@@ -42,7 +42,7 @@ nav a:hover {
 }
 
 /* ======================
-   Generic text links
+   Generic links
 ====================== */
 
 main a:not(.button) {
@@ -155,25 +155,23 @@ a.button:hover {
 }
 
 /* ======================
-   MINISTRY
+   MINISTRY  (FIXED)
 ====================== */
 
 .page-ministry .hero {
   min-height: 100vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;              /* ⬅️ было flex-end */
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: center;
-  padding-bottom: 120px;
+  padding: 0;                        /* ⬅️ убрали нижний сдвиг */
 }
 
 .page-ministry .hero-content {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
-  background: none;
-  box-shadow: none;
 }
 
 .page-ministry h1,
@@ -184,7 +182,7 @@ a.button:hover {
 
 .page-ministry .ministry-sections {
   max-width: 960px;
-  margin: -100px auto 120px;
+  margin: -80px auto 120px;          /* ⬅️ блоки подняты, но не рвут фото */
   padding: 0 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -202,6 +200,7 @@ a.button:hover {
 ====================== */
 
 @media (max-width: 768px) {
+
   .page-home .hero {
     padding: 80px 20px;
   }
@@ -223,8 +222,12 @@ a.button:hover {
     grid-template-columns: 1fr;
   }
 
+  .page-ministry .hero {
+    min-height: 70vh;               /* ⬅️ чтобы текст не вываливался на мобиле */
+  }
+
   .page-ministry .ministry-sections {
     grid-template-columns: 1fr;
-    margin-top: -60px;
+    margin-top: -40px;
   }
 }
