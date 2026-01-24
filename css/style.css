@@ -65,16 +65,20 @@ main {
   background-position: center;
 }
 
+/* КЛЮЧЕВОЕ МЕСТО */
 .hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
 
-  /* КЛЮЧЕВОЙ МОМЕНТ */
-  background: rgba(255, 255, 255, 0.65); /* было слишком плотным */
-  backdrop-filter: blur(2px);
+  /* Вместо глухого белого — прозрачный градиент */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.35)
+  );
 
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(1.5px);
 }
 
 .hero h1 {
@@ -89,8 +93,14 @@ main {
 }
 
 /* ======================
-   Links
+   Links & Buttons
 ====================== */
+
+.hero-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
 a {
   color: #111;
@@ -102,16 +112,6 @@ a:hover {
   opacity: 0.6;
 }
 
-.hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* ======================
-   Buttons
-====================== */
-
 a.button {
   display: inline-block;
   padding: 14px 28px;
@@ -119,6 +119,7 @@ a.button {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
+  background: transparent;
 }
 
 a.button:hover {
@@ -139,7 +140,12 @@ a.button:hover {
   .hero-content {
     margin: 0;
     padding: 32px;
-    background: rgba(255, 255, 255, 0.72);
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.6)
+    );
   }
 
   .hero h1 {
