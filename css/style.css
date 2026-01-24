@@ -51,16 +51,20 @@ main {
 }
 
 /* ======================
-   Hero (HOME)
+   HERO (HOME) — FULL WIDTH
 ====================== */
 
 .hero {
   min-height: 85vh;
+  width: 100%;
+
   display: flex;
   align-items: center;
+
   background-image: url("../assets/images/home.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -68,13 +72,9 @@ main {
   margin-left: 8%;
   padding: 48px;
 
-  /* ключевое: более прозрачный фон */
-  background: rgba(255, 255, 255, 0.6);
-
-  /* аккуратная глубина */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-
-  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
 }
 
 .hero h1 {
@@ -89,7 +89,7 @@ main {
 }
 
 /* ======================
-   Hero links / buttons
+   Hero buttons
 ====================== */
 
 .hero-links {
@@ -115,7 +115,43 @@ a.button:hover {
 }
 
 /* ======================
-   Generic links
+   Generic content pages
+====================== */
+
+.page {
+  max-width: 960px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+}
+
+/* ======================
+   About page layout
+====================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text p {
+  margin-top: 0;
+}
+
+/* ======================
+   Links
 ====================== */
 
 a {
@@ -133,6 +169,7 @@ a:hover {
 ====================== */
 
 @media (max-width: 768px) {
+
   .hero {
     min-height: auto;
     padding: 80px 20px;
@@ -149,5 +186,9 @@ a:hover {
 
   .hero p {
     font-size: 1.1rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
   }
 }
