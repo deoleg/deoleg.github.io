@@ -39,28 +39,13 @@ nav a:hover {
 }
 
 /* ======================
-   Shared layout
+   Neutral container
 ====================== */
 
 .page {
   max-width: 960px;
   margin: 0 auto;
-  padding: 48px 24px;
-}
-
-.page-header {
-  max-width: 640px;
-  margin-bottom: 40px;
-}
-
-.page-header h1 {
-  font-size: 2.4rem;
-  margin: 0 0 16px;
-}
-
-.page-header p {
-  margin: 0;
-  font-size: 1.15rem;
+  padding: 0 24px;
 }
 
 /* ======================
@@ -84,19 +69,23 @@ nav a:hover {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.page-home .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 24px;
-}
-
-.page-home .hero p {
-  font-size: 1.25rem;
-  margin-bottom: 32px;
-}
-
 /* ======================
-   ABOUT
+   ABOUT — ФИКС
 ====================== */
+
+.page-about .page {
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
+
+.page-about .page-header {
+  margin-bottom: 40px;
+}
+
+.page-about .page-header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+}
 
 .page-about .about {
   display: grid;
@@ -122,6 +111,38 @@ nav a:hover {
    MINISTRY
 ====================== */
 
+.page-ministry .ministry-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-image: url("../assets/images/ministry.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+
+.page-ministry .ministry-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.55)
+  );
+}
+
+.page-ministry .ministry-hero-content {
+  position: relative;
+  max-width: 720px;
+  padding: 48px;
+  color: #fff;
+}
+
+.page-ministry .page {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
 .page-ministry .ministry-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -131,32 +152,6 @@ nav a:hover {
 .page-ministry .ministry-card {
   border: 1px solid #eee;
   padding: 32px;
-}
-
-.page-ministry .ministry-card h2 {
-  margin: 0 0 12px;
-}
-
-/* ======================
-   Buttons & links
-====================== */
-
-a.button {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
-  color: #111;
-}
-
-a.button:hover {
-  background: #111;
-  color: #fff;
-}
-
-a {
-  color: #111;
-  text-decoration: underline;
 }
 
 /* ======================
@@ -170,6 +165,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .page-about .about {
+    grid-template-columns: 1fr;
+  }
+
   .page-home .hero {
     min-height: auto;
     padding: 80px 20px;
@@ -180,7 +179,7 @@ a {
     padding: 32px;
   }
 
-  .page-about .about {
-    grid-template-columns: 1fr;
+  .page-ministry .ministry-hero-content {
+    padding: 32px;
   }
 }
