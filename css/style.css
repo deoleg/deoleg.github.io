@@ -51,20 +51,17 @@ main {
 }
 
 /* ======================
-   HERO (HOME) — FULL WIDTH
+   HERO — HOME (НЕ ЛОМАЕМ)
 ====================== */
 
 .hero {
   min-height: 85vh;
-  width: 100%;
-
   display: flex;
   align-items: center;
-
   background-image: url("../assets/images/home.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  width: 100%;
 }
 
 .hero-content {
@@ -72,9 +69,10 @@ main {
   margin-left: 8%;
   padding: 48px;
 
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .hero h1 {
@@ -88,15 +86,15 @@ main {
   margin: 0 0 32px 0;
 }
 
-/* ======================
-   Hero buttons
-====================== */
-
 .hero-links {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
+
+/* ======================
+   Buttons
+====================== */
 
 a.button {
   display: inline-block;
@@ -115,23 +113,33 @@ a.button:hover {
 }
 
 /* ======================
-   Generic content pages
+   Generic links
+====================== */
+
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ======================
+   ABOUT PAGE (ЧИНИМ)
 ====================== */
 
 .page {
   max-width: 960px;
-  margin: 80px auto;
-  padding: 0 24px;
+  margin: 0 auto;
+  padding: 64px 24px;
 }
 
-.page h1 {
-  font-size: 2.2rem;
-  margin-bottom: 32px;
+.page-header h1 {
+  margin: 0 0 32px 0;
+  font-size: 2.4rem;
 }
-
-/* ======================
-   About page layout
-====================== */
 
 .about {
   display: grid;
@@ -146,22 +154,13 @@ a.button:hover {
   display: block;
 }
 
-.about-text p {
+.about-text {
+  font-size: 1rem;
+}
+
+/* КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ — УБИРАЕМ СДВИГ */
+.about-text p:first-child {
   margin-top: 0;
-}
-
-/* ======================
-   Links
-====================== */
-
-a {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-a:hover {
-  opacity: 0.7;
 }
 
 /* ======================
