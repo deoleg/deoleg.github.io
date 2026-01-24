@@ -19,6 +19,9 @@ body {
 
 header {
   border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index: 10;
 }
 
 nav {
@@ -39,7 +42,7 @@ nav a:hover {
 }
 
 /* ======================
-   Neutral container
+   Generic container
 ====================== */
 
 .page {
@@ -49,7 +52,7 @@ nav a:hover {
 }
 
 /* ======================
-   HOME
+   HOME (НЕ ТРОГАЕМ)
 ====================== */
 
 .page-home .hero {
@@ -70,7 +73,7 @@ nav a:hover {
 }
 
 /* ======================
-   ABOUT — ФИКС
+   ABOUT (СТАБИЛЕН)
 ====================== */
 
 .page-about .page {
@@ -80,11 +83,6 @@ nav a:hover {
 
 .page-about .page-header {
   margin-bottom: 48px;
-}
-
-.page-about .page-header h1 {
-  font-size: 2.4rem;
-  margin: 0;
 }
 
 .page-about .about {
@@ -103,23 +101,18 @@ nav a:hover {
   margin: 0 0 20px;
 }
 
-.page-about .about-text p:first-child {
-  margin-top: 0;
-}
-
 /* ======================
-   MINISTRY — HERO WITH PHOTO
+   MINISTRY — HERO + BLOCKS НА ФОНЕ
 ====================== */
 
 .page-ministry .ministry-hero {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-end;
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: top center;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
 }
 
 .page-ministry .ministry-hero::after {
@@ -128,13 +121,16 @@ nav a:hover {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55)
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
   );
 }
 
+/* Заголовок поверх фото */
+
 .page-ministry .ministry-hero-content {
   position: relative;
+  z-index: 2;
   max-width: 720px;
   padding: 56px;
   color: #fff;
@@ -150,14 +146,15 @@ nav a:hover {
   margin: 0;
 }
 
-.page-ministry .page {
-  padding-top: 72px;
-  padding-bottom: 80px;
-}
-
 /* ======================
-   Ministry content
+   БЛОКИ — НАЕЗЖАЮТ НА ФОТО
 ====================== */
+
+.page-ministry .ministry-section {
+  position: relative;
+  margin-top: -120px; /* КЛЮЧЕВОЕ МЕСТО */
+  padding-bottom: 96px;
+}
 
 .page-ministry .ministry-grid {
   display: grid;
@@ -166,8 +163,9 @@ nav a:hover {
 }
 
 .page-ministry .ministry-card {
-  border: 1px solid #eee;
+  background: #fff;
   padding: 32px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 /* ======================
@@ -177,6 +175,10 @@ nav a:hover {
 @media (max-width: 900px) {
   .page-ministry .ministry-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-ministry .ministry-section {
+    margin-top: -80px;
   }
 }
 
