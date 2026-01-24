@@ -74,12 +74,12 @@ nav a:hover {
 ====================== */
 
 .page-about .page {
-  padding-top: 56px;
-  padding-bottom: 72px;
+  padding-top: 72px;
+  padding-bottom: 80px;
 }
 
 .page-about .page-header {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .page-about .page-header h1 {
@@ -108,7 +108,7 @@ nav a:hover {
 }
 
 /* ======================
-   MINISTRY
+   MINISTRY — HERO WITH PHOTO
 ====================== */
 
 .page-ministry .ministry-hero {
@@ -119,14 +119,16 @@ nav a:hover {
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: top center;
+  background-repeat: no-repeat;
 }
 
-.page-ministry .ministry-hero-overlay {
+.page-ministry .ministry-hero::after {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.15),
     rgba(0,0,0,0.55)
   );
 }
@@ -134,14 +136,28 @@ nav a:hover {
 .page-ministry .ministry-hero-content {
   position: relative;
   max-width: 720px;
-  padding: 48px;
+  padding: 56px;
   color: #fff;
+}
+
+.page-ministry .ministry-hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 16px;
+}
+
+.page-ministry .ministry-hero-content p {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .page-ministry .page {
   padding-top: 72px;
-  padding-bottom: 72px;
+  padding-bottom: 80px;
 }
+
+/* ======================
+   Ministry content
+====================== */
 
 .page-ministry .ministry-grid {
   display: grid;
@@ -179,7 +195,15 @@ nav a:hover {
     padding: 32px;
   }
 
+  .page-ministry .ministry-hero {
+    min-height: 90vh;
+  }
+
   .page-ministry .ministry-hero-content {
     padding: 32px;
+  }
+
+  .page-ministry .ministry-hero-content h1 {
+    font-size: 2.2rem;
   }
 }
