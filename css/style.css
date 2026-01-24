@@ -1,5 +1,5 @@
 /* ======================
-   RESET / BASE
+   RESET & BASE
 ====================== */
 
 * {
@@ -21,12 +21,12 @@ img {
 }
 
 /* ======================
-   HEADER / NAV
+   HEADER & NAV
 ====================== */
 
 header {
-  border-bottom: 1px solid #eee;
   background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 nav {
@@ -51,7 +51,6 @@ nav a:hover {
 ====================== */
 
 main {
-  margin: 0;
   padding: 0;
 }
 
@@ -66,27 +65,7 @@ a:hover {
 }
 
 /* ======================
-   BUTTONS
-====================== */
-
-a.button {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  background: transparent;
-  color: #111;
-}
-
-a.button:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* ======================
-   HOME (index.html)
+   HOME
 ====================== */
 
 .hero {
@@ -103,19 +82,19 @@ a.button:hover {
   margin-left: 8%;
   padding: 48px;
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(3px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  backdrop-filter: blur(3px);
 }
 
 .hero h1 {
   font-size: 3rem;
   line-height: 1.2;
-  margin: 0 0 24px 0;
+  margin: 0 0 24px;
 }
 
 .hero p {
   font-size: 1.25rem;
-  margin: 0 0 32px 0;
+  margin: 0 0 32px;
 }
 
 .hero-links {
@@ -124,92 +103,118 @@ a.button:hover {
   flex-wrap: wrap;
 }
 
+a.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+  background: transparent;
+}
+
+a.button:hover {
+  background: #111;
+  color: #fff;
+}
+
 /* ======================
-   ABOUT (about.html)
+   ABOUT
 ====================== */
 
-.page-about main {
+.page-about .page-header {
   max-width: 1100px;
-  margin: 80px auto;
+  margin: 40px auto 24px;
   padding: 0 24px;
 }
 
-.page-about h1 {
-  margin-bottom: 40px;
-}
-
-.about {
+.page-about .about {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
 }
 
-.about-text p {
-  margin-top: 0; /* КЛЮЧЕВОЕ: убираем верхний отступ */
+.page-about .about img {
+  width: 100%;
+}
+
+.page-about .about-text p {
+  margin-top: 0; /* КЛЮЧЕВОЕ — убран верхний отступ */
   margin-bottom: 20px;
 }
 
 /* ======================
-   MINISTRY (ministry.html)
+   MINISTRY
 ====================== */
 
-.page-ministry .hero {
-  min-height: 90vh;
-  position: relative;
+.page-ministry .ministry-hero {
+  min-height: 100vh;
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: center;
-  align-items: flex-start;
+  position: relative;
 }
 
-.page-ministry .hero-content {
-  margin: 0;
-  padding: 80px 24px 40px 24px;
-  background: none;
-  box-shadow: none;
+.page-ministry .ministry-overlay {
+  min-height: 100vh;
+  padding: 100px 24px 80px;
+  background: rgba(0,0,0,0.25);
+}
+
+.page-ministry .ministry-intro {
   max-width: 1100px;
-  color: #111;
+  margin: 0 auto 80px;
+  color: #fff;
 }
 
-.page-ministry .hero h1 {
+.page-ministry .ministry-intro h1 {
+  margin: 0 0 16px;
   font-size: 2.6rem;
-  margin-bottom: 16px;
 }
 
-.page-ministry .hero p {
+.page-ministry .ministry-intro p {
+  max-width: 720px;
   font-size: 1.1rem;
-  max-width: 700px;
 }
 
-/* cards поверх фото */
+/* cards inside photo */
 
-.ministry-sections {
+.page-ministry .ministry-sections {
   max-width: 1100px;
-  margin: -180px auto 120px auto; /* ПОДНЯТЫ НА ФОТО */
-  padding: 0 24px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  position: relative;
-  z-index: 2;
 }
 
-.ministry-card {
-  background: rgba(255,255,255,0.96);
+.page-ministry .ministry-card {
+  background: #fff;
   padding: 32px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.ministry-card h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: #111; /* без свечения */
+.page-ministry .ministry-card h3 {
+  margin: 0 0 12px;
+  color: #111; /* ЧИСТЫЙ ЧЕРНЫЙ */
 }
 
-.ministry-card p {
+.page-ministry .ministry-card p {
   margin: 0;
   color: #111;
+}
+
+/* ======================
+   PARTNER (заготовка)
+====================== */
+
+.page-partner {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 24px;
 }
 
 /* ======================
@@ -217,17 +222,7 @@ a.button:hover {
 ====================== */
 
 @media (max-width: 900px) {
-  .about {
-    grid-template-columns: 1fr;
-  }
 
-  .ministry-sections {
-    grid-template-columns: 1fr;
-    margin-top: -120px;
-  }
-}
-
-@media (max-width: 768px) {
   .hero {
     min-height: auto;
     padding: 80px 20px;
@@ -245,4 +240,13 @@ a.button:hover {
   .hero p {
     font-size: 1.1rem;
   }
+
+  .page-about .about {
+    grid-template-columns: 1fr;
+  }
+
+  .page-ministry .ministry-sections {
+    grid-template-columns: 1fr;
+  }
+
 }
