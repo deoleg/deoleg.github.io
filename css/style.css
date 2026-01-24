@@ -1,5 +1,5 @@
 /* ======================
-   Base
+   RESET / BASE
 ====================== */
 
 * {
@@ -15,8 +15,13 @@ body {
   line-height: 1.7;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 /* ======================
-   Header & Navigation
+   HEADER / NAV
 ====================== */
 
 header {
@@ -25,7 +30,7 @@ header {
 }
 
 nav {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 16px 24px;
 }
@@ -42,21 +47,36 @@ nav a:hover {
 }
 
 /* ======================
-   Buttons
+   GENERIC
+====================== */
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ======================
+   BUTTONS
 ====================== */
 
 a.button {
   display: inline-block;
   padding: 14px 28px;
   border: 1px solid #111;
+  text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: #111;
   background: transparent;
-  text-decoration: none;
-}
-
-a.button:visited {
   color: #111;
 }
 
@@ -66,10 +86,10 @@ a.button:hover {
 }
 
 /* ======================
-   HOME
+   HOME (index.html)
 ====================== */
 
-.page-home .hero {
+.hero {
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -78,114 +98,151 @@ a.button:hover {
   background-position: center;
 }
 
-.page-home .hero-content {
+.hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
   background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin: 0 0 32px 0;
+}
+
+.hero-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* ======================
-   ABOUT
+   ABOUT (about.html)
 ====================== */
 
-.page-about .page-header {
-  max-width: 960px;
-  margin: 60px auto 40px;
+.page-about main {
+  max-width: 1100px;
+  margin: 80px auto;
   padding: 0 24px;
 }
 
-.page-about .about {
-  max-width: 960px;
-  margin: 0 auto 120px;
-  padding: 0 24px;
+.page-about h1 {
+  margin-bottom: 40px;
+}
+
+.about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
 }
 
-.page-about .about img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.page-about .about-text p {
-  margin-top: 0;
+.about-text p {
+  margin-top: 0; /* КЛЮЧЕВОЕ: убираем верхний отступ */
   margin-bottom: 20px;
 }
 
 /* ======================
-   MINISTRY — FIXED PROPERLY
+   MINISTRY (ministry.html)
 ====================== */
 
 .page-ministry .hero {
-  min-height: 100vh;
+  min-height: 90vh;
+  position: relative;
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* ⬅️ ВСЁ внутри фото */
-  padding: 80px 0 120px;
+  align-items: flex-start;
 }
 
 .page-ministry .hero-content {
-  max-width: 960px;
-  margin: 0 auto 80px;
-  padding: 0 24px;
-}
-
-/* ⬇️ УБРАЛИ СВЕЧЕНИЕ ПОЛНОСТЬЮ */
-.page-ministry h1,
-.page-ministry p {
+  margin: 0;
+  padding: 80px 24px 40px 24px;
+  background: none;
+  box-shadow: none;
+  max-width: 1100px;
   color: #111;
-  text-shadow: none;
 }
 
-.page-ministry .ministry-sections {
-  max-width: 960px;
-  margin: 0 auto;
+.page-ministry .hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+.page-ministry .hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+/* cards поверх фото */
+
+.ministry-sections {
+  max-width: 1100px;
+  margin: -180px auto 120px auto; /* ПОДНЯТЫ НА ФОТО */
   padding: 0 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
 }
 
-.page-ministry .ministry-card {
-  background: rgba(255,255,255,0.9);
+.ministry-card {
+  background: rgba(255,255,255,0.96);
   padding: 32px;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.ministry-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #111; /* без свечения */
+}
+
+.ministry-card p {
+  margin: 0;
+  color: #111;
 }
 
 /* ======================
-   Responsive
+   RESPONSIVE
 ====================== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
 
-  .page-home .hero {
+  .ministry-sections {
+    grid-template-columns: 1fr;
+    margin-top: -120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
     padding: 80px 20px;
   }
 
-  .page-home .hero-content {
+  .hero-content {
     margin: 0;
     padding: 32px;
   }
 
-  .page-about .about {
-    grid-template-columns: 1fr;
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
-  .page-ministry .hero {
-    min-height: auto;
-    padding: 60px 0 80px;
-  }
-
-  .page-ministry .ministry-sections {
-    grid-template-columns: 1fr;
+  .hero p {
+    font-size: 1.1rem;
   }
 }
