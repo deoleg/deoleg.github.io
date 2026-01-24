@@ -42,20 +42,6 @@ nav a:hover {
 }
 
 /* ======================
-   Generic links
-====================== */
-
-main a:not(.button) {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-main a:not(.button):hover {
-  opacity: 0.7;
-}
-
-/* ======================
    Buttons
 ====================== */
 
@@ -101,23 +87,6 @@ a.button:hover {
   backdrop-filter: blur(3px);
 }
 
-.page-home h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 0 0 24px 0;
-}
-
-.page-home p {
-  font-size: 1.25rem;
-  margin: 0 0 32px 0;
-}
-
-.hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 /* ======================
    ABOUT
 ====================== */
@@ -126,11 +95,6 @@ a.button:hover {
   max-width: 960px;
   margin: 60px auto 40px;
   padding: 0 24px;
-}
-
-.page-about h1 {
-  font-size: 2.4rem;
-  margin: 0;
 }
 
 .page-about .about {
@@ -155,34 +119,36 @@ a.button:hover {
 }
 
 /* ======================
-   MINISTRY  (FIXED)
+   MINISTRY — FIXED PROPERLY
 ====================== */
 
 .page-ministry .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;              /* ⬅️ было flex-end */
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: center;
-  padding: 0;                        /* ⬅️ убрали нижний сдвиг */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ⬅️ ВСЁ внутри фото */
+  padding: 80px 0 120px;
 }
 
 .page-ministry .hero-content {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
   padding: 0 24px;
 }
 
+/* ⬇️ УБРАЛИ СВЕЧЕНИЕ ПОЛНОСТЬЮ */
 .page-ministry h1,
 .page-ministry p {
-  color: #fff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  color: #111;
+  text-shadow: none;
 }
 
 .page-ministry .ministry-sections {
   max-width: 960px;
-  margin: -80px auto 120px;          /* ⬅️ блоки подняты, но не рвут фото */
+  margin: 0 auto;
   padding: 0 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -190,9 +156,9 @@ a.button:hover {
 }
 
 .page-ministry .ministry-card {
-  background: #fff;
+  background: rgba(255,255,255,0.9);
   padding: 32px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 
 /* ======================
@@ -210,24 +176,16 @@ a.button:hover {
     padding: 32px;
   }
 
-  .page-home h1 {
-    font-size: 2.2rem;
-  }
-
-  .page-home p {
-    font-size: 1.1rem;
-  }
-
   .page-about .about {
     grid-template-columns: 1fr;
   }
 
   .page-ministry .hero {
-    min-height: 70vh;               /* ⬅️ чтобы текст не вываливался на мобиле */
+    min-height: auto;
+    padding: 60px 0 80px;
   }
 
   .page-ministry .ministry-sections {
     grid-template-columns: 1fr;
-    margin-top: -40px;
   }
 }
