@@ -42,22 +42,7 @@ nav a:hover {
 }
 
 /* ======================
-   Layout
-====================== */
-
-main {
-  margin: 0;
-  padding: 0;
-}
-
-.page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-
-/* ======================
-   Hero (HOME)
+   HERO — HOME (НЕ ТРОГАЕМ)
 ====================== */
 
 .hero {
@@ -73,9 +58,9 @@ main {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
 }
 
 .hero h1 {
@@ -96,8 +81,51 @@ main {
 }
 
 /* ======================
-   Page Header (About / Ministry)
+   Buttons
 ====================== */
+
+a.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #111;
+  background: transparent;
+}
+
+a.button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ======================
+   Page image (Ministry)
+====================== */
+
+.page-image {
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+}
+
+.page-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======================
+   Page layout
+====================== */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
 
 .page-header {
   max-width: 640px;
@@ -140,27 +168,7 @@ main {
 }
 
 /* ======================
-   Buttons
-====================== */
-
-a.button {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #111;
-  background: transparent;
-}
-
-a.button:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* ======================
-   Generic links
+   Links
 ====================== */
 
 a {
@@ -202,8 +210,12 @@ a:hover {
     font-size: 1.1rem;
   }
 
+  .page-image {
+    height: 35vh;
+  }
+
   .page {
-    padding: 48px 20px;
+    padding: 40px 20px 56px;
   }
 
   .page-header h1 {
