@@ -58,27 +58,19 @@ main {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 
   background-image: url("../assets/images/home.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* КЛЮЧЕВОЕ МЕСТО */
 .hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
 
-  /* Вместо глухого белого — прозрачный градиент */
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.55),
-    rgba(255, 255, 255, 0.35)
-  );
-
-  backdrop-filter: blur(1.5px);
+  /* ВОТ КЛЮЧ: тот же блок, но легче */
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .hero h1 {
@@ -140,12 +132,7 @@ a.button:hover {
   .hero-content {
     margin: 0;
     padding: 32px;
-
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.6)
-    );
+    background: rgba(255, 255, 255, 0.75);
   }
 
   .hero h1 {
