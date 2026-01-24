@@ -2,6 +2,10 @@
    Base
 ====================== */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
@@ -18,8 +22,6 @@ body {
 header {
   border-bottom: 1px solid #eee;
   background: #fff;
-  position: relative;
-  z-index: 10;
 }
 
 nav {
@@ -40,6 +42,15 @@ nav a:hover {
 }
 
 /* ======================
+   Layout
+====================== */
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================
    Hero
 ====================== */
 
@@ -47,45 +58,38 @@ nav a:hover {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  background-image: url("/assets/images/home.jpg");
+  justify-content: flex-start;
+
+  background-image: url("../assets/images/home.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* ======================
-   Hero Content
-====================== */
-
 .hero-content {
-  max-width: 620px;              /* уже — лица свободнее */
-  margin-left: 6%;
-  margin-top: 8%;
+  max-width: 720px;
+  margin-left: 8%;
   padding: 48px;
 
-  /* КЛЮЧЕВОЕ МЕСТО */
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.78),
-    rgba(255,255,255,0.65)
-  );
+  /* КЛЮЧЕВОЙ МОМЕНТ */
+  background: rgba(255, 255, 255, 0.65); /* было слишком плотным */
+  backdrop-filter: blur(2px);
 
-  backdrop-filter: blur(3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
-.hero-content h1 {
+.hero h1 {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
-.hero-content p {
+.hero p {
   font-size: 1.25rem;
   margin-bottom: 32px;
 }
 
 /* ======================
-   Links & Buttons
+   Links
 ====================== */
 
 a {
@@ -98,9 +102,15 @@ a:hover {
   opacity: 0.6;
 }
 
-.hero-links a {
-  margin-right: 20px;
+.hero-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
+
+/* ======================
+   Buttons
+====================== */
 
 a.button {
   display: inline-block;
@@ -108,7 +118,7 @@ a.button {
   border: 1px solid #111;
   text-decoration: none;
   font-weight: 500;
-  background: transparent;
+  letter-spacing: 0.02em;
 }
 
 a.button:hover {
@@ -117,36 +127,26 @@ a.button:hover {
 }
 
 /* ======================
-   Mobile
+   Responsive
 ====================== */
 
 @media (max-width: 768px) {
-
   .hero {
     min-height: auto;
     padding: 80px 20px;
   }
 
   .hero-content {
-    max-width: 100%;
     margin: 0;
-    padding: 32px 24px;
-
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: none;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.72);
   }
 
-  .hero-content h1 {
-    font-size: 2.1rem;
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
-  .hero-content p {
-    font-size: 1.05rem;
-  }
-
-  .hero-links a {
-    display: block;
-    margin-bottom: 12px;
-    text-align: center;
+  .hero p {
+    font-size: 1.1rem;
   }
 }
