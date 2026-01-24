@@ -2,9 +2,7 @@
    Base
 ====================== */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -21,7 +19,6 @@ body {
 
 header {
   border-bottom: 1px solid #eee;
-  background: #fff;
 }
 
 nav {
@@ -42,10 +39,35 @@ nav a:hover {
 }
 
 /* ======================
-   HERO — HOME (НЕ ТРОГАЕМ)
+   Shared layout
 ====================== */
 
-.hero {
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.page-header {
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 0 0 16px;
+}
+
+.page-header p {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+/* ======================
+   HOME
+====================== */
+
+.page-home .hero {
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -54,34 +76,69 @@ nav a:hover {
   background-position: center;
 }
 
-.hero-content {
+.page-home .hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.hero h1 {
+.page-home .hero h1 {
   font-size: 3rem;
-  line-height: 1.2;
-  margin: 0 0 24px 0;
+  margin-bottom: 24px;
 }
 
-.hero p {
+.page-home .hero p {
   font-size: 1.25rem;
-  margin: 0 0 32px 0;
-}
-
-.hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  margin-bottom: 32px;
 }
 
 /* ======================
-   Buttons
+   ABOUT
+====================== */
+
+.page-about .about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.page-about .about img {
+  width: 100%;
+  display: block;
+}
+
+.page-about .about-text p {
+  margin: 0 0 20px;
+}
+
+.page-about .about-text p:first-child {
+  margin-top: 0;
+}
+
+/* ======================
+   MINISTRY
+====================== */
+
+.page-ministry .ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.page-ministry .ministry-card {
+  border: 1px solid #eee;
+  padding: 32px;
+}
+
+.page-ministry .ministry-card h2 {
+  margin: 0 0 12px;
+}
+
+/* ======================
+   Buttons & links
 ====================== */
 
 a.button {
@@ -89,10 +146,7 @@ a.button {
   padding: 14px 28px;
   border: 1px solid #111;
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.02em;
   color: #111;
-  background: transparent;
 }
 
 a.button:hover {
@@ -100,85 +154,9 @@ a.button:hover {
   color: #fff;
 }
 
-/* ======================
-   Page image (Ministry)
-====================== */
-
-.page-image {
-  width: 100%;
-  height: 45vh;
-  overflow: hidden;
-}
-
-.page-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ======================
-   Page layout
-====================== */
-
-.page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 56px 24px 72px;
-}
-
-.page-header {
-  max-width: 640px;
-  margin-bottom: 48px;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  margin: 0 0 16px 0;
-}
-
-.page-header p {
-  font-size: 1.15rem;
-  margin: 0;
-}
-
-/* ======================
-   Ministry
-====================== */
-
-.ministry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.ministry-card {
-  border: 1px solid #eee;
-  padding: 32px;
-}
-
-.ministry-card h2 {
-  font-size: 1.4rem;
-  margin: 0 0 12px 0;
-}
-
-.ministry-card p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-/* ======================
-   Links
-====================== */
-
 a {
   color: #111;
   text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-a:hover {
-  opacity: 0.7;
 }
 
 /* ======================
@@ -186,39 +164,23 @@ a:hover {
 ====================== */
 
 @media (max-width: 900px) {
-  .ministry-grid {
+  .page-ministry .ministry-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .page-home .hero {
     min-height: auto;
     padding: 80px 20px;
   }
 
-  .hero-content {
+  .page-home .hero-content {
     margin: 0;
     padding: 32px;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .page-image {
-    height: 35vh;
-  }
-
-  .page {
-    padding: 40px 20px 56px;
-  }
-
-  .page-header h1 {
-    font-size: 2rem;
+  .page-about .about {
+    grid-template-columns: 1fr;
   }
 }
