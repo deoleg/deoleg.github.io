@@ -45,3 +45,15 @@ h1 {
 p {
   margin-bottom: 24px;
 }
+
+/* Links */
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
