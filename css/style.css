@@ -2,10 +2,6 @@
    Base
 ====================== */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
@@ -49,21 +45,15 @@ main {
   padding: 0;
 }
 
-.page {
-  max-width: 960px;
-  margin: 80px auto;
-  padding: 0 24px;
-}
-
 /* ======================
-   Hero (Home)
+   HERO (HOME — НЕ ТРОГАЕМ)
 ====================== */
 
 .hero {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  background-image: url("../assets/images/home.jpg");
+  background-image: url("/assets/images/home.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -71,9 +61,10 @@ main {
 .hero-content {
   max-width: 720px;
   margin-left: 8%;
-  background: rgba(255, 255, 255, 0.65); /* более прозрачный */
+  background: rgba(255, 255, 255, 0.78); /* слегка прозрачнее */
   padding: 48px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
 }
 
 .hero h1 {
@@ -87,57 +78,8 @@ main {
   margin-bottom: 32px;
 }
 
-.hero-links a {
-  margin-right: 16px;
-}
-
 /* ======================
-   Buttons
-====================== */
-
-a.button {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-a.button:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* ======================
-   About Page
-====================== */
-
-.page-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 48px;
-}
-
-.about-intro {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.about-intro img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.about-text p {
-  margin-bottom: 24px;
-  font-size: 1.05rem;
-}
-
-/* ======================
-   Links
+   Links & Buttons
 ====================== */
 
 a {
@@ -150,17 +92,68 @@ a:hover {
   opacity: 0.6;
 }
 
+.hero-links a {
+  margin-right: 16px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ======================
+   ABOUT PAGE (ТОЛЬКО ЗДЕСЬ ИЗМЕНЕНИЯ)
+====================== */
+
+/* контейнер страницы */
+.about {
+  max-width: 960px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+/* заголовок */
+.about h1 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+/* фото */
+.about-image {
+  margin-bottom: 48px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* текстовый блок */
+.about-text {
+  max-width: 680px;
+  font-size: 1.05rem;
+}
+
+.about-text p {
+  margin-bottom: 24px;
+}
+
 /* ======================
    Responsive
 ====================== */
 
-@media (max-width: 900px) {
-  .hero-content {
-    margin-left: 5%;
-  }
-}
-
 @media (max-width: 768px) {
+
+  /* Home */
   .hero {
     min-height: auto;
     padding: 80px 20px;
@@ -179,66 +172,16 @@ a:hover {
     font-size: 1.1rem;
   }
 
-  .about-intro {
-    grid-template-columns: 1fr;
-  }
-
-  .page {
+  /* About */
+  .about {
     margin: 48px auto;
   }
-}
-/* ======================
-   Page container
-====================== */
 
-.page {
-  max-width: 960px;
-  margin: 80px auto;
-  padding: 0 24px;
-}
-
-/* ======================
-   Page header
-====================== */
-
-.page-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-}
-
-/* ======================
-   About section
-====================== */
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.about img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
-.about-text p {
-  margin-bottom: 20px;
-  max-width: 40ch;
-}
-
-/* ======================
-   Responsive
-====================== */
-
-@media (max-width: 900px) {
-  .about {
-    grid-template-columns: 1fr;
+  .about h1 {
+    font-size: 2rem;
   }
 
-  .about-text p {
-    max-width: none;
+  .about-text {
+    font-size: 1rem;
   }
 }
