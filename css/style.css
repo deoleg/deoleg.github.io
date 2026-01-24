@@ -57,3 +57,6 @@ a:hover {
   opacity: 0.6;
 }
 
+nav a {
+  font-weight: 400;
+}
