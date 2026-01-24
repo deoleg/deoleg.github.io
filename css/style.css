@@ -138,12 +138,8 @@ a.button:hover {
   align-items: start;
 }
 
-.page-about .about img {
-  width: 100%;
-}
-
 .page-about .about-text p {
-  margin-top: 0; /* КЛЮЧЕВОЕ — убран верхний отступ */
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -156,7 +152,6 @@ a.button:hover {
   background-image: url("../assets/images/ministry.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 
 .page-ministry .ministry-overlay {
@@ -170,18 +165,6 @@ a.button:hover {
   margin: 0 auto 80px;
   color: #fff;
 }
-
-.page-ministry .ministry-intro h1 {
-  margin: 0 0 16px;
-  font-size: 2.6rem;
-}
-
-.page-ministry .ministry-intro p {
-  max-width: 720px;
-  font-size: 1.1rem;
-}
-
-/* cards inside photo */
 
 .page-ministry .ministry-sections {
   max-width: 1100px;
@@ -198,23 +181,49 @@ a.button:hover {
 }
 
 .page-ministry .ministry-card h3 {
-  margin: 0 0 12px;
-  color: #111; /* ЧИСТЫЙ ЧЕРНЫЙ */
-}
-
-.page-ministry .ministry-card p {
-  margin: 0;
+  margin-top: 0;
   color: #111;
 }
 
 /* ======================
-   PARTNER (заготовка)
+   PARTNER
 ====================== */
 
-.page-partner {
-  max-width: 1100px;
-  margin: 80px auto;
+.page-partner .partner-hero {
+  background: #f6f6f6;
+  padding: 100px 24px 80px;
+}
+
+.page-partner .partner-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-partner h1 {
+  margin-top: 0;
+  font-size: 2.6rem;
+}
+
+.page-partner .partner-content {
+  max-width: 900px;
+  margin: 60px auto;
   padding: 0 24px;
+}
+
+.page-partner .partner-ways {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.page-partner .partner-card {
+  padding: 32px;
+  border: 1px solid #eee;
+}
+
+.page-partner .partner-card h3 {
+  margin-top: 0;
 }
 
 /* ======================
@@ -224,29 +233,19 @@ a.button:hover {
 @media (max-width: 900px) {
 
   .hero {
-    min-height: auto;
     padding: 80px 20px;
   }
 
   .hero-content {
     margin: 0;
-    padding: 32px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
   }
 
   .page-about .about {
     grid-template-columns: 1fr;
   }
 
-  .page-ministry .ministry-sections {
+  .page-ministry .ministry-sections,
+  .page-partner .partner-ways {
     grid-template-columns: 1fr;
   }
-
 }
