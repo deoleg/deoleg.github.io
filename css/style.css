@@ -60,3 +60,18 @@ a:hover {
 nav a {
   font-weight: 400;
 }
+
+/* Button */
+a.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+a.button:hover {
+  background: #111;
+  color: #fff;
+}
