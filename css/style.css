@@ -2,10 +2,6 @@
    Base
 ====================== */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
@@ -21,7 +17,6 @@ body {
 
 header {
   border-bottom: 1px solid #eee;
-  background: #fff;
 }
 
 nav {
@@ -58,20 +53,25 @@ main {
   min-height: 85vh;
   display: flex;
   align-items: center;
-
-  background-image: url("../assets/images/home.jpg");
+  background-image: url("/assets/images/home.jpg");
   background-size: cover;
   background-position: center;
 }
+
+/* ТЕКСТОВЫЙ БЛОК — КАК БЫЛО */
 
 .hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
 
-  /* ВОТ КЛЮЧ: тот же блок, но легче */
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.65); /* более прозрачный фон */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12); /* аккуратная тень */
 }
+
+/* ======================
+   Typography
+====================== */
 
 .hero h1 {
   font-size: 3rem;
@@ -88,12 +88,6 @@ main {
    Links & Buttons
 ====================== */
 
-.hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 a {
   color: #111;
   text-decoration: underline;
@@ -104,6 +98,10 @@ a:hover {
   opacity: 0.6;
 }
 
+.hero-links a {
+  margin-right: 16px;
+}
+
 a.button {
   display: inline-block;
   padding: 14px 28px;
@@ -111,12 +109,12 @@ a.button {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
-  background: transparent;
 }
 
 a.button:hover {
   background: #111;
   color: #fff;
+  opacity: 1;
 }
 
 /* ======================
@@ -133,6 +131,7 @@ a.button:hover {
     margin: 0;
     padding: 32px;
     background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   }
 
   .hero h1 {
