@@ -50,8 +50,14 @@ main {
   padding: 0;
 }
 
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
 /* ======================
-   HERO — HOME (НЕ ЛОМАЕМ)
+   Hero (HOME)
 ====================== */
 
 .hero {
@@ -61,18 +67,15 @@ main {
   background-image: url("../assets/images/home.jpg");
   background-size: cover;
   background-position: center;
-  width: 100%;
 }
 
 .hero-content {
   max-width: 720px;
   margin-left: 8%;
   padding: 48px;
-
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(3px);
-
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(3px);
 }
 
 .hero h1 {
@@ -90,6 +93,50 @@ main {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+/* ======================
+   Page Header (About / Ministry)
+====================== */
+
+.page-header {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 16px 0;
+}
+
+.page-header p {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* ======================
+   Ministry
+====================== */
+
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.ministry-card {
+  border: 1px solid #eee;
+  padding: 32px;
+}
+
+.ministry-card h2 {
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+}
+
+.ministry-card p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 /* ======================
@@ -127,48 +174,16 @@ a:hover {
 }
 
 /* ======================
-   ABOUT PAGE (ЧИНИМ)
-====================== */
-
-.page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-
-.page-header h1 {
-  margin: 0 0 32px 0;
-  font-size: 2.4rem;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.about img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.about-text {
-  font-size: 1rem;
-}
-
-/* КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ — УБИРАЕМ СДВИГ */
-.about-text p:first-child {
-  margin-top: 0;
-}
-
-/* ======================
    Responsive
 ====================== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .ministry-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
+@media (max-width: 768px) {
   .hero {
     min-height: auto;
     padding: 80px 20px;
@@ -187,7 +202,11 @@ a:hover {
     font-size: 1.1rem;
   }
 
-  .about {
-    grid-template-columns: 1fr;
+  .page {
+    padding: 48px 20px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
   }
 }
