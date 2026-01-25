@@ -1,6 +1,6 @@
-/* =====================
-   RESET / BASE
-===================== */
+/* ======================
+   RESET & BASE
+====================== */
 
 * {
   box-sizing: border-box;
@@ -21,13 +21,13 @@ img {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-/* =====================
-   HEADER / NAV (GLOBAL, SAFE)
-===================== */
+/* ======================
+   HEADER & NAV
+====================== */
 
 header {
   background: #fff;
@@ -44,18 +44,17 @@ nav {
 }
 
 nav a {
-  font-size: 14px;
   font-weight: 500;
+  font-size: 16px;
 }
 
-/* =====================
-   BUTTONS (GLOBAL, SAFE)
-===================== */
+/* ======================
+   GLOBAL BUTTON
+====================== */
 
 .button {
   display: inline-block;
   padding: 14px 28px;
-  font-size: 14px;
   font-weight: 500;
   border: 1px solid #111;
   transition: background 0.2s ease, color 0.2s ease;
@@ -67,12 +66,7 @@ nav a {
 }
 
 .button.primary:hover {
-  background: #000;
-}
-
-.button.secondary {
-  background: transparent;
-  color: #111;
+  opacity: 0.85;
 }
 
 .button.secondary:hover {
@@ -80,145 +74,137 @@ nav a {
   color: #fff;
 }
 
-/* =========================================================
-   INDEX PAGE
-========================================================= */
+/* ======================================================
+   HOME
+===================================================== */
 
-.page-home main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-/* =========================================================
-   ABOUT PAGE
-========================================================= */
-
-.page-about main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-.page-about h1 {
-  font-size: 36px;
-  margin-bottom: 32px;
-}
-
-/* =========================================================
-   MINISTRY PAGE
-========================================================= */
-
-.page-ministry .hero {
-  position: relative;
-  min-height: 70vh;
-  background: url("../images/ministry-hero.jpg") center / cover no-repeat;
+body.page-home .home-hero {
+  min-height: 85vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-image: url("/assets/images/home.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.page-ministry .hero-content {
-  max-width: 520px;
-  padding: 64px;
-  background: rgba(255, 255, 255, 0.9);
-  margin-left: 80px;
+body.page-home .home-hero-content {
+  max-width: 720px;
+  padding: 48px;
+  background: rgba(255,255,255,0.7);
 }
 
-.page-ministry .hero h1 {
-  font-size: 40px;
-  margin-bottom: 16px;
+/* ======================================================
+   ABOUT
+===================================================== */
+
+body.page-about .about-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
 }
 
-.page-ministry .ministry-sections {
+body.page-about .about-text p {
+  margin-bottom: 24px;
+}
+
+/* ======================================================
+   MINISTRY
+===================================================== */
+
+body.page-ministry .ministry-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-image: url("/assets/images/ministry.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body.page-ministry .ministry-hero-content {
+  max-width: 640px;
+  padding: 48px;
+  background: rgba(255,255,255,0.8);
+}
+
+body.page-ministry .ministry-sections {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 100px 24px;
+  padding: 80px 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
-.page-ministry .ministry-card {
+body.page-ministry .ministry-card {
   padding: 32px;
   border: 1px solid #eee;
 }
 
-/* =========================================================
-   PARTNER PAGE (ISOLATED)
-========================================================= */
+/* ======================================================
+   PARTNER
+===================================================== */
 
-.page-partner .partner-hero {
-  position: relative;
-  min-height: 100vh;
-  background: url("../images/partner_desktop.jpg") center top / cover no-repeat;
+body.page-partner .partner-hero {
+  min-height: 90vh;
   display: flex;
   align-items: center;
+  background-size: cover;
+  background-position: center;
 }
 
-.page-partner .partner-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.page-partner .partner-hero-content {
-  position: relative;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: 80px;
+body.page-partner .partner-hero-content {
+  max-width: 720px;
   padding: 48px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.75);
+  margin-left: 8%;
 }
 
-.page-partner .partner-hero h1 {
-  font-size: 42px;
-  margin-bottom: 16px;
-}
-
-.page-partner .partner-content {
-  max-width: 700px;
+body.page-partner .partner-content {
+  max-width: 720px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 80px 24px;
   text-align: center;
 }
 
-.page-partner .partner-content p {
-  margin-bottom: 24px;
-}
-
-.page-partner .partner-actions {
+body.page-partner .partner-actions {
   margin-top: 48px;
   display: flex;
-  justify-content: center;
   gap: 24px;
+  justify-content: center;
 }
 
-/* =====================
+/* ======================================================
    RESPONSIVE
-===================== */
+===================================================== */
 
 @media (max-width: 768px) {
 
-  .page-ministry .hero-content {
-    margin: 24px;
-    padding: 32px;
+  body.page-home .home-hero {
+    min-height: auto;
+    padding: 80px 24px;
   }
 
-  .page-ministry .ministry-sections {
+  body.page-about .about-section {
     grid-template-columns: 1fr;
   }
 
-  .page-partner .partner-hero {
-    background-image: url("../images/partner_mobile.jpg");
+  body.page-ministry .ministry-sections {
+    grid-template-columns: 1fr;
   }
 
-  .page-partner .partner-hero-content {
-    margin: 24px;
+  body.page-partner .partner-hero {
+    background-image: url("/assets/images/partner_mobile.jpg");
+    background-position: center top;
+    min-height: auto;
+    padding: 80px 24px;
+  }
+
+  body.page-partner .partner-hero-content {
+    margin: 0;
     padding: 32px;
-  }
-
-  .page-partner .partner-actions {
-    flex-direction: column;
   }
 }
