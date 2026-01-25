@@ -1,59 +1,144 @@
-:root {
-    --primary-color: #2563eb;
-    --dark-bg: #0f172a;
-    --text-light: #f8fafc;
-}
-
+/* ===== RESET ===== */
+* { box-sizing: border-box; }
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111;
+  line-height: 1.7;
 }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
 
+/* ===== NAV ===== */
+header {
+  border-bottom: 1px solid #eee;
+}
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: rgba(15, 23, 42, 0.9);
-    position: sticky;
-    top: 0;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+nav a {
+  margin-right: 20px;
+  font-weight: 500;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
-.logo span { color: var(--primary-color); }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+/* ===== BUTTON ===== */
+.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  font-weight: 500;
+}
+.button:hover {
+  background: #111;
+  color: #fff;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+/* =====================================================
+   HOME
+===================================================== */
+.page-home .home-hero {
+  width: 100%;
+  min-height: 85vh;
+  background: url("/assets/images/home.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+.page-home .home-content {
+  max-width: 960px;
+  padding: 0 24px;
+}
+.page-home .home-box {
+  max-width: 560px;
+  background: rgba(255,255,255,0.75);
+  padding: 32px;
 }
 
-.nav-links a:hover { color: var(--primary-color); }
-
-#hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
+/* =====================================================
+   ABOUT
+===================================================== */
+.page-about main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.page-about .about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+@media (max-width: 768px) {
+  .page-about .about {
+    grid-template-columns: 1fr;
+  }
 }
 
-.btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+/* =====================================================
+   MINISTRY
+===================================================== */
+.page-ministry .ministry-hero {
+  width: 100%;
+  min-height: 85vh;
+  background: url("/assets/images/ministry.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+.page-ministry .ministry-content {
+  max-width: 960px;
+  padding: 0 24px;
+}
+.page-ministry .ministry-box {
+  max-width: 560px;
+  background: rgba(255,255,255,0.75);
+  padding: 32px;
+}
+.page-ministry .ministry-sections {
+  max-width: 960px;
+  margin: 64px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 32px;
+}
+.page-ministry .ministry-card {
+  border: 1px solid #eee;
+  padding: 24px;
+}
+@media (max-width: 768px) {
+  .page-ministry .ministry-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PARTNER
+===================================================== */
+.page-partner .partner-hero {
+  width: 100%;
+  min-height: 85vh;
+  background: url("/assets/images/partner_desktop.jpg") center top / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.page-partner .partner-content {
+  max-width: 960px;
+  padding: 0 24px;
+}
+.page-partner .partner-box {
+  max-width: 520px;
+  background: rgba(255,255,255,0.75);
+  padding: 32px;
+}
+.page-partner main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+@media (max-width: 768px) {
+  .page-partner .partner-hero {
+    background-image: url("/assets/images/partner_mobile.jpg");
+    justify-content: flex-start;
+  }
 }
