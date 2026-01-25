@@ -197,11 +197,13 @@ h3 {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  height: 100vh;
   background: url("../assets/images/partner_desktop.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 60px 6%;
+  overflow-y: auto;
 }
 
 .page-partner .hero-content {
