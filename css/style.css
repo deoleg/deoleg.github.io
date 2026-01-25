@@ -44,7 +44,7 @@ main {
   position: relative;
   width: 100%;
   height: 80vh;
-  background: url("../images/home.jpg") center/cover no-repeat;
+  background: url("../assets/images/home.jpg") center/cover no-repeat;
 }
 
 .page-home .hero-content {
@@ -89,7 +89,7 @@ main {
   position: relative;
   width: 100%;
   height: 80vh;
-  background: url("../images/ministry.jpg") center/cover no-repeat;
+  background: url("../assets/images/ministry.jpg") center/cover no-repeat;
 }
 
 .page-ministry .hero-content {
@@ -125,7 +125,7 @@ main {
   position: relative;
   width: 100%;
   height: 80vh;
-  background: url("../images/partner.jpg") center/cover no-repeat;
+  background: url("../assets/images/partner.jpg") center/cover no-repeat;
 }
 
 .page-partner .hero-content {
