@@ -1,18 +1,19 @@
 /* ======================
-   RESET & BASE
+   RESET / BASE
 ====================== */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111;
   background: #fff;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 img {
@@ -20,8 +21,13 @@ img {
   display: block;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ======================
-   HEADER & NAV
+   HEADER / NAV
 ====================== */
 
 header {
@@ -32,220 +38,246 @@ header {
 nav {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 20px 24px;
+
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
 
 nav a {
-  margin-right: 24px;
-  text-decoration: none;
-  color: #111;
   font-weight: 500;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
 /* ======================
-   GENERIC
+   GLOBAL BUTTONS
 ====================== */
 
-main {
-  padding: 0;
-}
-
-a {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-/* ======================
-   HOME
-====================== */
-
-.hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  background-image: url("../assets/images/home.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-content {
-  max-width: 720px;
-  margin-left: 8%;
-  padding: 48px;
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  backdrop-filter: blur(3px);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 0 0 24px;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin: 0 0 32px;
-}
-
-.hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-a.button {
+.button {
   display: inline-block;
   padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
   font-weight: 500;
-  color: #111;
-  background: transparent;
+  border: 1px solid #111;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-a.button:hover {
+.button.primary {
   background: #111;
   color: #fff;
 }
 
-/* ======================
-   ABOUT
-====================== */
-
-.page-about .page-header {
-  max-width: 1100px;
-  margin: 40px auto 24px;
-  padding: 0 24px;
+.button.primary:hover {
+  opacity: 0.85;
 }
 
-.page-about .about {
-  max-width: 1100px;
-  margin: 0 auto 80px;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
+.button.secondary {
+  background: transparent;
+  color: #111;
 }
 
-.page-about .about-text p {
-  margin-top: 0;
-  margin-bottom: 20px;
+.button.secondary:hover {
+  background: #111;
+  color: #fff;
 }
 
-/* ======================
-   MINISTRY
-====================== */
+/* ======================================================
+   INDEX PAGE
+====================================================== */
 
-.page-ministry .ministry-hero {
-  min-height: 100vh;
-  background-image: url("../assets/images/ministry.jpg");
+body.page-home .hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+
   background-size: cover;
   background-position: center;
 }
 
-.page-ministry .ministry-overlay {
-  min-height: 100vh;
-  padding: 100px 24px 80px;
-  background: rgba(0,0,0,0.25);
+body.page-home .hero-content {
+  max-width: 640px;
+  padding: 48px;
+  margin-left: 8%;
+  background: rgba(255, 255, 255, 0.7);
 }
 
-.page-ministry .ministry-intro {
-  max-width: 1100px;
-  margin: 0 auto 80px;
-  color: #fff;
+body.page-home h1 {
+  font-size: 3rem;
+  margin-bottom: 24px;
 }
 
-.page-ministry .ministry-sections {
+/* ======================================================
+   ABOUT PAGE
+====================================================== */
+
+body.page-about main {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 80px 24px;
+}
+
+body.page-about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 48px;
+}
+
+body.page-about .about-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.page-ministry .ministry-card {
-  background: #fff;
-  padding: 32px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+body.page-about .about-layout img {
+  width: 100%;
 }
 
-.page-ministry .ministry-card h3 {
-  margin-top: 0;
-  color: #111;
+body.page-about p {
+  margin-bottom: 24px;
 }
-
-/* ======================
-   PARTNER
-====================== */
-
-.page-partner .partner-hero {
-  background: #f6f6f6;
-  padding: 100px 24px 80px;
-}
-
-.page-partner .partner-hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.page-partner h1 {
-  margin-top: 0;
-  font-size: 2.6rem;
-}
-
-.page-partner .partner-content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 24px;
-}
-
-.page-partner .partner-ways {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 40px;
-}
-
-.page-partner .partner-card {
-  padding: 32px;
-  border: 1px solid #eee;
-}
-
-.page-partner .partner-card h3 {
-  margin-top: 0;
-}
-
-/* ======================
-   RESPONSIVE
-====================== */
 
 @media (max-width: 900px) {
-
-  .hero {
-    padding: 80px 20px;
-  }
-
-  .hero-content {
-    margin: 0;
-  }
-
-  .page-about .about {
+  body.page-about .about-layout {
     grid-template-columns: 1fr;
   }
+}
 
-  .page-ministry .ministry-sections,
-  .page-partner .partner-ways {
+/* ======================================================
+   MINISTRY PAGE
+====================================================== */
+
+body.page-ministry .hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 120px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+body.page-ministry .hero-content {
+  max-width: 640px;
+  margin-left: 8%;
+  padding: 48px;
+}
+
+body.page-ministry h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+body.page-ministry .ministry-sections {
+  max-width: 1100px;
+  margin: -160px auto 0;
+  padding: 0 24px 120px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+body.page-ministry .ministry-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 32px;
+}
+
+body.page-ministry .ministry-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  body.page-ministry .hero {
+    padding-top: 80px;
+  }
+
+  body.page-ministry .ministry-sections {
     grid-template-columns: 1fr;
+    margin-top: -80px;
+  }
+}
+
+/* ======================================================
+   PARTNER PAGE
+====================================================== */
+
+body.page-partner main {
+  margin: 0;
+  padding: 0;
+}
+
+/* HERO */
+
+body.page-partner .partner-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+
+  background-image: url("../assets/images/partner_desktop.jpg");
+  background-size: cover;
+  background-position: left center;
+}
+
+body.page-partner .partner-hero-content {
+  max-width: 640px;
+  margin-left: 8%;
+  padding: 48px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+body.page-partner .partner-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+body.page-partner .partner-hero p {
+  font-size: 1.2rem;
+}
+
+/* CONTENT */
+
+body.page-partner .partner-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+body.page-partner .partner-text {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+body.page-partner .partner-text p {
+  margin-bottom: 24px;
+}
+
+body.page-partner .partner-actions {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  body.page-partner .partner-hero {
+    min-height: 70vh;
+    background-image: url("../assets/images/partner_mobile.jpg");
+    background-position: center top;
+  }
+
+  body.page-partner .partner-hero-content {
+    margin: 0 16px;
+    padding: 32px;
+  }
+
+  body.page-partner .partner-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  body.page-partner .partner-content {
+    padding: 64px 20px;
   }
 }
