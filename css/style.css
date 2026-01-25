@@ -1,151 +1,224 @@
-/* ======================
-   Base
-====================== */
+/* =====================
+   RESET / BASE
+===================== */
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111;
   background: #fff;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-/* ======================
-   Header & Navigation
-====================== */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =====================
+   HEADER / NAV (GLOBAL, SAFE)
+===================== */
 
 header {
-  border-bottom: 1px solid #eee;
   background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 nav {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 16px 24px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
 
 nav a {
-  margin-right: 24px;
-  text-decoration: none;
-  color: #111;
+  font-size: 14px;
   font-weight: 500;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
+/* =====================
+   BUTTONS (GLOBAL, SAFE)
+===================== */
 
-/* ======================
-   Buttons
-====================== */
-
-a.button {
+.button {
   display: inline-block;
   padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #111;
+  border: 1px solid #111;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.button.primary {
+  background: #111;
+  color: #fff;
+}
+
+.button.primary:hover {
+  background: #000;
+}
+
+.button.secondary {
   background: transparent;
+  color: #111;
 }
 
-a.button.primary {
+.button.secondary:hover {
   background: #111;
   color: #fff;
 }
 
-a.button.primary:hover {
-  opacity: 0.85;
+/* =========================================================
+   INDEX PAGE
+========================================================= */
+
+.page-home main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
 }
 
-a.button.secondary:hover {
-  background: #111;
-  color: #fff;
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.page-about main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
 }
 
-/* ======================
-   PARTNER PAGE
-====================== */
+.page-about h1 {
+  font-size: 36px;
+  margin-bottom: 32px;
+}
 
-body.page-partner .partner-hero {
-  min-height: 90vh;
+/* =========================================================
+   MINISTRY PAGE
+========================================================= */
+
+.page-ministry .hero {
+  position: relative;
+  min-height: 70vh;
+  background: url("../images/ministry-hero.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
-  background-size: cover;
-  background-position: left center;
 }
 
-body.page-partner .partner-hero-content {
-  max-width: 720px;
-  margin-left: 8%;
+.page-ministry .hero-content {
+  max-width: 520px;
+  padding: 64px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-left: 80px;
+}
+
+.page-ministry .hero h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.page-ministry .ministry-sections {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.page-ministry .ministry-card {
+  padding: 32px;
+  border: 1px solid #eee;
+}
+
+/* =========================================================
+   PARTNER PAGE (ISOLATED)
+========================================================= */
+
+.page-partner .partner-hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("../images/partner_desktop.jpg") center top / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.page-partner .partner-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.page-partner .partner-hero-content {
+  position: relative;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: 80px;
   padding: 48px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.9);
 }
 
-body.page-partner h1 {
-  font-size: 3rem;
-  margin: 0 0 24px 0;
+.page-partner .partner-hero h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
 }
 
-body.page-partner .partner-hero p {
-  font-size: 1.25rem;
-  margin: 0;
-}
-
-/* ======================
-   Partner content
-====================== */
-
-body.page-partner .partner-content {
-  max-width: 720px;
+.page-partner .partner-content {
+  max-width: 700px;
   margin: 0 auto;
   padding: 96px 24px;
   text-align: center;
 }
 
-body.page-partner .partner-text p {
+.page-partner .partner-content p {
   margin-bottom: 24px;
-  font-size: 1.1rem;
 }
 
-body.page-partner .partner-actions {
+.page-partner .partner-actions {
   margin-top: 48px;
   display: flex;
-  gap: 24px;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 24px;
 }
 
-/* ======================
-   Responsive (mobile)
-====================== */
+/* =====================
+   RESPONSIVE
+===================== */
 
 @media (max-width: 768px) {
 
-  body.page-partner .partner-hero {
-    background-image: url("../assets/images/partner_mobile.jpg");
-    background-position: center top;
-    min-height: auto;
-    padding: 80px 20px;
-  }
-
-  body.page-partner .partner-hero-content {
-    margin: 0;
+  .page-ministry .hero-content {
+    margin: 24px;
     padding: 32px;
   }
 
-  body.page-partner h1 {
-    font-size: 2.2rem;
+  .page-ministry .ministry-sections {
+    grid-template-columns: 1fr;
   }
 
-  body.page-partner .partner-content {
-    padding: 64px 20px;
+  .page-partner .partner-hero {
+    background-image: url("../images/partner_mobile.jpg");
+  }
+
+  .page-partner .partner-hero-content {
+    margin: 24px;
+    padding: 32px;
+  }
+
+  .page-partner .partner-actions {
+    flex-direction: column;
   }
 }
