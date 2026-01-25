@@ -144,7 +144,8 @@ h3 {
 }
 
 .page-ministry .hero-content {
-  margin: 0 6% 60px auto;
+  margin: 0 6% 60px 6%;
+  margin-left: auto;
   background: rgba(255, 255, 255, 0.92);
   padding: 48px;
   max-width: 520px;
@@ -161,10 +162,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  width: 85%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 6%;
+  margin: 0;
 }
 
 .page-ministry .card {
@@ -200,50 +199,38 @@ h3 {
   min-height: 100vh;
   background: url("../assets/images/partner_desktop.jpg") center / cover no-repeat;
   display: flex;
-  align-items: flex-start;
-  padding-top: 80px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 60px 6%;
 }
 
 .page-partner .hero-content {
-  margin-right: 6%;
-  margin-left: auto;
   background: rgba(255, 255, 255, 0.92);
   padding: 48px;
-  max-width: 520px;
+  max-width: 580px;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.page-partner .hero-content h1 {
+  margin-top: 0;
+}
+
+.page-partner .hero-content h2 {
+  margin-top: 32px;
+  font-size: 1.75rem;
 }
 
 .page-partner .hero-content p {
-  font-size: 1.15rem;
-  margin-bottom: 0;
-}
-
-.page-partner .partner-content {
-  position: absolute;
-  bottom: 60px;
-  left: 6%;
-  right: 6%;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 48px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.page-partner .partner-content p {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
   color: #444;
 }
 
 .page-partner .buttons {
   margin-top: 32px;
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -320,29 +307,21 @@ h3 {
   }
 
   .page-partner .hero {
-    min-height: auto;
-    padding: 40px 0 400px 0;
+    min-height: 70vh;
+    padding: 40px 6%;
+    justify-content: center;
   }
 
   .page-partner .hero-content {
-    margin: 0 6%;
     max-width: 88%;
-  }
-
-  .page-partner .partner-content {
-    position: static;
-    margin: 40px 6%;
-    padding: 32px;
   }
 
   .page-partner .buttons {
     flex-direction: column;
-    align-items: center;
   }
 
   .page-partner .buttons a {
     width: 100%;
-    max-width: 300px;
   }
 }
 
