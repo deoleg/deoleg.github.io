@@ -1,4 +1,6 @@
-/* ===== Base ===== */
+/* ======================
+   RESET & BASE
+====================== */
 
 * {
   box-sizing: border-box;
@@ -6,10 +8,11 @@
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #111;
   background: #fff;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 img {
@@ -17,121 +20,212 @@ img {
   display: block;
 }
 
-/* ===== Header ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ======================
+   HEADER / NAV
+====================== */
 
 header {
   border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 nav {
-  max-width: 960px;
-  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
   padding: 16px 24px;
 }
 
 nav a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #111;
   font-weight: 500;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Buttons ===== */
+/* ======================
+   GLOBAL BUTTONS
+====================== */
 
 .button {
   display: inline-block;
   padding: 14px 28px;
-  border: 1px solid #111;
-  text-decoration: none;
-  color: #111;
   font-weight: 500;
+  border: 1px solid #111;
 }
 
-.button:hover {
+.button.primary {
   background: #111;
   color: #fff;
 }
 
-/* ===== Layout ===== */
-
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 48px 24px;
+.button.secondary:hover {
+  background: #111;
+  color: #fff;
 }
 
-/* ===== Hero (общий, как раньше) ===== */
+/* ======================
+   HOME
+====================== */
 
-.hero {
-  margin-bottom: 64px;
-  padding: 96px 48px;
+body.page-home .hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 120px 0;
+  background-image: url("/assets/images/home.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.hero-content {
-  max-width: 640px;
-  background: rgba(255,255,255,0.8);
-  padding: 32px;
+body.page-home .hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.75);
 }
 
-/* ===== Home ===== */
-
-.page-home .hero {
-  background-image: url("/assets/images/home.jpg");
+body.page-home .hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
 }
 
-/* ===== About ===== */
+body.page-home .hero p {
+  font-size: 1.2rem;
+}
 
-.page-about .about {
+@media (max-width: 768px) {
+  body.page-home .hero {
+    padding: 80px 0;
+  }
+  body.page-home .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ======================
+   ABOUT
+====================== */
+
+body.page-about .about {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
 }
 
+body.page-about .about img {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
-  .page-about .about {
+  body.page-about .about {
     grid-template-columns: 1fr;
   }
 }
 
-/* ===== Ministry ===== */
+/* ======================
+   MINISTRY
+====================== */
 
-.page-ministry .hero {
+body.page-ministry .hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 120px 0;
   background-image: url("/assets/images/ministry.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.page-ministry .ministry-cards {
+body.page-ministry .hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.75);
+}
+
+body.page-ministry .hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+body.page-ministry .ministry-sections {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 32px;
-  margin-top: 48px;
 }
 
-.page-ministry .ministry-card {
-  border: 1px solid #eee;
+body.page-ministry .ministry-card {
   padding: 24px;
+  border: 1px solid #eee;
 }
 
 @media (max-width: 768px) {
-  .page-ministry .ministry-cards {
+  body.page-ministry .hero {
+    padding: 80px 0;
+  }
+  body.page-ministry .hero h1 {
+    font-size: 2.2rem;
+  }
+  body.page-ministry .ministry-sections {
     grid-template-columns: 1fr;
   }
 }
 
-/* ===== Partner ===== */
+/* ======================
+   PARTNER
+====================== */
 
-.page-partner .hero {
+body.page-partner .hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 120px 0;
   background-image: url("/assets/images/partner_desktop.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.page-partner .partner-actions {
-  margin-top: 32px;
+body.page-partner .hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.75);
+}
+
+body.page-partner .hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+body.page-partner .partner-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+body.page-partner .partner-actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  body.page-partner .hero {
+    background-image: url("/assets/images/partner_mobile.jpg");
+    padding: 80px 0;
+  }
+  body.page-partner .hero h1 {
+    font-size: 2.2rem;
+  }
 }
