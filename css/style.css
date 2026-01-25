@@ -125,7 +125,7 @@ main {
   position: relative;
   width: 100%;
   height: 80vh;
-  background: url("../assets/images/partner.jpg") center/cover no-repeat;
+  background: url("../assets/images/partner_desktop.jpg") center/cover no-repeat;
 }
 
 .page-partner .hero-content {
