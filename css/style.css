@@ -78,9 +78,8 @@ body.page-partner .partner-hero {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background-image: url("../assets/images/partner_desktop.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: left center;
 }
 
 body.page-partner .partner-hero-content {
@@ -125,13 +124,14 @@ body.page-partner .partner-actions {
 }
 
 /* ======================
-   Responsive
+   Responsive (mobile)
 ====================== */
 
 @media (max-width: 768px) {
 
   body.page-partner .partner-hero {
     background-image: url("../assets/images/partner_mobile.jpg");
+    background-position: center top;
     min-height: auto;
     padding: 80px 20px;
   }
