@@ -1,96 +1,175 @@
-/* ===== BASE (НЕ ЛОМАЕТ ДРУГИЕ СТРАНИЦЫ) ===== */
-
-* {
-  box-sizing: border-box;
-}
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: #111;
+  line-height: 1.6;
+  background: #fff;
 }
 
+img { max-width: 100%; display: block; }
+
 header {
-  background: #fff;
   border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  padding: 16px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
 }
 
 nav a {
+  margin-right: 24px;
+  font-weight: 500;
   text-decoration: none;
   color: #111;
+}
+
+/* ===== BUTTON ===== */
+.button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
   font-weight: 500;
+  background: transparent;
+}
+.button:hover {
+  background: #111;
+  color: #fff;
 }
 
-/* ===== MINISTRY PAGE ONLY ===== */
-
-.page-ministry .ministry-hero {
-  width: 100%;
+/* =====================================================
+   HOME
+===================================================== */
+.page-home .hero {
   min-height: 100vh;
-  background-image: url("../images/ministry.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.page-ministry .ministry-overlay {
-  min-height: 100vh;
-  padding: 80px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  background: url("/assets/images/home.jpg") center / cover no-repeat;
+  display: flex;
   align-items: center;
 }
 
-.page-ministry .ministry-main {
-  background: rgba(255,255,255,0.85);
-  padding: 32px;
+.page-home .hero-inner {
+  max-width: 1100px;
+  padding: 0 24px;
+}
+
+.page-home .hero-box {
   max-width: 520px;
+  background: rgba(255,255,255,0.8);
+  padding: 32px;
 }
 
-.page-ministry .ministry-main h1 {
-  margin-top: 0;
-  font-size: 36px;
+/* =====================================================
+   ABOUT
+===================================================== */
+.page-about main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px;
 }
 
-.page-ministry .ministry-main p {
-  line-height: 1.6;
-}
-
-/* ===== CARDS ===== */
-
-.page-ministry .ministry-cards {
+.page-about .about {
   display: flex;
-  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.page-about .about img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.page-about .about-text {
+  width: 50%;
+}
+
+/* =====================================================
+   MINISTRY
+===================================================== */
+.page-ministry .hero {
+  min-height: 100vh;
+  background: url("/assets/images/ministry.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.page-ministry .hero-inner {
+  max-width: 1100px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-ministry .hero-box {
+  max-width: 420px;
+  background: rgba(255,255,255,0.8);
+  padding: 32px;
+}
+
+.page-ministry .cards {
+  max-width: 1100px;
+  margin: -120px auto 0;
+  padding: 0 24px 64px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   gap: 24px;
 }
 
-.page-ministry .ministry-card {
-  background: rgba(255,255,255,0.85);
+.page-ministry .card {
+  background: rgba(255,255,255,0.8);
   padding: 24px;
 }
 
-.page-ministry .ministry-card h3 {
-  margin-top: 0;
+/* =====================================================
+   PARTNER
+===================================================== */
+.page-partner .hero {
+  min-height: 100vh;
+  background: url("/assets/images/partner_desktop.jpg") center top / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.page-partner .hero-inner {
+  max-width: 1100px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-partner .hero-box {
+  max-width: 420px;
+  background: rgba(255,255,255,0.8);
+  padding: 32px;
+}
+
+.page-partner main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  text-align: center;
 }
 
 /* ===== MOBILE ===== */
-
 @media (max-width: 900px) {
-
-  .page-ministry .ministry-overlay {
-    grid-template-columns: 1fr;
-    padding: 40px 20px;
+  .page-about .about {
+    flex-direction: column;
+  }
+  .page-about .about img,
+  .page-about .about-text {
+    width: 100%;
   }
 
-  .page-ministry .ministry-main,
-  .page-ministry .ministry-card {
-    max-width: 100%;
+  .page-ministry .cards {
+    margin-top: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .page-partner .hero {
+    background-image: url("/assets/images/partner_mobile.jpg");
   }
 }
