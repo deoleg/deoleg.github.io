@@ -1,27 +1,23 @@
 /* ======================
-   RESET / BASE
+   BASE (SAFE)
 ====================== */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111;
   background: #fff;
   line-height: 1.7;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
 
 /* ======================
-   HEADER / NAV
+   HEADER / NAV (SAFE)
 ====================== */
 
 header {
@@ -37,260 +33,168 @@ nav {
 
 nav a {
   margin-right: 24px;
-  text-decoration: none;
-  color: #111;
   font-weight: 500;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
 /* ======================
-   BUTTONS (GLOBAL)
+   BUTTONS (SAFE)
 ====================== */
 
-a.button {
+.button {
   display: inline-block;
   padding: 14px 28px;
   border: 1px solid #111;
-  text-decoration: none;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #111;
-  background: transparent;
 }
 
-a.button:hover {
+.button.primary {
   background: #111;
   color: #fff;
 }
 
-a.button.primary {
+.button.secondary:hover {
   background: #111;
   color: #fff;
 }
 
-a.button.primary:hover {
-  opacity: 0.85;
-}
-
-a.button.secondary {
-  background: transparent;
-}
-
-/* ======================
+/* ======================================================
    HOME
-====================== */
+===================================================== */
 
-body.page-home .hero {
+.page-home .home-hero {
   min-height: 85vh;
   position: relative;
-
-  background-image: url("../assets/images/home.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/assets/images/home.jpg") center / cover no-repeat;
 }
 
-body.page-home .hero-content {
+.page-home .home-hero-content {
   position: absolute;
-  left: 6%;
+  left: 4%;
   top: 50%;
   transform: translateY(-50%);
-
   max-width: 720px;
   padding: 48px;
-
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255,255,255,0.65);
 }
 
-body.page-home .hero h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 0 0 24px 0;
-}
-
-body.page-home .hero p {
-  font-size: 1.25rem;
-  margin: 0 0 32px 0;
-}
-
-body.page-home .hero-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* HOME — MOBILE */
 @media (max-width: 768px) {
-  body.page-home .hero {
-    min-height: auto;
+  .page-home .home-hero {
     padding: 80px 24px;
+    min-height: auto;
   }
-
-  body.page-home .hero-content {
+  .page-home .home-hero-content {
     position: static;
     transform: none;
     padding: 32px;
   }
-
-  body.page-home .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  body.page-home .hero p {
-    font-size: 1.1rem;
-  }
 }
 
-/* ======================
+/* ======================================================
    ABOUT
-====================== */
+===================================================== */
 
-body.page-about main {
+.page-about main {
   max-width: 960px;
   margin: 0 auto;
   padding: 64px 24px;
 }
 
-body.page-about h1 {
-  font-size: 2.4rem;
-  margin-bottom: 32px;
-}
-
-body.page-about .about {
+.page-about .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
 }
 
-body.page-about .about img {
-  width: 100%;
-}
-
-body.page-about .about-text p {
-  margin-top: 0;
-}
-
-/* ABOUT — MOBILE */
 @media (max-width: 768px) {
-  body.page-about .about {
+  .page-about .about {
     grid-template-columns: 1fr;
   }
 }
 
-/* ======================
+/* ======================================================
    MINISTRY
-====================== */
+===================================================== */
 
-body.page-ministry .hero {
+.page-ministry .ministry-hero {
   min-height: 80vh;
   position: relative;
-
-  background-image: url("../assets/images/ministry.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/assets/images/ministry.jpg") center / cover no-repeat;
 }
 
-body.page-ministry .hero-content {
+.page-ministry .ministry-hero-content {
   position: absolute;
-  left: 6%;
-  top: 45%;
+  left: 4%;
+  top: 50%;
   transform: translateY(-50%);
-
   max-width: 720px;
   padding: 48px;
-
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255,255,255,0.65);
 }
 
-body.page-ministry .ministry-sections {
+.page-ministry .ministry-cards {
   max-width: 960px;
   margin: -120px auto 0;
   padding: 0 24px 96px;
-
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 32px;
 }
 
-body.page-ministry .ministry-card {
+.page-ministry .ministry-card {
   background: #fff;
   padding: 32px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-body.page-ministry .ministry-card h3 {
-  margin-top: 0;
-}
-
-/* MINISTRY — MOBILE */
 @media (max-width: 768px) {
-  body.page-ministry .hero {
-    min-height: auto;
+  .page-ministry .ministry-hero {
     padding: 80px 24px;
+    min-height: auto;
   }
-
-  body.page-ministry .hero-content {
+  .page-ministry .ministry-hero-content {
     position: static;
     transform: none;
     padding: 32px;
   }
-
-  body.page-ministry .ministry-sections {
+  .page-ministry .ministry-cards {
     margin-top: 48px;
     grid-template-columns: 1fr;
   }
 }
 
-/* ======================
+/* ======================================================
    PARTNER
-====================== */
+===================================================== */
 
-body.page-partner .partner-hero {
-  min-height: 80vh;
+.page-partner .partner-hero {
+  min-height: 90vh;
   position: relative;
-
-  background-image: url("../assets/images/partner.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/assets/images/partner_desktop.jpg") center top / cover no-repeat;
 }
 
-body.page-partner .partner-hero-content {
+.page-partner .partner-hero-content {
   position: absolute;
-  right: 6%;
+  right: 4%;
   top: 50%;
   transform: translateY(-50%);
-
   max-width: 560px;
   padding: 48px;
-
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255,255,255,0.65);
 }
 
-body.page-partner .partner-content {
+.page-partner .partner-content {
   max-width: 720px;
   margin: 0 auto;
   padding: 80px 24px;
   text-align: center;
 }
 
-body.page-partner .partner-actions {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* PARTNER — MOBILE */
 @media (max-width: 768px) {
-  body.page-partner .partner-hero {
-    min-height: auto;
+  .page-partner .partner-hero {
+    background-image: url("/assets/images/partner_mobile.jpg");
     padding: 80px 24px;
+    min-height: auto;
   }
-
-  body.page-partner .partner-hero-content {
+  .page-partner .partner-hero-content {
     position: static;
     transform: none;
     padding: 32px;
