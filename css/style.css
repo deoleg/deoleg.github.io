@@ -37,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #0066cc;
+  color: #444;
 }
 
 nav a.active::after {
@@ -47,7 +47,7 @@ nav a.active::after {
   left: 0;
   right: 0;
   height: 2px;
-  background: #0066cc;
+  background: #111;
 }
 
 main {
@@ -144,7 +144,7 @@ h3 {
 }
 
 .page-ministry .hero-content {
-  margin: 0 auto 60px 6%;
+  margin: 0 6% 60px auto;
   background: rgba(255, 255, 255, 0.92);
   padding: 48px;
   max-width: 520px;
@@ -181,8 +181,9 @@ h3 {
 }
 
 .page-ministry .card h3 {
-  color: #0066cc;
+  color: #111;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .page-ministry .card p {
@@ -196,14 +197,16 @@ h3 {
 .page-partner .hero {
   position: relative;
   width: 100%;
-  min-height: 70vh;
+  min-height: 100vh;
   background: url("../assets/images/partner_desktop.jpg") center / cover no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 80px;
 }
 
 .page-partner .hero-content {
-  margin-left: 6%;
+  margin-right: 6%;
+  margin-left: auto;
   background: rgba(255, 255, 255, 0.92);
   padding: 48px;
   max-width: 520px;
@@ -217,10 +220,17 @@ h3 {
 }
 
 .page-partner .partner-content {
+  position: absolute;
+  bottom: 60px;
+  left: 6%;
+  right: 6%;
   text-align: center;
-  padding: 100px 10%;
   max-width: 900px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 48px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .page-partner .partner-content p {
@@ -230,7 +240,7 @@ h3 {
 }
 
 .page-partner .buttons {
-  margin-top: 48px;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -238,8 +248,8 @@ h3 {
 }
 
 .page-partner .buttons a {
-  border: 2px solid #0066cc;
-  background: #0066cc;
+  border: 2px solid #111;
+  background: #111;
   color: #fff;
   padding: 16px 36px;
   text-decoration: none;
@@ -250,20 +260,20 @@ h3 {
 }
 
 .page-partner .buttons a:hover {
-  background: #0052a3;
-  border-color: #0052a3;
+  background: #333;
+  border-color: #333;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .page-partner .buttons a:first-child {
   background: #fff;
-  color: #0066cc;
+  color: #111;
 }
 
 .page-partner .buttons a:first-child:hover {
-  background: #f0f8ff;
-  border-color: #0066cc;
+  background: #f5f5f5;
+  border-color: #111;
 }
 
 /* =========================
@@ -296,23 +306,33 @@ h3 {
   }
 
   .page-home .hero,
-  .page-ministry .hero,
-  .page-partner .hero {
+  .page-ministry .hero {
     height: auto;
     min-height: 70vh;
     padding: 40px 0;
   }
 
   .page-home .hero-content,
-  .page-ministry .hero-content,
-  .page-partner .hero-content {
+  .page-ministry .hero-content {
     margin: 40px 6%;
     padding: 32px;
     max-width: 88%;
   }
 
+  .page-partner .hero {
+    min-height: auto;
+    padding: 40px 0 400px 0;
+  }
+
+  .page-partner .hero-content {
+    margin: 0 6%;
+    max-width: 88%;
+  }
+
   .page-partner .partner-content {
-    padding: 60px 6%;
+    position: static;
+    margin: 40px 6%;
+    padding: 32px;
   }
 
   .page-partner .buttons {
@@ -343,6 +363,10 @@ h3 {
   }
 
   .page-ministry .card {
+    padding: 24px;
+  }
+
+  .page-partner .partner-content {
     padding: 24px;
   }
 }
