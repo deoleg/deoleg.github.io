@@ -1,279 +1,147 @@
 /* ======================
-   RESET / BASE
+   Base
 ====================== */
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #111;
   background: #fff;
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  line-height: 1.7;
 }
 
 /* ======================
-   HEADER / NAV
+   Header & Navigation
 ====================== */
 
 header {
-  background: #fff;
   border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 nav {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px 24px;
-
-  display: flex;
-  gap: 24px;
-  justify-content: center;
+  padding: 16px 24px;
 }
 
 nav a {
+  margin-right: 24px;
+  text-decoration: none;
+  color: #111;
   font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* ======================
-   GLOBAL BUTTONS
+   Buttons
 ====================== */
 
-.button {
+a.button {
   display: inline-block;
   padding: 14px 28px;
-  font-weight: 500;
   border: 1px solid #111;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #111;
+  background: transparent;
 }
 
-.button.primary {
+a.button.primary {
   background: #111;
   color: #fff;
 }
 
-.button.primary:hover {
+a.button.primary:hover {
   opacity: 0.85;
 }
 
-.button.secondary {
-  background: transparent;
-  color: #111;
-}
-
-.button.secondary:hover {
+a.button.secondary:hover {
   background: #111;
   color: #fff;
 }
 
-/* ======================================================
-   INDEX PAGE
-====================================================== */
-
-body.page-home .hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-
-  background-size: cover;
-  background-position: center;
-}
-
-body.page-home .hero-content {
-  max-width: 640px;
-  padding: 48px;
-  margin-left: 8%;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-body.page-home h1 {
-  font-size: 3rem;
-  margin-bottom: 24px;
-}
-
-/* ======================================================
-   ABOUT PAGE
-====================================================== */
-
-body.page-about main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-body.page-about h1 {
-  font-size: 2.5rem;
-  margin-bottom: 48px;
-}
-
-body.page-about .about-layout {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-body.page-about .about-layout img {
-  width: 100%;
-}
-
-body.page-about p {
-  margin-bottom: 24px;
-}
-
-@media (max-width: 900px) {
-  body.page-about .about-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ======================================================
-   MINISTRY PAGE
-====================================================== */
-
-body.page-ministry .hero {
-  min-height: 80vh;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 120px;
-
-  background-size: cover;
-  background-position: center;
-}
-
-body.page-ministry .hero-content {
-  max-width: 640px;
-  margin-left: 8%;
-  padding: 48px;
-}
-
-body.page-ministry h1 {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-body.page-ministry .ministry-sections {
-  max-width: 1100px;
-  margin: -160px auto 0;
-  padding: 0 24px 120px;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-body.page-ministry .ministry-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 32px;
-}
-
-body.page-ministry .ministry-card h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 900px) {
-  body.page-ministry .hero {
-    padding-top: 80px;
-  }
-
-  body.page-ministry .ministry-sections {
-    grid-template-columns: 1fr;
-    margin-top: -80px;
-  }
-}
-
-/* ======================================================
+/* ======================
    PARTNER PAGE
-====================================================== */
-
-body.page-partner main {
-  margin: 0;
-  padding: 0;
-}
-
-/* HERO */
+====================== */
 
 body.page-partner .partner-hero {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-
   background-image: url("../assets/images/partner_desktop.jpg");
   background-size: cover;
-  background-position: left center;
+  background-position: center;
 }
 
 body.page-partner .partner-hero-content {
-  max-width: 640px;
+  max-width: 720px;
   margin-left: 8%;
   padding: 48px;
   background: rgba(255, 255, 255, 0.65);
 }
 
-body.page-partner .partner-hero h1 {
+body.page-partner h1 {
   font-size: 3rem;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
 }
 
 body.page-partner .partner-hero p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
-/* CONTENT */
+/* ======================
+   Partner content
+====================== */
 
 body.page-partner .partner-content {
-  max-width: 960px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 80px 24px;
-}
-
-body.page-partner .partner-text {
-  max-width: 640px;
-  margin-bottom: 48px;
+  padding: 96px 24px;
+  text-align: center;
 }
 
 body.page-partner .partner-text p {
   margin-bottom: 24px;
+  font-size: 1.1rem;
 }
 
 body.page-partner .partner-actions {
+  margin-top: 48px;
   display: flex;
   gap: 24px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-/* MOBILE */
+/* ======================
+   Responsive
+====================== */
 
 @media (max-width: 768px) {
 
   body.page-partner .partner-hero {
-    min-height: 70vh;
     background-image: url("../assets/images/partner_mobile.jpg");
-    background-position: center top;
+    min-height: auto;
+    padding: 80px 20px;
   }
 
   body.page-partner .partner-hero-content {
-    margin: 0 16px;
+    margin: 0;
     padding: 32px;
   }
 
-  body.page-partner .partner-hero h1 {
+  body.page-partner h1 {
     font-size: 2.2rem;
   }
 
