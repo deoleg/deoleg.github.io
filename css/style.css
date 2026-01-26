@@ -333,11 +333,44 @@ p {
     gap: 40px;
   }
 
-  .page-ministry .hero {
-    height: auto;
-    min-height: auto;
+  /* HOME */
+  .page-home .hero {
+    min-height: 100vh;
+    height: 100vh;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .page-home .hero-content {
+    position: static;
+    margin: 0;
+    padding: 40px 6%;
+    max-width: 100%;
+    border-radius: 0;
+    background: #fff;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  /* MINISTRY */
+  .page-ministry .hero {
+    min-height: 100vh;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .page-ministry .hero::before {
+    content: '';
     display: block;
+    width: 100%;
+    min-height: 50vh;
+    background: url("/assets/images/ministry.jpg") center / cover no-repeat;
   }
 
   .page-ministry .hero-content {
@@ -363,29 +396,15 @@ p {
     padding: 32px;
   }
 
-  .page-home .hero {
-    height: auto;
-    min-height: auto;
-    padding: 0;
-    display: block;
-  }
-
-  .page-home .hero-content {
-    position: static;
-    margin: 0;
-    padding: 40px 6%;
-    max-width: 100%;
-    border-radius: 0;
-    background: #fff;
-    backdrop-filter: none;
-    box-shadow: none;
-  }
-
+  /* PARTNER */
   .page-partner .hero {
-    min-height: auto;
-    height: auto;
+    min-height: 100vh;
+    height: 100vh;
     padding: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
   }
 
   .page-partner .hero-content {
