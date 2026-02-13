@@ -138,11 +138,14 @@ p {
    MINISTRY
 ========================= */
 .page-ministry .hero {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
   background: url("/assets/images/ministry.jpg") center / cover no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
   padding: 60px 6%;
 }
 
@@ -158,6 +161,8 @@ p {
    PARTNER
 ========================= */
 .page-partner .hero {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
   background: url("/assets/images/partner_desktop.jpg") center / cover no-repeat;
   display: flex;
@@ -178,35 +183,38 @@ p {
    SPECIAL
 ========================= */
 
-/* IMAGE SECTION */
-.special-hero-image {
+.page-special .hero {
+  position: relative;
   width: 100%;
-  height: 75vh;
-  background: url("/assets/images/special.jpg") center / cover no-repeat;
+  min-height: 100vh;
+  background: url("/assets/images/special.jpg") center top / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
 }
 
-/* CONTENT BELOW IMAGE */
-.special-content {
-  background: #fff;
-  padding: 100px 8%;
+.page-special .hero-content {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 60px 8%;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
 }
 
-.special-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Vehicle Fund */
+/* =============================
+   Vehicle Fund Section
+============================= */
 
 .vehicle-fund {
   margin-top: 3rem;
+  max-width: 600px;
 }
 
 .progress-container {
   width: 100%;
   background: #eee;
-  height: 10px;
-  border-radius: 5px;
+  height: 8px;
+  border-radius: 4px;
   margin: 1.5rem 0;
   overflow: hidden;
 }
@@ -215,7 +223,7 @@ p {
   height: 100%;
   width: 0%;
   background: #1a1f36;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: width 0.6s ease;
 }
 
@@ -244,24 +252,24 @@ p {
 
 .car-indicator {
   position: absolute;
-  top: -34px;
+  top: -30px;
   transform: translateX(-50%);
   pointer-events: none;
   transition: left 0.1s ease;
 }
 
 .car-indicator img {
-  width: 38px;
+  width: 34px;
   filter: grayscale(100%) brightness(0);
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .donate-button {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding: 18px 40px;
   background: #1a1f36;
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -273,27 +281,5 @@ p {
 .donate-button:hover {
   background: #0f1420;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(26, 31, 54, 0.4);
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 900px) {
-
-  .special-hero-image {
-    height: 50vh;
-  }
-
-  .special-content {
-    padding: 60px 6%;
-  }
-
-  h1 {
-    font-size: 2.1rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
+  box-shadow: 0 6px 16px rgba(26,31,54,0.3);
 }
