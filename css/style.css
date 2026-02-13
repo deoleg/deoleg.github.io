@@ -478,3 +478,62 @@ p {
     font-size: 0.85rem;
   }
 }
+
+/* ============================= */
+/* Vehicle Fund Section */
+/* ============================= */
+
+.vehicle-fund {
+  margin-top: 4rem;
+}
+
+.progress-container {
+  width: 100%;
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #2c7be5;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.slider-container {
+  position: relative;
+  margin: 2rem 0;
+}
+
+#donationSlider {
+  width: 100%;
+}
+
+.car-indicator {
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: left 0.1s ease;
+}
+
+.donate-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #2c7be5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.donate-button:hover {
+  background: #1f5fbf;
+}
