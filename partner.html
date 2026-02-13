@@ -49,29 +49,30 @@
 
       <div class="buttons">
 
-        <!-- 1. GIVE ONLINE -->
-        <a href="https://give.cru.org/2880130"
-           target="_blank"
-           rel="noopener"
-           onclick="gtag('event', 'give_click', {
-             'event_callback': function() {
-               window.open('https://give.cru.org/2880130', '_blank');
-             }
-           }); return false;">
-           Give Online
-        </a>
+        <div class="button-row">
 
-        <!-- 2. SPECIAL NEED -->
-        <a href="special.html"
-           onclick="gtag('event', 'special_click');">
-           Special Need
-        </a>
+          <a href="https://give.cru.org/2880130"
+             target="_blank"
+             rel="noopener"
+             onclick="gtag('event', 'give_click', {
+               'event_callback': function() {
+                 window.open('https://give.cru.org/2880130', '_blank');
+               }
+             }); return false;">
+             Give Online
+          </a>
 
-        <!-- 3. SUBSCRIBE (НА НОВОЙ СТРОКЕ, НА ВСЮ ШИРИНУ) -->
+          <a href="special.html"
+             onclick="gtag('event', 'special_click');">
+             Special Need
+          </a>
+
+        </div>
+
         <a href="http://eepurl.com/gNI_nD"
            target="_blank"
            rel="noopener"
-           style="flex-basis:100%; text-align:center;"
+           class="full-width-btn"
            onclick="gtag('event', 'subscribe_click', {
              'event_callback': function() {
                window.open('http://eepurl.com/gNI_nD', '_blank');
