@@ -35,8 +35,10 @@
 
   <div class="special-layout">
 
+    <!-- LEFT IMAGE -->
     <div class="special-image"></div>
 
+    <!-- RIGHT CONTENT -->
     <div class="special-right">
       <div class="special-container">
 
@@ -52,42 +54,38 @@
 
         <p><strong>Goal: $15,000</strong></p>
 
-        <div class="vehicle-fund">
+        <p>
+          Raised: <strong>$400</strong><br>
+          Remaining: <strong>$14,600</strong>
+        </p>
 
-          <p>
-            Raised: <strong>$<span id="raisedAmount">400</span></strong><br>
-            Remaining: <strong>$<span id="remainingAmount">14,600</span></strong>
-          </p>
+        <div class="slider-container">
 
-          <div class="slider-container">
+          <div class="slider-track-fill" id="sliderFill"></div>
 
-            <div class="slider-track-fill" id="sliderFill"></div>
+          <input type="range"
+                 min="0"
+                 max="15000"
+                 step="25"
+                 value="400"
+                 id="donationSlider">
 
-            <input type="range"
-                   min="400"
-                   max="15000"
-                   step="25"
-                   value="400"
-                   id="donationSlider">
-
-            <div class="car-indicator" id="carIndicator">
-              <img src="assets/images/car.svg" alt="car icon">
-            </div>
-
+          <div class="car-indicator" id="carIndicator">
+            <img src="assets/images/car.svg" alt="car icon">
           </div>
 
-          <p>
-            Your Gift: <strong>$<span id="selectedAmount">0</span></strong>
-          </p>
-
-          <a id="vehicleDonateBtn"
-             class="donate-button"
-             target="_blank"
-             rel="noopener">
-             Give Toward Vehicle Fund
-          </a>
-
         </div>
+
+        <p>
+          Your Gift: <strong>$<span id="selectedAmount">0</span></strong>
+        </p>
+
+        <a id="vehicleDonateBtn"
+           class="donate-button"
+           target="_blank"
+           rel="noopener">
+           Give Toward Vehicle Fund
+        </a>
 
       </div>
     </div>
@@ -108,9 +106,14 @@
 
   function updateSlider() {
 
-    const currentValue = parseInt(slider.value);
+    let currentValue = parseInt(slider.value);
 
-    // Пожертвование = всё что сверх собранных 400
+    // Блокируем движение ниже 400
+    if (currentValue < raised) {
+      currentValue = raised;
+      slider.value = raised;
+    }
+
     const donation = currentValue - raised;
 
     selectedAmount.textContent = donation.toLocaleString();
@@ -118,9 +121,8 @@
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-    const percent = (currentValue - slider.min) / (slider.max - slider.min);
+    const percent = currentValue / goal;
     const sliderWidth = slider.offsetWidth;
-
     const position = percent * sliderWidth;
 
     carIndicator.style.left = position + "px";
@@ -128,6 +130,8 @@
   }
 
   slider.addEventListener("input", updateSlider);
+  window.addEventListener("resize", updateSlider);
+
   updateSlider();
 
   donateBtn.addEventListener("click", function() {
