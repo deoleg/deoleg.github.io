@@ -49,17 +49,7 @@
 
       <div class="buttons">
 
-        <a href="http://eepurl.com/gNI_nD"
-           target="_blank"
-           rel="noopener"
-           onclick="gtag('event', 'subscribe_click', {
-             'event_callback': function() {
-               window.open('http://eepurl.com/gNI_nD', '_blank');
-             }
-           }); return false;">
-           Subscribe to Updates
-        </a>
-
+        <!-- 1. GIVE ONLINE -->
         <a href="https://give.cru.org/2880130"
            target="_blank"
            rel="noopener"
@@ -71,9 +61,23 @@
            Give Online
         </a>
 
+        <!-- 2. SPECIAL NEED -->
         <a href="special.html"
            onclick="gtag('event', 'special_click');">
            Special Need
+        </a>
+
+        <!-- 3. SUBSCRIBE (НА НОВОЙ СТРОКЕ, НА ВСЮ ШИРИНУ) -->
+        <a href="http://eepurl.com/gNI_nD"
+           target="_blank"
+           rel="noopener"
+           style="flex-basis:100%; text-align:center;"
+           onclick="gtag('event', 'subscribe_click', {
+             'event_callback': function() {
+               window.open('http://eepurl.com/gNI_nD', '_blank');
+             }
+           }); return false;">
+           Subscribe to Updates
         </a>
 
       </div>
