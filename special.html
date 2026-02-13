@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Needs — Dermenji Family</title>
+  <title>Special Needs & Vehicle Fund — Dermenji Family</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,30 +34,98 @@
 <main>
   <section class="hero">
     <div class="hero-content">
-      <h1>Special Needs Ministry</h1>
+
+      <h1>Special Initiatives</h1>
+
+      <h2>A Reliable Ministry Vehicle</h2>
 
       <p>
-        We’re committed to building a church where every individual — including those with special needs — 
-        is welcomed, valued, and empowered to grow in faith.
+        Our current car has served us well, but due to age and repeated breakdowns,
+        we are praying for the opportunity to replace it with a safer and more dependable vehicle.
+        This would allow us to continue serving as a family, travel throughout Moldova,
+        and transport equipment for worship ministry.
       </p>
 
-      <p>
-        In Moldova, families caring for loved ones with disabilities often face isolation and a lack of spiritual support.
-        We want to walk alongside them — offering community, practical help, and discipleship rooted in Jesus’ love.
-      </p>
+      <p><strong>Goal: $15,000</strong></p>
 
-      <p>
-        Though each story is unique, our heart is simple: create spaces in the Church where every person belongs,
-        every parent feels supported, and every child is encouraged to thrive.
-      </p>
+      <div class="vehicle-fund">
 
-      <p>
-        Here we explore how local churches can be equipped to serve with dignity, compassion, and grace.
-      </p>
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p>
+          Raised: <strong>$<span id="raisedAmount">3500</span></strong><br>
+          Remaining: <strong>$<span id="remainingAmount">11500</span></strong>
+        </p>
+
+        <div class="slider-container">
+          <input type="range"
+                 min="25"
+                 max="2000"
+                 step="25"
+                 value="100"
+                 id="donationSlider">
+
+          <div class="car-indicator" id="carIndicator">🚗</div>
+        </div>
+
+        <p>
+          Your Gift: <strong>$<span id="selectedAmount">100</span></strong>
+        </p>
+
+        <a id="vehicleDonateBtn"
+           class="donate-button"
+           href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=100"
+           target="_blank"
+           rel="noopener">
+           Give Toward Vehicle Fund
+        </a>
+
+      </div>
 
     </div>
   </section>
 </main>
+
+<script>
+  const goal = 15000;
+  const raised = 3500;
+
+  const progressBar = document.getElementById("progressBar");
+  const raisedAmount = document.getElementById("raisedAmount");
+  const remainingAmount = document.getElementById("remainingAmount");
+  const slider = document.getElementById("donationSlider");
+  const selectedAmount = document.getElementById("selectedAmount");
+  const donateBtn = document.getElementById("vehicleDonateBtn");
+  const carIndicator = document.getElementById("carIndicator");
+
+  raisedAmount.textContent = raised;
+  remainingAmount.textContent = goal - raised;
+
+  progressBar.style.width = (raised / goal) * 100 + "%";
+
+  function updateSlider() {
+    const value = slider.value;
+    selectedAmount.textContent = value;
+
+    donateBtn.href =
+      `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${value}`;
+
+    const percent = (value - slider.min) / (slider.max - slider.min);
+    const sliderWidth = slider.offsetWidth;
+    carIndicator.style.left = percent * sliderWidth + "px";
+  }
+
+  slider.addEventListener("input", updateSlider);
+  updateSlider();
+
+  donateBtn.addEventListener("click", function() {
+    gtag('event', 'vehicle_give_click', {
+      'value': slider.value
+    });
+  });
+</script>
 
 </body>
 </html>
