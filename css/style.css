@@ -388,3 +388,27 @@ p {
     padding: 60px 6%;
   }
 }
+
+/* PARTNER BUTTON LAYOUT UPDATE */
+
+.page-partner .buttons {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-partner .button-row {
+  display: flex;
+  gap: 16px;
+}
+
+.page-partner .button-row a {
+  flex: 1;
+  text-align: center;
+}
+
+.page-partner .full-width-btn {
+  width: 100%;
+  text-align: center;
+}
