@@ -66,6 +66,7 @@
                  step="25"
                  value="100"
                  id="donationSlider">
+
           <div class="car-indicator" id="carIndicator">
             <img src="assets/images/car.svg" alt="car icon">
           </div>
@@ -103,22 +104,29 @@
 
   raisedAmount.textContent = raised;
   remainingAmount.textContent = goal - raised;
-
   progressBar.style.width = (raised / goal) * 100 + "%";
 
   function updateSlider() {
-    const value = slider.value;
+    const value = parseInt(slider.value);
     selectedAmount.textContent = value;
 
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${value}`;
 
-    const percent = (value - slider.min) / (slider.max - slider.min);
-    const sliderWidth = slider.offsetWidth;
-    carIndicator.style.left = percent * sliderWidth + "px";
+    const min = parseInt(slider.min);
+    const max = parseInt(slider.max);
+    const percent = (value - min) / (max - min);
+
+    const sliderRect = slider.getBoundingClientRect();
+    const thumbOffset = 16; 
+    const position = percent * (sliderRect.width - thumbOffset) + (thumbOffset / 2);
+
+    carIndicator.style.left = position + "px";
   }
 
   slider.addEventListener("input", updateSlider);
+  window.addEventListener("resize", updateSlider);
+
   updateSlider();
 
   donateBtn.addEventListener("click", function() {
