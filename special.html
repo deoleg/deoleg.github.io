@@ -32,8 +32,13 @@
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-content">
+
+  <!-- HERO IMAGE -->
+  <section class="special-hero-image"></section>
+
+  <!-- CONTENT BLOCK -->
+  <section class="special-content">
+    <div class="special-container">
 
       <h1>Special Initiatives</h1>
 
@@ -55,18 +60,16 @@
         </div>
 
         <p>
-          Raised: <strong>$<span id="raisedAmount">3500</span></strong><br>
-          Remaining: <strong>$<span id="remainingAmount">11500</span></strong>
+          Raised: <strong>$<span id="raisedAmount">400</span></strong><br>
+          Remaining: <strong>$<span id="remainingAmount"></span></strong>
         </p>
 
         <div class="slider-container">
           <input type="range"
                  min="25"
-                 max="2000"
                  step="25"
                  value="100"
                  id="donationSlider">
-
           <div class="car-indicator" id="carIndicator">
             <img src="assets/images/car.svg" alt="car icon">
           </div>
@@ -78,7 +81,6 @@
 
         <a id="vehicleDonateBtn"
            class="donate-button"
-           href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=100"
            target="_blank"
            rel="noopener">
            Give Toward Vehicle Fund
@@ -88,11 +90,13 @@
 
     </div>
   </section>
+
 </main>
 
 <script>
   const goal = 15000;
-  const raised = 3500;
+  const raised = 400;
+  const remaining = goal - raised;
 
   const progressBar = document.getElementById("progressBar");
   const raisedAmount = document.getElementById("raisedAmount");
@@ -102,31 +106,26 @@
   const donateBtn = document.getElementById("vehicleDonateBtn");
   const carIndicator = document.getElementById("carIndicator");
 
-  raisedAmount.textContent = raised;
-  remainingAmount.textContent = goal - raised;
+  raisedAmount.textContent = raised.toLocaleString();
+  remainingAmount.textContent = remaining.toLocaleString();
+
   progressBar.style.width = (raised / goal) * 100 + "%";
+
+  slider.max = remaining;
 
   function updateSlider() {
     const value = parseInt(slider.value);
-    selectedAmount.textContent = value;
+    selectedAmount.textContent = value.toLocaleString();
 
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${value}`;
 
-    const min = parseInt(slider.min);
-    const max = parseInt(slider.max);
-    const percent = (value - min) / (max - min);
-
-    const sliderRect = slider.getBoundingClientRect();
-    const thumbOffset = 16; 
-    const position = percent * (sliderRect.width - thumbOffset) + (thumbOffset / 2);
-
-    carIndicator.style.left = position + "px";
+    const percent = (value - slider.min) / (slider.max - slider.min);
+    const sliderWidth = slider.offsetWidth;
+    carIndicator.style.left = percent * sliderWidth + "px";
   }
 
   slider.addEventListener("input", updateSlider);
-  window.addEventListener("resize", updateSlider);
-
   updateSlider();
 
   donateBtn.addEventListener("click", function() {
