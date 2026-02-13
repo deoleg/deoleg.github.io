@@ -511,14 +511,28 @@ p {
 
 #donationSlider {
   width: 100%;
+  appearance: none;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  outline: none;
+}
+
+#donationSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #111;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .car-indicator {
   position: absolute;
-  top: -30px;
+  top: -28px;
   transform: translateX(-50%);
-  font-size: 1.5rem;
   pointer-events: none;
+  color: #111; /* можно поменять, если основной цвет другой */
   transition: left 0.1s ease;
 }
 
