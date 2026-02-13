@@ -529,11 +529,18 @@ p {
 
 .car-indicator {
   position: absolute;
-  top: -28px;
+  top: -32px;
   transform: translateX(-50%);
   pointer-events: none;
-  color: #111; /* можно поменять, если основной цвет другой */
   transition: left 0.1s ease;
+}
+
+.car-indicator img {
+   width: 38px;
+   height: auto;
+   display: block;
+   filter: grayscale(100%) brightness(0);
+   opacity: 0.85;
 }
 
 .donate-button {
