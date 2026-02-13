@@ -111,7 +111,14 @@
 
   progressBar.style.width = (raised / goal) * 100 + "%";
 
-  slider.max = remaining;
+  // Максимум ползунка = оставшаяся сумма, округлённая к шагу 25
+  const maxSliderValue = Math.floor(remaining / 25) * 25;
+  slider.max = maxSliderValue;
+
+  // Если текущее значение больше нового max — исправляем
+  if (parseInt(slider.value) > maxSliderValue) {
+    slider.value = maxSliderValue;
+  }
 
   function updateSlider() {
     const value = parseInt(slider.value);
