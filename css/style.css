@@ -93,23 +93,20 @@ p {
 }
 
 /* =========================
-   SPECIAL
+   HOME
 ========================= */
-
-.page-special .hero {
+.page-home .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  height: 100vh;
-  background: url("/assets/images/special.jpg") center / cover no-repeat;
+  height: 80vh;
+  min-height: 500px;
+  background: url("/assets/images/home.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 60px 6%;
-  overflow-y: auto;
 }
 
-.page-special .hero-content {
+.page-home .hero-content {
+  margin-left: 6%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 56px;
@@ -118,15 +115,96 @@ p {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* =========================
+   ABOUT
+========================= */
+.page-about .about-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  padding: 100px 8%;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-about img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   MINISTRY
+========================= */
+.page-ministry .hero {
+  min-height: 100vh;
+  background: url("/assets/images/ministry.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 60px 6%;
+}
+
+.page-ministry .hero-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 56px;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   PARTNER
+========================= */
+.page-partner .hero {
+  min-height: 100vh;
+  background: url("/assets/images/partner_desktop.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 60px 6%;
+}
+
+.page-partner .hero-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 56px;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   SPECIAL
+========================= */
+
+/* IMAGE SECTION */
+.special-hero-image {
+  width: 100%;
+  height: 75vh;
+  background: url("/assets/images/special.jpg") center / cover no-repeat;
+}
+
+/* CONTENT BELOW IMAGE */
+.special-content {
+  background: #fff;
+  padding: 100px 8%;
+}
+
+.special-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Vehicle Fund */
+
 .vehicle-fund {
   margin-top: 3rem;
 }
 
-/* Progress Bar */
-
 .progress-container {
   width: 100%;
-  background: #e6e6e6;
+  background: #eee;
   height: 10px;
   border-radius: 5px;
   margin: 1.5rem 0;
@@ -141,11 +219,9 @@ p {
   transition: width 0.6s ease;
 }
 
-/* Slider */
-
 .slider-container {
   position: relative;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 
 #donationSlider {
@@ -159,24 +235,12 @@ p {
 
 #donationSlider::-webkit-slider-thumb {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   background: #1a1f36;
   border-radius: 50%;
   cursor: pointer;
-  border: none;
 }
-
-#donationSlider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  background: #1a1f36;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-}
-
-/* Car Indicator */
 
 .car-indicator {
   position: absolute;
@@ -187,34 +251,27 @@ p {
 }
 
 .car-indicator img {
-  width: 36px;
-  height: auto;
-  display: block;
+  width: 38px;
   filter: grayscale(100%) brightness(0);
   opacity: 0.85;
 }
 
-/* Donation Button */
-
 .donate-button {
-  border: 2px solid #1a1f36;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 18px 40px;
   background: #1a1f36;
   color: #fff;
-  padding: 18px 40px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 4px;
   transition: all 0.3s ease;
-  display: inline-block;
-  margin-top: 1.5rem;
 }
 
 .donate-button:hover {
   background: #0f1420;
-  border-color: #0f1420;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(26, 31, 54, 0.4);
 }
@@ -222,44 +279,21 @@ p {
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width: 900px) {
 
-  .page-special .hero {
-    min-height: 100vh;
-    height: 100vh;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
+  .special-hero-image {
+    height: 50vh;
   }
 
-  .page-special .hero-content {
-    position: static;
-    margin: 0;
-    padding: 40px 6%;
-    max-width: 100%;
-    border-radius: 0;
-    background: #fff;
-    backdrop-filter: none;
-    box-shadow: none;
+  .special-content {
+    padding: 60px 6%;
   }
-}
-
-@media (max-width: 600px) {
 
   h1 {
-    font-size: 1.75rem;
+    font-size: 2.1rem;
   }
 
-  .page-special .hero-content {
-    padding: 24px;
-  }
-
-  .donate-button {
-    width: 100%;
-    text-align: center;
-    padding: 16px 32px;
+  h2 {
+    font-size: 1.6rem;
   }
 }
