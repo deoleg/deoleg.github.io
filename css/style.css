@@ -320,7 +320,7 @@ p {
   transform: translateY(-50%);
   left: 0;
   width: 0%;
-  transition: width 0.3s ease;
+  transition: none;
   z-index: 1;
 }
 
@@ -343,7 +343,7 @@ p {
   top: -38px;
   transform: translateX(-50%);
   pointer-events: none;
-  transition: left 0.3s ease;
+  transition: none;
   z-index: 3;
 }
 
