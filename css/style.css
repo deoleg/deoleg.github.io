@@ -125,6 +125,27 @@ p {
   max-width: 65ch;
 }
 
+.page-home .home-verse {
+  margin-top: 32px;
+  padding-left: 20px;
+  border-left: 3px solid #1a1f36;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #2c2c2c;
+  max-width: 60ch;
+}
+
+.page-home .home-verse span {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: #1a1f36;
+}
+
+
 /* =========================
    ABOUT
 ========================= */
