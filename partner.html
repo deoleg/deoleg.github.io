@@ -7,12 +7,26 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-5WR8LDXEV3');
   </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partner — Dermenji Family</title>
+  <meta name="description" content="Partner with the Dermenji Family in reaching Moldova for Christ. Support our mission to plant a church for every 1,000 people through monthly partnership.">
+  <meta name="keywords" content="support missionaries, Moldova missions, monthly giving, Cru partnership, church planting support">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Partner with Us — Dermenji Family">
+  <meta property="og:description" content="Your partnership fuels the vision of planting a church for every 1,000 people in Moldova.">
+  <meta property="og:url" content="https://deoleg.github.io/partner.html">
+  <meta property="og:image" content="https://deoleg.github.io/assets/images/partner_desktop.jpg">
+  
+  <title>Partner with Us — Dermenji Family</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,11 +36,11 @@
 <body class="page-partner">
 
 <header>
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="ministry.html">Ministry</a>
-    <a href="partner.html" class="active">Partner</a>
+    <a href="partner.html" class="active" aria-current="page">Partner</a>
   </nav>
 </header>
 
@@ -48,39 +62,39 @@
       </p>
 
       <div class="buttons">
-
         <div class="button-row">
-
           <a href="https://give.cru.org/2880130"
              target="_blank"
-             rel="noopener"
+             rel="noopener noreferrer"
+             aria-label="Give financial support online through Cru"
              onclick="gtag('event', 'give_click', {
-               'event_callback': function() {
-                 window.open('https://give.cru.org/2880130', '_blank');
-               }
-             }); return false;">
+               'event_category': 'engagement',
+               'event_label': 'Give Online Button'
+             });">
              Give Online
           </a>
 
           <a href="special.html"
-             onclick="gtag('event', 'special_click');">
+             aria-label="View special ministry needs"
+             onclick="gtag('event', 'special_click', {
+               'event_category': 'engagement',
+               'event_label': 'Special Need Button'
+             });">
              Special Need
           </a>
-
         </div>
 
         <a href="http://eepurl.com/gNI_nD"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            class="full-width-btn"
+           aria-label="Subscribe to monthly ministry updates"
            onclick="gtag('event', 'subscribe_click', {
-             'event_callback': function() {
-               window.open('http://eepurl.com/gNI_nD', '_blank');
-             }
-           }); return false;">
+             'event_category': 'engagement',
+             'event_label': 'Subscribe Button'
+           });">
            Subscribe to Updates
         </a>
-
       </div>
     </div>
   </section>
