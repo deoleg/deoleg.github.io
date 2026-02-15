@@ -403,7 +403,6 @@ strong {
   transform: translateY(-50%);
   left: 0;
   width: 0%;
-  transition: width 0.1s ease;
   z-index: 1;
   pointer-events: none;
 }
@@ -441,7 +440,6 @@ strong {
   top: -38px;
   transform: translateX(-50%);
   pointer-events: none;
-  transition: left 0.1s ease;
   z-index: 3;
 }
 
