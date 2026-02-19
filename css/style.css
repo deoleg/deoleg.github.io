@@ -55,6 +55,25 @@ nav a.active::after {
   border-radius: 2px;
 }
 
+/* Give button in navigation */
+nav a.nav-give {
+  background: #1a1f36;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a.nav-give:hover {
+  background: #0f1420;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 31, 54, 0.3);
+}
+
+nav a.nav-give::after {
+  display: none;
+}
+
 main {
   width: 100%;
   overflow-x: hidden;
