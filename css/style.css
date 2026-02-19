@@ -59,9 +59,10 @@ nav a.active::after {
 nav a.nav-give {
   background: #1a1f36;
   color: #fff;
-  padding: 8px 20px;
+  padding: 4px 14px;
   border-radius: 4px;
   transition: all 0.3s ease;
+  vertical-align: baseline;
 }
 
 nav a.nav-give:hover {
