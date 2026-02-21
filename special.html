@@ -61,8 +61,8 @@
         <p><strong>Goal: $15,000</strong></p>
 
         <p>
-          Raised: <strong>$2,400</strong><br>
-          Remaining: <strong>$<span id="remainingAmount">12,600</span></strong>
+          Raised: <strong>$<span id="raisedAmount"></span></strong><br>
+          Remaining: <strong>$<span id="remainingAmount"></span></strong>
         </p>
 
         <div class="slider-container">
@@ -73,7 +73,6 @@
                  min="0"
                  max="15000"
                  step="25"
-                 value="2400"
                  id="donationSlider">
 
           <div class="car-indicator" id="carIndicator">
@@ -101,7 +100,12 @@
 </main>
 
 <script>
+
   const goal = 15000;
+
+  /* ======================================================
+     🔴 МЕНЯЙ ТОЛЬКО ЭТО ЧИСЛО ПРИ ОБНОВЛЕНИИ СОБРАННОЙ СУММЫ
+     ====================================================== */
   const raised = 2400;
 
   const slider = document.getElementById("donationSlider");
@@ -110,6 +114,14 @@
   const carIndicator = document.getElementById("carIndicator");
   const sliderFill = document.getElementById("sliderFill");
   const remainingAmount = document.getElementById("remainingAmount");
+  const raisedAmount = document.getElementById("raisedAmount");
+
+  // Автоматически заполняем текстовые суммы
+  raisedAmount.textContent = raised.toLocaleString();
+  remainingAmount.textContent = (goal - raised).toLocaleString();
+
+  // Устанавливаем стартовую позицию слайдера
+  slider.value = raised;
 
   function updateSlider() {
 
@@ -147,6 +159,7 @@
       'value': slider.value - raised
     });
   });
+
 </script>
 
 </body>
