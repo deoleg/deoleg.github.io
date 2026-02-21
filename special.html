@@ -140,7 +140,32 @@
 
       // Update displayed amounts
       selectedAmount.textContent = donation.toLocaleString();
-      remainingAmount.textContent = '$' + remaining.toLocaleString();
+      remainingAmount.textContent = '
+
+    // Event listeners
+    slider.addEventListener('input', updateSlider);
+    window.addEventListener('resize', updateSlider);
+
+    // Track donations in Google Analytics
+    donateBtn.addEventListener('click', function() {
+      const donation = parseInt(slider.value, 10) - RAISED;
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'vehicle_donation', {
+          'event_category': 'special_giving',
+          'event_label': 'Vehicle Fund',
+          'value': donation
+        });
+      }
+    });
+
+    // Initialize
+    updateSlider();
+  })();
+</script>
+
+</body>
+</html> + remaining.toLocaleString();
 
       // Update donation link
       donateBtn.href = 
@@ -149,10 +174,11 @@
       // Update slider visual position
       const percent = currentValue / GOAL;
       const sliderWidth = slider.offsetWidth;
-      const position = percent * sliderWidth;
+      const thumbWidth = 18; // width of the slider thumb
+      const position = (percent * (sliderWidth - thumbWidth)) + (thumbWidth / 2);
 
       carIndicator.style.left = position + 'px';
-      sliderFill.style.width = position + 'px';
+      sliderFill.style.width = (percent * sliderWidth) + 'px';
 
       // Update ARIA
       slider.setAttribute('aria-valuenow', currentValue);
