@@ -74,10 +74,10 @@
           <div class="slider-track-fill" id="sliderFill"></div>
 
           <input type="range"
-                 min="2400"
-                 max="15000"
+                 min="0"
+                 max="12600"
                  step="25"
-                 value="2400"
+                 value="0"
                  id="donationSlider">
 
           <div class="car-indicator" id="carIndicator">
@@ -118,9 +118,9 @@
   const remainingAmount = document.getElementById('remainingAmount');
 
   function updateSlider() {
-    const currentValue = parseInt(slider.value, 10);
-    const donation = currentValue - RAISED;
-    const remaining = GOAL - currentValue;
+    const donation = parseInt(slider.value, 10);
+    const currentTotal = RAISED + donation;
+    const remaining = GOAL - currentTotal;
 
     selectedAmount.textContent = donation.toLocaleString();
     remainingAmount.textContent = '$' + remaining.toLocaleString();
@@ -130,21 +130,18 @@
 
     const sliderWidth = slider.offsetWidth;
 
-    const percentSlider =
-      (currentValue - slider.min) / (slider.max - slider.min);
-    const positionCar = percentSlider * sliderWidth;
-    carIndicator.style.left = positionCar + 'px';
+    const percentTotal = currentTotal / GOAL;
+    const position = percentTotal * sliderWidth;
 
-    const percentFill = currentValue / GOAL;
-    const positionFill = percentFill * sliderWidth;
-    sliderFill.style.width = positionFill + 'px';
+    carIndicator.style.left = position + 'px';
+    sliderFill.style.width = position + 'px';
   }
 
   slider.addEventListener('input', updateSlider);
   window.addEventListener('resize', updateSlider);
 
   donateBtn.addEventListener('click', function() {
-    const donation = parseInt(slider.value, 10) - RAISED;
+    const donation = parseInt(slider.value, 10);
 
     if (typeof gtag !== 'undefined') {
       gtag('event', 'vehicle_donation', {
