@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WR8LDXEV3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,15 +11,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Help the Dermenji Family raise funds for a reliable ministry vehicle. Goal: $15,000 to continue serving throughout Moldova.">
-
   <title>Vehicle Fund — Dermenji Family</title>
 
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -32,17 +24,15 @@
     <a href="about.html">About</a>
     <a href="ministry.html">Ministry</a>
     <a href="partner.html">Partner</a>
-    <a href="https://give.cru.org/2880130" target="_blank" rel="noopener" class="nav-give">Give</a>
+    <a href="https://give.cru.org/2880130" target="_blank" class="nav-give">Give</a>
   </nav>
 </header>
 
 <main>
   <div class="special-layout">
 
-    <!-- LEFT IMAGE -->
     <div class="special-image"></div>
 
-    <!-- RIGHT CONTENT -->
     <div class="special-right">
       <div class="special-container">
 
@@ -51,17 +41,8 @@
 
         <p>
           Our current car has served us well, but due to age and repeated breakdowns,
-          we are praying for the opportunity to replace it with a safer and more dependable vehicle.
-          This would allow us to continue serving as a family, travel throughout Moldova,
-          and transport equipment for worship ministry.
+          we are praying for the opportunity to replace it.
         </p>
-
-        <p><strong>Why we need this:</strong></p>
-        <ul>
-          <li>Travel 500+ km monthly to reach people across Moldova</li>
-          <li>Transport worship equipment to churches</li>
-          <li>Ensure safety for our family of 5 (including 3 children)</li>
-        </ul>
 
         <p><strong>Goal: $15,000</strong></p>
 
@@ -73,7 +54,6 @@
         <div class="slider-container">
           <div class="slider-track-fill" id="sliderFill"></div>
 
-          <!-- Donation slider -->
           <input type="range"
                  min="0"
                  max="12600"
@@ -81,9 +61,8 @@
                  value="0"
                  id="donationSlider">
 
-          <!-- Car indicator -->
           <div class="car-indicator" id="carIndicator">
-            <img src="assets/images/car.svg" alt="" width="40">
+            <img src="assets/images/car.svg" width="40">
           </div>
         </div>
 
@@ -94,8 +73,7 @@
         <a id="vehicleDonateBtn"
            href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=0"
            class="donate-button"
-           target="_blank"
-           rel="noopener">
+           target="_blank">
            Give Toward Vehicle Fund
         </a>
 
@@ -107,7 +85,6 @@
 
 <script>
 (function() {
-  'use strict';
 
   const GOAL = 15000;
   const RAISED = 2400;
@@ -120,6 +97,7 @@
   const remainingAmount = document.getElementById('remainingAmount');
 
   function updateSlider() {
+
     const donation = parseInt(slider.value, 10);
     const currentTotal = RAISED + donation;
     const remaining = GOAL - currentTotal;
@@ -130,11 +108,13 @@
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-    const sliderRect = slider.getBoundingClientRect();
-    const sliderWidth = sliderRect.width;
+    const rect = slider.getBoundingClientRect();
+    const thumbWidth = 18; // твой CSS thumb width
+    const usableWidth = rect.width - thumbWidth;
 
     const percentTotal = currentTotal / GOAL;
-    const position = percentTotal * sliderWidth;
+
+    const position = (percentTotal * usableWidth) + (thumbWidth / 2);
 
     carIndicator.style.left = position + 'px';
     sliderFill.style.width = position + 'px';
@@ -143,19 +123,8 @@
   slider.addEventListener('input', updateSlider);
   window.addEventListener('resize', updateSlider);
 
-  donateBtn.addEventListener('click', function() {
-    const donation = parseInt(slider.value, 10);
-
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'vehicle_donation', {
-        'event_category': 'special_giving',
-        'event_label': 'Vehicle Fund',
-        'value': donation
-      });
-    }
-  });
-
   updateSlider();
+
 })();
 </script>
 
