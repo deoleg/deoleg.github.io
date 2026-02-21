@@ -41,6 +41,7 @@
     <a href="about.html">About</a>
     <a href="ministry.html">Ministry</a>
     <a href="partner.html">Partner</a>
+    <a href="https://give.cru.org/2880130" target="_blank" rel="noopener noreferrer" class="nav-give">Give</a>
   </nav>
 </header>
 
@@ -63,10 +64,8 @@
           This would allow us to continue serving as a family, travel throughout Moldova,
           and transport equipment for worship ministry.
         </p>
-
-        <p>
-          <strong>Why we need this:</strong>
-        </p>
+        
+        <p><strong>Why we need this:</strong></p>
         <ul>
           <li>Travel 500+ km monthly to reach people across Moldova</li>
           <li>Transport worship equipment to churches</li>
@@ -124,7 +123,6 @@
 
     const GOAL = 15000;
     const RAISED = 2400;
-    const MIN_DONATION = 0;
 
     const slider = document.getElementById('donationSlider');
     const selectedAmount = document.getElementById('selectedAmount');
@@ -140,32 +138,7 @@
 
       // Update displayed amounts
       selectedAmount.textContent = donation.toLocaleString();
-      remainingAmount.textContent = '
-
-    // Event listeners
-    slider.addEventListener('input', updateSlider);
-    window.addEventListener('resize', updateSlider);
-
-    // Track donations in Google Analytics
-    donateBtn.addEventListener('click', function() {
-      const donation = parseInt(slider.value, 10) - RAISED;
-      
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'vehicle_donation', {
-          'event_category': 'special_giving',
-          'event_label': 'Vehicle Fund',
-          'value': donation
-        });
-      }
-    });
-
-    // Initialize
-    updateSlider();
-  })();
-</script>
-
-</body>
-</html> + remaining.toLocaleString();
+      remainingAmount.textContent = '$' + remaining.toLocaleString();
 
       // Update donation link
       donateBtn.href = 
@@ -174,11 +147,10 @@
       // Update slider visual position
       const percent = currentValue / GOAL;
       const sliderWidth = slider.offsetWidth;
-      const thumbWidth = 18; // width of the slider thumb
-      const position = (percent * (sliderWidth - thumbWidth)) + (thumbWidth / 2);
+      const position = percent * sliderWidth;
 
       carIndicator.style.left = position + 'px';
-      sliderFill.style.width = (percent * sliderWidth) + 'px';
+      sliderFill.style.width = position + 'px';
 
       // Update ARIA
       slider.setAttribute('aria-valuenow', currentValue);
