@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WR8LDXEV3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5WR8LDXEV3');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vehicle Fund — Dermenji Family</title>
-
+  <title>Special Need — Dermenji Family</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="page-special">
+<body>
 
 <header>
   <nav>
@@ -24,67 +15,73 @@
     <a href="about.html">About</a>
     <a href="ministry.html">Ministry</a>
     <a href="partner.html">Partner</a>
-    <a href="https://give.cru.org/2880130" target="_blank" class="nav-give">Give</a>
+    <a href="https://give.cru.org/2880130" target="_blank" class="give-btn">Give</a>
   </nav>
 </header>
 
-<main>
-  <div class="special-layout">
+<main class="special-layout">
 
-    <div class="special-image"></div>
+  <div class="special-image"></div>
 
-    <div class="special-right">
-      <div class="special-container">
+  <div class="special-right">
+    <div class="special-container">
 
-        <h1>Special Need</h1>
-        <h2>A Reliable Ministry Vehicle</h2>
+      <h1>Special Need</h1>
+      <h2>A Reliable Ministry Vehicle</h2>
 
-        <p>
-          Our current car has served us well, but due to age and repeated breakdowns,
-          we are praying for the opportunity to replace it.
-        </p>
+      <p>
+        Our current car has served us well, but due to age and repeated breakdowns, we are praying for the opportunity to replace it with a safer and more dependable vehicle. This would allow us to continue serving as a family, travel throughout Moldova, and transport equipment for worship ministry.
+      </p>
 
-        <p><strong>Goal: $15,000</strong></p>
+      <h3>Why we need this:</h3>
 
-        <p>
-          Raised: <strong>$2,400</strong><br>
-          Remaining: <strong id="remainingAmount">$12,600</strong>
-        </p>
+      <ul>
+        <li>Travel 500+ km monthly to reach people across Moldova</li>
+        <li>Transport worship equipment to churches</li>
+        <li>Ensure safety for our family of 5 (including 3 children)</li>
+      </ul>
 
-        <div class="slider-container">
-          <div class="slider-track-fill" id="sliderFill"></div>
+      <p><strong>Goal: $15,000</strong></p>
+      <p>Raised: <strong>$2,400</strong></p>
+      <p>Remaining: <strong id="remainingAmount">$12,600</strong></p>
 
-          <input type="range"
-                 min="0"
-                 max="12600"
-                 step="25"
-                 value="0"
-                 id="donationSlider">
+      <div class="slider-container">
 
-          <div class="car-indicator" id="carIndicator">
-            <img src="assets/images/car.svg" width="40">
-          </div>
+        <div id="carIndicator" class="car-indicator">
+          <img src="assets/images/car-icon.svg" alt="car">
         </div>
 
-        <p>
-          Your Gift: <strong>$<span id="selectedAmount">0</span></strong>
-        </p>
+        <div class="slider-track-fill" id="sliderFill"></div>
 
-        <a id="vehicleDonateBtn"
-           href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=0"
-           class="donate-button"
-           target="_blank">
-           Give Toward Vehicle Fund
-        </a>
+        <input
+          type="range"
+          id="donationSlider"
+          min="0"
+          max="12600"
+          step="50"
+          value="0"
+        >
 
       </div>
-    </div>
 
+      <p>Your Gift: <strong>$<span id="selectedAmount">0</span></strong></p>
+
+      <a
+        id="vehicleDonateBtn"
+        class="donate-button"
+        href="https://give.cru.org/2880130"
+        target="_blank"
+      >
+        GIVE TOWARD VEHICLE FUND
+      </a>
+
+    </div>
   </div>
+
 </main>
 
 <script>
-(function() {
+(function () {
 
   const GOAL = 15000;
   const RAISED = 2400;
@@ -99,8 +96,8 @@
   function updateSlider() {
 
     const donation = parseInt(slider.value, 10);
-    const currentTotal = RAISED + donation;
-    const remaining = GOAL - currentTotal;
+    const total = RAISED + donation;
+    const remaining = GOAL - total;
 
     selectedAmount.textContent = donation.toLocaleString();
     remainingAmount.textContent = '$' + remaining.toLocaleString();
@@ -108,13 +105,13 @@
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-    const rect = slider.getBoundingClientRect();
-    const thumbWidth = 18; // твой CSS thumb width
-    const usableWidth = rect.width - thumbWidth;
+    // корректный расчёт позиции
+    const trackWidth = slider.offsetWidth;
+    const thumbWidth = 18; // соответствует CSS
+    const usableWidth = trackWidth - thumbWidth;
 
-    const percentTotal = currentTotal / GOAL;
-
-    const position = (percentTotal * usableWidth) + (thumbWidth / 2);
+    const percent = total / GOAL;
+    const position = (percent * usableWidth) + (thumbWidth / 2);
 
     carIndicator.style.left = position + 'px';
     sliderFill.style.width = position + 'px';
@@ -122,6 +119,17 @@
 
   slider.addEventListener('input', updateSlider);
   window.addEventListener('resize', updateSlider);
+
+  donateBtn.addEventListener('click', function () {
+    const donation = parseInt(slider.value, 10);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'vehicle_donation', {
+        'event_category': 'special_giving',
+        'event_label': 'Vehicle Fund',
+        'value': donation
+      });
+    }
+  });
 
   updateSlider();
 
