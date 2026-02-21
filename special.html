@@ -138,19 +138,48 @@
 
       // Update displayed amounts
       selectedAmount.textContent = donation.toLocaleString();
-      remainingAmount.textContent = '$' + remaining.toLocaleString();
+      remainingAmount.textContent = '
+
+    // Event listeners
+    slider.addEventListener('input', updateSlider);
+    window.addEventListener('resize', updateSlider);
+
+    // Track donations in Google Analytics
+    donateBtn.addEventListener('click', function() {
+      const donation = parseInt(slider.value, 10) - RAISED;
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'vehicle_donation', {
+          'event_category': 'special_giving',
+          'event_label': 'Vehicle Fund',
+          'value': donation
+        });
+      }
+    });
+
+    // Initialize
+    updateSlider();
+  })();
+</script>
+
+</body>
+</html> + remaining.toLocaleString();
 
       // Update donation link
       donateBtn.href = 
         `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-      // Update slider visual position
-      const percent = currentValue / GOAL;
       const sliderWidth = slider.offsetWidth;
-      const position = percent * sliderWidth;
 
-      carIndicator.style.left = position + 'px';
-      sliderFill.style.width = position + 'px';
+      // Position car indicator - follows the actual slider thumb position (relative to slider range)
+      const percentSlider = (currentValue - slider.min) / (slider.max - slider.min);
+      const positionCar = percentSlider * sliderWidth;
+      carIndicator.style.left = positionCar + 'px';
+
+      // Fill track - shows absolute progress from 0 to currentValue
+      const percentFill = currentValue / GOAL;
+      const positionFill = percentFill * sliderWidth;
+      sliderFill.style.width = positionFill + 'px';
 
       // Update ARIA
       slider.setAttribute('aria-valuenow', currentValue);
