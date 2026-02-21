@@ -73,6 +73,7 @@
         <div class="slider-container">
           <div class="slider-track-fill" id="sliderFill"></div>
 
+          <!-- Donation slider -->
           <input type="range"
                  min="0"
                  max="12600"
@@ -80,6 +81,7 @@
                  value="0"
                  id="donationSlider">
 
+          <!-- Car indicator -->
           <div class="car-indicator" id="carIndicator">
             <img src="assets/images/car.svg" alt="" width="40">
           </div>
@@ -128,7 +130,8 @@
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-    const sliderWidth = slider.offsetWidth;
+    const sliderRect = slider.getBoundingClientRect();
+    const sliderWidth = sliderRect.width;
 
     const percentTotal = currentTotal / GOAL;
     const position = percentTotal * sliderWidth;
