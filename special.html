@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WR8LDXEV3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5WR8LDXEV3');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Need — Dermenji Family</title>
+  <title>Special Needs & Vehicle Fund — Dermenji Family</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="page-special">
 
 <header>
   <nav>
@@ -15,125 +28,123 @@
     <a href="about.html">About</a>
     <a href="ministry.html">Ministry</a>
     <a href="partner.html">Partner</a>
-    <a href="https://give.cru.org/2880130" target="_blank" class="give-btn">Give</a>
   </nav>
 </header>
 
-<main class="special-layout">
+<main>
 
-  <div class="special-image"></div>
+  <div class="special-layout">
 
-  <div class="special-right">
-    <div class="special-container">
+    <div class="special-image"></div>
 
-      <h1>Special Need</h1>
-      <h2>A Reliable Ministry Vehicle</h2>
+    <div class="special-right">
+      <div class="special-container">
 
-      <p>
-        Our current car has served us well, but due to age and repeated breakdowns, we are praying for the opportunity to replace it with a safer and more dependable vehicle. This would allow us to continue serving as a family, travel throughout Moldova, and transport equipment for worship ministry.
-      </p>
+        <h1>Special Need</h1>
+        <h2>A Reliable Ministry Vehicle</h2>
 
-      <h3>Why we need this:</h3>
+        <p>
+          Our current car has served us well, but due to age and repeated breakdowns,
+          we are praying for the opportunity to replace it with a safer and more dependable vehicle.
+          This would allow us to continue serving as a family, travel throughout Moldova,
+          and transport equipment for worship ministry.
+        </p>
 
-      <ul>
-        <li>Travel 500+ km monthly to reach people across Moldova</li>
-        <li>Transport worship equipment to churches</li>
-        <li>Ensure safety for our family of 5 (including 3 children)</li>
-      </ul>
+        <h3>Why we need this:</h3>
 
-      <p><strong>Goal: $15,000</strong></p>
-      <p>Raised: <strong>$2,400</strong></p>
-      <p>Remaining: <strong id="remainingAmount">$12,600</strong></p>
+        <ul>
+          <li>Travel 500+ km monthly to reach people across Moldova</li>
+          <li>Transport worship equipment to churches</li>
+          <li>Ensure safety for our family of 5 (including 3 children)</li>
+        </ul>
 
-      <div class="slider-container">
+        <p><strong>Goal: $15,000</strong></p>
 
-        <div id="carIndicator" class="car-indicator">
-          <img src="assets/images/car-icon.svg" alt="car">
+        <p>
+          Raised: <strong>$2,400</strong><br>
+          Remaining: <strong>$12,600</strong>
+        </p>
+
+        <div class="slider-container">
+
+          <div class="slider-track-fill" id="sliderFill"></div>
+
+          <input type="range"
+                 min="0"
+                 max="15000"
+                 step="25"
+                 value="2400"
+                 id="donationSlider">
+
+          <div class="car-indicator" id="carIndicator">
+            <img src="assets/images/car.svg" alt="car icon">
+          </div>
+
         </div>
 
-        <div class="slider-track-fill" id="sliderFill"></div>
+        <p>
+          Your Gift: <strong>$<span id="selectedAmount">0</span></strong>
+        </p>
 
-        <input
-          type="range"
-          id="donationSlider"
-          min="0"
-          max="12600"
-          step="50"
-          value="0"
-        >
+        <a id="vehicleDonateBtn"
+           class="donate-button"
+           target="_blank"
+           rel="noopener">
+           GIVE TOWARD VEHICLE FUND
+        </a>
 
       </div>
-
-      <p>Your Gift: <strong>$<span id="selectedAmount">0</span></strong></p>
-
-      <a
-        id="vehicleDonateBtn"
-        class="donate-button"
-        href="https://give.cru.org/2880130"
-        target="_blank"
-      >
-        GIVE TOWARD VEHICLE FUND
-      </a>
-
     </div>
+
   </div>
 
 </main>
 
 <script>
-(function () {
+  const goal = 15000;
+  const raised = 2400;
 
-  const GOAL = 15000;
-  const RAISED = 2400;
-
-  const slider = document.getElementById('donationSlider');
-  const selectedAmount = document.getElementById('selectedAmount');
-  const donateBtn = document.getElementById('vehicleDonateBtn');
-  const carIndicator = document.getElementById('carIndicator');
-  const sliderFill = document.getElementById('sliderFill');
-  const remainingAmount = document.getElementById('remainingAmount');
+  const slider = document.getElementById("donationSlider");
+  const selectedAmount = document.getElementById("selectedAmount");
+  const donateBtn = document.getElementById("vehicleDonateBtn");
+  const carIndicator = document.getElementById("carIndicator");
+  const sliderFill = document.getElementById("sliderFill");
 
   function updateSlider() {
 
-    const donation = parseInt(slider.value, 10);
-    const total = RAISED + donation;
-    const remaining = GOAL - total;
+    let currentValue = parseInt(slider.value);
+
+    // блокируем движение ниже текущего собранного
+    if (currentValue < raised) {
+      currentValue = raised;
+      slider.value = raised;
+    }
+
+    const donation = currentValue - raised;
 
     selectedAmount.textContent = donation.toLocaleString();
-    remainingAmount.textContent = '$' + remaining.toLocaleString();
 
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
 
-    // корректный расчёт позиции
-    const trackWidth = slider.offsetWidth;
-    const thumbWidth = 18; // соответствует CSS
-    const usableWidth = trackWidth - thumbWidth;
+    const percent = currentValue / goal;
+    const sliderWidth = slider.offsetWidth;
+    const position = percent * sliderWidth;
 
-    const percent = total / GOAL;
-    const position = (percent * usableWidth) + (thumbWidth / 2);
-
-    carIndicator.style.left = position + 'px';
-    sliderFill.style.width = position + 'px';
+    carIndicator.style.left = position + "px";
+    sliderFill.style.width = position + "px";
   }
 
-  slider.addEventListener('input', updateSlider);
-  window.addEventListener('resize', updateSlider);
-
-  donateBtn.addEventListener('click', function () {
-    const donation = parseInt(slider.value, 10);
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'vehicle_donation', {
-        'event_category': 'special_giving',
-        'event_label': 'Vehicle Fund',
-        'value': donation
-      });
-    }
-  });
+  slider.addEventListener("input", updateSlider);
+  window.addEventListener("resize", updateSlider);
 
   updateSlider();
 
-})();
+  donateBtn.addEventListener("click", function() {
+    gtag('event', 'vehicle_give_click', {
+      'value': slider.value - raised
+    });
+  });
 </script>
 
 </body>
