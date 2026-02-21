@@ -62,7 +62,7 @@
 
         <p>
           Raised: <strong>$2,400</strong><br>
-          Remaining: <strong>$12,600</strong>
+          Remaining: <strong>$<span id="remainingAmount">12,600</span></strong>
         </p>
 
         <div class="slider-container">
@@ -109,20 +109,22 @@
   const donateBtn = document.getElementById("vehicleDonateBtn");
   const carIndicator = document.getElementById("carIndicator");
   const sliderFill = document.getElementById("sliderFill");
+  const remainingAmount = document.getElementById("remainingAmount");
 
   function updateSlider() {
 
     let currentValue = parseInt(slider.value);
 
-    // блокируем движение ниже текущего собранного
     if (currentValue < raised) {
       currentValue = raised;
       slider.value = raised;
     }
 
     const donation = currentValue - raised;
+    const remaining = goal - currentValue;
 
     selectedAmount.textContent = donation.toLocaleString();
+    remainingAmount.textContent = remaining.toLocaleString();
 
     donateBtn.href =
       `https://give.cru.org/2880130?modal=give-gift&d=2880130&a=${donation}`;
