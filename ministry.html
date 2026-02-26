@@ -19,36 +19,35 @@
   
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
+ <style>
   /* ===== DESKTOP HERO ===== */
-  .page-ministry .hero {
+  .page-home .hero {
     position: relative;
     min-height: 100vh;
-    background-image: url("assets/images/croped/ministry_desktop.jpg");
+    background-image: url("assets/images/croped/home_desktop.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     padding: 80px 6%;
   }
 
-  /* затемнение */
-  .page-ministry .hero::before {
+  .page-home .hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.35);
   }
 
-  .page-ministry .hero-content,
-  .page-ministry .ministry-cards {
+  .page-home .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 700px;
+    color: #fff;
   }
 
-  /* 🚫 Скрываем mobile-изображение на desktop */
+  /* 🚫 Скрываем mobile image на desktop */
   .mobile-hero-image {
     display: none;
   }
@@ -56,18 +55,18 @@
   /* ===== MOBILE ===== */
   @media (max-width: 768px) {
 
-    .page-ministry .hero {
+    .page-home .hero {
       background: none;
       min-height: auto;
       padding: 0;
       display: block;
     }
 
-    .page-ministry .hero::before {
+    .page-home .hero::before {
       display: none;
     }
 
-    /* ✅ Показываем мобильное изображение */
+    /* ✅ Показываем mobile image */
     .mobile-hero-image {
       display: block;
     }
@@ -78,14 +77,10 @@
       display: block;
     }
 
-    .page-ministry .hero-content {
+    .page-home .hero-content {
       padding: 40px 6%;
       background: #fff;
-    }
-
-    .page-ministry .ministry-cards {
-      padding: 40px 6%;
-      background: #fff;
+      color: #1a1a1a;
     }
   }
 </style>
