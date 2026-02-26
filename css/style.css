@@ -125,7 +125,7 @@ strong {
   width: 100%;
   height: 80vh;
   min-height: 500px;
-  background: url("/assets/images/home.jpg") center / cover no-repeat;
+  background: url("/assets/images/croped/home_desktop.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
 }
@@ -217,6 +217,8 @@ strong {
   display: block;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  /* ВСЕГДА показываем mobile версию на About */
+  content: url("/assets/images/croped/about_mobile.jpg");
 }
 
 .page-about .about-text h1 {
@@ -236,7 +238,7 @@ strong {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url("/assets/images/ministry.jpg") center / cover no-repeat;
+  background: url("/assets/images/croped/ministry_desktop.jpg") center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -308,7 +310,7 @@ strong {
   width: 100%;
   min-height: 100vh;
   height: 100vh;
-  background: url("/assets/images/partner_desktop.jpg") center / cover no-repeat;
+  background: url("/assets/images/croped/partner_desktop.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -406,7 +408,7 @@ strong {
 
 .special-image {
   width: 50%;
-  background: url("/assets/images/special.jpg") center center / cover no-repeat;
+  background: url("/assets/images/croped/special_desktop.jpg") center center / cover no-repeat;
 }
 
 .special-right {
@@ -530,8 +532,9 @@ strong {
     padding: 16px 0;
   }
 
-  /* HOME */
+  /* HOME - переключаем на mobile фон */
   .page-home .hero {
+    background-image: url("/assets/images/croped/home_mobile.jpg");
     min-height: 100vh;
     height: 100vh;
     padding: 0;
@@ -551,15 +554,16 @@ strong {
     box-shadow: none;
   }
 
-  /* ABOUT */
+  /* ABOUT - оставляем mobile версию (уже задано выше) */
   .page-about .about-wrap {
     grid-template-columns: 1fr;
     padding: 60px 6%;
     gap: 40px;
   }
 
-  /* MINISTRY */
+  /* MINISTRY - переключаем на mobile фон */
   .page-ministry .hero {
+    background-image: url("/assets/images/croped/ministry_mobile.jpg");
     min-height: 100vh;
     height: auto;
     padding: 0;
@@ -574,7 +578,7 @@ strong {
     display: block;
     width: 100%;
     min-height: 50vh;
-    background: url("/assets/images/ministry.jpg") center / cover no-repeat;
+    background: url("/assets/images/croped/ministry_mobile.jpg") center / cover no-repeat;
   }
 
   .page-ministry .hero-content {
@@ -600,8 +604,9 @@ strong {
     padding: 32px;
   }
 
-  /* PARTNER */
+  /* PARTNER - переключаем на mobile фон */
   .page-partner .hero {
+    background-image: url("/assets/images/croped/partner_mobile.jpg");
     min-height: 100vh;
     height: 100vh;
     padding: 0;
@@ -630,7 +635,7 @@ strong {
     width: 100%;
   }
 
-  /* SPECIAL */
+  /* SPECIAL - переключаем на mobile фон */
   .special-layout {
     flex-direction: column;
   }
@@ -638,6 +643,7 @@ strong {
   .special-image {
     width: 100%;
     height: 50vh;
+    background-image: url("/assets/images/croped/special_mobile.jpg");
   }
 
   .special-right {
