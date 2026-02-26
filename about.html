@@ -20,7 +20,7 @@
   <meta property="og:title" content="About Us — Dermenji Family">
   <meta property="og:description" content="From skeptics to missionaries - our journey of faith and service in Moldova.">
   <meta property="og:url" content="https://deoleg.github.io/about.html">
-  <meta property="og:image" content="https://deoleg.github.io/assets/images/about.jpg">
+  <meta property="og:image" content="https://deoleg.github.io/assets/images/croped/about_desktop.jpg">
   
   <title>About Us — Dermenji Family</title>
   
@@ -46,7 +46,20 @@
 
 <main>
   <section class="about-wrap">
-    <img src="assets/images/about.jpg" alt="The Dermenji Family - Oleg, his wife, and their three children: Lev, Arina, and Maria" loading="lazy">
+
+    <picture>
+      <!-- Mobile version -->
+      <source 
+        srcset="assets/images/croped/about_mobile.jpg" 
+        media="(max-width: 768px)">
+      
+      <!-- Desktop version -->
+      <img 
+        src="assets/images/croped/about_desktop.jpg" 
+        alt="The Dermenji Family - Oleg, his wife, and their three children: Lev, Arina, and Maria"
+        loading="lazy">
+    </picture>
+
     <div class="about-text">
       <h1>About Us</h1>
       
@@ -56,6 +69,7 @@
       
       <p><strong>Our Mission.</strong> Today, our hearts are grounded in Jesus. We are dedicated to walking with young people and families as they grow in faith. Our dream is to help plant a home church or fellowship group for every 1,000 people in our country, so that everyone in Moldova knows someone who truly follows Jesus.</p>
     </div>
+
   </section>
 </main>
 
