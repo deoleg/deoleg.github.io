@@ -20,64 +20,76 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* ===== DESKTOP HERO ===== */
+  /* ===== DESKTOP HERO ===== */
+  .page-ministry .hero {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("assets/images/croped/ministry_desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 6%;
+  }
+
+  /* затемнение */
+  .page-ministry .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .page-ministry .hero-content,
+  .page-ministry .ministry-cards {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 🚫 Скрываем mobile-изображение на desktop */
+  .mobile-hero-image {
+    display: none;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+
     .page-ministry .hero {
-      position: relative;
-      min-height: 100vh;
-      background-image: url("assets/images/croped/ministry_desktop.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 6%;
+      background: none;
+      min-height: auto;
+      padding: 0;
+      display: block;
     }
 
-    /* затемнение для читаемости */
     .page-ministry .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
+      display: none;
     }
 
-    .page-ministry .hero-content,
+    /* ✅ Показываем мобильное изображение */
+    .mobile-hero-image {
+      display: block;
+    }
+
+    .mobile-hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .page-ministry .hero-content {
+      padding: 40px 6%;
+      background: #fff;
+    }
+
     .page-ministry .ministry-cards {
-      position: relative;
-      z-index: 2;
+      padding: 40px 6%;
+      background: #fff;
     }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-
-      .page-ministry .hero {
-        background: none;
-        min-height: auto;
-        padding: 0;
-      }
-
-      .page-ministry .hero::before {
-        display: none;
-      }
-
-      .mobile-hero-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .page-ministry .hero-content {
-        padding: 40px 6%;
-        background: #fff;
-      }
-
-      .page-ministry .ministry-cards {
-        padding: 40px 6%;
-        background: #fff;
-      }
-    }
-  </style>
+  }
+</style>
+  
 </head>
 
 <body class="page-ministry">
