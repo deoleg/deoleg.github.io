@@ -15,7 +15,7 @@
   <meta name="description" content="The Dermenji Family serves with Cru in Moldova, planting churches and discipling believers. Our dream: one fellowship group for every 1,000 people.">
   <meta name="keywords" content="Dermenji Family, Cru Moldova, church planting, Moldova missions, Christian ministry">
   
-  <!-- Open Graph / Social Media -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dermenji Family — Reaching Moldova for Christ">
   <meta property="og:description" content="Our dream is to see one church or fellowship group for every 1,000 people in Moldova.">
@@ -24,7 +24,6 @@
   
   <title>Dermenji Family — Reaching Moldova for Christ</title>
   
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,22 +31,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Responsive Hero Background -->
   <style>
-    .hero {
-      background-image: url("assets/images/croped/home_desktop.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .hero-layout {
+      position: relative;
+      overflow: hidden;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        background-image: url("assets/images/croped/home_mobile.jpg");
-      }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: left;
     }
   </style>
 </head>
+
 <body class="page-home">
 
 <header>
@@ -61,7 +66,16 @@
 </header>
 
 <main>
-  <section class="hero">
+
+  <section class="hero-layout">
+
+    <div class="hero-image">
+      <picture>
+        <source srcset="assets/images/croped/home_mobile.jpg" media="(max-width: 768px)">
+        <img src="assets/images/croped/home_desktop.jpg" alt="Dermenji Family in Moldova">
+      </picture>
+    </div>
+
     <div class="hero-content">
       <h1>Reaching Moldova for Christ</h1>
       <p>
@@ -78,7 +92,9 @@
         <a href="partner.html" class="cta-button">Join Our Team</a>
       </div>
     </div>
+
   </section>
+
 </main>
 
 </body>
