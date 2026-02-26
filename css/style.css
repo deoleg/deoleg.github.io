@@ -532,16 +532,22 @@ strong {
     padding: 16px 0;
   }
 
-  /* HOME - переключаем на mobile фон */
+  /* HOME - показываем полное фото */
   .page-home .hero {
-    background-image: url("/assets/images/croped/home_mobile.jpg");
-    background-position: top center;
-    min-height: 100vh;
-    height: 100vh;
+    background: none;
+    min-height: auto;
+    height: auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: block;
+  }
+  
+  .page-home .hero::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 133%; /* aspect ratio для вертикального mobile фото */
+    background: url("/assets/images/croped/home_mobile.jpg") top center / cover no-repeat;
   }
 
   .page-home .hero-content {
@@ -562,24 +568,21 @@ strong {
     gap: 40px;
   }
 
-  /* MINISTRY - переключаем на mobile фон */
+  /* MINISTRY - показываем полное фото */
   .page-ministry .hero {
-    background-image: url("/assets/images/croped/ministry_mobile.jpg");
-    background-position: top center;
-    min-height: 100vh;
+    background: none;
+    min-height: auto;
     height: auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+    display: block;
   }
-
+  
   .page-ministry .hero::before {
     content: '';
     display: block;
     width: 100%;
-    min-height: 50vh;
+    height: 0;
+    padding-bottom: 133%;
     background: url("/assets/images/croped/ministry_mobile.jpg") top center / cover no-repeat;
   }
 
@@ -606,17 +609,22 @@ strong {
     padding: 32px;
   }
 
-  /* PARTNER - переключаем на mobile фон */
+  /* PARTNER - показываем полное фото */
   .page-partner .hero {
-    background-image: url("/assets/images/croped/partner_mobile.jpg");
-    background-position: top center;
-    min-height: 100vh;
-    height: 100vh;
+    background: none;
+    min-height: auto;
+    height: auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
+    display: block;
+  }
+  
+  .page-partner .hero::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 133%;
+    background: url("/assets/images/croped/partner_mobile.jpg") top center / cover no-repeat;
   }
 
   .page-partner .hero-content {
