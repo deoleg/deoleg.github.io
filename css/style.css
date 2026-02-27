@@ -44,6 +44,7 @@ nav a.active {
   color: #1a1f36;
 }
 
+/* Active underline — solid bar (hidden when nav is hovered) */
 nav a.active::after {
   content: '';
   position: absolute;
@@ -53,6 +54,35 @@ nav a.active::after {
   height: 3px;
   background: #1a1f36;
   border-radius: 2px;
+  transition: opacity 0.2s ease;
+}
+
+/* Hide active underline while any nav link is hovered */
+nav.nav-hovered a.active::after {
+  opacity: 0;
+}
+
+/* SVG wave underline */
+.nav-underline-svg {
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 8px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.nav-underline-svg path {
+  stroke-dasharray: 115;
+  stroke-dashoffset: 115;
+  transition: stroke-dashoffset 0s;
+}
+
+/* Animate on hover */
+nav a.nav-link-hovered .nav-underline-svg path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Give button in navigation */
