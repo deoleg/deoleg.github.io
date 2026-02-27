@@ -51,7 +51,7 @@ nav a.active::after {
   bottom: -4px;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: #1a1f36;
   border-radius: 2px;
   transition: opacity 0.2s ease;
