@@ -517,7 +517,7 @@ strong {
 
 .car-indicator {
   position: absolute;
-  top: -38px;
+  top: -19px;
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 3;
