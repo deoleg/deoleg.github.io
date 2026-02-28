@@ -524,7 +524,7 @@ strong {
 }
 
 .car-indicator img {
-  width: 120px; /* или нужный размер */
+  width: 60px; /* или нужный размер */
   filter: none; /* убрать фильтр */
 }
 
