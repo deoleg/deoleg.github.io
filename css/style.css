@@ -524,8 +524,8 @@ strong {
 }
 
 .car-indicator img {
-  width: 40px;
-  filter: grayscale(100%) brightness(0);
+  width: 120px; /* или нужный размер */
+  filter: none; /* убрать фильтр */
 }
 
 .donate-button {
