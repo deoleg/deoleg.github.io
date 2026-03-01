@@ -477,7 +477,7 @@ strong {
 .slider-track-fill {
   position: absolute;
   height: 4px;
-  background: #1a1f36;
+  background: #f9b625;
   border-radius: 2px;
   top: 50%;
   transform: translateY(-50%);
