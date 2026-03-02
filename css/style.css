@@ -722,6 +722,28 @@ strong {
   }
 }
 
+.btn-gold {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #f9b625;
+  border: 2px solid #f9b625;
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: #e0a31f;
+  border-color: #e0a31f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 182, 37, 0.45);
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.75rem;
