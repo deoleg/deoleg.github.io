@@ -723,6 +723,38 @@ strong {
   }
 }
 
+/* Donation amount pill badges */
+.amount-pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.amount-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: #f9b625;
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid #f9b625;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.amount-pill:hover {
+  background: #e0a31f;
+  border-color: #e0a31f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 182, 37, 0.45);
+}
+
 .about-cta {
   margin-top: 36px;
 }
