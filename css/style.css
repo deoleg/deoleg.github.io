@@ -722,6 +722,10 @@ strong {
   }
 }
 
+.about-cta {
+  margin-top: 36px;
+}
+
 .btn-gold {
   display: inline-block;
   padding: 14px 32px;
