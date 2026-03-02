@@ -104,4 +104,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     nav.classList.remove('nav-hovered');
   });
+  // Static underline for .text-underline elements
+  const staticTargets = document.querySelectorAll('.text-underline');
+
+  staticTargets.forEach(el => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('nav-underline-svg');
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('viewBox', '0 0 100 12');
+    svg.setAttribute('aria-hidden', 'true');
+
+    strokes.forEach((stroke, i) => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', stroke.d);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', '#f9b625');
+      path.setAttribute('stroke-width', i === 1 ? '2' : '2.5');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('stroke-opacity', i === 1 ? '0.7' : '0.9');
+      svg.appendChild(path);
+    });
+
+    el.style.position = 'relative';
+    el.appendChild(svg);
+
+    requestAnimationFrame(() => {
+      svg.querySelectorAll('path').forEach(path => {
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = len;
+        path.style.strokeDashoffset = len;
+        path.style.transition = 'none';
+      });
+
+      // Запускаем анимацию с задержкой 700ms
+      svg.querySelectorAll('path').forEach((path, i) => {
+        const stroke = strokes[i];
+        const len = path.getTotalLength();
+        const baseDelay = 700;
+
+        setTimeout(() => {
+          path.style.transition = `stroke-dashoffset ${stroke.duration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+          path.style.strokeDashoffset = '0';
+        }, baseDelay + stroke.delay + 10);
+      });
+    });
+  });
 });
