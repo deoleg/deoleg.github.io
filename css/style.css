@@ -143,7 +143,7 @@ strong {
   width: 100%;
   height: 100vh;
   min-height: 500px;
-  background: url("/assets/images/croped/home_desktop_1.jpg") center 25% / cover no-repeat;
+  background: url("/assets/images/croped/home_desktop.jpg") center 25% / cover no-repeat;
   display: flex;
   align-items: center;
 }
