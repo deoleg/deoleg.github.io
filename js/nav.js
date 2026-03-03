@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
         path.style.transition = 'none';
       });
 
-      // Запускаем анимацию с задержкой 700ms
+      // Запускаем анимацию с задержкой 900ms
       svg.querySelectorAll('path').forEach((path, i) => {
         const stroke = strokes[i];
         const len = path.getTotalLength();
-        const baseDelay = 700;
+        const baseDelay = 900;
 
         setTimeout(() => {
           path.style.transition = `stroke-dashoffset ${stroke.duration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
