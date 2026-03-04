@@ -168,7 +168,44 @@
   slider.addEventListener("input", updateSlider);
   window.addEventListener("resize", updateSlider);
 
-  updateSlider();
+  // === DRIVE-IN ANIMATION ===
+  // Visually move car + fill + slider thumb together
+  function setSliderVisual(value) {
+    const percent = value / goal;
+    const sliderWidth = slider.offsetWidth;
+    const position = percent * sliderWidth;
+    carIndicator.style.left = position + "px";
+    sliderFill.style.width = position + "px";
+    slider.value = value; // moves the native thumb
+  }
+
+  // Start at zero
+  setSliderVisual(0);
+  selectedAmount.textContent = "0";
+
+  setTimeout(() => {
+    const animDuration = 1500;
+    const startTime = performance.now();
+
+    function easeOut(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateFrame(now) {
+      const elapsed = now - startTime;
+      const t = Math.min(elapsed / animDuration, 1);
+      setSliderVisual(easeOut(t) * raised);
+
+      if (t < 1) {
+        requestAnimationFrame(animateFrame);
+      } else {
+        slider.value = raised;
+        updateSlider();
+      }
+    }
+
+    requestAnimationFrame(animateFrame);
+  }, 900);
 
   donateBtn.addEventListener("click", function() {
     gtag('event', 'vehicle_give_click', {
