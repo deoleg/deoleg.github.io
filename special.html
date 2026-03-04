@@ -169,23 +169,24 @@
   window.addEventListener("resize", updateSlider);
 
   // === DRIVE-IN ANIMATION ===
-  // Visually move car + fill + slider thumb together
-  function setSliderVisual(value) {
+  function setSliderVisual(value, bobY) {
     const percent = value / goal;
     const sliderWidth = slider.offsetWidth;
     const position = percent * sliderWidth;
     carIndicator.style.left = position + "px";
+    carIndicator.style.transform = `translateX(-50%) translateY(${bobY}px)`;
     sliderFill.style.width = position + "px";
-    slider.value = value; // moves the native thumb
+    slider.value = value;
   }
 
-  // Start at zero
-  setSliderVisual(0);
+  setSliderVisual(0, 0);
   selectedAmount.textContent = "0";
 
   setTimeout(() => {
     const animDuration = 1500;
     const startTime = performance.now();
+    const bobAmplitude = 2; // px вверх-вниз
+    const bobCycles = 2;      // количество качаний
 
     function easeOut(t) {
       return 1 - Math.pow(1 - t, 3);
@@ -194,18 +195,24 @@
     function animateFrame(now) {
       const elapsed = now - startTime;
       const t = Math.min(elapsed / animDuration, 1);
-      setSliderVisual(easeOut(t) * raised);
+
+      const position = easeOut(t) * raised;
+      // 2 полных качания = 2 * 2π, затухают к концу через (1-t)
+      const bobY = Math.sin(t * bobCycles * 2 * Math.PI) * bobAmplitude * (1 - t);
+
+      setSliderVisual(position, bobY);
 
       if (t < 1) {
         requestAnimationFrame(animateFrame);
       } else {
+        carIndicator.style.transform = "translateX(-50%) translateY(0px)";
         slider.value = raised;
         updateSlider();
       }
     }
 
     requestAnimationFrame(animateFrame);
-  }, 900);
+  }, 500);
 
   donateBtn.addEventListener("click", function() {
     gtag('event', 'vehicle_give_click', {
