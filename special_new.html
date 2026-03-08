@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WR8LDXEV3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5WR8LDXEV3');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Help the Dermenji Family replace their ministry vehicle and continue reaching Moldova for Christ.">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Special Need — Dermenji Family">
+  <meta property="og:description" content="Support our vehicle fund and help us continue serving across Moldova.">
+  <meta property="og:url" content="https://deoleg.github.io/special.html">
+  <meta property="og:image" content="https://deoleg.github.io/assets/images/croped/special_desktop.jpg">
+  
+  <title>God Provided a Ministry Vehicle</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-special">
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ministry.html">Ministry</a>
+    <a href="partner.html">Partner</a>
+    <a href="https://give.cru.org/2880130" target="_blank" rel="noopener noreferrer" class="nav-give">Give</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="special-layout">
+
+    <div class="special-image"></div>
+
+    <div class="special-right">
+      <div class="special-container">
+
+        <h1>God Answered This Need</h1>
+        <h2>A Reliable Ministry Vehicle</h2>
+
+        <p>
+        Some time ago, our family faced a practical need: the car we used for ministry
+        was becoming unreliable and unsafe. Because our ministry requires frequent
+        travel across Moldova, we began praying for a way to replace it.
+        </p>
+
+        <p>
+        We shared this need with our ministry partners and trusted God to provide.
+        What happened next reminded us again how faithfully the Lord cares for His
+        servants through His people.
+        </p>
+
+        <p>
+        Through the generosity of our partners in ministry, the full amount of
+        <strong>$15,000</strong> was given. We are deeply grateful for the way God answered
+        this prayer and for every person who participated in this need.
+        </p>
+
+        <p>
+        This vehicle will help our family continue traveling across Moldova,
+        serving churches, transporting worship equipment, and sharing the Gospel.
+        </p>
+
+        <p>
+        <strong>To God be the glory.</strong>
+        </p>
+
+        <p>
+        <em>
+        Soon we will add a photo of our family with the car that God provided
+        through our ministry partners.
+        </em>
+        </p>
+
+        <p><strong>Goal: $15,000 — Fully Funded</strong></p>
+
+        <p>
+          <span class="text-underline">Raised:</span> <strong>$<span id="raisedAmount"></span></strong><br>
+          Remaining: <strong>$<span id="remainingAmount"></span></strong>
+        </p>
+
+        <div class="slider-container">
+
+          <div class="slider-track-fill" id="sliderFill"></div>
+
+          <input type="range"
+                 min="0"
+                 max="15000"
+                 step="100"
+                 id="donationSlider">
+
+          <div class="car-indicator" id="carIndicator">
+            <img src="assets/images/car.svg" alt="car icon">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+
+  const goal = 15000;
+
+  /* ======================================================
+     🔴 МЕНЯЙ ТОЛЬКО ЭТО ЧИСЛО ПРИ ОБНОВЛЕНИИ СОБРАННОЙ СУММЫ
+     ====================================================== */
+  const raised = 15000;
+
+  const slider = document.getElementById("donationSlider");
+  const carIndicator = document.getElementById("carIndicator");
+  const sliderFill = document.getElementById("sliderFill");
+  const remainingAmount = document.getElementById("remainingAmount");
+  const raisedAmount = document.getElementById("raisedAmount");
+
+  // Автоматически заполняем текстовые суммы
+  raisedAmount.textContent = raised.toLocaleString();
+  remainingAmount.textContent = (goal - raised).toLocaleString();
+
+  // Устанавливаем стартовую позицию слайдера
+  slider.value = raised;
+
+  function updateSlider() {
+    let currentValue = parseInt(slider.value);
+    if (currentValue < raised) {
+      currentValue = raised;
+      slider.value = raised;
+    }
+    const percent = currentValue / goal;
+    const sliderWidth = slider.offsetWidth;
+    const position = percent * sliderWidth;
+    carIndicator.style.left = position + "px";
+    sliderFill.style.width = position + "px";
+  }
+
+  slider.addEventListener("input", updateSlider);
+  window.addEventListener("resize", updateSlider);
+
+  // === DRIVE-IN ANIMATION ===
+  function setSliderVisual(value, bobY) {
+    const percent = value / goal;
+    const sliderWidth = slider.offsetWidth;
+    const position = percent * sliderWidth;
+    carIndicator.style.left = position + "px";
+    carIndicator.style.transform = `translateX(-50%) translateY(${bobY}px)`;
+    sliderFill.style.width = position + "px";
+    slider.value = value;
+  }
+
+  setSliderVisual(0, 0);
+
+  setTimeout(() => {
+    const animDuration = 3500;
+    const startTime = performance.now();
+    const bobAmplitude = 2; // px вверх-вниз
+    const bobCycles = 2;      // количество качаний
+
+    function easeOut(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateFrame(now) {
+      const elapsed = now - startTime;
+      const t = Math.min(elapsed / animDuration, 1);
+
+      const position = easeOut(t) * raised;
+      // 2 полных качания = 2 * 2π, затухают к концу через (1-t)
+      const bobY = Math.sin(t * bobCycles * 2 * Math.PI) * bobAmplitude * (1 - t);
+
+      setSliderVisual(position, bobY);
+
+      if (t < 1) {
+        requestAnimationFrame(animateFrame);
+      } else {
+        carIndicator.style.transform = "translateX(-50%) translateY(0px)";
+        slider.value = raised;
+        updateSlider();
+      }
+    }
+
+    requestAnimationFrame(animateFrame);
+  }, 500);
+
+// === FIREWORK CELEBRATION ===
+if (raised >= goal) {
+
+  setTimeout(() => {
+
+    const duration = 4000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+
+    })();
+
+  }, 1800);
+
+}
+</script>
+  
+<script src="js/nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

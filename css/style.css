@@ -438,24 +438,27 @@ strong {
 ========================= */
 .special-layout {
   display: flex;
-  min-height: calc(100vh - 80px);
+  flex-direction: column;
 }
 
 .special-image {
-  width: 50%;
+  width: 100%;
+  height: 65vh;
+  min-height: 320px;
   background: url("/assets/images/croped/special_desktop.jpg") top center / cover no-repeat;
 }
 
 .special-right {
-  width: 50%;
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
   padding: 80px 8%;
   background: #ffffff;
 }
 
 .special-container {
-  max-width: 600px;
+  max-width: 720px;
+  width: 100%;
 }
 
 .slider-container {
@@ -681,20 +684,13 @@ strong {
     width: 100%;
   }
 
-  /* SPECIAL - переключаем на mobile фон */
-  .special-layout {
-    flex-direction: column;
-  }
-
+  /* SPECIAL - mobile фон и паддинги */
   .special-image {
-    width: 100%;
     height: 50vh;
     background-image: url("/assets/images/croped/special_mobile.jpg");
-    background-position: top center;
   }
 
   .special-right {
-    width: 100%;
     padding: 60px 6%;
   }
 }
