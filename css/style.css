@@ -445,7 +445,7 @@ strong {
   width: 100%;
   height: 65vh;
   min-height: 320px;
-  background: url("/assets/images/new_car.jpg") top center / cover no-repeat;
+  background: url("/assets/images/new_car_desktop.jpg") top center / cover no-repeat;
 }
 
 .special-right {
@@ -687,7 +687,7 @@ strong {
   /* SPECIAL - mobile фон и паддинги */
   .special-image {
     height: 50vh;
-    background-image: url("/assets/images/new_car.jpg");
+    background-image: url("/assets/images/new_car_mobile.jpg");
   }
 
   .special-right {
