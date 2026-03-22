@@ -445,7 +445,7 @@ strong {
   width: 100%;
   height: 65vh;
   min-height: 320px;
-  background: url("/assets/images/croped/special_desktop.jpg") top center / cover no-repeat;
+  background: url("/assets/images/new_car.jpg") top center / cover no-repeat;
 }
 
 .special-right {
@@ -528,8 +528,8 @@ strong {
 }
 
 .car-indicator img {
-  width: 60px; /* или нужный размер */
-  filter: none; /* убрать фильтр */
+  width: 60px;
+  filter: none;
 }
 
 .donate-button {
@@ -584,7 +584,7 @@ strong {
     display: block;
     width: 100%;
     height: 0;
-    padding-bottom: 133%; /* aspect ratio для вертикального mobile фото */
+    padding-bottom: 133%;
     background: url("/assets/images/croped/home_mobile.jpg") top center / cover no-repeat;
   }
 
@@ -687,7 +687,7 @@ strong {
   /* SPECIAL - mobile фон и паддинги */
   .special-image {
     height: 50vh;
-    background-image: url("/assets/images/croped/special_mobile.jpg");
+    background-image: url("/assets/images/new_car.jpg");
   }
 
   .special-right {
