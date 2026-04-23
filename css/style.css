@@ -322,6 +322,59 @@ strong {
 }
 
 /* =========================
+   MINISTRY STORY
+========================= */
+.ministry-story {
+  background: #f8f9fa;
+  padding: 100px 8%;
+}
+
+.ministry-story-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ministry-story img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ministry-story h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.ministry-story blockquote {
+  margin: 0;
+  padding-left: 24px;
+  border-left: 3px solid #1a1f36;
+}
+
+.ministry-story blockquote p {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #2a2a2a;
+}
+
+.ministry-story blockquote cite {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: #1a1f36;
+}
+
+/* =========================
    PARTNER
 ========================= */
 .page-partner .hero {
@@ -645,6 +698,16 @@ strong {
 
   .page-ministry .card {
     padding: 32px;
+  }
+
+  /* MINISTRY STORY */
+  .ministry-story {
+    padding: 60px 6%;
+  }
+
+  .ministry-story-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   /* PARTNER - показываем полное фото */
