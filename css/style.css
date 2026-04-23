@@ -139,24 +139,21 @@ strong {
    HOME
 ========================= */
 .page-home .hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 500px;
-  background: url("/assets/images/croped/home_desktop.jpg") center 25% / cover no-repeat;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
 }
 
 .page-home .hero-content {
-  margin-left: 6%;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 56px;
-  max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 8%;
+  background: #fff;
+}
+
+.page-home .hero-photo {
+  background: url("/assets/images/croped/home_desktop.jpg") center center / cover no-repeat;
 }
 
 .page-home .hero-content h1 {
@@ -623,33 +620,21 @@ strong {
     padding: 16px 0;
   }
 
-  /* HOME - показываем полное фото */
+  /* HOME - mobile: stack photo on top, text below */
   .page-home .hero {
-    background: none;
+    grid-template-columns: 1fr;
     min-height: auto;
-    height: auto;
-    padding: 0;
-    display: block;
   }
-  
-  .page-home .hero::before {
-    content: '';
-    display: block;
-    width: 100%;
+
+  .page-home .hero-photo {
     height: 0;
     padding-bottom: 133%;
-    background: url("/assets/images/croped/home_mobile.jpg") top center / cover no-repeat;
+    background-image: url("/assets/images/croped/home_mobile.jpg");
+    background-position: top center;
   }
 
   .page-home .hero-content {
-    position: static;
-    margin: 0;
     padding: 40px 6%;
-    max-width: 100%;
-    border-radius: 0;
-    background: #fff;
-    backdrop-filter: none;
-    box-shadow: none;
   }
 
   /* ABOUT - оставляем mobile версию (уже задано выше) */
@@ -771,7 +756,10 @@ strong {
     font-size: 1.25rem;
   }
 
-  .page-home .hero-content,
+  .page-home .hero-content {
+    padding: 32px 6%;
+  }
+
   .page-ministry .hero-content,
   .page-partner .hero-content {
     padding: 32px;
@@ -851,7 +839,10 @@ strong {
     font-size: 0.95rem;
   }
 
-  .page-home .hero-content,
+  .page-home .hero-content {
+    padding: 24px 6%;
+  }
+
   .page-ministry .hero-content,
   .page-partner .hero-content {
     padding: 24px;
