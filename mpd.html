@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>100 встреч — прогресс сбора поддержки</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 64px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    /* Counter */
+    .counter-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .counter-num {
+      font-size: 48px;
+      font-weight: 600;
+      color: #1a1f36;
+      line-height: 1;
+    }
+
+    .counter-total {
+      font-size: 18px;
+      color: #888;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      width: 100%;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 3px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #1D9E75;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .progress-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .milestone {
+      font-size: 13px;
+      color: #1D9E75;
+      font-weight: 500;
+      min-height: 20px;
+      margin-bottom: 28px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .cell {
+      aspect-ratio: 1;
+      border-radius: 7px;
+      border: 1.5px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #bbb;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cell:hover {
+      border-color: #1D9E75;
+      transform: scale(1.08);
+    }
+
+    .cell.done {
+      background: #1D9E75;
+      border-color: #159A6E;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .cell.done:hover {
+      background: #159A6E;
+    }
+
+    /* Actions */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reset-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #aaa;
+      background: none;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 7px 16px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .reset-btn:hover {
+      color: #666;
+      border-color: #bbb;
+    }
+
+    .saved-note {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .saved-note span {
+      color: #1D9E75;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <h1>100 встреч</h1>
+  <p class="subtitle">Прогресс сбора поддержки — кликни на квадрат после каждой встречи</p>
+
+  <div class="counter-row">
+    <span class="counter-num" id="count">0</span>
+    <span class="counter-total">/ 100 встреч</span>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-fill" id="bar"></div>
+  </div>
+  <div class="progress-label" id="pct">0% выполнено</div>
+  <div class="milestone" id="milestone"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="actions">
+    <button class="reset-btn" id="resetBtn">Сбросить всё</button>
+    <span class="saved-note">Прогресс сохраняется <span>автоматически</span></span>
+  </div>
+</div>
+
+<script>
+const MILESTONES = {
+  10: "10 встреч — хорошее начало! 🌱",
+  25: "25 встреч — четверть пути!",
+  50: "50 встреч — половина! 🎉",
+  75: "75 встреч — почти там!",
+  100: "100 встреч — цель достигнута! 🙌"
+};
+
+const KEY = "mpd_calls_v1";
+let done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {}
+}
+
+function render() {
+  const n = done.size;
+  document.getElementById("count").textContent = n;
+  document.getElementById("bar").style.width = n + "%";
+  document.getElementById("pct").textContent = n + "% выполнено";
+  document.getElementById("milestone").textContent = MILESTONES[n] || "";
+}
+
+const grid = document.getElementById("grid");
+
+for (let i = 1; i <= 100; i++) {
+  const cell = document.createElement("div");
+  cell.className = "cell" + (done.has(i) ? " done" : "");
+  cell.dataset.n = i;
+  cell.textContent = done.has(i) ? "✓" : i;
+  cell.addEventListener("click", () => {
+    if (done.has(i)) {
+      done.delete(i);
+      cell.classList.remove("done");
+      cell.textContent = i;
+    } else {
+      done.add(i);
+      cell.classList.add("done");
+      cell.textContent = "✓";
+    }
+    save();
+    render();
+  });
+  grid.appendChild(cell);
+}
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (!confirm("Сбросить весь прогресс?")) return;
+  done.clear();
+  save();
+  grid.querySelectorAll(".cell").forEach(c => {
+    c.classList.remove("done");
+    c.textContent = c.dataset.n;
+  });
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>
