@@ -40,8 +40,35 @@
     .subtitle {
       font-size: 14px;
       color: #666;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
+
+    /* Status bar */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 24px;
+      min-height: 18px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ddd;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+
+    .status-dot.ok { background: #1D9E75; }
+    .status-dot.saving { background: #f0a500; }
+    .status-dot.error { background: #e05252; }
+
+    .status-text { transition: color 0.3s; }
+    .status-text.error { color: #e05252; }
 
     /* Counter */
     .counter-row {
@@ -103,6 +130,11 @@
       margin-bottom: 24px;
     }
 
+    .grid.loading {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
     .cell {
       aspect-ratio: 1;
       border-radius: 7px;
@@ -158,16 +190,6 @@
       color: #666;
       border-color: #bbb;
     }
-
-    .saved-note {
-      font-size: 12px;
-      color: #bbb;
-    }
-
-    .saved-note span {
-      color: #1D9E75;
-      font-weight: 500;
-    }
   </style>
 </head>
 <body>
@@ -175,6 +197,11 @@
 <div class="page">
   <h1>100 встреч</h1>
   <p class="subtitle">Прогресс сбора поддержки — кликни на квадрат после каждой встречи</p>
+
+  <div class="status-bar">
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-text" id="statusText">Загрузка…</span>
+  </div>
 
   <div class="counter-row">
     <span class="counter-num" id="count">0</span>
@@ -187,73 +214,201 @@
   <div class="progress-label" id="pct">0% выполнено</div>
   <div class="milestone" id="milestone"></div>
 
-  <div class="grid" id="grid"></div>
+  <div class="grid loading" id="grid"></div>
 
   <div class="actions">
     <button class="reset-btn" id="resetBtn">Сбросить всё</button>
-    <span class="saved-note">Прогресс сохраняется <span>автоматически</span></span>
+  </div>
+</div>
+
+<!-- Token setup screen (shown only when token is not saved) -->
+<div id="tokenScreen" style="display:none; position:fixed; inset:0; background:#f9f9f9; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px;">
+  <div style="width:100%; max-width:420px;">
+    <p style="font-size:13px; font-weight:600; color:#1a1f36; margin-bottom:6px;">Настройка сохранения</p>
+    <p style="font-size:13px; color:#666; margin-bottom:20px; line-height:1.6;">
+      Введи GitHub Personal Access Token — он сохранится только в этом браузере и никуда не отправится, кроме GitHub API.
+    </p>
+    <input id="tokenInput" type="password" placeholder="github_pat_…"
+      style="width:100%; font-family:monospace; font-size:13px; padding:10px 12px; border:1.5px solid #ddd; border-radius:8px; outline:none; margin-bottom:12px; background:#fff; color:#1a1a1a;">
+    <button id="tokenSaveBtn"
+      style="width:100%; font-family:'Inter',sans-serif; font-size:14px; font-weight:500; background:#1a1f36; color:#fff; border:none; border-radius:8px; padding:11px; cursor:pointer;">
+      Сохранить и продолжить
+    </button>
+    <p style="font-size:12px; color:#bbb; margin-top:12px; line-height:1.6;">
+      Нужен Fine-grained token с правом <strong>Contents: Read&nbsp;&amp;&nbsp;write</strong> для репозитория deoleg.github.io
+    </p>
   </div>
 </div>
 
 <script>
+// ── Конфигурация ──────────────────────────────────────────────────────────────
+const REPO  = "deoleg/deoleg.github.io";
+const FILE  = "data/mpd.json";
+// Токен хранится только в localStorage браузера, не в коде
+const TOKEN_KEY = "mpd_gh_token";
+let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
+// ─────────────────────────────────────────────────────────────────────────────
+
 const MILESTONES = {
-  10: "10 встреч — хорошее начало! 🌱",
-  25: "25 встреч — четверть пути!",
-  50: "50 встреч — половина! 🎉",
-  75: "75 встреч — почти там!",
+  10:  "10 встреч — хорошее начало! 🌱",
+  25:  "25 встреч — четверть пути!",
+  50:  "50 встреч — половина! 🎉",
+  75:  "75 встреч — почти там!",
   100: "100 встреч — цель достигнута! 🙌"
 };
 
-const KEY = "mpd_calls_v1";
-let done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+const HEADERS = {
+  Authorization: `token ${TOKEN}`,
+  Accept: "application/vnd.github.v3+json",
+  "Content-Type": "application/json"
+};
 
-function save() {
-  try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {}
+let done = new Set();
+let fileSha = null;
+let saveTimer = null;
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+
+function setStatus(state, text) {
+  const dot  = document.getElementById("statusDot");
+  const span = document.getElementById("statusText");
+  dot.className  = "status-dot " + (state || "");
+  span.className = "status-text" + (state === "error" ? " error" : "");
+  span.textContent = text;
 }
 
 function render() {
   const n = done.size;
   document.getElementById("count").textContent = n;
-  document.getElementById("bar").style.width = n + "%";
-  document.getElementById("pct").textContent = n + "% выполнено";
+  document.getElementById("bar").style.width   = n + "%";
+  document.getElementById("pct").textContent   = n + "% выполнено";
   document.getElementById("milestone").textContent = MILESTONES[n] || "";
 }
 
-const grid = document.getElementById("grid");
-
-for (let i = 1; i <= 100; i++) {
-  const cell = document.createElement("div");
-  cell.className = "cell" + (done.has(i) ? " done" : "");
-  cell.dataset.n = i;
-  cell.textContent = done.has(i) ? "✓" : i;
-  cell.addEventListener("click", () => {
-    if (done.has(i)) {
-      done.delete(i);
-      cell.classList.remove("done");
-      cell.textContent = i;
-    } else {
-      done.add(i);
-      cell.classList.add("done");
-      cell.textContent = "✓";
-    }
-    save();
-    render();
+function syncGrid() {
+  document.querySelectorAll(".cell").forEach(c => {
+    const i = Number(c.dataset.n);
+    const isDone = done.has(i);
+    c.classList.toggle("done", isDone);
+    c.textContent = isDone ? "✓" : i;
   });
-  grid.appendChild(cell);
 }
 
-document.getElementById("resetBtn").addEventListener("click", () => {
+// ── GitHub API ────────────────────────────────────────────────────────────────
+
+function apiHeaders() {
+  return {
+    Authorization: `token ${TOKEN}`,
+    Accept: "application/vnd.github.v3+json",
+    "Content-Type": "application/json"
+  };
+}
+
+async function loadFromGitHub() {
+  const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+  const r = await fetch(API, { headers: apiHeaders() });
+  if (r.status === 404) return [];
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.sha;
+  return JSON.parse(atob(json.content.replace(/\n/g, ""))).done || [];
+}
+
+async function saveToGitHub() {
+  const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+  const content = btoa(JSON.stringify({ done: [...done].sort((a, b) => a - b) }));
+  const body = { message: "Update MPD progress", content };
+  if (fileSha) body.sha = fileSha;
+
+  const r = await fetch(API, { method: "PUT", headers: apiHeaders(), body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.content.sha;
+}
+
+// ── Debounced save ────────────────────────────────────────────────────────────
+
+function scheduleSave() {
+  setStatus("saving", "Сохраняется…");
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      await saveToGitHub();
+      setStatus("ok", "Сохранено");
+    } catch (e) {
+      console.error(e);
+      setStatus("error", "Ошибка сохранения — проверь токен");
+    }
+  }, 1500);
+}
+
+// ── Token screen ──────────────────────────────────────────────────────────────
+
+function showTokenScreen() {
+  const screen = document.getElementById("tokenScreen");
+  screen.style.display = "flex";
+  document.getElementById("tokenSaveBtn").addEventListener("click", () => {
+    const val = document.getElementById("tokenInput").value.trim();
+    if (!val) return;
+    TOKEN = val;
+    localStorage.setItem(TOKEN_KEY, TOKEN);
+    screen.style.display = "none";
+    startApp();
+  });
+  document.getElementById("tokenInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") document.getElementById("tokenSaveBtn").click();
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+async function startApp() {
+  const grid = document.getElementById("grid");
+
+  for (let i = 1; i <= 100; i++) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.dataset.n = i;
+    cell.textContent = i;
+    cell.addEventListener("click", () => {
+      if (done.has(i)) { done.delete(i); } else { done.add(i); }
+      const isDone = done.has(i);
+      cell.classList.toggle("done", isDone);
+      cell.textContent = isDone ? "✓" : i;
+      render();
+      scheduleSave();
+    });
+    grid.appendChild(cell);
+  }
+
+  try {
+    const list = await loadFromGitHub();
+    done = new Set(list);
+    syncGrid();
+    render();
+    grid.classList.remove("loading");
+    setStatus("ok", "Сохранено");
+  } catch (e) {
+    console.error(e);
+    grid.classList.remove("loading");
+    setStatus("error", "Ошибка — токен неверный или истёк");
+  }
+}
+
+document.getElementById("resetBtn").addEventListener("click", async () => {
   if (!confirm("Сбросить весь прогресс?")) return;
   done.clear();
-  save();
-  grid.querySelectorAll(".cell").forEach(c => {
-    c.classList.remove("done");
-    c.textContent = c.dataset.n;
-  });
+  syncGrid();
   render();
+  scheduleSave();
 });
 
-render();
+if (TOKEN) {
+  startApp();
+} else {
+  showTokenScreen();
+}
 </script>
 
 </body>
