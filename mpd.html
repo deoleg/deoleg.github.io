@@ -346,18 +346,18 @@ function scheduleSave() {
 // ── Token screen ──────────────────────────────────────────────────────────────
 
 function showTokenScreen() {
-  const screen = document.getElementById("tokenScreen");
-  screen.style.display = "flex";
-  document.getElementById("tokenSaveBtn").addEventListener("click", () => {
+  document.getElementById("tokenScreen").style.display = "flex";
+
+  function save() {
     const val = document.getElementById("tokenInput").value.trim();
     if (!val) return;
-    TOKEN = val;
-    localStorage.setItem(TOKEN_KEY, TOKEN);
-    screen.style.display = "none";
-    startApp();
-  });
+    localStorage.setItem(TOKEN_KEY, val);
+    location.reload();
+  }
+
+  document.getElementById("tokenSaveBtn").addEventListener("click", save);
   document.getElementById("tokenInput").addEventListener("keydown", e => {
-    if (e.key === "Enter") document.getElementById("tokenSaveBtn").click();
+    if (e.key === "Enter") save();
   });
 }
 
