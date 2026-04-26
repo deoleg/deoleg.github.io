@@ -218,6 +218,7 @@
 
   <div class="actions">
     <button class="reset-btn" id="resetBtn">Сбросить всё</button>
+    <button class="reset-btn" id="changeTokenBtn">Сменить токен</button>
   </div>
 </div>
 
@@ -402,6 +403,11 @@ document.getElementById("resetBtn").addEventListener("click", async () => {
   syncGrid();
   render();
   scheduleSave();
+});
+
+document.getElementById("changeTokenBtn").addEventListener("click", () => {
+  localStorage.removeItem(TOKEN_KEY);
+  location.reload();
 });
 
 if (TOKEN) {
