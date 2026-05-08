@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Жизненный календарь</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'GreatVibes';
+      src: url('assets/fonts/GreatVibes-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cell: 7px;
+      --header-h: 34px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      gap: 20px;
+    }
+
+    /* ── Picker ── */
+    .picker-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: #444;
+      flex-shrink: 0;
+    }
+
+    .picker-row label { font-weight: 500; }
+
+    .picker-row input[type="date"] {
+      font-family: inherit;
+      font-size: 15px;
+      padding: 6px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      color: #1a1a1a;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .picker-row input[type="date"]:focus { border-color: #f9b625; }
+
+    /* ── Layout ── */
+    .calendar-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s;
+      overflow: visible;
+    }
+
+    .calendar-layout.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ── Verse ── */
+    .verse-side {
+      width: 155px;
+      flex-shrink: 0;
+      /* margin-top set in JS to align with 70-year line */
+    }
+
+    .verse {
+      font-family: 'GreatVibes', cursive;
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      border-left: 2px solid #007890;
+      padding-left: 10px;
+    }
+
+    .verse p { margin-bottom: 8px; }
+
+    .verse cite {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #aaa;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ── Grid outer ── */
+    .grid-outer { flex-shrink: 0; }
+
+    /* Header row above the grid — space for "Новый год" label */
+    .grid-header {
+      position: relative;
+      height: var(--header-h);
+    }
+
+    .newyear-label {
+      display: none;
+      position: absolute;
+      bottom: 4px;
+      font-family: 'GreatVibes', cursive;
+      font-size: 16px;
+      color: #00C0D8;
+      white-space: nowrap;
+      transform: translateX(-50%);
+    }
+
+    /* ── Grid area ── */
+    .grid-area {
+      position: relative;
+      overflow: visible;
+    }
+
+    .life-grid {
+      display: grid;
+      grid-template-columns: repeat(52, var(--cell));
+      grid-template-rows: repeat(80, var(--cell));
+      gap: 1px;
+    }
+
+    .cell {
+      width: var(--cell);
+      height: var(--cell);
+      background: #e0e0e0;
+      border-radius: 1px;
+    }
+
+    .cell.lived { background: #f9b625; }
+
+    /* ── Divider lines ── */
+    .divider-year {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #00C0D8;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .divider-70 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #007890;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ── Year labels ── */
+    .year-label {
+      position: absolute;
+      font-family: 'GreatVibes', cursive;
+      font-size: 18px;
+      color: #007890;
+      white-space: nowrap;
+      transform: translateY(-50%);
+      padding-left: 10px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="picker-row">
+    <label for="birthday">Дата рождения:</label>
+    <input type="date" id="birthday">
+  </div>
+
+  <div class="calendar-layout" id="calendar-layout">
+    <div class="verse-side" id="verse-side">
+      <blockquote class="verse">
+        <p>«Дней лет наших — семьдесят лет, а при бо́льшей крепости — восемьдесят лет;»</p>
+        <cite>Пс 89:10</cite>
+      </blockquote>
+    </div>
+    <div class="grid-outer" id="grid-outer">
+      <div class="grid-header">
+        <div class="newyear-label" id="newyear-label">Новый год</div>
+      </div>
+      <div class="grid-area" id="grid-area">
+        <div class="life-grid" id="life-grid"></div>
+        <div class="divider-year" id="divider-year"></div>
+        <div class="divider-70" id="divider-70"></div>
+        <div class="year-label" id="label-70">70 лет</div>
+        <div class="year-label" id="label-80">80 лет</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ROWS     = 80;
+    const COLS     = 52;
+    const GAP      = 1;
+    const HEADER_H = 34; // matches --header-h in CSS
+
+    const birthdayInput  = document.getElementById('birthday');
+    const calendarLayout = document.getElementById('calendar-layout');
+    const gridEl         = document.getElementById('life-grid');
+    const dividerYearEl  = document.getElementById('divider-year');
+    const divider70El    = document.getElementById('divider-70');
+    const newyearLabelEl = document.getElementById('newyear-label');
+    const verseSideEl    = document.getElementById('verse-side');
+    const label70El      = document.getElementById('label-70');
+    const label80El      = document.getElementById('label-80');
+
+    birthdayInput.max = new Date().toISOString().split('T')[0];
+
+    function cellSize() {
+      // Fit 80 rows + header into available vertical space; clamp to [5, 10]
+      const available = window.innerHeight - 120 - HEADER_H;
+      const size = Math.floor((available + GAP) / ROWS) - GAP;
+      return Math.max(5, Math.min(10, size));
+    }
+
+    function buildCalendar(birthday) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const CELL = cellSize();
+      const STEP = CELL + GAP;
+      document.documentElement.style.setProperty('--cell', CELL + 'px');
+
+      // Weeks from birthday to today (inclusive of birthday week)
+      const msPerWeek  = 7 * 24 * 60 * 60 * 1000;
+      const weeksLived = Math.floor((today - birthday) / msPerWeek) + 1;
+
+      // New Year vertical divider position
+      const nextJan1   = new Date(birthday.getFullYear() + 1, 0, 1);
+      const daysToJan1 = Math.round((nextJan1 - birthday) / (24 * 60 * 60 * 1000));
+      const dividerCol = Math.floor(daysToJan1 / 7);
+
+      // Grid width in pixels
+      const gridWidth = COLS * STEP - GAP;
+
+      // Build cells
+      gridEl.innerHTML = '';
+      const frag  = document.createDocumentFragment();
+      const total = ROWS * COLS;
+      for (let i = 0; i < total; i++) {
+        const cell = document.createElement('div');
+        cell.className = i < weeksLived ? 'cell lived' : 'cell';
+        frag.appendChild(cell);
+      }
+      gridEl.appendChild(frag);
+
+      // Vertical New Year divider
+      if (dividerCol > 0 && dividerCol < COLS) {
+        const lineLeft = dividerCol * STEP - 1;
+        dividerYearEl.style.left    = lineLeft + 'px';
+        dividerYearEl.style.display = 'block';
+        // translateX(-50%) in CSS centers the label on the line
+        newyearLabelEl.style.left    = (lineLeft + 1) + 'px';
+        newyearLabelEl.style.display = 'block';
+      } else {
+        dividerYearEl.style.display  = 'none';
+        newyearLabelEl.style.display = 'none';
+      }
+
+      // Horizontal 70-year divider
+      const line70Top = 70 * STEP - 1;
+      divider70El.style.top = line70Top + 'px';
+      label70El.style.top   = line70Top + 'px';
+      label70El.style.left  = (gridWidth + 8) + 'px';
+
+      // "80 лет" label at the bottom of the table (no line)
+      const line80Top = ROWS * STEP - 1;
+      label80El.style.top  = line80Top + 'px';
+      label80El.style.left = (gridWidth + 8) + 'px';
+
+      // Move verse down to align with 70-year line
+      verseSideEl.style.marginTop = (HEADER_H + line70Top) + 'px';
+
+      calendarLayout.classList.add('visible');
+    }
+
+    birthdayInput.addEventListener('change', () => {
+      const val = birthdayInput.value;
+      if (!val) return;
+      buildCalendar(new Date(val + 'T00:00:00'));
+    });
+  </script>
+</body>
+</html>
