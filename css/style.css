@@ -154,6 +154,7 @@ strong {
 
 .page-home .hero-photo {
   background: url("/assets/images/croped/home_desktop.jpg") center center / cover no-repeat;
+  filter: grayscale(100%);
 }
 
 .page-home .hero-content h1 {
