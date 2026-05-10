@@ -72,10 +72,6 @@
 
           <div class="amount-pills">
             <a class="amount-pill"
-               href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=50&f=MON"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Give $50 monthly">$50</a>
-            <a class="amount-pill"
                href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=100&f=MON"
                target="_blank" rel="noopener noreferrer"
                aria-label="Give $100 monthly">$100</a>
@@ -87,27 +83,10 @@
                href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=500&f=MON"
                target="_blank" rel="noopener noreferrer"
                aria-label="Give $500 monthly">$500</a>
-          </div>
-
-          <div class="partner-slider-wrap">
-            <div class="partner-progress-header">
-              <span></span>
-              <span>Goal: $1,700/mo</span>
-            </div>
-            <div class="partner-slider-inner">
-              <input type="range" id="teamSlider" min="0" max="1700" step="25" value="0" aria-label="Monthly giving amount">
-            </div>
-            <div class="partner-slider-label">Your contribution: +$<span id="teamContribution">0</span>/mo</div>
-          </div>
-
-          <div class="active-need-buttons">
-            <a id="teamGiveBtn"
-               href="https://give.cru.org/2880130"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Give financial support online through Cru">
-               Give Online
-            </a>
+            <a class="amount-pill"
+               href="https://give.cru.org/2880130?modal=give-gift&d=2880130&a=1000&f=MON"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Give $1000 monthly">$1,000</a>
           </div>
 
           <p class="special-email-note">If you would like to help us build our team's budget for next year, please <a href="mailto:oleg.dermenji@cru.md">email us</a> so we can direct your donation accordingly.</p>
@@ -280,38 +259,6 @@
   });
 </script>
 
-<script>
-  (function () {
-    const GOAL = 1700;
-    const BASE_URL = 'https://give.cru.org/2880130?modal=give-gift&d=2880130&a=';
-
-    const slider = document.getElementById('teamSlider');
-    const contributionLabel = document.getElementById('teamContribution');
-    const giveBtn = document.getElementById('teamGiveBtn');
-
-    function updateUI(val) {
-      const pct = (val / GOAL) * 100;
-      slider.style.background = val > 0
-        ? 'linear-gradient(to right, rgba(249,182,37,0.5) 0%, rgba(249,182,37,0.5) ' + pct + '%, #e5e5e5 ' + pct + '%)'
-        : '#e5e5e5';
-
-      contributionLabel.textContent = val;
-
-      if (val > 0) {
-        giveBtn.textContent = 'Give $' + val + '/mo';
-        giveBtn.href = BASE_URL + val + '&f=MON';
-      } else {
-        giveBtn.textContent = 'Give Online';
-        giveBtn.href = 'https://give.cru.org/2880130';
-      }
-    }
-
-    updateUI(parseInt(slider.value, 10));
-    slider.addEventListener('input', function () {
-      updateUI(parseInt(this.value, 10));
-    });
-  })();
-</script>
 <script src="js/nav.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
