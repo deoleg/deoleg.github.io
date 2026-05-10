@@ -503,9 +503,36 @@ strong {
   background: url("/assets/images/new_car_desktop.jpg") top center / cover no-repeat;
 }
 
-.special-image--team {
+.active-need {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 60px 6%;
+}
+
+.active-need::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: url("/assets/images/croped/team_desktop.jpg") center center / cover no-repeat;
   filter: grayscale(100%);
+  z-index: 0;
+}
+
+.active-need .special-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 56px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .active-need-buttons {
@@ -887,8 +914,25 @@ strong {
     background-image: url("/assets/images/new_car_mobile.jpg");
   }
 
-  .special-image--team {
-    background-image: url("/assets/images/croped/team_mobile.jpg");
+  .active-need {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    min-height: 0;
+  }
+
+  .active-need::before {
+    display: none;
+  }
+
+  .active-need .special-container {
+    padding: 40px 6%;
+    max-width: 100%;
+    border-radius: 0;
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .special-right {
@@ -980,7 +1024,8 @@ strong {
   width: 100%;
 }
 
-#partnerSlider {
+#partnerSlider,
+#teamSlider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -991,7 +1036,8 @@ strong {
   background: #e5e5e5;
 }
 
-#partnerSlider::-webkit-slider-thumb {
+#partnerSlider::-webkit-slider-thumb,
+#teamSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 22px;
@@ -1002,7 +1048,8 @@ strong {
   cursor: pointer;
 }
 
-#partnerSlider::-moz-range-thumb {
+#partnerSlider::-moz-range-thumb,
+#teamSlider::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
