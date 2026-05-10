@@ -504,35 +504,27 @@ strong {
 }
 
 .active-need {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 60px 6%;
+  flex-direction: column;
 }
 
-.active-need::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("/assets/images/croped/team_desktop.jpg") center center / cover no-repeat;
+.active-need-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
   filter: grayscale(100%);
-  z-index: 0;
+}
+
+.active-need-content {
+  display: flex;
+  justify-content: center;
+  padding: 80px 8%;
+  background: #fff;
 }
 
 .active-need .special-container {
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  padding: 56px;
-  max-width: 600px;
+  max-width: 720px;
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .active-need-buttons {
@@ -914,25 +906,8 @@ strong {
     background-image: url("/assets/images/new_car_mobile.jpg");
   }
 
-  .active-need {
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0;
-    min-height: 0;
-  }
-
-  .active-need::before {
-    display: none;
-  }
-
-  .active-need .special-container {
-    padding: 40px 6%;
-    max-width: 100%;
-    border-radius: 0;
-    background: #fff;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    box-shadow: none;
+  .active-need-content {
+    padding: 60px 6%;
   }
 
   .special-right {
