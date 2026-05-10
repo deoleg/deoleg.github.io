@@ -52,7 +52,7 @@
       <p>Your partnership fuels the vision of planting a church for every 1,000 people in Moldova.</p>
       
       <p>
-        By the end of 2026, we are seeking to build a full support team of <strong>$1,800 a month</strong> to reach out people across Moldova.
+        By the end of 2026, we are seeking to build a full support team of <strong>$2,800 a month</strong> to reach out people across Moldova.
         We invite you to join us with a monthly investment of
       </p>
       <div class="amount-pills">
@@ -75,14 +75,26 @@
       </div>
       <p>or an amount God leads you to give.</p>
 
+      <div class="partner-slider-wrap">
+        <div class="partner-progress-header">
+          <span class="partner-progress-raised">$<span id="raisedAmount">0</span> raised</span>
+          <span>Goal: $2,800/mo</span>
+        </div>
+        <div class="partner-slider-inner">
+          <input type="range" id="partnerSlider" min="0" max="2800" step="25" value="0" aria-label="Monthly giving amount">
+        </div>
+        <div class="partner-slider-label">Your contribution: +$<span id="contributionAmount">0</span>/mo</div>
+      </div>
+
       <p>
-        By joining our team, you are not just giving funds; 
+        By joining our team, you are not just giving funds;
         you are actively reaching the next generation and multiplying disciples across our nation.
       </p>
 
       <div class="buttons">
         <div class="button-row">
-          <a href="https://give.cru.org/2880130"
+          <a id="giveBtn"
+             href="https://give.cru.org/2880130"
              target="_blank"
              rel="noopener noreferrer"
              aria-label="Give financial support online through Cru"
@@ -120,5 +132,43 @@
 </main>
   
 <script src="js/nav.js"></script>
+<script>
+  (function () {
+    const COLLECTED = 0;
+    const GOAL = 2800;
+    const BASE_URL = 'https://give.cru.org/2880130?modal=give-gift&d=2880130&a=';
+
+    const slider = document.getElementById('partnerSlider');
+    const contributionLabel = document.getElementById('contributionAmount');
+    const giveBtn = document.getElementById('giveBtn');
+    const collectedPct = (COLLECTED / GOAL) * 100;
+
+    function updateUI(raw) {
+      const val = Math.max(raw, COLLECTED);
+      if (raw < COLLECTED) slider.value = COLLECTED;
+
+      const valuePct = (val / GOAL) * 100;
+      slider.style.background = val > COLLECTED
+        ? 'linear-gradient(to right, #f9b625 ' + collectedPct + '%, rgba(249,182,37,0.4) ' + collectedPct + '%, rgba(249,182,37,0.4) ' + valuePct + '%, #e5e5e5 ' + valuePct + '%)'
+        : 'linear-gradient(to right, #f9b625 ' + collectedPct + '%, #e5e5e5 ' + collectedPct + '%)';
+
+      const contribution = val - COLLECTED;
+      contributionLabel.textContent = contribution;
+
+      if (contribution > 0) {
+        giveBtn.textContent = 'Become a partner for $' + contribution + '/mo';
+        giveBtn.href = BASE_URL + contribution + '&f=MON';
+      } else {
+        giveBtn.textContent = 'Give Online';
+        giveBtn.href = 'https://give.cru.org/2880130';
+      }
+    }
+
+    updateUI(parseInt(slider.value, 10));
+    slider.addEventListener('input', function () {
+      updateUI(parseInt(this.value, 10));
+    });
+  })();
+</script>
 </body>
 </html>
