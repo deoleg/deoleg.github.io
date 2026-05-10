@@ -505,6 +505,7 @@ strong {
 
 .special-image--team {
   background: url("/assets/images/croped/team_desktop.jpg") center center / cover no-repeat;
+  filter: grayscale(100%);
 }
 
 .active-need-buttons {
