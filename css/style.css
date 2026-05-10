@@ -265,6 +265,7 @@ strong {
 
 .page-ministry .hero-content {
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 56px;
   max-width: 600px;
@@ -293,6 +294,7 @@ strong {
 
 .page-ministry .card {
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 40px;
   border-radius: 12px;
@@ -388,6 +390,7 @@ strong {
 
 .page-partner .hero-content {
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 56px;
   max-width: 600px;
@@ -498,6 +501,53 @@ strong {
 
 .special-image--car {
   background: url("/assets/images/new_car_desktop.jpg") top center / cover no-repeat;
+}
+
+.special-image--team {
+  background: url("/assets/images/croped/team_desktop.jpg") center center / cover no-repeat;
+}
+
+.active-need-buttons {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.active-need-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 24px;
+  border: 2px solid #1a1f36;
+  background: #1a1f36;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.active-need-buttons a:hover {
+  background: #0f1420;
+  border-color: #0f1420;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 31, 54, 0.4);
+}
+
+.special-email-note {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.special-email-note a {
+  color: #1a1f36;
+  text-decoration: underline;
 }
 
 .special-right {
@@ -834,6 +884,10 @@ strong {
 
   .special-image--car {
     background-image: url("/assets/images/new_car_mobile.jpg");
+  }
+
+  .special-image--team {
+    background-image: url("/assets/images/croped/team_mobile.jpg");
   }
 
   .special-right {
