@@ -294,6 +294,12 @@
       min-width: 110px;
     }
 
+    .p-date.overdue {
+      border-color: #e05252;
+      color: #c0392b;
+      background: #fff5f5;
+    }
+
     /* Token screen */
     .token-screen {
       display: none;
@@ -529,6 +535,19 @@ function applySelectStyle(sel) {
   sel.setAttribute("data-v", sel.value);
 }
 
+function isOverdue(dateStr) {
+  if (!dateStr) return false;
+  const parts = dateStr.split(".");
+  if (parts.length !== 2) return false;
+  const day = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10);
+  if (isNaN(day) || isNaN(month)) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const d = new Date(today.getFullYear(), month - 1, day);
+  return d < today;
+}
+
 function parseDateSortKey(dateStr) {
   if (!dateStr) return null;
   const parts = dateStr.split(".");
@@ -600,9 +619,11 @@ function buildPartnersTable() {
     dateInput.type = "text";
     dateInput.placeholder = "дд.мм";
     dateInput.value = date;
+    dateInput.classList.toggle("overdue", isOverdue(date));
     dateInput.addEventListener("input", () => {
       if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
       partnerData[p.id].date = dateInput.value;
+      dateInput.classList.toggle("overdue", isOverdue(dateInput.value));
       scheduleSave();
     });
     tdDate.appendChild(dateInput);
