@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +27,7 @@
 
     .page {
       width: 100%;
-      max-width: 560px;
+      max-width: 640px;
     }
 
     h1 {
@@ -63,9 +63,9 @@
       transition: background 0.3s;
     }
 
-    .status-dot.ok { background: #1D9E75; }
-    .status-dot.saving { background: #f0a500; }
-    .status-dot.error { background: #e05252; }
+    .status-dot.ok      { background: #1D9E75; }
+    .status-dot.saving  { background: #f0a500; }
+    .status-dot.error   { background: #e05252; }
 
     .status-text { transition: color 0.3s; }
     .status-text.error { color: #e05252; }
@@ -191,6 +191,109 @@
       border-color: #bbb;
     }
 
+    /* Section divider */
+    .section-divider {
+      border: none;
+      border-top: 1.5px solid #e8e8e8;
+      margin: 40px 0 28px;
+    }
+
+    .section-heading {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-bottom: 16px;
+    }
+
+    /* Partners table */
+    .partners-wrap {
+      overflow-x: auto;
+    }
+
+    table.partners {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 500px;
+    }
+
+    table.partners thead th {
+      padding: 0 8px 10px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #aaa;
+      border-bottom: 1.5px solid #e5e5e5;
+      white-space: nowrap;
+    }
+
+    table.partners thead th:first-child { padding-left: 0; }
+
+    table.partners tbody td {
+      padding: 8px;
+      border-bottom: 1px solid #f2f2f2;
+      vertical-align: middle;
+    }
+
+    table.partners tbody td:first-child { padding-left: 0; }
+
+    table.partners tbody tr:last-child td { border-bottom: none; }
+
+    table.partners tbody tr:hover td { background: #f7faf9; }
+
+    .p-num {
+      color: #ccc;
+      font-size: 12px;
+      width: 28px;
+      white-space: nowrap;
+    }
+
+    .p-name {
+      font-weight: 500;
+      color: #1a1f36;
+    }
+
+    .p-state {
+      color: #999;
+      font-size: 12px;
+      white-space: nowrap;
+      width: 40px;
+    }
+
+    .p-select, .p-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 6px;
+      padding: 5px 8px;
+      background: #fff;
+      color: #1a1a1a;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+    }
+
+    .p-select {
+      cursor: pointer;
+      min-width: 152px;
+    }
+
+    .p-select:focus, .p-date:focus {
+      border-color: #1D9E75;
+    }
+
+    .p-select[data-v="schedule"] { border-color: #93b4f4; color: #1e4ec9; background: #f0f4ff; }
+    .p-select[data-v="contacts"] { border-color: #f4c36a; color: #906200; background: #fffbf0; }
+    .p-select[data-v="result"]   { border-color: #6dcfb0; color: #0e7a57; background: #f0faf7; }
+    .p-select[data-v="refer"]    { border-color: #c39af4; color: #6b2ec9; background: #f7f0ff; }
+
+    .p-date {
+      width: 110px;
+      min-width: 110px;
+    }
+
     /* Token screen */
     .token-screen {
       display: none;
@@ -285,9 +388,27 @@
     <button type="button" class="reset-btn" id="resetBtn">Сбросить всё</button>
     <button type="button" class="reset-btn" id="changeTokenBtn">Сменить токен</button>
   </div>
+
+  <hr class="section-divider">
+
+  <h2 class="section-heading">Партнёры</h2>
+  <div class="partners-wrap">
+    <table class="partners">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Партнёр</th>
+          <th>Штат</th>
+          <th>Статус</th>
+          <th>Дата</th>
+        </tr>
+      </thead>
+      <tbody id="partnersTbody"></tbody>
+    </table>
+  </div>
 </div>
 
-<!-- Token setup screen (shown only when token is not saved) -->
+<!-- Token setup screen -->
 <div id="tokenScreen" class="token-screen">
   <div class="token-inner">
     <p class="token-title">Настройка сохранения</p>
@@ -306,9 +427,8 @@
 
 <script>
 // ── Конфигурация ──────────────────────────────────────────────────────────────
-const REPO  = "deoleg/deoleg.github.io";
-const FILE  = "data/mpd.json";
-// Токен хранится только в localStorage браузера, не в коде
+const REPO      = "deoleg/deoleg.github.io";
+const FILE      = "data/mpd.json";
 const TOKEN_KEY = "mpd_gh_token";
 let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
 // ─────────────────────────────────────────────────────────────────────────────
@@ -321,11 +441,61 @@ const MILESTONES = {
   100: "100 встреч — цель достигнута! 🙌"
 };
 
+const STATUS_LABELS = {
+  "":         "—",
+  "schedule": "Назначить встречу",
+  "contacts": "Спросить контакты",
+  "result":   "Узнать результат",
+  "refer":    "Отправить наши рекомендации",
+};
+
+const PARTNERS = [
+  { id: 1,    name: "Hanscom, Keven & Holly",       state: "VA" },
+  { id: 2,    name: "Koontz, Timothy & Wendy",       state: "IL" },
+  { id: 3,    name: "Hoskins, James & Linda",        state: "IL" },
+  { id: 4,    name: "Lowe, Stephanie, Joy & Judy",   state: "VA" },
+  { id: 5,    name: "Cotton, Roger & Danielle",      state: "MD" },
+  { id: 6,    name: "Kohrs, Bill & Dannette",        state: "IL" },
+  { id: 7,    name: "Hague, John & Patricia",        state: "VA" },
+  { id: 8,    name: "Graeser, Henry & Peggy",        state: "VA" },
+  { id: 9,    name: "Honeywell, Don",                state: "FL" },
+  { id: 10,   name: "Foster, Carmen",                state: "VA" },
+  { id: 11,   name: "Brown, Enoch",                  state: "MO" },
+  { id: 12,   name: "Young, Matthew & Vachira",      state: "OH" },
+  { id: 13,   name: "Moore, Scott & Laura",          state: "CA" },
+  { id: 14,   name: "Givens, Carole & Peter",        state: "VA" },
+  { id: 15,   name: "Taylor, Steve & Pat",           state: "VA" },
+  { id: 16,   name: "Pittman, Michael & Karen",      state: "VA" },
+  { id: 17,   name: "Barnes, Craig & Denise",        state: "MO" },
+  { id: 19,   name: "Tony, Dean & Pat",              state: "VA" },
+  { id: 20,   name: "Ratering, Steven & Karen",      state: "WI" },
+  { id: 21,   name: "Foster, Logan",                 state: "VA" },
+  { id: 22,   name: "Calvin, Kelsea & Ethan",        state: "MO" },
+  { id: 23,   name: "Strother, Janelle & Ben",       state: "MO" },
+  { id: 24,   name: "Vander Lay, Mark & Alison",     state: "IL" },
+  { id: 25,   name: "Johnson, Kevin & Deborah",      state: "VA" },
+  { id: 26,   name: "Kemp, Amanda & Austin",         state: "VA" },
+  { id: 27,   name: "Mooring, Michelle",             state: "TX" },
+  { id: 28,   name: "Kohrs, Alex",                   state: "MO" },
+  { id: 29,   name: "Hamilton, Jason & Charity",     state: "MO" },
+  { id: 30,   name: "Givens, Mark & Katie",          state: "VA" },
+  { id: 31,   name: "Roberson, James",               state: "NC" },
+  { id: 32,   name: "Meyer, Sara & Eric",            state: "IL" },
+  { id: 33,   name: "Miller, Alvin & Alexandra",     state: "VA" },
+  { id: 34,   name: "Brown, Caleb",                  state: "MO" },
+  { id: 35,   name: "Bartlett, Daniel",              state: "MO" },
+  { id: 36,   name: "Braun, Karl & Lynn",            state: "VA" },
+  { id: "p1", name: "Masiello, George",              state: "—" },
+  { id: "p2", name: "Gallagher, Lynn & Holly",       state: "—" },
+  { id: "p3", name: "Hoskins, David & Rebecca",      state: "—" },
+];
+
 const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 
-let done = new Set();
-let fileSha = null;
-let saveTimer = null;
+let done        = new Set();
+let partnerData = {}; // { [id]: { status, date } }
+let fileSha     = null;
+let saveTimer   = null;
 
 // ── UI helpers ────────────────────────────────────────────────────────────────
 
@@ -354,6 +524,81 @@ function syncGrid() {
   });
 }
 
+// ── Partners table ────────────────────────────────────────────────────────────
+
+function applySelectStyle(sel) {
+  sel.setAttribute("data-v", sel.value);
+}
+
+function buildPartnersTable() {
+  const tbody = document.getElementById("partnersTbody");
+  tbody.innerHTML = "";
+
+  PARTNERS.forEach(p => {
+    const saved  = partnerData[p.id] || {};
+    const status = saved.status || "";
+    const date   = saved.date   || "";
+
+    const tr = document.createElement("tr");
+
+    // #
+    const tdNum = document.createElement("td");
+    tdNum.className = "p-num";
+    tdNum.textContent = typeof p.id === "number" ? p.id : "";
+    tr.appendChild(tdNum);
+
+    // Имя
+    const tdName = document.createElement("td");
+    tdName.className = "p-name";
+    tdName.textContent = p.name;
+    tr.appendChild(tdName);
+
+    // Штат
+    const tdState = document.createElement("td");
+    tdState.className = "p-state";
+    tdState.textContent = p.state;
+    tr.appendChild(tdState);
+
+    // Статус
+    const tdStatus = document.createElement("td");
+    const sel = document.createElement("select");
+    sel.className = "p-select";
+    Object.entries(STATUS_LABELS).forEach(([val, label]) => {
+      const opt = document.createElement("option");
+      opt.value = val;
+      opt.textContent = label;
+      if (val === status) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    applySelectStyle(sel);
+    sel.addEventListener("change", () => {
+      if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
+      partnerData[p.id].status = sel.value;
+      applySelectStyle(sel);
+      scheduleSave();
+    });
+    tdStatus.appendChild(sel);
+    tr.appendChild(tdStatus);
+
+    // Дата
+    const tdDate = document.createElement("td");
+    const dateInput = document.createElement("input");
+    dateInput.className = "p-date";
+    dateInput.type = "text";
+    dateInput.placeholder = "дд.мм";
+    dateInput.value = date;
+    dateInput.addEventListener("input", () => {
+      if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
+      partnerData[p.id].date = dateInput.value;
+      scheduleSave();
+    });
+    tdDate.appendChild(dateInput);
+    tr.appendChild(tdDate);
+
+    tbody.appendChild(tr);
+  });
+}
+
 // ── GitHub API ────────────────────────────────────────────────────────────────
 
 function apiHeaders() {
@@ -366,15 +611,20 @@ function apiHeaders() {
 
 async function loadFromGitHub() {
   const r = await fetch(API, { headers: apiHeaders() });
-  if (r.status === 404) return [];
+  if (r.status === 404) return { done: [], partners: {} };
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const json = await r.json();
   fileSha = json.sha;
-  return JSON.parse(atob(json.content.replace(/\n/g, ""))).done || [];
+  const data = JSON.parse(atob(json.content.replace(/\n/g, "")));
+  return { done: data.done || [], partners: data.partners || {} };
 }
 
 async function saveToGitHub() {
-  const content = btoa(JSON.stringify({ done: [...done].sort((a, b) => a - b) }));
+  const payload = {
+    done: [...done].sort((a, b) => a - b),
+    partners: partnerData
+  };
+  const content = btoa(JSON.stringify(payload));
   const body = { message: "Update MPD progress", content };
   if (fileSha) body.sha = fileSha;
 
@@ -440,14 +690,17 @@ async function startApp() {
   }
 
   try {
-    const list = await loadFromGitHub();
-    done = new Set(list);
+    const data = await loadFromGitHub();
+    done        = new Set(data.done);
+    partnerData = data.partners;
     syncGrid();
     render();
+    buildPartnersTable();
     grid.classList.remove("loading");
     setStatus("ok", "Сохранено");
   } catch (e) {
     console.error(e);
+    buildPartnersTable();
     grid.classList.remove("loading");
     setStatus("error", "Ошибка — токен неверный или истёк");
   }
