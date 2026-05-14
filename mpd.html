@@ -535,28 +535,41 @@ function applySelectStyle(sel) {
   sel.setAttribute("data-v", sel.value);
 }
 
+const RU_MONTHS = {
+  "января":1,"февраля":2,"марта":3,"апреля":4,"мая":5,"июня":6,
+  "июля":7,"августа":8,"сентября":9,"октября":10,"ноября":11,"декабря":12
+};
+
+function parseDate(dateStr) {
+  if (!dateStr) return null;
+  // "дд.мм"
+  const dotParts = dateStr.split(".");
+  if (dotParts.length === 2) {
+    const day = parseInt(dotParts[0], 10);
+    const month = parseInt(dotParts[1], 10);
+    if (!isNaN(day) && !isNaN(month) && month >= 1 && month <= 12) return { day, month };
+  }
+  // "дд месяц" (русский)
+  const spaceParts = dateStr.trim().split(/\s+/);
+  if (spaceParts.length === 2) {
+    const day = parseInt(spaceParts[0], 10);
+    const month = RU_MONTHS[spaceParts[1].toLowerCase()];
+    if (!isNaN(day) && month) return { day, month };
+  }
+  return null;
+}
+
 function isOverdue(dateStr) {
-  if (!dateStr) return false;
-  const parts = dateStr.split(".");
-  if (parts.length !== 2) return false;
-  const day = parseInt(parts[0], 10);
-  const month = parseInt(parts[1], 10);
-  if (isNaN(day) || isNaN(month)) return false;
+  const d = parseDate(dateStr);
+  if (!d) return false;
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const d = new Date(today.getFullYear(), month - 1, day);
-  return d < today;
+  return new Date(today.getFullYear(), d.month - 1, d.day) < today;
 }
 
 function parseDateSortKey(dateStr) {
-  if (!dateStr) return null;
-  const parts = dateStr.split(".");
-  if (parts.length === 2) {
-    const day = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10);
-    if (!isNaN(day) && !isNaN(month)) return month * 100 + day;
-  }
-  return null;
+  const d = parseDate(dateStr);
+  return d ? d.month * 100 + d.day : null;
 }
 
 function buildPartnersTable() {
