@@ -396,7 +396,6 @@
     <table class="partners">
       <thead>
         <tr>
-          <th>#</th>
           <th>Партнёр</th>
           <th>Штат</th>
           <th>Статус</th>
@@ -530,22 +529,36 @@ function applySelectStyle(sel) {
   sel.setAttribute("data-v", sel.value);
 }
 
+function parseDateSortKey(dateStr) {
+  if (!dateStr) return null;
+  const parts = dateStr.split(".");
+  if (parts.length === 2) {
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10);
+    if (!isNaN(day) && !isNaN(month)) return month * 100 + day;
+  }
+  return null;
+}
+
 function buildPartnersTable() {
   const tbody = document.getElementById("partnersTbody");
   tbody.innerHTML = "";
 
-  PARTNERS.forEach(p => {
+  const sorted = [...PARTNERS].sort((a, b) => {
+    const da = parseDateSortKey((partnerData[a.id] || {}).date);
+    const db = parseDateSortKey((partnerData[b.id] || {}).date);
+    if (da !== null && db !== null) return da - db;
+    if (da !== null) return -1;
+    if (db !== null) return 1;
+    return 0;
+  });
+
+  sorted.forEach(p => {
     const saved  = partnerData[p.id] || {};
     const status = saved.status || "";
     const date   = saved.date   || "";
 
     const tr = document.createElement("tr");
-
-    // #
-    const tdNum = document.createElement("td");
-    tdNum.className = "p-num";
-    tdNum.textContent = typeof p.id === "number" ? p.id : "";
-    tr.appendChild(tdNum);
 
     // Имя
     const tdName = document.createElement("td");
