@@ -665,6 +665,12 @@ function buildPartnerRow(p, tbody) {
   sel.addEventListener("change", () => {
     if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
     partnerData[p.id].status = sel.value;
+    if (sel.value === "done" && !partnerData[p.id].date) {
+      const t = new Date();
+      partnerData[p.id].date = t.getDate() + " " +
+        ["января","февраля","марта","апреля","мая","июня",
+         "июля","августа","сентября","октября","ноября","декабря"][t.getMonth()];
+    }
     applySelectStyle(sel);
     buildPartnersTable();
     scheduleSave();
