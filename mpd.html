@@ -715,7 +715,7 @@ function buildPartnersTable() {
   sortByDate(active).forEach(p => buildPartnerRow(p, tbody));
   sortByDate(donePartners).forEach(p => buildPartnerRow(p, doneTbody));
 
-  doneSection.style.display = donePartners.length ? "" : "none";
+  doneSection.style.display = donePartners.length ? "block" : "none";
 }
 
 // ── GitHub API ────────────────────────────────────────────────────────────────
