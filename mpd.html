@@ -634,7 +634,7 @@ function parseDateSortKey(dateStr) {
   return d ? d.month * 100 + d.day : null;
 }
 
-function buildPartnerRow(p, tbody) {
+function buildPartnerRow(p, tbody, noOverdue) {
   const saved  = partnerData[p.id] || {};
   const status = saved.status || "";
   const date   = saved.date   || "";
@@ -684,11 +684,11 @@ function buildPartnerRow(p, tbody) {
   dateInput.type = "text";
   dateInput.placeholder = "дд.мм";
   dateInput.value = date;
-  dateInput.classList.toggle("overdue", isOverdue(date));
+  dateInput.classList.toggle("overdue", !noOverdue && isOverdue(date));
   dateInput.addEventListener("input", () => {
     if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
     partnerData[p.id].date = dateInput.value;
-    dateInput.classList.toggle("overdue", isOverdue(dateInput.value));
+    dateInput.classList.toggle("overdue", !noOverdue && isOverdue(dateInput.value));
     scheduleSave();
   });
   tdDate.appendChild(dateInput);
@@ -719,7 +719,7 @@ function buildPartnersTable() {
   const donePartners  = PARTNERS.filter(p => (partnerData[p.id] || {}).status === "done");
 
   sortByDate(active).forEach(p => buildPartnerRow(p, tbody));
-  sortByDate(donePartners).forEach(p => buildPartnerRow(p, doneTbody));
+  sortByDate(donePartners).forEach(p => buildPartnerRow(p, doneTbody, true));
 
   doneSection.style.display = donePartners.length ? "block" : "none";
 }
