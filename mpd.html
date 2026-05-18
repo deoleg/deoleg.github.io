@@ -645,7 +645,7 @@ function buildPartnerRow(p, tbody, noOverdue) {
 
   const tdName = document.createElement("td");
   tdName.className = "p-name";
-  tdName.textContent = p.name;
+  tdName.textContent = (status === "new" ? "✨ " : "") + p.name;
   tr.appendChild(tdName);
 
   const tdState = document.createElement("td");
