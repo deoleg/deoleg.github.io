@@ -645,7 +645,7 @@ function buildPartnerRow(p, tbody, noOverdue) {
 
   const tdName = document.createElement("td");
   tdName.className = "p-name";
-  tdName.textContent = (status === "new" ? "✨ " : "") + p.name;
+  tdName.textContent = (saved.isNew ? "✨ " : "") + p.name;
   tr.appendChild(tdName);
 
   const tdState = document.createElement("td");
@@ -667,6 +667,7 @@ function buildPartnerRow(p, tbody, noOverdue) {
   sel.addEventListener("change", () => {
     if (!partnerData[p.id]) partnerData[p.id] = { status: "", date: "" };
     partnerData[p.id].status = sel.value;
+    if (sel.value === "new") partnerData[p.id].isNew = true;
     if (sel.value === "done" && !partnerData[p.id].date) {
       const t = new Date();
       partnerData[p.id].date = t.getDate() + " " +
