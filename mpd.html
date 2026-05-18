@@ -284,6 +284,7 @@
       border-color: #1D9E75;
     }
 
+    .p-select[data-v="new"]      { border-color: #a8d4f5; color: #1060a0; background: #f0f7ff; }
     .p-select[data-v="schedule"] { border-color: #93b4f4; color: #1e4ec9; background: #f0f4ff; }
     .p-select[data-v="contacts"] { border-color: #f4c36a; color: #906200; background: #fffbf0; }
     .p-select[data-v="result"]   { border-color: #6dcfb0; color: #0e7a57; background: #f0faf7; }
@@ -477,10 +478,11 @@ const MILESTONES = {
 
 const STATUS_LABELS = {
   "":         "—",
-  "schedule": "Назначить встречу",
+  "new":      "Новый контакт",
+  "schedule": "Встреча назначена",
+  "refer":    "Отправить материалы",
+  "result":   "Узнать о решении",
   "contacts": "Спросить контакты",
-  "refer":    "Отправить наши рекомендации",
-  "result":   "Узнать результат",
   "done":     "Упражнение закончено",
 };
 
