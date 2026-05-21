@@ -378,37 +378,28 @@ strong {
    MINISTRY VIDEO
 ========================= */
 .ministry-video {
-  background: #1a1f36;
+  background-color: #0f1420;
   padding: 100px 8%;
   text-align: center;
 }
 
 .ministry-video-inner {
-  max-width: 900px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
-.ministry-video-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.45);
-  margin: 0 0 12px;
-}
-
-.ministry-video-title {
-  color: #fff;
-  margin: 0 0 48px;
+.ministry-video h2 {
+  color: #ffffff;
+  margin: 0 0 44px;
 }
 
 .video-wrap {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.65);
 }
 
 .video-wrap iframe {
