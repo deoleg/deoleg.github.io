@@ -128,6 +128,17 @@
     }
     .cal-cell.row-label .row-sub { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 1px; }
 
+    .cal-cell.section-header {
+      background: #f0f0ee; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      padding: 5px 10px 4px; justify-content: flex-start;
+      border-top: 1.5px solid var(--border);
+    }
+    .cal-cell.section-header.dad   { color: var(--dad); }
+    .cal-cell.section-header.lev   { color: var(--lev); }
+    .cal-cell.section-header.arina { color: var(--arina); }
+    .cal-cell.section-header.masha { color: var(--masha); }
+
     .check-btn {
       width: 28px; height: 28px; border-radius: 7px;
       border: 1.5px solid var(--border); background: #fff;
@@ -332,7 +343,8 @@ const TASKS = {
           { id: "tcmi",    label: "TCMi + чтение",    sub: "20 мин" }],
   lev:   [{ id: "bible",  label: "Чтение Библии",     sub: "15 мин" },
           { id: "sport",  label: "Физкультура",        sub: "15 мин" },
-          { id: "read",   label: "Чтение из списка",   sub: "30 мин" }],
+          { id: "read",   label: "Чтение из списка",   sub: "30 мин" },
+          { id: "free",   label: "Книга по выбору",    sub: "10 мин" }],
   arina: [{ id: "bible",  label: "Чтение Библии",     sub: "15 мин" },
           { id: "sport",  label: "Физкультура",        sub: "15 мин" },
           { id: "copy",   label: "Прописи Пятибратова",sub: "30 мин" },
@@ -516,12 +528,10 @@ function buildCalendar() {
     : `${m0.getDate()} ${RU_MON[m0.getMonth()]} – ${m1.getDate()} ${RU_MON[m1.getMonth()]} 2026`;
   document.getElementById("weekLabel").textContent = label;
 
-  // Nav buttons
   document.getElementById("prevWeek").disabled = false;
   document.getElementById("nextWeek").disabled = false;
 
-  // Calculate grid: rows = header + 4 people
-  // header row: empty corner + 5 day headers
+  // Header row: empty corner + 5 day headers
   const corner = makeCell("cal-cell header-day", "");
   corner.style.background = "#fafafa";
   grid.appendChild(corner);
@@ -541,60 +551,61 @@ function buildCalendar() {
     grid.appendChild(cell);
   });
 
-  // Person rows
+  // Person sections — one section header + one row per task
   PEOPLE.forEach(person => {
     const tasks = TASKS[person];
-    // For calendar: show one "all done" toggle per cell OR per task?
-    // We'll show a single combined check per day (all tasks done = checked)
-    // and a sub-row per task on hover — actually: let's show one row per person
-    // with a single compound check button per day. Simpler = better for mobile.
 
-    // Row label
-    const lbl = makeCell("cal-cell row-label", "");
-    const nameSpan = document.createElement("div");
-    nameSpan.textContent = PERSON_LABELS[person];
-    nameSpan.style.fontWeight = "600";
-    const subSpan = document.createElement("div");
-    subSpan.className = "row-sub";
-    subSpan.textContent = tasks.length + " задачи";
-    lbl.appendChild(nameSpan);
-    lbl.appendChild(subSpan);
-    grid.appendChild(lbl);
+    // Section header spanning all columns
+    const hdr = document.createElement("div");
+    hdr.className = `cal-cell section-header ${person}`;
+    hdr.style.gridColumn = "1 / -1";
+    hdr.textContent = PERSON_LABELS[person];
+    grid.appendChild(hdr);
 
-    days.forEach(d => {
-      const dk = dateKey(d);
-      const isToday = dk === todayKey();
-      const isSummer = isSummerDay(d);
-      const future = !isPast(d);
-      const cell = makeCell("cal-cell" + (isToday?" today-col":""), "");
+    tasks.forEach(task => {
+      // Row label
+      const lbl = makeCell("cal-cell row-label", "");
+      const nameDiv = document.createElement("div");
+      nameDiv.textContent = task.label;
+      const subDiv = document.createElement("div");
+      subDiv.className = "row-sub";
+      subDiv.textContent = task.sub;
+      lbl.appendChild(nameDiv);
+      lbl.appendChild(subDiv);
+      grid.appendChild(lbl);
 
-      if (!isSummer) {
-        cell.style.opacity = "0.2";
+      days.forEach(d => {
+        const dk = dateKey(d);
+        const isToday = dk === todayKey();
+        const isSummer = isSummerDay(d);
+        const future = !isPast(d);
+        const cell = makeCell("cal-cell" + (isToday?" today-col":""), "");
+
+        if (!isSummer) {
+          cell.style.opacity = "0.2";
+          grid.appendChild(cell);
+          return;
+        }
+
+        const done = state.checks[dk]?.[person]?.[task.id] || false;
+        const btn = document.createElement("button");
+        btn.className = `check-btn ${person}` + (done?" done":"") + (future?" future":"");
+        btn.textContent = done ? "✓" : "";
+        btn.style.fontSize = done ? "14px" : "0";
+
+        if (!future) {
+          btn.addEventListener("click", () => {
+            if (!state.checks[dk]) state.checks[dk] = {};
+            if (!state.checks[dk][person]) state.checks[dk][person] = {};
+            state.checks[dk][person][task.id] = !done;
+            buildCalendar();
+            updateSummary();
+            scheduleSave();
+          });
+        }
+        cell.appendChild(btn);
         grid.appendChild(cell);
-        return;
-      }
-
-      const dayData = state.checks[dk]?.[person] || {};
-      const allDone = tasks.every(t => dayData[t.id]);
-      const btn = document.createElement("button");
-      btn.className = `check-btn ${person}` + (allDone?" done":"") + (future?" future":"");
-      btn.title = tasks.map(t => (dayData[t.id]?"✓ ":"☐ ") + t.label).join("\n");
-      btn.textContent = allDone ? "✓" : "";
-      btn.style.fontSize = allDone ? "14px" : "0";
-
-      if (!future) {
-        btn.addEventListener("click", () => {
-          if (!state.checks[dk]) state.checks[dk] = {};
-          if (!state.checks[dk][person]) state.checks[dk][person] = {};
-          const newVal = !allDone;
-          tasks.forEach(t => { state.checks[dk][person][t.id] = newVal; });
-          buildCalendar();
-          updateSummary();
-          scheduleSave();
-        });
-      }
-      cell.appendChild(btn);
-      grid.appendChild(cell);
+      });
     });
   });
 }
