@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Лето 2026 — семейный трекер</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dad:   #1565C0; --dad-bg:   #E3F2FD; --dad-mid:   #90CAF9;
+      --lev:   #2E7D32; --lev-bg:   #E8F5E9; --lev-mid:   #A5D6A7;
+      --arina: #BF360C; --arina-bg: #FFF3E0; --arina-mid: #FFCC80;
+      --masha: #AD1457; --masha-bg: #FCE4EC; --masha-mid: #F48FB1;
+      --green: #1D9E75;
+      --border: #e5e5e5;
+      --text: #1a1f36;
+      --muted: #888;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f7f5;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 16px 80px;
+    }
+
+    .page { width: 100%; max-width: 720px; margin: 0 auto; }
+
+    /* ── Header ── */
+    .site-header { margin-bottom: 36px; }
+    .site-header h1 { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .site-header p  { font-size: 13px; color: var(--muted); }
+
+    .status-bar {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: #bbb; margin-top: 10px; min-height: 18px;
+    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #ddd; flex-shrink: 0; transition: background .3s; }
+    .status-dot.ok     { background: var(--green); }
+    .status-dot.saving { background: #f0a500; }
+    .status-dot.error  { background: #e05252; }
+    .status-text.error { color: #e05252; }
+
+    /* ── Tabs ── */
+    .tabs { display: flex; gap: 6px; margin-bottom: 28px; border-bottom: 1.5px solid var(--border); padding-bottom: 0; }
+    .tab-btn {
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+      padding: 8px 16px 10px; border: none; background: none; cursor: pointer;
+      color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1.5px;
+      transition: color .15s, border-color .15s;
+    }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--text); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Person cards summary row ── */
+    .summary-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 28px; }
+    .person-card {
+      border-radius: 12px; padding: 14px; border: 1.5px solid var(--border);
+      background: #fff; position: relative; overflow: hidden;
+    }
+    .person-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; border-radius: 12px 12px 0 0;
+    }
+    .person-card.dad::before   { background: var(--dad); }
+    .person-card.lev::before   { background: var(--lev); }
+    .person-card.arina::before { background: var(--arina); }
+    .person-card.masha::before { background: var(--masha); }
+    .person-name { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+    .person-card.dad   .person-name { color: var(--dad); }
+    .person-card.lev   .person-name { color: var(--lev); }
+    .person-card.arina .person-name { color: var(--arina); }
+    .person-card.masha .person-name { color: var(--masha); }
+    .person-days { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+    .person-total { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .mini-bar { height: 4px; background: #eee; border-radius: 2px; margin-top: 10px; overflow: hidden; }
+    .mini-fill { height: 100%; border-radius: 2px; transition: width .4s ease; }
+    .dad   .mini-fill { background: var(--dad); }
+    .lev   .mini-fill { background: var(--lev); }
+    .arina .mini-fill { background: var(--arina); }
+    .masha .mini-fill { background: var(--masha); }
+
+    /* ── Calendar ── */
+    .week-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .week-label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .nav-btn {
+      font-family: 'Inter', sans-serif; font-size: 12px; color: var(--muted);
+      background: none; border: 1px solid var(--border); border-radius: 6px;
+      padding: 5px 12px; cursor: pointer; transition: border-color .15s, color .15s;
+    }
+    .nav-btn:hover { border-color: #bbb; color: var(--text); }
+    .nav-btn:disabled { opacity: .35; cursor: default; }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: 110px repeat(5, 1fr);
+      gap: 0;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--border);
+    }
+    .cal-cell {
+      background: #fff;
+      padding: 8px 6px;
+      font-size: 12px;
+      text-align: center;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cal-cell.header-day {
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      background: #fafafa; flex-direction: column; gap: 1px;
+    }
+    .cal-cell.header-day .date-num { font-size: 15px; font-weight: 700; color: var(--text); }
+    .cal-cell.today-col { background: #fffbf0; }
+    .cal-cell.today-col.header-day .date-num { color: #c07000; }
+    .cal-cell.row-label {
+      font-size: 11px; font-weight: 500; text-align: left; padding: 8px 10px;
+      justify-content: flex-start; background: #fafafa; color: var(--text);
+    }
+    .cal-cell.row-label .row-sub { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 1px; }
+
+    .check-btn {
+      width: 28px; height: 28px; border-radius: 7px;
+      border: 1.5px solid var(--border); background: #fff;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; transition: all .15s; -webkit-tap-highlight-color: transparent;
+    }
+    .check-btn:hover { transform: scale(1.1); }
+    .check-btn.done { color: #fff; border-color: transparent; }
+    .check-btn.future { opacity: .3; cursor: default; pointer-events: none; }
+    .check-btn.dad.done   { background: var(--dad);   border-color: var(--dad); }
+    .check-btn.lev.done   { background: var(--lev);   border-color: var(--lev); }
+    .check-btn.arina.done { background: var(--arina); border-color: var(--arina); }
+    .check-btn.masha.done { background: var(--masha); border-color: var(--masha); }
+
+    /* ── Reading lists ── */
+    .reading-section { margin-bottom: 32px; }
+    .reading-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .reading-header h2 { font-size: 15px; font-weight: 600; }
+    .reading-badge {
+      font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
+    }
+    .dad-badge   { background: var(--dad-bg);   color: var(--dad); }
+    .lev-badge   { background: var(--lev-bg);   color: var(--lev); }
+    .arina-badge { background: var(--arina-bg); color: var(--arina); }
+    .masha-badge { background: var(--masha-bg); color: var(--masha); }
+
+    .book-category { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 14px 0 6px; }
+    .book-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; border-radius: 8px; cursor: pointer;
+      transition: background .12s; user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .book-item:hover { background: #f3f3f1; }
+    .book-check {
+      width: 20px; height: 20px; border-radius: 5px; flex-shrink: 0;
+      border: 1.5px solid var(--border); background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: #fff; transition: all .15s;
+    }
+    .book-item.done .book-check { color: #fff; border-color: transparent; }
+    .book-item.lev.done   .book-check { background: var(--lev); }
+    .book-item.arina.done .book-check { background: var(--arina); }
+    .book-label { font-size: 13px; line-height: 1.4; transition: color .15s; }
+    .book-item.done .book-label { color: var(--muted); text-decoration: line-through; }
+
+    .reading-progress { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Actions ── */
+    .page-actions { display: flex; gap: 10px; margin-top: 28px; }
+    .action-btn {
+      font-family: 'Inter', sans-serif; font-size: 13px; color: #aaa;
+      background: none; border: 1px solid var(--border); border-radius: 6px;
+      padding: 7px 16px; cursor: pointer; transition: color .15s, border-color .15s;
+    }
+    .action-btn:hover { color: #666; border-color: #bbb; }
+
+    /* ── Token screen ── */
+    .token-screen {
+      display: none; position: fixed; inset: 0; background: #f7f7f5;
+      z-index: 10; flex-direction: column; align-items: center;
+      justify-content: center; padding: 32px;
+    }
+    .token-inner { width: 100%; max-width: 420px; }
+    .token-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .token-desc  { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+    .token-input {
+      width: 100%; font-family: monospace; font-size: 13px; padding: 10px 12px;
+      border: 1.5px solid #ddd; border-radius: 8px; outline: none;
+      margin-bottom: 12px; background: #fff; color: var(--text);
+    }
+    .token-btn {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+      background: var(--text); color: #fff; border: none; border-radius: 8px;
+      padding: 11px; cursor: pointer;
+    }
+    .token-hint { font-size: 12px; color: #bbb; margin-top: 12px; line-height: 1.6; }
+
+    @media (max-width: 520px) {
+      .summary-row { grid-template-columns: repeat(2, 1fr); }
+      .cal-grid { grid-template-columns: 80px repeat(5, 1fr); }
+      .cal-cell { padding: 6px 3px; }
+      .check-btn { width: 24px; height: 24px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <div class="site-header">
+    <h1>Лето 2026 — семейный трекер</h1>
+    <p>Ежедневная рутина и списки чтения · Пн–Пт, июнь–август</p>
+    <div class="status-bar">
+      <div class="status-dot" id="statusDot"></div>
+      <span class="status-text" id="statusText">Загрузка…</span>
+    </div>
+  </div>
+
+  <!-- Summary cards -->
+  <div class="summary-row" id="summaryRow">
+    <div class="person-card dad">
+      <div class="person-name">Папа</div>
+      <div class="person-days" id="sum-dad">0</div>
+      <div class="person-total" id="sum-dad-total">из — дней</div>
+      <div class="mini-bar"><div class="mini-fill" id="bar-dad" style="width:0%"></div></div>
+    </div>
+    <div class="person-card lev">
+      <div class="person-name">Лев</div>
+      <div class="person-days" id="sum-lev">0</div>
+      <div class="person-total" id="sum-lev-total">из — дней</div>
+      <div class="mini-bar"><div class="mini-fill" id="bar-lev" style="width:0%"></div></div>
+    </div>
+    <div class="person-card arina">
+      <div class="person-name">Арина</div>
+      <div class="person-days" id="sum-arina">0</div>
+      <div class="person-total" id="sum-arina-total">из — дней</div>
+      <div class="mini-bar"><div class="mini-fill" id="bar-arina" style="width:0%"></div></div>
+    </div>
+    <div class="person-card masha">
+      <div class="person-name">Маша</div>
+      <div class="person-days" id="sum-masha">0</div>
+      <div class="person-total" id="sum-masha-total">из — дней</div>
+      <div class="mini-bar"><div class="mini-fill" id="bar-masha" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="calendar">Календарь</button>
+    <button class="tab-btn" data-tab="reading">Чтение</button>
+  </div>
+
+  <!-- Calendar tab -->
+  <div class="tab-panel active" id="tab-calendar">
+    <div class="week-nav">
+      <button class="nav-btn" id="prevWeek">← Назад</button>
+      <span class="week-label" id="weekLabel"></span>
+      <button class="nav-btn" id="nextWeek">Вперёд →</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="page-actions">
+      <button class="action-btn" id="todayBtn">Сегодня</button>
+      <button class="action-btn" id="changeTokenBtn">Сменить токен</button>
+    </div>
+  </div>
+
+  <!-- Reading tab -->
+  <div class="tab-panel" id="tab-reading">
+    <!-- Lev -->
+    <div class="reading-section">
+      <div class="reading-header">
+        <h2>Лев</h2>
+        <span class="reading-badge lev-badge">4→5 класс</span>
+        <span class="reading-progress" id="prog-lev"></span>
+      </div>
+      <div id="books-lev"></div>
+    </div>
+    <!-- Arina -->
+    <div class="reading-section">
+      <div class="reading-header">
+        <h2>Арина</h2>
+        <span class="reading-badge arina-badge">2→3 класс</span>
+        <span class="reading-progress" id="prog-arina"></span>
+      </div>
+      <div id="books-arina"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Token screen -->
+<div id="tokenScreen" class="token-screen">
+  <div class="token-inner">
+    <p class="token-title">Настройка сохранения</p>
+    <p class="token-desc">
+      Введи GitHub Personal Access Token — он сохранится только в этом браузере.
+    </p>
+    <input id="tokenInput" class="token-input" type="password" placeholder="github_pat_…">
+    <button type="button" id="tokenSaveBtn" class="token-btn">Сохранить и продолжить</button>
+    <p class="token-hint">Fine-grained token с правом <strong>Contents: Read&nbsp;&amp;&nbsp;write</strong> для репозитория deoleg.github.io</p>
+  </div>
+</div>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────────
+const REPO      = "deoleg/deoleg.github.io";
+const FILE      = "data/summer.json";
+const TOKEN_KEY = "mpd_gh_token"; // same key — same token
+
+let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+
+// ── People & tasks ─────────────────────────────────────────────────────────────
+const PEOPLE = ["dad", "lev", "arina", "masha"];
+const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", masha: "Маша" };
+
+const TASKS = {
+  dad:   [{ id: "guitar",  label: "Бас-гитара",      sub: "15–20 мин" },
+          { id: "english", label: "Английский",       sub: "15 мин" },
+          { id: "bible",   label: "Чтение Библии",    sub: "15 мин" },
+          { id: "tcmi",    label: "TCMi + чтение",    sub: "20 мин" }],
+  lev:   [{ id: "bible",  label: "Чтение Библии",     sub: "15 мин" },
+          { id: "sport",  label: "Физкультура",        sub: "15 мин" },
+          { id: "read",   label: "Чтение из списка",   sub: "30 мин" }],
+  arina: [{ id: "bible",  label: "Чтение Библии",     sub: "15 мин" },
+          { id: "sport",  label: "Физкультура",        sub: "15 мин" },
+          { id: "copy",   label: "Прописи Пятибратова",sub: "30 мин" },
+          { id: "aloud",  label: "Читает вслух вечером",sub: "10 мин" }],
+  masha: [{ id: "sport",  label: "Физкультура",        sub: "15 мин" },
+          { id: "draw",   label: "Рисование Гаврина",  sub: "30 мин" }],
+};
+
+// ── Books ─────────────────────────────────────────────────────────────────────
+const LEV_BOOKS = [
+  { cat: "Сказки и мифы", books: [
+    "Притча «Язык — самое лучшее и самое худшее»",
+    "Славянские мифы",
+    "Русские народные сказки",
+    "«Иван Царевич и Серый волк»",
+    "Молдавская нар. сказка «Иляна Косынзяна»",
+    "Г. Х. Андерсен — «Снежная королева»",
+    "А. С. Пушкин — «Сказка о мёртвой царевне»",
+    "Л. Кэрролл — «Алиса в стране чудес»",
+  ]},
+  { cat: "Поэзия и басни", books: [
+    "И. А. Крылов — «Волк на псарне»",
+    "И. А. Крылов — «Демьянова уха»",
+    "И. А. Крылов — «Волк и ягнёнок»",
+    "И. А. Крылов — «Лисица и виноград»",
+    "А. С. Пушкин — «Няне»",
+    "А. С. Пушкин — пролог к «Руслан и Людмила»",
+    "М. Ю. Лермонтов — «Бородино»",
+    "Н. А. Некрасов — «Крестьянские дети»",
+    "Стихи русских поэтов о природе",
+    "Стихи о Великой Отечественной войне",
+  ]},
+  { cat: "Проза", books: [
+    "Д. Р. Толкин — «Хоббит, или Туда и обратно»",
+    "И. С. Тургенев — «Муму»",
+    "Дж. К. Роулинг — «Сказки Барда Бидля»",
+    "Л. Н. Толстой — «Кавказский пленник»",
+    "В. Г. Короленко — «В дурном обществе»",
+    "В. П. Крапивин — «Колыбельная для брата»",
+    "А. П. Чехов — «Каштанка»",
+    "А. Погорельский — «Чёрная курица»",
+    "А. П. Платонов — «Ещё мама»",
+    "Ю. Яковлев — «Мама»",
+    "Ю. Яковлев — «Цветок хлеба»",
+    "В. П. Астафьев — «Васюткино озеро»",
+    "А. Я. Бруштейн — «Дорога уходит вдаль»",
+    "Любимая книга по выбору",
+  ]},
+];
+
+const ARINA_BOOKS = [
+  { cat: "Сказки", books: [
+    "Рус. нар. сказки: «Царевна-лягушка», «Сивка-бурка»",
+    "Сказки народов мира",
+    "А. С. Пушкин — «Сказка о мёртвой царевне»",
+    "А. С. Пушкин — «Сказка о рыбаке и рыбке»",
+    "П. Ершов — «Конёк-горбунок»",
+    "А. Толстой — «Золотой ключик»",
+    "В. Катаев — «Цветик-семицветик»",
+  ]},
+  { cat: "Рассказы о природе", books: [
+    "В. Бианки — Рассказы",
+    "Д. Мамин-Сибиряк — «Серая шейка»",
+    "М. Пришвин — Рассказы",
+    "А. Куприн — «Белый пудель»",
+  ]},
+  { cat: "Приключения и дружба", books: [
+    "Н. Носов — «Приключения Незнайки»",
+    "В. Драгунский — «Денискины рассказы»",
+    "Э. Успенский — «Крокодил Гена»",
+    "А. Линдгрен — «Малыш и Карлсон»",
+  ]},
+  { cat: "Классика", books: [
+    "Л. Толстой — «Рассказы для детей» («Филипок»…)",
+    "И. Крылов — Басни",
+    "К. Ушинский — Рассказы",
+  ]},
+];
+
+// ── Summer working days: June 1 – Aug 29 2026, Mon–Fri ───────────────────────
+function buildSummerDays() {
+  const days = [];
+  const start = new Date(2026, 5, 1);  // June 1
+  const end   = new Date(2026, 7, 29); // Aug 29
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    const dow = d.getDay();
+    if (dow >= 1 && dow <= 5) {
+      days.push(new Date(d));
+    }
+  }
+  return days;
+}
+const SUMMER_DAYS = buildSummerDays();
+const TOTAL_DAYS  = SUMMER_DAYS.length;
+
+function dateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function todayKey() { return dateKey(new Date()); }
+
+// ── State ─────────────────────────────────────────────────────────────────────
+// checks: { [dateKey]: { [person]: { [taskId]: bool } } }
+// books:  { lev: Set<idx>, arina: Set<idx> }
+let state = { checks: {}, books_lev: [], books_arina: [] };
+let fileSha   = null;
+let saveTimer = null;
+
+// ── Which week to show (0 = current) ─────────────────────────────────────────
+let currentWeekOffset = 0;
+
+function getWeekDays(offset) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  // Monday of current week
+  const dow = today.getDay() || 7;
+  const mon = new Date(today);
+  mon.setDate(today.getDate() - (dow - 1) + offset * 5);
+  // return 5 weekdays Mon–Fri
+  const days = [];
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    days.push(d);
+  }
+  return days;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function setStatus(s, t) {
+  const dot  = document.getElementById("statusDot");
+  const span = document.getElementById("statusText");
+  dot.className  = "status-dot " + (s||"");
+  span.className = "status-text" + (s==="error"?" error":"");
+  span.textContent = t;
+}
+
+function isPast(d) {
+  const t = new Date(); t.setHours(0,0,0,0);
+  return d <= t;
+}
+
+function isSummerDay(d) {
+  const k = dateKey(d);
+  return SUMMER_DAYS.some(sd => dateKey(sd) === k);
+}
+
+// ── Summary cards ─────────────────────────────────────────────────────────────
+function updateSummary() {
+  const passed = SUMMER_DAYS.filter(d => isPast(d));
+  const total  = passed.length;
+
+  PEOPLE.forEach(p => {
+    let done = 0;
+    passed.forEach(d => {
+      const dk = dateKey(d);
+      const dayData = state.checks[dk]?.[p] || {};
+      const tasks   = TASKS[p];
+      if (tasks.every(t => dayData[t.id])) done++;
+    });
+    document.getElementById(`sum-${p}`).textContent = done;
+    document.getElementById(`sum-${p}-total`).textContent = `из ${total} дней`;
+    document.getElementById(`bar-${p}`).style.width = total ? (done/total*100)+'%' : '0%';
+  });
+}
+
+// ── Calendar ──────────────────────────────────────────────────────────────────
+const RU_DAY  = ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+const RU_MON  = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+
+function buildCalendar() {
+  const days  = getWeekDays(currentWeekOffset);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const grid  = document.getElementById("calGrid");
+  grid.innerHTML = "";
+
+  // Week label
+  const m0 = days[0], m1 = days[4];
+  const label = m0.getMonth() === m1.getMonth()
+    ? `${m0.getDate()}–${m1.getDate()} ${RU_MON[m0.getMonth()]} 2026`
+    : `${m0.getDate()} ${RU_MON[m0.getMonth()]} – ${m1.getDate()} ${RU_MON[m1.getMonth()]} 2026`;
+  document.getElementById("weekLabel").textContent = label;
+
+  // Nav buttons
+  document.getElementById("prevWeek").disabled = false;
+  document.getElementById("nextWeek").disabled = false;
+
+  // Calculate grid: rows = header + 4 people
+  // header row: empty corner + 5 day headers
+  const corner = makeCell("cal-cell header-day", "");
+  corner.style.background = "#fafafa";
+  grid.appendChild(corner);
+
+  days.forEach(d => {
+    const isToday = dateKey(d) === todayKey();
+    const isSummer = isSummerDay(d);
+    const cell = makeCell("cal-cell header-day" + (isToday?" today-col":""), "");
+    const dayName = document.createElement("span");
+    dayName.textContent = RU_DAY[d.getDay()];
+    const dateNum = document.createElement("span");
+    dateNum.className = "date-num";
+    dateNum.textContent = d.getDate();
+    cell.appendChild(dayName);
+    cell.appendChild(dateNum);
+    if (!isSummer) cell.style.opacity = "0.35";
+    grid.appendChild(cell);
+  });
+
+  // Person rows
+  PEOPLE.forEach(person => {
+    const tasks = TASKS[person];
+    // For calendar: show one "all done" toggle per cell OR per task?
+    // We'll show a single combined check per day (all tasks done = checked)
+    // and a sub-row per task on hover — actually: let's show one row per person
+    // with a single compound check button per day. Simpler = better for mobile.
+
+    // Row label
+    const lbl = makeCell("cal-cell row-label", "");
+    const nameSpan = document.createElement("div");
+    nameSpan.textContent = PERSON_LABELS[person];
+    nameSpan.style.fontWeight = "600";
+    const subSpan = document.createElement("div");
+    subSpan.className = "row-sub";
+    subSpan.textContent = tasks.length + " задачи";
+    lbl.appendChild(nameSpan);
+    lbl.appendChild(subSpan);
+    grid.appendChild(lbl);
+
+    days.forEach(d => {
+      const dk = dateKey(d);
+      const isToday = dk === todayKey();
+      const isSummer = isSummerDay(d);
+      const future = !isPast(d);
+      const cell = makeCell("cal-cell" + (isToday?" today-col":""), "");
+
+      if (!isSummer) {
+        cell.style.opacity = "0.2";
+        grid.appendChild(cell);
+        return;
+      }
+
+      const dayData = state.checks[dk]?.[person] || {};
+      const allDone = tasks.every(t => dayData[t.id]);
+      const btn = document.createElement("button");
+      btn.className = `check-btn ${person}` + (allDone?" done":"") + (future?" future":"");
+      btn.title = tasks.map(t => (dayData[t.id]?"✓ ":"☐ ") + t.label).join("\n");
+      btn.textContent = allDone ? "✓" : "";
+      btn.style.fontSize = allDone ? "14px" : "0";
+
+      if (!future) {
+        btn.addEventListener("click", () => {
+          if (!state.checks[dk]) state.checks[dk] = {};
+          if (!state.checks[dk][person]) state.checks[dk][person] = {};
+          const newVal = !allDone;
+          tasks.forEach(t => { state.checks[dk][person][t.id] = newVal; });
+          buildCalendar();
+          updateSummary();
+          scheduleSave();
+        });
+      }
+      cell.appendChild(btn);
+      grid.appendChild(cell);
+    });
+  });
+}
+
+function makeCell(cls, text) {
+  const d = document.createElement("div");
+  d.className = cls;
+  if (text) d.textContent = text;
+  return d;
+}
+
+// ── Books ─────────────────────────────────────────────────────────────────────
+function buildBooks(person, data, containerId, progressId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+  let total = 0, done = 0;
+
+  data.forEach((section, si) => {
+    const catDiv = document.createElement("div");
+    catDiv.className = "book-category";
+    catDiv.textContent = section.cat;
+    container.appendChild(catDiv);
+
+    section.books.forEach((book, bi) => {
+      const idx = `${si}-${bi}`;
+      const bookDone = (state[`books_${person}`] || []).includes(idx);
+      if (bookDone) done++;
+      total++;
+
+      const item = document.createElement("div");
+      item.className = `book-item ${person}` + (bookDone ? " done" : "");
+      item.innerHTML = `<div class="book-check">${bookDone?"✓":""}</div><div class="book-label">${book}</div>`;
+      item.addEventListener("click", () => {
+        if (!state[`books_${person}`]) state[`books_${person}`] = [];
+        const arr = state[`books_${person}`];
+        const pos = arr.indexOf(idx);
+        if (pos >= 0) arr.splice(pos, 1); else arr.push(idx);
+        buildBooks(person, data, containerId, progressId);
+        scheduleSave();
+      });
+      container.appendChild(item);
+    });
+  });
+
+  document.getElementById(progressId).textContent = `${done} из ${total} прочитано`;
+}
+
+// ── GitHub API ────────────────────────────────────────────────────────────────
+function apiHeaders() {
+  return {
+    Authorization: `token ${TOKEN}`,
+    Accept: "application/vnd.github.v3+json",
+    "Content-Type": "application/json"
+  };
+}
+
+async function loadFromGitHub() {
+  const r = await fetch(API, { headers: apiHeaders() });
+  if (r.status === 404) return { checks: {}, books_lev: [], books_arina: [] };
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.sha;
+  return JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g,"")))));
+}
+
+async function saveToGitHub() {
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
+  const body = { message: "Update summer progress", content };
+  if (fileSha) body.sha = fileSha;
+  const r = await fetch(API, { method: "PUT", headers: apiHeaders(), body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.content.sha;
+}
+
+function scheduleSave() {
+  setStatus("saving", "Сохраняется…");
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      await saveToGitHub();
+      setStatus("ok", "Сохранено");
+    } catch(e) {
+      console.error(e);
+      setStatus("error", "Ошибка сохранения — проверь токен");
+    }
+  }, 1500);
+}
+
+// ── Tabs ──────────────────────────────────────────────────────────────────────
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+  });
+});
+
+// ── Week nav ──────────────────────────────────────────────────────────────────
+document.getElementById("prevWeek").addEventListener("click", () => {
+  currentWeekOffset--;
+  buildCalendar();
+});
+document.getElementById("nextWeek").addEventListener("click", () => {
+  currentWeekOffset++;
+  buildCalendar();
+});
+document.getElementById("todayBtn").addEventListener("click", () => {
+  currentWeekOffset = 0;
+  buildCalendar();
+});
+document.getElementById("changeTokenBtn").addEventListener("click", () => {
+  localStorage.removeItem(TOKEN_KEY);
+  location.reload();
+});
+
+// ── Token screen ──────────────────────────────────────────────────────────────
+function showTokenScreen() {
+  document.getElementById("tokenScreen").style.display = "flex";
+  function save() {
+    const val = document.getElementById("tokenInput").value.trim();
+    if (!val) return;
+    localStorage.setItem(TOKEN_KEY, val);
+    location.reload();
+  }
+  document.getElementById("tokenSaveBtn").addEventListener("click", save);
+  document.getElementById("tokenInput").addEventListener("keydown", e => { if(e.key==="Enter") save(); });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function startApp() {
+  try {
+    const data = await loadFromGitHub();
+    state = data;
+    if (!state.checks)       state.checks = {};
+    if (!state.books_lev)    state.books_lev = [];
+    if (!state.books_arina)  state.books_arina = [];
+    setStatus("ok", "Сохранено");
+  } catch(e) {
+    console.error(e);
+    setStatus("error", "Ошибка — токен неверный или истёк");
+  }
+
+  buildCalendar();
+  updateSummary();
+  buildBooks("lev",   LEV_BOOKS,   "books-lev",   "prog-lev");
+  buildBooks("arina", ARINA_BOOKS, "books-arina", "prog-arina");
+}
+
+if (TOKEN) {
+  startApp();
+} else {
+  showTokenScreen();
+}
+</script>
+</body>
+</html>
