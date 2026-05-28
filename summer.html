@@ -147,7 +147,6 @@
     }
     .check-btn:hover { transform: scale(1.1); }
     .check-btn.done { color: #fff; border-color: transparent; }
-    .check-btn.future { opacity: .3; cursor: default; pointer-events: none; }
     .check-btn.dad.done   { background: var(--dad);   border-color: var(--dad); }
     .check-btn.lev.done   { background: var(--lev);   border-color: var(--lev); }
     .check-btn.arina.done { background: var(--arina); border-color: var(--arina); }
@@ -578,7 +577,6 @@ function buildCalendar() {
         const dk = dateKey(d);
         const isToday = dk === todayKey();
         const isSummer = isSummerDay(d);
-        const future = !isPast(d);
         const cell = makeCell("cal-cell" + (isToday?" today-col":""), "");
 
         if (!isSummer) {
@@ -589,20 +587,18 @@ function buildCalendar() {
 
         const done = state.checks[dk]?.[person]?.[task.id] || false;
         const btn = document.createElement("button");
-        btn.className = `check-btn ${person}` + (done?" done":"") + (future?" future":"");
+        btn.className = `check-btn ${person}` + (done?" done":"");
         btn.textContent = done ? "✓" : "";
         btn.style.fontSize = done ? "14px" : "0";
 
-        if (!future) {
-          btn.addEventListener("click", () => {
-            if (!state.checks[dk]) state.checks[dk] = {};
-            if (!state.checks[dk][person]) state.checks[dk][person] = {};
-            state.checks[dk][person][task.id] = !done;
-            buildCalendar();
-            updateSummary();
-            scheduleSave();
-          });
-        }
+        btn.addEventListener("click", () => {
+          if (!state.checks[dk]) state.checks[dk] = {};
+          if (!state.checks[dk][person]) state.checks[dk][person] = {};
+          state.checks[dk][person][task.id] = !done;
+          buildCalendar();
+          updateSummary();
+          scheduleSave();
+        });
         cell.appendChild(btn);
         grid.appendChild(cell);
       });
