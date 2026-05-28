@@ -147,6 +147,7 @@
     }
     .check-btn:hover { transform: scale(1.1); }
     .check-btn.done { color: #fff; border-color: transparent; }
+    .check-btn.future { opacity: .3; cursor: default; pointer-events: none; }
     .check-btn.dad.done   { background: var(--dad);   border-color: var(--dad); }
     .check-btn.lev.done   { background: var(--lev);   border-color: var(--lev); }
     .check-btn.arina.done { background: var(--arina); border-color: var(--arina); }
@@ -259,7 +260,7 @@
       <div class="mini-bar"><div class="mini-fill" id="bar-arina" style="width:0%"></div></div>
     </div>
     <div class="person-card masha">
-      <div class="person-name">Маша</div>
+      <div class="person-name">Мария</div>
       <div class="person-days" id="sum-masha">0</div>
       <div class="person-total" id="sum-masha-total">из — дней</div>
       <div class="mini-bar"><div class="mini-fill" id="bar-masha" style="width:0%"></div></div>
@@ -333,7 +334,7 @@ const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 
 // ── People & tasks ─────────────────────────────────────────────────────────────
 const PEOPLE = ["dad", "lev", "arina", "masha"];
-const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", masha: "Маша" };
+const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", masha: "Мария" };
 
 const TASKS = {
   dad:   [{ id: "guitar",  label: "Бас-гитара",      sub: "15–20 мин" },
@@ -577,6 +578,7 @@ function buildCalendar() {
         const dk = dateKey(d);
         const isToday = dk === todayKey();
         const isSummer = isSummerDay(d);
+        const future = !isPast(d);
         const cell = makeCell("cal-cell" + (isToday?" today-col":""), "");
 
         if (!isSummer) {
@@ -587,18 +589,20 @@ function buildCalendar() {
 
         const done = state.checks[dk]?.[person]?.[task.id] || false;
         const btn = document.createElement("button");
-        btn.className = `check-btn ${person}` + (done?" done":"");
+        btn.className = `check-btn ${person}` + (done?" done":"") + (future?" future":"");
         btn.textContent = done ? "✓" : "";
         btn.style.fontSize = done ? "14px" : "0";
 
-        btn.addEventListener("click", () => {
-          if (!state.checks[dk]) state.checks[dk] = {};
-          if (!state.checks[dk][person]) state.checks[dk][person] = {};
-          state.checks[dk][person][task.id] = !done;
-          buildCalendar();
-          updateSummary();
-          scheduleSave();
-        });
+        if (!future) {
+          btn.addEventListener("click", () => {
+            if (!state.checks[dk]) state.checks[dk] = {};
+            if (!state.checks[dk][person]) state.checks[dk][person] = {};
+            state.checks[dk][person][task.id] = !done;
+            buildCalendar();
+            updateSummary();
+            scheduleSave();
+          });
+        }
         cell.appendChild(btn);
         grid.appendChild(cell);
       });
