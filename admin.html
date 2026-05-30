@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0ee; height: 100vh; display: flex; flex-direction: column; }
+
+    .tab-bar {
+      display: flex; align-items: center; gap: 4px;
+      background: #fff; border-bottom: 1.5px solid #e5e5e5;
+      padding: 10px 16px 0; flex-shrink: 0;
+    }
+
+    .tab-btn {
+      font-family: inherit; font-size: 13px; font-weight: 500;
+      padding: 8px 18px 10px; border: none; background: none; cursor: pointer;
+      color: #888; border-bottom: 2px solid transparent; margin-bottom: -1.5px;
+      border-radius: 6px 6px 0 0; transition: color .15s, border-color .15s;
+    }
+    .tab-btn:hover { color: #333; }
+    .tab-btn.active { color: #1a1f36; border-bottom-color: #1a1f36; }
+
+    .frame-wrap { flex: 1; position: relative; }
+
+    iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none; display: none;
+    }
+    iframe.active { display: block; }
+  </style>
+</head>
+<body>
+
+<div class="tab-bar">
+  <button class="tab-btn active" data-src="mpd.html">MPD</button>
+  <button class="tab-btn" data-src="life.html">Life</button>
+  <button class="tab-btn" data-src="summer.html">Summer</button>
+</div>
+
+<div class="frame-wrap">
+  <iframe id="frame-mpd.html"    src="mpd.html"    class="active"></iframe>
+  <iframe id="frame-life.html"   ></iframe>
+  <iframe id="frame-summer.html" ></iframe>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.src;
+
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('iframe').forEach(f => f.classList.remove('active'));
+      const frame = document.getElementById('frame-' + src);
+      if (!frame.src) frame.src = src;
+      frame.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
