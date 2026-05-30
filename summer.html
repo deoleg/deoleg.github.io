@@ -101,7 +101,7 @@
 
     .cal-grid {
       display: grid;
-      grid-template-columns: 110px repeat(5, 1fr);
+      grid-template-columns: 110px repeat(7, 1fr);
       gap: 0;
       border: 1.5px solid var(--border);
       border-radius: 10px;
@@ -221,7 +221,7 @@
 
     @media (max-width: 520px) {
       .summary-row { grid-template-columns: repeat(2, 1fr); }
-      .cal-grid { grid-template-columns: 80px repeat(5, 1fr); }
+      .cal-grid { grid-template-columns: 80px repeat(7, 1fr); }
       .cal-cell { padding: 6px 3px; }
       .check-btn { width: 24px; height: 24px; font-size: 11px; }
     }
@@ -466,7 +466,7 @@ function getWeekDays(offset) {
   mon.setDate(today.getDate() - (dow - 1) + offset * 7);
   // return 5 weekdays Mon–Fri
   const days = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     const d = new Date(mon);
     d.setDate(mon.getDate() + i);
     days.push(d);
@@ -523,7 +523,7 @@ function buildCalendar() {
   grid.innerHTML = "";
 
   // Week label
-  const m0 = days[0], m1 = days[4];
+  const m0 = days[0], m1 = days[6];
   const label = m0.getMonth() === m1.getMonth()
     ? `${m0.getDate()}–${m1.getDate()} ${RU_MON[m0.getMonth()]} 2026`
     : `${m0.getDate()} ${RU_MON[m0.getMonth()]} – ${m1.getDate()} ${RU_MON[m1.getMonth()]} 2026`;
