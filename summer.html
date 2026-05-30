@@ -463,7 +463,7 @@ function getWeekDays(offset) {
   // Monday of current week
   const dow = today.getDay() || 7;
   const mon = new Date(today);
-  mon.setDate(today.getDate() - (dow - 1) + offset * 5);
+  mon.setDate(today.getDate() - (dow - 1) + offset * 7);
   // return 5 weekdays Mon–Fri
   const days = [];
   for (let i = 0; i < 5; i++) {
