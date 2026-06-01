@@ -518,7 +518,6 @@ function isSummerDay(d) {
 // ── Summary cards ─────────────────────────────────────────────────────────────
 function updateSummary() {
   const passed = SUMMER_DAYS.filter(d => isPast(d));
-  const total  = passed.length;
 
   PEOPLE.forEach(p => {
     let done = 0;
@@ -529,8 +528,8 @@ function updateSummary() {
       if (tasks.every(t => dayData[t.id])) done++;
     });
     document.getElementById(`sum-${p}`).textContent = done;
-    document.getElementById(`sum-${p}-total`).textContent = `из ${total} дней`;
-    document.getElementById(`bar-${p}`).style.width = total ? (done/total*100)+'%' : '0%';
+    document.getElementById(`sum-${p}-total`).textContent = `из ${TOTAL_DAYS} дней`;
+    document.getElementById(`bar-${p}`).style.width = (done / TOTAL_DAYS * 100) + '%';
   });
 }
 
