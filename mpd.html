@@ -595,6 +595,7 @@ const PARTNERS = [
   { id: "p1", name: "Masiello, George",              state: "VA" },
   { id: "p2", name: "Gallagher, Lynn & Holly",       state: "FL" },
   { id: "p3", name: "Hoskins, David & Rebecca",      state: "IL" },
+  { id: "p4", name: "House, Larry & Martha",         state: "",   leaf: true },
 ];
 
 const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
@@ -717,7 +718,7 @@ function buildPartnerRow(p, tbody, noOverdue) {
   const tdName = document.createElement("td");
   tdName.className = "p-name";
   const isCustom = String(p.id).startsWith("c");
-  tdName.textContent = (saved.isNew || isCustom ? "🌱" : "") + p.name;
+  tdName.textContent = (saved.isNew || isCustom || p.leaf ? "🌱" : "") + p.name;
   tr.appendChild(tdName);
 
   const tdState = document.createElement("td");
