@@ -492,7 +492,7 @@ const REVIEW_DAYS = [2, 3, 7]; // days after learning
 function getAvailableIds(today) {
   if (!state.startDate) return [];
   const d = daysBetween(state.startDate, today);
-  const count = Math.min((Math.floor(d / 2) + 1) * BATCH_SIZE, WORDS.length);
+  const count = Math.min((d + 1) * BATCH_SIZE, WORDS.length);
   return WORDS.slice(0, count).map(w => w.id);
 }
 
@@ -616,11 +616,11 @@ function render() {
 function renderWelcome() {
   root.innerHTML = `
     <h1>Греческий словарь</h1>
-    <p class="subtitle">${WORDS.length} слов · метод 7–3–2–1 · 10 слов каждые 2 дня</p>
+    <p class="subtitle">${WORDS.length} слов · метод 7–3–2–1 · 10 новых слов каждый день</p>
     <div class="done-card" style="margin-bottom:20px">
       <div class="done-icon">🏛</div>
       <div class="done-title">Начнём учить?</div>
-      <div class="done-sub">Ты будешь учить по 10 новых слов каждые 2 дня с повторениями через 2, 3 и 7 дней.</div>
+      <div class="done-sub">Каждый день 10 новых слов, повторения через 2, 3 и 7 дней после изучения.</div>
     </div>
     <button class="btn btn-primary" id="btnStart">Начать обучение</button>`;
   document.getElementById('btnStart').onclick = () => {
