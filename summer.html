@@ -129,6 +129,8 @@
       white-space: nowrap; cursor: pointer; transition: background .12s;
     }
     .cal-cell.row-label:hover { background: #e8e8e6; }
+    .cal-cell.row-label.no-timer { cursor: default; }
+    .cal-cell.row-label.no-timer:hover { background: #fafafa; }
     .cal-cell.row-label .row-sub { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 1px; }
 
     .cal-cell.section-header {
@@ -359,21 +361,23 @@ const PEOPLE = ["dad", "lev", "arina", "masha"];
 const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", masha: "Мария" };
 
 const TASKS = {
-  dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "15 мин" },
-          { id: "bible",   label: "Чтение Библии",    sub: "15 мин" },
-          { id: "guitar",  label: "Бас-гитара",       sub: "15–20 мин" },
-          { id: "english", label: "Английский",        sub: "15 мин" },
-          { id: "tcmi",    label: "TCMi + чтение",    sub: "20 мин" }],
-  lev:   [{ id: "bible",  label: "Чтение Радикальной книги",     sub: "15 мин" },
-          { id: "sport",  label: "Физкультура",        sub: "15 мин" },
-          { id: "read",   label: "Чтение из списка",   sub: "30 мин" },
-          { id: "free",   label: "Книга по выбору",    sub: "10 мин" }],
-  arina: [{ id: "bible",  label: "Чтение Библии",     sub: "15 мин" },
-          { id: "sport",  label: "Физкультура",        sub: "15 мин" },
-          { id: "copy",   label: "Прописи Пятибратова",sub: "30 мин" },
-          { id: "aloud",  label: "Читает вслух вечером",sub: "10 мин" }],
-  masha: [{ id: "sport",  label: "Физкультура",        sub: "15 мин" },
-          { id: "draw",   label: "Рисование Гаврина",  sub: "30 мин" }],
+  dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "",           noTimer: true },
+          { id: "bible",   label: "Чтение Библии",      sub: "15 мин" },
+          { id: "guitar",  label: "Бас-гитара",         sub: "15–20 мин" },
+          { id: "english", label: "Английский",          sub: "15 мин" },
+          { id: "tcmi",    label: "TCMi + чтение",      sub: "20 мин" }],
+  lev:   [{ id: "bible",  label: "Чтение Радикальной книги", sub: "15 мин" },
+          { id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "read",   label: "Чтение из списка",     sub: "30 мин" },
+          { id: "free",   label: "Книга по выбору",      sub: "10 мин" },
+          { id: "english",label: "Английский",           sub: "15 мин" }],
+  arina: [{ id: "bible",  label: "Чтение Библии",       sub: "15 мин" },
+          { id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "copy",   label: "Прописи Пятибратова",  sub: "30 мин" },
+          { id: "aloud",  label: "Читает вслух вечером", sub: "10 мин" },
+          { id: "english",label: "Английский",           sub: "15 мин" }],
+  masha: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "draw",   label: "Рисование Гаврина",    sub: "30 мин",     noTimer: true }],
 };
 
 // ── Books ─────────────────────────────────────────────────────────────────────
@@ -589,12 +593,18 @@ function buildCalendar() {
       const lbl = makeCell("cal-cell row-label", "");
       const nameDiv = document.createElement("div");
       nameDiv.textContent = task.label;
-      const subDiv = document.createElement("div");
-      subDiv.className = "row-sub";
-      subDiv.textContent = task.sub;
       lbl.appendChild(nameDiv);
-      lbl.appendChild(subDiv);
-      lbl.addEventListener("click", () => startTimer(task.label, task.sub));
+      if (task.sub) {
+        const subDiv = document.createElement("div");
+        subDiv.className = "row-sub";
+        subDiv.textContent = task.sub;
+        lbl.appendChild(subDiv);
+      }
+      if (task.noTimer) {
+        lbl.classList.add("no-timer");
+      } else {
+        lbl.addEventListener("click", () => startTimer(task.label, task.sub));
+      }
       grid.appendChild(lbl);
 
       days.forEach(d => {
