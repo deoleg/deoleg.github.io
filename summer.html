@@ -363,21 +363,21 @@ const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", mas
 const TASKS = {
   dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "",           noTimer: true },
           { id: "bible",   label: "Чтение Библии",      sub: "15 мин" },
-          { id: "guitar",  label: "Бас-гитара",         sub: "15–20 мин" },
           { id: "english", label: "Английский",          sub: "15 мин" },
+          { id: "guitar",  label: "Бас-гитара",         sub: "15–20 мин" },
           { id: "tcmi",    label: "TCMi + чтение",      sub: "20 мин" }],
-  lev:   [{ id: "bible",  label: "Чтение Радикальной книги", sub: "15 мин" },
-          { id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
-          { id: "read",   label: "Чтение из списка",     sub: "30 мин" },
-          { id: "free",   label: "Книга по выбору",      sub: "10 мин" },
-          { id: "english",label: "Английский",           sub: "15 мин",     noTimer: true }],
-  arina:[{ id: "bible",  label: "Чтение Библии",       sub: "15 мин" },
-          { id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
-          { id: "copy",   label: "Прописи Пятибратова",  sub: "30 мин" },
-          { id: "aloud",  label: "Читает вслух вечером", sub: "10 мин" },
-          { id: "english",label: "Английский",           sub: "15 мин",     noTimer: true }],
+  lev:   [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "bible",  label: "Чтение Радикальной книги", sub: "",      dur: "15 мин" },
+          { id: "english",label: "Английский",           sub: "",           noTimer: true },
+          { id: "read",   label: "Чтение из списка",     sub: "",           dur: "30 мин" },
+          { id: "free",   label: "Книга по выбору",      sub: "",           dur: "10 мин" }],
+  arina: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "bible",  label: "Чтение Библии",        sub: "",           dur: "15 мин" },
+          { id: "english",label: "Английский",           sub: "",           noTimer: true },
+          { id: "copy",   label: "Прописи Пятибратова",  sub: "",           dur: "30 мин" },
+          { id: "aloud",  label: "Читает вслух вечером", sub: "",           dur: "10 мин" }],
   masha: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
-          { id: "draw",   label: "Рисование Гаврина",    sub: "30 мин",     noTimer: true }],
+          { id: "draw",   label: "Рисование Гаврина",    sub: "",           noTimer: true }],
 };
 
 // ── Books ─────────────────────────────────────────────────────────────────────
@@ -603,7 +603,7 @@ function buildCalendar() {
       if (task.noTimer) {
         lbl.classList.add("no-timer");
       } else {
-        lbl.addEventListener("click", () => startTimer(task.label, task.sub));
+        lbl.addEventListener("click", () => startTimer(task.label, task.dur || task.sub));
       }
       grid.appendChild(lbl);
 
