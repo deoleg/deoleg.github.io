@@ -566,6 +566,21 @@ function scheduleSave() {
 // ── Session ────────────────────────────────────────────────────────────────
 let session = null;
 
+const RU_MON_G = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+
+function getNextSessionDate() {
+  for (let i = 1; i <= 30; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() + i);
+    const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    if (getNewWords(ds).length > 0 || getReviews(ds).length > 0) {
+      const label = i === 1 ? 'завтра' : `${d.getDate()} ${RU_MON_G[d.getMonth()]}`;
+      return { days: i, label };
+    }
+  }
+  return null;
+}
+
 function buildSession(today) {
   const newW = getNewWords(today);
   const revs = getReviews(today);
@@ -641,10 +656,15 @@ function renderHome() {
       <div class="session-head">Сегодня</div>
       ${newW.length ? `<div class="session-row">📖 Новые слова<span class="session-cnt">${newW.length}</span></div>` : ''}
       ${revs.length ? `<div class="session-row">🔄 Повторение<span class="session-cnt">${revs.length}</span></div>` : ''}
-      ${!hasSession ? `<div style="text-align:center;font-size:14px;color:var(--muted);padding:8px 0">✅ На сегодня всё готово</div>` : ''}
+      ${!hasSession ? (() => {
+        const next = getNextSessionDate();
+        return `<div style="text-align:center;font-size:14px;color:var(--muted);padding:8px 0">
+          ✅ На сегодня всё готово${next ? `<br><span style="font-size:12px">Следующая сессия — ${next.label}</span>` : ''}
+        </div>`;
+      })() : ''}
     </div>
     <button class="btn btn-primary" id="btnSession" ${!hasSession?'disabled':''}>
-      ${hasSession ? 'Начать сессию' : 'Зайди завтра'}
+      ${hasSession ? 'Начать сессию' : (() => { const n = getNextSessionDate(); return n ? `Вернись ${n.label}` : 'Готово'; })()}
     </button>`;
   if (hasSession) {
     document.getElementById('btnSession').onclick = () => {
