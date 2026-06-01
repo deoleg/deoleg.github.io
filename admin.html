@@ -44,23 +44,30 @@
 </div>
 
 <div class="frame-wrap">
-  <iframe id="frame-mpd.html"    src="mpd.html"    class="active"></iframe>
+  <iframe id="frame-mpd.html"    class="active"></iframe>
   <iframe id="frame-life.html"   ></iframe>
   <iframe id="frame-summer.html" ></iframe>
 </div>
 
 <script>
+  const V = '?v=' + Date.now();
+
+  function loadFrame(src) {
+    const frame = document.getElementById('frame-' + src);
+    if (!frame.src) frame.src = src + V;
+    return frame;
+  }
+
+  // Load default tab
+  loadFrame('mpd.html').classList.add('active');
+
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const src = btn.dataset.src;
-
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       document.querySelectorAll('iframe').forEach(f => f.classList.remove('active'));
-      const frame = document.getElementById('frame-' + src);
-      if (!frame.src) frame.src = src;
-      frame.classList.add('active');
+      loadFrame(btn.dataset.src).classList.add('active');
     });
   });
 </script>
