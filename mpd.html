@@ -291,6 +291,12 @@
     .p-select[data-v="refer"]    { border-color: #c39af4; color: #6b2ec9; background: #f7f0ff; }
     .p-select[data-v="done"]     { border-color: #c8c8c8; color: #888;    background: #f5f5f5; }
 
+    .p-edit { font-family:'Inter',sans-serif; font-size:12px; border:1.5px solid #e8e8e8; border-radius:6px; padding:4px 7px; background:#fff; color:#1a1a1a; outline:none; width:100%; transition:border-color .15s; }
+    .p-edit:focus { border-color:#1D9E75; }
+    .p-del-btn { background:none; border:none; color:#ccc; cursor:pointer; font-size:15px; padding:2px 5px; border-radius:4px; transition:color .15s; line-height:1; }
+    .p-del-btn:hover { color:#e05252; }
+    .p-del-td { width:28px; text-align:center; }
+
     .done-section-heading {
       font-size: 14px;
       font-weight: 600;
@@ -463,6 +469,7 @@
           <th>Штат</th>
           <th>Статус</th>
           <th>Дата</th>
+          <th></th>
         </tr>
       </thead>
       <tbody id="partnersTbody"></tbody>
@@ -480,6 +487,7 @@
             <th>Штат</th>
             <th>Статус</th>
             <th>Дата</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="doneTbody"></tbody>
@@ -595,7 +603,6 @@ const PARTNERS = [
   { id: "p1", name: "Masiello, George",              state: "VA" },
   { id: "p2", name: "Gallagher, Lynn & Holly",       state: "FL" },
   { id: "p3", name: "Hoskins, David & Rebecca",      state: "IL" },
-  { id: "p4", name: "House, Larry & Martha",         state: "",   leaf: true },
 ];
 
 const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
@@ -712,20 +719,56 @@ function buildPartnerRow(p, tbody, noOverdue) {
   const saved  = partnerData[p.id] || {};
   const status = saved.status || "";
   const date   = saved.date   || "";
+  const isCustom = String(p.id).startsWith("c");
 
   const tr = document.createElement("tr");
 
+  // ── Name cell ──
   const tdName = document.createElement("td");
   tdName.className = "p-name";
-  const isCustom = String(p.id).startsWith("c");
-  tdName.textContent = (saved.isNew || isCustom || p.leaf ? "🌱" : "") + p.name;
+  if (isCustom) {
+    const leaf = document.createElement("span");
+    leaf.textContent = "🌱";
+    tdName.appendChild(leaf);
+    const nameInp = document.createElement("input");
+    nameInp.className = "p-edit";
+    nameInp.value = p.name;
+    nameInp.style.marginLeft = "4px";
+    nameInp.addEventListener("input", () => {
+      p.name = nameInp.value;
+      const cp = customPartners.find(x => x.id === p.id);
+      if (cp) cp.name = nameInp.value;
+      scheduleSave();
+    });
+    tdName.appendChild(nameInp);
+  } else {
+    tdName.textContent = (saved.isNew || p.leaf ? "🌱" : "") + p.name;
+  }
   tr.appendChild(tdName);
 
+  // ── State cell ──
   const tdState = document.createElement("td");
   tdState.className = "p-state";
-  tdState.textContent = p.state;
+  if (isCustom) {
+    const stateInp = document.createElement("input");
+    stateInp.className = "p-edit";
+    stateInp.value = p.state;
+    stateInp.maxLength = 3;
+    stateInp.style.width = "44px";
+    stateInp.addEventListener("input", () => {
+      p.state = stateInp.value.toUpperCase();
+      stateInp.value = p.state;
+      const cp = customPartners.find(x => x.id === p.id);
+      if (cp) cp.state = p.state;
+      scheduleSave();
+    });
+    tdState.appendChild(stateInp);
+  } else {
+    tdState.textContent = p.state;
+  }
   tr.appendChild(tdState);
 
+  // ── Status cell ──
   const tdStatus = document.createElement("td");
   const sel = document.createElement("select");
   sel.className = "p-select";
@@ -754,6 +797,7 @@ function buildPartnerRow(p, tbody, noOverdue) {
   tdStatus.appendChild(sel);
   tr.appendChild(tdStatus);
 
+  // ── Date cell ──
   const tdDate = document.createElement("td");
   const dateInput = document.createElement("input");
   dateInput.className = "p-date";
@@ -769,6 +813,29 @@ function buildPartnerRow(p, tbody, noOverdue) {
   });
   tdDate.appendChild(dateInput);
   tr.appendChild(tdDate);
+
+  // ── Delete cell (custom only) ──
+  const tdDel = document.createElement("td");
+  tdDel.className = "p-del-td";
+  if (isCustom) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "p-del-btn";
+    btn.title = "Удалить";
+    btn.textContent = "×";
+    btn.addEventListener("click", () => {
+      if (!confirm(`Удалить «${p.name}»?`)) return;
+      const ci = customPartners.findIndex(x => x.id === p.id);
+      if (ci !== -1) customPartners.splice(ci, 1);
+      const pi = PARTNERS.findIndex(x => x.id === p.id);
+      if (pi !== -1) PARTNERS.splice(pi, 1);
+      delete partnerData[p.id];
+      buildPartnersTable();
+      scheduleSave();
+    });
+    tdDel.appendChild(btn);
+  }
+  tr.appendChild(tdDel);
 
   tbody.appendChild(tr);
 }
