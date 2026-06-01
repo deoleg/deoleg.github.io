@@ -249,6 +249,44 @@
       letter-spacing: -.02em; transition: color .15s;
     }
     .timer-display.flash { color: #e05252; }
+
+    /* ── Reading speed modal ── */
+    .reading-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.45);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 300; cursor: pointer;
+    }
+    .reading-modal {
+      background: #fff; border-radius: 20px; padding: 36px 28px 28px;
+      width: 340px; max-width: calc(100vw - 32px);
+      cursor: default; text-align: center;
+    }
+    .reading-modal-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .reading-modal-sub   { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .reading-input {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 40px;
+      font-weight: 700; text-align: center; border: 1.5px solid var(--border);
+      border-radius: 10px; padding: 12px; outline: none; color: var(--text);
+      margin-bottom: 14px; appearance: textfield; -moz-appearance: textfield;
+    }
+    .reading-input::-webkit-outer-spin-button,
+    .reading-input::-webkit-inner-spin-button { -webkit-appearance: none; appearance: none; }
+    .reading-input:focus { border-color: var(--arina); }
+    .reading-save-btn {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+      background: var(--arina); color: #fff; border: none; border-radius: 10px;
+      padding: 12px; cursor: pointer; margin-bottom: 8px;
+    }
+    .reading-skip-btn {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 13px; color: #aaa;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .reading-chart-svg { display: block; width: 100%; margin: 12px 0 16px; }
+    .reading-close-btn {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+      background: none; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 10px; cursor: pointer; color: #555;
+    }
   </style>
 </head>
 <body>
@@ -375,7 +413,7 @@ const TASKS = {
           { id: "bible",  label: "Чтение Библии",        sub: "",           dur: "15 мин" },
           { id: "english",label: "Английский",           sub: "",           noTimer: true },
           { id: "copy",   label: "Прописи Пятибратова",  sub: "",           dur: "30 мин" },
-          { id: "aloud",  label: "Читает вслух вечером", sub: "",           dur: "10 мин" }],
+          { id: "aloud",  label: "Читает вслух вечером", sub: "",           dur: "10 мин", trackReading: true }],
   masha: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
           { id: "draw",   label: "Рисование Гаврина",    sub: "",           noTimer: true }],
 };
@@ -476,7 +514,7 @@ function todayKey() { return dateKey(new Date()); }
 // ── State ─────────────────────────────────────────────────────────────────────
 // checks: { [dateKey]: { [person]: { [taskId]: bool } } }
 // books:  { lev: Set<idx>, arina: Set<idx> }
-let state = { checks: {}, books_lev: [], books_arina: [] };
+let state = { checks: {}, books_lev: [], books_arina: [], reading_speed: {} };
 let fileSha   = null;
 let saveTimer = null;
 
@@ -630,10 +668,19 @@ function buildCalendar() {
           btn.addEventListener("click", () => {
             if (!state.checks[dk]) state.checks[dk] = {};
             if (!state.checks[dk][person]) state.checks[dk][person] = {};
-            state.checks[dk][person][task.id] = !done;
-            buildCalendar();
-            updateSummary();
-            scheduleSave();
+            if (!done && task.trackReading) {
+              showReadingModal(dk, () => {
+                state.checks[dk][person][task.id] = true;
+                buildCalendar();
+                updateSummary();
+                scheduleSave();
+              });
+            } else {
+              state.checks[dk][person][task.id] = !done;
+              buildCalendar();
+              updateSummary();
+              scheduleSave();
+            }
           });
         }
         cell.appendChild(btn);
@@ -648,6 +695,92 @@ function makeCell(cls, text) {
   d.className = cls;
   if (text) d.textContent = text;
   return d;
+}
+
+// ── Reading speed ─────────────────────────────────────────────────────────────
+const RU_MON_S = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+
+function showReadingModal(dk, onConfirm) {
+  const overlay = document.createElement('div');
+  overlay.className = 'reading-overlay';
+  overlay.innerHTML = `
+    <div class="reading-modal">
+      <div class="reading-modal-title">Техника чтения — Арина</div>
+      <div class="reading-modal-sub">Сколько слов прочитала за минуту?</div>
+      <input class="reading-input" id="readingInput" type="number" min="1" max="999" placeholder="45">
+      <button type="button" class="reading-save-btn" id="readingSave">Сохранить</button>
+      <button type="button" class="reading-skip-btn" id="readingSkip">Пропустить</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  const input = document.getElementById('readingInput');
+  input.focus();
+
+  function save() {
+    const val = parseInt(input.value);
+    if (!val || val < 1) { input.focus(); return; }
+    if (!state.reading_speed) state.reading_speed = {};
+    state.reading_speed[dk] = val;
+    overlay.remove();
+    onConfirm();
+    scheduleSave();
+    showReadingChart(dk);
+  }
+
+  document.getElementById('readingSave').addEventListener('click', save);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') save(); });
+  document.getElementById('readingSkip').addEventListener('click', () => { overlay.remove(); onConfirm(); });
+}
+
+function showReadingChart(highlightDk) {
+  const data = Object.entries(state.reading_speed || {}).sort(([a],[b]) => a.localeCompare(b));
+  if (!data.length) return;
+  const overlay = document.createElement('div');
+  overlay.className = 'reading-overlay';
+  overlay.innerHTML = `
+    <div class="reading-modal">
+      <div class="reading-modal-title">Прогресс чтения — Арина</div>
+      <div class="reading-modal-sub">слов в минуту</div>
+      ${buildReadingChart(data, highlightDk)}
+      <button type="button" class="reading-close-btn" id="readingClose">Закрыть</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.getElementById('readingClose').addEventListener('click', () => overlay.remove());
+}
+
+function buildReadingChart(data, highlightDk) {
+  const W = 300, H = 160, PL = 32, PR = 8, PT = 20, PB = 30;
+  const pw = W - PL - PR, ph = H - PT - PB;
+  const vals = data.map(([,v]) => v);
+  const minV = Math.max(0, Math.min(...vals) - 15);
+  const maxV = Math.max(...vals) + 15;
+  const n = data.length;
+  const xS = i => PL + (n > 1 ? (i / (n-1)) * pw : pw / 2);
+  const yS = v => PT + ph - ((v - minV) / (maxV - minV)) * ph;
+  const pts = data.map(([,v], i) => `${xS(i).toFixed(1)},${yS(v).toFixed(1)}`);
+  const line = 'M' + pts.join('L');
+  const area = `M${PL},${PT+ph}L${pts.join('L')}L${xS(n-1)},${PT+ph}Z`;
+  const circles = data.map(([dk, v], i) => {
+    const cx = xS(i).toFixed(1), cy = yS(v).toFixed(1);
+    const hl = dk === highlightDk;
+    return `<circle cx="${cx}" cy="${cy}" r="${hl?5.5:3.5}" fill="${hl?'#BF360C':'#FFCC80'}" stroke="#BF360C" stroke-width="1.5"/>
+            <text x="${cx}" y="${(+cy-9).toFixed(1)}" text-anchor="middle" font-size="9" fill="#BF360C" font-weight="${hl?700:500}">${v}</text>`;
+  }).join('');
+  const idxs = n <= 4 ? data.map((_,i)=>i) : [...new Set([0, Math.round((n-1)/2), n-1])];
+  const xLabels = idxs.map(i => {
+    const d = new Date(data[i][0]);
+    return `<text x="${xS(i).toFixed(1)}" y="${H-4}" text-anchor="middle" font-size="9" fill="#aaa">${d.getDate()} ${RU_MON_S[d.getMonth()]}</text>`;
+  }).join('');
+  const yTicks = [minV, (minV+maxV)/2, maxV].map(v => {
+    const y = yS(v).toFixed(1);
+    return `<line x1="${PL}" y1="${y}" x2="${W-PR}" y2="${y}" stroke="#f0f0ee" stroke-width="1"/>
+            <text x="${PL-4}" y="${(+y+3).toFixed(1)}" text-anchor="end" font-size="9" fill="#bbb">${Math.round(v)}</text>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" class="reading-chart-svg">
+    ${yTicks}<path d="${area}" fill="rgba(191,54,12,0.07)"/>
+    <path d="${line}" fill="none" stroke="#BF360C" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${circles}${xLabels}
+  </svg>`;
 }
 
 // ── Books ─────────────────────────────────────────────────────────────────────
@@ -828,9 +961,10 @@ async function startApp() {
   try {
     const data = await loadFromGitHub();
     state = data;
-    if (!state.checks)       state.checks = {};
-    if (!state.books_lev)    state.books_lev = [];
-    if (!state.books_arina)  state.books_arina = [];
+    if (!state.checks)         state.checks = {};
+    if (!state.books_lev)      state.books_lev = [];
+    if (!state.books_arina)    state.books_arina = [];
+    if (!state.reading_speed)  state.reading_speed = {};
     setStatus("ok", "Сохранено");
   } catch(e) {
     console.error(e);
