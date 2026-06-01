@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Греческий — карточки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a4f7a; --blue-bg: #e8f0f8;
+      --green: #1d9e75; --red: #c0392b;
+      --border: #e5e5e5; --text: #1a1f36; --muted: #888; --bg: #f7f7f5;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 40px 16px 80px; }
+    .page { width: 100%; max-width: 520px; margin: 0 auto; }
+
+    .status-bar { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #bbb; margin-bottom: 24px; min-height: 18px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #ddd; flex-shrink: 0; transition: background .3s; }
+    .status-dot.ok { background: var(--green); }
+    .status-dot.saving { background: #f0a500; }
+    .status-dot.error { background: var(--red); }
+    .status-text.error { color: var(--red); }
+
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .subtitle { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+    .stat-card { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+    .stat-num { font-size: 26px; font-weight: 700; color: var(--blue); }
+    .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .progress-wrap { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; }
+    .progress-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .progress-bar { height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width .4s ease; }
+
+    .session-wrap { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+    .session-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+    .session-row { display: flex; align-items: center; gap: 10px; font-size: 14px; padding: 5px 0; }
+    .session-row + .session-row { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 9px; }
+    .session-cnt { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--blue); }
+
+    .btn { display: block; width: 100%; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; border: none; border-radius: 10px; padding: 14px; cursor: pointer; transition: opacity .15s; }
+    .btn:disabled { opacity: .4; cursor: default; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #15406a; }
+    .btn-ghost { background: none; color: var(--blue); border: 1.5px solid var(--blue); margin-top: 10px; }
+    .btn-ghost:hover:not(:disabled) { background: var(--blue-bg); }
+
+    /* Card */
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .card-label { font-size: 12px; color: var(--muted); }
+    .card-pbar { width: 100px; height: 4px; background: #eee; border-radius: 2px; overflow: hidden; }
+    .card-pfill { height: 100%; background: var(--blue); border-radius: 2px; transition: width .3s; }
+
+    .flashcard { background: #fff; border: 1.5px solid var(--border); border-radius: 20px; padding: 48px 28px 40px; text-align: center; margin-bottom: 16px; min-height: 210px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .fc-badge { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 18px; }
+    .fc-main { font-size: 40px; font-weight: 700; color: var(--text); line-height: 1.15; }
+    .fc-rest { font-size: 16px; color: var(--muted); font-weight: 400; margin-top: 4px; }
+    .fc-divider { width: 36px; height: 2px; background: var(--border); margin: 20px auto; }
+    .fc-translation { font-size: 22px; font-weight: 500; color: var(--blue); }
+
+    .choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .choice { font-family: 'Inter', sans-serif; font-size: 15px; text-align: left; background: #fff; color: var(--text); border: 1.5px solid var(--border); border-radius: 10px; padding: 13px 16px; cursor: pointer; transition: all .12s; }
+    .choice:hover:not(:disabled) { border-color: var(--blue); background: var(--blue-bg); }
+    .choice.correct { border-color: var(--green); background: #e6f5ef; color: var(--green); font-weight: 500; }
+    .choice.wrong   { border-color: var(--red);   background: #fbeaea; color: var(--red); }
+    .choice:disabled { cursor: default; }
+
+    /* Done */
+    .done-card { background: #fff; border: 1.5px solid var(--border); border-radius: 20px; padding: 48px 28px; text-align: center; }
+    .done-icon { font-size: 48px; margin-bottom: 16px; }
+    .done-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .done-sub { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* Token */
+    .token-screen { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 10; flex-direction: column; align-items: center; justify-content: center; padding: 32px; }
+    .token-inner { width: 100%; max-width: 420px; }
+    .token-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .token-desc  { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+    .token-input { width: 100%; font-family: monospace; font-size: 13px; padding: 10px 12px; border: 1.5px solid #ddd; border-radius: 8px; outline: none; margin-bottom: 12px; }
+    .token-btn { width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; background: var(--text); color: #fff; border: none; border-radius: 8px; padding: 11px; cursor: pointer; }
+    .token-hint { font-size: 12px; color: #bbb; margin-top: 12px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="tokenScreen" class="token-screen">
+  <div class="token-inner">
+    <p class="token-title">Настройка сохранения</p>
+    <p class="token-desc">Введи GitHub Personal Access Token — тот же, что используется в других страницах.</p>
+    <input id="tokenInput" class="token-input" type="password" placeholder="github_pat_…">
+    <button type="button" id="tokenSaveBtn" class="token-btn">Сохранить и продолжить</button>
+    <p class="token-hint">Fine-grained token с правом <strong>Contents: Read&nbsp;&amp;&nbsp;write</strong> для deoleg.github.io</p>
+  </div>
+</div>
+
+<div class="page">
+  <div class="status-bar">
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-text" id="statusText">Загрузка…</span>
+  </div>
+  <div id="root"></div>
+</div>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────────
+const REPO      = "deoleg/deoleg.github.io";
+const FILE      = "data/greek.json";
+const TOKEN_KEY = "mpd_gh_token";
+let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+
+// ── Words (300 entries from dictionary) ───────────────────────────────────────
+const WORDS = [
+  {id:1,  gr:"βλέπω",                    ru:"вижу"},
+  {id:2,  gr:"γινώσκω",                  ru:"знаю"},
+  {id:3,  gr:"γράφω",                    ru:"пишу"},
+  {id:4,  gr:"διδάσκω",                  ru:"учу"},
+  {id:5,  gr:"λαμβάνω",                  ru:"беру"},
+  {id:6,  gr:"λέγω",                     ru:"говорю"},
+  {id:7,  gr:"λύω",                      ru:"развязываю"},
+  {id:8,  gr:"ἔχω",                      ru:"имею"},
+  {id:9,  gr:"ἀδελφός, ὁ",              ru:"брат"},
+  {id:10, gr:"ἄνθρωπος, ὁ",             ru:"человек"},
+  {id:11, gr:"ἀπόστολος, ὁ",            ru:"апостол"},
+  {id:12, gr:"δοῦλος, ὁ",               ru:"раб"},
+  {id:13, gr:"δῶρον, τό",               ru:"дар"},
+  {id:14, gr:"θάνατος, ὁ",              ru:"смерть"},
+  {id:15, gr:"ἱερόν, τό",               ru:"храм"},
+  {id:16, gr:"καί",                      ru:"и (союз)"},
+  {id:17, gr:"λόγος, ὁ",               ru:"слово"},
+  {id:18, gr:"νόμος, ὁ",               ru:"закон"},
+  {id:19, gr:"οἶκος, ὁ",               ru:"дом"},
+  {id:20, gr:"υἱός, ὁ",                ru:"сын"},
+  {id:21, gr:"ἀλήθεια, ἡ",             ru:"истина"},
+  {id:22, gr:"βασιλεία, ἡ",            ru:"царство"},
+  {id:23, gr:"γραφή, ἡ",               ru:"Писание"},
+  {id:24, gr:"δόξα, ἡ",                ru:"слава"},
+  {id:25, gr:"εἰρήνη, ἡ",              ru:"мир"},
+  {id:26, gr:"ἐκκλησία, ἡ",            ru:"Церковь"},
+  {id:27, gr:"ἐντολή, ἡ",              ru:"заповедь"},
+  {id:28, gr:"ζωή, ἡ",                 ru:"жизнь"},
+  {id:29, gr:"ἡμέρα, ἡ",              ru:"день"},
+  {id:30, gr:"καρδία, ἡ",             ru:"сердце"},
+  {id:31, gr:"παραβολή, ἡ",           ru:"притча"},
+  {id:32, gr:"φωνή, ἡ",               ru:"голос"},
+  {id:33, gr:"ψυχή, ἡ",               ru:"душа"},
+  {id:34, gr:"ὥρα, ἡ",                ru:"час"},
+  {id:35, gr:"ἀγαθός, ή, όν",         ru:"хороший"},
+  {id:36, gr:"ἄλλος, η, ον",          ru:"другой"},
+  {id:37, gr:"δίκαιος, α, ον",        ru:"праведный"},
+  {id:38, gr:"ἐγείρω",                 ru:"воскрешаю"},
+  {id:39, gr:"ἔρημος, ἡ",             ru:"пустыня"},
+  {id:40, gr:"ἔσχατος, η, ον",        ru:"последний"},
+  {id:41, gr:"κακός, ή, όν",          ru:"плохой"},
+  {id:42, gr:"καλός, ή, όν",          ru:"красивый"},
+  {id:43, gr:"κύριος, ὁ",             ru:"Господь"},
+  {id:44, gr:"μικρός, ά, όν",         ru:"маленький"},
+  {id:45, gr:"νεκρός, ά, όν",         ru:"мёртвый"},
+  {id:46, gr:"ὁ, ἡ, τό",              ru:"артикль определённый"},
+  {id:47, gr:"ὁδός, ἡ",               ru:"путь"},
+  {id:48, gr:"πιστός, ή, όν",         ru:"верный"},
+  {id:49, gr:"πρῶτος, ή, όν",         ru:"первый"},
+  {id:50, gr:"ἄγγελος, ὁ",            ru:"ангел"},
+  {id:51, gr:"ἄγω",                    ru:"веду"},
+  {id:52, gr:"ἀπό",                    ru:"от"},
+  {id:53, gr:"βάλλω",                  ru:"бросаю"},
+  {id:54, gr:"διά",                    ru:"чрез; из-за"},
+  {id:55, gr:"εἰς",                    ru:"в (с вин.)"},
+  {id:56, gr:"ἐκ",                     ru:"из"},
+  {id:57, gr:"ἐν",                     ru:"в (с дат.)"},
+  {id:58, gr:"θεός, ὁ",               ru:"Бог"},
+  {id:59, gr:"κόσμος, ὁ",             ru:"мир (вселенная)"},
+  {id:60, gr:"λίθος, ὁ",              ru:"камень"},
+  {id:61, gr:"μαθητής, ὁ",            ru:"ученик"},
+  {id:62, gr:"μένω",                   ru:"остаюсь"},
+  {id:63, gr:"μετά",                   ru:"с; после"},
+  {id:64, gr:"οὐρανός, ὁ",            ru:"небо"},
+  {id:65, gr:"πέμπω",                  ru:"посылаю"},
+  {id:66, gr:"πρός",                   ru:"к"},
+  {id:67, gr:"προφήτης, ὁ",           ru:"пророк"},
+  {id:68, gr:"τέκνον, τό",            ru:"ребёнок"},
+  {id:69, gr:"τόπος, ὁ",              ru:"место"},
+  {id:70, gr:"φέρω",                   ru:"несу"},
+  {id:71, gr:"αὐτός, ή, ό",           ru:"он, она, оно"},
+  {id:72, gr:"δέ",                     ru:"но; и"},
+  {id:73, gr:"ἐγώ",                    ru:"я"},
+  {id:74, gr:"εἰμί",                   ru:"есмь (я есть)"},
+  {id:75, gr:"ἀγάπη, ἡ",              ru:"любовь"},
+  {id:76, gr:"ἁμαρτία, ἡ",            ru:"грех"},
+  {id:77, gr:"βαπτίζω",               ru:"крещу"},
+  {id:78, gr:"διδάσκαλος, ὁ",         ru:"учитель"},
+  {id:79, gr:"ἐκεῖνος, η, ο",         ru:"тот, та, то"},
+  {id:80, gr:"ἐπαγγελία, ἡ",          ru:"обещание"},
+  {id:81, gr:"εὐαγγέλιον, τό",        ru:"Евангелие"},
+  {id:82, gr:"κρίνω",                  ru:"сужу"},
+  {id:83, gr:"νῦν",                    ru:"сейчас"},
+  {id:84, gr:"οὗτος, αὕτη, τοῦτο",   ru:"этот, эта, это"},
+  {id:85, gr:"οὕτως",                  ru:"так"},
+  {id:86, gr:"πονηρός, ά, όν",        ru:"злой"},
+  {id:87, gr:"πρόσωπον, τό",          ru:"лицо"},
+  {id:88, gr:"χαρά, ἡ",               ru:"радость"},
+  {id:89, gr:"ἀλλά",                   ru:"но"},
+  {id:90, gr:"ἀκούω",                  ru:"слышу"},
+  {id:91, gr:"ἁμαρτωλός, ὁ",         ru:"грешник"},
+  {id:92, gr:"ἀποκρίνομαι",            ru:"отвечаю"},
+  {id:93, gr:"ἄρχω",                   ru:"начинаю"},
+  {id:94, gr:"γίνομαι",                ru:"становлюсь"},
+  {id:95, gr:"διέρχομαι",              ru:"прохожу"},
+  {id:96, gr:"εἰσέρχομαι",             ru:"вхожу"},
+  {id:97, gr:"ἐξέρχομαι",              ru:"выхожу"},
+  {id:98, gr:"ἔρχομαι",                ru:"прихожу"},
+  {id:99, gr:"ὅτι",                    ru:"что; потому что"},
+  {id:100, gr:"οὐ",                    ru:"не"},
+  {id:101, gr:"πορεύομαι",             ru:"иду"},
+  {id:102, gr:"σώζω",                  ru:"спасаю"},
+  {id:103, gr:"ὑπό",                   ru:"под (предлог)"},
+  {id:104, gr:"αἴρω",                  ru:"поднимаю"},
+  {id:105, gr:"ἀναβαίνω",              ru:"поднимаюсь"},
+  {id:106, gr:"ἀποθνήσκω",             ru:"умираю"},
+  {id:107, gr:"ἀποκτείνω",             ru:"убиваю"},
+  {id:108, gr:"ἀποστέλλω",             ru:"отправляю"},
+  {id:109, gr:"ἄρτος, ὁ",             ru:"хлеб"},
+  {id:110, gr:"βαίνω",                 ru:"иду (хожу)"},
+  {id:111, gr:"ἐσθίω",                 ru:"ем"},
+  {id:112, gr:"κατά",                  ru:"против; по"},
+  {id:113, gr:"καταβαίνω",             ru:"спускаюсь"},
+  {id:114, gr:"μέν…δέ",               ru:"с одной стороны…с другой"},
+  {id:115, gr:"οὐκέτι",               ru:"более не"},
+  {id:116, gr:"παρά",                  ru:"от; возле; напротив"},
+  {id:117, gr:"παραλαμβάνω",           ru:"принимаю"},
+  {id:118, gr:"σύν",                   ru:"с (с дат.)"},
+  {id:119, gr:"συνάγω",                ru:"собираю"},
+  {id:120, gr:"τότε",                  ru:"тогда"},
+  {id:121, gr:"ἀπέρχομαι",             ru:"ухожу"},
+  {id:122, gr:"βιβλίον, τό",           ru:"книга"},
+  {id:123, gr:"δαιμόνιον, τό",         ru:"бес"},
+  {id:124, gr:"δέχομαι",               ru:"получаю"},
+  {id:125, gr:"ἐκπορεύομαι",           ru:"выхожу (из)"},
+  {id:126, gr:"ἔργον, τό",             ru:"работа"},
+  {id:127, gr:"ἔτι",                   ru:"ещё"},
+  {id:128, gr:"θάλασσα, ἡ",           ru:"море"},
+  {id:129, gr:"κατέρχομαι",            ru:"схожу"},
+  {id:130, gr:"οὐδέ",                  ru:"и не"},
+  {id:131, gr:"οὔπω",                  ru:"ещё не"},
+  {id:132, gr:"περί",                  ru:"о; вокруг"},
+  {id:133, gr:"πλοῖον, τό",            ru:"лодка"},
+  {id:134, gr:"συνέρχομαι",            ru:"иду вместе"},
+  {id:135, gr:"ὑπέρ",                  ru:"за, ради; над"},
+  {id:136, gr:"ἀναβλέπω",              ru:"смотрю вверх"},
+  {id:137, gr:"βήσομαι (βαίνω)",       ru:"буду идти"},
+  {id:138, gr:"γενήσομαι (γίνομαι)",   ru:"стану"},
+  {id:139, gr:"γνώσομαι (γινώσκω)",    ru:"буду знать"},
+  {id:140, gr:"διδάξω (διδάσκω)",      ru:"буду учить"},
+  {id:141, gr:"διώκω",                 ru:"преследую"},
+  {id:142, gr:"δοξάζω",                ru:"прославляю"},
+  {id:143, gr:"ἐλεύσομαι (ἔρχομαι)",  ru:"приду"},
+  {id:144, gr:"ἕξω (ἔχω)",            ru:"буду иметь"},
+  {id:145, gr:"κηρύσσω",               ru:"провозглашаю"},
+  {id:146, gr:"λήμψομαι (λαμβάνω)",    ru:"буду брать"},
+  {id:147, gr:"προσεύχομαι",           ru:"молюсь"},
+  {id:148, gr:"τυφλός, ὁ",            ru:"слепой"},
+  {id:149, gr:"ἀπολύω",               ru:"освобождаю"},
+  {id:150, gr:"ἐπιστρέφω",             ru:"поворачиваюсь"},
+  {id:151, gr:"ἐτοιμάζω",              ru:"приготовляю"},
+  {id:152, gr:"ἤδη",                   ru:"уже"},
+  {id:153, gr:"θαυμάζω",               ru:"удивляюсь"},
+  {id:154, gr:"θεραπεύω",              ru:"лечу"},
+  {id:155, gr:"πείθω",                 ru:"убеждаю"},
+  {id:156, gr:"πιστεύω",               ru:"верю"},
+  {id:157, gr:"ὑποστρέφω",             ru:"возвращаюсь"},
+  {id:158, gr:"γάρ",                   ru:"ибо"},
+  {id:159, gr:"ἔβαλον (βάλλω)",        ru:"бросил"},
+  {id:160, gr:"ἐγενόμην (γίνομαι)",    ru:"стал"},
+  {id:161, gr:"εἶδον (βλέπω)",         ru:"увидел"},
+  {id:162, gr:"εἶπον (λέγω)",          ru:"сказал"},
+  {id:163, gr:"ἔλαβον (λαμβάνω)",      ru:"взял"},
+  {id:164, gr:"ἤγαγον (ἄγω)",          ru:"повёл"},
+  {id:165, gr:"ἦλθον (ἔρχομαι)",       ru:"пришёл"},
+  {id:166, gr:"ἤνεγκα (φέρω)",         ru:"принёс"},
+  {id:167, gr:"ἔλιπον (λείπω)",        ru:"оставил"},
+  {id:168, gr:"ὄψομαι (βλέπω)",        ru:"увижу"},
+  {id:169, gr:"ἔπεσον (πίπτω)",        ru:"упал"},
+  {id:170, gr:"προσφέρω",              ru:"приношу"},
+  {id:171, gr:"ἀναλαμβάνω",            ru:"поднимаю (беру вверх)"},
+  {id:172, gr:"ἐβλήθην (βάλλω)",       ru:"был брошен"},
+  {id:173, gr:"ἐγενήθην (γίνομαι)",    ru:"был создан"},
+  {id:174, gr:"ἐγνώσθην (γινώσκω)",    ru:"был узнан"},
+  {id:175, gr:"ἐδιδάχθην (διδάσκω)",   ru:"был научен"},
+  {id:176, gr:"ἐκηρύχθην (κηρύσσω)",   ru:"был проповедан"},
+  {id:177, gr:"ἐλήμφθην (λαμβάνω)",    ru:"был взят"},
+  {id:178, gr:"ἐπορεύθην (πορεύομαι)", ru:"пошёл"},
+  {id:179, gr:"ἠγέρθην (ἐγείρω)",      ru:"был воскрешён"},
+  {id:180, gr:"ἠκούσθην (ἀκούω)",      ru:"был услышан"},
+  {id:181, gr:"ἠνέχθην (φέρω)",        ru:"был принесён"},
+  {id:182, gr:"ἤχθην (ἄγω)",           ru:"был приведён"},
+  {id:183, gr:"ὤφθην (βλέπω)",         ru:"был увиден"},
+  {id:184, gr:"ἅγιος, α, ον",          ru:"святой"},
+  {id:185, gr:"αἷμα, αἷματος, τό",     ru:"кровь"},
+  {id:186, gr:"αἰών, αἰῶνος, ὁ",       ru:"век"},
+  {id:187, gr:"ἄρχων, ἄρχοντος, ὁ",    ru:"правитель"},
+  {id:188, gr:"γράμμα, γράμματος, τό",  ru:"буква"},
+  {id:189, gr:"ἐλπίς, ἐλπίδος, ἡ",     ru:"надежда"},
+  {id:190, gr:"θέλημα, θελήματος, τό",  ru:"воля"},
+  {id:191, gr:"νύξ, νυκτός, ἡ",        ru:"ночь"},
+  {id:192, gr:"ὄνομα, ὀνόματος, τό",   ru:"имя"},
+  {id:193, gr:"πνεῦμα, πνεύματος, τό",  ru:"дух"},
+  {id:194, gr:"ῥῆμα, ῥήματος, τό",     ru:"слово (высказывание)"},
+  {id:195, gr:"σάρξ, σαρκός, ἡ",       ru:"плоть"},
+  {id:196, gr:"σῶμα, σώματος, τό",      ru:"тело"},
+  {id:197, gr:"προσέρχομαι",            ru:"подхожу"},
+  {id:198, gr:"ὤν, οὖσα, ὄν",          ru:"сущий"},
+  {id:199, gr:"ἀγαγών (ἄγω)",          ru:"приведший"},
+  {id:200, gr:"ἀπέθανον (ἀποθνήσκω)",  ru:"умер"},
+  {id:201, gr:"ἀπεκρίθην (ἀποκρίνομαι)", ru:"ответил"},
+  {id:202, gr:"εἰπών (λέγω)",          ru:"сказавший"},
+  {id:203, gr:"ἐλθών (ἔρχομαι)",       ru:"пришедший"},
+  {id:204, gr:"ἐνεγκών (φέρω)",        ru:"принесший"},
+  {id:205, gr:"ἰδών (βλέπω)",          ru:"увидевший"},
+  {id:206, gr:"γραφείς (γράφω)",       ru:"написанный"},
+  {id:207, gr:"ἐκεῖ",                  ru:"там"},
+  {id:208, gr:"εὐθέως",                ru:"тотчас"},
+  {id:209, gr:"ἱμάτιον, τό",           ru:"одежда"},
+  {id:210, gr:"οἰκία, ἡ",              ru:"дом (жилище)"},
+  {id:211, gr:"παιδίον, τό",           ru:"маленький ребёнок"},
+  {id:212, gr:"συναγωγή, ἡ",           ru:"синагога"},
+  {id:213, gr:"στρατιώτης, ὁ",         ru:"воин"},
+  {id:214, gr:"φυλακή, ἡ",             ru:"тюрьма"},
+  {id:215, gr:"ἁμαρτάνω",              ru:"грешу"},
+  {id:216, gr:"δικαιοσύνη, ἡ",         ru:"праведность"},
+  {id:217, gr:"ἐάν",                   ru:"если (с сослаг.)"},
+  {id:218, gr:"εἰ",                    ru:"если"},
+  {id:219, gr:"εὐαγγελίζομαι",         ru:"благовествую"},
+  {id:220, gr:"ἵνα",                   ru:"чтобы"},
+  {id:221, gr:"λαός, ὁ",               ru:"народ"},
+  {id:222, gr:"λοιπός, ή, όν",         ru:"остальной"},
+  {id:223, gr:"μακάριος, α, ον",       ru:"блаженный"},
+  {id:224, gr:"μαρτυρία, ἡ",           ru:"свидетельство"},
+  {id:225, gr:"μηδέ",                  ru:"и не; ни"},
+  {id:226, gr:"μηκέτι",               ru:"больше не"},
+  {id:227, gr:"ὄχλος, ὁ",              ru:"толпа"},
+  {id:228, gr:"δεῖ",                   ru:"нужно"},
+  {id:229, gr:"ἔξεστι",               ru:"можно"},
+  {id:230, gr:"θέλω",                  ru:"хочу"},
+  {id:231, gr:"Ἰησοῦς, ὁ",            ru:"Иисус"},
+  {id:232, gr:"Ἰουδαῖος, ὁ",          ru:"иудей"},
+  {id:233, gr:"κελεύω",                ru:"приказываю"},
+  {id:234, gr:"κώμη, ἡ",              ru:"селение"},
+  {id:235, gr:"μέλλω",                 ru:"намереваюсь"},
+  {id:236, gr:"ὀφείλω",               ru:"должен"},
+  {id:237, gr:"πάσχω",                 ru:"страдаю"},
+  {id:238, gr:"πρό",                   ru:"перед"},
+  {id:239, gr:"σωτηρία, ἡ",           ru:"спасение"},
+  {id:240, gr:"Φαρισαῖος, ὁ",         ru:"фарисей"},
+  {id:241, gr:"Χριστός, ὁ",           ru:"Христос"},
+  {id:242, gr:"ἀγαπάω",               ru:"люблю"},
+  {id:243, gr:"ἀκολουθέω",            ru:"следую"},
+  {id:244, gr:"Γαλιλαία, ἡ",          ru:"Галилея"},
+  {id:245, gr:"δηλόω",                 ru:"показываю"},
+  {id:246, gr:"εὐλογέω",              ru:"благословляю"},
+  {id:247, gr:"εὐχαριστέω",           ru:"благодарю"},
+  {id:248, gr:"ζητέω",                ru:"ищу"},
+  {id:249, gr:"θεωρέω",               ru:"созерцаю"},
+  {id:250, gr:"καλέω",                ru:"зову"},
+  {id:251, gr:"λαλέω",                ru:"говорю (лалео)"},
+  {id:252, gr:"παρακαλέω",            ru:"призываю, утешаю"},
+  {id:253, gr:"περιπατέω",            ru:"хожу"},
+  {id:254, gr:"ποιέω",                ru:"делаю"},
+  {id:255, gr:"προσκυνέω",            ru:"поклоняюсь"},
+  {id:256, gr:"σταυρόω",              ru:"распинаю"},
+  {id:257, gr:"τηρέω",                ru:"храню"},
+  {id:258, gr:"τιμάω",                ru:"чту"},
+  {id:259, gr:"φιλέω",                ru:"люблю (дружески)"},
+  {id:260, gr:"χώρα, ἡ",              ru:"страна"},
+  {id:261, gr:"ἀλλήλων",              ru:"друг друга"},
+  {id:262, gr:"ἀποθανοῦμαι (ἀποθνήσκω)", ru:"умру"},
+  {id:263, gr:"ἀποκτενῶ (ἀποκτείνω)", ru:"убью"},
+  {id:264, gr:"ἀποστελῶ (ἀποστέλλω)", ru:"пошлю"},
+  {id:265, gr:"ἀρῶ (αἴρω)",           ru:"уберу"},
+  {id:266, gr:"βαλῶ (βάλλω)",         ru:"брошу"},
+  {id:267, gr:"ἑαυτοῦ",               ru:"его самого"},
+  {id:268, gr:"ἐγερῶ (ἐγείρω)",       ru:"воскрешу"},
+  {id:269, gr:"ἐμαυτοῦ",              ru:"меня самого"},
+  {id:270, gr:"ἐπί",                  ru:"на; против"},
+  {id:271, gr:"ἔσομαι",               ru:"буду"},
+  {id:272, gr:"μενῶ (μένω)",          ru:"останусь"},
+  {id:273, gr:"μετανοέω",             ru:"каюсь"},
+  {id:274, gr:"σεαυτοῦ",              ru:"тебя самого"},
+  {id:275, gr:"σπείρω",               ru:"сею"},
+  {id:276, gr:"φοβέομαι",             ru:"боюсь"},
+  {id:277, gr:"ἀληθής",               ru:"истинный"},
+  {id:278, gr:"ἀνήρ, ἀνδρός, ὁ",     ru:"муж, мужчина"},
+  {id:279, gr:"ἀρχιερεύς, ὁ",        ru:"первосвященник"},
+  {id:280, gr:"βασιλεύς, βασιλέως, ὁ", ru:"царь"},
+  {id:281, gr:"γένος, γένους, τό",    ru:"род"},
+  {id:282, gr:"γραμματεύς, ὁ",        ru:"книжник"},
+  {id:283, gr:"ἔθνος, ἔθνους, τό",   ru:"племя"},
+  {id:284, gr:"ἱερεύς, ἱερέως, ὁ",   ru:"священник"},
+  {id:285, gr:"μήτηρ, μητρός, ἡ",    ru:"мать"},
+  {id:286, gr:"ὄρος, ὄρους, τό",     ru:"гора"},
+  {id:287, gr:"πατήρ, πατρός, ὁ",    ru:"отец"},
+  {id:288, gr:"πίστις, πίστεως, ἡ",  ru:"вера"},
+  {id:289, gr:"πλήρης, ες",           ru:"полный"},
+  {id:290, gr:"πόλις, πόλεως, ἡ",    ru:"город"},
+  {id:291, gr:"χάρις, χάριτος, ἡ",   ru:"благодать"},
+  {id:292, gr:"δύο",                  ru:"два"},
+  {id:293, gr:"εἷς, μία, ἕν",        ru:"один"},
+  {id:294, gr:"ἕξ",                   ru:"шесть"},
+  {id:295, gr:"ἔτος, ἔτους, τό",     ru:"год"},
+  {id:296, gr:"ἤ",                    ru:"или"},
+  {id:297, gr:"πέντε",                ru:"пять"},
+  {id:298, gr:"Ἰάκωβος, ὁ",          ru:"Иаков"},
+  {id:299, gr:"καθαρός, ά, όν",      ru:"чистый"},
+  {id:300, gr:"ἀρχή, ἡ",             ru:"начало"},
+];
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function getToday() {
+  return new Date().toISOString().slice(0,10);
+}
+function daysBetween(a, b) {
+  return Math.round((new Date(b) - new Date(a)) / 86400000);
+}
+function splitGr(gr) {
+  const i = gr.indexOf(',');
+  return i === -1 ? {main: gr, rest: ''} : {main: gr.slice(0,i), rest: gr.slice(i)};
+}
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function wordById(id) { return WORDS.find(w => w.id === id); }
+
+// ── Scheduling ────────────────────────────────────────────────────────────────
+const BATCH_SIZE = 10;
+const REVIEW_DAYS = [2, 3, 7]; // days after learning
+
+function getAvailableIds(today) {
+  if (!state.startDate) return [];
+  const d = daysBetween(state.startDate, today);
+  const count = Math.min((Math.floor(d / 2) + 1) * BATCH_SIZE, WORDS.length);
+  return WORDS.slice(0, count).map(w => w.id);
+}
+
+function getNewWords(today) {
+  return getAvailableIds(today).filter(id => !state.cards[id]);
+}
+
+function getReviews(today) {
+  const due = [];
+  for (const [sid, card] of Object.entries(state.cards)) {
+    const id = parseInt(sid);
+    if (card.mastered) continue;
+    const diff = daysBetween(card.learnedAt, today);
+    const reviews = card.reviews || [false, false, false];
+    for (let i = 0; i < REVIEW_DAYS.length; i++) {
+      if (!reviews[i] && diff >= REVIEW_DAYS[i]) {
+        due.push({id, slot: i});
+        break;
+      }
+    }
+  }
+  return due;
+}
+
+function buildChoices(wordId) {
+  const correct = wordById(wordId).ru;
+  const pool = WORDS.filter(w => w.id !== wordId && w.ru !== correct);
+  const picked = shuffle(pool).slice(0, 3).map(w => w.ru);
+  return shuffle([correct, ...picked]);
+}
+
+// ── State & GitHub ────────────────────────────────────────────────────────────
+let state = { startDate: null, cards: {} };
+let fileSha = null;
+let saveTimer = null;
+
+function setStatus(s, t) {
+  document.getElementById('statusDot').className = 'status-dot ' + (s||'');
+  const span = document.getElementById('statusText');
+  span.className = 'status-text' + (s==='error'?' error':'');
+  span.textContent = t;
+}
+function apiHeaders() {
+  return { Authorization: `token ${TOKEN}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' };
+}
+async function loadFromGitHub() {
+  const r = await fetch(API, {headers: apiHeaders()});
+  if (r.status === 404) return {startDate: null, cards: {}};
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.sha;
+  return JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g,'')))));
+}
+async function saveToGitHub() {
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
+  const body = {message: 'Update Greek progress', content};
+  if (fileSha) body.sha = fileSha;
+  const r = await fetch(API, {method:'PUT', headers: apiHeaders(), body: JSON.stringify(body)});
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  fileSha = (await r.json()).content.sha;
+}
+function scheduleSave() {
+  setStatus('saving', 'Сохраняется…');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try { await saveToGitHub(); setStatus('ok', 'Сохранено'); }
+    catch(e) { setStatus('error', 'Ошибка сохранения'); }
+  }, 1500);
+}
+
+// ── Session ────────────────────────────────────────────────────────────────
+let session = null;
+
+function buildSession(today) {
+  const newW = getNewWords(today);
+  const revs = getReviews(today);
+  if (!newW.length && !revs.length) return null;
+  return {
+    queue: [
+      ...newW.map(id => ({type:'new', id})),
+      ...revs.map(({id,slot}) => ({type:'review', id, slot}))
+    ],
+    index: 0,
+    revealed: false,
+    answered: null,
+    choices: null,
+    retried: {}
+  };
+}
+
+function currentItem() {
+  return session && session.index < session.queue.length ? session.queue[session.index] : null;
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+const root = document.getElementById('root');
+
+function render() {
+  if (!state.startDate) { renderWelcome(); return; }
+  if (!session) { renderHome(); return; }
+  const item = currentItem();
+  if (!item) { renderDone(); session = null; return; }
+  item.type === 'new' ? renderLearn(item) : renderReview(item);
+}
+
+function renderWelcome() {
+  root.innerHTML = `
+    <h1>Греческий словарь</h1>
+    <p class="subtitle">${WORDS.length} слов · метод 7–3–2–1 · 10 слов каждые 2 дня</p>
+    <div class="done-card" style="margin-bottom:20px">
+      <div class="done-icon">🏛</div>
+      <div class="done-title">Начнём учить?</div>
+      <div class="done-sub">Ты будешь учить по 10 новых слов каждые 2 дня с повторениями через 2, 3 и 7 дней.</div>
+    </div>
+    <button class="btn btn-primary" id="btnStart">Начать обучение</button>`;
+  document.getElementById('btnStart').onclick = () => {
+    state.startDate = getToday();
+    session = buildSession(state.startDate);
+    scheduleSave();
+    render();
+  };
+}
+
+function renderHome() {
+  const today = getToday();
+  const newW  = getNewWords(today);
+  const revs  = getReviews(today);
+  const totalLearned = Object.keys(state.cards).length;
+  const mastered = Object.values(state.cards).filter(c => c.mastered).length;
+  const pct = Math.round(totalLearned / WORDS.length * 100);
+  const hasSession = newW.length > 0 || revs.length > 0;
+
+  root.innerHTML = `
+    <h1>Греческий словарь</h1>
+    <p class="subtitle">Прогресс на сегодня</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">${totalLearned}</div><div class="stat-lbl">изучено</div></div>
+      <div class="stat-card"><div class="stat-num">${mastered}</div><div class="stat-lbl">выучено</div></div>
+      <div class="stat-card"><div class="stat-num">${WORDS.length - totalLearned}</div><div class="stat-lbl">осталось</div></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-row"><span>Общий прогресс</span><span>${pct}%</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="session-wrap">
+      <div class="session-head">Сегодня</div>
+      ${newW.length ? `<div class="session-row">📖 Новые слова<span class="session-cnt">${newW.length}</span></div>` : ''}
+      ${revs.length ? `<div class="session-row">🔄 Повторение<span class="session-cnt">${revs.length}</span></div>` : ''}
+      ${!hasSession ? `<div style="text-align:center;font-size:14px;color:var(--muted);padding:8px 0">✅ На сегодня всё готово</div>` : ''}
+    </div>
+    <button class="btn btn-primary" id="btnSession" ${!hasSession?'disabled':''}>
+      ${hasSession ? 'Начать сессию' : 'Зайди завтра'}
+    </button>`;
+  if (hasSession) {
+    document.getElementById('btnSession').onclick = () => {
+      session = buildSession(today);
+      render();
+    };
+  }
+}
+
+function renderLearn(item) {
+  const word = wordById(item.id);
+  const {main, rest} = splitGr(word.gr);
+  const total = session.queue.filter(i=>i.type==='new').length;
+  const done  = session.queue.slice(0, session.index).filter(i=>i.type==='new').length;
+  const pct   = total ? Math.round(done/total*100) : 0;
+
+  root.innerHTML = `
+    <div class="card-header">
+      <span class="card-label">Новое слово · ${done+1} / ${total}</span>
+      <div class="card-pbar"><div class="card-pfill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="flashcard" id="fc">
+      <div class="fc-badge">Греческий → Русский</div>
+      <div class="fc-main">${main}</div>
+      ${rest ? `<div class="fc-rest">${rest}</div>` : ''}
+      <div class="fc-divider" id="div"></div>
+      <div class="fc-translation" id="tr"></div>
+    </div>
+    <button class="btn btn-primary" id="btnReveal" style="${session.revealed?'display:none':''}">Показать перевод</button>
+    <button class="btn btn-primary" id="btnLearned" style="${session.revealed?'':'display:none'}">Выучил! →</button>`;
+
+  document.getElementById('btnReveal')?.addEventListener('click', () => {
+    session.revealed = true;
+    document.getElementById('tr').textContent = word.ru;
+    document.getElementById('tr').style.opacity = '1';
+    document.getElementById('div').style.display = 'block';
+    document.getElementById('btnReveal').style.display = 'none';
+    document.getElementById('btnLearned').style.display = 'block';
+  });
+  document.getElementById('btnLearned')?.addEventListener('click', () => {
+    state.cards[item.id] = {learnedAt: getToday(), reviews: [false,false,false], mastered: false};
+    scheduleSave();
+    session.index++;
+    session.revealed = false;
+    render();
+  });
+}
+
+function renderReview(item) {
+  const word = wordById(item.id);
+  const {main, rest} = splitGr(word.gr);
+  if (!session.choices) session.choices = buildChoices(item.id);
+  const choices = session.choices;
+  const answered = session.answered;
+  const total = session.queue.filter(i=>i.type==='review').length;
+  const done  = session.queue.slice(0, session.index).filter(i=>i.type==='review').length;
+  const pct   = total ? Math.round(done/total*100) : 0;
+
+  root.innerHTML = `
+    <div class="card-header">
+      <span class="card-label">Повторение · ${done+1} / ${total}</span>
+      <div class="card-pbar"><div class="card-pfill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="flashcard">
+      <div class="fc-badge">Что значит это слово?</div>
+      <div class="fc-main">${main}</div>
+      ${rest ? `<div class="fc-rest">${rest}</div>` : ''}
+    </div>
+    <div class="choices">
+      ${choices.map(c => {
+        let cls = '';
+        if (answered) {
+          if (c === word.ru) cls = 'correct';
+          else if (c === answered && answered !== word.ru) cls = 'wrong';
+        }
+        return `<button class="choice ${cls}" data-val="${c}" ${answered?'disabled':''}>${c}</button>`;
+      }).join('')}
+    </div>
+    <button class="btn btn-primary" id="btnNext" style="${answered?'':'display:none'}">Далее →</button>`;
+
+  if (!answered) {
+    document.querySelectorAll('.choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.val;
+        session.answered = val;
+        const correct = val === word.ru;
+        if (correct) {
+          const reviews = state.cards[item.id].reviews;
+          reviews[item.slot] = true;
+          if (reviews.every(Boolean)) state.cards[item.id].mastered = true;
+          scheduleSave();
+        } else {
+          if (!session.retried[item.id + '_' + item.slot]) {
+            session.retried[item.id + '_' + item.slot] = true;
+            session.queue.push({type:'review', id:item.id, slot:item.slot});
+          }
+        }
+        render();
+      });
+    });
+  } else {
+    document.getElementById('btnNext').addEventListener('click', () => {
+      session.index++;
+      session.answered = null;
+      session.choices = null;
+      render();
+    });
+  }
+}
+
+function renderDone() {
+  const today = getToday();
+  const newW = getNewWords(today);
+  const revs = getReviews(today);
+  root.innerHTML = `
+    <div class="done-card">
+      <div class="done-icon">🎉</div>
+      <div class="done-title">Сессия завершена!</div>
+      <div class="done-sub">Отличная работа. Возвращайся завтра — прогресс сохранён.</div>
+    </div>
+    <button class="btn btn-ghost" id="btnHome" style="margin-top:16px">← На главную</button>`;
+  document.getElementById('btnHome').onclick = render;
+}
+
+// ── Token screen ──────────────────────────────────────────────────────────────
+function showTokenScreen() {
+  document.getElementById('tokenScreen').style.display = 'flex';
+  function save() {
+    const val = document.getElementById('tokenInput').value.trim();
+    if (!val) return;
+    localStorage.setItem(TOKEN_KEY, val);
+    location.reload();
+  }
+  document.getElementById('tokenSaveBtn').addEventListener('click', save);
+  document.getElementById('tokenInput').addEventListener('keydown', e => { if(e.key==='Enter') save(); });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  try {
+    state = await loadFromGitHub();
+    if (!state.cards) state.cards = {};
+    setStatus('ok', 'Сохранено');
+  } catch(e) {
+    console.error(e);
+    setStatus('error', 'Ошибка загрузки');
+  }
+  render();
+}
+
+if (TOKEN) { init(); } else { showTokenScreen(); }
+</script>
+</body>
+</html>
