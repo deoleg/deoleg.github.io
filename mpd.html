@@ -773,8 +773,13 @@ function buildPartnerRow(p, tbody, noOverdue) {
   tbody.appendChild(tr);
 }
 
+const STATUS_PRIORITY = { "schedule": 0, "new": 1 };
+
 function sortByDate(list) {
   return [...list].sort((a, b) => {
+    const pa = STATUS_PRIORITY[(partnerData[a.id] || {}).status] ?? 2;
+    const pb = STATUS_PRIORITY[(partnerData[b.id] || {}).status] ?? 2;
+    if (pa !== pb) return pa - pb;
     const da = parseDateSortKey((partnerData[a.id] || {}).date);
     const db = parseDateSortKey((partnerData[b.id] || {}).date);
     if (da !== null && db !== null) return da - db;
