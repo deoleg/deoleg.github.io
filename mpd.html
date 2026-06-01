@@ -376,6 +376,48 @@
       margin-top: 12px;
       line-height: 1.6;
     }
+
+    /* Add partner */
+    .partners-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .partners-header .section-heading { margin-bottom: 0; }
+    .add-partner-btn {
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+      background: #1a1f36; color: #fff; border: none; border-radius: 6px;
+      padding: 6px 14px; cursor: pointer; transition: opacity .15s;
+    }
+    .add-partner-btn:hover { opacity: .85; }
+
+    .ap-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4);
+      z-index: 20; align-items: center; justify-content: center; padding: 20px;
+    }
+    .ap-overlay.open { display: flex; }
+    .ap-modal {
+      background: #fff; border-radius: 14px; padding: 28px 24px 24px;
+      width: 100%; max-width: 380px;
+    }
+    .ap-title { font-size: 15px; font-weight: 700; color: #1a1f36; margin-bottom: 20px; }
+    .ap-field { margin-bottom: 14px; }
+    .ap-field label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #aaa; margin-bottom: 6px; }
+    .ap-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; }
+    .ap-input, .ap-select {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 13px;
+      border: 1.5px solid #e5e5e5; border-radius: 7px; padding: 8px 10px;
+      outline: none; color: #1a1f36; background: #fff;
+    }
+    .ap-input:focus, .ap-select:focus { border-color: #1a1f36; }
+    .ap-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .ap-cancel {
+      flex: 1; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+      background: none; border: 1.5px solid #e5e5e5; border-radius: 7px;
+      padding: 9px; cursor: pointer; color: #666;
+    }
+    .ap-save {
+      flex: 2; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      background: #1a1f36; color: #fff; border: none; border-radius: 7px;
+      padding: 9px; cursor: pointer;
+    }
+    .ap-save:hover { opacity: .85; }
   </style>
 </head>
 <body>
@@ -409,7 +451,10 @@
 
   <hr class="section-divider">
 
-  <h2 class="section-heading">Партнёры</h2>
+  <div class="partners-header">
+    <h2 class="section-heading">Партнёры</h2>
+    <button type="button" id="addPartnerBtn" class="add-partner-btn">+ Добавить</button>
+  </div>
   <div class="partners-wrap">
     <table class="partners">
       <thead>
@@ -439,6 +484,31 @@
         </thead>
         <tbody id="doneTbody"></tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<!-- Add partner modal -->
+<div class="ap-overlay" id="apOverlay">
+  <div class="ap-modal">
+    <div class="ap-title">Новый партнёр</div>
+    <div class="ap-field">
+      <label>Имя</label>
+      <input type="text" class="ap-input" id="apName" placeholder="Smith, John & Jane">
+    </div>
+    <div class="ap-row">
+      <div class="ap-field">
+        <label>Штат</label>
+        <input type="text" class="ap-input" id="apState" placeholder="VA" maxlength="3">
+      </div>
+      <div class="ap-field">
+        <label>Статус</label>
+        <select class="ap-select" id="apStatus"></select>
+      </div>
+    </div>
+    <div class="ap-actions">
+      <button type="button" class="ap-cancel" id="apCancel">Отмена</button>
+      <button type="button" class="ap-save"   id="apSave">Добавить</button>
     </div>
   </div>
 </div>
@@ -529,10 +599,11 @@ const PARTNERS = [
 
 const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 
-let done        = new Set();
-let partnerData = {}; // { [id]: { status, date } }
-let fileSha     = null;
-let saveTimer   = null;
+let done           = new Set();
+let partnerData    = {}; // { [id]: { status, date } }
+let customPartners = []; // [{ id, name, state }]
+let fileSha        = null;
+let saveTimer      = null;
 
 // ── UI helpers ────────────────────────────────────────────────────────────────
 
@@ -739,18 +810,19 @@ function apiHeaders() {
 
 async function loadFromGitHub() {
   const r = await fetch(API, { headers: apiHeaders() });
-  if (r.status === 404) return { done: [], partners: {} };
+  if (r.status === 404) return { done: [], partners: {}, customPartners: [] };
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const json = await r.json();
   fileSha = json.sha;
   const data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
-  return { done: data.done || [], partners: data.partners || {} };
+  return { done: data.done || [], partners: data.partners || {}, customPartners: data.customPartners || [] };
 }
 
 async function saveToGitHub() {
   const payload = {
     done: [...done].sort((a, b) => a - b),
-    partners: partnerData
+    partners: partnerData,
+    customPartners
   };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
   const body = { message: "Update MPD progress", content };
@@ -819,8 +891,10 @@ async function startApp() {
 
   try {
     const data = await loadFromGitHub();
-    done        = new Set(data.done);
-    partnerData = data.partners;
+    done           = new Set(data.done);
+    partnerData    = data.partners;
+    customPartners = data.customPartners || [];
+    customPartners.forEach(p => { if (!PARTNERS.find(x => x.id === p.id)) PARTNERS.push(p); });
     syncGrid();
     render();
     buildPartnersTable();
@@ -833,6 +907,56 @@ async function startApp() {
     setStatus("error", "Ошибка — токен неверный или истёк");
   }
 }
+
+// ── Add partner modal ─────────────────────────────────────────────────────────
+(function () {
+  const overlay  = document.getElementById("apOverlay");
+  const nameInp  = document.getElementById("apName");
+  const stateInp = document.getElementById("apState");
+  const statusSel= document.getElementById("apStatus");
+
+  // Populate status select
+  Object.entries(STATUS_LABELS).forEach(([val, label]) => {
+    const opt = document.createElement("option");
+    opt.value = val; opt.textContent = label;
+    statusSel.appendChild(opt);
+  });
+
+  function open() {
+    nameInp.value = ""; stateInp.value = ""; statusSel.value = "";
+    overlay.classList.add("open");
+    nameInp.focus();
+  }
+  function close() { overlay.classList.remove("open"); }
+
+  document.getElementById("addPartnerBtn").addEventListener("click", open);
+  document.getElementById("apCancel").addEventListener("click", close);
+  overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+
+  document.getElementById("apSave").addEventListener("click", () => {
+    const name  = nameInp.value.trim();
+    const state = stateInp.value.trim().toUpperCase();
+    const status= statusSel.value;
+    if (!name) { nameInp.focus(); return; }
+
+    const id = "c" + Date.now();
+    const p  = { id, name, state: state || "—" };
+    customPartners.push(p);
+    PARTNERS.push(p);
+    if (status) partnerData[id] = { status, date: "" };
+
+    close();
+    buildPartnersTable();
+    scheduleSave();
+  });
+
+  nameInp.addEventListener("keydown", e => {
+    if (e.key === "Enter") { stateInp.focus(); }
+  });
+  stateInp.addEventListener("keydown", e => {
+    if (e.key === "Enter") { document.getElementById("apSave").click(); }
+  });
+})();
 
 document.getElementById("resetBtn").addEventListener("click", async () => {
   if (!confirm("Сбросить весь прогресс?")) return;
