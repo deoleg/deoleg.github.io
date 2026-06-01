@@ -31,7 +31,7 @@
       padding: 40px 16px 80px;
     }
 
-    .page { width: 100%; max-width: 720px; margin: 0 auto; }
+    .page { width: 100%; max-width: 940px; margin: 0 auto; }
 
     /* ── Header ── */
     .site-header { margin-bottom: 36px; }
@@ -101,7 +101,7 @@
 
     .cal-grid {
       display: grid;
-      grid-template-columns: 110px repeat(7, 1fr);
+      grid-template-columns: auto repeat(7, 1fr);
       gap: 0;
       border: 1.5px solid var(--border);
       border-radius: 10px;
@@ -125,7 +125,9 @@
     .cal-cell.row-label {
       font-size: 11px; font-weight: 500; text-align: left; padding: 8px 10px;
       justify-content: flex-start; background: #fafafa; color: var(--text);
+      white-space: nowrap; cursor: pointer; transition: background .12s;
     }
+    .cal-cell.row-label:hover { background: #e8e8e6; }
     .cal-cell.row-label .row-sub { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 1px; }
 
     .cal-cell.section-header {
@@ -221,10 +223,29 @@
 
     @media (max-width: 520px) {
       .summary-row { grid-template-columns: repeat(2, 1fr); }
-      .cal-grid { grid-template-columns: 80px repeat(7, 1fr); }
+      .cal-grid { grid-template-columns: auto repeat(7, 1fr); }
       .cal-cell { padding: 6px 3px; }
       .check-btn { width: 24px; height: 24px; font-size: 11px; }
     }
+
+    /* ── Timer overlay ── */
+    .timer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.45);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 200; cursor: pointer;
+    }
+    .timer-box {
+      background: #fff; border-radius: 20px; padding: 48px 72px;
+      text-align: center; cursor: default; min-width: 260px;
+    }
+    .timer-name { font-size: 13px; font-weight: 500; color: #888; margin-bottom: 8px; }
+    .timer-sub  { font-size: 11px; color: #bbb; margin-bottom: 20px; }
+    .timer-display {
+      font-size: 80px; font-weight: 700; line-height: 1;
+      font-variant-numeric: tabular-nums; color: #1a1f36;
+      letter-spacing: -.02em; transition: color .15s;
+    }
+    .timer-display.flash { color: #e05252; }
   </style>
 </head>
 <body>
@@ -573,6 +594,7 @@ function buildCalendar() {
       subDiv.textContent = task.sub;
       lbl.appendChild(nameDiv);
       lbl.appendChild(subDiv);
+      lbl.addEventListener("click", () => startTimer(task.label, task.sub));
       grid.appendChild(lbl);
 
       days.forEach(d => {
@@ -652,6 +674,60 @@ function buildBooks(person, data, containerId, progressId) {
   });
 
   document.getElementById(progressId).textContent = `${done} из ${total} прочитано`;
+}
+
+// ── Timer ─────────────────────────────────────────────────────────────────────
+let _timerInterval = null;
+
+function parseDuration(sub) {
+  const m = sub.match(/(\d+)/);
+  return m ? parseInt(m[1]) * 60 : 60;
+}
+
+function formatTime(s) {
+  return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+}
+
+function startTimer(label, sub) {
+  if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+  document.querySelector('.timer-overlay')?.remove();
+
+  let seconds = parseDuration(sub);
+
+  const overlay = document.createElement('div');
+  overlay.className = 'timer-overlay';
+  overlay.innerHTML = `
+    <div class="timer-box">
+      <div class="timer-name">${label}</div>
+      <div class="timer-sub">${sub}</div>
+      <div class="timer-display" id="timerDisplay">${formatTime(seconds)}</div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', e => { if (e.target === overlay) stopTimer(); });
+
+  _timerInterval = setInterval(() => {
+    seconds--;
+    const el = document.getElementById('timerDisplay');
+    if (!el) { clearInterval(_timerInterval); return; }
+    if (seconds <= 0) {
+      clearInterval(_timerInterval);
+      _timerInterval = null;
+      el.textContent = '00:00';
+      let flashes = 0;
+      const flash = setInterval(() => {
+        el.classList.toggle('flash');
+        if (++flashes >= 8) { clearInterval(flash); overlay.remove(); }
+      }, 350);
+    } else {
+      el.textContent = formatTime(seconds);
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+  document.querySelector('.timer-overlay')?.remove();
 }
 
 // ── GitHub API ────────────────────────────────────────────────────────────────
