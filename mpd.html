@@ -616,6 +616,7 @@ let done             = new Set();
 let partnerData      = {}; // { [id]: { status, date } }
 let customPartners   = []; // [{ id, name, state }]
 let partnerOverrides = {}; // { [id]: { name, state } } — edits to hardcoded partners
+let deletedIds       = []; // IDs of deleted hardcoded partners
 let editingIds       = new Set();
 let fileSha          = null;
 let saveTimer        = null;
@@ -833,22 +834,24 @@ function buildPartnerRow(p, tbody, noOverdue) {
     });
     tdAct.appendChild(editBtn);
 
-    if (isCustom) {
-      const delBtn = document.createElement("button");
-      delBtn.type = "button"; delBtn.className = "p-del-btn"; delBtn.title = "Удалить"; delBtn.textContent = "×";
-      delBtn.addEventListener("click", () => {
-        if (!confirm(`Удалить «${p.name}»?`)) return;
+    const delBtn = document.createElement("button");
+    delBtn.type = "button"; delBtn.className = "p-del-btn"; delBtn.title = "Удалить"; delBtn.textContent = "×";
+    delBtn.addEventListener("click", () => {
+      if (!confirm(`Удалить «${p.name}»?`)) return;
+      if (isCustom) {
         const ci = customPartners.findIndex(x => x.id === p.id);
         if (ci !== -1) customPartners.splice(ci, 1);
-        const pi = PARTNERS.findIndex(x => x.id === p.id);
-        if (pi !== -1) PARTNERS.splice(pi, 1);
-        delete partnerData[p.id];
-        editingIds.delete(p.id);
-        buildPartnersTable();
-        scheduleSave();
-      });
-      tdAct.appendChild(delBtn);
-    }
+      } else {
+        if (!deletedIds.includes(String(p.id))) deletedIds.push(String(p.id));
+      }
+      const pi = PARTNERS.findIndex(x => x.id === p.id);
+      if (pi !== -1) PARTNERS.splice(pi, 1);
+      delete partnerData[p.id];
+      editingIds.delete(p.id);
+      buildPartnersTable();
+      scheduleSave();
+    });
+    tdAct.appendChild(delBtn);
   }
   tr.appendChild(tdAct);
   tbody.appendChild(tr);
@@ -903,7 +906,7 @@ async function loadFromGitHub() {
   const json = await r.json();
   fileSha = json.sha;
   const data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
-  return { done: data.done || [], partners: data.partners || {}, customPartners: data.customPartners || [], partnerOverrides: data.partnerOverrides || {} };
+  return { done: data.done || [], partners: data.partners || {}, customPartners: data.customPartners || [], partnerOverrides: data.partnerOverrides || {}, deletedIds: data.deletedIds || [] };
 }
 
 async function saveToGitHub() {
@@ -911,7 +914,8 @@ async function saveToGitHub() {
     done: [...done].sort((a, b) => a - b),
     partners: partnerData,
     customPartners,
-    partnerOverrides
+    partnerOverrides,
+    deletedIds
   };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
   const body = { message: "Update MPD progress", content };
@@ -984,7 +988,9 @@ async function startApp() {
     partnerData    = data.partners;
     customPartners   = data.customPartners || [];
     partnerOverrides = data.partnerOverrides || {};
+    deletedIds       = data.deletedIds || [];
     customPartners.forEach(p => { if (!PARTNERS.find(x => x.id === p.id)) PARTNERS.push(p); });
+    deletedIds.forEach(id => { const i = PARTNERS.findIndex(x => String(x.id) === String(id)); if (i !== -1) PARTNERS.splice(i, 1); });
     Object.entries(partnerOverrides).forEach(([id, ov]) => {
       const p = PARTNERS.find(x => String(x.id) === String(id));
       if (p) { if (ov.name !== undefined) p.name = ov.name; if (ov.state !== undefined) p.state = ov.state; }
