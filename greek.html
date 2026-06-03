@@ -59,8 +59,12 @@
 
     .flashcard { background: #fff; border: 1.5px solid var(--border); border-radius: 20px; padding: 48px 28px 40px; text-align: center; margin-bottom: 16px; min-height: 210px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .fc-badge { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 18px; }
+    .fc-word-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
     .fc-main { font-size: 40px; font-weight: 700; color: var(--text); line-height: 1.15; }
     .fc-rest { font-size: 16px; color: var(--muted); font-weight: 400; margin-top: 4px; }
+    .speak-btn { background: none; border: none; cursor: pointer; font-size: 20px; padding: 4px 6px; border-radius: 8px; opacity: .35; transition: opacity .15s, transform .1s; line-height: 1; flex-shrink: 0; }
+    .speak-btn:hover { opacity: 1; }
+    .speak-btn.active { opacity: 1; transform: scale(1.15); }
     .fc-divider { width: 36px; height: 2px; background: var(--border); margin: 20px auto; }
     .fc-translation { font-size: 22px; font-weight: 500; color: var(--blue); }
 
@@ -674,6 +678,31 @@ function renderHome() {
   }
 }
 
+// ── TTS ────────────────────────────────────────────────────────────────────
+function getWordForSpeech(gr) {
+  const {main} = splitGr(gr);
+  return main.replace(/\s*\([^)]+\)/g, '').trim();
+}
+
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'el-GR';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+function attachSpeakBtn(word) {
+  const btn = document.getElementById('speakBtn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    speak(getWordForSpeech(word.gr));
+    btn.classList.add('active');
+    setTimeout(() => btn.classList.remove('active'), 600);
+  });
+}
+
 function renderLearn(item) {
   const word = wordById(item.id);
   const {main, rest} = splitGr(word.gr);
@@ -688,7 +717,10 @@ function renderLearn(item) {
     </div>
     <div class="flashcard" id="fc">
       <div class="fc-badge">Греческий → Русский</div>
-      <div class="fc-main">${main}</div>
+      <div class="fc-word-row">
+        <div class="fc-main">${main}</div>
+        <button class="speak-btn" id="speakBtn" title="Произнести">🔊</button>
+      </div>
       ${rest ? `<div class="fc-rest">${rest}</div>` : ''}
       <div class="fc-divider" id="div"></div>
       <div class="fc-translation" id="tr"></div>
@@ -697,6 +729,7 @@ function renderLearn(item) {
     <button class="btn btn-primary" id="btnLearned" style="${session.revealed?'':'display:none'}">Выучил! →</button>
     ${buildAlphabetRef()}`;
 
+  attachSpeakBtn(word);
   document.getElementById('btnReveal')?.addEventListener('click', () => {
     session.revealed = true;
     document.getElementById('tr').textContent = word.ru;
@@ -731,7 +764,10 @@ function renderReview(item) {
     </div>
     <div class="flashcard">
       <div class="fc-badge">Что значит это слово?</div>
-      <div class="fc-main">${main}</div>
+      <div class="fc-word-row">
+        <div class="fc-main">${main}</div>
+        <button class="speak-btn" id="speakBtn" title="Произнести">🔊</button>
+      </div>
       ${rest ? `<div class="fc-rest">${rest}</div>` : ''}
     </div>
     <div class="choices">
@@ -747,6 +783,7 @@ function renderReview(item) {
     <button class="btn btn-primary" id="btnNext" style="${answered?'':'display:none'}">Далее →</button>
     ${buildAlphabetRef()}`;
 
+  attachSpeakBtn(word);
   if (!answered) {
     document.querySelectorAll('.choice').forEach(btn => {
       btn.addEventListener('click', () => {
