@@ -787,6 +787,7 @@ function renderLearn(item) {
 function renderReview(item) {
   const word = wordById(item.id);
   const {main, rest} = splitGr(word.gr);
+  const transcription = greekTranscription(getWordForSpeech(word.gr));
   if (!session.choices) session.choices = buildChoices(item.id);
   const choices = session.choices;
   const answered = session.answered;
@@ -803,7 +804,10 @@ function renderReview(item) {
     <div class="flashcard">
       <div class="fc-badge">Что значит это слово?</div>
       <div class="fc-word-row">
-        <div class="fc-main">${main}</div>
+        <div class="fc-word-col">
+          <div class="fc-main">${main}</div>
+          <div class="fc-transcription">[${transcription}]</div>
+        </div>
         <button class="speak-btn" id="speakBtn" title="Произнести">🔊</button>
       </div>
       ${rest ? `<div class="fc-rest">${rest}</div>` : ''}
@@ -822,6 +826,9 @@ function renderReview(item) {
     ${buildAlphabetRef()}`;
 
   attachSpeakBtn(word);
+  if (session.free && !answered) {
+    setTimeout(() => speak(getWordForSpeech(word.gr)), 300);
+  }
   if (!answered) {
     document.querySelectorAll('.choice').forEach(btn => {
       btn.addEventListener('click', () => {
