@@ -604,6 +604,18 @@ function buildSession(today) {
   };
 }
 
+function buildFreeSession() {
+  const ids = shuffle(Object.keys(state.cards).map(Number)).slice(0, 10);
+  return {
+    free: true,
+    queue: ids.map(id => ({type:'review', id, slot: 0})),
+    index: 0,
+    answered: null,
+    choices: null,
+    retried: {}
+  };
+}
+
 function currentItem() {
   return session && session.index < session.queue.length ? session.queue[session.index] : null;
 }
@@ -615,7 +627,7 @@ function render() {
   if (!state.startDate) { renderWelcome(); return; }
   if (!session) { renderHome(); return; }
   const item = currentItem();
-  if (!item) { renderDone(); session = null; return; }
+  if (!item) { const wasFree = session.free; session = null; renderDone(wasFree); return; }
   item.type === 'new' ? renderLearn(item) : renderReview(item);
 }
 
@@ -671,13 +683,18 @@ function renderHome() {
     </div>
     <button class="btn btn-primary" id="btnSession" ${!hasSession?'disabled':''}>
       ${hasSession ? 'Начать сессию' : (() => { const n = getNextSessionDate(); return n ? `Вернись ${n.label}` : 'Готово'; })()}
-    </button>`;
+    </button>
+    ${totalLearned > 0 ? `<button class="btn btn-ghost" id="btnFree">🔁 Свободное повторение</button>` : ''}`;
   if (hasSession) {
     document.getElementById('btnSession').onclick = () => {
       session = buildSession(today);
       render();
     };
   }
+  document.getElementById('btnFree')?.addEventListener('click', () => {
+    session = buildFreeSession();
+    render();
+  });
 }
 
 // ── TTS & Transcription ───────────────────────────────────────────────────
@@ -776,10 +793,11 @@ function renderReview(item) {
   const total = session.queue.filter(i=>i.type==='review').length;
   const done  = session.queue.slice(0, session.index).filter(i=>i.type==='review').length;
   const pct   = total ? Math.round(done/total*100) : 0;
+  const modeLabel = session.free ? 'Тренировка' : 'Повторение';
 
   root.innerHTML = `
     <div class="card-header">
-      <span class="card-label">Повторение · ${done+1} / ${total}</span>
+      <span class="card-label">${modeLabel} · ${done+1} / ${total}</span>
       <div class="card-pbar"><div class="card-pfill" style="width:${pct}%"></div></div>
     </div>
     <div class="flashcard">
@@ -811,10 +829,12 @@ function renderReview(item) {
         session.answered = val;
         const correct = val === word.ru;
         if (correct) {
-          const reviews = state.cards[item.id].reviews;
-          reviews[item.slot] = true;
-          if (reviews.every(Boolean)) state.cards[item.id].mastered = true;
-          scheduleSave();
+          if (!session.free) {
+            const reviews = state.cards[item.id].reviews;
+            reviews[item.slot] = true;
+            if (reviews.every(Boolean)) state.cards[item.id].mastered = true;
+            scheduleSave();
+          }
         } else {
           if (!session.retried[item.id + '_' + item.slot]) {
             session.retried[item.id + '_' + item.slot] = true;
@@ -834,18 +854,20 @@ function renderReview(item) {
   }
 }
 
-function renderDone() {
-  const today = getToday();
-  const newW = getNewWords(today);
-  const revs = getReviews(today);
+function renderDone(isFree = false) {
   root.innerHTML = `
     <div class="done-card">
-      <div class="done-icon">🎉</div>
-      <div class="done-title">Сессия завершена!</div>
-      <div class="done-sub">Отличная работа. Возвращайся завтра — прогресс сохранён.</div>
+      <div class="done-icon">${isFree ? '✨' : '🎉'}</div>
+      <div class="done-title">${isFree ? 'Тренировка завершена!' : 'Сессия завершена!'}</div>
+      <div class="done-sub">${isFree ? 'Хорошая тренировка! Можно запустить ещё раз.' : 'Отличная работа. Возвращайся завтра — прогресс сохранён.'}</div>
     </div>
-    <button class="btn btn-ghost" id="btnHome" style="margin-top:16px">← На главную</button>`;
+    ${isFree ? `<button class="btn btn-primary" id="btnAgain" style="margin-top:16px">🔁 Ещё раз</button>` : ''}
+    <button class="btn btn-ghost" id="btnHome" style="margin-top:${isFree?'10':'16'}px">← На главную</button>`;
   document.getElementById('btnHome').onclick = render;
+  document.getElementById('btnAgain')?.addEventListener('click', () => {
+    session = buildFreeSession();
+    render();
+  });
 }
 
 // ── Token screen ──────────────────────────────────────────────────────────────
