@@ -722,11 +722,18 @@ function speak(text) {
   speechSynthesis.cancel();
   // Chrome bug: cancel() + speak() in the same tick silently fails
   setTimeout(() => {
+    const voices = speechSynthesis.getVoices();
+    const greek = voices.find(v => v.lang.startsWith('el'));
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'el-GR';
+    if (greek) {
+      u.voice = greek;
+      u.lang = greek.lang;
+    }
+    // Without a Greek voice the default voice attempts to read the text —
+    // imperfect but produces audible output instead of silent failure
     u.rate = 0.8;
     speechSynthesis.speak(u);
-  }, 50);
+  }, 100);
 }
 
 function attachSpeakBtn(word) {
