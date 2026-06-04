@@ -723,14 +723,12 @@ function speak(text) {
   // Chrome bug: cancel() + speak() in the same tick silently fails
   setTimeout(() => {
     const voices = speechSynthesis.getVoices();
-    const greek = voices.find(v => v.lang.startsWith('el'));
     const u = new SpeechSynthesisUtterance(text);
-    if (greek) {
-      u.voice = greek;
-      u.lang = greek.lang;
-    }
-    // Without a Greek voice the default voice attempts to read the text —
-    // imperfect but produces audible output instead of silent failure
+    // Prefer Greek voice; fall back to English (reads Greek Unicode);
+    // avoid Russian/other voices that silently fail on non-Latin text
+    const voice = voices.find(v => v.lang.startsWith('el'))
+                || voices.find(v => v.lang.startsWith('en'));
+    if (voice) { u.voice = voice; u.lang = voice.lang; }
     u.rate = 0.8;
     speechSynthesis.speak(u);
   }, 100);
