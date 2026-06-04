@@ -720,10 +720,13 @@ function greekTranscription(text) {
 function speak(text) {
   if (!window.speechSynthesis) return;
   speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'el-GR';
-  u.rate = 0.8;
-  speechSynthesis.speak(u);
+  // Chrome bug: cancel() + speak() in the same tick silently fails
+  setTimeout(() => {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'el-GR';
+    u.rate = 0.8;
+    speechSynthesis.speak(u);
+  }, 50);
 }
 
 function attachSpeakBtn(word) {
@@ -826,9 +829,6 @@ function renderReview(item) {
     ${buildAlphabetRef()}`;
 
   attachSpeakBtn(word);
-  if (session.free && !answered) {
-    setTimeout(() => speak(getWordForSpeech(word.gr)), 300);
-  }
   if (!answered) {
     document.querySelectorAll('.choice').forEach(btn => {
       btn.addEventListener('click', () => {
