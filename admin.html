@@ -38,19 +38,21 @@
 <body>
 
 <div class="tab-bar">
-  <button class="tab-btn active" data-src="mpd.html">MPD</button>
-  <button class="tab-btn" data-src="summer.html">Summer</button>
+  <button class="tab-btn active" data-src="summer.html">Summer</button>
+  <button class="tab-btn" data-src="mpd.html">MPD</button>
   <button class="tab-btn" data-src="greek.html">Greek</button>
-  <button class="tab-btn" data-src="life.html">Life</button>
+  <button class="tab-btn" data-src="english.html">English</button>
   <button class="tab-btn" data-src="romanian.html">Romanian</button>
+  <button class="tab-btn" data-src="life.html">Life</button>
 </div>
 
 <div class="frame-wrap">
-  <iframe id="frame-mpd.html"      class="active"></iframe>
-  <iframe id="frame-summer.html"   ></iframe>
+  <iframe id="frame-summer.html"   class="active"></iframe>
+  <iframe id="frame-mpd.html"      ></iframe>
   <iframe id="frame-greek.html"    ></iframe>
-  <iframe id="frame-life.html"     ></iframe>
+  <iframe id="frame-english.html"  ></iframe>
   <iframe id="frame-romanian.html" ></iframe>
+  <iframe id="frame-life.html"     ></iframe>
 </div>
 
 <script>
@@ -63,7 +65,7 @@
   }
 
   // Load default tab
-  loadFrame('mpd.html').classList.add('active');
+  loadFrame('summer.html').classList.add('active');
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
