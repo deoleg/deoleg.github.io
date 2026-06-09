@@ -47,66 +47,102 @@
       top: 48px;
     }
 
-    .tasks-hdr {
+    .task-input-wrap {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
+      background: #fff;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 4px 6px 4px 12px;
+      margin-bottom: 6px;
+      gap: 4px;
+      transition: border-color .15s;
     }
+    .task-input-wrap:focus-within { border-color: #1a1f36; }
 
-    .tasks-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #1a1f36;
-    }
-
-    .tasks-add-btn {
+    .task-main-inp {
+      flex: 1;
       font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      line-height: 1;
-      color: #888;
-      background: none;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      font-size: 13px;
+      border: none;
+      outline: none;
+      color: #1a1f36;
+      background: transparent;
+      min-width: 0;
+      padding: 6px 0;
+    }
+
+    .task-ctrl-btn {
       width: 28px;
       height: 28px;
+      border: none;
+      background: none;
+      border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: color .15s, border-color .15s;
+      flex-shrink: 0;
+      color: #bbb;
+      transition: background .12s, color .12s;
     }
-    .tasks-add-btn:hover { color: #1a1f36; border-color: #bbb; }
+    .task-ctrl-btn:hover { background: #f0f0ee; color: #555; }
+    .task-ctrl-btn.active { color: #1a1f36; }
 
-    .task-form {
+    .task-color-swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1.5px #ddd;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: box-shadow .12s;
+    }
+    .task-color-swatch:hover { box-shadow: 0 0 0 2px #bbb; }
+
+    .task-date-hidden {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .task-date-badge {
       display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 8px;
+      padding: 0 6px;
+    }
+    .task-date-badge.visible { display: flex; }
+
+    .task-date-clear {
+      background: none;
+      border: none;
+      color: #ccc;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      padding: 0;
+    }
+    .task-date-clear:hover { color: #888; }
+
+    .task-color-popup {
+      display: none;
+      gap: 8px;
+      padding: 8px 10px;
       background: #fff;
       border: 1.5px solid #e5e5e5;
       border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 10px;
-    }
-    .task-form.open { display: block; }
-
-    .task-inp, .task-date-inp {
-      width: 100%;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      border: 1.5px solid #e5e5e5;
-      border-radius: 7px;
-      padding: 7px 10px;
-      outline: none;
-      color: #1a1f36;
-      background: #fff;
       margin-bottom: 8px;
+      flex-wrap: wrap;
     }
-    .task-inp:focus, .task-date-inp:focus { border-color: #1a1f36; }
-
-    .task-colors {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
+    .task-color-popup.open { display: flex; }
 
     .task-color-dot {
       width: 20px;
@@ -119,36 +155,6 @@
     }
     .task-color-dot:hover { transform: scale(1.15); }
     .task-color-dot.sel { border-color: #1a1f36; transform: scale(1.1); }
-
-    .task-form-btns { display: flex; gap: 8px; }
-
-    .task-save-btn {
-      flex: 2;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      background: #1a1f36;
-      color: #fff;
-      border: none;
-      border-radius: 7px;
-      padding: 7px;
-      cursor: pointer;
-      transition: opacity .15s;
-    }
-    .task-save-btn:hover { opacity: .85; }
-
-    .task-cancel-btn {
-      flex: 1;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      color: #888;
-      background: none;
-      border: 1.5px solid #e5e5e5;
-      border-radius: 7px;
-      padding: 7px;
-      cursor: pointer;
-    }
-    .task-cancel-btn:hover { border-color: #bbb; color: #444; }
 
     .task-item {
       display: flex;
@@ -700,19 +706,19 @@
 </div>
 
 <aside class="tasks-panel">
-  <div class="tasks-hdr">
-    <span class="tasks-title">Задачи</span>
-    <button type="button" class="tasks-add-btn" id="tasksAddBtn" title="Добавить задачу">+</button>
+  <div class="task-input-wrap">
+    <input type="text" class="task-main-inp" id="taskInp" placeholder="Новая задача…">
+    <button type="button" class="task-ctrl-btn" id="taskCalBtn" title="Дедлайн">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x=".75" y="2.25" width="12.5" height="10.5" rx="1.25"/><line x1=".75" y1="5.5" x2="13.25" y2="5.5"/><line x1="4" y1=".75" x2="4" y2="3.75"/><line x1="10" y1=".75" x2="10" y2="3.75"/></svg>
+    </button>
+    <input type="date" id="taskDateInp" class="task-date-hidden" title="Дедлайн" aria-label="Дедлайн задачи">
+    <button type="button" class="task-color-swatch" id="taskColorBtn" title="Цвет задачи"></button>
   </div>
-  <div class="task-form" id="taskForm">
-    <input type="text"  class="task-inp"      id="taskInp"     placeholder="Новая задача…">
-    <input type="date"  class="task-date-inp"  id="taskDateInp">
-    <div class="task-colors" id="taskColorPicker"></div>
-    <div class="task-form-btns">
-      <button type="button" class="task-save-btn"   id="taskSaveBtn">Добавить</button>
-      <button type="button" class="task-cancel-btn" id="taskCancelBtn">Отмена</button>
-    </div>
+  <div class="task-date-badge" id="taskDateBadge">
+    <span id="taskDateLabel"></span>
+    <button type="button" class="task-date-clear" id="taskDateClear" title="Очистить дату">×</button>
   </div>
+  <div class="task-color-popup" id="taskColorPopup"></div>
   <div id="tasksList"></div>
 </aside>
 
@@ -1370,49 +1376,77 @@ function buildTasksList() {
   });
 }
 
-(function initTaskForm() {
-  const form       = document.getElementById('taskForm');
-  const inp        = document.getElementById('taskInp');
-  const dateInp    = document.getElementById('taskDateInp');
-  const picker     = document.getElementById('taskColorPicker');
-  const addBtn     = document.getElementById('tasksAddBtn');
-  const saveBtn    = document.getElementById('taskSaveBtn');
-  const cancelBtn  = document.getElementById('taskCancelBtn');
+(function initTaskInput() {
+  const inp       = document.getElementById('taskInp');
+  const dateInp   = document.getElementById('taskDateInp');
+  const calBtn    = document.getElementById('taskCalBtn');
+  const colorBtn  = document.getElementById('taskColorBtn');
+  const popup     = document.getElementById('taskColorPopup');
+  const dateBadge = document.getElementById('taskDateBadge');
+  const dateLabel = document.getElementById('taskDateLabel');
+  const dateClear = document.getElementById('taskDateClear');
+
+  colorBtn.style.background = _taskColor;
 
   TASK_COLORS.forEach(c => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'task-color-dot' + (c === _taskColor ? ' sel' : '');
     dot.style.background = c;
-    dot.addEventListener('click', () => {
+    dot.addEventListener('click', e => {
+      e.stopPropagation();
       _taskColor = c;
-      picker.querySelectorAll('.task-color-dot').forEach(d => d.classList.remove('sel'));
+      colorBtn.style.background = c;
+      popup.querySelectorAll('.task-color-dot').forEach(d => d.classList.remove('sel'));
       dot.classList.add('sel');
+      popup.classList.remove('open');
     });
-    picker.appendChild(dot);
+    popup.appendChild(dot);
   });
 
-  addBtn.addEventListener('click', () => {
-    form.classList.toggle('open');
-    if (form.classList.contains('open')) inp.focus();
+  calBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    try { dateInp.showPicker(); } catch(_) { dateInp.click(); }
   });
 
-  function close() {
-    form.classList.remove('open');
-    inp.value = ''; dateInp.value = '';
-  }
+  const MONTHS = ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
+  dateInp.addEventListener('change', () => {
+    if (dateInp.value) {
+      const [, m, d] = dateInp.value.split('-');
+      dateLabel.textContent = +d + ' ' + MONTHS[+m - 1];
+      dateBadge.classList.add('visible');
+      calBtn.classList.add('active');
+    } else {
+      dateBadge.classList.remove('visible');
+      calBtn.classList.remove('active');
+    }
+  });
+
+  dateClear.addEventListener('click', () => {
+    dateInp.value = '';
+    dateBadge.classList.remove('visible');
+    calBtn.classList.remove('active');
+  });
+
+  colorBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    popup.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => popup.classList.remove('open'));
 
   function save() {
     const text = inp.value.trim();
     if (!text) { inp.focus(); return; }
     tasks.push({ id: 't' + Date.now(), text, deadline: dateInp.value || '', color: _taskColor });
-    close();
+    inp.value = '';
+    dateInp.value = '';
+    dateBadge.classList.remove('visible');
+    calBtn.classList.remove('active');
     buildTasksList();
     scheduleSave();
   }
 
-  saveBtn.addEventListener('click', save);
-  cancelBtn.addEventListener('click', close);
   inp.addEventListener('keydown', e => { if (e.key === 'Enter') save(); });
 })();
 
