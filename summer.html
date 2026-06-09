@@ -404,17 +404,19 @@ const TASKS = {
           { id: "english", label: "Английский",          sub: "15 мин" },
           { id: "guitar",  label: "Музыка",             sub: "15–20 мин" },
           { id: "tcmi",    label: "TCMi + чтение",      sub: "20 мин" }],
-  lev:   [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
-          { id: "bible",  label: "Чтение Радикальной книги", sub: "",      dur: "15 мин" },
-          { id: "english",label: "Английский",           sub: "",           noTimer: true },
-          { id: "read",   label: "Чтение из списка",     sub: "",           dur: "30 мин" },
-          { id: "free",   label: "Книга по выбору",      sub: "",           dur: "10 мин" }],
-  arina: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
-          { id: "bible",  label: "Чтение Библии",        sub: "",           dur: "15 мин" },
-          { id: "english",label: "Английский",           sub: "",           noTimer: true },
-          { id: "read",   label: "Чтение из списка",     sub: "",           dur: "30 мин" },
-          { id: "copy",   label: "Прописи Пятибратова",  sub: "",           dur: "30 мин" },
-          { id: "aloud",  label: "Читает вслух вечером", sub: "",           dur: "10 мин", trackReading: true }],
+  lev:   [{ id: "sport",    label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "bible",    label: "Чтение Радикальной книги", sub: "",      dur: "15 мин" },
+          { id: "english",  label: "Английский",           sub: "",           noTimer: true },
+          { id: "romanian", label: "Румынский",             sub: "",           noTimer: true, since: "2026-06-09" },
+          { id: "read",     label: "Чтение из списка",     sub: "",           dur: "30 мин" },
+          { id: "free",     label: "Книга по выбору",      sub: "",           dur: "10 мин" }],
+  arina: [{ id: "sport",    label: "Физкультура",          sub: "",           noTimer: true },
+          { id: "bible",    label: "Чтение Библии",        sub: "",           dur: "15 мин" },
+          { id: "english",  label: "Английский",           sub: "",           noTimer: true },
+          { id: "romanian", label: "Румынский",             sub: "",           noTimer: true, since: "2026-06-09" },
+          { id: "read",     label: "Чтение из списка",     sub: "",           dur: "30 мин" },
+          { id: "copy",     label: "Прописи Пятибратова",  sub: "",           dur: "30 мин" },
+          { id: "aloud",    label: "Читает вслух вечером", sub: "",           dur: "10 мин", trackReading: true }],
   masha: [{ id: "sport",  label: "Физкультура",          sub: "",           noTimer: true },
           { id: "draw",   label: "Рисование Гаврина",    sub: "",           noTimer: true }],
 };
@@ -567,7 +569,7 @@ function updateSummary() {
     passed.forEach(d => {
       const dk = dateKey(d);
       const dayData = state.checks[dk]?.[p] || {};
-      const tasks   = TASKS[p];
+      const tasks   = TASKS[p].filter(t => !t.since || dk >= t.since);
       if (tasks.every(t => dayData[t.id])) done++;
     });
     document.getElementById(`sum-${p}`).textContent = done;
@@ -655,6 +657,12 @@ function buildCalendar() {
 
         if (!isSummer) {
           cell.style.opacity = "0.2";
+          grid.appendChild(cell);
+          return;
+        }
+
+        if (task.since && dk < task.since) {
+          cell.style.opacity = "0.15";
           grid.appendChild(cell);
           return;
         }
