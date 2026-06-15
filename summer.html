@@ -282,6 +282,11 @@
       background: none; border: none; cursor: pointer; padding: 6px;
     }
     .reading-chart-svg { display: block; width: 100%; margin: 12px 0 16px; }
+    .workout-list { list-style: none; text-align: left; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .workout-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--dad-bg); border-radius: 10px; font-size: 14px; }
+    .workout-num  { font-size: 12px; font-weight: 700; color: var(--dad); min-width: 18px; text-align: right; }
+    .workout-name { flex: 1; font-weight: 500; color: var(--text); }
+    .workout-reps { font-size: 12px; font-weight: 600; color: var(--dad); white-space: nowrap; }
     .reading-close-btn {
       width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
       background: none; border: 1.5px solid var(--border); border-radius: 10px;
@@ -399,7 +404,16 @@ const PEOPLE = ["dad", "lev", "arina", "masha"];
 const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", masha: "Мария" };
 
 const TASKS = {
-  dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "",           noTimer: true },
+  dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "",           noTimer: true, exercises: [
+            { name: "Выпады",                  reps: "20 раз" },
+            { name: "Свинги",                  reps: "30 раз" },
+            { name: "Перехваты (мельница)",    reps: "30 раз" },
+            { name: "Гоблет приседания",       reps: "15 раз" },
+            { name: "Протяжка",                reps: "15 раз" },
+            { name: "Жим над головой",         reps: "15 раз" },
+            { name: "Подъём на бицепс",        reps: "15 раз" },
+            { name: "Французский жим",         reps: "15 раз" },
+          ] },
           { id: "bible",   label: "Чтение Библии",      sub: "15 мин" },
           { id: "english", label: "Английский",          sub: "15 мин" },
           { id: "guitar",  label: "Музыка",             sub: "15–20 мин" },
@@ -641,7 +655,10 @@ function buildCalendar() {
         subDiv.textContent = task.sub;
         lbl.appendChild(subDiv);
       }
-      if (task.noTimer) {
+      if (task.exercises) {
+        lbl.style.cursor = "pointer";
+        lbl.addEventListener("click", () => showWorkoutModal(task.exercises));
+      } else if (task.noTimer) {
         lbl.classList.add("no-timer");
       } else {
         lbl.addEventListener("click", () => startTimer(task.label, task.dur || task.sub));
@@ -704,6 +721,28 @@ function makeCell(cls, text) {
   d.className = cls;
   if (text) d.textContent = text;
   return d;
+}
+
+// ── Workout modal ─────────────────────────────────────────────────────────────
+function showWorkoutModal(exercises) {
+  const overlay = document.createElement('div');
+  overlay.className = 'reading-overlay';
+  overlay.innerHTML = `
+    <div class="reading-modal">
+      <div class="reading-modal-title">💪 Физкультура (гиря)</div>
+      <ul class="workout-list">
+        ${exercises.map((e, i) => `
+          <li class="workout-item">
+            <span class="workout-num">${i + 1}.</span>
+            <span class="workout-name">${e.name}</span>
+            <span class="workout-reps">${e.reps}</span>
+          </li>`).join('')}
+      </ul>
+      <button type="button" class="reading-close-btn" id="workoutClose">Закрыть</button>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.getElementById('workoutClose').addEventListener('click', () => overlay.remove());
 }
 
 // ── Reading speed ─────────────────────────────────────────────────────────────
