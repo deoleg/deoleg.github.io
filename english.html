@@ -1492,22 +1492,26 @@ function renderDone(isFree = false) {
   document.getElementById('btnAgain')?.addEventListener('click', () => { session = buildFreeSession(); render(); });
 }
 
-function speak(text) {
+async function speak(text) {
   speechSynthesis.cancel();
-  function doSpeak() {
-    const voices = speechSynthesis.getVoices();
-    const u = new SpeechSynthesisUtterance(text);
-    const gv = voices.find(v => v.name.startsWith('Google') && v.lang.startsWith('en'));
-    const av = voices.find(v => v.lang.startsWith('en'));
-    if (gv || av) u.voice = gv || av;
-    u.lang = 'en-US'; u.rate = 0.9;
-    speechSynthesis.speak(u);
-  }
-  if (speechSynthesis.getVoices().length) setTimeout(doSpeak, 50);
-  else { speechSynthesis.onvoiceschanged = () => { speechSynthesis.onvoiceschanged = null; doSpeak(); }; }
+  try {
+    const r = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(text.toLowerCase().trim())}`);
+    if (r.ok) {
+      const data = await r.json();
+      const url = data[0]?.phonetics?.find(p => p.audio)?.audio;
+      if (url) { new Audio(url).play(); return; }
+    }
+  } catch(e) {}
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.9;
+  speechSynthesis.speak(u);
 }
 
 document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const btn = document.getElementById('btnNext');
+    if (btn && btn.style.display !== 'none') { btn.click(); return; }
+  }
   if (['1','2','3','4'].includes(e.key)) {
     const btns = document.querySelectorAll('.choice:not([disabled])');
     const idx = parseInt(e.key) - 1;

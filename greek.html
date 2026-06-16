@@ -956,6 +956,10 @@ function renderDone(isFree = false) {
 }
 
 document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const btn = document.getElementById('btnNext');
+    if (btn && btn.style.display !== 'none') { btn.click(); return; }
+  }
   if (['1','2','3','4'].includes(e.key)) {
     const btns = document.querySelectorAll('.choice:not([disabled])');
     const idx = parseInt(e.key) - 1;
