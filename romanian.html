@@ -430,6 +430,25 @@ function buildChoices(wordId) {
   const pool = WORDS.filter(w => w.id !== wordId && w.ru !== correct);
   return shuffle([correct, ...shuffle(pool).slice(0,3).map(w => w.ru)]);
 }
+function buildChoicesReverse(wordId) {
+  const correct = wordById(wordId).ro;
+  const pool = WORDS.filter(w => w.id !== wordId && w.ro !== correct);
+  return shuffle([correct, ...shuffle(pool).slice(0,3).map(w => w.ro)]);
+}
+function getRevReviews(today) {
+  const due = [];
+  for (const [sid, card] of Object.entries(state.cards)) {
+    const id = parseInt(sid);
+    if (!card.mastered) continue;
+    const base = card.revLearnedAt || card.learnedAt;
+    const diff = daysBetween(base, today);
+    const revReviews = card.revReviews || [false,false,false];
+    for (let i = 0; i < REVIEW_DAYS.length; i++) {
+      if (!revReviews[i] && diff >= REVIEW_DAYS[i]) { due.push({id, slot: i}); break; }
+    }
+  }
+  return due;
+}
 
 let state = { startDate: null, cards: {} };
 let fileSha = null;
@@ -476,7 +495,7 @@ function getNextSessionDate() {
   for (let i = 1; i <= 30; i++) {
     const d = new Date(); d.setDate(d.getDate() + i);
     const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-    if (getNewWords(ds).length > 0 || getReviews(ds).length > 0) {
+    if (getNewWords(ds).length > 0 || getReviews(ds).length > 0 || getRevReviews(ds).length > 0) {
       const label = i === 1 ? 'завтра' : `${d.getDate()} ${RU_MON_G[d.getMonth()]}`;
       return { days: i, label };
     }
@@ -484,10 +503,14 @@ function getNextSessionDate() {
   return null;
 }
 function buildSession(today) {
-  const newW = getNewWords(today), revs = getReviews(today);
-  if (!newW.length && !revs.length) return null;
+  const newW = getNewWords(today), revs = getReviews(today), revRevs = getRevReviews(today);
+  if (!newW.length && !revs.length && !revRevs.length) return null;
   return {
-    queue: [...newW.map(id=>({type:'new',id})), ...revs.map(({id,slot})=>({type:'review',id,slot}))],
+    queue: [
+      ...newW.map(id=>({type:'new',id})),
+      ...revs.map(({id,slot})=>({type:'review',id,slot})),
+      ...revRevs.map(({id,slot})=>({type:'reverse',id,slot}))
+    ],
     index: 0, revealed: false, answered: null, choices: null, retried: {}
   };
 }
@@ -506,7 +529,9 @@ function render() {
   if (!session) { renderHome(); return; }
   const item = currentItem();
   if (!item) { const wasFree = session.free; session = null; renderDone(wasFree); return; }
-  item.type === 'new' ? renderLearn(item) : renderReview(item);
+  if (item.type === 'new') renderLearn(item);
+  else if (item.type === 'reverse') renderReverse(item);
+  else renderReview(item);
 }
 
 function renderWelcome() {
@@ -529,11 +554,11 @@ function renderWelcome() {
 
 function renderHome() {
   const today = getToday();
-  const newW = getNewWords(today), revs = getReviews(today);
+  const newW = getNewWords(today), revs = getReviews(today), revRevs = getRevReviews(today);
   const totalLearned = Object.keys(state.cards).length;
   const mastered = Object.values(state.cards).filter(c => c.mastered).length;
   const pct = Math.round(totalLearned / WORDS.length * 100);
-  const hasSession = newW.length > 0 || revs.length > 0;
+  const hasSession = newW.length > 0 || revs.length > 0 || revRevs.length > 0;
   root.innerHTML = `
     <h1>Румынский словарь</h1>
     <p class="subtitle">Прогресс на сегодня</p>
@@ -550,6 +575,7 @@ function renderHome() {
       <div class="session-head">Сегодня</div>
       ${newW.length ? `<div class="session-row">📖 Новые слова<span class="session-cnt">${newW.length}</span></div>` : ''}
       ${revs.length ? `<div class="session-row">🔄 Повторение<span class="session-cnt">${revs.length}</span></div>` : ''}
+      ${revRevs.length ? `<div class="session-row">🔁 Обратное повторение<span class="session-cnt">${revRevs.length}</span></div>` : ''}
       ${!hasSession ? (() => {
         const next = getNextSessionDate();
         return `<div style="text-align:center;font-size:14px;color:var(--muted);padding:8px 0">
@@ -640,13 +666,13 @@ function renderReview(item) {
       ${answered && correct ? exampleBlock(word) : ''}
     </div>
     <div class="choices">
-      ${choices.map(c => {
+      ${choices.map((c, i) => {
         let cls = '';
         if (answered) {
           if (c === word.ru) cls = 'correct';
           else if (c === answered && !correct) cls = 'wrong';
         }
-        return `<button class="choice ${cls}" data-val="${esc(c)}" ${answered?'disabled':''}>${esc(c)}</button>`;
+        return `<button class="choice ${cls}" data-val="${esc(c)}" ${answered?'disabled':''}>${i+1}. ${esc(c)}</button>`;
       }).join('')}
     </div>
     <button class="btn btn-primary" id="btnNext" style="${answered?'':'display:none'}">Далее →</button>`;
@@ -666,7 +692,11 @@ function renderReview(item) {
           if (!session.free) {
             const reviews = state.cards[item.id].reviews;
             reviews[item.slot] = true;
-            if (reviews.every(Boolean)) state.cards[item.id].mastered = true;
+            if (reviews.every(Boolean)) {
+              state.cards[item.id].mastered = true;
+              state.cards[item.id].revLearnedAt = getToday();
+              state.cards[item.id].revReviews = [false,false,false];
+            }
             scheduleSave();
           }
         } else {
@@ -688,6 +718,69 @@ function renderReview(item) {
   }
 }
 
+function renderReverse(item) {
+  const word = wordById(item.id);
+  if (!session.choices) session.choices = buildChoicesReverse(item.id);
+  const choices = session.choices, answered = session.answered;
+  const total = session.queue.filter(i=>i.type==='reverse').length;
+  const done  = session.queue.slice(0,session.index).filter(i=>i.type==='reverse').length;
+  const pct   = total ? Math.round(done/total*100) : 0;
+  const correct = answered === word.ro;
+
+  root.innerHTML = `
+    <div class="card-header">
+      <span class="card-label">Обратное · ${done+1} / ${total}</span>
+      <div class="card-pbar"><div class="card-pfill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="flashcard">
+      <div class="fc-badge">Русский → Румынский</div>
+      <div class="fc-main">${esc(word.ru)}</div>
+      ${exampleBlock(word)}
+    </div>
+    <div class="choices">
+      ${choices.map((c, i) => {
+        let cls = '';
+        if (answered) {
+          if (c === word.ro) cls = 'correct';
+          else if (c === answered && !correct) cls = 'wrong';
+        }
+        return `<button class="choice ${cls}" data-val="${esc(c)}" ${answered?'disabled':''}>${i+1}. ${esc(c)}</button>`;
+      }).join('')}
+    </div>
+    <button class="btn btn-primary" id="btnNext" style="${answered?'':'display:none'}">Далее →</button>`;
+
+  if (!answered) {
+    document.querySelectorAll('.choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.val;
+        session.answered = val;
+        if (val === word.ro) {
+          const card = state.cards[item.id];
+          const revReviews = card.revReviews || [false,false,false];
+          revReviews[item.slot] = true;
+          card.revReviews = revReviews;
+          if (revReviews.every(Boolean)) {
+            card.revLearnedAt = getToday();
+            card.revReviews = [false,false,false];
+          }
+          scheduleSave();
+        } else {
+          const key = item.id+'_rev_'+item.slot;
+          if (!session.retried[key]) {
+            session.retried[key] = true;
+            session.queue.push({type:'reverse', id:item.id, slot:item.slot});
+          }
+        }
+        render();
+      });
+    });
+  } else {
+    document.getElementById('btnNext').addEventListener('click', () => {
+      session.index++; session.answered = null; session.choices = null; render();
+    });
+  }
+}
+
 function renderDone(isFree = false) {
   root.innerHTML = `
     <div class="done-card">
@@ -701,11 +794,27 @@ function renderDone(isFree = false) {
   document.getElementById('btnAgain')?.addEventListener('click', () => { session = buildFreeSession(); render(); });
 }
 
-let _audio = null;
+document.addEventListener('keydown', e => {
+  if (['1','2','3','4'].includes(e.key)) {
+    const btns = document.querySelectorAll('.choice:not([disabled])');
+    const idx = parseInt(e.key) - 1;
+    if (btns[idx]) btns[idx].click();
+  }
+});
+
 function speak(text) {
-  if (_audio) { _audio.pause(); _audio = null; }
-  _audio = new Audio(`https://translate.googleapis.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ro&client=gtx`);
-  _audio.play().catch(() => {});
+  speechSynthesis.cancel();
+  function doSpeak() {
+    const voices = speechSynthesis.getVoices();
+    const u = new SpeechSynthesisUtterance(text);
+    const gv = voices.find(v => v.name.startsWith('Google') && v.lang.startsWith('ro'));
+    const av = voices.find(v => v.lang.startsWith('ro'));
+    if (gv || av) u.voice = gv || av;
+    u.lang = 'ro-RO'; u.rate = 0.9;
+    speechSynthesis.speak(u);
+  }
+  if (speechSynthesis.getVoices().length) setTimeout(doSpeak, 50);
+  else { speechSynthesis.onvoiceschanged = () => { speechSynthesis.onvoiceschanged = null; doSpeak(); }; }
 }
 
 function showTokenScreen() {
