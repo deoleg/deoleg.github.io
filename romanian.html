@@ -701,30 +701,10 @@ function renderDone(isFree = false) {
   document.getElementById('btnAgain')?.addEventListener('click', () => { session = buildFreeSession(); render(); });
 }
 
-async function gtxTts(text, lang) {
-  const KEY = 'AIzaSyDLEeFI5OtFBwYBIoK_jj5m32rZK5CkCXA';
-  try {
-    const url = `https://translate-pa.googleapis.com/v1/textToSpeech?client=gtx&language=${encodeURIComponent(lang)}&text=${encodeURIComponent(text)}&voice_speed=1&key=${KEY}`;
-    const r = await fetch(url, {headers: {'Content-Type': 'application/json+protobuf'}});
-    if (!r.ok) throw new Error(r.status);
-    const bytes = new Uint8Array(await r.arrayBuffer());
-    let i = 0;
-    if (bytes[i++] !== 0x0A) throw new Error('proto');
-    let len = 0, shift = 0;
-    for (;;) { const b = bytes[i++]; len |= (b & 0x7F) << shift; if (!(b & 0x80)) break; shift += 7; }
-    const blob = new Blob([bytes.slice(i, i + len)], {type: 'audio/mpeg'});
-    return URL.createObjectURL(blob);
-  } catch {
-    return `https://translate.googleapis.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${lang}&client=tw-ob`;
-  }
-}
-
 let _audio = null;
-async function speak(text) {
+function speak(text) {
   if (_audio) { _audio.pause(); _audio = null; }
-  const src = await gtxTts(text, 'ro');
-  if (!src) return;
-  _audio = new Audio(src);
+  _audio = new Audio(`https://translate.googleapis.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ro&client=gtx`);
   _audio.play().catch(() => {});
 }
 
