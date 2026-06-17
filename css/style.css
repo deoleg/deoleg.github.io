@@ -194,7 +194,31 @@ strong {
 /* CTA button on home page */
 .hero-cta {
   margin-top: 32px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-button-gold {
+  display: inline-block;
+  background: #f9b625;
+  color: #1a1f36;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cta-button-gold:hover {
+  background: #e0a218;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 182, 37, 0.45);
 }
 
 .cta-button {
