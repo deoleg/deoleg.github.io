@@ -73,11 +73,11 @@ function getSlots() {
     const end = new Date(cur.getTime() + DURATION * 60000);
 
     const sh = +Utilities.formatDate(cur, TZ, 'H');
-    const eh = +Utilities.formatDate(end, TZ, 'H');
-    const em = +Utilities.formatDate(end, TZ, 'm');
+    const sm = +Utilities.formatDate(cur, TZ, 'm');
+    const startMin = sh * 60 + sm;
 
-    // Slot must start >= 14:00 and end <= 21:00 (Moldova)
-    const inWindow = sh >= WIN_START && (eh < WIN_END || (eh === WIN_END && em === 0));
+    // Slot must start >= 14:00 and end (start + 45 min) <= 21:00 (Moldova)
+    const inWindow = startMin >= WIN_START * 60 && startMin + DURATION <= WIN_END * 60;
 
     if (inWindow) {
       const cs = cur.getTime(), ce = end.getTime();
