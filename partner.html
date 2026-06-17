@@ -30,6 +30,136 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Schedule Meeting button (fits .buttons gap flow) ── */
+    .schedule-btn {
+      min-height: 56px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border: 2px solid #1d9e75;
+      background: #1d9e75;
+      color: #fff;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .schedule-btn:hover {
+      background: #178a64;
+      border-color: #178a64;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(29,158,117,.35);
+    }
+
+    /* ── Modal overlay ── */
+    .sched-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.52);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .sched-overlay.open { display: flex; }
+
+    .sched-modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.75rem 1.75rem;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-family: 'Inter', sans-serif;
+    }
+    .sched-x {
+      position: absolute;
+      top: .875rem;
+      right: 1.1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #bbb;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .sched-x:hover { color: #555; }
+
+    .sched-h   { font-size: 1.15rem; font-weight: 700; color: #1a1f36; margin-bottom: .25rem; }
+    .sched-sub { font-size: .82rem;  color: #999;      margin-bottom: 1.5rem; }
+
+    .sched-slot {
+      background: #f4f7fb;
+      border-radius: 10px;
+      padding: 1.1rem 1rem;
+      margin-bottom: .875rem;
+    }
+    .sched-slot-date { font-size: .95rem; font-weight: 600; color: #1a1f36; }
+    .sched-slot-time { font-size: 1.5rem;  font-weight: 800; color: #1d9e75; margin: .2rem 0; }
+    .sched-slot-tz   { font-size: .72rem;  color: #bbb; }
+
+    .sched-next {
+      background: none;
+      border: 1.5px solid #e2e2e2;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .82rem;
+      color: #666;
+      padding: .55rem 1rem;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 1.1rem;
+      transition: border-color .15s, color .15s;
+    }
+    .sched-next:hover { border-color: #aaa; color: #222; }
+
+    .sched-input {
+      width: 100%;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .9rem;
+      padding: .65rem .875rem;
+      margin-bottom: .75rem;
+      box-sizing: border-box;
+      outline: none;
+      color: #1a1f36;
+    }
+    .sched-input:focus { border-color: #1d9e75; }
+
+    .sched-confirm {
+      background: #1a1f36;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+      padding: .75rem 1.5rem;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .sched-confirm:hover   { opacity: .85; }
+    .sched-confirm:disabled { opacity: .5; cursor: default; }
+
+    .sched-msg { font-size: .875rem; color: #888; padding: 1.5rem 0; }
+    .sched-err { font-size: .8rem;   color: #c0392b; margin-top: .6rem; display: none; }
+
+    .sched-done { padding: 1rem 0 .5rem; }
+    .sched-done-icon  { font-size: 3rem; margin-bottom: .75rem; }
+    .sched-done-title { font-size: 1.1rem; font-weight: 700; color: #1a1f36; margin-bottom: .6rem; }
+    .sched-done-sub   { font-size: .875rem; color: #555; line-height: 1.6; }
+  </style>
 </head>
 
 <body class="page-partner">
@@ -114,6 +244,7 @@
              Special Need
           </a>
         </div>
+      <button type="button" class="schedule-btn" id="scheduleMeetingBtn">📅 Schedule a Meeting</button>
       <p><em>Subscribe to our newsletter to see how God is changing lives in Moldova and pray with us.</em></p>
         <a href="http://eepurl.com/gNI_nD"
            target="_blank"
@@ -131,6 +262,14 @@
   </section>
 </main>
   
+<!-- ── Schedule Meeting Modal ─────────────────────────────────── -->
+<div class="sched-overlay" id="schedOverlay" role="dialog" aria-modal="true" aria-label="Schedule a meeting">
+  <div class="sched-modal">
+    <button type="button" class="sched-x" id="schedClose" aria-label="Close">×</button>
+    <div id="schedBody"><p class="sched-msg">Loading available times…</p></div>
+  </div>
+</div>
+
 <script src="js/nav.js"></script>
 <script>
   (function () {
@@ -169,6 +308,152 @@
       updateUI(parseInt(this.value, 10));
     });
   })();
+</script>
+<script>
+(function () {
+  // ── After deploying meeting-script.gs, paste your web app URL here ──
+  const SCRIPT_URL = 'REPLACE_WITH_APPS_SCRIPT_URL';
+
+  let slots = [], idx = 0;
+
+  const overlay = document.getElementById('schedOverlay');
+  const body    = document.getElementById('schedBody');
+
+  document.getElementById('scheduleMeetingBtn').addEventListener('click', function () {
+    gtag('event', 'schedule_click', { event_category: 'engagement', event_label: 'Schedule Meeting Button' });
+    openModal();
+  });
+  document.getElementById('schedClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  function openModal() {
+    slots = []; idx = 0;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setBody('<p class="sched-msg">Loading available times…</p>');
+    fetch(SCRIPT_URL)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d.ok || !d.slots || !d.slots.length) {
+          setBody('<p class="sched-msg">No available times in the next 4 weeks.<br>Please email us at <a href="mailto:mr.deoleg@gmail.com">mr.deoleg@gmail.com</a></p>');
+          return;
+        }
+        slots = d.slots;
+        renderSlot();
+      })
+      .catch(function () {
+        setBody('<p class="sched-msg" style="color:#c0392b">Could not load the schedule. Please try again later.</p>');
+      });
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function setBody(html) { body.innerHTML = html; }
+
+  function userTz() { return Intl.DateTimeFormat().resolvedOptions().timeZone; }
+
+  function fmtSlot(slot) {
+    var tz    = userTz();
+    var start = new Date(slot.start);
+    var end   = new Date(slot.end);
+    return {
+      date: start.toLocaleDateString('en-US', { timeZone: tz, weekday: 'long', month: 'long', day: 'numeric' }),
+      time: start.toLocaleTimeString('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }) +
+            ' – ' +
+            end.toLocaleTimeString('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }),
+      tzLabel: tz.replace(/_/g, ' ')
+    };
+  }
+
+  function renderSlot() {
+    var slot    = slots[idx];
+    var fmt     = fmtSlot(slot);
+    var hasNext = idx < slots.length - 1;
+
+    setBody(
+      '<div class="sched-h">Schedule a Meeting</div>' +
+      '<div class="sched-sub">Online · 45 min · Dermenji Family</div>' +
+      '<div class="sched-slot">' +
+        '<div class="sched-slot-date">' + fmt.date + '</div>' +
+        '<div class="sched-slot-time">' + fmt.time + '</div>' +
+        '<div class="sched-slot-tz">'   + fmt.tzLabel + '</div>' +
+      '</div>' +
+      (hasNext
+        ? '<button type="button" class="sched-next" id="schedNext">This doesn\'t work for me → Next available time</button>'
+        : '<p class="sched-msg" style="font-size:.8rem">No more available times in the next 4 weeks.</p>') +
+      '<input class="sched-input" id="schedName" type="text" placeholder="Your full name" autocomplete="name" />' +
+      '<button type="button" class="sched-confirm" id="schedBook">Confirm Meeting</button>' +
+      '<div class="sched-err" id="schedErr"></div>'
+    );
+
+    if (hasNext) {
+      document.getElementById('schedNext').addEventListener('click', function () {
+        idx++;
+        renderSlot();
+      });
+    }
+
+    document.getElementById('schedName').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('schedBook').click();
+    });
+
+    document.getElementById('schedBook').addEventListener('click', function () {
+      var name = document.getElementById('schedName').value.trim();
+      var err  = document.getElementById('schedErr');
+      if (!name) { document.getElementById('schedName').focus(); return; }
+
+      var btn = document.getElementById('schedBook');
+      btn.disabled    = true;
+      btn.textContent = 'Booking…';
+      err.style.display = 'none';
+
+      var url = new URL(SCRIPT_URL);
+      url.searchParams.set('action', 'book');
+      url.searchParams.set('name',  name);
+      url.searchParams.set('start', slot.start);
+      url.searchParams.set('tz',    userTz());
+
+      fetch(url)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.ok) {
+            showDone(name, fmtSlot(slot));
+          } else if (d.conflict) {
+            err.textContent   = 'This slot was just taken. Please choose another time.';
+            err.style.display = 'block';
+            btn.disabled      = false;
+            btn.textContent   = 'Confirm Meeting';
+          } else {
+            throw new Error(d.error || 'error');
+          }
+        })
+        .catch(function () {
+          err.textContent   = 'Something went wrong. Please try again.';
+          err.style.display = 'block';
+          btn.disabled      = false;
+          btn.textContent   = 'Confirm Meeting';
+        });
+    });
+  }
+
+  function showDone(name, fmt) {
+    var first = name.split(' ')[0];
+    setBody(
+      '<div class="sched-done">' +
+        '<div class="sched-done-icon">🎉</div>' +
+        '<div class="sched-done-title">You\'re all set, ' + first + '!</div>' +
+        '<div class="sched-done-sub"><strong>' + fmt.date + '</strong><br>' + fmt.time + '<br><br>' +
+          'We\'re looking forward to connecting with you!</div>' +
+      '</div>' +
+      '<button type="button" class="sched-confirm" id="schedDone" style="margin-top:1.5rem">Done</button>'
+    );
+    document.getElementById('schedDone').addEventListener('click', closeModal);
+  }
+})();
 </script>
 </body>
 </html>
