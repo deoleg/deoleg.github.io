@@ -103,9 +103,25 @@
       padding: 1.1rem 1rem;
       margin-bottom: .875rem;
     }
-    .sched-slot-date { font-size: .95rem; font-weight: 600; color: #1a1f36; }
-    .sched-slot-time { font-size: 1.5rem;  font-weight: 800; color: #1d9e75; margin: .2rem 0; }
-    .sched-slot-tz   { font-size: .72rem;  color: #bbb; }
+    .sched-nav-row { display: flex; align-items: center; gap: 6px; }
+    .sched-nav-btn {
+      background: none;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      font-size: .95rem;
+      color: #666;
+      padding: .28rem .55rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      line-height: 1;
+      transition: border-color .15s, color .15s;
+    }
+    .sched-nav-btn:hover:not([disabled]) { border-color: #999; color: #222; }
+    .sched-nav-btn[disabled] { opacity: .25; cursor: default; }
+
+    .sched-slot-date { font-size: .9rem;  font-weight: 600; color: #1a1f36; flex: 1; text-align: center; }
+    .sched-slot-time { font-size: 1.35rem; font-weight: 800; color: #1d9e75; flex: 1; text-align: center; }
+    .sched-slot-tz   { font-size: .72rem;  color: #bbb; margin-top: .4rem; }
 
     .sched-next {
       background: none;
@@ -314,10 +330,10 @@
   // ── After deploying meeting-script.gs, paste your web app URL here ──
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0rJIpd5s798z1HX-d2EdH9sRxvU1oEwL0BdAdFtEEHNQWBmQxQE9tIthimhjxCqm9/exec';
 
-  let slots = [], idx = 0;
+  var slots = [], dateIdx = 0, timeIdx = 0, grouped = null;
 
-  const overlay = document.getElementById('schedOverlay');
-  const body    = document.getElementById('schedBody');
+  var overlay = document.getElementById('schedOverlay');
+  var body    = document.getElementById('schedBody');
 
   document.getElementById('scheduleMeetingBtn').addEventListener('click', function () {
     gtag('event', 'schedule_click', { event_category: 'engagement', event_label: 'Schedule Meeting Button' });
@@ -328,7 +344,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
   function openModal() {
-    slots = []; idx = 0;
+    slots = []; dateIdx = 0; timeIdx = 0; grouped = null;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     setBody('<p class="sched-msg">Loading available times…</p>');
@@ -340,6 +356,7 @@
           return;
         }
         slots = d.slots;
+        grouped = groupByDate(slots);
         renderSlot();
       })
       .catch(function () {
@@ -369,48 +386,59 @@
     };
   }
 
-  function renderSlot() {
-    var slot    = slots[idx];
-    var fmt     = fmtSlot(slot);
-    var hasPrev = idx > 0;
-    var hasNext = idx < slots.length - 1;
+  function groupByDate(allSlots) {
+    var groups = {}, order = [];
+    allSlots.forEach(function (s) {
+      var key = new Date(s.start).toLocaleDateString('en-US', {
+        timeZone: userTz(), year: 'numeric', month: '2-digit', day: '2-digit'
+      });
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(s);
+    });
+    return { groups: groups, order: order };
+  }
 
-    var navHtml = '';
-    if (hasPrev || hasNext) {
-      navHtml = '<div style="display:flex;gap:8px;margin-bottom:1.1rem">' +
-        (hasPrev ? '<button type="button" class="sched-next" id="schedPrev" style="flex:1">← Previous</button>' : '') +
-        (hasNext ? '<button type="button" class="sched-next" id="schedNext" style="flex:1">Next →</button>' : '') +
-      '</div>';
-    } else {
-      navHtml = '<p class="sched-msg" style="font-size:.8rem">No more available times in the next 4 weeks.</p>';
+  function renderSlot() {
+    var dateKey  = grouped.order[dateIdx];
+    var daySlots = grouped.groups[dateKey];
+    var slot     = daySlots[timeIdx];
+    var fmt      = fmtSlot(slot);
+
+    var hasPD = dateIdx > 0;
+    var hasND = dateIdx < grouped.order.length - 1;
+    var hasPT = timeIdx > 0;
+    var hasNT = timeIdx < daySlots.length - 1;
+
+    function nb(id, lbl, dis) {
+      return '<button type="button" class="sched-nav-btn" id="' + id + '"' +
+             (dis ? ' disabled' : '') + '>' + lbl + '</button>';
     }
 
     setBody(
       '<div class="sched-h">Schedule a Meeting</div>' +
       '<div class="sched-sub">Online · 45 min · Dermenji Family</div>' +
       '<div class="sched-slot">' +
-        '<div class="sched-slot-date">' + fmt.date + '</div>' +
-        '<div class="sched-slot-time">' + fmt.time + '</div>' +
-        '<div class="sched-slot-tz">'   + fmt.tzLabel + '</div>' +
+        '<div class="sched-nav-row">' +
+          nb('schedPD', '←', !hasPD) +
+          '<div class="sched-slot-date">' + fmt.date + '</div>' +
+          nb('schedND', '→', !hasND) +
+        '</div>' +
+        '<div class="sched-nav-row" style="margin-top:.5rem">' +
+          nb('schedPT', '←', !hasPT) +
+          '<div class="sched-slot-time">' + fmt.time + '</div>' +
+          nb('schedNT', '→', !hasNT) +
+        '</div>' +
+        '<div class="sched-slot-tz">' + fmt.tzLabel + '</div>' +
       '</div>' +
-      navHtml +
       '<input class="sched-input" id="schedName" type="text" placeholder="Your full name" autocomplete="name" />' +
       '<button type="button" class="sched-confirm" id="schedBook">Confirm Meeting</button>' +
       '<div class="sched-err" id="schedErr"></div>'
     );
 
-    if (hasPrev) {
-      document.getElementById('schedPrev').addEventListener('click', function () {
-        idx--;
-        renderSlot();
-      });
-    }
-    if (hasNext) {
-      document.getElementById('schedNext').addEventListener('click', function () {
-        idx++;
-        renderSlot();
-      });
-    }
+    if (hasPD) document.getElementById('schedPD').addEventListener('click', function () { dateIdx--; timeIdx = 0; renderSlot(); });
+    if (hasND) document.getElementById('schedND').addEventListener('click', function () { dateIdx++; timeIdx = 0; renderSlot(); });
+    if (hasPT) document.getElementById('schedPT').addEventListener('click', function () { timeIdx--; renderSlot(); });
+    if (hasNT) document.getElementById('schedNT').addEventListener('click', function () { timeIdx++; renderSlot(); });
 
     document.getElementById('schedName').addEventListener('keydown', function (e) {
       if (e.key === 'Enter') document.getElementById('schedBook').click();

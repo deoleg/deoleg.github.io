@@ -14,7 +14,7 @@ const DURATION    = 45;   // minutes
 const WIN_START   = 14;   // 14:00 Moldova
 const WIN_END     = 21;   // 21:00 Moldova
 const WEEKS       = 4;
-const MAX_SLOTS   = 20;
+const MAX_SLOTS   = 250;
 const BUFFER_MS   = 15 * 60000;  // 15-min gap before/after each event
 
 function doGet(e) {
