@@ -93,13 +93,13 @@ function book(name, startISO, userTz) {
   const start = new Date(startISO);
   const end   = new Date(start.getTime() + DURATION * 60000);
 
-  // Double-check slot is still free
-  if (cal.getEvents(start, end).length > 0) {
+  // Double-check across ALL calendars (same logic as getSlots)
+  if (getBusyIntervals(start, end).length > 0) {
     return { ok: false, conflict: true };
   }
 
-  cal.createEvent(TITLE + ' — ' + name, start, end, {
-    description: 'Booked by: ' + name + '\nTimezone: ' + userTz
+  cal.createEvent(name, start, end, {
+    description: TITLE + '\nTimezone: ' + userTz
   });
 
   const when = Utilities.formatDate(start, TZ, 'EEEE, MMMM d, yyyy · HH:mm') + ' (Moldova)';
