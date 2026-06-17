@@ -481,6 +481,8 @@ function splitGr(gr) {
   const i = gr.indexOf(',');
   return i === -1 ? {main: gr, rest: ''} : {main: gr.slice(0,i), rest: gr.slice(i)};
 }
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length-1; i > 0; i--) {
