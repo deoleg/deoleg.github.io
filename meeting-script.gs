@@ -15,6 +15,7 @@ const WIN_START   = 14;   // 14:00 Moldova
 const WIN_END     = 21;   // 21:00 Moldova
 const WEEKS       = 4;
 const MAX_SLOTS   = 20;
+const BUFFER_MS   = 15 * 60000;  // 15-min gap before/after each event
 
 function doGet(e) {
   const p = (e && e.parameter) ? e.parameter : {};
@@ -34,13 +35,15 @@ function respond(obj) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
-// Returns busy intervals across ALL calendars in the account (respects "Busy" status).
+// Returns busy intervals.
+// Queries OWNER_EMAIL (primary calendar) — it aggregates accepted events from ALL
+// calendars including shared ones (Via Veritas, etc.). Also queries CAL_ID so
+// already-booked meeting slots are excluded.
 function getBusyIntervals(start, end) {
-  const items = CalendarApp.getAllCalendars().map(c => ({ id: c.getId() }));
-  const resp  = Calendar.Freebusy.query({
+  const resp = Calendar.Freebusy.query({
     timeMin: start.toISOString(),
     timeMax: end.toISOString(),
-    items:   items
+    items:   [{ id: OWNER_EMAIL }, { id: CAL_ID }]
   });
   const busy = [];
   const cals = resp.calendars || {};
@@ -78,7 +81,8 @@ function getSlots() {
 
     if (inWindow) {
       const cs = cur.getTime(), ce = end.getTime();
-      const free = !busy.some(([bs, be]) => cs < be && ce > bs);
+      // Block slot if it overlaps with any busy period INCLUDING the 15-min buffer zone
+      const free = !busy.some(([bs, be]) => cs < be + BUFFER_MS && ce > bs - BUFFER_MS);
       if (free) result.push({ start: cur.toISOString(), end: end.toISOString() });
     }
 
@@ -93,8 +97,13 @@ function book(name, startISO, userTz) {
   const start = new Date(startISO);
   const end   = new Date(start.getTime() + DURATION * 60000);
 
-  // Double-check across ALL calendars (same logic as getSlots)
-  if (getBusyIntervals(start, end).length > 0) {
+  // Double-check with buffer: query a wider window then apply the same ±15-min logic
+  const cs = start.getTime(), ce = end.getTime();
+  const allBusy = getBusyIntervals(
+    new Date(cs - BUFFER_MS - 60000),
+    new Date(ce + BUFFER_MS + 60000)
+  );
+  if (allBusy.some(([bs, be]) => cs < be + BUFFER_MS && ce > bs - BUFFER_MS)) {
     return { ok: false, conflict: true };
   }
 

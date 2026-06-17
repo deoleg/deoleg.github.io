@@ -372,7 +372,18 @@
   function renderSlot() {
     var slot    = slots[idx];
     var fmt     = fmtSlot(slot);
+    var hasPrev = idx > 0;
     var hasNext = idx < slots.length - 1;
+
+    var navHtml = '';
+    if (hasPrev || hasNext) {
+      navHtml = '<div style="display:flex;gap:8px;margin-bottom:1.1rem">' +
+        (hasPrev ? '<button type="button" class="sched-next" id="schedPrev" style="flex:1">← Previous</button>' : '') +
+        (hasNext ? '<button type="button" class="sched-next" id="schedNext" style="flex:1">Next →</button>' : '') +
+      '</div>';
+    } else {
+      navHtml = '<p class="sched-msg" style="font-size:.8rem">No more available times in the next 4 weeks.</p>';
+    }
 
     setBody(
       '<div class="sched-h">Schedule a Meeting</div>' +
@@ -382,14 +393,18 @@
         '<div class="sched-slot-time">' + fmt.time + '</div>' +
         '<div class="sched-slot-tz">'   + fmt.tzLabel + '</div>' +
       '</div>' +
-      (hasNext
-        ? '<button type="button" class="sched-next" id="schedNext">This doesn\'t work for me → Next available time</button>'
-        : '<p class="sched-msg" style="font-size:.8rem">No more available times in the next 4 weeks.</p>') +
+      navHtml +
       '<input class="sched-input" id="schedName" type="text" placeholder="Your full name" autocomplete="name" />' +
       '<button type="button" class="sched-confirm" id="schedBook">Confirm Meeting</button>' +
       '<div class="sched-err" id="schedErr"></div>'
     );
 
+    if (hasPrev) {
+      document.getElementById('schedPrev').addEventListener('click', function () {
+        idx--;
+        renderSlot();
+      });
+    }
     if (hasNext) {
       document.getElementById('schedNext').addEventListener('click', function () {
         idx++;
