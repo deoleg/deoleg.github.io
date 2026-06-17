@@ -195,9 +195,10 @@ strong {
 .hero-cta {
   margin-top: 32px;
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .cta-button-gold {
