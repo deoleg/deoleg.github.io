@@ -1,4 +1,6 @@
 // ─── Google Apps Script — paste this at script.google.com ────────────────────
+// Before deploying: click "+" next to "Services" in the left sidebar,
+//   find "Google Calendar API" and click Add. This enables the Calendar object.
 // Deploy → New deployment → Web app
 //   Execute as:  Me
 //   Who has access:  Anyone
@@ -32,16 +34,30 @@ function respond(obj) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
+// Returns busy intervals across ALL calendars in the account (respects "Busy" status).
+function getBusyIntervals(start, end) {
+  const items = CalendarApp.getAllCalendars().map(c => ({ id: c.getId() }));
+  const resp  = Calendar.Freebusy.query({
+    timeMin: start.toISOString(),
+    timeMax: end.toISOString(),
+    items:   items
+  });
+  const busy = [];
+  const cals = resp.calendars || {};
+  for (const id in cals) {
+    for (const p of (cals[id].busy || [])) {
+      busy.push([new Date(p.start).getTime(), new Date(p.end).getTime()]);
+    }
+  }
+  return busy;
+}
+
 function getSlots() {
-  const cal   = CalendarApp.getCalendarById(CAL_ID);
   const now   = new Date();
   const until = new Date(now.getTime() + WEEKS * 7 * 86400000);
 
-  // Fetch all events once, build busy intervals
-  const busy = cal.getEvents(now, until).map(ev => [
-    ev.getStartTime().getTime(),
-    ev.getEndTime().getTime()
-  ]);
+  // Check ALL calendars for busy time, not just the meeting calendar
+  const busy = getBusyIntervals(now, until);
 
   const result = [];
 
