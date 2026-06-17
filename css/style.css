@@ -201,8 +201,14 @@ strong {
   gap: 12px;
 }
 
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
 .cta-button-gold {
   display: inline-block;
+  position: relative;
   background: #f9b625;
   color: #1a1f36;
   padding: 14px 32px;
@@ -210,16 +216,32 @@ strong {
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   border: none;
   cursor: pointer;
   font-family: inherit;
 }
 
+.cta-button-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 20px 7px rgba(249,182,37,0.55);
+  opacity: 0;
+  animation: glow-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .cta-button-gold:hover {
   background: #e0a218;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(249, 182, 37, 0.45);
+  box-shadow: 0 6px 16px rgba(249,182,37,0.5);
+}
+
+.cta-button-gold:hover::after {
+  animation: none;
+  opacity: 0;
 }
 
 .cta-button {
