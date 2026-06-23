@@ -577,7 +577,12 @@ async function saveToGitHub() {
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
   const body = {message: 'Update Greek progress', content};
   if (fileSha) body.sha = fileSha;
-  const r = await fetch(API, {method:'PUT', headers: apiHeaders(), body: JSON.stringify(body)});
+  let r = await fetch(API, {method:'PUT', headers: apiHeaders(), body: JSON.stringify(body)});
+  if (r.status === 409) {
+    const fresh = await fetch(API, {headers: apiHeaders()});
+    if (fresh.ok) { const j = await fresh.json(); fileSha = j.sha; body.sha = fileSha; }
+    r = await fetch(API, {method:'PUT', headers: apiHeaders(), body: JSON.stringify(body)});
+  }
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   fileSha = (await r.json()).content.sha;
 }
