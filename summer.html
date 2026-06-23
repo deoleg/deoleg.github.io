@@ -283,9 +283,13 @@
     }
     .reading-chart-svg { display: block; width: 100%; margin: 12px 0 16px; }
     .workout-list { list-style: none; text-align: left; margin: 0 0 20px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .workout-section { font-size: 10px; font-weight: 700; letter-spacing: .08em; color: #aaa; text-transform: uppercase; margin: 8px 2px 2px; }
+    .workout-section:first-child { margin-top: 0; }
     .workout-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--dad-bg); border-radius: 10px; font-size: 14px; }
     .workout-num  { font-size: 12px; font-weight: 700; color: var(--dad); min-width: 18px; text-align: right; }
     .workout-name { flex: 1; font-weight: 500; color: var(--text); }
+    .workout-badge-kids { font-size: 10px; font-weight: 600; color: #3a8a5a; background: #e8f5ee; padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
+    .workout-badge-solo { font-size: 10px; font-weight: 600; color: #555; background: #eee; padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
     .workout-reps { font-size: 12px; font-weight: 600; color: var(--dad); white-space: nowrap; }
     .reading-close-btn {
       width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
@@ -405,14 +409,14 @@ const PERSON_LABELS = { dad: "Папа", lev: "Лев", arina: "Арина", mas
 
 const TASKS = {
   dad:   [{ id: "sport",   label: "Физкультура (гиря)", sub: "",           noTimer: true, exercises: [
-            { name: "Выпады",                  reps: "20 раз" },
-            { name: "Свинги",                  reps: "30 раз" },
-            { name: "Перехваты (мельница)",    reps: "30 раз" },
-            { name: "Гоблет приседания",       reps: "15 раз" },
-            { name: "Протяжка",                reps: "15 раз" },
-            { name: "Жим над головой",         reps: "15 раз" },
-            { name: "Подъём на бицепс",        reps: "15 раз" },
-            { name: "Французский жим",         reps: "15 раз" },
+            { name: "Выпады",                  reps: "20 раз"    },
+            { name: "Свинги",                  reps: "30 раз"    },
+            { name: "Гоблет приседания",       reps: "15 раз"    },
+            { name: "Жим над головой",         reps: "15 раз"    },
+            { name: "Протяжка",                reps: "15 раз"    },
+            { name: "Планка",                  reps: "45 сек"    },
+            { name: "Тяга к поясу в наклоне", reps: "12 раз",   solo: true },
+            { name: "Turkish Get-Up",          reps: "3×каждой", solo: true },
           ] },
           { id: "bible",   label: "Чтение Библии",      sub: "15 мин" },
           { id: "english", label: "Английский",          sub: "15 мин" },
@@ -725,18 +729,31 @@ function makeCell(cls, text) {
 
 // ── Workout modal ─────────────────────────────────────────────────────────────
 function showWorkoutModal(exercises) {
+  const kids = exercises.filter(e => !e.solo);
+  const solo = exercises.filter(e => e.solo);
+  let num = 0;
+  function item(e) {
+    num++;
+    const badge = e.solo
+      ? '<span class="workout-badge-solo">только ты</span>'
+      : '<span class="workout-badge-kids">дети</span>';
+    return `<li class="workout-item">
+      <span class="workout-num">${num}.</span>
+      <span class="workout-name">${e.name}</span>
+      ${badge}
+      <span class="workout-reps">${e.reps}</span>
+    </li>`;
+  }
   const overlay = document.createElement('div');
   overlay.className = 'reading-overlay';
   overlay.innerHTML = `
     <div class="reading-modal">
       <div class="reading-modal-title">💪 Физкультура (гиря)</div>
       <ul class="workout-list">
-        ${exercises.map((e, i) => `
-          <li class="workout-item">
-            <span class="workout-num">${i + 1}.</span>
-            <span class="workout-name">${e.name}</span>
-            <span class="workout-reps">${e.reps}</span>
-          </li>`).join('')}
+        <li class="workout-section">🧑‍🤝‍🧑 Вместе с детьми</li>
+        ${kids.map(item).join('')}
+        <li class="workout-section">🧍 Только для тебя</li>
+        ${solo.map(item).join('')}
       </ul>
       <button type="button" class="reading-close-btn" id="workoutClose">Закрыть</button>
     </div>`;
