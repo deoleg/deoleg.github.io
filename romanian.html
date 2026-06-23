@@ -806,19 +806,26 @@ document.addEventListener('keydown', e => {
   }
 });
 
-function speak(text) {
-  speechSynthesis.cancel();
-  function doSpeak() {
-    const voices = speechSynthesis.getVoices();
+let _audio = null;
+async function speak(text) {
+  if (_audio) { _audio.pause(); _audio = null; }
+  try {
+    const url = 'https://translate-pa.googleapis.com/v1/textToSpeech?client=gtx&language=ro&voice_speed=1&key=AIzaSyDLEeFI5OtFBwYBIoK_jj5m32rZK5CkCXA&text=' + encodeURIComponent(text);
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const { audioContent } = await r.json();
+    const bin = atob(audioContent);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    const blobUrl = URL.createObjectURL(new Blob([bytes], { type: 'audio/mpeg' }));
+    _audio = new Audio(blobUrl);
+    _audio.onended = () => URL.revokeObjectURL(blobUrl);
+    _audio.play();
+  } catch(e) {
     const u = new SpeechSynthesisUtterance(text);
-    const gv = voices.find(v => v.name.startsWith('Google') && v.lang.startsWith('ro'));
-    const av = voices.find(v => v.lang.startsWith('ro'));
-    if (gv || av) u.voice = gv || av;
     u.lang = 'ro-RO'; u.rate = 0.9;
     speechSynthesis.speak(u);
   }
-  if (speechSynthesis.getVoices().length) setTimeout(doSpeak, 50);
-  else { speechSynthesis.onvoiceschanged = () => { speechSynthesis.onvoiceschanged = null; doSpeak(); }; }
 }
 
 function showTokenScreen() {

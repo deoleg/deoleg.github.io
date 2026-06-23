@@ -1492,19 +1492,26 @@ function renderDone(isFree = false) {
   document.getElementById('btnAgain')?.addEventListener('click', () => { session = buildFreeSession(); render(); });
 }
 
+let _audio = null;
 async function speak(text) {
-  speechSynthesis.cancel();
+  if (_audio) { _audio.pause(); _audio = null; }
   try {
-    const r = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(text.toLowerCase().trim())}`);
-    if (r.ok) {
-      const data = await r.json();
-      const url = data[0]?.phonetics?.find(p => p.audio)?.audio;
-      if (url) { new Audio(url).play(); return; }
-    }
-  } catch(e) {}
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'en-US'; u.rate = 0.9;
-  speechSynthesis.speak(u);
+    const url = 'https://translate-pa.googleapis.com/v1/textToSpeech?client=gtx&language=en&voice_speed=1&key=AIzaSyDLEeFI5OtFBwYBIoK_jj5m32rZK5CkCXA&text=' + encodeURIComponent(text);
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const { audioContent } = await r.json();
+    const bin = atob(audioContent);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    const blobUrl = URL.createObjectURL(new Blob([bytes], { type: 'audio/mpeg' }));
+    _audio = new Audio(blobUrl);
+    _audio.onended = () => URL.revokeObjectURL(blobUrl);
+    _audio.play();
+  } catch(e) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.9;
+    speechSynthesis.speak(u);
+  }
 }
 
 document.addEventListener('keydown', e => {
