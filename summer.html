@@ -196,6 +196,32 @@
 
     /* ── Actions ── */
     .page-actions { display: flex; gap: 10px; margin-top: 28px; }
+
+    /* ── Custom Timer ── */
+    .cal-with-timer { display: flex; gap: 20px; align-items: flex-start; }
+    .cal-main { flex: 1; min-width: 0; }
+    .custom-timer {
+      flex-shrink: 0; width: 148px;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 14px 12px; text-align: center;
+      position: sticky; top: 16px;
+    }
+    .custom-timer-label { font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #bbb; margin-bottom: 8px; }
+    .custom-timer-display { font-size: 32px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; margin-bottom: 10px; letter-spacing: -.01em; }
+    .custom-timer-controls { display: flex; gap: 6px; margin-bottom: 10px; }
+    .custom-timer-adj { flex: 1; background: none; border: 1.5px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 600; color: #666; padding: 5px 2px; cursor: pointer; transition: border-color .15s, color .15s; }
+    .custom-timer-adj:hover:not(:disabled) { border-color: #999; color: #222; }
+    .custom-timer-adj:disabled { opacity: .25; cursor: default; }
+    .custom-timer-start { width: 100%; font-family: inherit; background: var(--text); color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; padding: 9px 0; cursor: pointer; transition: opacity .15s; }
+    .custom-timer-start:hover { opacity: .8; }
+    @media (max-width: 680px) {
+      .cal-with-timer { flex-direction: column; }
+      .custom-timer { width: 100%; position: static; display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+      .custom-timer-label { margin-bottom: 0; white-space: nowrap; }
+      .custom-timer-display { font-size: 22px; margin-bottom: 0; }
+      .custom-timer-controls { margin-bottom: 0; }
+      .custom-timer-start { width: auto; padding: 9px 20px; }
+    }
     .action-btn {
       font-family: 'Inter', sans-serif; font-size: 13px; color: #aaa;
       background: none; border: 1px solid var(--border); border-radius: 6px;
@@ -351,10 +377,23 @@
       <span class="week-label" id="weekLabel"></span>
       <button class="nav-btn" id="nextWeek">Вперёд →</button>
     </div>
-    <div class="cal-grid" id="calGrid"></div>
-    <div class="page-actions">
-      <button class="action-btn" id="todayBtn">Сегодня</button>
-      <button class="action-btn" id="changeTokenBtn">Сменить токен</button>
+    <div class="cal-with-timer">
+      <div class="cal-main">
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="page-actions">
+          <button type="button" class="action-btn" id="todayBtn">Сегодня</button>
+          <button type="button" class="action-btn" id="changeTokenBtn">Сменить токен</button>
+        </div>
+      </div>
+      <div class="custom-timer">
+        <div class="custom-timer-label">Таймер</div>
+        <div class="custom-timer-display" id="ctDisplay">15:00</div>
+        <div class="custom-timer-controls">
+          <button type="button" class="custom-timer-adj" id="ctMinus">−5</button>
+          <button type="button" class="custom-timer-adj" id="ctPlus">+5</button>
+        </div>
+        <button type="button" class="custom-timer-start" id="ctStart">▶ Старт</button>
+      </div>
     </div>
   </div>
 
@@ -937,6 +976,24 @@ function stopTimer() {
   if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
   document.querySelector('.timer-overlay')?.remove();
 }
+
+// ── Custom Timer widget ────────────────────────────────────────────────────────
+(function () {
+  let mins = 15;
+  const MIN_M = 5, MAX_M = 120;
+
+  function update() {
+    document.getElementById('ctDisplay').textContent = String(mins).padStart(2, '0') + ':00';
+    document.getElementById('ctMinus').disabled = mins <= MIN_M;
+    document.getElementById('ctPlus').disabled  = mins >= MAX_M;
+  }
+
+  document.getElementById('ctMinus').addEventListener('click', () => { if (mins > MIN_M) { mins -= 5; update(); } });
+  document.getElementById('ctPlus').addEventListener('click',  () => { if (mins < MAX_M) { mins += 5; update(); } });
+  document.getElementById('ctStart').addEventListener('click', () => startTimer('Таймер', mins + ' мин'));
+
+  update();
+})();
 
 // ── GitHub API ────────────────────────────────────────────────────────────────
 function apiHeaders() {
