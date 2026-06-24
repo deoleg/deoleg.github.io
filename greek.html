@@ -719,17 +719,75 @@ function getWordForSpeech(gr) {
   return main.replace(/\s*\([^)]+\)/g, '').trim();
 }
 
-const GREEK_MAP = {
-  'α':'а','β':'б','γ':'г','δ':'д','ε':'е','ζ':'дз','η':'э','θ':'т',
-  'ι':'и','κ':'к','λ':'л','μ':'м','ν':'н','ξ':'кс','ο':'о','π':'п',
-  'ρ':'р','σ':'с','ς':'с','τ':'т','υ':'ю','φ':'ф','χ':'х','ψ':'пс','ω':'о',
-};
-
 function greekTranscription(text) {
-  // NFD decomposes polytonic chars into base letter + combining marks
-  const stripped = text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  // Normalize to NFC to keep precomposed Greek letters intact for diacritic detection
+  let s = text.normalize('NFC').toLowerCase();
+
+  // Remove content in parentheses (e.g. "(βάλλω)")
+  s = s.replace(/\s*\([^)]+\)/g, '').trim();
+
   let out = '';
-  for (const ch of stripped) out += GREEK_MAP[ch] ?? '';
+  let i = 0;
+  while (i < s.length) {
+    const ch = s[i];
+    const ch2 = s[i + 1] || '';
+
+    // ── Detect rough breathing (῾ or ʽ) before a vowel → prepend х
+    // Rough breathing is the combining mark \u0314 in NFD form
+    // In NFC precomposed: ἁ ἑ ἡ ἱ ὁ ὑ ὡ and their caps; also ῥ (rho)
+    // We'll check NFD: if current char decomposes with \u0314, emit х first
+    const nfd = ch.normalize('NFD');
+    const hasRough = nfd.includes('\u0314');
+    // Strip all combining marks to get base letter
+    const base = nfd.replace(/[\u0300-\u036f]/g, '');
+
+    // ── Diphthongs and digraph (check base letters of current + next) ──
+    const nfd2 = ch2 ? ch2.normalize('NFD') : '';
+    const base2 = nfd2 ? nfd2.replace(/[\u0300-\u036f]/g, '') : '';
+
+    // γγ → нг, γκ → нк, γχ → нх, γξ → нкс
+    if (base === 'γ' && (base2 === 'γ' || base2 === 'κ' || base2 === 'χ' || base2 === 'ξ')) {
+      out += 'н'; i++; continue; // emit н, next iteration handles γ/κ/χ/ξ normally
+    }
+
+    // ου → у
+    if (base === 'ο' && base2 === 'υ') { out += 'у'; i += 2; continue; }
+    // αι → ай
+    if (base === 'α' && base2 === 'ι') { out += 'ай'; i += 2; continue; }
+    // οι → ой
+    if (base === 'ο' && base2 === 'ι') { out += 'ой'; i += 2; continue; }
+    // ει → эй
+    if (base === 'ε' && base2 === 'ι') { out += 'эй'; i += 2; continue; }
+    // υι → юй
+    if (base === 'υ' && base2 === 'ι') {
+      // initial υ always has rough breathing
+      if (hasRough || out === '') out += 'х';
+      out += 'юй'; i += 2; continue;
+    }
+    // αυ → ау
+    if (base === 'α' && base2 === 'υ') { out += 'ау'; i += 2; continue; }
+    // ευ → эу
+    if (base === 'ε' && base2 === 'υ') { out += 'эу'; i += 2; continue; }
+    // ηυ → эу
+    if (base === 'η' && base2 === 'υ') { out += 'эу'; i += 2; continue; }
+
+    // ── Single letter map ──
+    const MAP = {
+      'α':'а','β':'б','γ':'г','δ':'д','ε':'э','ζ':'дз','η':'э','θ':'т',
+      'ι':'и','κ':'к','λ':'л','μ':'м','ν':'н','ξ':'кс','ο':'о','π':'п',
+      'ρ':'р','σ':'с','ς':'с','τ':'т','υ':'ю','φ':'ф','χ':'х','ψ':'пс','ω':'о',
+    };
+
+    if (MAP[base] !== undefined) {
+      // Rough breathing before vowel/rho → prepend х
+      // Initial υ always carries rough breathing per Machen §1
+      const isInitialUpsilon = base === 'υ' && out === '';
+      if (hasRough || isInitialUpsilon) out += 'х';
+      out += MAP[base];
+    }
+    // Skip spaces, punctuation, unknown chars silently
+    i++;
+  }
   return out;
 }
 
