@@ -740,7 +740,7 @@ function renderReverse(item) {
     <div class="flashcard">
       <div class="fc-badge">Русский → Румынский</div>
       <div class="fc-main">${esc(word.ru)}</div>
-      ${exampleBlock(word)}
+      ${answered ? exampleBlock(word) : ''}
     </div>
     <div class="choices">
       ${choices.map((c, i) => {
