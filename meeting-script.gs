@@ -8,6 +8,7 @@
 
 const CAL_ID      = 'c7747b07eb17cb248191a9b3be9c09e3a995ec734e3fe61be1bcc4ea484c5a8e@group.calendar.google.com';
 const OWNER_EMAIL = 'mr.deoleg@gmail.com';
+const WORK_EMAIL  = 'oleg.dermenji@cru.md'; // shared with OWNER_EMAIL as "See all event details"
 const TZ          = 'Europe/Chisinau';
 const TITLE       = 'Online Meeting with the Dermenji Family';
 const DURATION    = 45;   // minutes
@@ -37,13 +38,15 @@ function respond(obj) {
 
 // Returns busy intervals.
 // Queries OWNER_EMAIL (primary calendar) — it aggregates accepted events from ALL
-// calendars including shared ones (Via Veritas, etc.). Also queries CAL_ID so
-// already-booked meeting slots are excluded.
+// calendars OWNER_EMAIL owns or attends (Via Veritas, etc.). Also queries CAL_ID so
+// already-booked meeting slots are excluded, and WORK_EMAIL directly — calendars
+// merely shared for viewing (not owned/attended) don't feed into OWNER_EMAIL's
+// own freebusy, so the work calendar has to be queried explicitly.
 function getBusyIntervals(start, end) {
   const resp = Calendar.Freebusy.query({
     timeMin: start.toISOString(),
     timeMax: end.toISOString(),
-    items:   [{ id: OWNER_EMAIL }, { id: CAL_ID }]
+    items:   [{ id: OWNER_EMAIL }, { id: CAL_ID }, { id: WORK_EMAIL }]
   });
   const busy = [];
   const cals = resp.calendars || {};
