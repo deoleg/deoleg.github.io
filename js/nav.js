@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { d: 'M2,7 Q30,4 52,7 Q72,10 98,7',  delay: 540,  duration: 280 },
   ];
 
-  links.forEach(link => {
+  function createUnderlineSvg() {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.classList.add('nav-underline-svg');
     svg.setAttribute('preserveAspectRatio', 'none');
@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
       svg.appendChild(path);
     });
 
+    return svg;
+  }
+
+  links.forEach(link => {
+    const svg = createUnderlineSvg();
     link.appendChild(svg);
 
     // Pre-measure path lengths after render
@@ -108,23 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const staticTargets = document.querySelectorAll('.text-underline');
 
   staticTargets.forEach(el => {
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.classList.add('nav-underline-svg');
-    svg.setAttribute('preserveAspectRatio', 'none');
-    svg.setAttribute('viewBox', '0 0 100 12');
-    svg.setAttribute('aria-hidden', 'true');
-
-    strokes.forEach((stroke, i) => {
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', stroke.d);
-      path.setAttribute('fill', 'none');
-      path.setAttribute('stroke', '#f9b625');
-      path.setAttribute('stroke-width', i === 1 ? '2' : '2.5');
-      path.setAttribute('stroke-linecap', 'round');
-      path.setAttribute('stroke-opacity', i === 1 ? '0.7' : '0.9');
-      svg.appendChild(path);
-    });
-
+    const svg = createUnderlineSvg();
     el.style.position = 'relative';
     el.appendChild(svg);
 

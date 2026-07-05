@@ -198,10 +198,10 @@
 (function () {
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0rJIpd5s798z1HX-d2EdH9sRxvU1oEwL0BdAdFtEEHNQWBmQxQE9tIthimhjxCqm9/exec';
 
-  var slots = [], dateIdx = 0, timeIdx = 0, grouped = null;
+  let slots = [], dateIdx = 0, timeIdx = 0, grouped = null;
 
-  var overlay = document.getElementById('schedOverlay');
-  var body    = document.getElementById('schedBody');
+  const overlay = document.getElementById('schedOverlay');
+  const body    = document.getElementById('schedBody');
 
   document.getElementById('schedMeetingBtnHome').addEventListener('click', function () {
     gtag('event', 'schedule_click', { event_category: 'engagement', event_label: 'Schedule Meeting Button Home' });
@@ -242,9 +242,9 @@
   function userTz() { return Intl.DateTimeFormat().resolvedOptions().timeZone; }
 
   function fmtSlot(slot) {
-    var tz    = userTz();
-    var start = new Date(slot.start);
-    var end   = new Date(slot.end);
+    const tz    = userTz();
+    const start = new Date(slot.start);
+    const end   = new Date(slot.end);
     return {
       date: start.toLocaleDateString('en-US', { timeZone: tz, weekday: 'long', month: 'long', day: 'numeric' }),
       time: start.toLocaleTimeString('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }) +
@@ -255,9 +255,9 @@
   }
 
   function groupByDate(allSlots) {
-    var groups = {}, order = [];
+    const groups = {}, order = [];
     allSlots.forEach(function (s) {
-      var key = new Date(s.start).toLocaleDateString('en-US', {
+      const key = new Date(s.start).toLocaleDateString('en-US', {
         timeZone: userTz(), year: 'numeric', month: '2-digit', day: '2-digit'
       });
       if (!groups[key]) { groups[key] = []; order.push(key); }
@@ -267,15 +267,15 @@
   }
 
   function renderSlot() {
-    var dateKey  = grouped.order[dateIdx];
-    var daySlots = grouped.groups[dateKey];
-    var slot     = daySlots[timeIdx];
-    var fmt      = fmtSlot(slot);
+    const dateKey  = grouped.order[dateIdx];
+    const daySlots = grouped.groups[dateKey];
+    const slot     = daySlots[timeIdx];
+    const fmt      = fmtSlot(slot);
 
-    var hasPD = dateIdx > 0;
-    var hasND = dateIdx < grouped.order.length - 1;
-    var hasPT = timeIdx > 0;
-    var hasNT = timeIdx < daySlots.length - 1;
+    const hasPD = dateIdx > 0;
+    const hasND = dateIdx < grouped.order.length - 1;
+    const hasPT = timeIdx > 0;
+    const hasNT = timeIdx < daySlots.length - 1;
 
     function nb(id, lbl, dis) {
       return '<button type="button" class="sched-nav-btn" id="' + id + '"' +
@@ -313,16 +313,16 @@
     });
 
     document.getElementById('schedBook').addEventListener('click', function () {
-      var name = document.getElementById('schedName').value.trim();
-      var err  = document.getElementById('schedErr');
+      const name = document.getElementById('schedName').value.trim();
+      const err  = document.getElementById('schedErr');
       if (!name) { document.getElementById('schedName').focus(); return; }
 
-      var btn = document.getElementById('schedBook');
+      const btn = document.getElementById('schedBook');
       btn.disabled    = true;
       btn.textContent = 'Booking…';
       err.style.display = 'none';
 
-      var url = new URL(SCRIPT_URL);
+      const url = new URL(SCRIPT_URL);
       url.searchParams.set('action', 'book');
       url.searchParams.set('name',  name);
       url.searchParams.set('start', slot.start);
@@ -352,7 +352,7 @@
   }
 
   function showDone(name, fmt) {
-    var first = name.split(' ')[0];
+    const first = name.split(' ')[0];
     setBody(
       '<div class="sched-done">' +
         '<div class="sched-done-icon">🎉</div>' +
