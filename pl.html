@@ -87,6 +87,39 @@
     .legend .el i { background: #e08a1e; }
     .legend .rel i { background: #e05252; }
 
+    /* ── Followed / favorite team highlighting ── */
+    tr.followed td { background: #fffaf0; }
+    tr.favorite td { background: #eaf4fc !important; }
+    tr.favorite td.team { font-weight: 700; }
+    .team-mark { margin-left: 6px; font-size: 11px; }
+
+    .favorites-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .fav-chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px 7px 9px;
+      border-radius: 20px;
+      border: 1.5px solid #f4d99a;
+      background: #fffaf0;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #7a5a10;
+    }
+    .fav-chip img { width: 18px; height: 18px; object-fit: contain; }
+    .fav-chip.favorite {
+      border-color: #a9d3ef;
+      background: #eaf4fc;
+      color: #0b5f96;
+      font-weight: 700;
+    }
+    .fav-chip .heart { font-weight: 500; opacity: .85; }
+    .fixture.followed { border-color: #f4d99a; background: #fffaf0; }
+    .fixture.favorite { border-color: #a9d3ef; background: #eaf4fc; }
+    .fixture .mark { width: 18px; flex-shrink: 0; text-align: center; font-size: 13px; }
+    .fact-card.followed { border-top: 3px solid #f9b625; }
+    .fact-card.favorite { border-top: 3px solid #6CABDD; background: #f6fbff; }
+
     /* ── Fixtures ── */
     .fixture-list { display: flex; flex-direction: column; gap: 8px; }
     .fixture {
@@ -162,6 +195,11 @@
   </header>
 
   <div class="card">
+    <h2>Наши команды</h2>
+    <div class="favorites-bar" id="favorites-bar"><div class="loading">Загрузка…</div></div>
+  </div>
+
+  <div class="card">
     <h2>Таблица <span class="tag" id="season-tag"></span></h2>
     <table class="standings" id="standings-table">
       <thead>
@@ -203,6 +241,11 @@
 
 <script>
   const FILE = "data/pl.json";
+  const FOLLOWED_TEAMS = ['Arsenal', 'Chelsea', 'Manchester United', 'Manchester City', 'Liverpool'];
+  const FAVORITE_TEAM = 'Manchester City';
+
+  const isFollowed = team => FOLLOWED_TEAMS.includes(team);
+  const isFavorite = team => team === FAVORITE_TEAM;
 
   function timeAgoLabel(iso) {
     const d = new Date(iso);
@@ -220,15 +263,33 @@
     return code ? `https://resources.premierleague.com/premierleague/badges/50/${code}.png` : '';
   }
 
+  function renderFavorites(rows) {
+    const bar = document.getElementById('favorites-bar');
+    const followedRows = rows.filter(r => isFollowed(r.team));
+    bar.innerHTML = followedRows.map(r => `
+      <span class="fav-chip ${isFavorite(r.team) ? 'favorite' : ''}">
+        <img src="${crestUrl(r.crest)}" alt="" onerror="this.style.display='none'">
+        ${r.team}
+        ${isFavorite(r.team) ? '<span class="heart">❤️ болеем вместе</span>' : ''}
+      </span>
+    `).join('');
+  }
+
   function renderStandings(rows) {
     const body = document.getElementById('standings-body');
-    body.innerHTML = rows.map(r => `
-      <tr class="${zoneClass(r.qualification)}">
+    body.innerHTML = rows.map(r => {
+      const classes = [zoneClass(r.qualification)];
+      if (isFollowed(r.team)) classes.push('followed');
+      if (isFavorite(r.team)) classes.push('favorite');
+      const mark = isFavorite(r.team) ? '<span class="team-mark" title="Наша любимая команда">❤️</span>'
+        : isFollowed(r.team) ? '<span class="team-mark" title="Следим за этой командой">★</span>' : '';
+      return `
+      <tr class="${classes.join(' ')}">
         <td class="pos">${r.position}</td>
         <td class="team">
           <span class="team-cell">
             <img class="crest" src="${crestUrl(r.crest)}" alt="" onerror="this.style.display='none'">
-            ${r.team}
+            ${r.team}${mark}
           </span>
         </td>
         <td class="num">${r.played}</td>
@@ -238,7 +299,8 @@
         <td class="num">${r.gd > 0 ? '+' + r.gd : r.gd}</td>
         <td class="num pts">${r.points}</td>
       </tr>
-    `).join('');
+    `;
+    }).join('');
   }
 
   function renderFixtures(fixtures) {
@@ -247,8 +309,14 @@
       list.innerHTML = '<div class="empty">На этой неделе матчей не найдено.</div>';
       return;
     }
-    list.innerHTML = fixtures.map(f => `
-      <div class="fixture">
+    list.innerHTML = fixtures.map(f => {
+      const favorite = isFavorite(f.home) || isFavorite(f.away);
+      const followed = !favorite && (isFollowed(f.home) || isFollowed(f.away));
+      const cls = favorite ? 'favorite' : followed ? 'followed' : '';
+      const mark = favorite ? '❤️' : followed ? '★' : '';
+      return `
+      <div class="fixture ${cls}">
+        <div class="mark">${mark}</div>
         <div class="when">${f.kickoffLabel}</div>
         <div class="matchup">
           <span class="side home"><img class="crest" src="${crestUrl(f.homeCrest)}" alt="" onerror="this.style.display='none'">${f.home}</span>
@@ -257,7 +325,8 @@
         </div>
         <div class="ground">${f.ground || ''}</div>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   function renderFacts(facts) {
@@ -266,14 +335,20 @@
       grid.innerHTML = '<div class="empty">Пока нет данных для фактов на эту неделю.</div>';
       return;
     }
-    grid.innerHTML = facts.map(f => `
-      <div class="fact-card">
-        <div class="fact-team">${f.team}</div>
+    grid.innerHTML = facts.map(f => {
+      const favorite = isFavorite(f.team);
+      const followed = !favorite && isFollowed(f.team);
+      const cls = favorite ? 'favorite' : followed ? 'followed' : '';
+      const mark = favorite ? ' ❤️' : followed ? ' ★' : '';
+      return `
+      <div class="fact-card ${cls}">
+        <div class="fact-team">${f.team}${mark}</div>
         <div class="fact-player">${f.player}</div>
         <div class="fact-bio">${f.position}${f.nationality ? ', ' + f.nationality : ''}${f.age ? ', ' + f.age + ' лет' : ''}</div>
         <div class="fact-note">${f.note}</div>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   fetch(FILE + '?v=' + Date.now())
@@ -281,6 +356,7 @@
     .then(data => {
       document.getElementById('season-tag').textContent = data.season.replace('English Premier League Season ', '');
       document.getElementById('meta').textContent = 'Обновлено: ' + timeAgoLabel(data.updatedAt);
+      renderFavorites(data.standings);
       renderStandings(data.standings);
       renderFixtures(data.fixtures);
       renderFacts(data.facts);
