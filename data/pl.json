@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T20:43:41.387377+03:00",
+  "updatedAt": "2026-08-25T12:17:45.590713+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -79,6 +79,21 @@
     },
     {
       "position": 6,
+      "team": "Chelsea",
+      "shortName": "Chelsea",
+      "crest": "t8",
+      "played": 1,
+      "won": 1,
+      "drawn": 0,
+      "lost": 0,
+      "gf": 3,
+      "ga": 2,
+      "gd": 1,
+      "points": 3,
+      "qualification": null
+    },
+    {
+      "position": 7,
       "team": "Ipswich Town",
       "shortName": "Ipswich",
       "crest": "t40",
@@ -93,7 +108,7 @@
       "qualification": null
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "Manchester City",
       "shortName": "Man City",
       "crest": "t43",
@@ -108,7 +123,7 @@
       "qualification": null
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Leeds United",
       "shortName": "Leeds",
       "crest": "t2",
@@ -123,7 +138,7 @@
       "qualification": null
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "Liverpool",
       "shortName": "Liverpool",
       "crest": "t14",
@@ -138,7 +153,7 @@
       "qualification": null
     },
     {
-      "position": 10,
+      "position": 11,
       "team": "Newcastle United",
       "shortName": "Newcastle",
       "crest": "t4",
@@ -153,32 +168,17 @@
       "qualification": null
     },
     {
-      "position": 11,
-      "team": "Chelsea",
-      "shortName": "Chelsea",
-      "crest": "t8",
-      "played": 0,
-      "won": 0,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "points": 0,
-      "qualification": null
-    },
-    {
       "position": 12,
       "team": "Fulham",
       "shortName": "Fulham",
       "crest": "t54",
-      "played": 0,
+      "played": 1,
       "won": 0,
       "drawn": 0,
-      "lost": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "lost": 1,
+      "gf": 2,
+      "ga": 3,
+      "gd": -1,
       "points": 0,
       "qualification": null
     },
@@ -305,17 +305,6 @@
   ],
   "fixtures": [
     {
-      "gameweek": 1.0,
-      "kickoff": "2026-08-24T22:00:00+03:00",
-      "kickoffLabel": "Пн, 24 августа, 22:00",
-      "home": "Fulham",
-      "homeCrest": "t54",
-      "away": "Chelsea",
-      "awayCrest": "t8",
-      "ground": "Craven Cottage",
-      "status": "U"
-    },
-    {
       "gameweek": 2.0,
       "kickoff": "2026-08-28T22:00:00+03:00",
       "kickoffLabel": "Пт, 28 августа, 22:00",
@@ -413,9 +402,28 @@
       "awayCrest": "t40",
       "ground": "Old Trafford",
       "status": "U"
+    },
+    {
+      "gameweek": 2.0,
+      "kickoff": "2026-08-31T22:00:00+03:00",
+      "kickoffLabel": "Пн, 31 августа, 22:00",
+      "home": "Aston Villa",
+      "homeCrest": "t7",
+      "away": "Arsenal",
+      "awayCrest": "t3",
+      "ground": "Villa Park",
+      "status": "U"
     }
   ],
   "facts": [
+    {
+      "team": "Arsenal",
+      "player": "Kai Havertz",
+      "position": "Нападающий",
+      "nationality": "Germany",
+      "age": "27",
+      "note": "лучший бомбардир «Arsenal» в этом сезоне — 1 гол"
+    },
     {
       "team": "Bournemouth",
       "player": "Marcus Tavernier",
@@ -441,12 +449,28 @@
       "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 2 гола"
     },
     {
+      "team": "Chelsea",
+      "player": "João Pedro",
+      "position": "Нападающий",
+      "nationality": "Brazil",
+      "age": "24",
+      "note": "лучший бомбардир «Chelsea» в этом сезоне — 1 гол"
+    },
+    {
       "team": "Everton",
       "player": "Thierno Barry",
       "position": "Нападающий",
       "nationality": "France",
       "age": "23",
       "note": "лучший бомбардир «Everton» в этом сезоне — 1 гол"
+    },
+    {
+      "team": "Fulham",
+      "player": "Gonzalo García",
+      "position": "Нападающий",
+      "nationality": "Spain",
+      "age": "22",
+      "note": "лучший бомбардир «Fulham» в этом сезоне — 1 гол"
     },
     {
       "team": "Hull City",
