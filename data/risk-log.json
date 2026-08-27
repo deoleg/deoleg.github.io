@@ -10,30 +10,13 @@
       },
       "russian_rhetoric": {
         "score": 2,
-        "reasoning": "Найдено 4 релевантных статей, сработавшие термины: мид россии, путин. Взвешенный балл: 4.0.",
-        "sources": [
-          {
-            "title": "МИД России предупредил Британию об ответе на удары ВСУ ее оружием11:50",
-            "url": "https://ria.ru/20260827/mid-2113486332.html"
-          },
-          {
-            "title": "МИД России отметил колебания в риторике США по переговорам вокруг Украины15:19",
-            "url": "https://ria.ru/20260827/peregovory-2113582220.html"
-          },
-          {
-            "title": "Скворцова рассказала Путину о результатах работы ФМБА13:17",
-            "url": "https://ria.ru/20260827/fmba-2113525516.html"
-          },
-          {
-            "title": "МИД России вызывает временного поверенного в делах Румынии после высылки российского дипломата из Бухареста",
-            "url": "https://ipn.md/ru/mid-rossii-vyzyvaet-vremennogo-poverennogo-v-delah-rumynii-posle-vysylki-rossijskogo-diplomata-iz-buharesta/"
-          }
-        ],
-        "carried_forward": false
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
       },
       "border_aviation": {
-        "score": 5,
-        "reasoning": "Найдено 9 релевантных статей, сработавшие термины: бпла, воздушное пространство молдовы, дрон, нарушил, нарушили. Взвешенный балл: 17.0.",
+        "score": 3,
+        "reasoning": "Найдено 3 релевантных статей, сработавшие термины: аэропорт кишинёва, воздушное пространство молдовы, дрон. Взвешенный балл: 7.0.",
         "sources": [
           {
             "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
@@ -44,16 +27,8 @@
             "url": "https://point.md/ru/novosti/proisshestviya/piat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-etoi-noch-iu/"
           },
           {
-            "title": "ВС России поразили семь хранилищ с имуществом ВСУ и цех по сборке дронов в порту Одесса18:50",
-            "url": "https://ria.ru/20260827/odessa-2113660746.html"
-          },
-          {
-            "title": "БПЛА атаковал турецкий танкер в Черном море10:47",
-            "url": "https://ria.ru/20260827/more-2113464034.html"
-          },
-          {
-            "title": "Предотвращена атака с применением напалма на заводе по производству дронов в Словакии. Задержаны трое иностранцев",
-            "url": "https://ipn.md/ru/predotvrashhena-ataka-s-primeneniem-napalma-na-zavode-po-proizvodstvu-dronov-v-slovakii-zaderzhany-troe-inostranczev/"
+            "title": "Ограниченный доступ в Международный аэропорт Кишинёва с 27 по 31 августа",
+            "url": "https://ipn.md/ru/ogranichennyj-dostup-v-mezhdunarodnyj-aeroport-kishinyova-s-27-po-31-avgusta/"
           }
         ],
         "carried_forward": false
@@ -71,7 +46,7 @@
         "carried_forward": true
       }
     },
-    "overall_score": 1.4,
-    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
