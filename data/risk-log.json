@@ -9,9 +9,21 @@
         "carried_forward": true
       },
       "russian_rhetoric": {
-        "score": 1,
-        "reasoning": "Найдено 1 релевантных статей, сработавшие термины: мид россии. Взвешенный балл: 1.0.",
+        "score": 2,
+        "reasoning": "Найдено 4 релевантных статей, сработавшие термины: мид россии, путин. Взвешенный балл: 4.0.",
         "sources": [
+          {
+            "title": "МИД России предупредил Британию об ответе на удары ВСУ ее оружием11:50",
+            "url": "https://ria.ru/20260827/mid-2113486332.html"
+          },
+          {
+            "title": "МИД России отметил колебания в риторике США по переговорам вокруг Украины15:19",
+            "url": "https://ria.ru/20260827/peregovory-2113582220.html"
+          },
+          {
+            "title": "Скворцова рассказала Путину о результатах работы ФМБА13:17",
+            "url": "https://ria.ru/20260827/fmba-2113525516.html"
+          },
           {
             "title": "МИД России вызывает временного поверенного в делах Румынии после высылки российского дипломата из Бухареста",
             "url": "https://ipn.md/ru/mid-rossii-vyzyvaet-vremennogo-poverennogo-v-delah-rumynii-posle-vysylki-rossijskogo-diplomata-iz-buharesta/"
@@ -20,20 +32,28 @@
         "carried_forward": false
       },
       "border_aviation": {
-        "score": 3,
-        "reasoning": "Найдено 3 релевантных статей, сработавшие термины: воздушное пространство молдовы, дрон, нарушил, нарушили. Взвешенный балл: 7.0.",
+        "score": 5,
+        "reasoning": "Найдено 9 релевантных статей, сработавшие термины: бпла, воздушное пространство молдовы, дрон, нарушил, нарушили. Взвешенный балл: 17.0.",
         "sources": [
           {
             "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
             "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/"
           },
           {
-            "title": "Предотвращена атака с применением напалма на заводе по производству дронов в Словакии. Задержаны трое иностранцев",
-            "url": "https://ipn.md/ru/predotvrashhena-ataka-s-primeneniem-napalma-na-zavode-po-proizvodstvu-dronov-v-slovakii-zaderzhany-troe-inostranczev/"
+            "title": "Пять дронов нарушили воздушное пространство Молдовы этой ночью",
+            "url": "https://point.md/ru/novosti/proisshestviya/piat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-etoi-noch-iu/"
           },
           {
-            "title": "Россия приняла закон о государственном контроле над объектами гражданской инфраструктуры, подвергающимися атакам дронов",
-            "url": "https://ipn.md/ru/rossiya-prinyala-zakon-o-gosudarstvennom-kontrole-nad-obektami-grazhdanskoj-infrastruktury-podvergayushhimisya-atakam-dronov/"
+            "title": "ВС России поразили семь хранилищ с имуществом ВСУ и цех по сборке дронов в порту Одесса18:50",
+            "url": "https://ria.ru/20260827/odessa-2113660746.html"
+          },
+          {
+            "title": "БПЛА атаковал турецкий танкер в Черном море10:47",
+            "url": "https://ria.ru/20260827/more-2113464034.html"
+          },
+          {
+            "title": "Предотвращена атака с применением напалма на заводе по производству дронов в Словакии. Задержаны трое иностранцев",
+            "url": "https://ipn.md/ru/predotvrashhena-ataka-s-primeneniem-napalma-na-zavode-po-proizvodstvu-dronov-v-slovakii-zaderzhany-troe-inostranczev/"
           }
         ],
         "carried_forward": false
@@ -51,7 +71,7 @@
         "carried_forward": true
       }
     },
-    "overall_score": 0.8,
-    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 0.8."
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
