@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2026-08-27",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 релевантных статей, сработавшие термины: мид россии. Взвешенный балл: 1.0.",
+        "sources": [
+          {
+            "title": "МИД России вызывает временного поверенного в делах Румынии после высылки российского дипломата из Бухареста",
+            "url": "https://ipn.md/ru/mid-rossii-vyzyvaet-vremennogo-poverennogo-v-delah-rumynii-posle-vysylki-rossijskogo-diplomata-iz-buharesta/"
+          }
+        ],
+        "carried_forward": false
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 3 релевантных статей, сработавшие термины: воздушное пространство молдовы, дрон, нарушил, нарушили. Взвешенный балл: 7.0.",
+        "sources": [
+          {
+            "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
+            "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/"
+          },
+          {
+            "title": "Предотвращена атака с применением напалма на заводе по производству дронов в Словакии. Задержаны трое иностранцев",
+            "url": "https://ipn.md/ru/predotvrashhena-ataka-s-primeneniem-napalma-na-zavode-po-proizvodstvu-dronov-v-slovakii-zaderzhany-troe-inostranczev/"
+          },
+          {
+            "title": "Россия приняла закон о государственном контроле над объектами гражданской инфраструктуры, подвергающимися атакам дронов",
+            "url": "https://ipn.md/ru/rossiya-prinyala-zakon-o-gosudarstvennom-kontrole-nad-obektami-grazhdanskoj-infrastruktury-podvergayushhimisya-atakam-dronov/"
+          }
+        ],
+        "carried_forward": false
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      }
+    },
+    "overall_score": 0.8,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 0.8."
+  }
+]
