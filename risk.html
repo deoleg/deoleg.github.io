@@ -37,6 +37,14 @@
   }
   .top-row { display: flex; gap: 20px; flex-wrap: wrap; }
   .top-row .card { flex: 1; min-width: 260px; }
+  .stats-row { display: flex; }
+  .stats-row .stat-mini {
+    flex: 1;
+    text-align: center;
+    padding: 4px 12px;
+    border-left: 1px solid var(--border);
+  }
+  .stats-row .stat-mini:first-child { border-left: none; }
 
   .today-score { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
   .today-score .value { font-size: 2.6rem; font-weight: 700; }
@@ -46,8 +54,8 @@
   .today-score .label { color: var(--muted); font-size: 0.85rem; }
   .summary-text { color: var(--text); line-height: 1.5; margin: 8px 0 0; font-size: 0.92rem; }
   .stat-mini { text-align: center; }
-  .stat-mini .value { font-size: 2rem; font-weight: 700; }
-  .stat-mini .label { color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+  .stat-mini .value { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+  .stat-mini .label { color: var(--muted); font-size: 0.78rem; margin-top: 6px; line-height: 1.3; }
 
   .period-toggle, .toggle { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
   .period-toggle button, .toggle button {
@@ -98,17 +106,19 @@
         <p class="summary-text" id="last-update" style="color:var(--muted);font-size:0.78rem;margin-top:10px;"></p>
       </div>
       <div class="card top-row" style="gap:0;">
-        <div class="stat-mini">
-          <div class="value" id="stat-drones-confirmed">–</div>
-          <div class="label">Дронов подтверждено</div>
-        </div>
-        <div class="stat-mini">
-          <div class="value" id="stat-drones-month">–</div>
-          <div class="label">За 30 дней</div>
-        </div>
-        <div class="stat-mini">
-          <div class="value" id="stat-drones-pending">–</div>
-          <div class="label">На проверку</div>
+        <div class="stats-row" style="width:100%;">
+          <div class="stat-mini">
+            <div class="value" id="stat-drones-confirmed">–</div>
+            <div class="label">Дронов<br>подтверждено</div>
+          </div>
+          <div class="stat-mini">
+            <div class="value" id="stat-drones-month">–</div>
+            <div class="label">За 30 дней</div>
+          </div>
+          <div class="stat-mini">
+            <div class="value" id="stat-drones-pending">–</div>
+            <div class="label">На проверку</div>
+          </div>
         </div>
       </div>
     </div>
