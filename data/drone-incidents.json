@@ -228,5 +228,21 @@
     "excerpt": "",
     "confidence": "low",
     "detected_at": "2026-08-27T19:27:52.844026+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Sinteza Săptămânii",
+    "url": "https://www.zdg.md/categoria/video/sinteza-saptamanii/",
+    "excerpt": "VIDEOGaz mai scump | Ion Ceban, accidentat în vacanță | Noutăți despre depozitul de la Cobasna | Protestul profesorilor | Dosarul „Kuliok” | Drone peste R. Moldova | SĂPTĂMÂNA DE GARDĂSinteza Săptămânii",
+    "confidence": "low",
+    "detected_at": "2026-08-27T19:38:47.155335+00:00"
+  },
+  {
+    "date_mentioned": "26 августа",
+    "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
+    "excerpt": "Вечером 26 августа неизвестный воздушный объект пересёк воздушное пространство Молдовы в районе Паланки, Штефан-Водского района, после чего…",
+    "confidence": "medium",
+    "detected_at": "2026-08-27T19:38:47.155335+00:00"
   }
 ]
