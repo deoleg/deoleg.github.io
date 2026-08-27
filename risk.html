@@ -133,8 +133,10 @@
       <div class="toggle">
         <button data-mode="cumulative" class="active">Нарастающим итогом</button>
         <button data-mode="weekly">По неделям</button>
+        <button data-mode="yearly">По годам (официально)</button>
       </div>
       <canvas id="drone-chart"></canvas>
+      <p id="yearly-note" style="display:none;color:var(--muted);font-size:0.78rem;margin-top:10px;"></p>
     </div>
 
     <div class="card">
@@ -171,20 +173,23 @@ const FACTOR_COLORS = {
 
 let riskLog = [];
 let droneIncidents = [];
+let yearlyTotals = [];
 let riskChart = null;
 let droneChart = null;
 
 async function loadAll() {
   try {
-    const [riskRes, droneRes] = await Promise.all([
+    const [riskRes, droneRes, yearlyRes] = await Promise.all([
       fetch('/data/risk-log.json', { cache: 'no-store' }),
       fetch('/data/drone-incidents.json', { cache: 'no-store' }),
+      fetch('/data/drone-yearly-totals.json', { cache: 'no-store' }).catch(() => null),
     ]);
     if (!riskRes.ok) throw new Error('Не удалось загрузить risk-log.json');
     if (!droneRes.ok) throw new Error('Не удалось загрузить drone-incidents.json');
 
     riskLog = await riskRes.json();
     droneIncidents = await droneRes.json();
+    yearlyTotals = (yearlyRes && yearlyRes.ok) ? await yearlyRes.json() : [];
 
     if (!Array.isArray(riskLog) || riskLog.length === 0) {
       throw new Error('Данных по риску пока нет — появятся после первого запуска скрипта на сервере.');
@@ -352,6 +357,40 @@ function groupByWeek(incidents) {
 }
 
 function renderDroneChart(mode) {
+  const yearlyNote = document.getElementById('yearly-note');
+
+  if (mode === 'yearly') {
+    yearlyNote.style.display = 'block';
+    yearlyNote.textContent = 'Официальные агрегированные данные Центра воздушных операций Национальной армии Молдовы (дроны и ракеты суммарно). 2026 год не завершён.';
+
+    if (droneChart) droneChart.destroy();
+    const ctx = document.getElementById('drone-chart').getContext('2d');
+    droneChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: yearlyTotals.map(y => y.note ? `${y.year}*` : String(y.year)),
+        datasets: [{
+          label: 'Инцидентов за год (официально)',
+          data: yearlyTotals.map(y => y.count),
+          backgroundColor: '#ef444480',
+          borderColor: '#ef4444',
+          borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
+          x: { ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
+        },
+        plugins: { legend: { labels: { color: '#e6e6e6' } } },
+      }
+    });
+    return;
+  }
+
+  yearlyNote.style.display = 'none';
+
   const confirmed = droneIncidents.filter(i => i.confidence === 'high');
   const weekly = groupByWeek(confirmed);
   const sortedWeeks = Object.keys(weekly).sort();

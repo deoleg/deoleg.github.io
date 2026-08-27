@@ -1,5 +1,131 @@
 [
   {
+    "date_mentioned": "2022-10-31",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Наславче (Окницкий район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Наславча, Окницкий район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2023-01-14",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Ларге (Бричанский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Ларга, Бричанский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2023-09-25",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Кицканах (Каушанский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Кицканы, Каушанский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2023-11-27",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Хырбовэц (Новоаненский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Хырбовэц, Новоаненский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2025-02-13",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Валя Пержей (Тараклийский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Чумай/Валя Пержей, Тараклийский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2025-11-25",
+    "title": "Шесть БПЛА нарушили воздушное пространство Молдовы во время атаки РФ по Украине",
+    "url": "https://www.svoboda.org/a/moldova-i-rumyniya-vnovj-zayavili-o-peresechenii-ih-granits-dronami/33605138.html",
+    "excerpt": "Минобороны Молдовы: несанкционированное пересечение воздушного пространства шестью беспилотниками в ночь на 25 ноября.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: Радио Свобода (Молдавская служба), 25.11.2025"
+  },
+  {
+    "date_mentioned": "2026-01-22",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Крокмазе (Штефан-Водский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Крокмаз, Штефан-Водский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2026-03-17",
+    "title": "Обломки дрона с взрывчаткой обнаружены в Тудоре (Штефан-Водский район)",
+    "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
+    "excerpt": "Официальные данные Минобороны Молдовы: дрон с взрывным устройством, с. Тудора, Штефан-Водский район.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: официальная сводка Минобороны Молдовы через NewsMaker, 09.04.2026"
+  },
+  {
+    "date_mentioned": "2026-05-13",
+    "title": "Дрон обнаружен над территорией Молдовы, воздушное пространство временно закрыто на севере",
+    "url": "https://www.moldpres.md/rus/obshestvo/video-nad-territoriej-respubliki-moldova-obnaruzhen-dron-vlasti-vremenno-zakryli-vozdushnoe-prostranstvo-na-severe",
+    "excerpt": "Молдпрес: слежение за дроном до 16:26, воздушное пространство на севере временно закрыто. С начала войны — более 40 нарушений на тот момент.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: Moldpres, 13.05.2026"
+  },
+  {
+    "date_mentioned": "2026-08-09",
+    "title": "Российский БПЛА взорвался на территории Молдовы, посол РФ отозван для консультаций",
+    "url": "https://mignews.com/news/disasters/rossijskij-dron-snova-narushil-vozdushnoe-prostranstvo-moldovy.html",
+    "excerpt": "Взрыв БПЛА нового типа на территории Молдовы. Кишинёв отозвал своего посла в России для консультаций.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: MigNews, дипломатическая реакция подтверждена"
+  },
+  {
+    "date_mentioned": "2026-08-20",
+    "title": "Три инцидента с дронами за ночь: Шахед-136 над Этулией и обломки у Джурджулешты-Рени",
+    "url": "https://newsmaker.md/ru/foto-na-granicze-moldovy-i-ukrainy-vzorvalsya-bespilotnik-postradal-ukrainskii-kpp-tabaki",
+    "excerpt": "МВД Молдовы сообщило о трёх инцидентах с дронами за ночь на 20 августа, включая Шахед-136 над Этулией (Гагаузия).",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: NewsMaker, 21.08.2026"
+  },
+  {
+    "date_mentioned": "2026-08-21",
+    "title": "Взрыв БПЛА на границе Молдовы и Украины, пострадал украинский КПП Табаки",
+    "url": "https://newsmaker.md/ru/foto-na-granicze-moldovy-i-ukrainy-vzorvalsya-bespilotnik-postradal-ukrainskii-kpp-tabaki",
+    "excerpt": "МВД: около 00:35 у КПП Мирное-Табаки взорвались беспилотники, работу КПП приостановили.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: NewsMaker, 21.08.2026"
+  },
+  {
+    "date_mentioned": "2026-08-22",
+    "title": "Дрон типа Shahed пересёк воздушное пространство Молдовы в направлении Каплан",
+    "url": "https://www.eurointegration.com.ua/rus/news/2026/08/22/7243972/",
+    "excerpt": "Минобороны Молдовы: несанкционированный пролёт 22 августа в 04:07, предположительно Shahed-138, со стороны Крутояровки в направлении Каплан.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: Европейская правда, 22.08.2026"
+  },
+  {
+    "date_mentioned": "2026-08-24",
+    "title": "Дрон пересёк воздушное пространство юга Молдовы, F-16 Румынии подняты в воздух",
+    "url": "https://newsmaker.md/ru/dron-narushil-vozdushnoe-prostranstvo-moldovy-na-yuge-vveli-ogranicheniya-na-15-minut-on-napravilsya-v-storonu-rumynii",
+    "excerpt": "Минобороны: беспилотник вошёл в воздушное пространство в 05:55 со стороны Одесской области, покинул в 06:09 в сторону Румынии. Ограничения на юге на 15 минут.",
+    "confidence": "high",
+    "detected_at": "2026-08-27T00:00:00+00:00",
+    "source_note": "backfill: NewsMaker, 24.08.2026"
+  },
+  {
     "date_mentioned": null,
     "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
     "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/",

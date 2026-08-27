@@ -1,0 +1,9 @@
+{
+  "source": "Центр воздушных операций Национальной армии Молдовы / Минобороны Молдовы",
+  "source_articles": [
+    "https://noi.md/ru/obshhestvo/60-incidentov-s-nachala-vojny-naskoliko-zashhishheno-vozdushnoe-prostranstvo-moldovy",
+    "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony"
+  ],
+  "collected_at": "2026-08-27",
+  "note": "Официальные агрегированные данные, включают как дроны, так и ракеты/обломки. Не путать со списком отдельных инцидентов в drone-incidents.json — тот содержит только те случаи, для которых удалось найти точную дату в открытых источниках, и является неполным подмножеством этих официальных итогов."
+}
