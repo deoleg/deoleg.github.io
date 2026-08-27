@@ -24,9 +24,17 @@
         "carried_forward": false
       },
       "border_aviation": {
-        "score": 4,
-        "reasoning": "Найдено 5 релевантных статей, сработавшие термины: аэропорт кишинёва, воздушное пространство молдовы, дрон. Взвешенный балл: 10.0.",
+        "score": 5,
+        "reasoning": "Найдено 7 релевантных статей, сработавшие термины: dronă, spațiul aerian, аэропорт кишинёва, воздушное пространство молдовы, дрон. Взвешенный балл: 25.0.",
         "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-9"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-8"
+          },
           {
             "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
             "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/"
@@ -38,14 +46,6 @@
           {
             "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
             "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/"
-          },
-          {
-            "title": "Ограниченный доступ в Международный аэропорт Кишинёва с 27 по 31 августа",
-            "url": "https://ipn.md/ru/ogranichennyj-dostup-v-mezhdunarodnyj-aeroport-kishinyova-s-27-po-31-avgusta/"
-          },
-          {
-            "title": "Носатый о дронах: Мы должны иметь возможности для защиты территории и граждан",
-            "url": "https://point.md/ru/novosti/politika/nosatyi-o-dronakh-my-dolzhny-imet-vozmozhnosti-dlia-zashchity-territorii-i-grazhdan/"
           }
         ],
         "carried_forward": false
@@ -63,7 +63,7 @@
         "carried_forward": true
       }
     },
-    "overall_score": 1.0,
-    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
