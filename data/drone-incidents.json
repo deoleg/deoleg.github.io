@@ -22,5 +22,61 @@
     "excerpt": "",
     "confidence": "low",
     "detected_at": "2026-08-27T18:11:57.051874+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ВС России поразили семь хранилищ с имуществом ВСУ и цех по сборке дронов в порту Одесса18:50",
+    "url": "https://ria.ru/20260827/odessa-2113660746.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "БПЛА атаковал турецкий танкер в Черном море10:47",
+    "url": "https://ria.ru/20260827/more-2113464034.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Мисаил-Никитин после вторжения дронов: Гражданам следует укрыться и звонить в 112",
+    "url": "https://point.md/ru/novosti/politika/misail-nikitin-posle-vtorzheniia-dronov-grazhdanam-sleduet-ukryt-sia-i-zvonit-v-112/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Носатый о дронах: Мы должны иметь возможности для защиты территории и граждан",
+    "url": "https://point.md/ru/novosti/politika/nosatyi-o-dronakh-my-dolzhny-imet-vozmozhnosti-dlia-zashchity-territorii-i-grazhdan/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Никушор Дан: Российские беспилотники — «постоянный вызов» для Румынии и Молдовы",
+    "url": "https://point.md/ru/novosti/politika/nikushor-dan-rossiiskie-bespilotniki-postoiannyi-vyzov-dlia-rumynii-i-moldovy/",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Парламент нарушил прозрачность при рассмотрении 30 из 34 законопроектов",
+    "url": "https://point.md/ru/novosti/politika/parlament-narushil-prozrachnost-pri-rassmotrenii-30-iz-34-zakonoproektov/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Пять дронов нарушили воздушное пространство Молдовы этой ночью",
+    "url": "https://point.md/ru/novosti/proisshestviya/piat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-etoi-noch-iu/",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-08-27T18:16:50.813519+00:00"
   }
 ]
