@@ -238,6 +238,30 @@
     "detected_at": "2026-08-27T19:38:47.155335+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В упавшем в Румынии дроне не обнаружили взрывчатку",
+    "url": "https://point.md/ru/novosti/v-mire/v-upavshem-v-rumynii-drone-ne-obnaruzhili-vzryvchatku/",
+    "excerpt": "Румынские специалисты завершили предварительное обследование места падения дрона возле поселка Плауру, расположенного напротив украинского …",
+    "confidence": "low",
+    "detected_at": "2026-08-27T19:48:16.493220+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-9",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, în această noapte, 27 august curent, în comun cu partenerii au fost fixate survoluri neautorizate în spațiul aerian național cu implicarea a cinci drone. Prima dronă cu traversarea frontierei de stat în Republica Moldova din Ucraina, a fost",
+    "confidence": "high",
+    "detected_at": "2026-08-27T19:48:16.493220+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-8",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, astăzi, la ora 17.38 a fost detectat un obiect aerian care a pătruns în spațiul aerian național cu traversarea frontierei de stat a Republicii Moldova, prin localitatea Palanca, raionul Ștefan Vodă. Ulterior obiectul aerian la ora 17.43 din",
+    "confidence": "high",
+    "detected_at": "2026-08-27T19:48:16.493220+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
