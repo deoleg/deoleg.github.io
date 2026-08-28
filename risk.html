@@ -5,35 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Risk — Moldova</title>
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
-    --bg: #0f1115;
-    --card-bg: #171a21;
-    --text: #e6e6e6;
-    --muted: #9aa0aa;
-    --accent: #4f8cff;
-    --danger: #ef4444;
-    --border: #2a2e38;
+    --bg: #f9f9f9;
+    --card-bg: #fff;
+    --text: #1a1a1a;
+    --muted: #999;
+    --accent: #f9b625;
+    --ok: #1D9E75;
+    --warning: #e08a1e;
+    --danger: #e05252;
+    --border: #e5e5e5;
   }
   * { box-sizing: border-box; }
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 24px 16px 60px;
+    padding: 40px 20px 64px;
   }
-  .container { max-width: 960px; margin: 0 auto; }
-  h1 { font-size: 1.4rem; margin-bottom: 4px; }
-  h2 { font-size: 1.05rem; margin: 0 0 12px; }
-  .subtitle { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  h2 { font-size: 15px; font-weight: 600; margin: 0 0 14px; }
+  .subtitle { color: var(--muted); font-size: 12.5px; margin-bottom: 28px; }
   .card {
     background: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--border);
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
   }
   .top-row { display: flex; gap: 20px; flex-wrap: wrap; }
   .top-row .card { flex: 1; min-width: 260px; }
@@ -48,8 +55,8 @@
 
   .today-score { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
   .today-score .value { font-size: 2.6rem; font-weight: 700; }
-  .today-score .value.risk-0, .today-score .value.risk-1 { color: #10b981; }
-  .today-score .value.risk-2 { color: #f59e0b; }
+  .today-score .value.risk-0, .today-score .value.risk-1 { color: var(--ok); }
+  .today-score .value.risk-2 { color: var(--warning); }
   .today-score .value.risk-3, .today-score .value.risk-4, .today-score .value.risk-5 { color: var(--danger); }
   .today-score .label { color: var(--muted); font-size: 0.85rem; }
   .summary-text { color: var(--text); line-height: 1.5; margin: 8px 0 0; font-size: 0.92rem; }
@@ -59,28 +66,32 @@
 
   .period-toggle, .toggle { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
   .period-toggle button, .toggle button {
-    background: transparent; border: 1px solid var(--border); color: var(--muted);
-    padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 0.82rem;
+    font-family: inherit;
+    background: transparent; border: 1.5px solid var(--border); color: var(--muted);
+    padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 0.82rem;
+    transition: border-color .15s, color .15s, background .15s;
   }
-  .period-toggle button.active, .toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .period-toggle button:hover, .toggle button:hover { color: #555; }
+  .period-toggle button.active, .toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
 
   canvas { max-height: 340px; }
 
   details { border-top: 1px solid var(--border); padding: 10px 0; }
   details summary { cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; font-size: 0.92rem; }
-  .factor-score { display: inline-block; min-width: 24px; text-align: center; padding: 2px 8px; border-radius: 6px; background: var(--border); font-weight: 700; margin-left: 8px; }
+  .factor-score { display: inline-block; min-width: 24px; text-align: center; padding: 2px 8px; border-radius: 6px; background: #f4f4f2; color: #555; font-weight: 700; margin-left: 8px; }
   .reasoning { color: var(--muted); font-size: 0.85rem; margin: 8px 0; line-height: 1.5; }
-  .sources a { color: var(--accent); text-decoration: none; font-size: 0.82rem; display: block; margin-top: 4px; }
+  .sources a { color: #1e63c9; text-decoration: none; font-size: 0.82rem; display: block; margin-top: 4px; }
+  .sources a:hover { text-decoration: underline; }
 
   .incident-list { list-style: none; padding: 0; margin: 0; }
   .incident-list li { border-top: 1px solid var(--border); padding: 10px 0; }
   .incident-list a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-  .incident-list a:hover { color: var(--accent); }
+  .incident-list a:hover { color: #1e63c9; }
   .incident-meta { color: var(--muted); font-size: 0.78rem; margin-top: 3px; }
-  .confidence-tag { display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; margin-left: 6px; }
-  .confidence-high { background: #10b98130; color: #10b981; }
-  .confidence-medium { background: #f59e0b30; color: #f59e0b; }
-  .confidence-low { background: #6b728030; color: #9aa0aa; }
+  .confidence-tag { display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.72rem; margin-left: 6px; font-weight: 500; }
+  .confidence-high { background: #1D9E7520; color: #16815e; }
+  .confidence-medium { background: #e08a1e20; color: #a5650f; }
+  .confidence-low { background: #f4f4f2; color: var(--muted); }
 
   .disclaimer { font-size: 0.78rem; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 12px; margin-top: 8px; }
   .loading, .error { color: var(--muted); padding: 20px; text-align: center; }
@@ -173,12 +184,12 @@ const FACTOR_LABELS = {
   travel_advisories: "Travel advisories"
 };
 const FACTOR_COLORS = {
-  transnistria_military: "#ef4444",
-  russian_rhetoric: "#f59e0b",
-  border_aviation: "#3b82f6",
-  economic: "#10b981",
-  travel_advisories: "#a855f7",
-  overall_score: "#e6e6e6"
+  transnistria_military: "#e05252",
+  russian_rhetoric: "#e08a1e",
+  border_aviation: "#1e63c9",
+  economic: "#1D9E75",
+  travel_advisories: "#8b5cf6",
+  overall_score: "#1a1f36"
 };
 
 let riskLog = [];
@@ -294,10 +305,10 @@ function renderRiskChart(days) {
       responsive: true,
       interaction: { mode: 'index', intersect: false },
       scales: {
-        y: { min: 0, max: 5, ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
-        x: { ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
+        y: { min: 0, max: 5, ticks: { color: '#999' }, grid: { color: '#eee' } },
+        x: { ticks: { color: '#999' }, grid: { color: '#eee' } },
       },
-      plugins: { legend: { labels: { color: '#e6e6e6' } } },
+      plugins: { legend: { labels: { color: '#555' } } },
     },
   });
 }
@@ -382,18 +393,18 @@ function renderDroneChart(mode) {
         datasets: [{
           label: 'Инцидентов за год (официально)',
           data: yearlyTotals.map(y => y.count),
-          backgroundColor: '#ef444480',
-          borderColor: '#ef4444',
+          backgroundColor: '#e0525280',
+          borderColor: '#e05252',
           borderWidth: 2,
         }]
       },
       options: {
         responsive: true,
         scales: {
-          y: { beginAtZero: true, ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
-          x: { ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
+          y: { beginAtZero: true, ticks: { color: '#999' }, grid: { color: '#eee' } },
+          x: { ticks: { color: '#999' }, grid: { color: '#eee' } },
         },
-        plugins: { legend: { labels: { color: '#e6e6e6' } } },
+        plugins: { legend: { labels: { color: '#555' } } },
       }
     });
     return;
@@ -431,8 +442,8 @@ function renderDroneChart(mode) {
       datasets: [{
         label: mode === 'weekly' ? 'Инцидентов за неделю' : 'Всего инцидентов (нарастающим итогом)',
         data,
-        borderColor: '#ef4444',
-        backgroundColor: mode === 'weekly' ? '#ef444480' : 'transparent',
+        borderColor: '#e05252',
+        backgroundColor: mode === 'weekly' ? '#e0525280' : 'transparent',
         borderWidth: 2,
         tension: 0.2,
       }]
@@ -440,10 +451,10 @@ function renderDroneChart(mode) {
     options: {
       responsive: true,
       scales: {
-        y: { beginAtZero: true, ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
-        x: { ticks: { color: '#9aa0aa' }, grid: { color: '#2a2e38' } },
+        y: { beginAtZero: true, ticks: { color: '#999' }, grid: { color: '#eee' } },
+        x: { ticks: { color: '#999' }, grid: { color: '#eee' } },
       },
-      plugins: { legend: { labels: { color: '#e6e6e6' } } },
+      plugins: { legend: { labels: { color: '#555' } } },
     }
   });
 }
