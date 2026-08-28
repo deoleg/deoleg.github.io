@@ -294,6 +294,22 @@
     "detected_at": "2026-08-28T07:00:49.630237+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Болгарские военные нейтрализовали неизвестный дрон в Чёрном море",
+    "url": "https://point.md/ru/novosti/v-mire/bolgarskie-voennye-neitralizovali-neizvestnyi-dron-v-chiornom-more/",
+    "excerpt": "Военно-морские силы Болгарии в четверг обнаружили неизвестный беспилотник в водах Чёрного моря у острова Святой Иван.",
+    "confidence": "low",
+    "detected_at": "2026-08-28T11:49:09.095888+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Страны Балтийского моря создадут оперативную группу для защиты от дронов",
+    "url": "https://point.md/ru/novosti/v-mire/strany-baltiiskogo-moria-sozdadut-operativnuiu-gruppu-dlia-zashchity-ot-dronov/",
+    "excerpt": "Страны, омываемые Балтийским морем, планируют создать совместную оперативную группу для защиты от беспилотников, что позволит им оперативно…",
+    "confidence": "low",
+    "detected_at": "2026-08-28T11:49:09.095888+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
