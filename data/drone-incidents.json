@@ -262,6 +262,38 @@
     "detected_at": "2026-08-27T19:48:16.493220+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Воробьев сообщил о последствиях атаки БПЛА в Павловском Посаде08:39",
+    "url": "https://ria.ru/20260828/bespilotnik-2113730076.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-28T07:00:49.630237+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "На Костромском шоссе под Ярославлем затруднено движение после атаки БПЛА09:11",
+    "url": "https://ria.ru/20260828/bespilotnik-2113733896.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-28T07:00:49.630237+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Германии полиция предотвратила атаку на завод беспилотников",
+    "url": "https://point.md/ru/novosti/v-mire/v-germanii-politsiia-predotvratila-ataku-na-zavod-bespilotnikov/",
+    "excerpt": "Немецкая полиция задержала в Гамбурге 26-летнего гражданина Латвии.",
+    "confidence": "low",
+    "detected_at": "2026-08-28T07:00:49.630237+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове утвердили новые правила для полетов дронов в воздушном пространстве U-space",
+    "url": "https://point.md/ru/novosti/obschestvo/v-moldove-utverdili-novye-pravila-dlia-poletov-dronov-v-vozdushnom-prostranstve-u-space/",
+    "excerpt": "Республика Молдова вводит новые правила эксплуатации дронов в воздушном пространстве U-space. Правительство утвердило соответствующий регла…",
+    "confidence": "medium",
+    "detected_at": "2026-08-28T07:00:49.630237+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
