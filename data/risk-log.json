@@ -65,5 +65,68 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-08-28",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 релевантных статей, сработавшие термины: путин. Взвешенный балл: 1.0.",
+        "sources": [
+          {
+            "title": "Текущие новости",
+            "url": "https://nm.md/aggregator/categories/1"
+          }
+        ],
+        "carried_forward": false
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 7 релевантных статей, сработавшие термины: dronă, spațiul aerian, аэропорт кишинёва, воздушное пространство молдовы, дрон. Взвешенный балл: 25.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-9"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-8"
+          },
+          {
+            "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
+            "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/"
+          },
+          {
+            "title": "Пять дронов нарушили воздушное пространство Молдовы этой ночью",
+            "url": "https://point.md/ru/novosti/proisshestviya/piat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-etoi-noch-iu/"
+          },
+          {
+            "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/"
+          }
+        ],
+        "carried_forward": false
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
