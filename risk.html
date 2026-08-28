@@ -245,7 +245,7 @@ const I18N = {
   en: {
     h1Title: 'Risk Index — Moldova',
     subtitle: 'Automated daily assessment based on open sources · collected daily on the server',
-    sourceLangNote: 'Article titles, source excerpts, and daily summaries below are shown in their original language (Russian).',
+    sourceLangNote: 'Article titles, factor notes, and daily summaries below are auto-translated from Russian and may be imprecise.',
     loading: 'Loading data…',
     riskLoadError: 'Failed to load risk-log.json',
     droneLoadError: 'Failed to load drone-incidents.json',
@@ -289,6 +289,74 @@ const I18N = {
 let LANG = localStorage.getItem('riskLang') === 'en' ? 'en' : 'ru';
 const T = () => I18N[LANG];
 
+// ---------------- Auto-translation for daily-generated Russian content ----------------
+// Summaries, factor reasoning, and incident titles come verbatim from a Russian-language
+// data feed refreshed daily on the server, so they can't be covered by the static I18N
+// dictionary above. Machine-translate them on the fly via MyMemory's free API, cached in
+// localStorage so each string is only ever translated once. Falls back to the original
+// Russian text on any error — never blocks or breaks rendering.
+
+function getTranslateCache() {
+  try { return JSON.parse(localStorage.getItem('riskTranslateCache') || '{}'); }
+  catch (e) { return {}; }
+}
+
+function saveTranslateCache(cache) {
+  try { localStorage.setItem('riskTranslateCache', JSON.stringify(cache)); }
+  catch (e) { /* localStorage full or unavailable — cache just won't persist */ }
+}
+
+async function translateText(ru) {
+  if (!ru) return ru;
+  const cache = getTranslateCache();
+  if (cache[ru]) return cache[ru];
+  try {
+    const res = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(ru) + '&langpair=ru|en');
+    const data = await res.json();
+    const en = data && data.responseData && data.responseData.translatedText;
+    if (en && data.responseStatus === 200) {
+      cache[ru] = en;
+      saveTranslateCache(cache);
+      return en;
+    }
+  } catch (e) { /* offline or API error — fall through to original text */ }
+  return ru;
+}
+
+// Translates an element's current text in place, but only while still in EN mode and
+// only if the element is still on the page by the time the translation resolves
+// (guards against a language toggle or re-render racing the network request).
+// A page can ask for 30+ translations at once (incidents, reasoning, sources). Firing
+// them all in parallel gets some silently throttled by the free API, so real network
+// calls are run one at a time through this queue; cache hits still resolve instantly.
+const MAX_CONCURRENT_TRANSLATIONS = 3;
+let activeTranslations = 0;
+const translateWaitQueue = [];
+
+function runNextTranslation() {
+  if (activeTranslations >= MAX_CONCURRENT_TRANSLATIONS || translateWaitQueue.length === 0) return;
+  activeTranslations++;
+  const job = translateWaitQueue.shift();
+  job().finally(() => {
+    activeTranslations--;
+    runNextTranslation();
+  });
+}
+
+function translateElement(el) {
+  if (LANG !== 'en' || !el) return;
+  const original = el.textContent;
+  const cached = getTranslateCache()[original];
+  if (cached) { el.textContent = cached; return; }
+
+  translateWaitQueue.push(() => translateText(original)
+    .then(en => {
+      if (LANG === 'en' && document.body.contains(el)) el.textContent = en;
+    })
+    .catch(() => {}));
+  runNextTranslation();
+}
+
 let riskLog = [];
 let droneIncidents = [];
 let yearlyTotals = [];
@@ -317,8 +385,9 @@ function setLang(lang) {
   applyStaticTranslations();
 
   if (riskLog.length) {
-    renderFactorDetails(riskLog[riskLog.length - 1]);
-    document.getElementById('last-update').textContent = T().updatedPrefix + riskLog[riskLog.length - 1].date;
+    const today = riskLog[riskLog.length - 1];
+    renderDaySummary(today);
+    renderFactorDetails(today);
     renderRiskChart(currentPeriodDays);
   }
   if (droneIncidents.length || yearlyTotals.length) {
@@ -364,13 +433,19 @@ async function loadAll() {
 
 // ---------------- Risk section ----------------
 
+function renderDaySummary(today) {
+  const daySummaryEl = document.getElementById('day-summary');
+  daySummaryEl.textContent = today.day_summary || ''; // always reset from the raw Russian source first
+  translateElement(daySummaryEl);
+  document.getElementById('last-update').textContent = T().updatedPrefix + today.date;
+}
+
 function renderRiskSection() {
   const today = riskLog[riskLog.length - 1];
   const scoreEl = document.getElementById('overall-score');
   scoreEl.textContent = today.overall_score;
   scoreEl.className = 'value risk-' + Math.round(today.overall_score);
-  document.getElementById('day-summary').textContent = today.day_summary || '';
-  document.getElementById('last-update').textContent = T().updatedPrefix + today.date;
+  renderDaySummary(today);
 
   renderFactorDetails(today);
   renderRiskChart(currentPeriodDays);
@@ -401,6 +476,8 @@ function renderFactorDetails(entry) {
       <div class="sources">${sourcesHtml}</div>
     `;
     container.appendChild(det);
+    translateElement(det.querySelector('.reasoning'));
+    det.querySelectorAll('.sources a').forEach(translateElement);
   }
 }
 
@@ -497,6 +574,7 @@ function renderIncidentList(confirmed) {
       <div class="incident-meta">${i.date_mentioned || (i.detected_at || '').slice(0,10)}</div>
     </li>
   `).join('');
+  list.querySelectorAll('a').forEach(translateElement);
 }
 
 function groupByWeek(incidents) {
