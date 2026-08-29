@@ -12,6 +12,8 @@ Usage:
 """
 import json
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -175,53 +177,85 @@ def ru_count(n: int, one: str, few: str, many: str) -> str:
 # ---------------- Wikipedia enrichment ----------------
 # Runs server-side (this script), not in the browser, so CORS never applies here —
 # unlike the live-in-page fetches elsewhere on the site, this can call any public API.
+# Prefers the Russian Wikipedia (real Russian prose, no machine translation needed);
+# falls back to the English article + machine translation only when no Russian
+# article exists.
 
-def wiki_search_title(query: str) -> str | None:
-    url = ("https://en.wikipedia.org/w/api.php?action=query&list=search"
+def wiki_api_call(url: str, retries: int = 1) -> dict:
+    try:
+        return fetch_json(url, headers=WIKI_HEADERS)
+    except urllib.error.HTTPError as e:
+        if e.code == 429 and retries > 0:
+            time.sleep(1.5)
+            return wiki_api_call(url, retries - 1)
+        raise
+
+
+def wiki_search_title(query: str, lang: str) -> str | None:
+    url = (f"https://{lang}.wikipedia.org/w/api.php?action=query&list=search"
            f"&srsearch={urllib.parse.quote(query)}&format=json&srlimit=3")
     try:
-        data = fetch_json(url, headers=WIKI_HEADERS)
+        data = wiki_api_call(url)
     except Exception:
         return None
     hits = data.get("query", {}).get("search", [])
     return hits[0]["title"] if hits else None
 
 
-def wiki_intro_paragraphs(title: str) -> list[str]:
-    url = ("https://en.wikipedia.org/w/api.php?action=query&prop=extracts"
+def wiki_intro_paragraphs(title: str, lang: str) -> list[str]:
+    url = (f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts"
            f"&exintro=1&explaintext=1&titles={urllib.parse.quote(title)}&format=json")
-    data = fetch_json(url, headers=WIKI_HEADERS)
+    data = wiki_api_call(url)
     pages = data.get("query", {}).get("pages", {})
     extract = next(iter(pages.values()), {}).get("extract", "")
     return [p.strip() for p in extract.split("\n") if p.strip()]
 
 
-def first_sentences(text: str, max_len: int = 240) -> str:
-    parts = re.split(r'(?<=[.!?])\s+', text)
-    out = ""
-    for part in parts:
-        if out and len(out) + len(part) > max_len:
-            break
-        out = (out + " " + part).strip()
-        if len(out) >= max_len * 0.6:
-            break
-    return out
+def first_sentences(text: str, max_len: int = 320) -> str:
+    """Trims text to roughly one sentence's worth. Bios routinely contain
+    abbreviations with periods (e.g. "порт.-браз.") that a naive sentence
+    splitter mistakes for sentence ends, cutting the text mid-word — so this
+    keeps the whole paragraph whenever it already fits, and otherwise looks
+    for the last real sentence boundary (period/!/? followed by a capital
+    letter or the end of the window) rather than blindly splitting on every
+    punctuation mark."""
+    text = text.strip()
+    if len(text) <= max_len:
+        return text
+    window = text[:max_len]
+    matches = list(re.finditer(r'[.!?](?=\s+[A-ZА-ЯЁ]|\s*$)', window))
+    if matches:
+        return window[:matches[-1].end()].strip()
+    return window.rstrip()
 
 
-def fetch_wiki_fact(player_name: str) -> dict | None:
-    """Best-effort one-sentence trivia about a player, sourced from Wikipedia.
-    Returns None on any failure or ambiguous match — never blocks the pipeline."""
-    title = wiki_search_title(player_name + " footballer")
+def translate_to_ru(text: str) -> str:
+    """Best-effort EN->RU machine translation (MyMemory, free/no key). Falls back
+    to the original English text on any error — never blocks the pipeline."""
+    try:
+        url = "https://api.mymemory.translated.net/get?q=" + urllib.parse.quote(text) + "&langpair=en|ru"
+        data = fetch_json(url, headers=WIKI_HEADERS)
+        translated = data.get("responseData", {}).get("translatedText")
+        if translated and data.get("responseStatus") == 200:
+            return translated
+    except Exception:
+        pass
+    return text
+
+
+def fetch_wiki_fact_lang(player_name: str, lang: str, disambiguator: str, bio_markers: tuple) -> dict | None:
+    title = wiki_search_title(f"{player_name} {disambiguator}", lang)
     if not title:
         return None
     try:
-        paragraphs = wiki_intro_paragraphs(title)
+        paragraphs = wiki_intro_paragraphs(title, lang)
     except Exception:
         return None
     if not paragraphs:
         return None
     # Guard against namesake mismatches (search can return a non-footballer page).
-    if "footballer" not in paragraphs[0].lower() and "football player" not in paragraphs[0].lower():
+    first_lower = paragraphs[0].lower()
+    if not any(marker in first_lower for marker in bio_markers):
         return None
     # The 2nd paragraph usually covers career highlights/honours — more
     # "interesting fact"-shaped than the 1st, which just restates position/club.
@@ -231,8 +265,24 @@ def fetch_wiki_fact(player_name: str) -> dict | None:
         return None
     return {
         "text": sentence,
-        "url": "https://en.wikipedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_")),
+        "url": f"https://{lang}.wikipedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_")),
     }
+
+
+def fetch_wiki_fact(player_name: str) -> dict | None:
+    """Best-effort one-sentence trivia about a player. Tries the Russian
+    Wikipedia first; if there's no Russian article, falls back to the English
+    one and machine-translates the sentence. Returns None if neither has a
+    usable match — never blocks the pipeline."""
+    ru = fetch_wiki_fact_lang(player_name, "ru", "футболист", ("футболист",))
+    if ru:
+        return ru
+
+    time.sleep(0.3)  # be polite between Wikipedia language editions
+    en = fetch_wiki_fact_lang(player_name, "en", "footballer", ("footballer", "football player"))
+    if not en:
+        return None
+    return {"text": translate_to_ru(en["text"]), "url": en["url"]}
 
 
 def build_facts(season_id: int, team_ids: set[int]) -> list[dict]:
@@ -284,6 +334,7 @@ def build_facts(season_id: int, team_ids: set[int]) -> list[dict]:
         if wiki:
             fact["wikiFact"] = wiki["text"]
             fact["wikiUrl"] = wiki["url"]
+        time.sleep(0.3)  # stay well under Wikipedia's rate limit across ~20 teams
 
         facts.append(fact)
 
