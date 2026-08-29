@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T09:24:03.968114+03:00",
+  "updatedAt": "2026-08-29T17:28:30.883314+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -142,14 +142,14 @@
       "team": "Liverpool",
       "shortName": "Liverpool",
       "crest": "t14",
-      "played": 1,
+      "played": 2,
       "won": 0,
-      "drawn": 1,
+      "drawn": 2,
       "lost": 0,
-      "gf": 2,
-      "ga": 2,
+      "gf": 4,
+      "ga": 4,
       "gd": 0,
-      "points": 1,
+      "points": 2,
       "qualification": null
     },
     {
@@ -169,6 +169,21 @@
     },
     {
       "position": 12,
+      "team": "Nottingham Forest",
+      "shortName": "Nott'm Forest",
+      "crest": "t17",
+      "played": 2,
+      "won": 0,
+      "drawn": 1,
+      "lost": 1,
+      "gf": 2,
+      "ga": 3,
+      "gd": -1,
+      "points": 1,
+      "qualification": null
+    },
+    {
+      "position": 13,
       "team": "Fulham",
       "shortName": "Fulham",
       "crest": "t54",
@@ -183,7 +198,7 @@
       "qualification": null
     },
     {
-      "position": 13,
+      "position": 14,
       "team": "Bournemouth",
       "shortName": "Bournemouth",
       "crest": "t91",
@@ -198,7 +213,7 @@
       "qualification": null
     },
     {
-      "position": 14,
+      "position": 15,
       "team": "Sunderland",
       "shortName": "Sunderland",
       "crest": "t56",
@@ -208,21 +223,6 @@
       "lost": 1,
       "gf": 1,
       "ga": 2,
-      "gd": -1,
-      "points": 0,
-      "qualification": null
-    },
-    {
-      "position": 15,
-      "team": "Nottingham Forest",
-      "shortName": "Nott'm Forest",
-      "crest": "t17",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 0,
-      "ga": 1,
       "gd": -1,
       "points": 0,
       "qualification": null
@@ -306,17 +306,6 @@
   "fixtures": [
     {
       "gameweek": 2.0,
-      "kickoff": "2026-08-29T14:30:00+03:00",
-      "kickoffLabel": "Сб, 29 августа, 14:30",
-      "home": "Liverpool",
-      "homeCrest": "t14",
-      "away": "Nottingham Forest",
-      "awayCrest": "t17",
-      "ground": "Anfield",
-      "status": "U"
-    },
-    {
-      "gameweek": 2.0,
       "kickoff": "2026-08-29T17:00:00+03:00",
       "kickoffLabel": "Сб, 29 августа, 17:00",
       "home": "Bournemouth",
@@ -324,7 +313,7 @@
       "away": "Everton",
       "awayCrest": "t11",
       "ground": "Vitality Stadium",
-      "status": "U"
+      "status": "L"
     },
     {
       "gameweek": 2.0,
@@ -335,7 +324,7 @@
       "away": "Hull City",
       "awayCrest": "t88",
       "ground": "Coventry Building Society Arena",
-      "status": "U"
+      "status": "L"
     },
     {
       "gameweek": 2.0,
@@ -413,6 +402,72 @@
       "awayCrest": "t14",
       "ground": "Portman Road",
       "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T14:30:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 14:30",
+      "home": "Newcastle United",
+      "homeCrest": "t4",
+      "away": "Bournemouth",
+      "awayCrest": "t91",
+      "ground": "St. James' Park",
+      "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T17:00:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 17:00",
+      "home": "Brentford",
+      "homeCrest": "t94",
+      "away": "Sunderland",
+      "awayCrest": "t56",
+      "ground": "Gtech Community Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T17:00:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 17:00",
+      "home": "Brighton & Hove Albion",
+      "homeCrest": "t36",
+      "away": "Leeds United",
+      "awayCrest": "t2",
+      "ground": "American Express Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T17:00:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 17:00",
+      "home": "Fulham",
+      "homeCrest": "t54",
+      "away": "Crystal Palace",
+      "awayCrest": "t31",
+      "ground": "Craven Cottage",
+      "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T17:00:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 17:00",
+      "home": "Manchester City",
+      "homeCrest": "t43",
+      "away": "Coventry City",
+      "awayCrest": "t9",
+      "ground": "Etihad Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T17:00:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 17:00",
+      "home": "Nottingham Forest",
+      "homeCrest": "t17",
+      "away": "Tottenham Hotspur",
+      "awayCrest": "t6",
+      "ground": "The City Ground",
+      "status": "U"
     }
   ],
   "facts": [
@@ -487,6 +542,16 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%2C_%D0%9E%D1%80%D0%B5%D0%BB%D1%8C"
     },
     {
+      "team": "Crystal Palace",
+      "player": "Jaydee Canvot",
+      "position": "Защитник",
+      "nationality": "France",
+      "age": "20",
+      "note": "провёл на поле 180 минут за «Crystal Palace» в этом сезоне",
+      "wikiFact": "Жейде́ Канво́ (фр. Jaydee Canvot; родился 29 июля 2006) — французский футболист, центральный защитник английского клуба «Кристал Пэлас».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B2%D0%BE%2C_%D0%96%D0%B5%D0%B9%D0%B4%D0%B5"
+    },
+    {
       "team": "Everton",
       "player": "Thierno Barry",
       "position": "Нападающий",
@@ -547,6 +612,16 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BA%D0%BF%D0%BE%2C_%D0%9A%D0%BE%D0%B4%D0%B8"
     },
     {
+      "team": "Manchester City",
+      "player": "Rayan Cherki",
+      "position": "Полузащитник",
+      "nationality": "France",
+      "age": "23",
+      "note": "лучший бомбардир «Manchester City» в этом сезоне — 2 гола",
+      "wikiFact": "Мати́с Райа́н Шерки́ (фр. Mathis Rayan Cherki; род. 17 августа 2003, Пюзиньян, Рона) — французский футболист, атакующий полузащитник и вингер английского клуба «Манчестер Сити» и национальной сборной Франции.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D1%80%D0%BA%D0%B8%2C_%D0%A0%D0%B0%D0%B9%D0%B0%D0%BD"
+    },
+    {
       "team": "Manchester United",
       "player": "Bruno Fernandes",
       "position": "Полузащитник",
@@ -572,7 +647,7 @@
       "position": "Полузащитник",
       "nationality": "England",
       "age": "26",
-      "note": "провёл на поле 90 минут за «Nottingham Forest» в этом сезоне",
+      "note": "лучший бомбардир «Nottingham Forest» в этом сезоне — 1 гол",
       "wikiFact": "Мо́рган Э́нтони Гиббс-Уа́йт (англ. Morgan Anthony Gibbs-White; 27 января 2000, Стаффорд, Англия) — английский футболист, атакующий полузащитник клуба «Ноттингем Форест» и сборной Англии.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%B1%D0%B1%D1%81-%D0%A3%D0%B0%D0%B9%D1%82%2C_%D0%9C%D0%BE%D1%80%D0%B3%D0%B0%D0%BD"
     },
