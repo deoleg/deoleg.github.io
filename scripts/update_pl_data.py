@@ -11,6 +11,8 @@ Usage:
     python3 scripts/update_pl_data.py
 """
 import json
+import re
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -18,6 +20,9 @@ from zoneinfo import ZoneInfo
 
 API = "https://footballapi.pulselive.com/football"
 HEADERS = {"Origin": "https://www.premierleague.com"}
+# Wikimedia's API etiquette requires a descriptive User-Agent identifying the
+# tool and a contact URL — requests without one can get rate-limited or blocked.
+WIKI_HEADERS = {"User-Agent": "deoleg-github-io-pl-page/1.0 (https://deoleg.github.io/pl.html)"}
 TZ = ZoneInfo("Europe/Chisinau")
 
 RU_WEEKDAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
@@ -28,8 +33,8 @@ RU_MONTHS = [
 RU_POSITIONS = {"G": "Вратарь", "D": "Защитник", "M": "Полузащитник", "F": "Нападающий"}
 
 
-def fetch_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers=HEADERS)
+def fetch_json(url: str, headers: dict = HEADERS) -> dict:
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=20) as resp:
         return json.load(resp)
 
@@ -167,30 +172,120 @@ def ru_count(n: int, one: str, few: str, many: str) -> str:
     return many
 
 
+# ---------------- Wikipedia enrichment ----------------
+# Runs server-side (this script), not in the browser, so CORS never applies here —
+# unlike the live-in-page fetches elsewhere on the site, this can call any public API.
+
+def wiki_search_title(query: str) -> str | None:
+    url = ("https://en.wikipedia.org/w/api.php?action=query&list=search"
+           f"&srsearch={urllib.parse.quote(query)}&format=json&srlimit=3")
+    try:
+        data = fetch_json(url, headers=WIKI_HEADERS)
+    except Exception:
+        return None
+    hits = data.get("query", {}).get("search", [])
+    return hits[0]["title"] if hits else None
+
+
+def wiki_intro_paragraphs(title: str) -> list[str]:
+    url = ("https://en.wikipedia.org/w/api.php?action=query&prop=extracts"
+           f"&exintro=1&explaintext=1&titles={urllib.parse.quote(title)}&format=json")
+    data = fetch_json(url, headers=WIKI_HEADERS)
+    pages = data.get("query", {}).get("pages", {})
+    extract = next(iter(pages.values()), {}).get("extract", "")
+    return [p.strip() for p in extract.split("\n") if p.strip()]
+
+
+def first_sentences(text: str, max_len: int = 240) -> str:
+    parts = re.split(r'(?<=[.!?])\s+', text)
+    out = ""
+    for part in parts:
+        if out and len(out) + len(part) > max_len:
+            break
+        out = (out + " " + part).strip()
+        if len(out) >= max_len * 0.6:
+            break
+    return out
+
+
+def fetch_wiki_fact(player_name: str) -> dict | None:
+    """Best-effort one-sentence trivia about a player, sourced from Wikipedia.
+    Returns None on any failure or ambiguous match — never blocks the pipeline."""
+    title = wiki_search_title(player_name + " footballer")
+    if not title:
+        return None
+    try:
+        paragraphs = wiki_intro_paragraphs(title)
+    except Exception:
+        return None
+    if not paragraphs:
+        return None
+    # Guard against namesake mismatches (search can return a non-footballer page).
+    if "footballer" not in paragraphs[0].lower() and "football player" not in paragraphs[0].lower():
+        return None
+    # The 2nd paragraph usually covers career highlights/honours — more
+    # "interesting fact"-shaped than the 1st, which just restates position/club.
+    body = paragraphs[1] if len(paragraphs) > 1 else paragraphs[0]
+    sentence = first_sentences(body)
+    if not sentence:
+        return None
+    return {
+        "text": sentence,
+        "url": "https://en.wikipedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_")),
+    }
+
+
 def build_facts(season_id: int, team_ids: set[int]) -> list[dict]:
-    goals = fetch_ranked_stat(season_id, "goals", team_ids)
-    assists = fetch_ranked_stat(season_id, "goal_assist", team_ids)
+    # Priority order: goals, then assists, then clean sheets (mainly keepers/
+    # defenders), then minutes played — the last is near-universal, so almost
+    # every team playing this week ends up with a fact instead of just the
+    # early-season goalscorers.
+    stat_sources = [
+        ("goals", fetch_ranked_stat(season_id, "goals", team_ids)),
+        ("assists", fetch_ranked_stat(season_id, "goal_assist", team_ids)),
+        ("clean_sheets", fetch_ranked_stat(season_id, "clean_sheet", team_ids)),
+        ("mins_played", fetch_ranked_stat(season_id, "mins_played", team_ids)),
+    ]
 
     facts = []
     for team_id in team_ids:
-        if team_id in goals:
-            info, n = goals[team_id], goals[team_id]["value"]
+        chosen = None
+        for stat_key, ranked in stat_sources:
+            if team_id in ranked:
+                chosen = (stat_key, ranked[team_id])
+                break
+        if not chosen:
+            continue
+
+        stat_key, info = chosen
+        n = info["value"]
+        if stat_key == "goals":
             note = (f"лучший бомбардир «{info['team']}» в этом сезоне — "
                     f"{n} {ru_count(n, 'гол', 'гола', 'голов')}")
-        elif team_id in assists:
-            info, n = assists[team_id], assists[team_id]["value"]
+        elif stat_key == "assists":
             note = (f"лучший ассистент «{info['team']}» в этом сезоне — "
                     f"{n} {ru_count(n, 'результативная передача', 'результативные передачи', 'результативных передач')}")
-        else:
-            continue
-        facts.append({
+        elif stat_key == "clean_sheets":
+            note = (f"{n} {ru_count(n, 'сухой матч', 'сухих матча', 'сухих матчей')} "
+                    f"за «{info['team']}» в этом сезоне")
+        else:  # mins_played
+            note = f"провёл на поле {n} минут за «{info['team']}» в этом сезоне"
+
+        fact = {
             "team": info["team"],
             "player": info["player"],
             "position": info["position"],
             "nationality": info["nationality"],
             "age": info["age"],
             "note": note,
-        })
+        }
+
+        wiki = fetch_wiki_fact(info["player"])
+        if wiki:
+            fact["wikiFact"] = wiki["text"]
+            fact["wikiUrl"] = wiki["url"]
+
+        facts.append(fact)
 
     facts.sort(key=lambda f: f["team"])
     return facts

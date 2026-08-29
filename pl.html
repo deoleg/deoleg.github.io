@@ -143,7 +143,7 @@
     /* ── Facts ── */
     .facts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 12px;
     }
     .fact-card {
@@ -156,6 +156,9 @@
     .fact-card .fact-player { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
     .fact-card .fact-bio { font-size: 12px; color: #888; margin-bottom: 6px; }
     .fact-card .fact-note { font-size: 12.5px; color: #1D9E75; font-weight: 500; }
+    .fact-card .fact-wiki { font-size: 12px; color: #666; line-height: 1.45; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #e5e5e5; }
+    .fact-card .fact-wiki-link { font-size: 11px; color: #1e63c9; text-decoration: none; margin-top: 5px; display: inline-block; }
+    .fact-card .fact-wiki-link:hover { text-decoration: underline; }
 
     /* ── Calendar ── */
     .calendar-wrap iframe {
@@ -345,12 +348,17 @@
       const followed = !favorite && isFollowed(f.team);
       const cls = favorite ? 'favorite' : followed ? 'followed' : '';
       const mark = favorite ? ' ❤️' : followed ? ' ★' : '';
+      const wiki = f.wikiFact
+        ? `<div class="fact-wiki">${f.wikiFact}</div>
+           <a class="fact-wiki-link" href="${f.wikiUrl}" target="_blank" rel="noopener">Wikipedia ↗</a>`
+        : '';
       return `
       <div class="fact-card ${cls}">
         <div class="fact-team">${f.team}${mark}</div>
         <div class="fact-player">${f.player}</div>
         <div class="fact-bio">${f.position}${f.nationality ? ', ' + f.nationality : ''}${f.age ? ', ' + f.age + ' лет' : ''}</div>
         <div class="fact-note">${f.note}</div>
+        ${wiki}
       </div>
     `;
     }).join('');

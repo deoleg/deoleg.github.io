@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T08:45:38.480383+03:00",
+  "updatedAt": "2026-08-29T09:16:56.509217+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -422,7 +422,19 @@
       "position": "Нападающий",
       "nationality": "Germany",
       "age": "27",
-      "note": "лучший бомбардир «Arsenal» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Arsenal» в этом сезоне — 1 гол",
+      "wikiFact": "Having graduated from Bayer Leverkusen's youth academy in 2016, Havertz made his senior debut with the club in the same year.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kai_Havertz"
+    },
+    {
+      "team": "Aston Villa",
+      "player": "Marco Bizot",
+      "position": "Вратарь",
+      "nationality": "Netherlands",
+      "age": "35",
+      "note": "провёл на поле 90 минут за «Aston Villa» в этом сезоне",
+      "wikiFact": "Marco Remon Bizot (Dutch pronunciation: [ˈmɑrkoː ˈbizɔt]; born 10 March 1991) is a Dutch professional footballer who plays as a goalkeeper for Premier League club Aston Villa.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Marco_Bizot"
     },
     {
       "team": "Bournemouth",
@@ -430,7 +442,9 @@
       "position": "Полузащитник",
       "nationality": "England",
       "age": "27",
-      "note": "лучший бомбардир «Bournemouth» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Bournemouth» в этом сезоне — 1 гол",
+      "wikiFact": "Marcus Joseph Tavernier (born 22 March 1999) is an English professional footballer who plays as a midfielder or winger for Premier League club Bournemouth.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Marcus_Tavernier"
     },
     {
       "team": "Brentford",
@@ -438,7 +452,9 @@
       "position": "Полузащитник",
       "nationality": "Germany",
       "age": "28",
-      "note": "лучший бомбардир «Brentford» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Brentford» в этом сезоне — 1 гол",
+      "wikiFact": "Janelt is a product of the Hamburger SV and RB Leipzig academies and made his professional breakthrough at VfL Bochum in 2017, before moving to England to join Brentford in 2020.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Vitaly_Janelt"
     },
     {
       "team": "Brighton & Hove Albion",
@@ -446,7 +462,9 @@
       "position": "Полузащитник",
       "nationality": "England",
       "age": "21",
-      "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 2 гола"
+      "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 2 гола",
+      "wikiFact": "Jack Luca Hinshelwood (born 11 April 2005) is an English professional footballer who plays for Premier League club Brighton & Hove Albion and the England under-21 national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Jack_Hinshelwood"
     },
     {
       "team": "Chelsea",
@@ -454,7 +472,19 @@
       "position": "Нападающий",
       "nationality": "Brazil",
       "age": "24",
-      "note": "лучший бомбардир «Chelsea» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Chelsea» в этом сезоне — 1 гол",
+      "wikiFact": "João Pedro Junqueira de Jesus (Portuguese: [ʒuˈɐ̃w̃ ˈpedɾu], born 26 September 2001) is a Brazilian professional footballer who plays as a striker for Premier League club Chelsea and the Brazil national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Jo%C3%A3o_Pedro_%28footballer%2C_born_2001%29"
+    },
+    {
+      "team": "Coventry City",
+      "player": "Aurèle Amenda",
+      "position": "Защитник",
+      "nationality": "Switzerland",
+      "age": "23",
+      "note": "провёл на поле 90 минут за «Coventry City» в этом сезоне",
+      "wikiFact": "Aurèle Florian Amenda (born 31 July 2003) is a Swiss professional footballer who plays as a centre-back for Premier League club Coventry City and the Switzerland national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Aur%C3%A8le_Amenda"
     },
     {
       "team": "Everton",
@@ -462,7 +492,9 @@
       "position": "Нападающий",
       "nationality": "France",
       "age": "23",
-      "note": "лучший бомбардир «Everton» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Everton» в этом сезоне — 1 гол",
+      "wikiFact": "Thierno Mamadou Barry (born 21 October 2002) is a French professional footballer who plays as a striker for Premier League club Everton.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Thierno_Barry_%28footballer%2C_born_2002%29"
     },
     {
       "team": "Fulham",
@@ -470,7 +502,9 @@
       "position": "Нападающий",
       "nationality": "Spain",
       "age": "22",
-      "note": "лучший бомбардир «Fulham» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Fulham» в этом сезоне — 1 гол",
+      "wikiFact": "Gonzalo García Torres (born 24 March 2004) is a Spanish professional footballer who plays as a forward for Premier League club Fulham and the Spain national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Gonzalo_Garc%C3%ADa_%28footballer%2C_born_2004%29"
     },
     {
       "team": "Hull City",
@@ -478,7 +512,9 @@
       "position": "Защитник",
       "nationality": "Nigeria",
       "age": "32",
-      "note": "лучший бомбардир «Hull City» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Hull City» в этом сезоне — 1 гол",
+      "wikiFact": "Oluwasemilogo Adesewo Ibidapo \"Semi\" Ajayi   (born 9 November 1993) is a professional footballer who plays as a centre-back for Premier League club Hull City.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Semi_Ajayi"
     },
     {
       "team": "Ipswich Town",
@@ -486,7 +522,9 @@
       "position": "Нападающий",
       "nationality": "England",
       "age": "25",
-      "note": "лучший бомбардир «Ipswich Town» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Ipswich Town» в этом сезоне — 1 гол",
+      "wikiFact": "Jack Raymond Clarke (born 23 November 2000) is an English professional footballer who plays as a winger for Premier League club Ipswich Town.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Jack_Clarke_%28footballer%2C_born_2000%29"
     },
     {
       "team": "Leeds United",
@@ -494,7 +532,9 @@
       "position": "Полузащитник",
       "nationality": "Germany",
       "age": "27",
-      "note": "лучший бомбардир «Leeds United» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Leeds United» в этом сезоне — 1 гол",
+      "wikiFact": "Anton Levi Stach (born 15 November 1998) is a German professional footballer who plays as a defensive midfielder for Premier League club Leeds United and the Germany national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Anton_Stach"
     },
     {
       "team": "Liverpool",
@@ -502,7 +542,19 @@
       "position": "Нападающий",
       "nationality": "Netherlands",
       "age": "27",
-      "note": "лучший бомбардир «Liverpool» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Liverpool» в этом сезоне — 1 гол",
+      "wikiFact": "A PSV academy graduate, Gakpo made his first-team debut in February 2018. In the 2021–22 season, he won the Dutch Footballer of the Year award after scoring 21 goals in 47 games in all competitions.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Cody_Gakpo"
+    },
+    {
+      "team": "Manchester United",
+      "player": "Bruno Fernandes",
+      "position": "Полузащитник",
+      "nationality": "Portugal",
+      "age": "31",
+      "note": "провёл на поле 90 минут за «Manchester United» в этом сезоне",
+      "wikiFact": "Fernandes started his career at Italian Serie B side Novara but soon made a move to Serie A side Udinese in 2013, followed by Sampdoria three years later.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bruno_Fernandes"
     },
     {
       "team": "Newcastle United",
@@ -510,7 +562,19 @@
       "position": "Нападающий",
       "nationality": "Sweden",
       "age": "24",
-      "note": "лучший бомбардир «Newcastle United» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Newcastle United» в этом сезоне — 1 гол",
+      "wikiFact": "Anthony David Junior Elanga (born 27 April 2002) is a Swedish professional footballer who plays as a forward or winger for Premier League club Newcastle United and the Sweden national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Anthony_Elanga"
+    },
+    {
+      "team": "Nottingham Forest",
+      "player": "Morgan Gibbs-White",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "26",
+      "note": "провёл на поле 90 минут за «Nottingham Forest» в этом сезоне",
+      "wikiFact": "Gibbs-White began his career with Wolverhampton Wanderers, making his first-team debut in 2017 and making 88 appearances for the club.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Morgan_Gibbs-White"
     },
     {
       "team": "Sunderland",
@@ -518,7 +582,19 @@
       "position": "Нападающий",
       "nationality": "Ecuador",
       "age": "23",
-      "note": "лучший бомбардир «Sunderland» в этом сезоне — 1 гол"
+      "note": "лучший бомбардир «Sunderland» в этом сезоне — 1 гол",
+      "wikiFact": "Nilson David Angulo Ramírez (born 19 June 2003) is an Ecuadorian professional footballer who plays as a winger or wide midfielder for Premier League club Sunderland and the Ecuador national team.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Nilson_Angulo"
+    },
+    {
+      "team": "Tottenham Hotspur",
+      "player": "Antonín Kinsky",
+      "position": "Вратарь",
+      "nationality": "Czech Republic",
+      "age": "23",
+      "note": "провёл на поле 90 минут за «Tottenham Hotspur» в этом сезоне",
+      "wikiFact": "Antonín Kinský (born 13 March 2003) is a Czech professional footballer who plays as a goalkeeper for Premier League club Tottenham Hotspur.",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Kinsk%C3%BD_%28footballer%2C_born_2003%29"
     }
   ]
 }
