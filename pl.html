@@ -70,6 +70,10 @@
       border-bottom: 1.5px solid #eee;
     }
     table.standings th.num, table.standings td.num { text-align: center; width: 30px; }
+    table.standings th[data-sort] { cursor: pointer; user-select: none; transition: color .15s; white-space: nowrap; }
+    table.standings th[data-sort]:hover { color: #555; }
+    table.standings th.sort-asc::after { content: '▲'; font-size: 8px; margin-left: 3px; }
+    table.standings th.sort-desc::after { content: '▼'; font-size: 8px; margin-left: 3px; }
     table.standings td { padding: 7px 6px; border-bottom: 1px solid #f2f2f2; }
     table.standings tr:last-child td { border-bottom: none; }
     table.standings tr.zone-cl td:first-child { box-shadow: inset 3px 0 0 #1e63c9; }
@@ -178,14 +182,14 @@
     <table class="standings" id="standings-table">
       <thead>
         <tr>
-          <th class="num">#</th>
-          <th>Команда</th>
-          <th class="num">И</th>
-          <th class="num">В</th>
-          <th class="num">Н</th>
-          <th class="num">П</th>
-          <th class="num">РМ</th>
-          <th class="num">О</th>
+          <th class="num" data-sort="position">#</th>
+          <th data-sort="team">Команда</th>
+          <th class="num" data-sort="played">И</th>
+          <th class="num" data-sort="won">В</th>
+          <th class="num" data-sort="drawn">Н</th>
+          <th class="num" data-sort="lost">П</th>
+          <th class="num" data-sort="gd">РМ</th>
+          <th class="num" data-sort="points">О</th>
         </tr>
       </thead>
       <tbody id="standings-body"></tbody>
@@ -236,6 +240,45 @@
   function crestUrl(code) {
     return code ? `https://resources.premierleague.com/premierleague/badges/50/${code}.png` : '';
   }
+
+  let standingsData = [];
+  let sortState = { key: 'position', dir: 1 };
+
+  function sortedStandings() {
+    const { key, dir } = sortState;
+    const rows = [...standingsData];
+    rows.sort((a, b) => {
+      if (key === 'team') return dir * a.team.localeCompare(b.team, 'en');
+      return dir * (a[key] - b[key]);
+    });
+    return rows;
+  }
+
+  function updateSortIndicators() {
+    document.querySelectorAll('#standings-table th[data-sort]').forEach(th => {
+      th.classList.remove('sort-asc', 'sort-desc');
+      if (th.dataset.sort === sortState.key) {
+        th.classList.add(sortState.dir === 1 ? 'sort-asc' : 'sort-desc');
+      }
+    });
+  }
+
+  function sortStandingsBy(key) {
+    if (sortState.key === key) {
+      sortState.dir *= -1;
+    } else {
+      // Team names sort A→Z first; every numeric column sorts highest-first,
+      // except position, where ascending (1, 2, 3…) is the natural order.
+      sortState.key = key;
+      sortState.dir = (key === 'team' || key === 'position') ? 1 : -1;
+    }
+    renderStandings(sortedStandings());
+    updateSortIndicators();
+  }
+
+  document.querySelectorAll('#standings-table th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => sortStandingsBy(th.dataset.sort));
+  });
 
   function renderStandings(rows) {
     const body = document.getElementById('standings-body');
@@ -318,7 +361,9 @@
     .then(data => {
       document.getElementById('season-tag').textContent = data.season.replace('English Premier League Season ', '');
       document.getElementById('meta').textContent = 'Обновлено: ' + timeAgoLabel(data.updatedAt);
-      renderStandings(data.standings);
+      standingsData = data.standings;
+      renderStandings(sortedStandings());
+      updateSortIndicators();
       renderFixtures(data.fixtures);
       renderFacts(data.facts);
     })
