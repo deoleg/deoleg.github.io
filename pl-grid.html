@@ -58,15 +58,16 @@
 
     /* table-layout:fixed makes every unspecified column share the table's
        width equally; aspect-ratio:1 on the score cells then makes each row
-       exactly as tall as its own (equal) column width — so the grid grows
-       and shrinks with the page while every cell stays square. max-width
-       caps how big the squares get on very wide screens. */
+       exactly as tall as its own (equal) column width — so the grid fills
+       the page width and every cell stays square. No max-width: the table
+       (and page) just gets taller on wide screens — that's fine, the page
+       scrolls normally; the only thing to avoid is a scrollbar trapped
+       inside a nested box, which .grid-scroll deliberately doesn't have. */
     table.results-grid {
       border-collapse: separate;
       border-spacing: 0;
       font-size: 9.5px;
       width: 100%;
-      max-width: 820px;
       table-layout: fixed;
     }
 
