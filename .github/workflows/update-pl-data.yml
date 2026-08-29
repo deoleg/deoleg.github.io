@@ -2,8 +2,12 @@ name: Update Premier League data
 
 on:
   schedule:
-    # 05:00 UTC daily — after evening kick-offs in Europe have finished.
-    - cron: '0 5 * * *'
+    # Target ~07:00 Europe/Chisinau daily. GitHub Actions cron is fixed UTC and
+    # doesn't follow DST, so two entries approximate it year-round:
+    # Mar–Oct (EEST, UTC+3) -> 04:00 UTC; Nov–Feb (EET, UTC+2) -> 05:00 UTC.
+    # Off by up to a few days right at the DST switchover — not worth more precision.
+    - cron: '0 4 * 3-10 *'
+    - cron: '0 5 * 11,12,1,2 *'
   workflow_dispatch: {}
 
 permissions:
