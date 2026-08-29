@@ -57,12 +57,14 @@
     }
 
     /* table-layout:fixed makes every unspecified column share the table's
-       width equally; aspect-ratio:1 on the score cells then makes each row
-       exactly as tall as its own (equal) column width — so the grid fills
-       the page width and every cell stays square. No max-width: the table
-       (and page) just gets taller on wide screens — that's fine, the page
-       scrolls normally; the only thing to avoid is a scrollbar trapped
-       inside a nested box, which .grid-scroll deliberately doesn't have. */
+       width equally. <td> itself ignores aspect-ratio, so the square comes
+       from .cell-inner: a block child with width:100% has a definite width
+       (the equal column width), and aspect-ratio:1 then gives it a matching
+       height that the row grows to fit — so every cell stays square as the
+       grid fills the page width. No max-width: the table (and page) just
+       gets taller on wide screens — that's fine, the page scrolls normally;
+       the only thing to avoid is a scrollbar trapped inside a nested box,
+       which .grid-scroll deliberately doesn't have. */
     table.results-grid {
       border-collapse: separate;
       border-spacing: 0;
@@ -101,10 +103,10 @@
     .crest { width: 15px; height: 15px; object-fit: contain; }
     .abbr { font-size: 8.5px; color: #888; font-weight: 600; }
 
-    td.cell { padding: 0; aspect-ratio: 1 / 1; }
+    td.cell { padding: 0; }
     td.diagonal { background: #f6f6f4; }
 
-    .cell-inner { height: 100%; display: flex; flex-direction: column; }
+    .cell-inner { width: 100%; aspect-ratio: 1 / 1; display: flex; flex-direction: column; }
 
     .half {
       flex: 1;
