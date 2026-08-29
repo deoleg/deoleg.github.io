@@ -24,7 +24,7 @@
       padding: 14px 20px 16px;
     }
 
-    .page { width: 100%; max-width: 1100px; }
+    .page { width: 100%; }
 
     header.top { margin-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
     header.top h1 { font-size: 18px; font-weight: 700; }
@@ -57,6 +57,8 @@
       border-collapse: separate;
       border-spacing: 0;
       font-size: 9.5px;
+      width: 100%;
+      table-layout: fixed;
     }
 
     table.results-grid th, table.results-grid td {
@@ -67,6 +69,11 @@
     .corner, .col-head { position: sticky; top: 0; background: #fff; z-index: 2; }
     .row-head { position: sticky; left: 0; background: #fff; z-index: 1; }
     .corner { left: 0; z-index: 3; }
+
+    /* table-layout:fixed takes column widths from this first row — a fixed
+       width for the corner/row-head column, and the rest (unset) share
+       whatever's left equally, however wide the page ends up being. */
+    .corner, .row-head { width: 80px; }
 
     .col-head, .row-head {
       padding: 3px 2px;
@@ -88,7 +95,7 @@
     .crest { width: 15px; height: 15px; object-fit: contain; }
     .abbr { font-size: 8.5px; color: #888; font-weight: 600; }
 
-    td.cell { padding: 0; width: 34px; min-width: 34px; height: 24px; }
+    td.cell { padding: 0; height: 24px; }
     td.diagonal { background: #f6f6f4; }
 
     .half {
