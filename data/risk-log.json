@@ -135,33 +135,43 @@
     "factors": {
       "transnistria_military": {
         "score": 1,
-        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
-        "carried_forward": true
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
       },
       "russian_rhetoric": {
         "score": 1,
-        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
-        "carried_forward": true
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
       },
       "border_aviation": {
         "score": 5,
-        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
-        "carried_forward": true
+        "carried_forward": true,
+        "peak_score": 5,
+        "days_since_last_signal": 1
       },
       "economic": {
         "score": 0,
-        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
-        "carried_forward": true
+        "carried_forward": true,
+        "peak_score": 0,
+        "days_since_last_signal": 1
       },
       "travel_advisories": {
         "score": 0,
-        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
-        "carried_forward": true
+        "carried_forward": true,
+        "peak_score": 0,
+        "days_since_last_signal": 1
       }
     },
     "overall_score": 1.4,
