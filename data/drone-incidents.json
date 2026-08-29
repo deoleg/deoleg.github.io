@@ -310,6 +310,54 @@
     "detected_at": "2026-08-28T11:49:09.095888+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При массированной атаке БПЛА на Ростовскую область пострадали семь человек06:14",
+    "url": "https://ria.ru/20260829/rostovskaya-2113951403.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Логистический объект Ozon в Ростовской области попал под атаку БПЛА07:02",
+    "url": "https://ria.ru/20260829/ozon-2113953808.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTAtac masiv cu drone în regiunea Rostov, Rusia: depozite Ozon, DNS și Chizhik, lovite. Război în Ucraina, ziua 1648",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-atac-masiv-cu-drone-in-regiunea-rostov-rusia-depozite-ozon-dns-si-chizhik-lovite-razboi-in-ucraina-ziua-1648/",
+    "excerpt": "LIVE TEXTAtac masiv cu drone în regiunea Rostov, Rusia: depozite Ozon, DNS și Chizhik, lovite. Război în Ucraina, ziua 1648NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Extern",
+    "url": "https://www.zdg.md/categoria/stiri/stiri-externe/",
+    "excerpt": "LIVE TEXTAtac masiv cu drone în regiunea Rostov, Rusia: depozite Ozon, DNS și Chizhik, lovite. Război în Ucraina, ziua 1648NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "VIDEOZelenski și Dan, la Chișinău de Ziua Independenței | Remanieri în Guvern | O dronă a fost găsită lângă traseul Chișinău-Basarabeasca | Zinaida Greceanîi, audiată în dosarul „Kuliok” | Noutăți din dosarul lui Plahotniuc | SĂPTĂMÂNA DE GARDĂ",
+    "url": "https://www.zdg.md/video/video-zelenski-si-dan-la-chisinau-de-ziua-independentei-remanieri-in-guvern-o-drona-a-fost-gasita-langa-traseul-chisinau-basarabeasca-zinaida-greceanii-audiata-in-dosarul-kuliok/",
+    "excerpt": "VIDEOZelenski și Dan, la Chișinău de Ziua Independenței | Remanieri în Guvern | O dronă a fost găsită lângă traseul Chișinău-Basarabeasca | Zinaida Greceanîi, audiată în dosarul „Kuliok” | Noutăți din dosarul lui Plahotniuc | SĂPTĂMÂNA DE GARDĂNouSinteza Săptămânii",
+    "confidence": "medium",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Зеленский: ВСУ должны запускать по России 1000 дронов в день",
+    "url": "https://point.md/ru/novosti/v-mire/zelenskii-vsu-dolzhny-zapuskat-po-rossii-1000-dronov-v-den/",
+    "excerpt": "Число ударов ВСУ дальнобойными беспилотниками по России должно быть увеличено до 1000 в день - с примерно 300 на текущий момент, заявил пре…",
+    "confidence": "low",
+    "detected_at": "2026-08-29T07:00:56.012817+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
