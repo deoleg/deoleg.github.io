@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Сетка результатов АПЛ</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 64px;
+    }
+
+    .page { width: 100%; max-width: 1100px; }
+
+    header.top { margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+    header.top h1 { font-size: 22px; font-weight: 700; }
+    header.top .meta { font-size: 12.5px; color: #999; margin-top: 4px; }
+    .back-link { font-size: 12.5px; color: #1e63c9; text-decoration: none; white-space: nowrap; }
+    .back-link:hover { text-decoration: underline; }
+
+    .card {
+      background: #fff;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 24px;
+    }
+
+    .legend {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .legend b { color: #555; }
+
+    /* ── Grid ── */
+    .grid-scroll {
+      overflow: auto;
+      max-width: 100%;
+      max-height: 78vh;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    table.results-grid {
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 11px;
+    }
+
+    table.results-grid th, table.results-grid td {
+      border-right: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .corner, .col-head { position: sticky; top: 0; background: #fff; z-index: 2; }
+    .row-head { position: sticky; left: 0; background: #fff; z-index: 1; }
+    .corner { left: 0; z-index: 3; }
+
+    .col-head, .row-head {
+      padding: 6px 4px;
+      text-align: center;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .row-head { text-align: left; padding-left: 8px; }
+
+    .col-head .team-cell, .row-head .team-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .row-head .team-cell { justify-content: flex-start; }
+    .col-head .team-cell { flex-direction: column; gap: 2px; }
+
+    .crest { width: 20px; height: 20px; object-fit: contain; }
+    .abbr { font-size: 10px; color: #888; font-weight: 600; }
+
+    td.cell { padding: 0; width: 44px; min-width: 44px; height: 36px; }
+    td.diagonal { background: #f6f6f4; }
+
+    .half {
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #444;
+    }
+    .half.top { border-bottom: 1px dashed #eee; }
+
+    tr.followed-row .row-head,
+    .col-head.followed-col { background: #fffaf0; }
+    tr.favorite-row .row-head,
+    .col-head.favorite-col { background: #eaf4fc; }
+    td.cell.followed-cell { background: #fffdf6; }
+    td.cell.favorite-cell { background: #f6fbff; }
+
+    .empty { color: #aaa; font-size: 13px; padding: 8px 0; }
+    .loading { color: #aaa; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <header class="top">
+    <div>
+      <h1>Сетка результатов АПЛ</h1>
+      <div class="meta" id="meta">Загрузка…</div>
+    </div>
+    <a class="back-link" href="pl.html">← К таблице и матчам недели</a>
+  </header>
+
+  <div class="card">
+    <p class="legend">
+      Каждая ячейка — пара команд: <b>строка</b> слева и <b>столбец</b> сверху.
+      Верхняя половина ячейки — счёт матча, где команда из <b>столбца</b> играла дома;
+      нижняя половина — счёт матча, где дома играла команда из <b>строки</b>.
+      Пустая половина — матч ещё не сыгран. Диагональ пустая — команда не играет сама с собой.
+    </p>
+    <div class="grid-scroll" id="grid-scroll"><div class="loading">Загрузка…</div></div>
+  </div>
+</div>
+
+<script>
+  const FILE = "data/pl-results.json";
+  const FOLLOWED_TEAMS = ['Arsenal', 'Chelsea', 'Manchester United', 'Manchester City', 'Liverpool'];
+  const FAVORITE_TEAM = 'Manchester City';
+
+  const isFollowed = team => FOLLOWED_TEAMS.includes(team);
+  const isFavorite = team => team === FAVORITE_TEAM;
+
+  function timeAgoLabel(iso) {
+    const d = new Date(iso);
+    return d.toLocaleString('ru-RU', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function crestUrl(code) {
+    return code ? `https://resources.premierleague.com/premierleague/badges/50/${code}.png` : '';
+  }
+
+  function buildResultsMap(results) {
+    const map = {};
+    results.forEach(r => {
+      if (!map[r.home]) map[r.home] = {};
+      map[r.home][r.away] = r;
+    });
+    return map;
+  }
+
+  function scoreLabel(r) {
+    if (!r || !r.played || r.homeScore === null || r.awayScore === null) return '';
+    return `${r.homeScore}–${r.awayScore}`;
+  }
+
+  function teamHeadClasses(team) {
+    if (isFavorite(team)) return 'favorite-col';
+    if (isFollowed(team)) return 'followed-col';
+    return '';
+  }
+
+  function renderGrid(teams, results) {
+    const map = buildResultsMap(results);
+    const container = document.getElementById('grid-scroll');
+
+    let html = '<table class="results-grid"><thead><tr><th class="corner"></th>';
+    teams.forEach(t => {
+      html += `
+        <th class="col-head ${teamHeadClasses(t.team)}" title="${t.team}">
+          <div class="team-cell">
+            <img class="crest" src="${crestUrl(t.crest)}" alt="" onerror="this.style.display='none'">
+            <span class="abbr">${t.abbr || t.shortName}</span>
+          </div>
+        </th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    teams.forEach(rowTeam => {
+      const rowCls = isFavorite(rowTeam.team) ? 'favorite-row' : isFollowed(rowTeam.team) ? 'followed-row' : '';
+      html += `<tr class="${rowCls}">
+        <th class="row-head" title="${rowTeam.team}">
+          <div class="team-cell">
+            <img class="crest" src="${crestUrl(rowTeam.crest)}" alt="" onerror="this.style.display='none'">
+            <span class="abbr">${rowTeam.abbr || rowTeam.shortName}</span>
+          </div>
+        </th>`;
+
+      teams.forEach(colTeam => {
+        if (rowTeam.team === colTeam.team) {
+          html += '<td class="cell diagonal"></td>';
+          return;
+        }
+        const favorite = isFavorite(rowTeam.team) || isFavorite(colTeam.team);
+        const followed = !favorite && (isFollowed(rowTeam.team) || isFollowed(colTeam.team));
+        const cellCls = favorite ? 'favorite-cell' : followed ? 'followed-cell' : '';
+
+        const topScore = scoreLabel(map[colTeam.team] && map[colTeam.team][rowTeam.team]);
+        const bottomScore = scoreLabel(map[rowTeam.team] && map[rowTeam.team][colTeam.team]);
+
+        html += `
+          <td class="cell ${cellCls}">
+            <div class="half top">${topScore}</div>
+            <div class="half bottom">${bottomScore}</div>
+          </td>`;
+      });
+
+      html += '</tr>';
+    });
+
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
+
+  fetch(FILE + '?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('meta').textContent =
+        'Сезон ' + data.season.replace('English Premier League Season ', '') + ' · обновлено: ' + timeAgoLabel(data.updatedAt);
+      renderGrid(data.teams, data.results);
+    })
+    .catch(err => {
+      document.getElementById('meta').textContent = 'Не удалось загрузить данные';
+      document.getElementById('grid-scroll').innerHTML = '<div class="empty">Ошибка загрузки.</div>';
+      console.error(err);
+    });
+</script>
+
+</body>
+</html>

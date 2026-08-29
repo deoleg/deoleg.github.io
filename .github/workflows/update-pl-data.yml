@@ -23,17 +23,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Refresh data/pl.json
+      - name: Refresh PL data
         run: python3 scripts/update_pl_data.py
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- data/pl.json; then
-            echo "No changes to data/pl.json"
+          if git diff --quiet -- data/pl.json data/pl-results.json; then
+            echo "No changes to PL data"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pl.json
+          git add data/pl.json data/pl-results.json
           git commit -m "Auto-update Premier League data"
           git push

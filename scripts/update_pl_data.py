@@ -60,6 +60,7 @@ def fetch_standings(season_id: int) -> list[dict]:
             "position": e["position"],
             "team": team["name"],
             "shortName": team["shortName"],
+            "abbr": team.get("club", {}).get("abbr"),
             "crest": team.get("altIds", {}).get("opta"),
             "played": overall["played"],
             "won": overall["won"],
@@ -141,6 +142,37 @@ def fetch_week_fixtures_widened(content: list[dict], now: datetime) -> tuple[lis
         team_ids.add(int(away["id"]))
     fixtures.sort(key=lambda x: x["kickoff"])
     return fixtures, team_ids
+
+
+def fetch_all_results(season_id: int, standings: list[dict]) -> dict:
+    """Every fixture in the season (played and upcoming) for the head-to-head
+    results grid — home/away score for completed matches, blank otherwise."""
+    results = []
+    page = 0
+    while True:
+        data = fetch_json(
+            f"{API}/fixtures?comps=1&compSeasons={season_id}&page={page}&pageSize=100&sort=asc&altIds=true"
+        )
+        for f in data["content"]:
+            home, away = f["teams"][0], f["teams"][1]
+            played = f["status"] == "C"
+            results.append({
+                "home": home["team"]["name"],
+                "away": away["team"]["name"],
+                "homeScore": int(home["score"]) if played and home.get("score") is not None else None,
+                "awayScore": int(away["score"]) if played and away.get("score") is not None else None,
+                "played": played,
+            })
+        page += 1
+        if page >= data["pageInfo"]["numPages"]:
+            break
+
+    # Alphabetical by team name — the conventional order for these cross-tables.
+    teams = sorted(
+        ({"team": r["team"], "shortName": r["shortName"], "abbr": r["abbr"], "crest": r["crest"]} for r in standings),
+        key=lambda t: t["team"],
+    )
+    return {"teams": teams, "results": results}
 
 
 def fetch_ranked_stat(season_id: int, stat: str, team_ids: set[int]) -> dict[int, dict]:
@@ -357,10 +389,17 @@ def main():
         "facts": facts,
     }
 
-    out_path = Path(__file__).resolve().parent.parent / "data" / "pl.json"
+    data_dir = Path(__file__).resolve().parent.parent / "data"
+    out_path = data_dir / "pl.json"
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {out_path} — season {season['label']}, "
           f"{len(standings)} teams, {len(fixtures)} fixtures this week, {len(facts)} facts.")
+
+    grid = fetch_all_results(season["id"], standings)
+    grid_out = {"updatedAt": now.isoformat(), "season": season["label"], **grid}
+    grid_path = data_dir / "pl-results.json"
+    grid_path.write_text(json.dumps(grid_out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Wrote {grid_path} — {len(grid['teams'])} teams, {len(grid['results'])} fixtures total.")
 
 
 if __name__ == "__main__":
