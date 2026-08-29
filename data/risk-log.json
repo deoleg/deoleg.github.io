@@ -134,38 +134,25 @@
     "date": "2026-08-29",
     "factors": {
       "transnistria_military": {
-        "score": 2,
-        "reasoning": "Найдено 3 релевантных статей, сработавшие термины: приднестровье. Взвешенный балл: 3.4.",
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.2.",
         "sources": [
           {
             "title": "Красносельский: В Приднестровье на выборах в Госдуму РФ откроют 17 участков. Реакция Кишинева",
             "url": "https://newsmaker.md/ru/krasnoselskii-v-pridnestrove-na-vyborah-v-gosdumu-rf-otkroyut-17-uchastkov-reakcziya-kishineva"
-          },
-          {
-            "title": "Политик из Нидерландов сфотографировался в Приднестровье с автоматом. Что сказали власти Молдовы",
-            "url": "https://newsmaker.md/ru/politik-iz-niderlandov-sfotografirovalsya-v-pridnestrove-s-avtomatom-chto-skazali-vlasti-moldovy"
-          },
-          {
-            "title": "В МИД предупредили об ответе в случае обострения ситуации в Приднестровье00:53",
-            "url": "https://ria.ru/20260829/rossija-2113938298.html"
           }
         ],
         "carried_forward": false
       },
       "russian_rhetoric": {
         "score": 1,
-        "reasoning": "Найдено 1 релевантных статей, сработавшие термины: путин. Взвешенный балл: 1.0.",
-        "sources": [
-          {
-            "title": "Текущие новости",
-            "url": "https://nm.md/aggregator/categories/1"
-          }
-        ],
-        "carried_forward": false
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
       },
       "border_aviation": {
         "score": 5,
-        "reasoning": "Найдено 7 релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл: 25.0.",
+        "reasoning": "Найдено 7 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 25.0.",
         "sources": [
           {
             "title": "Informează!",
@@ -203,7 +190,7 @@
         "carried_forward": true
       }
     },
-    "overall_score": 1.6,
-    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.6."
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
