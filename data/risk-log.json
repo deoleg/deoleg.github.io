@@ -135,14 +135,9 @@
     "factors": {
       "transnistria_military": {
         "score": 1,
-        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.2.",
-        "sources": [
-          {
-            "title": "Красносельский: В Приднестровье на выборах в Госдуму РФ откроют 17 участков. Реакция Кишинева",
-            "url": "https://newsmaker.md/ru/krasnoselskii-v-pridnestrove-na-vyborah-v-gosdumu-rf-otkroyut-17-uchastkov-reakcziya-kishineva"
-          }
-        ],
-        "carried_forward": false
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
       },
       "russian_rhetoric": {
         "score": 1,
@@ -152,30 +147,9 @@
       },
       "border_aviation": {
         "score": 5,
-        "reasoning": "Найдено 7 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 25.0.",
-        "sources": [
-          {
-            "title": "Informează!",
-            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-9"
-          },
-          {
-            "title": "Informează!",
-            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-8"
-          },
-          {
-            "title": "Пять дронов нарушили воздушное пространство Молдовы. Объект найден у трассы Кишинёв-Басарабяска",
-            "url": "https://ipn.md/ru/pyat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-obekt-najden-u-trassy-kishinyov-basarabyaska/"
-          },
-          {
-            "title": "Пять дронов нарушили воздушное пространство Молдовы этой ночью",
-            "url": "https://point.md/ru/novosti/proisshestviya/piat-dronov-narushili-vozdushnoe-prostranstvo-moldovy-etoi-noch-iu/"
-          },
-          {
-            "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
-            "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/"
-          }
-        ],
-        "carried_forward": false
+        "reasoning": "Нет новых данных за сутки, значение без изменений.",
+        "sources": [],
+        "carried_forward": true
       },
       "economic": {
         "score": 0,
@@ -191,6 +165,6 @@
       }
     },
     "overall_score": 1.4,
-    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+    "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
   }
 ]
