@@ -358,6 +358,22 @@
     "detected_at": "2026-08-29T07:00:56.012817+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Украинские дроны атаковали Ростовскую область. Загорелись склады Ozon и DNS",
+    "url": "https://newsmaker.md/ru/ukrainskie-drony-atakovali-rostovskuyu-oblast-zagorelis-sklady-ozon-i-dns",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-29T09:56:24.802632+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Россия выслала румынского дипломата в ответ на аналогичные меры, принятые Бухарестом",
+    "url": "https://ipn.md/ru/rossiya-vyslala-rumynskogo-diplomata-v-otvet-na-analogichnye-mery-prinyatye-buharestom/",
+    "excerpt": "ПолитикаРоссия выслала румынского дипломата в ответ на аналогичные меры, принятые БухарестомbyBolohan Maxim28.08.2026Россия высылает румынского дипломата в качестве ответной меры после того, как Румыния объявила русского дипломата персоной нон грата в связи с инцидентом, произошедшим в июле, когда т",
+    "confidence": "low",
+    "detected_at": "2026-08-29T09:56:24.802632+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
