@@ -21,12 +21,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 14px 20px 16px;
+      padding: 10px 20px 12px;
     }
 
     .page { width: 100%; }
 
-    header.top { margin-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+    header.top { margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
     header.top h1 { font-size: 18px; font-weight: 700; }
     header.top .meta { font-size: 11.5px; color: #999; margin-top: 2px; }
     .back-link { font-size: 11.5px; color: #1e63c9; text-decoration: none; white-space: nowrap; }
@@ -36,14 +36,14 @@
       background: #fff;
       border: 1.5px solid #e5e5e5;
       border-radius: 12px;
-      padding: 12px 16px 16px;
+      padding: 10px 14px 12px;
     }
 
     .legend {
       font-size: 10.5px;
       color: #888;
       line-height: 1.4;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .legend b { color: #555; }
 
@@ -51,14 +51,14 @@
     .grid-scroll {
       border: 1px solid #eee;
       border-radius: 8px;
+      width: fit-content;
+      margin: 0 auto;
     }
 
     table.results-grid {
       border-collapse: separate;
       border-spacing: 0;
       font-size: 9.5px;
-      width: 100%;
-      table-layout: fixed;
     }
 
     table.results-grid th, table.results-grid td {
@@ -69,11 +69,6 @@
     .corner, .col-head { position: sticky; top: 0; background: #fff; z-index: 2; }
     .row-head { position: sticky; left: 0; background: #fff; z-index: 1; }
     .corner { left: 0; z-index: 3; }
-
-    /* table-layout:fixed takes column widths from this first row — a fixed
-       width for the corner/row-head column, and the rest (unset) share
-       whatever's left equally, however wide the page ends up being. */
-    .corner, .row-head { width: 80px; }
 
     .col-head, .row-head {
       padding: 3px 2px;
@@ -95,11 +90,11 @@
     .crest { width: 15px; height: 15px; object-fit: contain; }
     .abbr { font-size: 8.5px; color: #888; font-weight: 600; }
 
-    td.cell { padding: 0; height: 24px; }
+    td.cell { padding: 0; width: 26px; height: 26px; }
     td.diagonal { background: #f6f6f4; }
 
     .half {
-      height: 12px;
+      height: 13px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,7 +122,7 @@
       <h1>Сетка результатов АПЛ</h1>
       <div class="meta" id="meta">Загрузка…</div>
     </div>
-    <a class="back-link" href="pl.html">← К таблице и матчам недели</a>
+    <a class="back-link" id="back-link" href="pl.html">← К таблице и матчам недели</a>
   </header>
 
   <div class="card">
@@ -140,6 +135,9 @@
 
 <script>
   const FILE = "data/pl-results.json";
+  // Same reasoning as the link the other direction — bust GitHub Pages' cache
+  // on every visit so an edited pl.html doesn't stay stuck stale for 10 min.
+  document.getElementById('back-link').href = 'pl.html?v=' + Date.now();
   const FOLLOWED_TEAMS = ['Arsenal', 'Chelsea', 'Manchester United', 'Manchester City', 'Liverpool'];
   const FAVORITE_TEAM = 'Manchester City';
 

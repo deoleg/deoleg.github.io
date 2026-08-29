@@ -182,7 +182,7 @@
       <h1>⚽ Английская Премьер-лига</h1>
       <div class="meta" id="meta">Загрузка…</div>
     </div>
-    <a class="grid-link" href="pl-grid.html">Сетка результатов всех туров →</a>
+    <a class="grid-link" id="grid-link" href="pl-grid.html">Сетка результатов всех туров →</a>
   </header>
 
   <div class="card">
@@ -227,6 +227,10 @@
 
 <script>
   const FILE = "data/pl.json";
+  // pl-grid.html is served with cache-control: max-age=600 by GitHub Pages, so
+  // a plain link can show a stale cached page for up to 10 minutes after an
+  // edit — bust it on every visit so this link always loads the latest.
+  document.getElementById('grid-link').href = 'pl-grid.html?v=' + Date.now();
   const FOLLOWED_TEAMS = ['Arsenal', 'Chelsea', 'Manchester United', 'Manchester City', 'Liverpool'];
   const FAVORITE_TEAM = 'Manchester City';
 
