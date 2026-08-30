@@ -176,5 +176,75 @@
     },
     "overall_score": 1.4,
     "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
+  },
+  {
+    "date": "2026-08-30",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье, тирасполь. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "МИД об открытии участков в Приднестровье на выборах в России: «Неприемлемо без согласия властей Молдовы»",
+            "url": "https://newsmaker.md/ru/kishinev-ob-otkrytii-uchastkov-v-pridnestrove-na-vyborah-v-rossii-nepriemlemo-bez-soglasiya-vlastei-moldovy"
+          },
+          {
+            "title": "Тирасполь объявляет об открытии избирательных участков для выборов в России. МИД: Открытие без согласия Кишинёва недопустимо",
+            "url": "https://ipn.md/ru/tiraspol-obyavlyaet-ob-otkrytii-izbiratelnyh-uchastkov-dlya-vyborov-v-rossii-mid-otkrytie-bez-soglasiya-kishinyova-nedopustimo/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: dronă, spațiul aerian. Взвешенный балл за сегодня: 15.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-9"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-8"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: паника. Взвешенный балл за сегодня: 2.4.",
+        "sources": [
+          {
+            "title": "Паника в России? Более 113 тыс. человек за неделю пересекли границу с Грузией на фоне опасений новой мобилизации",
+            "url": "https://newsmaker.md/ru/panika-v-rossii-bolee-113-tys-chelovek-za-nedelyu-peresekli-graniczu-s-gruziei-na-fone-opasenii-novoi-mobilizaczii"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 0,
+        "days_since_last_signal": 2
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.4."
   }
 ]
