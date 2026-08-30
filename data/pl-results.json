@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T17:46:38.318481+03:00",
+  "updatedAt": "2026-08-30T12:43:29.275490+03:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -211,23 +211,23 @@
     {
       "home": "Bournemouth",
       "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 1,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Coventry City",
       "away": "Hull City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Tottenham Hotspur",
       "away": "Newcastle United",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 2,
+      "played": true
     },
     {
       "home": "Chelsea",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T17:46:38.318481+03:00",
+  "updatedAt": "2026-08-30T12:43:29.275490+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -20,6 +20,54 @@
     },
     {
       "position": 2,
+      "team": "Hull City",
+      "shortName": "Hull",
+      "abbr": "HUL",
+      "crest": "t88",
+      "played": 2,
+      "won": 2,
+      "drawn": 0,
+      "lost": 0,
+      "gf": 3,
+      "ga": 0,
+      "gd": 3,
+      "points": 6,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 3,
+      "team": "Newcastle United",
+      "shortName": "Newcastle",
+      "abbr": "NEW",
+      "crest": "t4",
+      "played": 2,
+      "won": 1,
+      "drawn": 1,
+      "lost": 0,
+      "gf": 4,
+      "ga": 2,
+      "gd": 2,
+      "points": 4,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 4,
+      "team": "Everton",
+      "shortName": "Everton",
+      "abbr": "EVE",
+      "crest": "t11",
+      "played": 2,
+      "won": 1,
+      "drawn": 1,
+      "lost": 0,
+      "gf": 3,
+      "ga": 1,
+      "gd": 2,
+      "points": 4,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 5,
       "team": "Brighton & Hove Albion",
       "shortName": "Brighton",
       "abbr": "BHA",
@@ -32,10 +80,10 @@
       "ga": 0,
       "gd": 4,
       "points": 3,
-      "qualification": "EU_CL"
+      "qualification": "EU_EL"
     },
     {
-      "position": 3,
+      "position": 6,
       "team": "Arsenal",
       "shortName": "Arsenal",
       "abbr": "ARS",
@@ -48,10 +96,10 @@
       "ga": 0,
       "gd": 3,
       "points": 3,
-      "qualification": "EU_CL"
+      "qualification": null
     },
     {
-      "position": 4,
+      "position": 7,
       "team": "Brentford",
       "shortName": "Brentford",
       "abbr": "BRE",
@@ -64,42 +112,10 @@
       "ga": 0,
       "gd": 3,
       "points": 3,
-      "qualification": "EU_CL"
-    },
-    {
-      "position": 5,
-      "team": "Everton",
-      "shortName": "Everton",
-      "abbr": "EVE",
-      "crest": "t11",
-      "played": 1,
-      "won": 1,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 2,
-      "ga": 0,
-      "gd": 2,
-      "points": 3,
-      "qualification": "EU_EL"
-    },
-    {
-      "position": 6,
-      "team": "Hull City",
-      "shortName": "Hull",
-      "abbr": "HUL",
-      "crest": "t88",
-      "played": 1,
-      "won": 1,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 2,
-      "ga": 0,
-      "gd": 2,
-      "points": 3,
       "qualification": null
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "Chelsea",
       "shortName": "Chelsea",
       "abbr": "CHE",
@@ -115,7 +131,7 @@
       "qualification": null
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Ipswich Town",
       "shortName": "Ipswich",
       "abbr": "IPS",
@@ -131,7 +147,7 @@
       "qualification": null
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "Leeds United",
       "shortName": "Leeds",
       "abbr": "LEE",
@@ -147,7 +163,7 @@
       "qualification": null
     },
     {
-      "position": 10,
+      "position": 11,
       "team": "Liverpool",
       "shortName": "Liverpool",
       "abbr": "LIV",
@@ -163,23 +179,23 @@
       "qualification": null
     },
     {
-      "position": 11,
-      "team": "Newcastle United",
-      "shortName": "Newcastle",
-      "abbr": "NEW",
-      "crest": "t4",
-      "played": 1,
+      "position": 12,
+      "team": "Bournemouth",
+      "shortName": "Bournemouth",
+      "abbr": "BOU",
+      "crest": "t91",
+      "played": 2,
       "won": 0,
       "drawn": 1,
-      "lost": 0,
+      "lost": 1,
       "gf": 2,
-      "ga": 2,
-      "gd": 0,
+      "ga": 3,
+      "gd": -1,
       "points": 1,
       "qualification": null
     },
     {
-      "position": 12,
+      "position": 13,
       "team": "Nottingham Forest",
       "shortName": "Nott'm Forest",
       "abbr": "NFO",
@@ -195,7 +211,7 @@
       "qualification": null
     },
     {
-      "position": 13,
+      "position": 14,
       "team": "Fulham",
       "shortName": "Fulham",
       "abbr": "FUL",
@@ -206,22 +222,6 @@
       "lost": 1,
       "gf": 2,
       "ga": 3,
-      "gd": -1,
-      "points": 0,
-      "qualification": null
-    },
-    {
-      "position": 14,
-      "team": "Bournemouth",
-      "shortName": "Bournemouth",
-      "abbr": "BOU",
-      "crest": "t91",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 1,
-      "ga": 2,
       "gd": -1,
       "points": 0,
       "qualification": null
@@ -260,38 +260,6 @@
     },
     {
       "position": 17,
-      "team": "Coventry City",
-      "shortName": "Coventry",
-      "abbr": "COV",
-      "crest": "t9",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 0,
-      "ga": 3,
-      "gd": -3,
-      "points": 0,
-      "qualification": null
-    },
-    {
-      "position": 18,
-      "team": "Tottenham Hotspur",
-      "shortName": "Spurs",
-      "abbr": "TOT",
-      "crest": "t6",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 0,
-      "ga": 3,
-      "gd": -3,
-      "points": 0,
-      "qualification": "EN_CH"
-    },
-    {
-      "position": 19,
       "team": "Aston Villa",
       "shortName": "Aston Villa",
       "abbr": "AVL",
@@ -304,10 +272,26 @@
       "ga": 4,
       "gd": -4,
       "points": 0,
+      "qualification": null
+    },
+    {
+      "position": 18,
+      "team": "Coventry City",
+      "shortName": "Coventry",
+      "abbr": "COV",
+      "crest": "t9",
+      "played": 2,
+      "won": 0,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 0,
+      "ga": 4,
+      "gd": -4,
+      "points": 0,
       "qualification": "EN_CH"
     },
     {
-      "position": 20,
+      "position": 19,
       "team": "Crystal Palace",
       "shortName": "Crystal Palace",
       "abbr": "CRY",
@@ -321,42 +305,25 @@
       "gd": -5,
       "points": 0,
       "qualification": "EN_CH"
+    },
+    {
+      "position": 20,
+      "team": "Tottenham Hotspur",
+      "shortName": "Spurs",
+      "abbr": "TOT",
+      "crest": "t6",
+      "played": 2,
+      "won": 0,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 0,
+      "ga": 5,
+      "gd": -5,
+      "points": 0,
+      "qualification": "EN_CH"
     }
   ],
   "fixtures": [
-    {
-      "gameweek": 2.0,
-      "kickoff": "2026-08-29T17:00:00+03:00",
-      "kickoffLabel": "Сб, 29 августа, 17:00",
-      "home": "Bournemouth",
-      "homeCrest": "t91",
-      "away": "Everton",
-      "awayCrest": "t11",
-      "ground": "Vitality Stadium",
-      "status": "L"
-    },
-    {
-      "gameweek": 2.0,
-      "kickoff": "2026-08-29T17:00:00+03:00",
-      "kickoffLabel": "Сб, 29 августа, 17:00",
-      "home": "Coventry City",
-      "homeCrest": "t9",
-      "away": "Hull City",
-      "awayCrest": "t88",
-      "ground": "Coventry Building Society Arena",
-      "status": "L"
-    },
-    {
-      "gameweek": 2.0,
-      "kickoff": "2026-08-29T19:30:00+03:00",
-      "kickoffLabel": "Сб, 29 августа, 19:30",
-      "home": "Tottenham Hotspur",
-      "homeCrest": "t6",
-      "away": "Newcastle United",
-      "awayCrest": "t4",
-      "ground": "Tottenham Hotspur Stadium",
-      "status": "U"
-    },
     {
       "gameweek": 2.0,
       "kickoff": "2026-08-30T16:00:00+03:00",
@@ -488,6 +455,17 @@
       "awayCrest": "t6",
       "ground": "The City Ground",
       "status": "U"
+    },
+    {
+      "gameweek": 3.0,
+      "kickoff": "2026-09-05T19:30:00+03:00",
+      "kickoffLabel": "Сб, 5 сентября, 19:30",
+      "home": "Hull City",
+      "homeCrest": "t88",
+      "away": "Aston Villa",
+      "awayCrest": "t7",
+      "ground": "The MKM Stadium",
+      "status": "U"
     }
   ],
   "facts": [
@@ -500,16 +478,6 @@
       "note": "лучший бомбардир «Arsenal» в этом сезоне — 1 гол",
       "wikiFact": "Кай Лу́кас Ха́верц (нем. Kai Lukas Havertz; род. 11 июня 1999, Ахен, Германия) — немецкий футболист, нападающий английского клуба «Арсенал» и сборной Германии. Участник чемпионатов Европы 2020, 2024 годов и чемпионатов мира 2022, 2026 годов.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B2%D0%B5%D1%80%D1%86%2C_%D0%9A%D0%B0%D0%B9"
-    },
-    {
-      "team": "Aston Villa",
-      "player": "Marco Bizot",
-      "position": "Вратарь",
-      "nationality": "Netherlands",
-      "age": "35",
-      "note": "провёл на поле 90 минут за «Aston Villa» в этом сезоне",
-      "wikiFact": "Ма́рко Бизо́т (нид. Marco Bizot; род. 10 марта 1991, Хорн, Северная Голландия) — нидерландский футболист, вратарь английского клуба «Астон Вилла». Выступал за сборную Нидерландов.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%B7%D0%BE%D1%82%2C_%D0%9C%D0%B0%D1%80%D0%BA%D0%BE"
     },
     {
       "team": "Bournemouth",
@@ -557,7 +525,7 @@
       "position": "Защитник",
       "nationality": "Switzerland",
       "age": "23",
-      "note": "провёл на поле 90 минут за «Coventry City» в этом сезоне",
+      "note": "провёл на поле 180 минут за «Coventry City» в этом сезоне",
       "wikiFact": "Оре́ль Флориа́н Аменда́ (фр. Aurèle Florian Amenda; родился 31 июля 2003, Биль) — швейцарский футболист, центральный защитник английского клуба «Ковентри Сити» и сборной Швейцарии.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%2C_%D0%9E%D1%80%D0%B5%D0%BB%D1%8C"
     },
@@ -570,16 +538,6 @@
       "note": "провёл на поле 180 минут за «Crystal Palace» в этом сезоне",
       "wikiFact": "Жейде́ Канво́ (фр. Jaydee Canvot; родился 29 июля 2006) — французский футболист, центральный защитник английского клуба «Кристал Пэлас».",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B2%D0%BE%2C_%D0%96%D0%B5%D0%B9%D0%B4%D0%B5"
-    },
-    {
-      "team": "Everton",
-      "player": "Thierno Barry",
-      "position": "Нападающий",
-      "nationality": "France",
-      "age": "23",
-      "note": "лучший бомбардир «Everton» в этом сезоне — 1 гол",
-      "wikiFact": "Тьерно́ Мамаду́ Барри́ (фр. Thierno Mamadou Barry; род. 21 октября 2002, Лион) — французский футболист, нападающий клуба «Эвертон».",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D1%80%D0%B8%2C_%D0%A2%D1%8C%D0%B5%D1%80%D0%BD%D0%BE_%28%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82%29"
     },
     {
       "team": "Fulham",
@@ -642,22 +600,12 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D1%80%D0%BA%D0%B8%2C_%D0%A0%D0%B0%D0%B9%D0%B0%D0%BD"
     },
     {
-      "team": "Manchester United",
-      "player": "Bruno Fernandes",
-      "position": "Полузащитник",
-      "nationality": "Portugal",
-      "age": "31",
-      "note": "провёл на поле 90 минут за «Manchester United» в этом сезоне",
-      "wikiFact": "В составе национальной сборной принял участие в трёх чемпионатов мира (2018, 2022 и 2026) и двух чемпионатов Европы (2020 и 2024), а также в летних Олимпийских играх 2016 года. Победитель первого в истории розыгрыша Лиги наций УЕФА.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BD%D0%B0%D0%BD%D0%B4%D0%B5%D1%88%2C_%D0%91%D1%80%D1%83%D0%BD%D1%83"
-    },
-    {
       "team": "Newcastle United",
       "player": "Anthony Elanga",
       "position": "Нападающий",
       "nationality": "Sweden",
       "age": "24",
-      "note": "лучший бомбардир «Newcastle United» в этом сезоне — 1 гол",
+      "note": "лучший бомбардир «Newcastle United» в этом сезоне — 2 гола",
       "wikiFact": "Антони Давид Жуниор Эланга (швед. Anthony David Junior Elanga; родился 27 апреля 2002 года, Мальмё, Швеция) — шведский футболист, вингер английского клуба «Ньюкасл Юнайтед» и сборной Швеции.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B0%D0%BD%D0%B3%D0%B0%2C_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8"
     },
@@ -687,7 +635,7 @@
       "position": "Вратарь",
       "nationality": "Czech Republic",
       "age": "23",
-      "note": "провёл на поле 90 минут за «Tottenham Hotspur» в этом сезоне",
+      "note": "провёл на поле 180 минут за «Tottenham Hotspur» в этом сезоне",
       "wikiFact": "Антонин Кински (чеш. Antonín Kinský; род. 13 марта 2003, Прага) — чешский футболист, вратарь клуба «Тоттенхэм Хотспур». Сын бывшего вратаря сборной Чехии и «Сатурна» Антонина Кински. Неоднократно назывался одним из самых перспективных молодых голкиперов Чехии.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%2C_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D0%BD_%282003%29"
     }
