@@ -382,11 +382,67 @@
     "detected_at": "2026-08-29T09:58:38.292145+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Ленинградской области отразили атаку БПЛА07:08",
+    "url": "https://ria.ru/20260830/opasnost-2114096408.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Ленинградской области из-за атаки БПЛА начался пожар на НПЗ05:02",
+    "url": "https://ria.ru/20260830/npz-2114091203.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Ростовской областью ночью было уничтожено около 15 БПЛА06:53",
+    "url": "https://ria.ru/20260830/bpla-2114095507.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTKievul, atacat din nou de Rusia: 37 de morți, 42 de răniți și 233 de drone neutralizate. Război în Ucraina, ziua 1648",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-kievul-atacat-din-nou-de-rusia-37-de-morti-42-de-raniti-si-233-de-drone-neutralizate-razboi-in-ucraina-ziua-1648/",
+    "excerpt": "LIVE TEXTKievul, atacat din nou de Rusia: 37 de morți, 42 de răniți și 233 de drone neutralizate. Război în Ucraina, ziua 1648NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-9",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, în această noapte, 27 august curent, în comun cu partenerii au fost fixate survoluri neautorizate în spațiul aerian național cu implicarea a cinci drone. Prima dronă cu traversarea frontierei de stat în Republica Moldova din Ucraina, a fost",
+    "confidence": "high",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-8",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, astăzi, la ora 17.38 a fost detectat un obiect aerian care a pătruns în spațiul aerian național cu traversarea frontierei de stat a Republicii Moldova, prin localitatea Palanca, raionul Ștefan Vodă. Ulterior obiectul aerian la ora 17.43 din",
+    "confidence": "high",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
     "excerpt": "Вечером 26 августа неизвестный воздушный объект пересёк воздушное пространство Молдовы в районе Паланки, Штефан-Водского района, после чего…",
     "confidence": "medium",
     "detected_at": "2026-08-27T19:38:47.155335+00:00"
+  },
+  {
+    "date_mentioned": "29 августа",
+    "title": "Из-за атаки России в Киеве загорелся 12-этажный жилой дом",
+    "url": "https://point.md/ru/novosti/v-mire/iz-za-ataki-rossii-v-kieve-zagorelsia-12-etazhnyi-zhiloi-dom/",
+    "excerpt": "В Киеве поздно вечером в субботу, 29 августа, в результате атаки российских беспилотников вспыхнул пожар в 12-этажном жилом доме.",
+    "confidence": "low",
+    "detected_at": "2026-08-30T07:00:54.397733+00:00"
   }
 ]
