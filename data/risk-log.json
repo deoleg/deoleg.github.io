@@ -246,5 +246,66 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-08-31",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Галузин: Россия решительно отреагирует на обострение ситуации в Приднестровье",
+            "url": "https://point.md/ru/novosti/politika/galuzin-rossiia-reshitel-no-otreagiruet-na-obostrenie-situatsii-v-pridnestrov-e/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы. Взвешенный балл за сегодня: 8.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-10"
+          },
+          {
+            "title": "Неизвестный объект вторгся в воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-ob-ekt-vtorgsia-v-vozdushnoe-prostranstvo-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 0,
+        "days_since_last_signal": 3
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
