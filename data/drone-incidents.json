@@ -430,6 +430,38 @@
     "detected_at": "2026-08-30T07:00:54.397733+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Молдова вновь зафиксировала вторжение беспилотника во время атаки России на Украину",
+    "url": "https://newsmaker.md/ru/nad-moldovoi-vnov-proletel-bespilotnik-vo-vremya-ataki-rossii-na-ukrainu",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTRusia a lansat asupra Ucrainei o rachetă și 121 de drone de atac. Război în Ucraina, ziua 1650",
+    "url": "https://www.zdg.md/stiri/live-text-rusia-a-lansat-asupra-ucrainei-o-racheta-si-121-de-drone-de-atac-razboi-in-ucraina-ziua-1650/",
+    "excerpt": "LIVE TEXTRusia a lansat asupra Ucrainei o rachetă și 121 de drone de atac. Război în Ucraina, ziua 1650NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Un obiect neautorizat a pătruns în spațiul aerian al R. Moldova, în urma atacurilor Federației Ruse asupra Ucrainei",
+    "url": "https://www.zdg.md/stiri/un-obiect-neautorizat-a-patruns-in-spatiul-aerian-al-r-moldova-in-urma-atacurilor-federatiei-ruse-asupra-ucrainei/",
+    "excerpt": "Un obiect neautorizat a pătruns în spațiul aerian al R. Moldova, în urma atacurilor Federației Ruse asupra UcraineiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-10",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, astăzi, 30 august curent, la ora 15:50 a fost detectat un obiect aerian care a pătruns în spațiul aerian național cu traversarea frontierei de stat a Republicii Moldova, prin localitatea Dnestrovsk, sectorul transnistrean, din localitatea L",
+    "confidence": "high",
+    "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
@@ -444,5 +476,13 @@
     "excerpt": "В Киеве поздно вечером в субботу, 29 августа, в результате атаки российских беспилотников вспыхнул пожар в 12-этажном жилом доме.",
     "confidence": "low",
     "detected_at": "2026-08-30T07:00:54.397733+00:00"
+  },
+  {
+    "date_mentioned": "30 августа",
+    "title": "Неизвестный объект вторгся в воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-ob-ekt-vtorgsia-v-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "По данным Службы воздушных операций Национальной армии, сегодня, 30 августа, в 15:50 был обнаружен воздушный объект, который вторгся в возд…",
+    "confidence": "medium",
+    "detected_at": "2026-08-31T07:00:53.839016+00:00"
   }
 ]
