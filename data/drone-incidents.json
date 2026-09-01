@@ -462,6 +462,30 @@
     "detected_at": "2026-08-31T07:00:53.839016+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ПВО отразила налет БПЛА на Ленинградскую область06:20",
+    "url": "https://ria.ru/20260901/bpla-2114511562.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-01T07:00:48.762743+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Россия атаковала Киев ракетами и беспилотниками: погибли восемь человек",
+    "url": "https://newsmaker.md/ru/rossiya-atakovala-kiev-raketami-i-bespilotnikami-pogibli-vosem-chelovek",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-01T07:00:48.762743+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Россия атаковала КПП \"Орловка\" на украинско-румынской границе",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-atakovala-kpp-orlovka-na-ukrainsko-rumynskoi-granitse/",
+    "excerpt": "Ночью Россия атаковала ударными беспилотниками \"Shahed\" международный пункт пропуска для паромного сообщения \"Орловка\" на г…",
+    "confidence": "low",
+    "detected_at": "2026-09-01T07:00:48.762743+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
