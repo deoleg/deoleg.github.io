@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T13:30:01.897202+03:00",
+  "updatedAt": "2026-09-01T12:09:19.311735+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -20,6 +20,22 @@
     },
     {
       "position": 2,
+      "team": "Arsenal",
+      "shortName": "Arsenal",
+      "abbr": "ARS",
+      "crest": "t3",
+      "played": 2,
+      "won": 2,
+      "drawn": 0,
+      "lost": 0,
+      "gf": 4,
+      "ga": 0,
+      "gd": 4,
+      "points": 6,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 3,
       "team": "Hull City",
       "shortName": "Hull",
       "abbr": "HUL",
@@ -35,7 +51,7 @@
       "qualification": "EU_CL"
     },
     {
-      "position": 3,
+      "position": 4,
       "team": "Chelsea",
       "shortName": "Chelsea",
       "abbr": "CHE",
@@ -51,7 +67,7 @@
       "qualification": "EU_CL"
     },
     {
-      "position": 4,
+      "position": 5,
       "team": "Brentford",
       "shortName": "Brentford",
       "abbr": "BRE",
@@ -64,10 +80,10 @@
       "ga": 1,
       "gd": 3,
       "points": 4,
-      "qualification": "EU_CL"
+      "qualification": "EU_EL"
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Newcastle United",
       "shortName": "Newcastle",
       "abbr": "NEW",
@@ -80,10 +96,10 @@
       "ga": 2,
       "gd": 2,
       "points": 4,
-      "qualification": "EU_EL"
+      "qualification": null
     },
     {
-      "position": 6,
+      "position": 7,
       "team": "Everton",
       "shortName": "Everton",
       "abbr": "EVE",
@@ -99,7 +115,7 @@
       "qualification": null
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "Leeds United",
       "shortName": "Leeds",
       "abbr": "LEE",
@@ -115,7 +131,7 @@
       "qualification": null
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Brighton & Hove Albion",
       "shortName": "Brighton",
       "abbr": "BHA",
@@ -126,22 +142,6 @@
       "lost": 1,
       "gf": 7,
       "ga": 4,
-      "gd": 3,
-      "points": 3,
-      "qualification": null
-    },
-    {
-      "position": 9,
-      "team": "Arsenal",
-      "shortName": "Arsenal",
-      "abbr": "ARS",
-      "crest": "t3",
-      "played": 1,
-      "won": 1,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 3,
-      "ga": 0,
       "gd": 3,
       "points": 3,
       "qualification": null
@@ -260,22 +260,6 @@
     },
     {
       "position": 17,
-      "team": "Aston Villa",
-      "shortName": "Aston Villa",
-      "abbr": "AVL",
-      "crest": "t7",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 0,
-      "ga": 4,
-      "gd": -4,
-      "points": 0,
-      "qualification": null
-    },
-    {
-      "position": 18,
       "team": "Coventry City",
       "shortName": "Coventry",
       "abbr": "COV",
@@ -288,10 +272,10 @@
       "ga": 4,
       "gd": -4,
       "points": 0,
-      "qualification": "EN_CH"
+      "qualification": null
     },
     {
-      "position": 19,
+      "position": 18,
       "team": "Crystal Palace",
       "shortName": "Crystal Palace",
       "abbr": "CRY",
@@ -302,6 +286,22 @@
       "lost": 2,
       "gf": 1,
       "ga": 6,
+      "gd": -5,
+      "points": 0,
+      "qualification": "EN_CH"
+    },
+    {
+      "position": 19,
+      "team": "Aston Villa",
+      "shortName": "Aston Villa",
+      "abbr": "AVL",
+      "crest": "t7",
+      "played": 2,
+      "won": 0,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 0,
+      "ga": 5,
       "gd": -5,
       "points": 0,
       "qualification": "EN_CH"
@@ -324,17 +324,6 @@
     }
   ],
   "fixtures": [
-    {
-      "gameweek": 2.0,
-      "kickoff": "2026-08-31T22:00:00+03:00",
-      "kickoffLabel": "Пн, 31 августа, 22:00",
-      "home": "Aston Villa",
-      "homeCrest": "t7",
-      "away": "Arsenal",
-      "awayCrest": "t3",
-      "ground": "Villa Park",
-      "status": "U"
-    },
     {
       "gameweek": 3.0,
       "kickoff": "2026-09-04T22:00:00+03:00",
@@ -449,13 +438,23 @@
   "facts": [
     {
       "team": "Arsenal",
-      "player": "Kai Havertz",
+      "player": "Bukayo Saka",
       "position": "Нападающий",
-      "nationality": "Germany",
-      "age": "27",
-      "note": "лучший бомбардир «Arsenal» в этом сезоне — 1 гол",
-      "wikiFact": "Кай Лу́кас Ха́верц (нем. Kai Lukas Havertz; род. 11 июня 1999, Ахен, Германия) — немецкий футболист, нападающий английского клуба «Арсенал» и сборной Германии. Участник чемпионатов Европы 2020, 2024 годов и чемпионатов мира 2022, 2026 годов.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B2%D0%B5%D1%80%D1%86%2C_%D0%9A%D0%B0%D0%B9"
+      "nationality": "England",
+      "age": "24",
+      "note": "лучший бомбардир «Arsenal» в этом сезоне — 2 гола",
+      "wikiFact": "Бука́йо Айоинка Темида́йо Са́ка (англ. Bukayo Ayoyinka Temidayo Saka; родился 5 сентября 2001, Лондон) — английский футболист, выступающий на позиции правого вингера за клуб Премьер-лиги «Арсенал» и сборную Англии. Участник двух чемпионатов Европы (2020 и 2024) и чемпионатов мира (2022 и 2026).",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BA%D0%B0%2C_%D0%91%D1%83%D0%BA%D0%B0%D0%B9%D0%BE"
+    },
+    {
+      "team": "Aston Villa",
+      "player": "Boubacar Kamara",
+      "position": "Полузащитник",
+      "nationality": "France",
+      "age": "26",
+      "note": "провёл на поле 180 минут за «Aston Villa» в этом сезоне",
+      "wikiFact": "Бубака́р Берна́р Камара́ (фр. Boubacar Bernard Kamara; 23 ноября 1999, Марсель, Франция) — французский футболист мавританского происхождения, полузащитник английского клуба «Астон Вилла».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B0%D1%80%D0%B0%2C_%D0%91%D1%83%D0%B1%D0%B0%D0%BA%D0%B0%D1%80"
     },
     {
       "team": "Bournemouth",
