@@ -359,5 +359,70 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Официальные travel advisories. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-09-02",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: в Гагаузии пройдут «двойные» выборы, Приднестровье лишается льгот, Доге пририсовали лишний палец",
+            "url": "https://newsmaker.md/ru/nm-espresso-4"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: дрон, обломки. Взвешенный балл за сегодня: 5.0.",
+        "sources": [
+          {
+            "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
+            "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/"
+          },
+          {
+            "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
+            "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/"
+          },
+          {
+            "title": "Майя Санду выразила солидарность Германии после инцидента с дроном в Лейпциге",
+            "url": "https://point.md/ru/novosti/politika/maiia-sandu-vyrazila-solidarnost-germanii-posle-intsidenta-s-dronom-v-leiptsige/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
