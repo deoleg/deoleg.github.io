@@ -1,5 +1,21 @@
 [
   {
+    "date_mentioned": "2 сентября",
+    "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
+    "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
+    "excerpt": "Инцидент произошел в ночь на 2 сентября в приграничной зоне, на окраине села Крокмаз. Пограничники сначала услышали взрыв, а позднее обнару…",
+    "confidence": "medium",
+    "detected_at": "2026-09-02T07:00:59.713260+00:00"
+  },
+  {
+    "date_mentioned": "2 сентября",
+    "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
+    "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
+    "excerpt": "Инцидент произошел в ночь на 2 сентября в приграничной зоне, на окраине села Крокмаз. Пограничники сначала услышали взрыв, а позднее обнару…",
+    "confidence": "medium",
+    "detected_at": "2026-09-02T07:00:59.713260+00:00"
+  },
+  {
     "date_mentioned": "2022-10-31",
     "title": "Обломки дрона с взрывчаткой обнаружены в Наславче (Окницкий район)",
     "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
@@ -484,6 +500,30 @@
     "excerpt": "Ночью Россия атаковала ударными беспилотниками \"Shahed\" международный пункт пропуска для паромного сообщения \"Орловка\" на г…",
     "confidence": "low",
     "detected_at": "2026-09-01T07:00:48.762743+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Штефан-Водском районе услышали взрыв. В Крокмазе обнаружили выгоревший участок земли и обломки металла и пластика",
+    "url": "https://newsmaker.md/ru/v-shtefan-vodskom-raione-uslyshali-vzryv-v-krokmaze-obnarujili-vygorevshii-uchastok-zemli-i-oblomki-metalla-i-plastika",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-02T07:00:59.713260+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Volodimir Zelenski avertizează companiile de aviație care folosesc spațiul aerian rus: „Dronele vor fi prezente pe cerul rusesc, așa că trebuie să fim atenți”",
+    "url": "https://www.zdg.md/stiri/volodimir-zelenski-avertizeaza-companiile-de-aviatie-care-folosesc-spatiul-aerian-rus-dronele-vor-fi-prezente-pe-cerul-rusesc-asa-ca-trebuie-sa-fim-atenti/",
+    "excerpt": "Volodimir Zelenski avertizează companiile de aviație care folosesc spațiul aerian rus: „Dronele vor fi prezente pe cerul rusesc, așa că trebuie să fim atenți”NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-02T07:00:59.713260+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Майя Санду выразила солидарность Германии после инцидента с дроном в Лейпциге",
+    "url": "https://point.md/ru/novosti/politika/maiia-sandu-vyrazila-solidarnost-germanii-posle-intsidenta-s-dronom-v-leiptsige/",
+    "excerpt": "Президент Молдовы Майя Санду выразила солидарность с Германией после инцидента в районе аэропорта Лейпцига, где был обнаружен беспилотник с…",
+    "confidence": "medium",
+    "detected_at": "2026-09-02T07:00:59.713260+00:00"
   },
   {
     "date_mentioned": "26 августа",
