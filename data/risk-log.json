@@ -424,5 +424,65 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-03",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: приднестровье, тирасполь. Взвешенный балл за сегодня: 3.4.",
+        "sources": [
+          {
+            "title": "NM Espresso: Кишинев разом «перезагрузит» Гагаузию, в Приднестровье провели «провокационную акцию», речь Санду будут изучать в школах",
+            "url": "https://newsmaker.md/ru/nm-espresso-deficzit-byudjeta-vyros-kishinev-napravlyaet-rossii-notu-protesta-merii-v-moldove-stanet-vtroe-menshe"
+          },
+          {
+            "title": "Кишинев раскритиковал мероприятия в Приднестровье по случаю «Дня республики»",
+            "url": "https://newsmaker.md/ru/kishinev-raskritikoval-meropriyatiya-v-pridnestrove-po-sluchayu-dnya-respubliki"
+          },
+          {
+            "title": "«Шериф» Тирасполь U-19 встретится с «Фарул» Констанца в отборочном турнире Юношеской лиги УЕФА",
+            "url": "https://ipn.md/ru/sherif-tiraspol-u-19-vstretitsya-s-farul-konstancza-v-otborochnom-turnire-yunosheskoj-ligi-uefa/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 4
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 2
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.2."
   }
 ]
