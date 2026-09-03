@@ -183,7 +183,11 @@ def fetch_ranked_stat(season_id: int, stat: str, team_ids: set[int]) -> dict[int
     best: dict[int, dict] = {}
     for entry in data["stats"]["content"]:
         owner = entry["owner"]
-        team = owner["currentTeam"]
+        # A ranked player who has since left the league (transfer abroad, released)
+        # comes back with no currentTeam — skip them, the next entry is the fallback.
+        team = owner.get("currentTeam")
+        if not team:
+            continue
         team_id = int(team["id"])
         if team_id not in team_ids or team_id in best:
             continue

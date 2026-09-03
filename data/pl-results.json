@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T12:09:19.311735+03:00",
+  "updatedAt": "2026-09-03T18:15:42.719804+03:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -433,13 +433,6 @@
       "played": false
     },
     {
-      "home": "Leeds United",
-      "away": "Crystal Palace",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
       "home": "Newcastle United",
       "away": "Hull City",
       "homeScore": null,
@@ -456,6 +449,13 @@
     {
       "home": "Bournemouth",
       "away": "Liverpool",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Leeds United",
+      "away": "Crystal Palace",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -643,13 +643,6 @@
       "played": false
     },
     {
-      "home": "Liverpool",
-      "away": "Brighton & Hove Albion",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
       "home": "Chelsea",
       "away": "Tottenham Hotspur",
       "homeScore": null,
@@ -666,6 +659,13 @@
     {
       "home": "Hull City",
       "away": "Brentford",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Liverpool",
+      "away": "Brighton & Hove Albion",
       "homeScore": null,
       "awayScore": null,
       "played": false
