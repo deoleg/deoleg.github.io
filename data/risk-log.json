@@ -484,5 +484,74 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-09-04",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Глава СИБ: В Приднестровье переоборудуют гражданские дроны для военных нужд",
+            "url": "https://point.md/ru/novosti/obschestvo/glava-sib-v-pridnestrov-e-pereoboruduiut-grazhdanskie-drony-dlia-voennykh-nuzhd/"
+          },
+          {
+            "title": "В Молдове студенты и их родители могут вернуть часть расходов на обучение",
+            "url": "https://point.md/ru/novosti/obschestvo/v-moldove-studenty-i-ikh-roditeli-mogut-vernut-chast-raskhodov-na-obuchenie/"
+          },
+          {
+            "title": "Молдова готовит план на случай прекращения поставок газа в Приднестровье",
+            "url": "https://point.md/ru/novosti/politika/moldova-gotovit-plan-na-sluchai-prekrashcheniia-postavok-gaza-v-pridnestrov-e-4/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 7
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 7.0.",
+        "sources": [
+          {
+            "title": "Armata Națională – 35 de ani în serviciul țării și cetățenilor (video)",
+            "url": "https://www.army.md/ro/comunicate-de-presa/armata-nationala-35-de-ani-serviciul-tarii-si-cetatenilor-video"
+          },
+          {
+            "title": "Глава СИБ: В Приднестровье переоборудуют гражданские дроны для военных нужд",
+            "url": "https://point.md/ru/novosti/obschestvo/glava-sib-v-pridnestrov-e-pereoboruduiut-grazhdanskie-drony-dlia-voennykh-nuzhd/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "travel_advisories": {
+        "score": 1,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение постепенно снижается (пик был 2, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 3
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
