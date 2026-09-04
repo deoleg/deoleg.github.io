@@ -550,6 +550,46 @@
     "detected_at": "2026-09-03T07:00:45.774388+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Сочи и Сириусе отражают массированную атаку БПЛА на инфраструктуру04:51",
+    "url": "https://ria.ru/20260904/ataka-2115346290.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-04T07:00:57.181326+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Dronele rusești deasupra R. Moldova: incidente sau avertismente? „Războiul propriu-zis nu vine spre țara noastră, dar presiunea va continua”",
+    "url": "https://www.zdg.md/stiri/dronele-rusesti-deasupra-r-moldova-incidente-sau-avertismente-razboiul-propriu-zis-nu-vine-spre-tara-noastra-dar-presiunea-va-continua/",
+    "excerpt": "Dronele rusești deasupra R. Moldova: incidente sau avertismente? „Războiul propriu-zis nu vine spre țara noastră, dar presiunea va continua”NouPolitic",
+    "confidence": "low",
+    "detected_at": "2026-09-04T07:00:57.181326+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Глава СИБ: В Приднестровье переоборудуют гражданские дроны для военных нужд",
+    "url": "https://point.md/ru/novosti/obschestvo/glava-sib-v-pridnestrov-e-pereoboruduiut-grazhdanskie-drony-dlia-voennykh-nuzhd/",
+    "excerpt": "Военные структуры Приднестровского региона используют гражданские дроны, адаптированные для военных нужд, в частности для разведки. Об этом…",
+    "confidence": "medium",
+    "detected_at": "2026-09-04T07:00:57.181326+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Румынии начали страховать жильё от попадания дронов",
+    "url": "https://point.md/ru/novosti/v-mire/v-rumynii-nachali-strakhovat-zhil-io-ot-popadaniia-dronov/",
+    "excerpt": "Компания Asirom объявила о первом в истории румынского страхового рынка виде компенсации за ущерб зданиям и имуществу, причиненный в резуль…",
+    "confidence": "low",
+    "detected_at": "2026-09-04T07:00:57.181326+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Armata Națională – 35 de ani în serviciul țării și cetățenilor (video)",
+    "url": "https://www.army.md/ro/comunicate-de-presa/armata-nationala-35-de-ani-serviciul-tarii-si-cetatenilor-video",
+    "excerpt": "Armata Națională marchează astăzi 35 de ani de la creare. Cu acest prilej, în Tabăra Militară 142 a avut loc o ceremonie, la care a participat președinta Republicii Moldova, Comandant Suprem al Forțelor Armate, Maia Sandu, conducerea Ministerului apărării și Statului Major al Apărării, atașați, dar ",
+    "confidence": "high",
+    "detected_at": "2026-09-04T07:00:57.181326+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
