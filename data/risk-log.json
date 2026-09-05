@@ -553,5 +553,74 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-09-05",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 2.4.",
+        "sources": [
+          {
+            "title": "NM Espresso: Гагаузию перезагрузят одним махом? Приднестровье может остаться без газа? на Луне будут искать воду?",
+            "url": "https://newsmaker.md/ru/nm-espresso-budet-li-gaz-v-pridnestrove-zimoi-i-kto-zaberet-gagauziyu"
+          },
+          {
+            "title": "Военная техника на дорогах страны. В Молдове пройдут учения с военными Румынии и США",
+            "url": "https://newsmaker.md/ru/voennaya-tehnika-na-dorogah-strany-v-moldove-proidut-ucheniya-s-voennymi-rumynii-i-ssha"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 8 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 8
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 13.0.",
+        "sources": [
+          {
+            "title": "Armata Națională – 35 de ani în serviciul țării și cetățenilor (video)",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/armata-nationala-35-de-ani-serviciul-tarii-si-cetatenilor-video"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-10"
+          },
+          {
+            "title": "Антониу Кошта в Бухаресте: твёрдая поддержка Румынии и расширения ЕС для Молдовы",
+            "url": "https://ipn.md/ru/antoniu-koshta-v-buhareste-tvyordaya-podderzhka-rumynii-i-rasshireniya-es-dlya-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 4
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
