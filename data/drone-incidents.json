@@ -590,6 +590,30 @@
     "detected_at": "2026-09-04T07:00:57.181326+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Антониу Кошта в Бухаресте: твёрдая поддержка Румынии и расширения ЕС для Молдовы",
+    "url": "https://ipn.md/ru/antoniu-koshta-v-buhareste-tvyordaya-podderzhka-rumynii-i-rasshireniya-es-dlya-moldovy/",
+    "excerpt": "ПолитикаПолитикаАнтониу Кошта в Бухаресте: твёрдая поддержка Румынии и расширения ЕС для МолдовыbyBolohan Maxim03.09.2026Председатель Европейского совета Антониу Кошта пообещал твёрдую поддержку Румынии в связи с недавними случаями пролёта российских беспилотников через воздушное пространство страны",
+    "confidence": "high",
+    "detected_at": "2026-09-05T07:00:50.666919+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Armata Națională – 35 de ani în serviciul țării și cetățenilor (video)",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/armata-nationala-35-de-ani-serviciul-tarii-si-cetatenilor-video",
+    "excerpt": "Armata Națională marchează astăzi 35 de ani de la creare. Cu acest prilej, în Tabăra Militară 142 a avut loc o ceremonie, la care a participat președinta Republicii Moldova, Comandant Suprem al Forțelor Armate, Maia Sandu, conducerea Ministerului apărării și Statului Major al Apărării, atașați, dar ",
+    "confidence": "high",
+    "detected_at": "2026-09-05T07:00:50.666919+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-10",
+    "excerpt": "Potrivit Serviciului operații aeriene al Armatei Naționale, astăzi, 30 august curent, la ora 15:50 a fost detectat un obiect aerian care a pătruns în spațiul aerian național cu traversarea frontierei de stat a Republicii Moldova, prin localitatea Dnestrovsk, sectorul transnistrean, din localitatea L",
+    "confidence": "high",
+    "detected_at": "2026-09-05T07:00:50.666919+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
@@ -612,5 +636,13 @@
     "excerpt": "По данным Службы воздушных операций Национальной армии, сегодня, 30 августа, в 15:50 был обнаружен воздушный объект, который вторгся в возд…",
     "confidence": "medium",
     "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
+    "date_mentioned": "4 сентября",
+    "title": "В Румынии обнаружили обломок дрона со взрывчаткой: объект обезврежен",
+    "url": "https://point.md/ru/novosti/v-mire/v-rumynii-obnaruzhili-oblomok-drona-so-vzryvchatkoi-ob-ekt-obezvrezhen/",
+    "excerpt": "Военно-морские силы Румынии 4 сентября обнаружили и обезвредили обломок беспилотника со взрывной нагрузкой в Чёрном море, примерно в пяти м…",
+    "confidence": "low",
+    "detected_at": "2026-09-05T07:00:50.666919+00:00"
   }
 ]
