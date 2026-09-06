@@ -614,6 +614,38 @@
     "detected_at": "2026-09-05T07:00:50.666919+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке дрона на Белгородскую область погиб мирный житель07:06",
+    "url": "https://ria.ru/20260906/ataka-2115804509.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-06T07:00:56.795606+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Рязанской области обломки БПЛА повредили жилой дом08:12",
+    "url": "https://ria.ru/20260906/oblomki-2115807895.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-06T07:00:56.795606+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Силы ПВО за ночь уничтожили 258 дронов ВСУ08:32",
+    "url": "https://ria.ru/20260906/minoborony-2115809183.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-06T07:00:56.795606+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Германия расширяет военную поддержку Украины после инцидента с беспилотниками в Лейпциге",
+    "url": "https://ipn.md/ru/germaniya-rasshiryaet-voennuyu-podderzhku-ukrainy-posle-inczidenta-s-bespilotnikami-v-lejpczige/",
+    "excerpt": "ПолитикаПолитикаГермания расширяет военную поддержку Украины после инцидента с беспилотниками в ЛейпцигеbyBolohan Maxim04.09.2026Германия намерена расширить военную поддержку Украины и укрепить сотрудничество между германскими и украинскими спецслужбами в выявлении целей на территории России. Соглас",
+    "confidence": "low",
+    "detected_at": "2026-09-06T07:00:56.795606+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
