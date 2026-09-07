@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T11:21:07.799383+03:00",
+  "updatedAt": "2026-09-07T11:54:22.461347+03:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -323,16 +323,16 @@
     {
       "home": "Everton",
       "away": "Manchester United",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 2,
+      "played": true
     },
     {
       "home": "Arsenal",
       "away": "Chelsea",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Aston Villa",

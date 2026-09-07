@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T11:21:07.799383+03:00",
+  "updatedAt": "2026-09-07T11:54:22.461347+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -20,6 +20,22 @@
     },
     {
       "position": 2,
+      "team": "Arsenal",
+      "shortName": "Arsenal",
+      "abbr": "ARS",
+      "crest": "t3",
+      "played": 3,
+      "won": 3,
+      "drawn": 0,
+      "lost": 0,
+      "gf": 6,
+      "ga": 1,
+      "gd": 5,
+      "points": 9,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 3,
       "team": "Hull City",
       "shortName": "Hull",
       "abbr": "HUL",
@@ -35,34 +51,18 @@
       "qualification": "EU_CL"
     },
     {
-      "position": 3,
-      "team": "Arsenal",
-      "shortName": "Arsenal",
-      "abbr": "ARS",
-      "crest": "t3",
-      "played": 2,
-      "won": 2,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 4,
-      "ga": 0,
-      "gd": 4,
-      "points": 6,
-      "qualification": "EU_CL"
-    },
-    {
       "position": 4,
       "team": "Chelsea",
       "shortName": "Chelsea",
       "abbr": "CHE",
       "crest": "t8",
-      "played": 2,
+      "played": 3,
       "won": 2,
       "drawn": 0,
-      "lost": 0,
-      "gf": 7,
-      "ga": 5,
-      "gd": 2,
+      "lost": 1,
+      "gf": 8,
+      "ga": 7,
+      "gd": 1,
       "points": 6,
       "qualification": "EU_CL"
     },
@@ -116,6 +116,22 @@
     },
     {
       "position": 8,
+      "team": "Everton",
+      "shortName": "Everton",
+      "abbr": "EVE",
+      "crest": "t11",
+      "played": 3,
+      "won": 1,
+      "drawn": 2,
+      "lost": 0,
+      "gf": 5,
+      "ga": 3,
+      "gd": 2,
+      "points": 5,
+      "qualification": null
+    },
+    {
+      "position": 9,
       "team": "Leeds United",
       "shortName": "Leeds",
       "abbr": "LEE",
@@ -131,7 +147,7 @@
       "qualification": null
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "Brighton & Hove Albion",
       "shortName": "Brighton",
       "abbr": "BHA",
@@ -147,23 +163,23 @@
       "qualification": null
     },
     {
-      "position": 10,
-      "team": "Everton",
-      "shortName": "Everton",
-      "abbr": "EVE",
-      "crest": "t11",
-      "played": 2,
+      "position": 11,
+      "team": "Manchester United",
+      "shortName": "Man Utd",
+      "abbr": "MUN",
+      "crest": "t1",
+      "played": 3,
       "won": 1,
       "drawn": 1,
-      "lost": 0,
-      "gf": 3,
-      "ga": 1,
-      "gd": 2,
+      "lost": 1,
+      "gf": 7,
+      "ga": 6,
+      "gd": 1,
       "points": 4,
       "qualification": null
     },
     {
-      "position": 11,
+      "position": 12,
       "team": "Sunderland",
       "shortName": "Sunderland",
       "abbr": "SUN",
@@ -176,22 +192,6 @@
       "ga": 3,
       "gd": 0,
       "points": 4,
-      "qualification": null
-    },
-    {
-      "position": 12,
-      "team": "Manchester United",
-      "shortName": "Man Utd",
-      "abbr": "MUN",
-      "crest": "t1",
-      "played": 2,
-      "won": 1,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 5,
-      "ga": 4,
-      "gd": 1,
-      "points": 3,
       "qualification": null
     },
     {
@@ -325,28 +325,6 @@
   ],
   "fixtures": [
     {
-      "gameweek": 3.0,
-      "kickoff": "2026-09-06T16:00:00+03:00",
-      "kickoffLabel": "Вс, 6 сентября, 16:00",
-      "home": "Everton",
-      "homeCrest": "t11",
-      "away": "Manchester United",
-      "awayCrest": "t1",
-      "ground": "Hill Dickinson Stadium",
-      "status": "U"
-    },
-    {
-      "gameweek": 3.0,
-      "kickoff": "2026-09-06T18:30:00+03:00",
-      "kickoffLabel": "Вс, 6 сентября, 18:30",
-      "home": "Arsenal",
-      "homeCrest": "t3",
-      "away": "Chelsea",
-      "awayCrest": "t8",
-      "ground": "Emirates Stadium",
-      "status": "U"
-    },
-    {
       "gameweek": 4.0,
       "kickoff": "2026-09-12T17:00:00+03:00",
       "kickoffLabel": "Сб, 12 сентября, 17:00",
@@ -422,18 +400,40 @@
       "awayCrest": "t3",
       "ground": "Stadium of Light",
       "status": "U"
+    },
+    {
+      "gameweek": 4.0,
+      "kickoff": "2026-09-13T16:00:00+03:00",
+      "kickoffLabel": "Вс, 13 сентября, 16:00",
+      "home": "Coventry City",
+      "homeCrest": "t9",
+      "away": "Brighton & Hove Albion",
+      "awayCrest": "t36",
+      "ground": "Coventry Building Society Arena",
+      "status": "U"
+    },
+    {
+      "gameweek": 4.0,
+      "kickoff": "2026-09-13T18:30:00+03:00",
+      "kickoffLabel": "Вс, 13 сентября, 18:30",
+      "home": "Manchester United",
+      "homeCrest": "t1",
+      "away": "Manchester City",
+      "awayCrest": "t43",
+      "ground": "Old Trafford",
+      "status": "U"
     }
   ],
   "facts": [
     {
       "team": "Arsenal",
-      "player": "Bukayo Saka",
+      "player": "Kai Havertz",
       "position": "Нападающий",
-      "nationality": "England",
-      "age": "25",
+      "nationality": "Germany",
+      "age": "27",
       "note": "лучший бомбардир «Arsenal» в этом сезоне — 2 гола",
-      "wikiFact": "Бука́йо Айоинка Темида́йо Са́ка (англ. Bukayo Ayoyinka Temidayo Saka; родился 5 сентября 2001, Лондон) — английский футболист, выступающий на позиции правого вингера за клуб Премьер-лиги «Арсенал» и сборную Англии. Участник двух чемпионатов Европы (2020 и 2024) и чемпионатов мира (2022 и 2026).",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BA%D0%B0%2C_%D0%91%D1%83%D0%BA%D0%B0%D0%B9%D0%BE"
+      "wikiFact": "Кай Лу́кас Ха́верц (нем. Kai Lukas Havertz; род. 11 июня 1999, Ахен, Германия) — немецкий футболист, нападающий английского клуба «Арсенал» и сборной Германии. Участник чемпионатов Европы 2020, 2024 годов и чемпионатов мира 2022, 2026 годов.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B2%D0%B5%D1%80%D1%86%2C_%D0%9A%D0%B0%D0%B9"
     },
     {
       "team": "Aston Villa",
@@ -466,6 +466,16 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D0%B5%D0%BB%D1%8C%D1%82%2C_%D0%92%D0%B8%D1%82%D0%B0%D0%BB%D0%B8"
     },
     {
+      "team": "Brighton & Hove Albion",
+      "player": "Jack Hinshelwood",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "21",
+      "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 2 гола",
+      "wikiFact": "Джек Лу́ка Хи́ншелвуд (англ. Jack Luca Hinshelwood; род. 11 апреля 2005, Уэртинг, Юго-Восточная Англия) — английский футболист, центральный полузащитник клуба «Брайтон энд Хоув Альбион».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B8%D0%BD%D1%88%D0%B5%D0%BB%D0%B2%D1%83%D0%B4%2C_%D0%94%D0%B6%D0%B5%D0%BA"
+    },
+    {
       "team": "Chelsea",
       "player": "João Pedro",
       "position": "Нападающий",
@@ -474,6 +484,16 @@
       "note": "лучший бомбардир «Chelsea» в этом сезоне — 2 гола",
       "wikiFact": "Жуан Педро Жункейра де Жезус (порт.-браз. João Pedro Junqueira de Jesus; род. 26 сентября 2001, Рибейран-Прету), или же просто Жуан Педро (порт.-браз. João Pedro, бразильский португальский: [ʒuˈɐ̃w̃ ˈpedɾu]) — бразильский футболист, нападающий английского клуба «Челси» и сборной Бразилии.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D0%B0%D0%BD_%D0%9F%D0%B5%D0%B4%D1%80%D0%BE_%28%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82%2C_2001%29"
+    },
+    {
+      "team": "Coventry City",
+      "player": "Aurèle Amenda",
+      "position": "Защитник",
+      "nationality": "Switzerland",
+      "age": "23",
+      "note": "провёл на поле 270 минут за «Coventry City» в этом сезоне",
+      "wikiFact": "Оре́ль Флориа́н Аменда́ (фр. Aurèle Florian Amenda; родился 31 июля 2003, Биль) — швейцарский футболист, центральный защитник английского клуба «Ковентри Сити» и сборной Швейцарии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%2C_%D0%9E%D1%80%D0%B5%D0%BB%D1%8C"
     },
     {
       "team": "Crystal Palace",
@@ -534,6 +554,16 @@
       "note": "лучший бомбардир «Liverpool» в этом сезоне — 3 гола",
       "wikiFact": "Алекса́ндер И́сак (швед. Alexander Isak; род. 21 сентября 1999, Стокгольм) — шведский футболист, нападающий английского клуба «Ливерпуль» и национальной сборной Швеции.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B0%D0%BA%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D0%B5%D1%80"
+    },
+    {
+      "team": "Manchester City",
+      "player": "Erling Haaland",
+      "position": "Нападающий",
+      "nationality": "Norway",
+      "age": "26",
+      "note": "лучший бомбардир «Manchester City» в этом сезоне — 3 гола",
+      "wikiFact": "Холанн начинал карьеру в норвежских клубах «Брюне» и «Молде», а в январе 2019 года перешёл в австрийский клуб «Ред Булл Зальцбург». Благодаря своим играм в Австрии в 2020 году норвежец подписал контракт с дортмундской «Боруссией», в составе которой выиграл Кубок Германии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BB%D0%B0%D0%BD%D0%BD%2C_%D0%AD%D1%80%D0%BB%D0%B8%D0%BD%D0%B3"
     },
     {
       "team": "Manchester United",
