@@ -646,6 +646,22 @@
     "detected_at": "2026-09-06T07:00:56.795606+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Пермском крае при атаке беспилотников погиб человек09:06",
+    "url": "https://ria.ru/20260907/perm-2115954531.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-07T07:00:54.528441+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Шалару: Вторжение российских дронов в Молдову уже давно не являются случайными",
+    "url": "https://point.md/ru/novosti/politika/shalaru-vtorzhenie-rossiiskikh-dronov-v-moldovu-uzhe-davno-ne-iavliaiutsia-sluchainymi/",
+    "excerpt": "В последнее время случаи проникновения беспилотников в воздушное пространство Республики Молдова, их падения и даже взрывов на территории с…",
+    "confidence": "medium",
+    "detected_at": "2026-09-07T07:00:54.528441+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
@@ -676,5 +692,13 @@
     "excerpt": "Военно-морские силы Румынии 4 сентября обнаружили и обезвредили обломок беспилотника со взрывной нагрузкой в Чёрном море, примерно в пяти м…",
     "confidence": "low",
     "detected_at": "2026-09-05T07:00:50.666919+00:00"
+  },
+  {
+    "date_mentioned": "7 сентября",
+    "title": "Украинские беспилотники атаковали Пермь: один из дронов попал в многоэтажный дом",
+    "url": "https://point.md/ru/novosti/v-mire/ukrainskie-bespilotniki-atakovali-perm-odin-iz-dronov-popal-v-mnogoetazhnyi-dom/",
+    "excerpt": "Украинские дроны утром 7 сентября атаковали Пермь. Один из беспилотников попал в многоэтажный жилой дом.",
+    "confidence": "low",
+    "detected_at": "2026-09-07T07:00:54.528441+00:00"
   }
 ]
