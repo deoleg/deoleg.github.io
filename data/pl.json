@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T11:54:22.461347+03:00",
+  "updatedAt": "2026-09-08T11:35:38.475477+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -422,6 +422,17 @@
       "awayCrest": "t43",
       "ground": "Old Trafford",
       "status": "U"
+    },
+    {
+      "gameweek": 4.0,
+      "kickoff": "2026-09-14T22:00:00+03:00",
+      "kickoffLabel": "Пн, 14 сентября, 22:00",
+      "home": "Leeds United",
+      "homeCrest": "t2",
+      "away": "Newcastle United",
+      "awayCrest": "t4",
+      "ground": "Elland Road",
+      "status": "U"
     }
   ],
   "facts": [
@@ -546,6 +557,16 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BF%D0%BE%D0%BC%2C_%D0%A7%D1%83%D0%B1%D0%B0"
     },
     {
+      "team": "Leeds United",
+      "player": "Jayden Bogle",
+      "position": "Защитник",
+      "nationality": "England",
+      "age": "26",
+      "note": "лучший бомбардир «Leeds United» в этом сезоне — 1 гол",
+      "wikiFact": "Джейден Богл (англ. Jayden Bogle; род. 27 июля 2000, Рединг) — английский футболист, правый защитник клуба «Лидс Юнайтед».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B3%D0%BB%2C_%D0%94%D0%B6%D0%B5%D0%B9%D0%B4%D0%B5%D0%BD"
+    },
+    {
       "team": "Liverpool",
       "player": "Alexander Isak",
       "position": "Нападающий",
@@ -570,10 +591,20 @@
       "player": "Bruno Fernandes",
       "position": "Полузащитник",
       "nationality": "Portugal",
-      "age": "31",
+      "age": "32",
       "note": "лучший бомбардир «Manchester United» в этом сезоне — 3 гола",
       "wikiFact": "В составе национальной сборной принял участие в трёх чемпионатов мира (2018, 2022 и 2026) и двух чемпионатов Европы (2020 и 2024), а также в летних Олимпийских играх 2016 года. Победитель первого в истории розыгрыша Лиги наций УЕФА.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BD%D0%B0%D0%BD%D0%B4%D0%B5%D1%88%2C_%D0%91%D1%80%D1%83%D0%BD%D1%83"
+    },
+    {
+      "team": "Newcastle United",
+      "player": "Anthony Elanga",
+      "position": "Нападающий",
+      "nationality": "Sweden",
+      "age": "24",
+      "note": "лучший бомбардир «Newcastle United» в этом сезоне — 2 гола",
+      "wikiFact": "Антони Давид Жуниор Эланга (швед. Anthony David Junior Elanga; родился 27 апреля 2002 года, Мальмё, Швеция) — шведский футболист, вингер английского клуба «Ньюкасл Юнайтед» и сборной Швеции.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B0%D0%BD%D0%B3%D0%B0%2C_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8"
     },
     {
       "team": "Nottingham Forest",
