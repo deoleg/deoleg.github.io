@@ -662,6 +662,22 @@
     "detected_at": "2026-09-07T07:00:54.528441+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке дронов на Саратов пострадали десять человек08:09",
+    "url": "https://ria.ru/20260908/saratov--2116204711.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-08T07:00:54.867404+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Саратове БПЛА повредили несколько домов08:12",
+    "url": "https://ria.ru/20260908/saratov-2116205031.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-08T07:00:54.867404+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
@@ -700,5 +716,13 @@
     "excerpt": "Украинские дроны утром 7 сентября атаковали Пермь. Один из беспилотников попал в многоэтажный жилой дом.",
     "confidence": "low",
     "detected_at": "2026-09-07T07:00:54.528441+00:00"
+  },
+  {
+    "date_mentioned": "8 сентября",
+    "title": "Россия нанесла ракетный удар по Киеву, два человека погибли",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-nanesla-raketnyi-udar-po-kievu-dva-cheloveka-pogibli/",
+    "excerpt": "Вооруженные силы РФ в ночь на вторник, 8 сентября, нанесли удары по Киеву с применением БПЛА и баллистических ракет.",
+    "confidence": "low",
+    "detected_at": "2026-09-08T07:00:54.867404+00:00"
   }
 ]
