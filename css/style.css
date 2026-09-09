@@ -295,6 +295,75 @@ strong {
   max-width: 65ch;
 }
 
+.newsletter-archive {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8% 100px;
+}
+
+.newsletter-archive h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.nl-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #e5e5e5;
+  max-width: 65ch;
+}
+
+.nl-list li {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1rem;
+}
+
+.nl-date {
+  flex: 0 0 130px;
+  color: #777;
+}
+
+.nl-list a {
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nl-list a:hover {
+  color: #e0a31f;
+  text-decoration: underline;
+}
+
+.nl-empty {
+  color: #777;
+}
+
+.nl-updated {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  .newsletter-archive {
+    padding-bottom: 60px;
+  }
+
+  .nl-list li {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nl-date {
+    flex-basis: auto;
+    font-size: 0.85rem;
+  }
+}
+
 /* =========================
    MINISTRY
 ========================= */
