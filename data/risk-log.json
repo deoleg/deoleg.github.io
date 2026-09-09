@@ -786,5 +786,73 @@
     },
     "overall_score": 0.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 0.4."
+  },
+  {
+    "date": "2026-09-09",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 12 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 12
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 6 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, дрон. Взвешенный балл за сегодня: 14.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-11"
+          },
+          {
+            "title": "Атака дронов на границе с Молдовой: двое погибших, пункт пропуска закрыт. Главное",
+            "url": "https://newsmaker.md/ru/ataka-dronov-na-granicze-s-moldovoi-dvoe-pogibshih-punkt-propuska-zakryt-glavnoe"
+          },
+          {
+            "title": "Семь гражданских самолетов затронуло закрытие воздушного пространства Молдовы из-за дрона. Один приземлился в Яссах",
+            "url": "https://newsmaker.md/ru/sem-grajdanskih-samoletov-zatronulo-zakrytie-vozdushnogo-prostranstva-moldovy-iz-za-bespilotnika-odin-prizemlilsya-v-yassah"
+          },
+          {
+            "title": "Тревога из-за дрона в пяти уездах Румынии после пролёта через воздушное пространство Республики Молдова",
+            "url": "https://ipn.md/ru/trevoga-iz-za-drona-v-pyati-uezdah-rumynii-posle-prolyota-cherez-vozdushnoe-prostranstvo-respubliki-moldova/"
+          },
+          {
+            "title": "Дроны атаковали пункт пропуска на границе с Молдовой: два человека погибли",
+            "url": "https://point.md/ru/novosti/proisshestviya/drony-atakovali-punkt-propuska-starokazach-e-na-granitse-s-moldovoi-dva-cheloveka-pogibli/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 10
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 8 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 8
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
