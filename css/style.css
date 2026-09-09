@@ -303,39 +303,49 @@ strong {
 
 .newsletter-archive h2 {
   font-size: 1.5rem;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
-.nl-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid #e5e5e5;
-  max-width: 65ch;
+.nl-year {
+  margin-top: 28px;
 }
 
-.nl-list li {
+.nl-year-label {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.nl-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 10px;
+  max-width: 640px;
+}
+
+.nl-card {
   display: flex;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 1rem;
-}
-
-.nl-date {
-  flex: 0 0 130px;
-  color: #777;
-}
-
-.nl-list a {
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
   color: #1a1a2e;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s, color 0.15s;
 }
 
-.nl-list a:hover {
+.nl-card:hover {
+  border-color: #f9b625;
   color: #e0a31f;
-  text-decoration: underline;
+  box-shadow: 0 4px 14px rgba(249, 182, 37, 0.25);
+  transform: translateY(-2px);
 }
 
 .nl-empty {
@@ -343,7 +353,7 @@ strong {
 }
 
 .nl-updated {
-  margin-top: 16px;
+  margin-top: 28px;
   font-size: 0.8rem;
   color: #999;
 }
@@ -353,14 +363,13 @@ strong {
     padding-bottom: 60px;
   }
 
-  .nl-list li {
-    flex-direction: column;
-    gap: 2px;
+  .nl-cards {
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
   }
 
-  .nl-date {
-    flex-basis: auto;
-    font-size: 0.85rem;
+  .nl-card {
+    padding: 14px 8px;
+    font-size: 0.9rem;
   }
 }
 

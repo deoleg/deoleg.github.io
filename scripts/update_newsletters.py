@@ -117,16 +117,43 @@ def build_rows(campaigns: list) -> list:
 
 
 def render_block(rows: list) -> str:
-    if rows:
-        items = "\n".join(
-            f'        <li><span class="nl-date">{EN_MONTHS[dt.month - 1]} {dt.year}</span>'
-            f'<a href="{html.escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">'
-            f"{html.escape(subject)}</a></li>"
-            for dt, subject, url in rows
-        )
-        body = f'      <ul class="nl-list">\n{items}\n      </ul>'
-    else:
+    if not rows:
         body = '      <p class="nl-empty">No newsletters in the last year.</p>'
+    else:
+        # The subject line is deliberately kept out of view — supporters use a
+        # near-identical subject for every letter, so a list of them reads as
+        # noise. Each letter shows only its month; the subject stays in the
+        # aria-label for screen readers. Cards are grouped under a year heading,
+        # and a day is added only when two letters share a month.
+        per_month = {}
+        for dt, _subject, _url in rows:
+            per_month[(dt.year, dt.month)] = per_month.get((dt.year, dt.month), 0) + 1
+
+        groups: list = []  # [(year, [(label, subject, url), ...]), ...]
+        for dt, subject, url in rows:
+            label = EN_MONTHS[dt.month - 1]
+            if per_month[(dt.year, dt.month)] > 1:
+                label = f"{label} {dt.day}"
+            if not groups or groups[-1][0] != dt.year:
+                groups.append((dt.year, []))
+            groups[-1][1].append((label, subject, url))
+
+        blocks = []
+        for year, items in groups:
+            cards = "\n".join(
+                f'          <a class="nl-card" href="{html.escape(url, quote=True)}" '
+                f'target="_blank" rel="noopener noreferrer" '
+                f'aria-label="{html.escape(label)} {year} — {html.escape(subject)}">'
+                f"{html.escape(label)}</a>"
+                for label, subject, url in items
+            )
+            blocks.append(
+                f'      <div class="nl-year">\n'
+                f'        <h3 class="nl-year-label">{year}</h3>\n'
+                f'        <div class="nl-cards">\n{cards}\n        </div>\n'
+                f"      </div>"
+            )
+        body = "\n".join(blocks)
     return (
         f"{START_MARKER}\n"
         f'    <section class="newsletter-archive" aria-label="Newsletter archive">\n'
