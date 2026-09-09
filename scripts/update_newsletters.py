@@ -48,6 +48,16 @@ SKIP_SUBJECT_RE = re.compile(r"^\s*(re:\s*)?\[?\s*test\b", re.I)
 # ("UPDATES::News from Moldova") — strip it for the public list.
 PREFIX_RE = re.compile(r"^[A-Za-z]+::\s*")
 
+# A button normally shows just the month. When the letter is clearly a holiday
+# one (by subject line), it shows the holiday name instead — nicer, and it also
+# keeps two letters in the same month from colliding.
+HOLIDAY_LABELS = [
+    (re.compile(r"christmas|nativity|рождеств", re.I), "Christmas"),
+    (re.compile(r"thanksgiving", re.I), "Thanksgiving"),
+    (re.compile(r"easter|пасх|resurrection sunday", re.I), "Easter"),
+    (re.compile(r"new year|новогодн|с\s+новым\s+годом", re.I), "New Year"),
+]
+
 
 def api_get(path: str, params: dict, api_key: str) -> dict:
     dc = api_key.rsplit("-", 1)[-1] if "-" in api_key else ""
@@ -122,17 +132,25 @@ def render_block(rows: list) -> str:
     else:
         # The subject line is deliberately kept out of view — supporters use a
         # near-identical subject for every letter, so a list of them reads as
-        # noise. Each letter shows only its month; the subject stays in the
-        # aria-label for screen readers. Cards are grouped under a year heading,
-        # and a day is added only when two letters share a month.
-        per_month = {}
-        for dt, _subject, _url in rows:
-            per_month[(dt.year, dt.month)] = per_month.get((dt.year, dt.month), 0) + 1
+        # noise. Each button shows just its month, or a holiday name when the
+        # subject makes that obvious ("Merry Christmas!" -> "Christmas"). The
+        # subject stays in the aria-label for screen readers. Cards are grouped
+        # under a year heading. A day is added only as a last resort, when two
+        # non-holiday letters would otherwise show the same month.
+        def base_label(dt, subject):
+            for pattern, name in HOLIDAY_LABELS:
+                if pattern.search(subject):
+                    return name
+            return EN_MONTHS[dt.month - 1]
+
+        labelled = [(dt, base_label(dt, subject), subject, url) for dt, subject, url in rows]
+        seen = {}
+        for dt, label, _s, _u in labelled:
+            seen[(dt.year, label)] = seen.get((dt.year, label), 0) + 1
 
         groups: list = []  # [(year, [(label, subject, url), ...]), ...]
-        for dt, subject, url in rows:
-            label = EN_MONTHS[dt.month - 1]
-            if per_month[(dt.year, dt.month)] > 1:
+        for dt, label, subject, url in labelled:
+            if seen[(dt.year, label)] > 1:
                 label = f"{label} {dt.day}"
             if not groups or groups[-1][0] != dt.year:
                 groups.append((dt.year, []))
@@ -157,7 +175,7 @@ def render_block(rows: list) -> str:
     return (
         f"{START_MARKER}\n"
         f'    <section class="newsletter-archive" aria-label="Newsletter archive">\n'
-        f"      <h2>Newsletter Archive</h2>\n"
+        f"      <h2>Catch up with us</h2>\n"
         f"{body}\n"
         f'      <p class="nl-updated">Updated automatically from our Mailchimp newsletter.</p>\n'
         f"    </section>\n"
