@@ -854,5 +854,69 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-10",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 13 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 13
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 14.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-11"
+          },
+          {
+            "title": "Кульминский: Россия могла умышленно направить дрон в направлении самолета Зеленского",
+            "url": "https://point.md/ru/novosti/politika/kul-minskii-rossiia-mogla-umyshlenno-napravit-dron-v-napravlenii-samoleta-zelenskogo/"
+          },
+          {
+            "title": "Власти Молдовы об инциденте с самолетом Зеленского: Борт не мог вылететь из-за дрона",
+            "url": "https://point.md/ru/novosti/obschestvo/vlasti-moldovy-ob-intsidente-s-samoletom-zelenskogo-bort-ne-mog-vyletet-iz-za-drona/"
+          },
+          {
+            "title": "Курэрару: Молдова способна перехватывать дроны РФ, но ресурсы крайне ограничены",
+            "url": "https://point.md/ru/novosti/obschestvo/kureraru-moldova-sposobna-perekhvatyvat-drony-rf-no-resursy-kraine-ogranicheny/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 11 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 11
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 9 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 9
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
