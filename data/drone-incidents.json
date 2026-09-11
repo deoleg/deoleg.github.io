@@ -934,6 +934,38 @@
     "detected_at": "2026-09-10T07:01:43.528369+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Тульской области два человека погибли при атаке дронов08:24",
+    "url": "https://ria.ru/20260911/tula-2116969074.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-11T07:02:15.492020+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "NM Espresso: самолет Зеленского «чуть не столкнулся» с дроном, Москву призвали «не лезть» в дела Молдовы, Додона назвали «пропагандистской взрывчаткой»",
+    "url": "https://newsmaker.md/ru/nm-espresso-v-benderah-proshli-protesty-v-parlamente-proizoshla-perepalka-s-matami",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-11T07:02:15.492020+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTUcraina a fost atacată cu peste 160 de drone, 19 au lovit regiuni ale țării. Război în Ucraina, ziua 1661",
+    "url": "https://www.zdg.md/stiri/live-text-ucraina-a-fost-atacata-cu-peste-160-de-drone-19-au-lovit-regiuni-ale-tarii-razboi-in-ucraina-ziua-1661/",
+    "excerpt": "LIVE TEXTUcraina a fost atacată cu peste 160 de drone, 19 au lovit regiuni ale țării. Război în Ucraina, ziua 1661NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-11T07:02:15.492020+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Гросу: Молдова обсуждает с Румынией и Украиной быстрые решения для перехвата дронов",
+    "url": "https://point.md/ru/novosti/politika/grosu-moldova-obsuzhdaet-s-rumyniei-i-ukrainoi-bystrye-resheniia-dlia-perekhvata-dronov/",
+    "excerpt": "Молдова обсуждает с Румынией и Украиной, как быстрее получить возможность перехватывать и сбивать беспилотники, нарушающие воздушное простр…",
+    "confidence": "medium",
+    "detected_at": "2026-09-11T07:02:15.492020+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
