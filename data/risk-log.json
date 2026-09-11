@@ -918,5 +918,61 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-11",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 14 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 14
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: самолет Зеленского «чуть не столкнулся» с дроном, Москву призвали «не лезть» в дела Молдовы, Додона назвали «пропагандистской взрывчаткой»",
+            "url": "https://newsmaker.md/ru/nm-espresso-v-benderah-proshli-protesty-v-parlamente-proizoshla-perepalka-s-matami"
+          },
+          {
+            "title": "Гросу: Молдова обсуждает с Румынией и Украиной быстрые решения для перехвата дронов",
+            "url": "https://point.md/ru/novosti/politika/grosu-moldova-obsuzhdaet-s-rumyniei-i-ukrainoi-bystrye-resheniia-dlia-perekhvata-dronov/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 12 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 12
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 10
+      }
+    },
+    "overall_score": 0.2,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.2."
   }
 ]
