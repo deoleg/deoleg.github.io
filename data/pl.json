@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T11:32:49.939755+03:00",
+  "updatedAt": "2026-09-12T11:21:07.954411+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -432,6 +432,17 @@
       "away": "Newcastle United",
       "awayCrest": "t4",
       "ground": "Elland Road",
+      "status": "U"
+    },
+    {
+      "gameweek": 5.0,
+      "kickoff": "2026-09-18T22:00:00+03:00",
+      "kickoffLabel": "Пт, 18 сентября, 22:00",
+      "home": "Brentford",
+      "homeCrest": "t94",
+      "away": "Chelsea",
+      "awayCrest": "t8",
+      "ground": "Gtech Community Stadium",
       "status": "U"
     }
   ],
