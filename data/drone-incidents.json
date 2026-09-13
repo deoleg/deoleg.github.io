@@ -1038,6 +1038,78 @@
     "detected_at": "2026-09-12T07:00:46.959536+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Татарстане два человека погибли и 12 пострадали при атаке дронов ВСУ08:15",
+    "url": "https://ria.ru/20260913/tatarstan-2117378190.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "На севере Молдовы заметили дрон. Воздушное пространство временно закрыли",
+    "url": "https://newsmaker.md/ru/na-severe-moldovy-zametili-dron-vozdushnoe-prostranstvo-vremenno-zakryli",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон нарушил воздушное пространство Молдовы: полёты временно ограничивали",
+    "url": "https://ipn.md/ru/dron-narushil-vozdushnoe-prostranstvo-moldovy-polyoty-vremenno-ogranichivali/",
+    "excerpt": "Дрон нарушил воздушное пространство Молдовы: полёты временно ограничивали12.09.202617:14",
+    "confidence": "medium",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTUn atac cu drone a lovit un centru industrial din Tatarstanul rus, raportându-se victime. Război în Ucraina, ziua 1663",
+    "url": "https://www.zdg.md/stiri/live-text-un-atac-cu-drone-a-lovit-un-centru-industrial-din-tatarstanul-rus-raportandu-se-victime-razboi-in-ucraina-ziua-1663/",
+    "excerpt": "LIVE TEXTUn atac cu drone a lovit un centru industrial din Tatarstanul rus, raportându-se victime. Război în Ucraina, ziua 1663NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O nouă dronă a fost detectată în spațiul aerian al R. Moldova",
+    "url": "https://www.zdg.md/stiri/o-noua-drona-a-fost-detectata-in-spatiul-aerian-al-r-moldova/",
+    "excerpt": "O nouă dronă a fost detectată în spațiul aerian al R. MoldovaNouŞtiri",
+    "confidence": "low",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ştiri",
+    "url": "https://www.zdg.md/categoria/stiri/",
+    "excerpt": "O nouă dronă a fost detectată în spațiul aerian al R. MoldovaNouŞtiri",
+    "confidence": "low",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон, из-за которого закрывали небо Молдовы, разбился в Румынии: поднимали F-16",
+    "url": "https://point.md/ru/novosti/v-mire/dron-iz-za-kotorogo-zakryvali-nebo-moldovy-razbilsia-v-rumynii-v-vozdukh-podniali-f-16/",
+    "excerpt": "Информацию подтвердило Министерство национальной обороны Румынии.",
+    "confidence": "medium",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дроны атаковали аэродром в Таганроге и химзавод в Тольятти",
+    "url": "https://point.md/ru/novosti/v-mire/drony-atakovali-aerodrom-v-taganroge-i-khimzavod-v-tol-iatti/",
+    "excerpt": "В Таганроге сообщается об атаках на бывший автозавод и военный аэродром. В Тольятти после налета БПЛА вспыхнул пожар на территории химическ…",
+    "confidence": "low",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-12",
+    "excerpt": "Serviciul operații aeriene al Armatei Naționale a detectat, astăzi, 12 septembrie curent, la ora 15:26, un obiect care a pătruns neautorizat în spațiul aerian al țării noastre dinspre Ucraina. Totodată, patrula Poliției de Frontieră din cadrul SPF a observat un aparat fără pilot la aceeași oră. Dron",
+    "confidence": "high",
+    "detected_at": "2026-09-13T07:00:51.116871+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
