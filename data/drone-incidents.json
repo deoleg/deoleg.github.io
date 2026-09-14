@@ -1110,6 +1110,46 @@
     "detected_at": "2026-09-13T07:00:51.116871+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Сочи пять человек пострадали при падении обломков дронов08:26",
+    "url": "https://ria.ru/20260914/sochi-2117503629.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ПВО за ночь уничтожила 399 беспилотников08:20",
+    "url": "https://ria.ru/20260914/pvo-2117503044.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Polonia, după ce dronele rusești au atacat Ucraina în apropierea graniței sale: „Rusia este un dușman al lumii libere”",
+    "url": "https://www.zdg.md/stiri/polonia-dupa-ce-dronele-rusesti-au-atacat-ucraina-in-apropierea-granitei-sale-rusia-este-un-dusman-al-lumii-libere/",
+    "excerpt": "Polonia, după ce dronele rusești au atacat Ucraina în apropierea graniței sale: „Rusia este un dușman al lumii libere”NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Туск: Мы, к сожалению, не можем исключить, что эскалация затронет и нашу территорию",
+    "url": "https://point.md/ru/novosti/v-mire/tusk-my-k-sozhaleniiu-ne-mozhem-iskliuchit-chto-eskalatsiia-zatronet-i-nashu-territoriiu/",
+    "excerpt": "Российские дроны атаковали западную Украину у границы с Польшей. ВВС подняли в небо истребители, на КПП эвакуация. Дональд Туск предупрежда…",
+    "confidence": "low",
+    "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Вильнюс закрыл аэропорт и поднял истребитель НАТО из-за птиц",
+    "url": "https://point.md/ru/novosti/v-mire/vil-nius-zakryl-aeroport-i-podnial-istrebitel-nato-iz-za-ptits/",
+    "excerpt": "Литва временно закрыла аэропорт Вильнюса и подняла истребитель НАТО из-за возможного появления беспилотника. Была объявлена воздушная трево…",
+    "confidence": "low",
+    "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
