@@ -1095,5 +1095,62 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-14",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "В Приднестровье пообещали не допустить отмены российской миротворческой миссии05:32",
+            "url": "https://ria.ru/20260914/pridnestrove-2117492969.html"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 17 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 17
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 4,
+        "days_since_last_signal": 1
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 15 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 15
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: эвакуаци. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Туск: Мы, к сожалению, не можем исключить, что эскалация затронет и нашу территорию",
+            "url": "https://point.md/ru/novosti/v-mire/tusk-my-k-sozhaleniiu-ne-mozhem-iskliuchit-chto-eskalatsiia-zatronet-i-nashu-territoriiu/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальные travel advisories. Общий индекс: 1.4."
   }
 ]
