@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T12:33:10.287831+03:00",
+  "updatedAt": "2026-09-15T12:11:03.515473+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -36,6 +36,22 @@
     },
     {
       "position": 3,
+      "team": "Leeds United",
+      "shortName": "Leeds",
+      "abbr": "LEE",
+      "crest": "t2",
+      "played": 4,
+      "won": 2,
+      "drawn": 2,
+      "lost": 0,
+      "gf": 7,
+      "ga": 3,
+      "gd": 4,
+      "points": 8,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 4,
       "team": "Hull City",
       "shortName": "Hull",
       "abbr": "HUL",
@@ -51,7 +67,7 @@
       "qualification": "EU_CL"
     },
     {
-      "position": 4,
+      "position": 5,
       "team": "Brighton & Hove Albion",
       "shortName": "Brighton",
       "abbr": "BHA",
@@ -64,10 +80,10 @@
       "ga": 5,
       "gd": 8,
       "points": 7,
-      "qualification": "EU_CL"
+      "qualification": "EU_EL"
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Chelsea",
       "shortName": "Chelsea",
       "abbr": "CHE",
@@ -80,10 +96,10 @@
       "ga": 9,
       "gd": 1,
       "points": 7,
-      "qualification": "EU_EL"
+      "qualification": null
     },
     {
-      "position": 6,
+      "position": 7,
       "team": "Brentford",
       "shortName": "Brentford",
       "abbr": "BRE",
@@ -99,7 +115,7 @@
       "qualification": null
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "Liverpool",
       "shortName": "Liverpool",
       "abbr": "LIV",
@@ -115,7 +131,7 @@
       "qualification": null
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Everton",
       "shortName": "Everton",
       "abbr": "EVE",
@@ -131,7 +147,7 @@
       "qualification": null
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "Ipswich Town",
       "shortName": "Ipswich",
       "abbr": "IPS",
@@ -147,39 +163,7 @@
       "qualification": null
     },
     {
-      "position": 10,
-      "team": "Newcastle United",
-      "shortName": "Newcastle",
-      "abbr": "NEW",
-      "crest": "t4",
-      "played": 3,
-      "won": 1,
-      "drawn": 2,
-      "lost": 0,
-      "gf": 6,
-      "ga": 4,
-      "gd": 2,
-      "points": 5,
-      "qualification": null
-    },
-    {
       "position": 11,
-      "team": "Leeds United",
-      "shortName": "Leeds",
-      "abbr": "LEE",
-      "crest": "t2",
-      "played": 3,
-      "won": 1,
-      "drawn": 2,
-      "lost": 0,
-      "gf": 3,
-      "ga": 2,
-      "gd": 1,
-      "points": 5,
-      "qualification": null
-    },
-    {
-      "position": 12,
       "team": "Nottingham Forest",
       "shortName": "Nott'm Forest",
       "abbr": "NFO",
@@ -191,6 +175,22 @@
       "gf": 4,
       "ga": 4,
       "gd": 0,
+      "points": 5,
+      "qualification": null
+    },
+    {
+      "position": 12,
+      "team": "Newcastle United",
+      "shortName": "Newcastle",
+      "abbr": "NEW",
+      "crest": "t4",
+      "played": 4,
+      "won": 1,
+      "drawn": 2,
+      "lost": 1,
+      "gf": 7,
+      "ga": 8,
+      "gd": -1,
       "points": 5,
       "qualification": null
     },
@@ -324,17 +324,6 @@
     }
   ],
   "fixtures": [
-    {
-      "gameweek": 4.0,
-      "kickoff": "2026-09-14T22:00:00+03:00",
-      "kickoffLabel": "Пн, 14 сентября, 22:00",
-      "home": "Leeds United",
-      "homeCrest": "t2",
-      "away": "Newcastle United",
-      "awayCrest": "t4",
-      "ground": "Elland Road",
-      "status": "U"
-    },
     {
       "gameweek": 5.0,
       "kickoff": "2026-09-18T22:00:00+03:00",
@@ -573,7 +562,7 @@
       "position": "Защитник",
       "nationality": "England",
       "age": "26",
-      "note": "лучший бомбардир «Leeds United» в этом сезоне — 1 гол",
+      "note": "лучший бомбардир «Leeds United» в этом сезоне — 2 гола",
       "wikiFact": "Джейден Богл (англ. Jayden Bogle; род. 27 июля 2000, Рединг) — английский футболист, правый защитник клуба «Лидс Юнайтед».",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B3%D0%BB%2C_%D0%94%D0%B6%D0%B5%D0%B9%D0%B4%D0%B5%D0%BD"
     },
