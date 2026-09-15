@@ -1,5 +1,13 @@
 [
   {
+    "date_mentioned": "15 сентября",
+    "title": "В Литве самолеты НАТО сбили дрон, залетевший в страну",
+    "url": "https://point.md/ru/novosti/v-mire/v-litve-samolety-nato-sbili-dron-zaletevshii-v-stranu/",
+    "excerpt": "В ночь с 14 на 15 сентября в Литве был объявлен \"желтый\" уровень воздушной угрозы из-за дрона, который нарушил воздушное пространст…",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
     "date_mentioned": "2 сентября",
     "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
@@ -1148,6 +1156,70 @@
     "excerpt": "Литва временно закрыла аэропорт Вильнюса и подняла истребитель НАТО из-за возможного появления беспилотника. Была объявлена воздушная трево…",
     "confidence": "low",
     "detected_at": "2026-09-14T07:00:48.403007+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Истребитель НАТО сбил дрон в воздушном пространстве Литвы00:45",
+    "url": "https://ria.ru/20260915/dron-2117687181.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Истребители НАТО сбили беспилотник над Литвой. Он прилетел из Беларуси?",
+    "url": "https://newsmaker.md/ru/istrebiteli-nato-sbili-bespilotnik-nad-litvoi-on-priletel-iz-belarusi",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Россия возводит стены из морских контейнеров вокруг НПЗ в качестве защиты от дронов",
+    "url": "https://ipn.md/ru/rossiya-vozvodit-steny-iz-morskih-kontejnerov-vokrug-npz-v-kachestve-zashhity-ot-dronov/",
+    "excerpt": "Россия возводит стены из морских контейнеров вокруг НПЗ в качестве защиты от дронов14:49",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обновление: Ещё один беспилотник пролетел над воздушным пространством страны",
+    "url": "https://ipn.md/ru/dron-obnaruzhen-v-vozdushnom-prostranstve-respubliki-moldova-nedaleko-ot-palanki/",
+    "excerpt": "Обновление: Ещё один беспилотник пролетел над воздушным пространством страны12:06",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Un avion NATO a doborât o dronă în sudul Lituaniei",
+    "url": "https://www.zdg.md/stiri/stiri-externe/un-avion-nato-a-doborat-o-drona-in-sudul-lituaniei/",
+    "excerpt": "Un avion NATO a doborât o dronă în sudul LituanieiNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-13",
+    "excerpt": "UPDATE: Serviciul Operații Aeriene informează că o altă dronă neautorizată a pătruns în spațiul aerian al Republicii Moldova, la ora 11:09, din direcția Ucrainei, deplasându-se în apropierea localității Cioburciu, spre localitatea Pervomaisc, segmentul transnistrean.La ora 11:19, drona a părăsit spa",
+    "confidence": "high",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-12",
+    "excerpt": "Serviciul operații aeriene al Armatei Naționale a detectat, astăzi, 12 septembrie curent, la ora 15:26, un obiect care a pătruns neautorizat în spațiul aerian al țării noastre dinspre Ucraina. Totodată, patrula Poliției de Frontieră din cadrul SPF a observat un aparat fără pilot la aceeași oră. Dron",
+    "confidence": "high",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон пересек границу Молдовы у Паланки и через минуту вернулся в Украину",
+    "url": "https://point.md/ru/novosti/proisshestviya/dron-peresek-granitsu-moldovy-u-palanki-i-cherez-minutu-vernulsia-v-ukrainu/",
+    "excerpt": "Беспилотник на короткое время пересек воздушное пространство Республики Молдова в районе Паланки на фоне массированных атак России по Украи…",
+    "confidence": "medium",
+    "detected_at": "2026-09-15T07:00:50.673685+00:00"
   },
   {
     "date_mentioned": "26 августа",
