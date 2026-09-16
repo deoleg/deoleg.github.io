@@ -1222,6 +1222,38 @@
     "detected_at": "2026-09-15T07:00:50.673685+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Зеленский: Россия дважды вторгалась в воздушное пространство Молдовы, когда там находился мой самолет",
+    "url": "https://newsmaker.md/ru/zelenskii-rossiya-dvajdy-zapuskala-drony-v-vozdushnoe-prostranstvo-moldovy-kogda-tam-nahodilsya-moi-samolet",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-16T07:00:48.268407+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Volodimir Zelenski declară că Rusia a încercat să-i atace avionul cu drone de două ori în ultimele săptămâni",
+    "url": "https://www.zdg.md/stiri/volodimir-zelenski-declara-ca-rusia-a-incercat-sa-i-atace-avionul-cu-drone-de-doua-ori-in-ultimele-saptamani/",
+    "excerpt": "Volodimir Zelenski declară că Rusia a încercat să-i atace avionul cu drone de două ori în ultimele săptămâniNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-16T07:00:48.268407+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "CBS опубликовал кадры разрушений на базах США после атак Ирана",
+    "url": "https://point.md/ru/novosti/v-mire/cbs-opublikoval-kadry-razrushenii-na-bazakh-ssha-posle-atak-irana/",
+    "excerpt": "Новые фотографии показали повреждение американских военных позиций на Ближнем Востоке после атак Ирана ракетами и беспилотниками.",
+    "confidence": "low",
+    "detected_at": "2026-09-16T07:00:48.268407+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-13",
+    "excerpt": "UPDATE: Serviciul Operații Aeriene informează că o altă dronă neautorizată a pătruns în spațiul aerian al Republicii Moldova, la ora 11:09, din direcția Ucrainei, deplasându-se în apropierea localității Cioburciu, spre localitatea Pervomaisc, segmentul transnistrean.La ora 11:19, drona a părăsit spa",
+    "confidence": "high",
+    "detected_at": "2026-09-16T07:00:48.268407+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
