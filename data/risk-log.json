@@ -1212,5 +1212,70 @@
     },
     "overall_score": 1.6,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.6."
+  },
+  {
+    "date": "2026-09-16",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: тариф на газ могут вновь повысить, цена солярки бьет рекорды, в Приднестровье продолжаются «псевдопротесты»",
+            "url": "https://newsmaker.md/ru/nm-espresso-o-registraczii-na-zimnie-kompensaczii-ne-dobrovolnom-obedinenii-merii"
+          },
+          {
+            "title": "Фленкя: Евроинтеграция привлекательна для жителей Приднестровья, но не для «Шерифа»",
+            "url": "https://point.md/ru/novosti/politika/flenkia-evrointegratsiia-privlekatel-na-dlia-zhitelei-pridnestrov-ia-no-ne-dlia-sherifa/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 19 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 19
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы. Взвешенный балл за сегодня: 11.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-13"
+          },
+          {
+            "title": "Зеленский: Россия дважды вторгалась в воздушное пространство Молдовы, когда там находился мой самолет",
+            "url": "https://newsmaker.md/ru/zelenskii-rossiya-dvajdy-zapuskala-drony-v-vozdushnoe-prostranstvo-moldovy-kogda-tam-nahodilsya-moi-samolet"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 17 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 17
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 2
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
