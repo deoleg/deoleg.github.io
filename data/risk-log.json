@@ -1277,5 +1277,70 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-09-17",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 20 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 20
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 15.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-14"
+          },
+          {
+            "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: рост цен на топливо. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Ионицэ: Рост цен на топливо отразится на уровне жизни 80% населения",
+            "url": "https://point.md/ru/novosti/obschestvo/ionitse-rost-tsen-na-toplivo-otrazitsia-na-urovne-zhizni-80-naseleniia/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 1,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение постепенно снижается (пик был 2, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 3
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.4."
   }
 ]
