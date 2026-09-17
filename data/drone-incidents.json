@@ -8,6 +8,30 @@
     "detected_at": "2026-09-15T07:00:50.673685+00:00"
   },
   {
+    "date_mentioned": "17 сентября",
+    "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "На фоне массированных атак России по территории Украины, в том числе Одесской области, неопознанный беспилотник утром 17 сентября на короткое время пересек воздушное пространство …",
+    "confidence": "medium",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": "17 сентября",
+    "title": "Ночная атака России на Киев и Одессу: дрон попал в жилую многоэтажку",
+    "url": "https://point.md/ru/novosti/v-mire/nochnaia-ataka-rossii-na-kiev-i-odessu-dron-popal-v-zhiluiu-mnogoetazhku/",
+    "excerpt": "В ночь на 17 сентября армия РФ массировано атаковала Украину. По последним данным, пострадали 12 человек, в том числе дети 10 и 12 лет.",
+    "confidence": "low",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": "17 сентября",
+    "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "На фоне массированных атак России по территории Украины, в том числе Одесской области, неопознанный беспилотник утром 17 сентября на коротк…",
+    "confidence": "medium",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
     "date_mentioned": "2 сентября",
     "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
@@ -1252,6 +1276,46 @@
     "excerpt": "UPDATE: Serviciul Operații Aeriene informează că o altă dronă neautorizată a pătruns în spațiul aerian al Republicii Moldova, la ora 11:09, din direcția Ucrainei, deplasându-se în apropierea localității Cioburciu, spre localitatea Pervomaisc, segmentul transnistrean.La ora 11:19, drona a părăsit spa",
     "confidence": "high",
     "detected_at": "2026-09-16T07:00:48.268407+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Ярославской области отразили крупную атаку беспилотников06:55",
+    "url": "https://ria.ru/20260917/bespilotniki-2118165813.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O dronă a intrat ilegal în spațiul aerian al R. Moldova, pentru circa două minute: „În contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa”",
+    "url": "https://www.zdg.md/stiri/stiri-sociale/o-drona-a-intrat-ilegal-in-spatiul-aerian-al-r-moldova-pentru-circa-doua-minute-in-contextul-atacurilor-masive-ale-federatiei-ruse-desfasurate-in-aceasta-dimineata-asupra-ucrainei-inclusi/",
+    "excerpt": "O dronă a intrat ilegal în spațiul aerian al R. Moldova, pentru circa două minute: „În contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa”NouSocial",
+    "confidence": "low",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Финляндия и Швеция планируют использовать морские дроны для наблюдения за морем",
+    "url": "https://point.md/ru/novosti/v-mire/finliandiia-i-shvetsiia-planiruiut-ispol-zovat-morskie-drony-dlia-nabliudeniia-za-morem/",
+    "excerpt": "Финляндия и Швеция рассматривают возможность совместных закупок морских дронов, или беспилотных катеров наблюдения, с целью повышения уровн…",
+    "confidence": "low",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Науседа: РФ намеренно позволяет дронам залетать в страны Балтии",
+    "url": "https://point.md/ru/novosti/v-mire/nauseda-rf-namerenno-pozvoliaet-dronam-zaletat-v-strany-baltii/",
+    "excerpt": "Президент Литвы Гитанас Науседа считает, что дронам, залетающим на территорию его страны или других стран Балтии, могут намеренно позволять…",
+    "confidence": "low",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-14",
+    "excerpt": "Serviciul Operații Aeriene informează că, în contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa, o dronă neidentificată a traversat pentru scurt timp spațiul aerian al Republicii Moldova. La ora 08:56, drona a traversat neauto",
+    "confidence": "high",
+    "detected_at": "2026-09-17T07:00:46.378799+00:00"
   },
   {
     "date_mentioned": "26 августа",
