@@ -1342,5 +1342,83 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-09-18",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "В Приднестровье двухлетний ребенок отравился крысиным ядом",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-dvukhletnii-rebenok-otravilsia-krysinym-iadom/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 21 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 21
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, дрон. Взвешенный балл за сегодня: 12.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-14"
+          },
+          {
+            "title": "Дрон незаконно находился в воздушном пространстве Молдовы две минуты",
+            "url": "https://ipn.md/ru/bespilotnik-nezakonno-nahodilsya-v-vozdushnom-prostranstve-respubliki-moldova-v-techenie-dvuh-minut/"
+          },
+          {
+            "title": "Взрыв возле Колоницы был слышен в Кишинёве: полиция подняла дроны",
+            "url": "https://point.md/ru/novosti/proisshestviya/vzryv-vozle-kolonitsy-byl-slyshen-v-kishiniove-politsiia-podniala-drony/"
+          },
+          {
+            "title": "Взрыв возле Колоницы был слышен в Кишинёве: полиция подняла дроны",
+            "url": "https://point.md/ru/novosti/proisshestviya/vzryv-vozle-kolonitsy-byl-slyshen-v-kishiniove-politsiia-podniala-drony/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: рост цен на топливо. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Рост цен на топливо продолжается: дизельное топливо достигает 35,53 лея за литр",
+            "url": "https://ipn.md/ru/rost-czen-na-toplivo-prodolzhaetsya-dizelnoe-toplivo-dostigaet-3553-leya-za-litr/"
+          },
+          {
+            "title": "Госсекретарь: Рост цен на топливо грозит серьёзными последствиями для экономики",
+            "url": "https://point.md/ru/novosti/ekonomika/gossekretar-rost-tsen-na-toplivo-grozit-ser-ioznymi-posledstviiami-dlia-ekonomiki/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 4
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.2."
   }
 ]
