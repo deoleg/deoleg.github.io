@@ -32,6 +32,30 @@
     "detected_at": "2026-09-17T07:00:46.378799+00:00"
   },
   {
+    "date_mentioned": "17 сентября",
+    "title": "В Резинском районе у трех охотников изъяли ружье, дрон и прибор ночного видения",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-rezinskom-raione-u-trekh-okhotnikov-iz-iali-ruzh-e-dron-i-pribor-nochnogo-videniia/",
+    "excerpt": "В целях предотвращения незаконной охоты полиция регулярно проводит рейды по всей стране. Утром 17 сентября сотрудники полиции Резины обнару…",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": "18 сентября",
+    "title": "Взрыв возле Колоницы был слышен в Кишинёве: полиция подняла дроны",
+    "url": "https://point.md/ru/novosti/proisshestviya/vzryv-vozle-kolonitsy-byl-slyshen-v-kishiniove-politsiia-podniala-drony/",
+    "excerpt": "Взрыв, встревоживший жителей Колоницы на рассвете 18 сентября, был слышен также в коммуне Бубуечь и столичном секторе Ботаника.",
+    "confidence": "high",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": "18 сентября",
+    "title": "Взрыв возле Колоницы был слышен в Кишинёве: полиция подняла дроны",
+    "url": "https://point.md/ru/novosti/proisshestviya/vzryv-vozle-kolonitsy-byl-slyshen-v-kishiniove-politsiia-podniala-drony/",
+    "excerpt": "Взрыв, встревоживший жителей Колоницы на рассвете 18 сентября, был слышен также в коммуне Бубуечь и столичном секторе Ботаника.",
+    "confidence": "high",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
     "date_mentioned": "2 сентября",
     "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
@@ -1316,6 +1340,62 @@
     "excerpt": "Serviciul Operații Aeriene informează că, în contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa, o dronă neidentificată a traversat pentru scurt timp spațiul aerian al Republicii Moldova. La ora 08:56, drona a traversat neauto",
     "confidence": "high",
     "detected_at": "2026-09-17T07:00:46.378799+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Силы ПВО отражают налет БПЛА на Москву03:47",
+    "url": "https://ria.ru/20260918/pvo-2118365395.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон незаконно находился в воздушном пространстве Молдовы две минуты",
+    "url": "https://ipn.md/ru/bespilotnik-nezakonno-nahodilsya-v-vozdushnom-prostranstve-respubliki-moldova-v-techenie-dvuh-minut/",
+    "excerpt": "ВажноОбществоДрон незаконно находился в воздушном пространстве Молдовы две минутыbyAlexandru Carasec17.09.2026Сегодня утром неопознанный беспилотник незаконно пересёк воздушное пространство Республики Молдова. Министерство обороны сообщает, что летательный аппарат находился в национальном воздушном ",
+    "confidence": "medium",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ярославский нефтеперерабатывающий завод вновь стал целью украинских беспилотников",
+    "url": "https://ipn.md/ru/yaroslavskij-neftepererabatyvayushhij-zavod-vnov-stal-czelyu-ukrainskih-bespilotnikov/",
+    "excerpt": "Ярославский нефтеперерабатывающий завод вновь стал целью украинских беспилотников11:40",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTO fetiță a fost rănită într-un atac cu drone în regiunea Kiev. Război în Ucraina, ziua 1667",
+    "url": "https://www.zdg.md/stiri/live-text-o-fetita-a-fost-ranita-intr-un-atac-cu-drone-in-regiunea-kiev-razboi-in-ucraina-ziua-1667/",
+    "excerpt": "LIVE TEXTO fetiță a fost rănită într-un atac cu drone în regiunea Kiev. Război în Ucraina, ziua 1667NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ЕС перечислит Украине 3,3 млрд евро – на ракеты и дроны",
+    "url": "https://point.md/ru/novosti/v-mire/es-perechislit-ukraine-3-3-mlrd-evro-na-rakety-i-drony/",
+    "excerpt": "Евросоюз в пятницу должен перечислить Украине 3,3 млрд евро на закупку беспилотников и ракет. Об этом заявила президент Еврокомиссии Урсула…",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Полиция Австралии платит водителям $20 за ноль на алкотестере",
+    "url": "https://point.md/ru/novosti/v-mire/politsiia-avstralii-platit-voditeliam-20-za-nol-na-alkotestere/",
+    "excerpt": "Полиция города Манжимап в Западной Австралии начала выдавать водителям по $20, если алкотестер показывает ноль и человек не нарушил других …",
+    "confidence": "low",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-14",
+    "excerpt": "Serviciul Operații Aeriene informează că, în contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa, o dronă neidentificată a traversat pentru scurt timp spațiul aerian al Republicii Moldova. La ora 08:56, drona a traversat neauto",
+    "confidence": "high",
+    "detected_at": "2026-09-18T07:00:47.271942+00:00"
   },
   {
     "date_mentioned": "26 августа",
