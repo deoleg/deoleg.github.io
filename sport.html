@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>100 дней — спортивный челлендж</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 64px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    /* Status bar */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 24px;
+      min-height: 18px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ddd;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+
+    .status-dot.ok      { background: #1D9E75; }
+    .status-dot.saving  { background: #f0a500; }
+    .status-dot.error   { background: #e05252; }
+
+    .status-text { transition: color 0.3s; }
+    .status-text.error { color: #e05252; }
+
+    /* Day nav */
+    .day-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+
+    .day-nav-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1.5px solid #e5e5e5;
+      background: #fff;
+      color: #888;
+      font-size: 15px;
+      cursor: pointer;
+      transition: border-color .15s, color .15s;
+      flex-shrink: 0;
+    }
+    .day-nav-btn:hover:not(:disabled) { border-color: #1a1f36; color: #1a1f36; }
+    .day-nav-btn:disabled { opacity: .35; cursor: default; }
+
+    .day-label {
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .day-label .day-num {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1f36;
+    }
+
+    .day-label .day-date {
+      font-size: 12.5px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    .day-status {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #bbb;
+      margin-bottom: 4px;
+      min-height: 20px;
+    }
+
+    .day-status.closed { color: #1D9E75; }
+    .day-status.today   { color: #f0a500; }
+
+    .jump-today-wrap { text-align: center; margin-bottom: 28px; min-height: 20px; }
+
+    .jump-today-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #1e63c9;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Exercise cards */
+    .exercises {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .ex-card {
+      background: #fff;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .ex-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .ex-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1f36;
+    }
+
+    .ex-count {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .ex-count b {
+      font-size: 17px;
+      color: #1a1f36;
+      font-weight: 700;
+    }
+
+    .ex-count.hit b { color: #1D9E75; }
+
+    .progress-wrap {
+      width: 100%;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 3px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #1D9E75;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .ex-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ex-btn {
+      font-family: 'Inter', sans-serif;
+      border: 1.5px solid #e5e5e5;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color .15s, color .15s, background .15s;
+      flex-shrink: 0;
+    }
+
+    .ex-btn.step {
+      width: 34px;
+      height: 34px;
+      font-size: 16px;
+      color: #888;
+    }
+    .ex-btn.step:hover { border-color: #1a1f36; color: #1a1f36; }
+    .ex-btn.step:active { background: #f0f0ee; }
+
+    .ex-input {
+      width: 64px;
+      height: 34px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 8px;
+      outline: none;
+      color: #1a1a1a;
+      -moz-appearance: textfield;
+    }
+    .ex-input::-webkit-outer-spin-button,
+    .ex-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .ex-input:focus { border-color: #1D9E75; }
+
+    .ex-btn.add {
+      flex: 1;
+      height: 34px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #1a1f36;
+      color: #fff;
+      border: none;
+    }
+    .ex-btn.add:hover { opacity: .85; }
+
+    .ex-btn.undo {
+      width: 34px;
+      height: 34px;
+      font-size: 13px;
+      color: #ccc;
+    }
+    .ex-btn.undo:hover { color: #e05252; border-color: #e05252; }
+
+    /* Section divider */
+    .section-divider {
+      border: none;
+      border-top: 1.5px solid #e8e8e8;
+      margin: 32px 0 24px;
+    }
+
+    .section-heading {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-bottom: 16px;
+    }
+
+    /* Challenge counter */
+    .counter-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .counter-num {
+      font-size: 40px;
+      font-weight: 600;
+      color: #1a1f36;
+      line-height: 1;
+    }
+
+    .counter-total {
+      font-size: 16px;
+      color: #888;
+    }
+
+    .streak-note {
+      font-size: 13px;
+      color: #1D9E75;
+      font-weight: 500;
+      min-height: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .grid.loading { opacity: 0.4; pointer-events: none; }
+
+    .cell {
+      aspect-ratio: 1;
+      border-radius: 7px;
+      border: 1.5px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10.5px;
+      color: #bbb;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+    }
+
+    .cell:hover:not(.future) { border-color: #1D9E75; transform: scale(1.08); }
+
+    .cell.partial { background: #fff3d6; border-color: #f0c96a; color: #a87a10; }
+    .cell.done    { background: #1D9E75; border-color: #159A6E; color: #fff; font-size: 12px; }
+    .cell.done:hover { background: #159A6E; }
+    .cell.future  { background: #f5f5f4; color: #ddd; cursor: default; }
+
+    .cell.selected { box-shadow: 0 0 0 2px #1a1f36; }
+    .cell.is-today::after {
+      content: '';
+      position: absolute;
+      top: 3px; right: 3px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #f0a500;
+    }
+    .cell.done.is-today::after { background: #fff; }
+
+    /* Actions */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reset-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #aaa;
+      background: none;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 7px 16px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .reset-btn:hover { color: #666; border-color: #bbb; }
+
+    /* Token screen */
+    .token-screen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #f9f9f9;
+      z-index: 10;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .token-inner { width: 100%; max-width: 420px; }
+
+    .token-title { font-size: 13px; font-weight: 600; color: #1a1f36; margin-bottom: 6px; }
+
+    .token-desc { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+
+    .token-input {
+      width: 100%;
+      font-family: monospace;
+      font-size: 13px;
+      padding: 10px 12px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 12px;
+      background: #fff;
+      color: #1a1a1a;
+    }
+
+    .token-btn {
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      background: #1a1f36;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px;
+      cursor: pointer;
+    }
+
+    .token-hint { font-size: 12px; color: #bbb; margin-top: 12px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <h1>💪 100 дней</h1>
+  <p class="subtitle">Отжимания, подтягивания, гоблет-приседания — каждый день</p>
+
+  <div class="status-bar">
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-text" id="statusText">Загрузка…</span>
+  </div>
+
+  <div class="day-nav">
+    <button type="button" class="day-nav-btn" id="prevDayBtn">←</button>
+    <div class="day-label">
+      <div class="day-num"><span id="dayNum">1</span> / 100</div>
+      <div class="day-date" id="dayDate"></div>
+    </div>
+    <button type="button" class="day-nav-btn" id="nextDayBtn">→</button>
+  </div>
+  <div class="day-status" id="dayStatus"></div>
+  <div class="jump-today-wrap">
+    <button type="button" class="jump-today-btn" id="jumpTodayBtn" style="display:none;">Вернуться к сегодня</button>
+  </div>
+
+  <div class="exercises" id="exercises"></div>
+
+  <hr class="section-divider">
+  <h2 class="section-heading">Прогресс челленджа</h2>
+
+  <div class="counter-row">
+    <span class="counter-num" id="closedCount">0</span>
+    <span class="counter-total">/ 100 дней закрыто</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-fill" id="challengeBar"></div>
+  </div>
+  <div class="streak-note" id="streakNote"></div>
+
+  <div class="grid loading" id="grid"></div>
+
+  <div class="actions">
+    <button type="button" class="reset-btn" id="resetBtn">Сбросить всё</button>
+    <button type="button" class="reset-btn" id="changeTokenBtn">Сменить токен</button>
+  </div>
+</div>
+
+<!-- Token setup screen -->
+<div id="tokenScreen" class="token-screen">
+  <div class="token-inner">
+    <p class="token-title">Настройка сохранения</p>
+    <p class="token-desc">
+      Введи GitHub Personal Access Token — он сохранится только в этом браузере и никуда не отправится, кроме GitHub API.
+    </p>
+    <input id="tokenInput" class="token-input" type="password" placeholder="github_pat_…">
+    <button type="button" id="tokenSaveBtn" class="token-btn">
+      Сохранить и продолжить
+    </button>
+    <p class="token-hint">
+      Нужен Fine-grained token с правом <strong>Contents: Read&nbsp;&amp;&nbsp;write</strong> для репозитория deoleg.github.io
+    </p>
+  </div>
+</div>
+
+<script>
+// ── Конфигурация ──────────────────────────────────────────────────────────────
+const REPO      = "deoleg/deoleg.github.io";
+const FILE      = "data/sport.json";
+const TOKEN_KEY = "sport_gh_token";
+let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
+const TOTAL_DAYS = 100;
+// ─────────────────────────────────────────────────────────────────────────────
+
+const EXERCISES = [
+  { key: "pushups", name: "Отжимания",          target: 250, step: 10 },
+  { key: "pullups", name: "Подтягивания",       target: 50,  step: 5  },
+  { key: "squats",  name: "Гоблет приседания",  target: 100, step: 10 },
+];
+
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+
+let startDate   = null;              // "YYYY-MM-DD" — day 1 of the challenge
+let days        = {};                // { "1": { pushups: n, pullups: n, squats: n }, ... }
+let selectedDay = 1;
+let fileSha     = null;
+let saveTimer   = null;
+
+const RU_MON = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+
+function todayISO() {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+function addDaysISO(iso, n) {
+  const d = new Date(iso + "T00:00:00");
+  d.setDate(d.getDate() + n);
+  return d;
+}
+
+function fmtDate(d) {
+  return d.getDate() + " " + RU_MON[d.getMonth()];
+}
+
+// Day 1 == startDate. Returns the current calendar day number, clamped to [1, TOTAL_DAYS].
+function currentDayNumber() {
+  const start = new Date(startDate + "T00:00:00");
+  const now   = new Date(todayISO() + "T00:00:00");
+  const diff  = Math.round((now - start) / 86400000) + 1;
+  return Math.min(Math.max(diff, 1), TOTAL_DAYS);
+}
+
+function dayData(n) {
+  if (!days[n]) days[n] = { pushups: 0, pullups: 0, squats: 0 };
+  return days[n];
+}
+
+function isDayClosed(n) {
+  const d = days[n];
+  if (!d) return false;
+  return EXERCISES.every(ex => (d[ex.key] || 0) >= ex.target);
+}
+
+function isDayPartial(n) {
+  const d = days[n];
+  if (!d) return false;
+  return EXERCISES.some(ex => (d[ex.key] || 0) > 0) && !isDayClosed(n);
+}
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+
+function setStatus(state, text) {
+  const dot  = document.getElementById("statusDot");
+  const span = document.getElementById("statusText");
+  dot.className  = "status-dot " + (state || "");
+  span.className = "status-text" + (state === "error" ? " error" : "");
+  span.textContent = text;
+}
+
+function buildExerciseCards() {
+  const wrap = document.getElementById("exercises");
+  wrap.innerHTML = "";
+  EXERCISES.forEach(ex => {
+    const card = document.createElement("div");
+    card.className = "ex-card";
+    card.innerHTML = `
+      <div class="ex-head">
+        <span class="ex-name">${ex.name}</span>
+        <span class="ex-count" id="cnt-${ex.key}"><b id="cntnum-${ex.key}">0</b> / ${ex.target}</span>
+      </div>
+      <div class="progress-wrap"><div class="progress-fill" id="bar-${ex.key}"></div></div>
+      <div class="ex-controls">
+        <button type="button" class="ex-btn step minus" data-ex="${ex.key}">−1</button>
+        <input type="number" class="ex-input" id="inp-${ex.key}" min="1" step="1" value="${ex.step}">
+        <button type="button" class="ex-btn add" data-ex="${ex.key}">Добавить</button>
+        <button type="button" class="ex-btn undo" data-ex="${ex.key}" title="Отменить последний ввод шага">↺</button>
+      </div>
+    `;
+    wrap.appendChild(card);
+  });
+
+  wrap.querySelectorAll(".ex-btn.add").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.ex;
+      const inp = document.getElementById("inp-" + key);
+      const val = parseInt(inp.value, 10);
+      if (!val || val < 1) { inp.focus(); return; }
+      changeExercise(key, val);
+    });
+  });
+
+  wrap.querySelectorAll(".ex-btn.minus").forEach(btn => {
+    btn.addEventListener("click", () => changeExercise(btn.dataset.ex, -1));
+  });
+
+  wrap.querySelectorAll(".ex-btn.undo").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.ex;
+      const inp = document.getElementById("inp-" + key);
+      const val = parseInt(inp.value, 10) || 0;
+      changeExercise(key, -val);
+    });
+  });
+}
+
+function changeExercise(key, delta) {
+  const d = dayData(selectedDay);
+  d[key] = Math.max(0, (d[key] || 0) + delta);
+  renderDay();
+  syncGrid();
+  render();
+  scheduleSave();
+}
+
+function renderDay() {
+  const cur = currentDayNumber();
+  const d = dayData(selectedDay);
+
+  document.getElementById("dayNum").textContent = selectedDay;
+  const dateObj = addDaysISO(startDate, selectedDay - 1);
+  document.getElementById("dayDate").textContent = fmtDate(dateObj);
+
+  EXERCISES.forEach(ex => {
+    const val = d[ex.key] || 0;
+    document.getElementById("cntnum-" + ex.key).textContent = val;
+    document.getElementById("cnt-" + ex.key).classList.toggle("hit", val >= ex.target);
+    document.getElementById("bar-" + ex.key).style.width = Math.min(100, (val / ex.target) * 100) + "%";
+  });
+
+  const statusEl = document.getElementById("dayStatus");
+  statusEl.className = "day-status";
+  if (isDayClosed(selectedDay)) {
+    statusEl.textContent = "✅ День закрыт";
+    statusEl.classList.add("closed");
+  } else if (selectedDay === cur) {
+    statusEl.textContent = "Сегодняшний день — вперёд!";
+    statusEl.classList.add("today");
+  } else if (selectedDay > cur) {
+    statusEl.textContent = "Ещё не наступил";
+  } else {
+    statusEl.textContent = "День не закрыт";
+  }
+
+  document.getElementById("prevDayBtn").disabled = selectedDay <= 1;
+  document.getElementById("nextDayBtn").disabled = selectedDay >= cur;
+
+  document.getElementById("jumpTodayBtn").style.display = (selectedDay !== cur) ? "inline" : "none";
+}
+
+function syncGrid() {
+  const cur = currentDayNumber();
+  document.querySelectorAll(".cell").forEach(c => {
+    const n = Number(c.dataset.n);
+    c.classList.toggle("done", isDayClosed(n));
+    c.classList.toggle("partial", isDayPartial(n));
+    c.classList.toggle("future", n > cur);
+    c.classList.toggle("is-today", n === cur);
+    c.classList.toggle("selected", n === selectedDay);
+    c.textContent = isDayClosed(n) ? "✓" : n;
+  });
+}
+
+function currentStreak() {
+  const cur = currentDayNumber();
+  let streak = 0;
+  for (let n = cur; n >= 1; n--) {
+    if (isDayClosed(n)) streak++;
+    else break;
+  }
+  return streak;
+}
+
+function render() {
+  let closed = 0;
+  for (let n = 1; n <= TOTAL_DAYS; n++) if (isDayClosed(n)) closed++;
+
+  document.getElementById("closedCount").textContent = closed;
+  document.getElementById("challengeBar").style.width = closed + "%";
+
+  const streak = currentStreak();
+  const note = document.getElementById("streakNote");
+  note.textContent = streak > 0 ? `🔥 Серия закрытых дней подряд: ${streak}` : "";
+}
+
+// ── GitHub API ────────────────────────────────────────────────────────────────
+
+function apiHeaders() {
+  return {
+    Authorization: `token ${TOKEN}`,
+    Accept: "application/vnd.github.v3+json",
+    "Content-Type": "application/json"
+  };
+}
+
+async function loadFromGitHub() {
+  const r = await fetch(API, { headers: apiHeaders() });
+  if (r.status === 404) return { startDate: null, days: {} };
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.sha;
+  const data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+  return { startDate: data.startDate || null, days: data.days || {} };
+}
+
+async function saveToGitHub() {
+  const payload = { startDate, days };
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  const body = { message: "Update sport challenge progress", content };
+  if (fileSha) body.sha = fileSha;
+
+  const r = await fetch(API, { method: "PUT", headers: apiHeaders(), body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.content.sha;
+}
+
+function scheduleSave() {
+  setStatus("saving", "Сохраняется…");
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      await saveToGitHub();
+      setStatus("ok", "Сохранено");
+    } catch (e) {
+      console.error(e);
+      setStatus("error", "Ошибка сохранения — проверь токен");
+    }
+  }, 1200);
+}
+
+// ── Token screen ──────────────────────────────────────────────────────────────
+
+function showTokenScreen() {
+  document.getElementById("tokenScreen").style.display = "flex";
+
+  function save() {
+    const val = document.getElementById("tokenInput").value.trim();
+    if (!val) return;
+    localStorage.setItem(TOKEN_KEY, val);
+    location.reload();
+  }
+
+  document.getElementById("tokenSaveBtn").addEventListener("click", save);
+  document.getElementById("tokenInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") save();
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+function selectDay(n) {
+  const cur = currentDayNumber();
+  selectedDay = Math.min(Math.max(n, 1), cur);
+  renderDay();
+  syncGrid();
+}
+
+async function startApp() {
+  const grid = document.getElementById("grid");
+  for (let i = 1; i <= TOTAL_DAYS; i++) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.dataset.n = i;
+    cell.textContent = i;
+    cell.addEventListener("click", () => {
+      if (i > currentDayNumber()) return;
+      selectDay(i);
+    });
+    grid.appendChild(cell);
+  }
+
+  buildExerciseCards();
+
+  try {
+    const data = await loadFromGitHub();
+    days = data.days || {};
+
+    if (data.startDate) {
+      startDate = data.startDate;
+    } else {
+      // First run — the challenge starts today.
+      startDate = todayISO();
+      await saveToGitHub().catch(() => {});
+    }
+
+    selectedDay = currentDayNumber();
+    renderDay();
+    syncGrid();
+    render();
+    grid.classList.remove("loading");
+    setStatus("ok", "Сохранено");
+  } catch (e) {
+    console.error(e);
+    startDate = startDate || todayISO();
+    selectedDay = currentDayNumber();
+    renderDay();
+    syncGrid();
+    render();
+    grid.classList.remove("loading");
+    setStatus("error", "Ошибка — токен неверный или истёк");
+  }
+}
+
+document.getElementById("prevDayBtn").addEventListener("click", () => selectDay(selectedDay - 1));
+document.getElementById("nextDayBtn").addEventListener("click", () => selectDay(selectedDay + 1));
+document.getElementById("jumpTodayBtn").addEventListener("click", () => selectDay(currentDayNumber()));
+
+document.getElementById("resetBtn").addEventListener("click", async () => {
+  if (!confirm("Сбросить весь прогресс челленджа?")) return;
+  days = {};
+  startDate = todayISO();
+  selectedDay = 1;
+  renderDay();
+  syncGrid();
+  render();
+  scheduleSave();
+});
+
+document.getElementById("changeTokenBtn").addEventListener("click", () => {
+  localStorage.removeItem(TOKEN_KEY);
+  location.reload();
+});
+
+if (TOKEN) {
+  startApp();
+} else {
+  showTokenScreen();
+}
+</script>
+
+</body>
+</html>
