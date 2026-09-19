@@ -56,6 +56,22 @@
     "detected_at": "2026-09-18T07:00:47.271942+00:00"
   },
   {
+    "date_mentioned": "19 сентября",
+    "title": "Несколько неизвестных летательных аппаратов нарушили воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neskol-ko-neizvestnykh-letatel-nykh-apparatov-narushili-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Утром 19 сентября вблизи границы с Украиной были замечены несколько неизвестных летательных аппаратов, по меньшей мере три из которых пролетели через воздушное пространство Респуб…",
+    "confidence": "medium",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": "19 сентября",
+    "title": "Несколько неизвестных летательных аппаратов нарушили воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neskol-ko-neizvestnykh-letatel-nykh-apparatov-narushili-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Утром 19 сентября вблизи границы с Украиной были замечены несколько неизвестных летательных аппаратов, по меньшей мере три из которых проле…",
+    "confidence": "medium",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
     "date_mentioned": "2 сентября",
     "title": "На юге Молдовы пограничники обнаружили обломки неизвестного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/na-iuge-moldovy-pogranichniki-obnaruzhili-oblomki-neizvestnogo-ob-ekta/",
@@ -1396,6 +1412,94 @@
     "excerpt": "Serviciul Operații Aeriene informează că, în contextul atacurilor masive ale Federației Ruse desfășurate în această dimineață asupra Ucrainei, inclusiv în regiunea Odesa, o dronă neidentificată a traversat pentru scurt timp spațiul aerian al Republicii Moldova. La ora 08:56, drona a traversat neauto",
     "confidence": "high",
     "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "NM Espresso: вблизи Кишинева взорвался дрон, Тофан отправляется в США, в Молдове похолодает",
+    "url": "https://newsmaker.md/ru/nm-espresso-pod-kishinevom-vzorvalsya-dron-tofan-otpravlyaetsya-v-ssha-i-chto-uznal-britanecz-o-moldove-za-poltora-dnya",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Почему не зафиксировали пролет боевого дрона, упавшего возле Кишинева? Отвечает минобороны",
+    "url": "https://newsmaker.md/ru/pochemu-ne-zafiksirovali-prolet-boevogo-drona-upavshego-vozle-kishineva-otvechaet-minoboron",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Европейская комиссия выделяет Украине новый транш в 3,3 млрд евро на дроны и ракеты",
+    "url": "https://ipn.md/ru/evropejskaya-komissiya-vydelyaet-ukraine-novyj-transh-v-33-mlrd-evro-na-drony-i-rakety/",
+    "excerpt": "Европейская комиссия выделяет Украине новый транш в 3,3 млрд евро на дроны и ракеты13:35",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Фрагменты, которые предположительно принадлежат дрону, обнаружены в Колонице",
+    "url": "https://ipn.md/ru/fragmenty-kotorye-predpolozhitelno-prinadlezhat-dronu-obnaruzheny-v-kolonicze/",
+    "excerpt": "Фрагменты, которые предположительно принадлежат дрону, обнаружены в Колонице13:20",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Лаборатория по управлению дронами открыта в Академии «Штефан чел Маре»",
+    "url": "https://ipn.md/ru/laboratoriya-po-upravleniyu-dronami-otkryta-v-akademii-shtefan-chel-mare/",
+    "excerpt": "Лаборатория по управлению дронами открыта в Академии «Штефан чел Маре»12:00",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "VIDEO„Ne așteaptă o iarnă complicată”. Drone peste R. Moldova. De ce nu e expulzat ambasadorul rus? Relația cu România, Ucraina, SUA, Israel, China. Mihai Popșoi, ministrul Afacerilor Externe, la Podcast ZdCe",
+    "url": "https://www.zdg.md/interviuri/video-ne-asteapta-o-iarna-complicata-drone-peste-r-moldova-de-ce-nu-e-expulzat-ambasadorul-rus-relatia-cu-romania-ucraina-sua-israel-china-mihai-popsoi-ministrul-afacerilo/",
+    "excerpt": "VIDEO„Ne așteaptă o iarnă complicată”. Drone peste R. Moldova. De ce nu e expulzat ambasadorul rus? Relația cu România, Ucraina, SUA, Israel, China. Mihai Popșoi, ministrul Afacerilor Externe, la Podcast ZdCeNouInterviuri",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Зеленский: В Украине успешно испытали два перехватчика реактивных \"Шахедов\"",
+    "url": "https://point.md/ru/novosti/v-mire/zelenskii-v-ukraine-uspeshno-ispytali-dva-perekhvatchika-reaktivnykh-shakhedov/",
+    "excerpt": "Две украинские компании успешно провели боевые испытания новых дронов-перехватчиков, сбив российский реактивный \"Шахед\".",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Жители Колоницы и соседних сел о дроне: От ударной волны тряслись стены и кровати",
+    "url": "https://point.md/ru/novosti/proisshestviya/zhiteli-kolonitsy-i-sosednikh-sel-o-drone-ot-udarnoi-volny-triaslis-steny-i-krovati/",
+    "excerpt": "Испуганные жители Колоницы, Тогатина и Максимовки рассказали о последствиях вчерашнего взрыва дрона.",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Макрон поручил подготовить план защиты инфраструктуры Франции от дронов и кибератак",
+    "url": "https://point.md/ru/novosti/v-mire/makron-poruchil-podgotovit-plan-zashchity-infrastruktury-frantsii-ot-dronov-i-kiberatak/",
+    "excerpt": "Президент Франции Эмманюэль Макрон заявил, что поручил правительству подготовить план защиты критической инфраструктуры, включая чувствител…",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Жители Колоницы и соседних сел о дроне: От ударной волны тряслись стены и кровати",
+    "url": "https://point.md/ru/novosti/proisshestviya/zhiteli-kolonitsy-i-sosednikh-sel-o-drone-ot-udarnoi-volny-triaslis-steny-i-krovati/",
+    "excerpt": "Испуганные жители Колоницы, Тогатина и Максимовки рассказали о последствиях вчерашнего взрыва дрона.",
+    "confidence": "low",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Возле Колоницы обнаружили фрагменты дрона",
+    "url": "https://point.md/ru/novosti/proisshestviya/vozle-kolonitsy-obnaruzhili-fragmenty-drona/",
+    "excerpt": "На участке земли недалеко от села Колоница, муниципия Кишинёв, обнаружили фрагменты, которые могут принадлежать беспилотнику.",
+    "confidence": "medium",
+    "detected_at": "2026-09-19T07:00:48.394831+00:00"
   },
   {
     "date_mentioned": "26 августа",
