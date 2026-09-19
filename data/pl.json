@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T11:44:43.450991+03:00",
+  "updatedAt": "2026-09-19T11:30:45.532743+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -36,6 +36,22 @@
     },
     {
       "position": 3,
+      "team": "Brentford",
+      "shortName": "Brentford",
+      "abbr": "BRE",
+      "crest": "t94",
+      "played": 5,
+      "won": 2,
+      "drawn": 3,
+      "lost": 0,
+      "gf": 10,
+      "ga": 4,
+      "gd": 6,
+      "points": 9,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 4,
       "team": "Leeds United",
       "shortName": "Leeds",
       "abbr": "LEE",
@@ -51,7 +67,7 @@
       "qualification": "EU_CL"
     },
     {
-      "position": 4,
+      "position": 5,
       "team": "Hull City",
       "shortName": "Hull",
       "abbr": "HUL",
@@ -64,10 +80,10 @@
       "ga": 2,
       "gd": 3,
       "points": 8,
-      "qualification": "EU_CL"
+      "qualification": "EU_EL"
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Brighton & Hove Albion",
       "shortName": "Brighton",
       "abbr": "BHA",
@@ -80,38 +96,22 @@
       "ga": 5,
       "gd": 8,
       "points": 7,
-      "qualification": "EU_EL"
-    },
-    {
-      "position": 6,
-      "team": "Chelsea",
-      "shortName": "Chelsea",
-      "abbr": "CHE",
-      "crest": "t8",
-      "played": 4,
-      "won": 2,
-      "drawn": 1,
-      "lost": 1,
-      "gf": 10,
-      "ga": 9,
-      "gd": 1,
-      "points": 7,
       "qualification": null
     },
     {
       "position": 7,
-      "team": "Brentford",
-      "shortName": "Brentford",
-      "abbr": "BRE",
-      "crest": "t94",
-      "played": 4,
-      "won": 1,
-      "drawn": 3,
-      "lost": 0,
-      "gf": 7,
-      "ga": 4,
-      "gd": 3,
-      "points": 6,
+      "team": "Chelsea",
+      "shortName": "Chelsea",
+      "abbr": "CHE",
+      "crest": "t8",
+      "played": 5,
+      "won": 2,
+      "drawn": 1,
+      "lost": 2,
+      "gf": 10,
+      "ga": 12,
+      "gd": -2,
+      "points": 7,
       "qualification": null
     },
     {
@@ -326,17 +326,6 @@
   "fixtures": [
     {
       "gameweek": 5.0,
-      "kickoff": "2026-09-18T22:00:00+03:00",
-      "kickoffLabel": "Пт, 18 сентября, 22:00",
-      "home": "Brentford",
-      "homeCrest": "t94",
-      "away": "Chelsea",
-      "awayCrest": "t8",
-      "ground": "Gtech Community Stadium",
-      "status": "U"
-    },
-    {
-      "gameweek": 5.0,
       "kickoff": "2026-09-19T14:30:00+03:00",
       "kickoffLabel": "Сб, 19 сентября, 14:30",
       "home": "Tottenham Hotspur",
@@ -467,16 +456,6 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B2%D0%B5%D1%80%D0%BD%D1%8C%D0%B5%2C_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81"
     },
     {
-      "team": "Brentford",
-      "player": "Kevin Schade",
-      "position": "Полузащитник",
-      "nationality": "Germany",
-      "age": "24",
-      "note": "лучший бомбардир «Brentford» в этом сезоне — 3 гола",
-      "wikiFact": "Шаде родился в семье немки и нигерийца.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B4%D0%B5%2C_%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD"
-    },
-    {
       "team": "Brighton & Hove Albion",
       "player": "Pascal Groß",
       "position": "Полузащитник",
@@ -485,16 +464,6 @@
       "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 2 гола",
       "wikiFact": "Па́скаль Грос (нем. Pascal Groß; род. 15 июня 1991, Мангейм, Германия) — немецкий футболист, полузащитник клуба «Брайтон энд Хоув Альбион» и сборной Германии. Участник чемпионата Европы 2024.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D1%81%2C_%D0%9F%D0%B0%D1%81%D0%BA%D0%B0%D0%BB%D1%8C"
-    },
-    {
-      "team": "Chelsea",
-      "player": "João Pedro",
-      "position": "Нападающий",
-      "nationality": "Brazil",
-      "age": "24",
-      "note": "лучший бомбардир «Chelsea» в этом сезоне — 3 гола",
-      "wikiFact": "Жуан Педро Жункейра де Жезус (порт.-браз. João Pedro Junqueira de Jesus; род. 26 сентября 2001, Рибейран-Прету), или же просто Жуан Педро (порт.-браз. João Pedro, бразильский португальский: [ʒuˈɐ̃w̃ ˈpedɾu]) — бразильский футболист, нападающий английского клуба «Челси» и сборной Бразилии.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D0%B0%D0%BD_%D0%9F%D0%B5%D0%B4%D1%80%D0%BE_%28%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82%2C_2001%29"
     },
     {
       "team": "Coventry City",
