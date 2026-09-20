@@ -1502,6 +1502,110 @@
     "detected_at": "2026-09-19T07:00:48.394831+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Московская область подверглась массированной атаке БПЛА, есть погибшие06:24",
+    "url": "https://ria.ru/20260920/ataka-2118847265.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Атака БПЛА привела к повреждению объекта на территории Московского НПЗ06:05",
+    "url": "https://ria.ru/20260920/moskva-2118845586.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Жители Оргеевского и Каларашского районов сообщили о дроне и взрыве. Что обнаружила полиция?",
+    "url": "https://newsmaker.md/ru/jiteli-orgeevskogo-i-kalarashskogo-raionov-soobshili-o-drone-i-vzryve-chto-obnarujila-policziya",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дроны в Штефан-Водском районе: пограничники сообщили о нарушении воздушного пространства Молдовы",
+    "url": "https://newsmaker.md/ru/drony-v-shtefan-vodskom-raione-pogranichniki-soobshili-o-narushenii-vozdushnogo-prostranstva-moldovy",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "МИД Молдовы осудил инцидент с дроном в Колонице: Последствие войны России против Украины",
+    "url": "https://newsmaker.md/ru/mid-moldovy-osudil-inczident-s-dronom-v-kolonicze-posledstvie-voiny-rossii-protiv-ukrainy",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ещё один нефтеперерабатывающий завод в Московской области остановлен из-за атак дронов",
+    "url": "https://ipn.md/ru/eshhyo-odin-neftepererabatyvayushhij-zavod-v-moskovskoj-oblasti-ostanovlen-iz-za-atak-dronov/",
+    "excerpt": "ПолитикаЕщё один нефтеперерабатывающий завод в Московской области остановлен из-за атак дроновbyBolohan Maxim18.09.2026Ярославский нефтеперерабатывающий завод, один из основных поставщиков топлива для Московской области, полностью остановил производство после атаки беспилотников, в результате которо",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Două drone au fost observate deasupra R. Moldova. Un locuitor din Dereneu a sesizat poliția în legătură cu o explozie",
+    "url": "https://www.zdg.md/stiri/doua-drone-au-fost-observate-deasupra-r-moldova-un-locuitor-din-dereneu-a-sesizat-politia-in-legatura-cu-o-explozie/",
+    "excerpt": "Două drone au fost observate deasupra R. Moldova. Un locuitor din Dereneu a sesizat poliția în legătură cu o explozieNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Social",
+    "url": "https://www.zdg.md/categoria/stiri/stiri-sociale/",
+    "excerpt": "Două drone au fost observate deasupra R. Moldova. Un locuitor din Dereneu a sesizat poliția în legătură cu o explozieNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Оргееве и Калараше сообщили о дроне и взрыве: полиция проводит проверки",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-orgeeve-i-kalarashe-soobshchili-o-drone-i-vzryve-politsiia-provodit-proverki/",
+    "excerpt": "Полицейские Оргеева и Калараша проводят масштабную операцию после того, как несколько человек сообщили властям о замеченном в небе объекте, похожем на дрон.",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Сотни дронов ВСУ атаковали Москву и область: два человека погибли",
+    "url": "https://point.md/ru/novosti/v-mire/sotni-dronov-vsu-atakovali-moskvu-i-oblast-dva-cheloveka-pogibli/",
+    "excerpt": "Два человека погибли, не менее шести пострадали в результате массированной атаки беспилотников в Подмосковье.",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Великобритании в течение года почти ежедневно фиксировали дроны возле Минобороны",
+    "url": "https://point.md/ru/novosti/v-mire/v-velikobritanii-v-techenie-goda-pochti-ezhednevno-fiksirovali-drony-vozle-ob-ektov-minoborony/",
+    "excerpt": "Неизвестные дроны почти ежедневно появляются возле объектов Минобороны Великобритании, что делает страну уязвимой перед растущими угрозами …",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-15",
+    "excerpt": "Serviciul Operații Aeriene informează că, în jurul orei 04:00, în zona localității Căplani, au fost observate survolări neautorizate ale spațiului aerian național. Două aparate de zbor neidentificate au survolat spațiul aerian al Republicii Moldova pe direcția Olănești—Cistovodnoe. În același interv",
+    "confidence": "high",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Оргееве и Калараше сообщили о дроне и взрыве: полиция проводит проверки",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-orgeeve-i-kalarashe-soobshchili-o-drone-i-vzryve-politsiia-provodit-proverki/",
+    "excerpt": "Полицейские Оргеева и Калараша проводят масштабную операцию после того, как несколько человек сообщили властям о замеченном в небе объекте,…",
+    "confidence": "low",
+    "detected_at": "2026-09-20T07:00:47.608543+00:00"
+  },
+  {
     "date_mentioned": "26 августа",
     "title": "В Молдове зафиксировали несанкционированный пролёт воздушного объекта",
     "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-zafiksirovali-nesanktsionirovannyi-proliot-vozdushnogo-ob-ekta/",
