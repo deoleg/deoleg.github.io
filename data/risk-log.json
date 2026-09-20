@@ -1493,5 +1493,83 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-20",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "МИД Румынии осудил проведение российских выборов в Украине и в Приднестровье",
+            "url": "https://newsmaker.md/ru/mid-rumynii-osudil-provedenie-rossiiskih-vyborov-v-ukraine-i-v-pridnestrove"
+          },
+          {
+            "title": "Румыния осудила открытие избирательных участков РФ в Приднестровье",
+            "url": "https://point.md/ru/novosti/politika/rumyniia-osudila-otkrytie-izbiratel-nykh-uchastkov-rf-v-pridnestrov-e/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 23 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 23
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 9.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-15"
+          },
+          {
+            "title": "Дроны в Штефан-Водском районе: пограничники сообщили о нарушении воздушного пространства Молдовы",
+            "url": "https://newsmaker.md/ru/drony-v-shtefan-vodskom-raione-pogranichniki-soobshili-o-narushenii-vozdushnogo-prostranstva-moldovy"
+          },
+          {
+            "title": "МИД Молдовы осудил инцидент с дроном в Колонице: Последствие войны России против Украины",
+            "url": "https://newsmaker.md/ru/mid-moldovy-osudil-inczident-s-dronom-v-kolonicze-posledstvie-voiny-rossii-protiv-ukrainy"
+          },
+          {
+            "title": "Фрагменты, которые предположительно принадлежат дрону, обнаружены в Колонице",
+            "url": "https://ipn.md/ru/fragmenty-kotorye-predpolozhitelno-prinadlezhat-dronu-obnaruzheny-v-kolonicze/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: рост цен на топливо. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Гросу: Правительство готовит меры, чтобы сдержать рост цен на топливо",
+            "url": "https://point.md/ru/novosti/politika/grosu-pravitel-stvo-gotovit-mery-chtoby-sderzhat-rost-tsen-na-toplivo/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 6
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.0."
   }
 ]
