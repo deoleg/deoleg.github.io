@@ -1571,5 +1571,83 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-21",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 1.2.",
+        "sources": [
+          {
+            "title": "В Приднестровье открыли участки для выборов в Госдуму России вопреки протесту Кишинева. Сколько человек уже проголосовали?",
+            "url": "https://newsmaker.md/ru/v-pridnestrove-otkryli-uchastki-dlya-vyborov-v-gosdumu-rossii-vopreki-protestu-kishineva-skolko-chelovek-uje-progolosovali"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 24 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 24
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 13.6.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-17"
+          },
+          {
+            "title": "Неизвестный летательный аппарат нарушил воздушное пространство Молдовы. На севере страны на 24 минуты вводили ограничения",
+            "url": "https://newsmaker.md/ru/neizvestnyi-letatelnyi-apparat-narushil-vozdushnoe-prostranstvo-moldovy-na-severe-strany-na-24-minuty-vvodili-ogranicheniya"
+          },
+          {
+            "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Минобороны: нарушений воздушного пространства Молдовы во время сообщений о дроне и взрыве не зафиксировали",
+            "url": "https://newsmaker.md/ru/minoborony-narushenii-vozdushnogo-prostranstva-moldovy-vo-vremya-soobshenii-o-drone-i-vzryve-ne-zafiksirovali"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: энергетический кризис. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Санду созывает Национальный совет безопасности: обсудят энергетический кризис",
+            "url": "https://point.md/ru/novosti/politika/sandu-sozyvaet-natsional-nyi-sovet-bezopasnosti-obsudiat-energeticheskii-krizis/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 7
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.2."
   }
 ]
