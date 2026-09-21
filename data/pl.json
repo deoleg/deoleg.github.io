@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T12:03:11.286654+03:00",
+  "updatedAt": "2026-09-21T12:35:08.727811+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -8,14 +8,14 @@
       "shortName": "Man City",
       "abbr": "MCI",
       "crest": "t43",
-      "played": 4,
-      "won": 4,
+      "played": 5,
+      "won": 5,
       "drawn": 0,
       "lost": 0,
-      "gf": 8,
-      "ga": 2,
-      "gd": 6,
-      "points": 12,
+      "gf": 13,
+      "ga": 5,
+      "gd": 8,
+      "points": 15,
       "qualification": "EU_CL"
     },
     {
@@ -68,6 +68,38 @@
     },
     {
       "position": 5,
+      "team": "Leeds United",
+      "shortName": "Leeds",
+      "abbr": "LEE",
+      "crest": "t2",
+      "played": 5,
+      "won": 2,
+      "drawn": 3,
+      "lost": 0,
+      "gf": 7,
+      "ga": 3,
+      "gd": 4,
+      "points": 9,
+      "qualification": "EU_EL"
+    },
+    {
+      "position": 6,
+      "team": "Liverpool",
+      "shortName": "Liverpool",
+      "abbr": "LIV",
+      "crest": "t14",
+      "played": 5,
+      "won": 2,
+      "drawn": 3,
+      "lost": 0,
+      "gf": 7,
+      "ga": 4,
+      "gd": 3,
+      "points": 9,
+      "qualification": null
+    },
+    {
+      "position": 7,
       "team": "Everton",
       "shortName": "Everton",
       "abbr": "EVE",
@@ -80,26 +112,10 @@
       "ga": 3,
       "gd": 3,
       "points": 9,
-      "qualification": "EU_EL"
-    },
-    {
-      "position": 6,
-      "team": "Leeds United",
-      "shortName": "Leeds",
-      "abbr": "LEE",
-      "crest": "t2",
-      "played": 4,
-      "won": 2,
-      "drawn": 2,
-      "lost": 0,
-      "gf": 7,
-      "ga": 3,
-      "gd": 4,
-      "points": 8,
       "qualification": null
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "Hull City",
       "shortName": "Hull",
       "abbr": "HUL",
@@ -115,7 +131,7 @@
       "qualification": null
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Newcastle United",
       "shortName": "Newcastle",
       "abbr": "NEW",
@@ -131,7 +147,7 @@
       "qualification": null
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "Chelsea",
       "shortName": "Chelsea",
       "abbr": "CHE",
@@ -144,22 +160,6 @@
       "ga": 12,
       "gd": -2,
       "points": 7,
-      "qualification": null
-    },
-    {
-      "position": 10,
-      "team": "Liverpool",
-      "shortName": "Liverpool",
-      "abbr": "LIV",
-      "crest": "t14",
-      "played": 4,
-      "won": 1,
-      "drawn": 3,
-      "lost": 0,
-      "gf": 6,
-      "ga": 4,
-      "gd": 2,
-      "points": 6,
       "qualification": null
     },
     {
@@ -180,6 +180,22 @@
     },
     {
       "position": 12,
+      "team": "Manchester United",
+      "shortName": "Man Utd",
+      "abbr": "MUN",
+      "crest": "t1",
+      "played": 5,
+      "won": 1,
+      "drawn": 2,
+      "lost": 2,
+      "gf": 8,
+      "ga": 8,
+      "gd": 0,
+      "points": 5,
+      "qualification": null
+    },
+    {
+      "position": 13,
       "team": "Nottingham Forest",
       "shortName": "Nott'm Forest",
       "abbr": "NFO",
@@ -195,39 +211,39 @@
       "qualification": null
     },
     {
-      "position": 13,
-      "team": "Manchester United",
-      "shortName": "Man Utd",
-      "abbr": "MUN",
-      "crest": "t1",
-      "played": 4,
-      "won": 1,
-      "drawn": 1,
-      "lost": 2,
-      "gf": 7,
-      "ga": 7,
-      "gd": 0,
-      "points": 4,
-      "qualification": null
-    },
-    {
       "position": 14,
       "team": "Sunderland",
       "shortName": "Sunderland",
       "abbr": "SUN",
       "crest": "t56",
-      "played": 4,
+      "played": 5,
       "won": 1,
       "drawn": 1,
-      "lost": 2,
-      "gf": 3,
-      "ga": 5,
-      "gd": -2,
+      "lost": 3,
+      "gf": 6,
+      "ga": 10,
+      "gd": -4,
       "points": 4,
       "qualification": null
     },
     {
       "position": 15,
+      "team": "Crystal Palace",
+      "shortName": "Crystal Palace",
+      "abbr": "CRY",
+      "crest": "t31",
+      "played": 5,
+      "won": 1,
+      "drawn": 1,
+      "lost": 3,
+      "gf": 6,
+      "ga": 11,
+      "gd": -5,
+      "points": 4,
+      "qualification": null
+    },
+    {
+      "position": 16,
       "team": "Aston Villa",
       "shortName": "Aston Villa",
       "abbr": "AVL",
@@ -243,34 +259,18 @@
       "qualification": null
     },
     {
-      "position": 16,
+      "position": 17,
       "team": "Bournemouth",
       "shortName": "Bournemouth",
       "abbr": "BOU",
       "crest": "t91",
-      "played": 4,
+      "played": 5,
       "won": 0,
       "drawn": 3,
-      "lost": 1,
+      "lost": 2,
       "gf": 6,
-      "ga": 7,
-      "gd": -1,
-      "points": 3,
-      "qualification": null
-    },
-    {
-      "position": 17,
-      "team": "Crystal Palace",
-      "shortName": "Crystal Palace",
-      "abbr": "CRY",
-      "crest": "t31",
-      "played": 4,
-      "won": 1,
-      "drawn": 0,
-      "lost": 3,
-      "gf": 6,
-      "ga": 11,
-      "gd": -5,
+      "ga": 8,
+      "gd": -2,
       "points": 3,
       "qualification": null
     },
@@ -292,6 +292,22 @@
     },
     {
       "position": 19,
+      "team": "Fulham",
+      "shortName": "Fulham",
+      "abbr": "FUL",
+      "crest": "t54",
+      "played": 5,
+      "won": 0,
+      "drawn": 2,
+      "lost": 3,
+      "gf": 5,
+      "ga": 8,
+      "gd": -3,
+      "points": 2,
+      "qualification": "EN_CH"
+    },
+    {
+      "position": 20,
       "team": "Tottenham Hotspur",
       "shortName": "Spurs",
       "abbr": "TOT",
@@ -305,150 +321,8 @@
       "gd": -6,
       "points": 2,
       "qualification": "EN_CH"
-    },
-    {
-      "position": 20,
-      "team": "Fulham",
-      "shortName": "Fulham",
-      "abbr": "FUL",
-      "crest": "t54",
-      "played": 4,
-      "won": 0,
-      "drawn": 1,
-      "lost": 3,
-      "gf": 4,
-      "ga": 7,
-      "gd": -3,
-      "points": 1,
-      "qualification": "EN_CH"
     }
   ],
-  "fixtures": [
-    {
-      "gameweek": 5.0,
-      "kickoff": "2026-09-20T16:00:00+03:00",
-      "kickoffLabel": "Вс, 20 сентября, 16:00",
-      "home": "Bournemouth",
-      "homeCrest": "t91",
-      "away": "Liverpool",
-      "awayCrest": "t14",
-      "ground": "Vitality Stadium",
-      "status": "U"
-    },
-    {
-      "gameweek": 5.0,
-      "kickoff": "2026-09-20T16:00:00+03:00",
-      "kickoffLabel": "Вс, 20 сентября, 16:00",
-      "home": "Leeds United",
-      "homeCrest": "t2",
-      "away": "Crystal Palace",
-      "awayCrest": "t31",
-      "ground": "Elland Road",
-      "status": "U"
-    },
-    {
-      "gameweek": 5.0,
-      "kickoff": "2026-09-20T16:00:00+03:00",
-      "kickoffLabel": "Вс, 20 сентября, 16:00",
-      "home": "Manchester City",
-      "homeCrest": "t43",
-      "away": "Sunderland",
-      "awayCrest": "t56",
-      "ground": "Etihad Stadium",
-      "status": "U"
-    },
-    {
-      "gameweek": 5.0,
-      "kickoff": "2026-09-20T18:30:00+03:00",
-      "kickoffLabel": "Вс, 20 сентября, 18:30",
-      "home": "Fulham",
-      "homeCrest": "t54",
-      "away": "Manchester United",
-      "awayCrest": "t1",
-      "ground": "Craven Cottage",
-      "status": "U"
-    }
-  ],
-  "facts": [
-    {
-      "team": "Bournemouth",
-      "player": "Marcus Tavernier",
-      "position": "Полузащитник",
-      "nationality": "England",
-      "age": "27",
-      "note": "лучший бомбардир «Bournemouth» в этом сезоне — 3 гола",
-      "wikiFact": "Маркус Джозеф Тавернье (англ.  Marcus Joseph Tavernier; род. 22 марта 1999, Лидс) — английский футболист, полузащитник клуба «Борнмут». Младший брат Джеймса Тавернье, правого защитника и капитана шотландского клуба «Рейнджерс».",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B2%D0%B5%D1%80%D0%BD%D1%8C%D0%B5%2C_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81"
-    },
-    {
-      "team": "Crystal Palace",
-      "player": "Tyrick Mitchell",
-      "position": "Защитник",
-      "nationality": "England",
-      "age": "27",
-      "note": "лучший бомбардир «Crystal Palace» в этом сезоне — 2 гола",
-      "wikiFact": "Тайрик Куон Митчелл (англ. Tyrick Kwon Mitchell; родился 1 сентября 1999, Брент, Внешний Лондон) — английский футболист, левый защитник клуба «Кристал Пэлас».",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%82%D1%87%D0%B5%D0%BB%D0%BB%2C_%D0%A2%D0%B0%D0%B9%D1%80%D0%B8%D0%BA"
-    },
-    {
-      "team": "Fulham",
-      "player": "Josh King",
-      "position": "Полузащитник",
-      "nationality": "England",
-      "age": "19",
-      "note": "лучший бомбардир «Fulham» в этом сезоне — 2 гола",
-      "wikiFact": "Джо́шуа Кри́стиан Ко́джо Кинг (англ. Joshua Christian Kojo King; родился 15 января 1992, Осло) — норвежский футболист, вингер клуба «Аль-Халидж» и национальной сборной Норвегии.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD%D0%B3%2C_%D0%94%D0%B6%D0%BE%D1%88%D1%83%D0%B0"
-    },
-    {
-      "team": "Leeds United",
-      "player": "Dominic Calvert-Lewin",
-      "position": "Нападающий",
-      "nationality": "England",
-      "age": "29",
-      "note": "лучший бомбардир «Leeds United» в этом сезоне — 3 гола",
-      "wikiFact": "Домини́к Натаниэ́л Ка́лверт-Лью́ин (англ. Dominic Nathaniel Calvert-Lewin; род. 16 марта 1997, Шеффилд, Йоркшир и Хамбер) — английский футболист, выступающий на позиции центрального нападающего. Игрок клуба «Лидс Юнайтед» и национальной сборной Англии.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B2%D0%B5%D1%80%D1%82-%D0%9B%D1%8C%D1%8E%D0%B8%D0%BD%2C_%D0%94%D0%BE%D0%BC%D0%B8%D0%BD%D0%B8%D0%BA"
-    },
-    {
-      "team": "Liverpool",
-      "player": "Alexander Isak",
-      "position": "Нападающий",
-      "nationality": "Sweden",
-      "age": "26",
-      "note": "лучший бомбардир «Liverpool» в этом сезоне — 3 гола",
-      "wikiFact": "Алекса́ндер И́сак (швед. Alexander Isak; род. 21 сентября 1999, Стокгольм) — шведский футболист, нападающий английского клуба «Ливерпуль» и национальной сборной Швеции.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B0%D0%BA%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D0%B5%D1%80"
-    },
-    {
-      "team": "Manchester City",
-      "player": "Erling Haaland",
-      "position": "Нападающий",
-      "nationality": "Norway",
-      "age": "26",
-      "note": "лучший бомбардир «Manchester City» в этом сезоне — 4 гола",
-      "wikiFact": "Холанн начинал карьеру в норвежских клубах «Брюне» и «Молде», а в январе 2019 года перешёл в австрийский клуб «Ред Булл Зальцбург». Благодаря своим играм в Австрии в 2020 году норвежец подписал контракт с дортмундской «Боруссией», в составе которой выиграл Кубок Германии.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BB%D0%B0%D0%BD%D0%BD%2C_%D0%AD%D1%80%D0%BB%D0%B8%D0%BD%D0%B3"
-    },
-    {
-      "team": "Manchester United",
-      "player": "Bruno Fernandes",
-      "position": "Полузащитник",
-      "nationality": "Portugal",
-      "age": "32",
-      "note": "лучший бомбардир «Manchester United» в этом сезоне — 3 гола",
-      "wikiFact": "В составе национальной сборной принял участие в трёх чемпионатов мира (2018, 2022 и 2026) и двух чемпионатов Европы (2020 и 2024), а также в летних Олимпийских играх 2016 года. Победитель первого в истории розыгрыша Лиги наций УЕФА.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BD%D0%B0%D0%BD%D0%B4%D0%B5%D1%88%2C_%D0%91%D1%80%D1%83%D0%BD%D1%83"
-    },
-    {
-      "team": "Sunderland",
-      "player": "Nilson Angulo",
-      "position": "Нападающий",
-      "nationality": "Ecuador",
-      "age": "23",
-      "note": "лучший бомбардир «Sunderland» в этом сезоне — 1 гол",
-      "wikiFact": "Нильсон Давид Ангуло Рамирес (исп. Nilson David Angulo Ramírez; род. 19 июня 2003, Кито) — эквадорский футболист, вингер клуба «Сандерленд» и сборной Эквадора.",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B3%D1%83%D0%BB%D0%BE%2C_%D0%9D%D0%B8%D0%BB%D1%8C%D1%81%D0%BE%D0%BD"
-    }
-  ]
+  "fixtures": [],
+  "facts": []
 }
