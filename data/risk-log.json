@@ -1774,5 +1774,69 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-09-24",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 27 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 27
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон, обломки. Взвешенный балл за сегодня: 17.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-19"
+          },
+          {
+            "title": "Два дрона нарушили воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/dva-drona-narushili-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Два дрона нарушили воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/dva-drona-narushili-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "В Молдове сообщили о нескольких взрывах. Полиция нашла обломки летательного аппарата во Флорештском районе",
+            "url": "https://newsmaker.md/ru/v-moldove-soobshili-o-neskolkih-vzryvah-policziya-nashla-oblomki-letatelnogo-apparata-vo-floreshtskom-raione"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 10
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
