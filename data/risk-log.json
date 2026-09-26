@@ -1911,5 +1911,70 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-26",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье, тирасполь. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: на сколько взлетят тарифы на газ и отопление, как  правильно называть Приднестровье, и как Молдова «сошла с рельсов»",
+            "url": "https://newsmaker.md/ru/nmespresso-chto-reshit-nare-o-tarifah-kak-pravilno-nazyvat-pridnestrove-chto-budet-v-novom-buletine-i-mojno-li-vernut-jeleznuyu-dorogu-moldovy"
+          },
+          {
+            "title": "Встреча в формате 1+1 в Тирасполе: обсуждались лицеи с преподаванием на латинской графике и Фонд конвергенции",
+            "url": "https://ipn.md/ru/vstrecha-v-formate-1-1-v-tiraspole-obsuzhdalis-liczei-s-prepodavaniem-na-latinskoj-grafike-i-fond-konvergenczii/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 29 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 29
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: dronă, spațiul aerian. Взвешенный балл за сегодня: 15.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-19"
+          },
+          {
+            "title": "Incidentele de survolări neautorizate în anul 2026 atestă o continu...",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/incidentele-de-survolari-neautorizate-anul-2026-atesta-o-continua-crestere"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 12 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 12
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
