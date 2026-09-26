@@ -2046,6 +2046,46 @@
     "detected_at": "2026-09-25T07:00:53.509626+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке дронов на Ростовскую область пострадали пять человек07:40",
+    "url": "https://ria.ru/20260926/ljudi-2120392486.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-26T07:00:46.413697+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "БПЛА атаковали Северский район Кубани, есть погибшие03:26",
+    "url": "https://ria.ru/20260926/ataka-2120381083.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-26T07:00:46.413697+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "De la „Drone pentru Ucraina prin Aeroportul Chișinău”, la „drone venite din Ucraina”. Radiografia unui fals rostogolit pe Telegram și cum propaganda și-a cerut scuze: „recunoaștem public că ne-am grăbit și că nu am fost suficient de vigilenți”",
+    "url": "https://www.zdg.md/stiri/de-la-drone-pentru-ucraina-prin-aeroportul-chisinau-la-drone-venite-din-ucraina-radiografia-unui-fals-rostogolit-pe-telegram-si-cum-propaganda-si-a-cerut-scuze/",
+    "excerpt": "De la „Drone pentru Ucraina prin Aeroportul Chișinău”, la „drone venite din Ucraina”. Radiografia unui fals rostogolit pe Telegram și cum propaganda și-a cerut scuze: „recunoaștem public că ne-am grăbit și că nu am fost suficient de vigilenți”NouPolitic",
+    "confidence": "medium",
+    "detected_at": "2026-09-26T07:00:46.413697+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Incidentele de survolări neautorizate în anul 2026 atestă o continu...",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/incidentele-de-survolari-neautorizate-anul-2026-atesta-o-continua-crestere",
+    "excerpt": "Pe fondul intensificării atacurilor aeriene ale Federației Ruse asupra Ucrainei, datele monitorizate de Serviciul de Operații Aeriene al Armatei Naționale arată o creștere a incidentelor, pe parcursul anului 2026, fapt ce afectează direct securitatea aeriană a Republicii Moldova. Retrospectiv reflec",
+    "confidence": "high",
+    "detected_at": "2026-09-26T07:00:46.413697+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-19",
+    "excerpt": "UPDATE:Serviciul Operații Aeriene informează despre o altă dronă, care a survolat spațiul aerian la 06:58 din direcția loc. Kodîma, reg Vinița UA, în direcția loc. Socola, raionul Șoldănești (RM). La 07:11, obiectul a dispărut de pe sistemele de monitorizare în proximitatea loc .Cunicea, r-nul Camen",
+    "confidence": "high",
+    "detected_at": "2026-09-26T07:00:46.413697+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
