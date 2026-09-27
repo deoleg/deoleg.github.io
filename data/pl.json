@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T12:05:13.863312+03:00",
+  "updatedAt": "2026-09-27T12:48:09.757234+03:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -323,6 +323,194 @@
       "qualification": "EN_CH"
     }
   ],
-  "fixtures": [],
-  "facts": []
+  "fixtures": [
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T14:30:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 14:30",
+      "home": "Arsenal",
+      "homeCrest": "t3",
+      "away": "Leeds United",
+      "awayCrest": "t2",
+      "ground": "Emirates Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T17:00:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 17:00",
+      "home": "Aston Villa",
+      "homeCrest": "t7",
+      "away": "Brentford",
+      "awayCrest": "t94",
+      "ground": "Villa Park",
+      "status": "U"
+    },
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T17:00:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 17:00",
+      "home": "Chelsea",
+      "homeCrest": "t8",
+      "away": "Bournemouth",
+      "awayCrest": "t91",
+      "ground": "Stamford Bridge",
+      "status": "U"
+    },
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T17:00:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 17:00",
+      "home": "Ipswich Town",
+      "homeCrest": "t40",
+      "away": "Fulham",
+      "awayCrest": "t54",
+      "ground": "Portman Road",
+      "status": "U"
+    },
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T17:00:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 17:00",
+      "home": "Sunderland",
+      "homeCrest": "t56",
+      "away": "Brighton & Hove Albion",
+      "awayCrest": "t36",
+      "ground": "Stadium of Light",
+      "status": "U"
+    },
+    {
+      "gameweek": 6.0,
+      "kickoff": "2026-10-10T19:30:00+03:00",
+      "kickoffLabel": "Сб, 10 октября, 19:30",
+      "home": "Manchester United",
+      "homeCrest": "t1",
+      "away": "Tottenham Hotspur",
+      "awayCrest": "t6",
+      "ground": "Old Trafford",
+      "status": "U"
+    }
+  ],
+  "facts": [
+    {
+      "team": "Arsenal",
+      "player": "Bukayo Saka",
+      "position": "Нападающий",
+      "nationality": "England",
+      "age": "25",
+      "note": "лучший бомбардир «Arsenal» в этом сезоне — 3 гола",
+      "wikiFact": "Бука́йо Айоинка Темида́йо Са́ка (англ. Bukayo Ayoyinka Temidayo Saka; родился 5 сентября 2001, Лондон) — английский футболист, выступающий на позиции правого вингера за клуб Премьер-лиги «Арсенал» и сборную Англии. Участник двух чемпионатов Европы (2020 и 2024) и чемпионатов мира (2022 и 2026).",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BA%D0%B0%2C_%D0%91%D1%83%D0%BA%D0%B0%D0%B9%D0%BE"
+    },
+    {
+      "team": "Aston Villa",
+      "player": "Emiliano Buendía",
+      "position": "Полузащитник",
+      "nationality": "Argentina",
+      "age": "29",
+      "note": "лучший бомбардир «Aston Villa» в этом сезоне — 1 гол",
+      "wikiFact": "Эмилиано Буэндия Стати (исп. Emiliano Buendía Stati; родился 25 декабря 1996 года в Мар-дель-Плата, Аргентина) — аргентинский футболист, атакующий полузащитник английского клуба «Астон Вилла».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%8D%D0%BD%D0%B4%D0%B8%D1%8F%2C_%D0%AD%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE"
+    },
+    {
+      "team": "Bournemouth",
+      "player": "Marcus Tavernier",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "27",
+      "note": "лучший бомбардир «Bournemouth» в этом сезоне — 3 гола",
+      "wikiFact": "Маркус Джозеф Тавернье (англ.  Marcus Joseph Tavernier; род. 22 марта 1999, Лидс) — английский футболист, полузащитник клуба «Борнмут». Младший брат Джеймса Тавернье, правого защитника и капитана шотландского клуба «Рейнджерс».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B2%D0%B5%D1%80%D0%BD%D1%8C%D0%B5%2C_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81"
+    },
+    {
+      "team": "Brentford",
+      "player": "Kevin Schade",
+      "position": "Полузащитник",
+      "nationality": "Germany",
+      "age": "24",
+      "note": "лучший бомбардир «Brentford» в этом сезоне — 3 гола",
+      "wikiFact": "Шаде родился в семье немки и нигерийца.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B4%D0%B5%2C_%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD"
+    },
+    {
+      "team": "Brighton & Hove Albion",
+      "player": "Pascal Groß",
+      "position": "Полузащитник",
+      "nationality": "Germany",
+      "age": "35",
+      "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 3 гола",
+      "wikiFact": "Па́скаль Грос (нем. Pascal Groß; род. 15 июня 1991, Мангейм, Германия) — немецкий футболист, полузащитник клуба «Брайтон энд Хоув Альбион» и сборной Германии. Участник чемпионата Европы 2024.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D1%81%2C_%D0%9F%D0%B0%D1%81%D0%BA%D0%B0%D0%BB%D1%8C"
+    },
+    {
+      "team": "Chelsea",
+      "player": "João Pedro",
+      "position": "Нападающий",
+      "nationality": "Brazil",
+      "age": "25",
+      "note": "лучший бомбардир «Chelsea» в этом сезоне — 3 гола",
+      "wikiFact": "Жуан Педро Жункейра де Жезус (порт.-браз. João Pedro Junqueira de Jesus; род. 26 сентября 2001, Рибейран-Прету), или же просто Жуан Педро (порт.-браз. João Pedro, бразильский португальский: [ʒuˈɐ̃w̃ ˈpedɾu]) — бразильский футболист, нападающий английского клуба «Челси» и сборной Бразилии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D0%B0%D0%BD_%D0%9F%D0%B5%D0%B4%D1%80%D0%BE_%28%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82%2C_2001%29"
+    },
+    {
+      "team": "Fulham",
+      "player": "Josh King",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "19",
+      "note": "лучший бомбардир «Fulham» в этом сезоне — 2 гола",
+      "wikiFact": "Джо́шуа Кри́стиан Ко́джо Кинг (англ. Joshua Christian Kojo King; родился 15 января 1992, Осло) — норвежский футболист, вингер клуба «Аль-Халидж» и национальной сборной Норвегии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD%D0%B3%2C_%D0%94%D0%B6%D0%BE%D1%88%D1%83%D0%B0"
+    },
+    {
+      "team": "Ipswich Town",
+      "player": "Emersonn",
+      "position": "Нападающий",
+      "nationality": "Brazil",
+      "age": "22",
+      "note": "лучший бомбардир «Ipswich Town» в этом сезоне — 2 гола",
+      "wikiFact": "Эмерсонн Коррея да Силва (порт.-браз. Emersonn Correia da Silva); род. 16 июля 2004, Кашуэйру-ди-Итапемирин, Эспириту-Санту), более известный, как Эмерсонн (порт.-браз. Emersonn) — бразильский футболист, центральный нападающий и вингер клуба «Ипсвич Таун».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D1%80%D0%B5%D1%8F_%D0%B4%D0%B0_%D0%A1%D0%B8%D0%BB%D0%B2%D0%B0%2C_%D0%AD%D0%BC%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%BD"
+    },
+    {
+      "team": "Leeds United",
+      "player": "Dominic Calvert-Lewin",
+      "position": "Нападающий",
+      "nationality": "England",
+      "age": "29",
+      "note": "лучший бомбардир «Leeds United» в этом сезоне — 3 гола",
+      "wikiFact": "Домини́к Натаниэ́л Ка́лверт-Лью́ин (англ. Dominic Nathaniel Calvert-Lewin; род. 16 марта 1997, Шеффилд, Йоркшир и Хамбер) — английский футболист, выступающий на позиции центрального нападающего. Игрок клуба «Лидс Юнайтед» и национальной сборной Англии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B2%D0%B5%D1%80%D1%82-%D0%9B%D1%8C%D1%8E%D0%B8%D0%BD%2C_%D0%94%D0%BE%D0%BC%D0%B8%D0%BD%D0%B8%D0%BA"
+    },
+    {
+      "team": "Manchester United",
+      "player": "Bruno Fernandes",
+      "position": "Полузащитник",
+      "nationality": "Portugal",
+      "age": "32",
+      "note": "лучший бомбардир «Manchester United» в этом сезоне — 3 гола",
+      "wikiFact": "В составе национальной сборной принял участие в трёх чемпионатов мира (2018, 2022 и 2026) и двух чемпионатов Европы (2020 и 2024), а также в летних Олимпийских играх 2016 года. Победитель первого в истории розыгрыша Лиги наций УЕФА.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BD%D0%B0%D0%BD%D0%B4%D0%B5%D1%88%2C_%D0%91%D1%80%D1%83%D0%BD%D1%83"
+    },
+    {
+      "team": "Sunderland",
+      "player": "Brian Brobbey",
+      "position": "Нападающий",
+      "nationality": "Netherlands",
+      "age": "24",
+      "note": "лучший бомбардир «Sunderland» в этом сезоне — 3 гола",
+      "wikiFact": "Брайан Эбенезер Аджей Бробби (нид. Brian Ebenezer Adjei Brobbey; род. 1 февраля 2002, Амстердам) — нидерландский футболист, нападающий клуба «Сандерленд» и сборной Нидерландов. Бронзовый призёр чемпионата Европы 2024. Участник чемпионата мира 2026 года.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%B1%D0%B1%D0%B8%2C_%D0%91%D1%80%D0%B0%D0%B9%D0%B0%D0%BD"
+    },
+    {
+      "team": "Tottenham Hotspur",
+      "player": "Conor Gallagher",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "26",
+      "note": "лучший бомбардир «Tottenham Hotspur» в этом сезоне — 1 гол",
+      "wikiFact": "Ко́нор Джон Га́ллахер (англ. Conor John Gallagher; родился 6 февраля 2000, Эпсом, Суррей) — английский футболист, полузащитник клуба «Тоттенхэм Хотспур» и сборной Англии. Участник чемпионата Европы 2024.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%BB%D0%B0%D1%85%D0%B5%D1%80%2C_%D0%9A%D0%BE%D0%BD%D0%BE%D1%80"
+    }
+  ]
 }
