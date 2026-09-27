@@ -2086,6 +2086,38 @@
     "detected_at": "2026-09-26T07:00:46.413697+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ГИП: Дрон, взорвавшийся в Бричень, предположительно относится к типу «Герань-4»",
+    "url": "https://ipn.md/ru/gip-dron-vzorvavshijsya-v-brichen-predpolozhitelno-otnositsya-k-tipu-geran-4/",
+    "excerpt": "Фрагменты летательного аппарата, обнаруженные в четверг вечером вблизи села Котюжень Бриченского района, предположительно принадлежат беспилотнику типа «Герань-4». По данным Генерального инспектората полиции, аппарат врезался в деревья и взорвался примерно в …Continue Reading",
+    "confidence": "low",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTO dronă rusească a lovit o clădire de birouri din Kiev. Război în Ucraina, ziua 1677",
+    "url": "https://www.zdg.md/stiri/live-text-o-drona-ruseasca-a-lovit-o-cladire-de-birouri-din-kiev-razboi-in-ucraina-ziua-1677/",
+    "excerpt": "LIVE TEXTO dronă rusească a lovit o clădire de birouri din Kiev. Război în Ucraina, ziua 1677NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Экс-глава погранполиции предложил привлечь Румынию к нейтрализации дронов в Молдове",
+    "url": "https://point.md/ru/novosti/obschestvo/eks-glava-pogranpolitsii-predlozhil-privlech-rumyniiu-k-neitralizatsii-dronov-v-moldove/",
+    "excerpt": "Бывший глава Инспектората пограничной полиции Росиян Василой предупредил, что Молдова больше не может терять время в укреплении возможносте…",
+    "confidence": "medium",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-20",
+    "excerpt": "UPDATE: Potrivit datelor înregistrate de sistemele de supraveghere din dotarea Armatei Naționale, obiectul aerian a intrat în spațiul național la ora 11:16, din direcția localității Stepanivka, regiunea Odesa, Ucraina, traversând frontiera de stat în direcția localității Novocotovsc, segmentul trans",
+    "confidence": "high",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -2132,6 +2164,30 @@
     "excerpt": "Вечером 26 августа неизвестный воздушный объект пересёк воздушное пространство Молдовы в районе Паланки, Штефан-Водского района, после чего…",
     "confidence": "medium",
     "detected_at": "2026-08-27T19:38:47.155335+00:00"
+  },
+  {
+    "date_mentioned": "26 сентября",
+    "title": "Румыния сообщила о нарушении воздушного пространства, была задействована авиация",
+    "url": "https://point.md/ru/novosti/v-mire/rumyniia-soobshchila-o-narushenii-vozdushnogo-prostranstva-byla-zadeistvovana-aviatsiia/",
+    "excerpt": "Ночью 26 сентября неизвестная цель нарушила воздушное пространство Румынии, в воздух были подняты истребители союзников.",
+    "confidence": "low",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
+    "date_mentioned": "26 сентября",
+    "title": "В Штефан-Водском районе нашли обломки беспилотника",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-shtefan-vodskom-raione-nashli-oblomki-bespilotnika/",
+    "excerpt": "Вечером 26 сентября пограничники обнаружили обломки беспилотника за пределами села Волинтирь в Штефан-Водском районе.",
+    "confidence": "low",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
+  },
+  {
+    "date_mentioned": "26 сентября",
+    "title": "В Штефан-Водском районе нашли обломки беспилотника",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-shtefan-vodskom-raione-nashli-oblomki-bespilotnika/",
+    "excerpt": "Вечером 26 сентября пограничники обнаружили обломки беспилотника за пределами села Волинтирь в Штефан-Водском районе.",
+    "confidence": "low",
+    "detected_at": "2026-09-27T07:00:48.123832+00:00"
   },
   {
     "date_mentioned": "29 августа",
