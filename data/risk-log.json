@@ -1976,5 +1976,61 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-09-27",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 30 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 30
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 7.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-20"
+          },
+          {
+            "title": "Экс-глава погранполиции предложил привлечь Румынию к нейтрализации дронов в Молдове",
+            "url": "https://point.md/ru/novosti/obschestvo/eks-glava-pogranpolitsii-predlozhil-privlech-rumyniiu-k-neitralizatsii-dronov-v-moldove/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 13 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 13
+      }
+    },
+    "overall_score": 0.8,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.8."
   }
 ]
