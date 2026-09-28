@@ -191,17 +191,49 @@
   /* ---------- Text helpers ---------- */
   function norm(s) { return String(s || '').toLowerCase().replace(/ё/g, 'е'); }
 
-  // First 1–2 sentences, skipping splits after abbreviations and initials
-  function excerpt(text, maxSentences) {
+  // Sentence boundaries (end offsets), skipping splits after abbreviations and initials
+  function sentenceCuts(text) {
     var re = /[.!?…]+["»”)]*\s+(?=["«“(]?[A-ZА-ЯЁ0-9])/g;
     var m, cuts = [];
-    while ((m = re.exec(text)) && cuts.length < maxSentences) {
+    while ((m = re.exec(text))) {
       var before = text.slice(0, m.index + 1);
       // "гг.", "св.", "т.", "e.g." / single-letter initials "А." "J."
       if (/(?:^|[\s(])(?:[a-zа-яё]{1,3}|[A-ZА-ЯЁ])\.$/.test(before)) continue;
       if (/(?:^|[\s(])(?:н\.\s?э|до н\.\s?э|ср|им|см)\.$/.test(before)) continue;
       cuts.push(m.index + m[0].length);
     }
+    return cuts;
+  }
+
+  function splitSentences(text) {
+    var out = [], start = 0;
+    sentenceCuts(text).forEach(function (c) { out.push(text.slice(start, c).trim()); start = c; });
+    if (start < text.length) out.push(text.slice(start).trim());
+    return out.filter(Boolean);
+  }
+
+  function wordCount(s) { return s.split(/\s+/).filter(Boolean).length; }
+
+  // Group sentences into paragraphs of ~40+ words; short texts stay one paragraph.
+  // Text is not changed, only split at sentence boundaries.
+  function paragraphs(text) {
+    var sents = splitSentences(text);
+    var total = wordCount(text);
+    if (total < 70 || sents.length < 3) return [text];
+    var paras = [], cur = [], curWords = 0, left = total;
+    sents.forEach(function (s) {
+      var w = wordCount(s);
+      cur.push(s); curWords += w; left -= w;
+      // Close the paragraph once it is long enough, unless only a short tail remains
+      if (curWords >= 40 && left >= 20) { paras.push(cur.join(' ')); cur = []; curWords = 0; }
+    });
+    if (cur.length) paras.push(cur.join(' '));
+    return paras;
+  }
+
+  // First 1–2 sentences for card excerpts
+  function excerpt(text, maxSentences) {
+    var cuts = sentenceCuts(text);
     var end = cuts.length >= maxSentences ? cuts[maxSentences - 1] : text.length;
     var out = text.slice(0, end).trim();
     // Keep card excerpts short even if the first sentences are long
@@ -708,7 +740,7 @@
       ]));
     }
 
-    body.appendChild(el('p', { class: 'panel-summary', text: F(e, 'summary') }));
+    body.appendChild(el('div', { class: 'panel-summary' }, paragraphs(F(e, 'summary')).map(function (t) { return el('p', { text: t }); })));
 
     var kp = F(e, 'key_points') || [];
     if (kp.length) {

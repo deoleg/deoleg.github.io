@@ -575,6 +575,8 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 .book-ref { font-style: normal; font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
 
 .panel-summary { margin: 0 0 22px; }
+.panel-summary p { margin: 0; }
+.panel-summary p + p { margin-top: .85em; }
 
 .panel-section { margin-top: 26px; }
 .panel-section h3 {
