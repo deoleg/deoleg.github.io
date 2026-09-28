@@ -2118,6 +2118,70 @@
     "detected_at": "2026-09-27T07:00:48.123832+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Правительство освободило от проверок объекты, пострадавшие от атак БПЛА09:18",
+    "url": "https://ria.ru/20260928/pravitelstvo-2120631878.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "На Кубани из-за падения обломков БПЛА загорелись три предприятия09:02",
+    "url": "https://ria.ru/20260928/kuban-2120629046.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "(ВИДЕО) Украина доставила дронами продукты в Олешки. В оккупированном Россией городе люди, предположительно, едят собак",
+    "url": "https://newsmaker.md/ru/video-ukraina-dostavila-dronami-produkty-v-oleshki-v-okkupirovannom-rossiei-gorode-lyudi-predpolojitelno-edyat-sobak",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Штефан-Водэ пограничники нашли обломки беспилотника",
+    "url": "https://newsmaker.md/ru/v-shtefan-vode-pogranichniki-nashli-oblomki-bespilotnica",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "«Цель — не Молдова». Озеров признал, что дроны, проникающие в Молдову, могут быть российскими",
+    "url": "https://newsmaker.md/ru/no-czel-ne-moldova-ozerov-priznal-chto-drony-pronikayushie-v-moldovu-mogut-byt-rossiiskimi",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTCel puțin doi morți și opt răniți la Kiev, după ce Rusia a atacat o piață și o benzinărie cu drone și rachete. Război în Ucraina, ziua 1678",
+    "url": "https://www.zdg.md/stiri/live-text-cel-putin-doi-morti-si-opt-raniti-la-kiev-dupa-ce-rusia-a-atacat-o-piata-si-o-benzinarie-cu-drone-si-rachete-razboi-in-ucraina-ziua-1678/",
+    "excerpt": "LIVE TEXTCel puțin doi morți și opt răniți la Kiev, după ce Rusia a atacat o piață și o benzinărie cu drone și rachete. Război în Ucraina, ziua 1678NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Карп: Молдова может сбивать некоторые дроны, но нужно определять место их падения",
+    "url": "https://point.md/ru/novosti/obschestvo/karp-moldova-mozhet-sbivat-nekotorye-drony-no-nuzhno-opredeliat-mesto-ikh-padeniia/",
+    "excerpt": "Молдова располагает возможностями для сбивания некоторых беспилотников, однако пока не применяла их из-за риска неконтролируемого падения д…",
+    "confidence": "medium",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Озеров допустил, что некоторые дроны над Молдовой могут быть российскими",
+    "url": "https://point.md/ru/novosti/politika/ozerov-dopustil-chto-nekotorye-drony-nad-moldovoi-mogut-byt-rossiiskimi/",
+    "excerpt": "При этом посол Российской Федерации утверждает, что целью является не Республика Молдова, а Украина.",
+    "confidence": "medium",
+    "detected_at": "2026-09-28T07:00:47.364737+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
