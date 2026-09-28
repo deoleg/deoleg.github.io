@@ -566,6 +566,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 .date-note .icon { color: var(--gold-ink); font-size: 20px; margin-top: 2px; }
 .date-note h3 { font-family: var(--font-sans); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 2px; }
 .date-note p { margin: 0; font-size: .93rem; }
+.book-ref { font-style: normal; font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
 
 .panel-summary { margin: 0 0 18px; }
 

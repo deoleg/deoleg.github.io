@@ -213,6 +213,71 @@
     return out;
   }
 
+  /* ---------- Book ids inside notes ----------
+     Some date notes mention books by their internal id ("north_church датирует…").
+     At render time they are replaced with a short author name; the full title
+     is shown on hover. Russian forms: nominative, genitive (after «у»), dative (after «по»). */
+  var BOOK_SHORT = {
+    berkhof_doctrines:   { ru: ['Беркхов', 'Беркхова', 'Беркхову'], en: 'Berkhof' },
+    gonzalez1_en:        { ru: ['Гонсалес («История христианской мысли»)', 'Гонсалеса («История христианской мысли»)', 'Гонсалесу («История христианской мысли»)'], en: 'González (Christian Thought)' },
+    gonzalez3_en:        { ru: ['Гонсалес («История христианской мысли», т. III)', 'Гонсалеса («История христианской мысли», т. III)', 'Гонсалесу («История христианской мысли», т. III)'], en: 'González (Christian Thought, vol. III)' },
+    grenz_olson_20c:     { ru: ['Гренц и Олсон', 'Гренца и Олсона', 'Гренцу и Олсону'], en: 'Grenz & Olson' },
+    hall_early_church:   { ru: ['Холл', 'Холла', 'Холлу'], en: 'Hall' },
+    hist_christ_1:       { ru: ['Гонсалес («История христианства», т. I)', 'Гонсалеса («История христианства», т. I)', 'Гонсалесу («История христианства», т. I)'], en: 'González (Story of Christianity, vol. I)' },
+    hist_christ_2:       { ru: ['Гонсалес («История христианства», т. II)', 'Гонсалеса («История христианства», т. II)', 'Гонсалесу («История христианства», т. II)'], en: 'González (Story of Christianity, vol. II)' },
+    lane_thinkers:       { ru: ['Лейн', 'Лейна', 'Лейну'], en: 'Lane' },
+    lebedev1:            { ru: ['Лебедев (ч. I)', 'Лебедева (ч. I)', 'Лебедеву (ч. I)'], en: 'Lebedev (part I)' },
+    lebedev2:            { ru: ['Лебедев (ч. II)', 'Лебедева (ч. II)', 'Лебедеву (ч. II)'], en: 'Lebedev (part II)' },
+    mcgrath_reformation: { ru: ['МакГрат', 'МакГрата', 'МакГрату'], en: 'McGrath' },
+    pelikan1:            { ru: ['Пеликан (т. 1)', 'Пеликана (т. 1)', 'Пеликану (т. 1)'], en: 'Pelikan (vol. 1)' },
+    pelikan2:            { ru: ['Пеликан (т. 2)', 'Пеликана (т. 2)', 'Пеликану (т. 2)'], en: 'Pelikan (vol. 2)' },
+    north_church:        { ru: ['Норт', 'Норта', 'Норту'], en: 'North' },
+    josephus:            { ru: ['Иосиф Флавий', 'Иосифа Флавия', 'Иосифу Флавию'], en: 'Josephus' }
+  };
+  var bookIdRe = null;
+
+  function bookShort(id, before) {
+    var b = BOOK_SHORT[id];
+    if (!b) return null;
+    if (state.lang === 'en') return b.en;
+    var form = /(?:^|[\s(])у\s$/i.test(before) ? 1 : /(?:^|[\s(])по\s$/i.test(before) ? 2 : 0;
+    return b.ru[form];
+  }
+
+  // Returns a DocumentFragment: plain text with book ids replaced by <cite title="full title">
+  function withBookNames(text) {
+    var frag = document.createDocumentFragment();
+    if (!bookIdRe) {
+      bookIdRe = new RegExp('\\b(' + Object.keys(BOOK_SHORT).join('|') + ')(?::(\\d+))?\\b(\\/)?', 'gi');
+    }
+    var last = 0, m;
+    bookIdRe.lastIndex = 0;
+    while ((m = bookIdRe.exec(text))) {
+      var id = m[1].toLowerCase();
+      var before = text.slice(0, m.index);
+      var name = bookShort(id, before);
+      // "Josephus" is also a plain English word: leave it untouched
+      if (!name || m[1] === name) continue;
+      frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var book = bookById[id];
+      var pageLabel = state.lang === 'en' ? 'p. ' : 'с. ';
+      var tail = '';
+      // "Лейн (lane_thinkers:35)" — author already named right before: keep only the page
+      var author = name.split(' ')[0];
+      if (m[2] && before.slice(-(author.length + 2)).replace(/\s*\($/, '').slice(-author.length) === author && /\($/.test(before)) {
+        frag.appendChild(el('span', { title: book ? N(book) : null, text: pageLabel + m[2] }));
+      } else {
+        frag.appendChild(el('cite', { class: 'book-ref', title: book ? N(book) : null, text: name }));
+        if (m[2]) tail += ', ' + pageLabel + m[2];
+      }
+      if (m[3]) tail += ' / ';
+      if (tail) frag.appendChild(document.createTextNode(tail));
+      last = m.index + m[0].length;
+    }
+    frag.appendChild(document.createTextNode(text.slice(last)));
+    return frag;
+  }
+
   /* ---------- State ---------- */
   var state = {
     lang: 'ru',
@@ -639,7 +704,7 @@
     if (note && note.trim()) {
       body.appendChild(el('aside', { class: 'date-note', 'aria-label': T('dateNote') }, [
         icon('alert'),
-        el('div', null, [el('h3', { text: T('dateNote') }), el('p', { text: note })])
+        el('div', null, [el('h3', { text: T('dateNote') }), el('p', null, [withBookNames(note)])])
       ]));
     }
 
