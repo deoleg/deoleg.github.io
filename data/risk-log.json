@@ -2032,5 +2032,70 @@
     },
     "overall_score": 0.8,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.8."
+  },
+  {
+    "date": "2026-09-28",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 31 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 31
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 3.2.",
+        "sources": [
+          {
+            "title": "«Цель — не Молдова». Озеров признал, что дроны, проникающие в Молдову, могут быть российскими",
+            "url": "https://newsmaker.md/ru/no-czel-ne-moldova-ozerov-priznal-chto-drony-pronikayushie-v-moldovu-mogut-byt-rossiiskimi"
+          },
+          {
+            "title": "Карп: Молдова может сбивать некоторые дроны, но нужно определять место их падения",
+            "url": "https://point.md/ru/novosti/obschestvo/karp-moldova-mozhet-sbivat-nekotorye-drony-no-nuzhno-opredeliat-mesto-ikh-padeniia/"
+          },
+          {
+            "title": "Озеров допустил, что некоторые дроны над Молдовой могут быть российскими",
+            "url": "https://point.md/ru/novosti/politika/ozerov-dopustil-chto-nekotorye-drony-nad-moldovoi-mogut-byt-rossiiskimi/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 7
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: эвакуаци. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Польша и Литва готовят план по эвакуации жителей стран Балтии",
+            "url": "https://point.md/ru/novosti/v-mire/pol-sha-i-litva-gotoviat-plan-po-evakuatsii-zhitelei-stran-baltii/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Официальные travel advisories. Общий индекс: 1.0."
   }
 ]
