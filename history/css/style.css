@@ -516,7 +516,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 .panel {
   margin: 0 0 0 auto;
   padding: 0;
-  width: min(560px, 100%);
+  width: min(640px, 100%);
   max-width: 100%;
   height: 100%;
   max-height: 100%;
@@ -543,7 +543,13 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 }
 .panel-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: .85rem; min-width: 0; }
 
-.panel-body { flex: 1; overflow-y: auto; padding: 18px 22px 28px; overscroll-behavior: contain; }
+.panel-body {
+  flex: 1; overflow-y: auto; padding: 20px 28px 32px; overscroll-behavior: contain;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+/* Readable measure, soft hyphenation for long Russian words */
+.panel-body p, .panel-body li { max-width: 64ch; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
 
 .panel-date {
   font-family: var(--font-serif);
@@ -565,19 +571,19 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 }
 .date-note .icon { color: var(--gold-ink); font-size: 20px; margin-top: 2px; }
 .date-note h3 { font-family: var(--font-sans); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 2px; }
-.date-note p { margin: 0; font-size: .93rem; }
+.date-note p { margin: 0; font-size: .97rem; line-height: 1.6; }
 .book-ref { font-style: normal; font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
 
-.panel-summary { margin: 0 0 18px; }
+.panel-summary { margin: 0 0 22px; }
 
-.panel-section { margin-top: 20px; }
+.panel-section { margin-top: 26px; }
 .panel-section h3 {
   font-size: 1rem; color: var(--burgundy);
   padding-bottom: 4px; margin-bottom: 8px;
   border-bottom: 1px solid var(--line);
 }
 .panel-section ul { margin: 0; padding-left: 1.2em; }
-.panel-section li { margin: 4px 0; }
+.panel-section li { margin: 8px 0; line-height: 1.6; padding-left: 2px; }
 .panel-section li::marker { color: var(--gold); }
 
 .people-chip { --c: var(--navy); }
