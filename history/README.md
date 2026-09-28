@@ -33,9 +33,8 @@ python3 -m http.server 8000
 
 - `#event/<id>` открывает событие, например `#event/hellenization-323bc`.
 - `#era/<id>` прокручивает к эпохе, например `#era/reformation`.
-- Язык и фильтры хранятся в параметрах URL: `?lang=en&cat=council,schism&era=imperial&imp=3&q=arius`.
-  - `imp=3` — только вехи;
-  - `imp=2` — вехи и важные;
+- Язык и фильтры хранятся в параметрах URL: `?lang=en&cat=council,schism&imp=2&q=arius`.
+  - `imp=2` — только важные события (importance 2 и 3);
   - без `imp` — все события.
 - Кнопка со скрепкой в шапке копирует ссылку на текущий вид.
 

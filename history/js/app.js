@@ -26,12 +26,10 @@
       searchLabel: 'Поиск по событиям',
       searchPlaceholder: 'Поиск: событие, имя, место…',
       importance: 'Порог важности',
-      impMilestones: 'Только вехи',
       impImportant: 'Важные',
       impAll: 'Все',
-      moreFilters: 'Категории и эпохи',
+      moreFilters: 'Категории',
       categories: 'Категории',
-      eras: 'Эпохи',
       reset: 'Сбросить',
       shown: ['Показано ', ' из '],
       empty: 'Ничего не найдено. Измените запрос или сбросьте фильтры.',
@@ -78,12 +76,10 @@
       searchLabel: 'Search events',
       searchPlaceholder: 'Search: event, person, place…',
       importance: 'Importance threshold',
-      impMilestones: 'Milestones',
       impImportant: 'Important',
       impAll: 'All',
-      moreFilters: 'Categories and eras',
+      moreFilters: 'Categories',
       categories: 'Categories',
-      eras: 'Eras',
       reset: 'Reset',
       shown: ['Showing ', ' of '],
       empty: 'Nothing found. Change the query or reset the filters.',
@@ -226,8 +222,7 @@
     lang: 'ru',
     q: '',
     cats: [],   // selected category ids; empty = all
-    eras: [],   // selected era ids; empty = all
-    imp: 1      // minimum importance: 3 = milestones, 2 = important, 1 = all
+    imp: 1      // minimum importance: 2 = important, 1 = all
   };
 
   var data = null;
@@ -261,9 +256,8 @@
     }
     state.q = p.get('q') || '';
     state.cats = splitParam(p.get('cat'));
-    state.eras = splitParam(p.get('era'));
     var imp = parseInt(p.get('imp'), 10);
-    state.imp = imp === 2 || imp === 3 ? imp : 1;
+    state.imp = imp === 2 ? 2 : 1;
   }
 
   function splitParam(v) {
@@ -274,7 +268,6 @@
     var p = new URLSearchParams();
     p.set('lang', state.lang);
     if (state.cats.length) p.set('cat', state.cats.join(','));
-    if (state.eras.length) p.set('era', state.eras.join(','));
     if (state.imp !== 1) p.set('imp', String(state.imp));
     if (state.q.trim()) p.set('q', state.q.trim());
     var qs = p.toString().replace(/%2C/g, ',');
@@ -345,7 +338,7 @@
   function buildImpSwitch() {
     var box = $('impSwitch');
     box.textContent = '';
-    [[3, 'impMilestones'], [2, 'impImportant'], [1, 'impAll']].forEach(function (o) {
+    [[2, 'impImportant'], [1, 'impAll']].forEach(function (o) {
       var checked = state.imp === o[0];
       var b = el('button', {
         type: 'button', role: 'radio',
@@ -362,7 +355,7 @@
     var keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
     if (!(e.key in keys)) return;
     e.preventDefault();
-    var order = [3, 2, 1];
+    var order = [2, 1];
     var i = order.indexOf(state.imp);
     var next = order[(i + keys[e.key] + order.length) % order.length];
     setImp(next);
@@ -379,9 +372,7 @@
   /* ---------- Chips ---------- */
   function buildChips() {
     var catBox = $('catChips');
-    var eraBox = $('eraChips');
     catBox.textContent = '';
-    eraBox.textContent = '';
 
     var catCount = {}, eraCount = {};
     data.events.forEach(function (e) {
@@ -399,24 +390,13 @@
       catBox.appendChild(b);
     });
 
-    data.meta.eras.forEach(function (er) {
-      var b = el('button', {
-        type: 'button', class: 'chip',
-        'aria-pressed': String(state.eras.indexOf(er.id) !== -1),
-        'data-era': er.id
-      }, [el('span', { text: N(er) }), el('span', { class: 'chip-count', text: eraRange(er) })]);
-      eraBox.appendChild(b);
-    });
   }
 
   function syncChips() {
     document.querySelectorAll('#catChips .chip').forEach(function (b) {
       b.setAttribute('aria-pressed', String(state.cats.indexOf(b.getAttribute('data-cat')) !== -1));
     });
-    document.querySelectorAll('#eraChips .chip').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(state.eras.indexOf(b.getAttribute('data-era')) !== -1));
-    });
-    var n = state.cats.length + state.eras.length;
+    var n = state.cats.length;
     var badge = $('filtersBadge');
     badge.hidden = n === 0;
     badge.textContent = String(n);
@@ -588,7 +568,6 @@
   function matches(e, terms) {
     if (e.importance < state.imp) return false;
     if (state.cats.length && state.cats.indexOf(e.category) === -1) return false;
-    if (state.eras.length && state.eras.indexOf(e.era) === -1) return false;
     if (terms.length) {
       var idx = e._idx[state.lang];
       for (var i = 0; i < terms.length; i++) if (idx.indexOf(terms[i]) === -1) return false;
@@ -644,13 +623,12 @@
   }
 
   function isFiltered() {
-    return !!(state.q.trim() || state.cats.length || state.eras.length || state.imp !== 1);
+    return !!(state.q.trim() || state.cats.length || state.imp !== 1);
   }
 
   function resetFilters() {
     state.q = '';
     state.cats = [];
-    state.eras = [];
     state.imp = 1;
     $('search').value = '';
     buildImpSwitch();
@@ -838,11 +816,7 @@
   function scrollToEra(id) {
     var sec = sectionEls[id];
     if (!sec) return;
-    if (sec.hidden) {
-      // Era is filtered out — drop the era filter so the jump lands somewhere
-      if (state.eras.length && state.eras.indexOf(id) === -1) { state.eras.push(id); applyFilters(); }
-      if (sec.hidden) return;
-    }
+    if (sec.hidden) return;
     sec.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     currentEra = id;
     renderCurrentEra();
@@ -958,12 +932,6 @@
       toggleIn(state.cats, b.getAttribute('data-cat'));
       applyFilters();
     });
-    $('eraChips').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-era]');
-      if (!b) return;
-      toggleIn(state.eras, b.getAttribute('data-era'));
-      applyFilters();
-    });
     $('resetBtn').addEventListener('click', resetFilters);
 
     // Era map: scroll without relying on hashchange (repeat clicks must work too)
@@ -1024,7 +992,7 @@
     else window.addEventListener('resize', syncMapH);
     syncMapH();
 
-    // Categories/eras panel open by default on wider screens
+    // Categories panel open by default on wider screens
     if (window.matchMedia && window.matchMedia('(min-width: 700px)').matches) $('filtersMore').open = true;
   }
 
@@ -1049,11 +1017,10 @@
         data.events.forEach(function (e) { eventsById[e.id] = e; });
         // Drop unknown ids coming from the URL
         state.cats = state.cats.filter(function (id) { return catById[id]; });
-        state.eras = state.eras.filter(function (id) { return eraById[id]; });
 
         buildIndex();
         $('status').textContent = '';
-        if (state.cats.length || state.eras.length) $('filtersMore').open = true;
+        if (state.cats.length) $('filtersMore').open = true;
         renderAll();
         // Wait for web fonts so the initial #era/#event jump lands on the final layout
         var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
