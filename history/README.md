@@ -57,7 +57,7 @@ python3 -m http.server 8000
     "date_label_ru": "325 г.", "date_label_en": "325",   // показывается на карточке
     "era": "imperial",                   // id из meta.eras
     "category": "council",               // id из meta.categories
-    "importance": 3,                     // 3 — веха, 2 — важное, 1 — дополнительное
+    "importance": 3,                     // 3 — поворотный момент, 2 — важное, 1 — дополнительное
     "title_ru": "…", "title_en": "…",
     "summary_ru": "…", "summary_en": "…",
     "key_points_ru": ["…"], "key_points_en": ["…"],
