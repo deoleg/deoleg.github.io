@@ -20,8 +20,6 @@
       copyLink: 'Скопировать ссылку на текущий вид',
       linkCopied: 'Ссылка скопирована',
       linkCopyFailed: 'Не удалось скопировать ссылку',
-      eraMap: 'Карта эпох',
-      eraMapCurrent: 'Сейчас:',
       filters: 'Фильтры и поиск',
       searchLabel: 'Поиск по событиям',
       searchPlaceholder: 'Поиск: событие, имя, место…',
@@ -70,8 +68,6 @@
       copyLink: 'Copy a link to the current view',
       linkCopied: 'Link copied',
       linkCopyFailed: 'Could not copy the link',
-      eraMap: 'Era map',
-      eraMapCurrent: 'Now:',
       filters: 'Filters and search',
       searchLabel: 'Search events',
       searchPlaceholder: 'Search: event, person, place…',
@@ -413,60 +409,6 @@
     return T('range')(er.from, er.to);
   }
 
-  /* ---------- Era mini-map ---------- */
-  function buildEraMap() {
-    var bar = $('eraMapBar');
-    bar.textContent = '';
-    var counts = {};
-    data.events.forEach(function (e) { counts[e.era] = (counts[e.era] || 0) + 1; });
-
-    data.meta.eras.forEach(function (er) {
-      var label = N(er) + ' · ' + eraRange(er) + ' · ' + T('eventsCount')(counts[er.id] || 0);
-      var a = el('a', {
-        class: 'era-seg',
-        href: '#era/' + er.id,
-        'data-era': er.id,
-        'aria-label': label,
-        title: label,
-        style: '--n: ' + (counts[er.id] || 1)
-      }, [el('span', { class: 'era-seg-label', text: N(er) })]);
-      bar.appendChild(a);
-    });
-  }
-
-  var currentEra = null;
-
-  function updateCurrentEra() {
-    if (!data) return;
-    var mapH = $('eraMap').offsetHeight;
-    var cur = null;
-    for (var i = 0; i < data.meta.eras.length; i++) {
-      var sec = sectionEls[data.meta.eras[i].id];
-      if (!sec || sec.hidden) continue;
-      if (!cur) cur = data.meta.eras[i].id; // first visible era by default
-      if (sec.getBoundingClientRect().top - mapH <= 60) cur = data.meta.eras[i].id;
-    }
-    if (cur === currentEra) return;
-    currentEra = cur;
-    renderCurrentEra();
-  }
-
-  function renderCurrentEra() {
-    document.querySelectorAll('.era-seg').forEach(function (s) {
-      var on = s.getAttribute('data-era') === currentEra;
-      s.classList.toggle('is-current', on);
-      if (on) s.setAttribute('aria-current', 'location'); else s.removeAttribute('aria-current');
-    });
-    var p = $('eraMapCurrent');
-    p.textContent = '';
-    var er = eraById[currentEra];
-    if (er) {
-      p.appendChild(document.createTextNode(T('eraMapCurrent') + ' '));
-      p.appendChild(el('strong', { text: N(er) }));
-      p.appendChild(document.createTextNode(' · ' + eraRange(er)));
-    }
-  }
-
   /* ---------- Timeline render (single pass) ---------- */
   function renderTimeline() {
     var root = $('timeline');
@@ -603,10 +545,6 @@
       sec._countEl.textContent = T('eventsCount')(n);
     });
 
-    document.querySelectorAll('.era-seg').forEach(function (s) {
-      s.classList.toggle('is-empty', !perEra[s.getAttribute('data-era')]);
-    });
-
     var counter = $('counter'), parts = T('shown');
     counter.textContent = '';
     counter.appendChild(document.createTextNode(parts[0]));
@@ -617,8 +555,6 @@
 
     syncChips();
     writeUrl();
-    currentEra = null;
-    updateCurrentEra();
     if (currentEventId) updatePanelNav();
   }
 
@@ -818,8 +754,6 @@
     if (!sec) return;
     if (sec.hidden) return;
     sec.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
-    currentEra = id;
-    renderCurrentEra();
   }
 
   /* ---------- Copy link ---------- */
@@ -864,7 +798,6 @@
 
   function renderAll() {
     buildChips();
-    buildEraMap();
     renderTimeline();
     renderFooter();
     applyFilters();
@@ -934,16 +867,6 @@
     });
     $('resetBtn').addEventListener('click', resetFilters);
 
-    // Era map: scroll without relying on hashchange (repeat clicks must work too)
-    $('eraMapBar').addEventListener('click', function (e) {
-      var a = e.target.closest('[data-era]');
-      if (!a) return;
-      e.preventDefault();
-      var id = a.getAttribute('data-era');
-      setHash('#era/' + id);
-      scrollToEra(id);
-    });
-
     // Cards: open directly so a repeat click on the same card works
     $('timeline').addEventListener('click', function (e) {
       var a = e.target.closest('.event-card');
@@ -977,20 +900,6 @@
     });
 
     window.addEventListener('hashchange', route);
-
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () { ticking = false; updateCurrentEra(); });
-    }, { passive: true });
-
-    // Keep sticky offsets in sync with the real height of the era map
-    var map = $('eraMap');
-    function syncMapH() { document.documentElement.style.setProperty('--map-h', map.offsetHeight + 'px'); }
-    if ('ResizeObserver' in window) new ResizeObserver(syncMapH).observe(map);
-    else window.addEventListener('resize', syncMapH);
-    syncMapH();
 
     // Categories panel open by default on wider screens
     if (window.matchMedia && window.matchMedia('(min-width: 700px)').matches) $('filtersMore').open = true;
