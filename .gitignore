@@ -1,2 +1,7 @@
 .DS_Store
 .claude/
+
+# History of Christianity: source materials (not published)
+history/PROMPT_vscode.md
+history/all_events_by_book_raw.json
+history/*.xlsx

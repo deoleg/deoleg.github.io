@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>История христианства · History of Christianity</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script>
+    // Apply saved theme before first paint to avoid a flash
+    try { var t = localStorage.getItem('hoc-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#timeline" data-i18n="skip"></a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <h1 class="site-title">
+      <span class="site-title-main" data-i18n="title"></span>
+      <span class="site-title-sub" data-i18n="subtitle"></span>
+    </h1>
+    <div class="header-tools">
+      <div class="lang-switch" role="group" data-i18n-aria="language">
+        <button type="button" data-lang="ru" lang="ru">RU</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="themeToggle"></button>
+      <button type="button" class="icon-btn" id="copyLink"></button>
+    </div>
+  </div>
+</header>
+
+<nav class="era-map" id="eraMap" data-i18n-aria="eraMap">
+  <div class="era-map-inner">
+    <div class="era-map-bar" id="eraMapBar"></div>
+    <p class="era-map-current" id="eraMapCurrent"></p>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="filters" aria-labelledby="filtersTitle">
+    <h2 class="visually-hidden" id="filtersTitle" data-i18n="filters"></h2>
+
+    <div class="filters-row">
+      <div class="search">
+        <label class="visually-hidden" for="search" data-i18n="searchLabel"></label>
+        <span class="search-icon" id="searchIcon" aria-hidden="true"></span>
+        <input type="search" id="search" autocomplete="off" spellcheck="false">
+      </div>
+
+      <div class="imp-switch" role="radiogroup" id="impSwitch" data-i18n-aria="importance"></div>
+    </div>
+
+    <details class="filters-more" id="filtersMore">
+      <summary><span data-i18n="moreFilters"></span> <span class="filters-badge" id="filtersBadge" hidden></span></summary>
+      <fieldset class="chip-group">
+        <legend data-i18n="categories"></legend>
+        <div class="chips" id="catChips"></div>
+      </fieldset>
+      <fieldset class="chip-group">
+        <legend data-i18n="eras"></legend>
+        <div class="chips" id="eraChips"></div>
+      </fieldset>
+    </details>
+
+    <div class="filters-status">
+      <p class="counter" id="counter" aria-live="polite" aria-atomic="true"></p>
+      <button type="button" class="btn-ghost" id="resetBtn" data-i18n="reset"></button>
+    </div>
+  </section>
+
+  <div class="status" id="status" role="status"></div>
+  <div class="timeline" id="timeline" tabindex="-1"></div>
+  <p class="empty" id="empty" hidden data-i18n="empty"></p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note" id="footerNote"></p>
+    <h2 class="footer-title" data-i18n="sources"></h2>
+    <ol class="footer-books" id="footerBooks"></ol>
+    <p class="footer-meta" id="footerMeta"></p>
+  </div>
+</footer>
+
+<dialog class="panel" id="panel" aria-labelledby="panelTitle">
+  <div class="panel-inner">
+    <div class="panel-top">
+      <div class="panel-kicker" id="panelKicker"></div>
+      <button type="button" class="icon-btn panel-close" id="panelClose"></button>
+    </div>
+    <div class="panel-body" id="panelBody"></div>
+    <div class="panel-nav">
+      <button type="button" class="panel-nav-btn" id="panelPrev"></button>
+      <button type="button" class="panel-nav-btn panel-nav-next" id="panelNext"></button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>
