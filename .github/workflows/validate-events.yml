@@ -1,0 +1,29 @@
+name: Validate events data
+
+# Checks data/events.json (History of Christianity timeline) whenever it changes.
+on:
+  push:
+    paths:
+      - 'data/events.json'
+      - 'scripts/validate_events.py'
+  pull_request:
+    paths:
+      - 'data/events.json'
+      - 'scripts/validate_events.py'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Validate data/events.json
+        run: python3 scripts/validate_events.py
