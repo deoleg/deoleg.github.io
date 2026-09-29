@@ -339,6 +339,10 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 }
 .btn-ghost:hover { background: var(--surface-2); }
 .btn-ghost:disabled { opacity: .45; cursor: default; }
+.filters-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn-toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--navy); }
+.btn-toggle .icon { font-size: 16px; }
+.btn-toggle[aria-pressed="true"] { background: var(--navy); color: var(--surface); border-color: var(--navy); }
 
 /* ---------- Status / empty ---------- */
 .status:empty { display: none; }
@@ -501,6 +505,18 @@ mark {
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 
+/* compact view: date + title only */
+.is-compact .event-excerpt { display: none; }
+.is-compact .event-card { padding: 8px 14px; box-shadow: none; }
+.is-compact .event.imp-3 .event-card { padding: 10px 16px; }
+.is-compact .event-title, .is-compact .event.imp-3 .event-title { font-size: 1rem; }
+.is-compact .event.imp-3 .event-title { font-weight: 700; }
+.is-compact .event.imp-1 .event-title { font-size: .94rem; }
+.is-compact .event { margin-bottom: 8px; }
+.is-compact .event::before { top: 14px; }
+.is-compact .milestone-tag span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.is-compact .milestone-tag { padding: 1px 5px; }
+
 /* reveal animation */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -526,6 +542,7 @@ mark {
   /* small overlap so the zig-zag reads as a single flow */
   .event + .event { margin-top: -28px; }
   .event.imp-3 + .event, .event + .event.imp-3 { margin-top: 0; }
+  .is-compact .event + .event, .is-compact .event.imp-3 + .event, .is-compact .event + .event.imp-3 { margin-top: -14px; }
   .era-head { margin-left: 0; margin-right: 0; }
 }
 

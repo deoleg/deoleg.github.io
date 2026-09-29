@@ -219,6 +219,15 @@ async function main() {
     }
     check('описания в панели выводятся полностью', lost.length === 0, lost.slice(0, 3).join(', '));
 
+    // --- compact view ---
+    await open(base + '?lang=ru');
+    await ev(`document.getElementById('compactBtn').click()`);
+    const exHidden = await ev(`getComputedStyle(document.querySelector('.event-excerpt')).display === 'none'`);
+    await open(base + '?lang=ru');
+    const kept = await ev(`document.body.classList.contains('is-compact')`);
+    await ev(`document.getElementById('compactBtn').click()`);
+    check('компактный режим скрывает описания и запоминается', exHidden && kept);
+
     // --- layout ---
     for (const w of [375, 360]) {
       await open(base + '?lang=ru', w, 780);

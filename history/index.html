@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=cff313d7b4">
+  <link rel="stylesheet" href="css/style.css?v=4f46663161">
 </head>
 <body>
 
@@ -66,7 +66,10 @@
 
     <div class="filters-status">
       <p class="counter" id="counter" aria-live="polite" aria-atomic="true"></p>
-      <button type="button" class="btn-ghost" id="resetBtn" data-i18n="reset"></button>
+      <div class="filters-actions">
+        <button type="button" class="btn-ghost btn-toggle" id="compactBtn" aria-pressed="false"></button>
+        <button type="button" class="btn-ghost" id="resetBtn" data-i18n="reset"></button>
+      </div>
     </div>
   </section>
 
@@ -102,6 +105,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/app.js?v=fc3545f93c" defer></script>
+<script src="js/app.js?v=9ad424fa92" defer></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
   var DATA_URL = '../data/events.json';
   var LS_LANG = 'hoc-lang';
   var LS_THEME = 'hoc-theme';
+  var LS_VIEW = 'hoc-view';
 
   /* ---------- i18n ---------- */
   var i18n = {
@@ -29,6 +30,8 @@
       moreFilters: 'Категории',
       categories: 'Категории',
       reset: 'Сбросить',
+      compact: 'Компактно',
+      compactHint: 'Показывать только дату и заголовок',
       eraJumpLabel: 'Перейти к эпохе',
       eraJumpPlaceholder: 'Перейти к эпохе…',
       toTop: 'Наверх',
@@ -87,6 +90,8 @@
       moreFilters: 'Categories',
       categories: 'Categories',
       reset: 'Reset',
+      compact: 'Compact',
+      compactHint: 'Show only the date and title',
       eraJumpLabel: 'Jump to an era',
       eraJumpPlaceholder: 'Jump to an era…',
       toTop: 'Back to top',
@@ -157,6 +162,7 @@
     left: ['M15 5l-7 7 7 7'],
     right: ['M9 5l7 7-7 7'],
     up: ['M12 19V5', 'M5 12l7-7 7 7'],
+    rows: ['M4 6h16', 'M4 12h16', 'M4 18h16'],
     pin: ['M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z', 'c:12,9.5,2.5'],
     alert: ['M12 3 2 20h20z', 'M12 10v4.5', 'M12 17.5v.01'],
     star: ['M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z']
@@ -423,6 +429,7 @@
     close.title = T('close') + ' (Esc)';
 
     updateThemeButton();
+    updateCompactButton();
     buildImpSwitch();
   }
 
@@ -448,6 +455,24 @@
     document.documentElement.setAttribute('data-theme', next);
     lsSet(LS_THEME, next);
     updateThemeButton();
+  }
+
+  /* ---------- Compact view ---------- */
+  function isCompact() { return document.body.classList.contains('is-compact'); }
+
+  function updateCompactButton() {
+    var btn = $('compactBtn');
+    btn.textContent = '';
+    btn.appendChild(icon('rows'));
+    btn.appendChild(el('span', { text: T('compact') }));
+    btn.title = T('compactHint');
+    btn.setAttribute('aria-pressed', String(isCompact()));
+  }
+
+  function setCompact(on) {
+    document.body.classList.toggle('is-compact', on);
+    lsSet(LS_VIEW, on ? 'compact' : 'full');
+    updateCompactButton();
   }
 
   /* ---------- Importance switch ---------- */
@@ -1164,6 +1189,7 @@
       applyFilters();
     });
     $('resetBtn').addEventListener('click', resetFilters);
+    $('compactBtn').addEventListener('click', function () { setCompact(!isCompact()); });
 
     $('eraJump').addEventListener('change', function () {
       var id = this.value;
@@ -1235,6 +1261,7 @@
   /* ---------- Boot ---------- */
   function boot() {
     readUrl();
+    if (lsGet(LS_VIEW) === 'compact') document.body.classList.add('is-compact');
     wire();
     applyStaticText();
     $('search').value = state.q;
