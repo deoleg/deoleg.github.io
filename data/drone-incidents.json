@@ -2182,6 +2182,22 @@
     "detected_at": "2026-09-28T07:00:47.364737+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Россия ночью атаковала Киев баллистическими ракетами и БПЛА",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-noch-iu-atakovala-kiev-ballisticheskimi-raketami-i-bpla/",
+    "excerpt": "После дневных ударов по Киеву - в частности, по зданию Национальной академии наук - РФ вновь атаковала украинскую столицу ночью. По данным …",
+    "confidence": "low",
+    "detected_at": "2026-09-29T07:00:50.260907+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Карп: Воздушный коридор Кишинев–Яссы относительно безопасен, но риски растут",
+    "url": "https://point.md/ru/novosti/obschestvo/karp-vozdushnyi-koridor-kishinev-iassy-otnositel-no-bezopasen-no-riski-rastut/",
+    "excerpt": "Воздушное пространство Молдовы находится под наблюдением, и коридор Кишинев–Яссы в настоящее время является относительно безопасным и защищ…",
+    "confidence": "medium",
+    "detected_at": "2026-09-29T07:00:50.260907+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
