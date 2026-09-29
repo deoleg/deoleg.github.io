@@ -506,7 +506,7 @@ mark {
 }
 
 /* compact view: date + title only */
-.is-compact .event-excerpt { display: none; }
+.is-compact .event .event-card .event-excerpt { display: none; }
 .is-compact .event-card { padding: 8px 14px; box-shadow: none; }
 .is-compact .event.imp-3 .event-card { padding: 10px 16px; }
 .is-compact .event-title, .is-compact .event.imp-3 .event-title { font-size: 1rem; }

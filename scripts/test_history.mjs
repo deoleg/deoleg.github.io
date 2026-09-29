@@ -226,7 +226,7 @@ async function main() {
     await open(base + '?lang=ru');
     const kept = await ev(`document.body.classList.contains('is-compact')`);
     await ev(`document.getElementById('compactBtn').click()`);
-    check('компактный режим скрывает описания и запоминается', exHidden && kept);
+    check('компактный режим скрывает описания и запоминается', exHidden && kept, `скрыто=${exHidden}, сохранено=${kept}`);
 
     // --- layout ---
     for (const w of [375, 360]) {
