@@ -345,6 +345,26 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 .btn-toggle[aria-pressed="true"] { background: var(--navy); color: var(--surface); border-color: var(--navy); }
 
 /* ---------- Status / empty ---------- */
+.status.is-loading {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+  margin: 0; padding: 0; border: 0;
+}
+.skeleton .event-card { display: flex; flex-direction: column; gap: 10px; }
+.skeleton.event::before { border-color: var(--line-strong); background: var(--surface); box-shadow: none; }
+.skeleton.imp-3 .event-card { border-color: var(--line); border-left-color: var(--line-strong); background: var(--surface); }
+.sk-line {
+  display: block; height: 12px; width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--bg) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.4s ease-in-out infinite;
+}
+.sk-short { width: 30%; height: 10px; }
+.sk-title { width: 75%; height: 18px; }
+.sk-mid { width: 60%; }
+.sk-head { width: 40%; height: 22px; }
+@keyframes sk-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+
 .status:empty { display: none; }
 .status {
   margin: 24px 0;

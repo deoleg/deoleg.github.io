@@ -1137,6 +1137,8 @@
 
   /* ---------- Errors ---------- */
   function showError() {
+    $('timeline').textContent = '';
+    $('timeline').removeAttribute('aria-busy');
     var box = $('status');
     box.className = 'status is-error';
     box.textContent = '';
@@ -1258,6 +1260,29 @@
     if (window.matchMedia && window.matchMedia('(min-width: 700px)').matches) $('filtersMore').open = true;
   }
 
+  /* ---------- Loading placeholder ---------- */
+  // Grey card outlines shown while events.json downloads (it is the slowest part on mobile)
+  function renderSkeleton() {
+    var root = $('timeline');
+    root.setAttribute('aria-busy', 'true');
+    var ol = el('ol', { class: 'era-events' });
+    for (var i = 0; i < 6; i++) {
+      ol.appendChild(el('li', { class: 'event skeleton ' + (i % 2 ? 'side-right' : 'side-left') + (i === 1 ? ' imp-3' : '') }, [
+        el('div', { class: 'event-card' }, [
+          el('span', { class: 'sk-line sk-short' }),
+          el('span', { class: 'sk-line sk-title' }),
+          el('span', { class: 'sk-line' }),
+          el('span', { class: 'sk-line sk-mid' })
+        ])
+      ]));
+    }
+    root.textContent = '';
+    root.appendChild(el('div', { class: 'era', 'aria-hidden': 'true' }, [
+      el('div', { class: 'era-head' }, [el('span', { class: 'sk-line sk-head' })]),
+      ol
+    ]));
+  }
+
   /* ---------- Boot ---------- */
   function boot() {
     readUrl();
@@ -1266,8 +1291,12 @@
     applyStaticText();
     $('search').value = state.q;
     $('status').textContent = T('loading');
+    $('status').classList.add('is-loading');
+    renderSkeleton();
+    $('eraJump').appendChild(el('option', { value: '', text: T('eraJumpPlaceholder') }));
 
-    fetch(DATA_URL, { cache: 'no-cache' })
+    // Default caching so the <link rel="preload"> in index.html is reused
+    fetch(DATA_URL)
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
@@ -1284,6 +1313,8 @@
         buildIndex();
         buildPeopleIndex();
         $('status').textContent = '';
+        $('status').classList.remove('is-loading');
+        $('timeline').removeAttribute('aria-busy');
         if (state.cats.length) $('filtersMore').open = true;
         renderAll();
         // Wait for web fonts so the initial #era/#event jump lands on the final layout

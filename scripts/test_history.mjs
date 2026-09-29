@@ -123,7 +123,7 @@ async function main() {
     await send('Page.navigate', { url });
     for (let i = 0; i < 100; i++) {
       await sleep(100);
-      const ready = await ev(`document.readyState === 'complete' && document.querySelectorAll('.event').length > 0 || !!document.querySelector('.status.is-error')`).catch(() => false);
+      const ready = await ev(`document.readyState === 'complete' && document.querySelectorAll('.event:not(.skeleton)').length > 0 || !!document.querySelector('.status.is-error')`).catch(() => false);
       if (ready) break;
     }
     await sleep(300);
