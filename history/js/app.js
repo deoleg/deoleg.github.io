@@ -29,6 +29,9 @@
       moreFilters: 'Категории',
       categories: 'Категории',
       reset: 'Сбросить',
+      eraJumpLabel: 'Перейти к эпохе',
+      eraJumpPlaceholder: 'Перейти к эпохе…',
+      toTop: 'Наверх',
       shown: ['Показано ', ' из '],
       empty: 'Ничего не найдено. Измените запрос или сбросьте фильтры.',
       eventsCount: function (n) { return n + ' ' + plural(n, 'событие', 'события', 'событий'); },
@@ -80,6 +83,9 @@
       moreFilters: 'Categories',
       categories: 'Categories',
       reset: 'Reset',
+      eraJumpLabel: 'Jump to an era',
+      eraJumpPlaceholder: 'Jump to an era…',
+      toTop: 'Back to top',
       shown: ['Showing ', ' of '],
       empty: 'Nothing found. Change the query or reset the filters.',
       eventsCount: function (n) { return n + (n === 1 ? ' event' : ' events'); },
@@ -142,6 +148,7 @@
     close: ['M6 6l12 12', 'M18 6 6 18'],
     left: ['M15 5l-7 7 7 7'],
     right: ['M9 5l7 7-7 7'],
+    up: ['M12 19V5', 'M5 12l7-7 7 7'],
     pin: ['M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z', 'c:12,9.5,2.5'],
     alert: ['M12 3 2 20h20z', 'M12 10v4.5', 'M12 17.5v.01'],
     star: ['M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z']
@@ -506,6 +513,23 @@
     if (i === -1) arr.push(id); else arr.splice(i, 1);
   }
 
+  /* ---------- Era jump (select) ---------- */
+  function buildEraJump() {
+    var sel = $('eraJump');
+    sel.textContent = '';
+    sel.appendChild(el('option', { value: '', text: T('eraJumpPlaceholder') }));
+    data.meta.eras.forEach(function (er) {
+      sel.appendChild(el('option', { value: er.id, text: N(er) + ' · ' + eraRange(er) }));
+    });
+    sel.value = '';
+  }
+
+  function syncEraJump(perEra) {
+    Array.prototype.forEach.call($('eraJump').options, function (o) {
+      if (o.value) o.disabled = !perEra[o.value];
+    });
+  }
+
   function eraRange(er) {
     if (er.from == null) return T('rangeTo')(er.to);
     if (er.to == null) return T('rangeFrom')(er.from);
@@ -716,6 +740,7 @@
     counter.appendChild(el('strong', { text: String(visibleIds.length) }));
     counter.appendChild(document.createTextNode(parts[1] + data.events.length));
     $('empty').hidden = visibleIds.length > 0;
+    syncEraJump(perEra);
     $('resetBtn').disabled = !isFiltered();
 
     syncChips();
@@ -981,6 +1006,7 @@
 
   function renderAll() {
     buildChips();
+    buildEraJump();
     renderTimeline();
     renderFooter();
     applyFilters();
@@ -1049,6 +1075,33 @@
       applyFilters();
     });
     $('resetBtn').addEventListener('click', resetFilters);
+
+    $('eraJump').addEventListener('change', function () {
+      var id = this.value;
+      if (!id) return;
+      setHash('#era/' + id);
+      scrollToEra(id);
+      this.value = '';
+    });
+
+    // Back to top: appears after scrolling down a few screens
+    var toTop = $('toTop');
+    toTop.appendChild(icon('up'));
+    toTop.appendChild(el('span', { class: 'to-top-label', 'data-i18n': 'toTop' }));
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      $('filtersTitle').focus({ preventScroll: true });
+      if (/^#era\//.test(location.hash)) setHash('');
+    });
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        toTop.hidden = window.scrollY < window.innerHeight * 2;
+      });
+    }, { passive: true });
 
     // Cards: open directly so a repeat click on the same card works
     $('timeline').addEventListener('click', function (e) {

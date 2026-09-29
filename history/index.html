@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260929">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
 
 <main id="main">
   <section class="filters" aria-labelledby="filtersTitle">
-    <h2 class="visually-hidden" id="filtersTitle" data-i18n="filters"></h2>
+    <h2 class="visually-hidden" id="filtersTitle" data-i18n="filters" tabindex="-1"></h2>
 
     <div class="filters-row">
       <div class="search">
@@ -49,6 +49,11 @@
       </div>
 
       <div class="imp-switch" role="radiogroup" id="impSwitch" data-i18n-aria="importance"></div>
+
+      <div class="era-jump">
+        <label class="visually-hidden" for="eraJump" data-i18n="eraJumpLabel"></label>
+        <select id="eraJump"></select>
+      </div>
     </div>
 
     <details class="filters-more" id="filtersMore">
@@ -93,8 +98,10 @@
   </div>
 </dialog>
 
+<button type="button" class="to-top" id="toTop" hidden></button>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/app.js" defer></script>
+<script src="js/app.js?v=20260929" defer></script>
 </body>
 </html>
