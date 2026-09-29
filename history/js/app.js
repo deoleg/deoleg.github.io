@@ -40,6 +40,10 @@
       rangeFrom: function (y) { return 'с ' + y + ' г.'; },
       range: function (a, b) { return a + '–' + b + ' гг.'; },
       dateNote: 'Расхождения в источниках',
+      dateNoteFlag: 'Источники расходятся в датировке',
+      matchPeople: 'Личности: ',
+      matchPlace: 'Место: ',
+      matchSummary: 'Совпадение в полном описании',
       keyPoints: 'Ключевые моменты',
       people: 'Личности',
       peopleHint: 'Нажмите на имя, чтобы найти все события с ним',
@@ -94,6 +98,10 @@
       rangeFrom: function (y) { return 'from ' + y; },
       range: function (a, b) { return a + '–' + b; },
       dateNote: 'Discrepancies between sources',
+      dateNoteFlag: 'Sources disagree on the date',
+      matchPeople: 'People: ',
+      matchPlace: 'Place: ',
+      matchSummary: 'Match in the full description',
       keyPoints: 'Key points',
       people: 'People',
       peopleHint: 'Click a name to find all events with that person',
@@ -580,6 +588,9 @@
     var cat = catById[e.category];
     var meta = el('div', { class: 'event-meta' }, [
       el('span', { class: 'event-date', text: F(e, 'date_label') }),
+      F(e, 'date_note') && F(e, 'date_note').trim()
+        ? el('span', { class: 'note-flag', title: T('dateNoteFlag') }, [icon('alert'), el('span', { class: 'visually-hidden', text: T('dateNoteFlag') })])
+        : null,
       el('span', { class: 'cat-tag' }, [icon(e.category), el('span', { text: cat ? N(cat) : e.category })]),
       e.importance === 3 ? el('span', { class: 'milestone-tag' }, [icon('star'), el('span', { text: T('milestone') })]) : null
     ]);
@@ -592,7 +603,8 @@
     }, [
       meta,
       el('h3', { class: 'event-title', id: titleId, text: F(e, 'title') }),
-      el('p', { class: 'event-excerpt', id: titleId + '-x', text: excerpt(F(e, 'summary'), e.importance === 1 ? 1 : 2) })
+      el('p', { class: 'event-excerpt', id: titleId + '-x', text: excerpt(F(e, 'summary'), e.importance === 1 ? 1 : 2) }),
+      el('p', { class: 'event-match', hidden: true })
     ]);
     var li = el('li', {
       class: 'event imp-' + e.importance + ' reveal',
@@ -697,6 +709,71 @@
     return list;
   }
 
+  /* ---------- Search highlighting ---------- */
+  // Fills `node` with `text`, wrapping every occurrence of the search terms in <mark>.
+  // Matching is case- and ё/е-insensitive; norm() keeps string length, so offsets map 1:1.
+  function highlightInto(node, text, terms) {
+    node.textContent = '';
+    if (!terms.length) { node.textContent = text; return false; }
+    var hay = norm(text), ranges = [];
+    terms.forEach(function (t) {
+      var i = hay.indexOf(t);
+      while (i !== -1) { ranges.push([i, i + t.length]); i = hay.indexOf(t, i + t.length); }
+    });
+    if (!ranges.length) { node.textContent = text; return false; }
+    ranges.sort(function (a, b) { return a[0] - b[0] || b[1] - a[1]; });
+    var merged = [];
+    ranges.forEach(function (r) {
+      var last = merged[merged.length - 1];
+      if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r.slice());
+    });
+    var pos = 0;
+    merged.forEach(function (r) {
+      if (r[0] > pos) node.appendChild(document.createTextNode(text.slice(pos, r[0])));
+      node.appendChild(el('mark', { text: text.slice(r[0], r[1]) }));
+      pos = r[1];
+    });
+    if (pos < text.length) node.appendChild(document.createTextNode(text.slice(pos)));
+    return true;
+  }
+
+  function hasAny(text, terms) {
+    var h = norm(text);
+    return terms.some(function (t) { return h.indexOf(t) !== -1; });
+  }
+
+  // Highlights the card and, if the match is not visible on it, says where it was found
+  function highlightCard(e, node, terms) {
+    var titleEl = node.querySelector('.event-title');
+    var exEl = node.querySelector('.event-excerpt');
+    var matchEl = node.querySelector('.event-match');
+    var title = F(e, 'title');
+    var ex = excerpt(F(e, 'summary'), e.importance === 1 ? 1 : 2);
+    if (!terms.length) {
+      if (node._hl) { titleEl.textContent = title; exEl.textContent = ex; matchEl.textContent = ''; matchEl.hidden = true; node._hl = false; }
+      return;
+    }
+    node._hl = true;
+    var shown = highlightInto(titleEl, title, terms) | highlightInto(exEl, ex, terms);
+    matchEl.textContent = '';
+    matchEl.hidden = true;
+    if (shown) return;
+    var people = (F(e, 'people') || []).filter(function (p) { return hasAny(p, terms); });
+    var place = F(e, 'place');
+    if (people.length) {
+      matchEl.appendChild(document.createTextNode(T('matchPeople')));
+      highlightInto(matchEl.appendChild(el('span')), people.join(', '), terms);
+    } else if (place && hasAny(place, terms)) {
+      matchEl.appendChild(document.createTextNode(T('matchPlace')));
+      highlightInto(matchEl.appendChild(el('span')), place, terms);
+    } else {
+      matchEl.textContent = T('matchSummary');
+    }
+    matchEl.hidden = false;
+  }
+
+  function currentTerms() { return norm(state.q).split(/\s+/).filter(Boolean); }
+
   /* ---------- Filtering ---------- */
   function matches(e, terms) {
     if (e.importance < state.imp) return false;
@@ -722,6 +799,7 @@
       node.hidden = !ok;
       if (!ok) return;
       visibleIds.push(e.id);
+      highlightCard(e, node, terms);
       perEra[e.era] = (perEra[e.era] || 0) + 1;
       if (e.era !== lastEra) { side = 0; lastEra = e.era; }
       node.classList.toggle('side-left', side % 2 === 0);
@@ -835,11 +913,20 @@
       ]));
     }
 
-    body.appendChild(el('div', { class: 'panel-summary' }, paragraphs(F(e, 'summary')).map(function (t) { return el('p', { text: t }); })));
+    var terms = currentTerms();
+    body.appendChild(el('div', { class: 'panel-summary' }, paragraphs(F(e, 'summary')).map(function (t) {
+      var p = el('p');
+      highlightInto(p, t, terms);
+      return p;
+    })));
 
     var kp = F(e, 'key_points') || [];
     if (kp.length) {
-      body.appendChild(section(T('keyPoints'), el('ul', null, kp.map(function (s) { return el('li', { text: s }); }))));
+      body.appendChild(section(T('keyPoints'), el('ul', null, kp.map(function (s) {
+        var li = el('li');
+        highlightInto(li, s, terms);
+        return li;
+      }))));
     }
 
     var people = F(e, 'people') || [];
@@ -850,7 +937,7 @@
           'data-person': name,
           'aria-label': T('searchPerson')(name),
           title: T('peopleHint')
-        }, [icon('person'), el('span', { text: name })]);
+        }, [icon('person'), (function () { var sp = el('span'); highlightInto(sp, name, terms); return sp; })()]);
       }));
       body.appendChild(section(T('people'), chips));
     }

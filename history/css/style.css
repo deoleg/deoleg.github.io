@@ -16,6 +16,7 @@
   --gold: #b8862b;
   --gold-ink: #7d5410;
   --gold-soft: #f3e3bd;
+  --mark-bg: #f6d77a;
   --focus: #1e4fa3;
   --shadow: 0 1px 2px rgba(60, 40, 10, .06), 0 4px 14px rgba(60, 40, 10, .07);
   --shadow-lg: 0 10px 40px rgba(30, 20, 5, .22);
@@ -59,6 +60,8 @@
     --gold: #d9aa4f;
     --gold-ink: #e6bf6b;
     --gold-soft: #3a3120;
+  --mark-bg: #6b5217;
+    --mark-bg: #6b5217;
     --focus: #86b4f5;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .25);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, .55);
@@ -463,6 +466,20 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 
 .event-title { font-size: 1.08rem; color: var(--text); }
 .event-excerpt { margin: 6px 0 0; color: var(--muted); font-size: .93rem; }
+
+/* date discrepancy flag */
+.note-flag { display: inline-flex; color: var(--gold-ink); font-size: 14px; cursor: help; }
+
+/* search highlight */
+mark {
+  background: var(--mark-bg);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+  box-shadow: 0 0 0 1px var(--mark-bg);
+}
+.event-match { margin: 6px 0 0; font-size: .84rem; color: var(--muted); font-style: italic; }
+.event-match span { font-style: normal; color: var(--text); }
 
 /* importance 3 — milestone */
 .event.imp-3 .event-card {
