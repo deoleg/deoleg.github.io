@@ -1,0 +1,41 @@
+name: Test history page
+
+# Browser smoke tests for history/ (History of Christianity timeline)
+# and a check that the ?v= cache-busting versions in history/index.html are current.
+on:
+  push:
+    paths:
+      - 'history/**'
+      - 'data/events.json'
+      - 'scripts/test_history.mjs'
+      - 'scripts/bump_asset_versions.py'
+  pull_request:
+    paths:
+      - 'history/**'
+      - 'data/events.json'
+      - 'scripts/test_history.mjs'
+      - 'scripts/bump_asset_versions.py'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Asset versions are current
+        run: python3 scripts/bump_asset_versions.py --check
+
+      - name: Browser tests (headless Chrome)
+        run: node scripts/test_history.mjs
