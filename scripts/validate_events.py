@@ -9,10 +9,13 @@ but the page still works.
 
 Usage:
     python3 scripts/validate_events.py [path/to/events.json]
+    python3 scripts/validate_events.py --names   # also list looser name matches for manual review
 """
+import difflib
 import json
 import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 DEFAULT_PATH = Path(__file__).resolve().parent.parent / "data" / "events.json"
@@ -22,10 +25,45 @@ LANGS = ("ru", "en")
 TEXT_FIELDS = ("date_label", "title", "summary", "place", "date_note")
 LIST_FIELDS = ("key_points", "people")
 REQUIRED_NONEMPTY = ("date_label", "title", "summary")
+# Two names that differ in one word with at least this similarity are likely
+# the same person spelled differently ("Августин Гиппонский" / "Августин Иппонский").
+NAME_SIMILARITY = 0.85
+NAME_SIMILARITY_LOOSE = 0.7
+ROMAN_RE = re.compile(r"^[ivxlc]+$")
+
+
+def name_tokens(name):
+    return re.findall(r"[\w-]+", name.lower().replace("ё", "е"))
+
+
+def similar_names(names, threshold):
+    """Pairs of names equal except for one word whose spellings are close.
+    Words that are Roman numerals are skipped: "Павел III" / "Павел VI" are different people."""
+    by_len = defaultdict(list)
+    for n in sorted(set(names)):
+        t = name_tokens(n)
+        if len(t) >= 2:
+            by_len[len(t)].append((n, t))
+    pairs = []
+    for group in by_len.values():
+        for i, (a, ta) in enumerate(group):
+            for b, tb in group[i + 1:]:
+                diff = [(x, y) for x, y in zip(ta, tb) if x != y]
+                if len(diff) != 1:
+                    continue
+                x, y = diff[0]
+                if ROMAN_RE.match(x) or ROMAN_RE.match(y):
+                    continue
+                ratio = difflib.SequenceMatcher(None, x, y).ratio()
+                if ratio >= threshold:
+                    pairs.append((ratio, a, b))
+    return sorted(pairs, reverse=True)
 
 
 def main():
-    path = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_PATH
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    show_loose = "--names" in sys.argv[1:]
+    path = Path(args[0]) if args else DEFAULT_PATH
     errors, warnings = [], []
 
     try:
@@ -152,6 +190,19 @@ def main():
             if isinstance(ru, list) and isinstance(en, list) and len(ru) != len(en):
                 warnings.append(f"{where}: в {field}_ru {len(ru)} элем., в {field}_en {len(en)}")
 
+        for lang in LANGS:
+            people = ev.get(f"people_{lang}")
+            if not isinstance(people, list):
+                continue
+            seen = set()
+            for p in people:
+                key = " ".join(name_tokens(p)) if isinstance(p, str) else p
+                if key in seen:
+                    warnings.append(f"{where}: people_{lang} — «{p}» указан дважды")
+                seen.add(key)
+            for _, a, b in similar_names([p for p in people if isinstance(p, str)], NAME_SIMILARITY):
+                warnings.append(f"{where}: people_{lang} — «{a}» и «{b}» похожи на одного человека")
+
         sources = ev.get("sources")
         if not isinstance(sources, list):
             errors.append(f"{where}: sources должен быть массивом")
@@ -164,6 +215,17 @@ def main():
                     errors.append(f"{where}: sources[{j}] — неизвестная книга \"{book}\"")
                 if isinstance(s, dict) and not isinstance(s.get("pages"), str):
                     errors.append(f"{where}: sources[{j}].pages должен быть строкой")
+
+    # --- names across all events ---
+    for lang in LANGS:
+        names = [p for ev in events if isinstance(ev, dict) for p in (ev.get(f"people_{lang}") or []) if isinstance(p, str)]
+        for ratio, a, b in similar_names(names, NAME_SIMILARITY):
+            warnings.append(f"people_{lang}: «{a}» и «{b}» — вероятно, один человек, записанный по-разному (сходство {ratio:.2f})")
+        if show_loose:
+            loose = [x for x in similar_names(names, NAME_SIMILARITY_LOOSE) if x[0] < NAME_SIMILARITY]
+            print(f"\n[--names] people_{lang}: похожие имена для ручной проверки ({len(loose)}), чаще всего это разные люди:")
+            for ratio, a, b in loose:
+                print(f"  {ratio:.2f}  {a}  /  {b}")
 
     # --- report ---
     for w in warnings:
