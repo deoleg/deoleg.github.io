@@ -230,6 +230,8 @@
   // Group sentences into paragraphs of ~40+ words; short texts stay one paragraph.
   // Text is not changed, only split at sentence boundaries.
   function paragraphs(text) {
+    // Paragraphs written into the data (blank line) win over automatic grouping
+    if (/\n\s*\n/.test(text)) return text.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
     var sents = splitSentences(text);
     var total = wordCount(text);
     if (total < 70 || sents.length < 3) return [text];
