@@ -41,6 +41,9 @@
       people: 'Личности',
       peopleHint: 'Нажмите на имя, чтобы найти все события с ним',
       searchPerson: function (name) { return 'Искать события: ' + name; },
+      related: 'Связанные события',
+      relatedHint: 'События с теми же личностями',
+      relatedShared: 'Общие: ',
       place: 'Место',
       sourcesTitle: 'Источники',
       prev: 'Предыдущее',
@@ -89,6 +92,9 @@
       people: 'People',
       peopleHint: 'Click a name to find all events with that person',
       searchPerson: function (name) { return 'Search events: ' + name; },
+      related: 'Related events',
+      relatedHint: 'Events involving the same people',
+      relatedShared: 'Shared: ',
       place: 'Place',
       sourcesTitle: 'Sources',
       prev: 'Previous',
@@ -603,6 +609,68 @@
     });
   }
 
+  /* ---------- Related events (shared people) ----------
+     Names are matched exactly (case- and ё-insensitive). The alias table merges
+     only unambiguous spellings of the same person found in the data. */
+  var PERSON_ALIASES = {
+    'августин иппонский': 'августин', 'августин гиппонский': 'августин',
+    'апостол павел': 'павел', 'савл (павел)': 'павел',
+    'апостол петр': 'петр',
+    'афанасий александрийский': 'афанасий великий',
+    'григорий богослов (назианзин)': 'григорий богослов',
+    'пипин короткий (сын карла мартелла)': 'пипин короткий',
+    'augustine of hippo': 'augustine',
+    'the apostle paul': 'paul', 'saul (paul)': 'paul',
+    'the apostle peter': 'peter',
+    'athanasius of alexandria': 'athanasius the great',
+    'gregory nazianzen (the theologian)': 'gregory of nazianzus',
+    'pepin the short (son of charles martel)': 'pepin the short',
+    'irenaeus of lyon': 'irenaeus of lyons'
+  };
+  var peopleIndex = { ru: {}, en: {} }; // canonical name -> [event ids]
+
+  function personKey(name) {
+    var k = norm(name).replace(/\s+/g, ' ').trim();
+    return PERSON_ALIASES[k] || k;
+  }
+
+  function buildPeopleIndex() {
+    data.events.forEach(function (e) {
+      ['ru', 'en'].forEach(function (l) {
+        var seen = {};
+        (e['people_' + l] || []).forEach(function (name) {
+          var k = personKey(name);
+          if (seen[k]) return;
+          seen[k] = true;
+          (peopleIndex[l][k] = peopleIndex[l][k] || []).push(e.id);
+        });
+      });
+    });
+  }
+
+  // Up to `limit` events sharing people with `e`: most shared names first,
+  // then importance, then closeness in time; shown in chronological order.
+  function relatedEvents(e, limit) {
+    var hits = {};
+    (F(e, 'people') || []).forEach(function (name) {
+      (peopleIndex[state.lang][personKey(name)] || []).forEach(function (id) {
+        if (id === e.id) return;
+        var h = hits[id] = hits[id] || { id: id, names: [] };
+        if (h.names.indexOf(name) === -1) h.names.push(name);
+      });
+    });
+    var list = Object.keys(hits).map(function (id) { return hits[id]; });
+    list.sort(function (a, b) {
+      var ea = eventsById[a.id], eb = eventsById[b.id];
+      return (b.names.length - a.names.length) ||
+        (eb.importance - ea.importance) ||
+        (Math.abs(ea.year_start - e.year_start) - Math.abs(eb.year_start - e.year_start));
+    });
+    list = list.slice(0, limit);
+    list.sort(function (a, b) { return data.events.indexOf(eventsById[a.id]) - data.events.indexOf(eventsById[b.id]); });
+    return list;
+  }
+
   /* ---------- Filtering ---------- */
   function matches(e, terms) {
     if (e.importance < state.imp) return false;
@@ -774,6 +842,24 @@
           s.pages ? el('span', { class: 'source-pages', text: s.pages }) : null
         ]);
       }))));
+    }
+
+    var related = relatedEvents(e, 6);
+    if (related.length) {
+      var ul = el('ul', { class: 'related' }, related.map(function (r) {
+        var re = eventsById[r.id];
+        return el('li', null, [el('a', {
+          class: 'related-link', href: '#event/' + r.id, 'data-goto': r.id,
+          style: '--c: var(--cat-' + re.category + ')'
+        }, [
+          el('span', { class: 'related-date', text: F(re, 'date_label') }),
+          el('span', { class: 'related-title', text: F(re, 'title') }),
+          el('span', { class: 'related-shared', text: T('relatedShared') + r.names.join(', ') })
+        ])]);
+      }));
+      var sec = section(T('related'), ul);
+      sec.insertBefore(el('p', { class: 'panel-hint', text: T('relatedHint') }), ul);
+      body.appendChild(sec);
     }
 
     updatePanelNav();
@@ -989,6 +1075,8 @@
     $('panelBody').addEventListener('click', function (e) {
       var b = e.target.closest('[data-person]');
       if (b) searchPerson(b.getAttribute('data-person'));
+      var r = e.target.closest('[data-goto]');
+      if (r && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); goto(r.getAttribute('data-goto')); }
     });
     dlg.addEventListener('keydown', function (e) {
       if (e.target.closest('input, textarea')) return;
@@ -1025,6 +1113,7 @@
         state.cats = state.cats.filter(function (id) { return catById[id]; });
 
         buildIndex();
+        buildPeopleIndex();
         $('status').textContent = '';
         if (state.cats.length) $('filtersMore').open = true;
         renderAll();

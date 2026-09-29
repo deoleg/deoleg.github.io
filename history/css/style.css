@@ -640,6 +640,26 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
   to { transform: none; opacity: 1; }
 }
 
+.panel-hint { margin: -2px 0 10px; font-size: .88rem; color: var(--muted); }
+
+.related { list-style: none; padding: 0 !important; margin: 0; }
+.related li { margin: 8px 0; }
+.related-link {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--c);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.related-link:hover { background: var(--surface-2); }
+.related-date { font-size: .8rem; font-weight: 700; color: var(--navy); }
+.related-title { font-family: var(--font-serif); font-size: 1rem; }
+.related-shared { font-size: .82rem; color: var(--muted); }
+
 /* ---------- Footer ---------- */
 .site-footer {
   margin-top: 30px;
