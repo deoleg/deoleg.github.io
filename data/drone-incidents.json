@@ -2198,6 +2198,70 @@
     "detected_at": "2026-09-29T07:00:50.260907+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "(ВИДЕО) Дрон пролетел над Молдовой и упал в Новоаненском районе. Он взорвался",
+    "url": "https://newsmaker.md/ru/video-dron-proletel-nad-moldovoi-i-upal-v-novoanenskom-raione-on-vzorvalsya",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник, замеченный вблизи Бендер, упал и взорвался в Хырбовэц",
+    "url": "https://ipn.md/ru/bespilotnik-zamechennyj-vblizi-bender-upal-i-vzorvalsya-v-hyrbovecz/",
+    "excerpt": "Беспилотник, замеченный вблизи Бендер, упал и взорвался в Хырбовэц30.09.202608:32",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ЕС одобрил первые пять совместных оборонных проектов, направленных на укрепление безопасности и промышленного потенциала",
+    "url": "https://ipn.md/ru/es-odobril-pervye-pyat-sovmestnyh-oboronnyh-proektov-napravlennyh-na-ukreplenie-bezopasnosti-i-promyshlennogo-potencziala/",
+    "excerpt": "ПолитикаЕС одобрил первые пять совместных оборонных проектов, направленных на укрепление безопасности и промышленного потенциалаbyBolohan Maxim28.09.2026Совет Европейского союза одобрил первые пять проектов, направленных на укрепление оборонного и промышленного потенциала блока сообщества. Они нацел",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Эстония обвиняет Россию в диверсии на заводе по производству дронов в прошлом месяце",
+    "url": "https://ipn.md/ru/estoniya-obvinyaet-rossiyu-v-diversii-na-zavode-po-proizvodstvu-dronov-v-proshlom-mesyacze/",
+    "excerpt": "Эстония обвиняет Россию в диверсии на заводе по производству дронов в прошлом месяце13:35",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTAtac rusesc cu rachete și drone asupra Kievului: cel puțin două persoane au fost ucise. Război în Ucraina, ziua 1680",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-atac-rusesc-cu-rachete-si-drone-asupra-kievului-cel-putin-doua-persoane-au-fost-ucise-razboi-in-ucraina-ziua-1680/",
+    "excerpt": "LIVE TEXTAtac rusesc cu rachete și drone asupra Kievului: cel puțin două persoane au fost ucise. Război în Ucraina, ziua 1680NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ULTIMA ORĂO dronă a explodat în raionul Anenii Noi. La fața locului au intervenit subdiviziunile specializate ale Poliției",
+    "url": "https://www.zdg.md/stiri/ultima-ora-o-drona-a-explodat-in-raionul-anenii-noi-la-fata-locului-au-intervenit-subdiviziunile-specializate-ale-politiei/",
+    "excerpt": "ULTIMA ORĂO dronă a explodat în raionul Anenii Noi. La fața locului au intervenit subdiviziunile specializate ale PolițieiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Россия атаковала Киев и область ракетами и БПЛА: погиб ребенок",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-atakovala-kiev-i-oblast-raketami-i-bpla-pogib-rebenok/",
+    "excerpt": "Россия ночью нанесла удары ракетами и дронами по Киеву и Киевской области. Разрушены и повреждены жилые дома, возникли пожары. В Вышгороде …",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-21",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, sistemul național integrat de monitorizare informează despre survolarea spațiului aerian național, astăzi, 30 septembrie, în jurul orei 05:43, de către o dronă, care a căzut în extravilanul satului Hîrbovăț, raionul Anenii Noi, unde",
+    "confidence": "high",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -2284,6 +2348,38 @@
     "excerpt": "По данным Службы воздушных операций Национальной армии, сегодня, 30 августа, в 15:50 был обнаружен воздушный объект, который вторгся в возд…",
     "confidence": "medium",
     "detected_at": "2026-08-31T07:00:53.839016+00:00"
+  },
+  {
+    "date_mentioned": "30 сентября",
+    "title": "Момент взрыва дрона в Новоаненском районе попал на видео",
+    "url": "https://point.md/ru/novosti/proisshestviya/moment-vzryva-drona-v-novoanenskom-raione-popal-na-video/",
+    "excerpt": "Кадры были сняты утром 30 сентября. Беспилотник упал за пределами села Гырбовец и взорвался. По предварительным данным, пострадавших нет.",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": "30 сентября",
+    "title": "В Новоаненском районе упал и взорвался дрон",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-novoanenskom-raione-upal-i-vzorvalsia-dron/",
+    "excerpt": "По данным Министерства обороны, дрон залетел в Молдову 30 сентября, примерно в 05:43. Позже он упал за пределами села Гырбовец Новоаненског…",
+    "confidence": "medium",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": "30 сентября",
+    "title": "Момент взрыва дрона в Новоаненском районе попал на видео",
+    "url": "https://point.md/ru/novosti/proisshestviya/moment-vzryva-drona-v-novoanenskom-raione-popal-na-video/",
+    "excerpt": "Кадры были сняты утром 30 сентября. Беспилотник упал за пределами села Гырбовец и взорвался. По предварительным данным, пострадавших нет.",
+    "confidence": "low",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": "30 сентября",
+    "title": "В Новоаненском районе упал и взорвался дрон",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-novoanenskom-raione-upal-i-vzorvalsia-dron/",
+    "excerpt": "По данным Министерства обороны, дрон залетел в Молдову 30 сентября, примерно в 05:43. Позже он упал за пределами села Гырбовец Новоаненског…",
+    "confidence": "medium",
+    "detected_at": "2026-09-30T07:00:46.660866+00:00"
   },
   {
     "date_mentioned": "4 сентября",
