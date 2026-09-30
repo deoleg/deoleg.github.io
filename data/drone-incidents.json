@@ -2302,6 +2302,22 @@
     "detected_at": "2026-09-30T19:40:05.850777+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-22",
+    "excerpt": "UPDATE:Potrivit ultimelor date, drona a dispărut de pe sistemele de monitorizare la ora 11:07, în proximitatea loc. Arionești, r. Dondușeni. Spațiul aerian al țării în zona Nord a fost redeschis. Menționăm că survolurile de astăzi au avut loc în urma atacurilor masive ale Federației Ruse asupra Ucra",
+    "confidence": "high",
+    "detected_at": "2026-09-30T19:43:11.964853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-21",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, sistemul național integrat de monitorizare informează despre survolarea spațiului aerian național, astăzi, 30 septembrie, în jurul orei 05:43, de către o dronă, care a căzut în extravilanul satului Hîrbovăț, raionul Anenii Noi, unde",
+    "confidence": "high",
+    "detected_at": "2026-09-30T19:43:11.964853+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
