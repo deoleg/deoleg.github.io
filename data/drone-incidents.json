@@ -2262,6 +2262,46 @@
     "detected_at": "2026-09-30T07:00:46.660866+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Трубчевске при атаке БПЛА пострадали не менее 12 человек12:36",
+    "url": "https://ria.ru/20260930/trubchevsk-2121177469.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "UPDATEÎn urma exploziei dronei, circulația rutieră a fost sistată temporar pe traseul dintre localitățile Ivancea și Brănești",
+    "url": "https://www.zdg.md/stiri/update-in-urma-exploziei-dronei-circulatia-rutiera-a-fost-sistata-temporar-pe-traseul-dintre-localitatile-ivancea-si-branesti/",
+    "excerpt": "UPDATEÎn urma exploziei dronei, circulația rutieră a fost sistată temporar pe traseul dintre localitățile Ivancea și BrăneștiNouJustiție",
+    "confidence": "low",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-23",
+    "excerpt": "UPDATE: La ora 21:07 spațiul aerian zona Centru a fost redeschis.",
+    "confidence": "high",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Оргеевском районе взорвался беспилотник",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-orgeevskom-raione-vzorvalsia-bespilotnik/",
+    "excerpt": "Полиция получила сообщение о громком звуке, похожем на взрыв, в районе населённого пункта Бранешты Оргеевского района.",
+    "confidence": "low",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Упавший в Новоаненском районе дрон врезался в вышку сотовой связи",
+    "url": "https://point.md/ru/novosti/proisshestviya/upavshii-v-novoanenskom-raione-dron-vrezalsia-v-vyshku-sotovoi-sviazi/",
+    "excerpt": "Эксперты Отдела взрывотехнической экспертизы обследуют место падения дрона за пределами села Гырбовец Новоаненского района. По предваритель…",
+    "confidence": "low",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -2380,6 +2420,14 @@
     "excerpt": "По данным Министерства обороны, дрон залетел в Молдову 30 сентября, примерно в 05:43. Позже он упал за пределами села Гырбовец Новоаненског…",
     "confidence": "medium",
     "detected_at": "2026-09-30T07:00:46.660866+00:00"
+  },
+  {
+    "date_mentioned": "30 сентября",
+    "title": "Еще один дрон залетел на территорию Молдовы: небо в центре и на севере закрыли",
+    "url": "https://point.md/ru/novosti/proisshestviya/eshche-odin-dron-zaletel-na-territoriiu-moldovy-nebo-v-tsentre-i-na-severe-zakryli/",
+    "excerpt": "Сегодня, 30 сентября, в 10:26 беспилотный летательный аппарат пролетел в воздушном пространстве Молдовы в районе населенного пункта Лунга Д…",
+    "confidence": "medium",
+    "detected_at": "2026-09-30T19:40:05.850777+00:00"
   },
   {
     "date_mentioned": "4 сентября",
