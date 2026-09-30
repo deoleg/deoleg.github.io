@@ -2318,6 +2318,14 @@
     "detected_at": "2026-09-30T19:43:11.964853+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Justiție",
+    "url": "https://www.zdg.md/categoria/stiri/stiri-justitie/",
+    "excerpt": "UPDATEÎn urma exploziei dronei, circulația rutieră a fost sistată temporar pe traseul dintre localitățile Ivancea și BrăneștiNouJustiție",
+    "confidence": "low",
+    "detected_at": "2026-09-30T21:35:19.265098+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
