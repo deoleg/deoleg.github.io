@@ -2164,52 +2164,31 @@
     "factors": {
       "transnistria_military": {
         "score": 1,
-        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: тирасполь. Взвешенный балл за сегодня: 2.0.",
-        "sources": [
-          {
-            "title": "У здания Генинспектората полиции Ford Mustang влетел в фасад магазина",
-            "url": "https://point.md/ru/novosti/proisshestviya/u-zdaniia-geninspektorata-politsii-ford-mustang-vletel-v-fasad-magazina/"
-          },
-          {
-            "title": "У здания Генинспектората полиции Ford Mustang влетел в фасад магазина",
-            "url": "https://point.md/ru/novosti/proisshestviya/u-zdaniia-geninspektorata-politsii-ford-mustang-vletel-v-fasad-magazina/"
-          }
-        ],
-        "carried_forward": false,
-        "peak_score": 1,
-        "days_since_last_signal": 0
-      },
-      "russian_rhetoric": {
-        "score": 0,
-        "reasoning": "Нет новых данных 33 дн. подряд — значение затухло до 0.",
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
         "carried_forward": true,
         "peak_score": 1,
-        "days_since_last_signal": 33
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 34 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 34
       },
       "border_aviation": {
         "score": 3,
-        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: dronă, аэропорт кишинёва, дрон. Взвешенный балл за сегодня: 7.2.",
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 7.0.",
         "sources": [
           {
             "title": "Informează!",
-            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-21"
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-23"
           },
           {
-            "title": "(ВИДЕО) Дрон пролетел над Молдовой и упал в Новоаненском районе. Он взорвался",
-            "url": "https://newsmaker.md/ru/video-dron-proletel-nad-moldovoi-i-upal-v-novoanenskom-raione-on-vzorvalsya"
-          },
-          {
-            "title": "Кишинёвский международный аэропорт объявил тендер на аренду помещения для проката автомобилей",
-            "url": "https://ipn.md/ru/kishinyovskij-mezhdunarodnyj-aeroport-obyavil-tender-na-arendu-pomeshheniya-dlya-prokata-avtomobilej/"
-          },
-          {
-            "title": "В Новоаненском районе упал и взорвался дрон",
-            "url": "https://point.md/ru/novosti/proisshestviya/v-novoanenskom-raione-upal-i-vzorvalsia-dron/"
-          },
-          {
-            "title": "В Новоаненском районе упал и взорвался дрон",
-            "url": "https://point.md/ru/novosti/proisshestviya/v-novoanenskom-raione-upal-i-vzorvalsia-dron/"
+            "title": "Еще один дрон залетел на территорию Молдовы: небо в центре и на севере закрыли",
+            "url": "https://point.md/ru/novosti/proisshestviya/eshche-odin-dron-zaletel-na-territoriiu-moldovy-nebo-v-tsentre-i-na-severe-zakryli/"
           }
         ],
         "carried_forward": false,
@@ -2218,22 +2197,22 @@
       },
       "economic": {
         "score": 2,
-        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
-        "sources": [],
-        "carried_forward": true,
-        "peak_score": 2,
-        "days_since_last_signal": 1
-      },
-      "travel_advisories": {
-        "score": 2,
         "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
         "sources": [],
         "carried_forward": true,
         "peak_score": 2,
         "days_since_last_signal": 2
+      },
+      "travel_advisories": {
+        "score": 1,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение постепенно снижается (пик был 2, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 3
       }
     },
-    "overall_score": 1.6,
-    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.6."
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
