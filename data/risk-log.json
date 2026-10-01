@@ -2205,5 +2205,62 @@
     },
     "overall_score": 0.6,
     "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
+  },
+  {
+    "date": "2026-10-01",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: путин. Взвешенный балл за сегодня: 1.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: Тофан ищет газ, но «не у Путина», надвигаются заморозки, Молдова вступит в ЕС раньше Украины?",
+            "url": "https://newsmaker.md/ru/nm-espresso-cheban-jdet-eshe-tri-motopompy-dlya-dnestra-tofan-ishet-gaz-ne-u-putina-moldova-vstupit-v-es-ranshe-ukrainy"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Носатый: Молдова будет оснащена системами для сбивания дронов и ракет",
+            "url": "https://point.md/ru/novosti/obschestvo/nosatyi-moldova-budet-osnashchena-sistemami-dlia-sbivaniia-dronov-i-raket/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 6
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 7
+      }
+    },
+    "overall_score": 0.4,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 0.4."
   }
 ]
