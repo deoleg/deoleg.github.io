@@ -2326,6 +2326,54 @@
     "detected_at": "2026-09-30T21:35:19.265098+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "(ФОТО, ВИДЕО) Дрон в Оргеевском районе: полиция сообщила о взрыве возле Бранешт",
+    "url": "https://newsmaker.md/ru/foto-video-dron-v-orgeevskom-raione-policziya-soobshila-o-vzryve-vozle-branesht",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Взрыв дрона в Хырбовэц повредил антенну связи. Это первый случай повреждения инфраструктуры",
+    "url": "https://ipn.md/ru/vzryv-drona-v-hyrbovecz-povredil-antennu-svyazi-eto-pervyj-sluchaj-povrezhdeniya-infrastruktury/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон взорвался недалеко от населённого пункта Брэнешть Орхейского района",
+    "url": "https://ipn.md/ru/dron-vzorvalsya-nedaleko-ot-naselyonnogo-punkta-brenesht-orhejskogo-rajona/",
+    "excerpt": "Дрон взорвался недалеко от населённого пункта Брэнешть Орхейского района30.09.202623:17",
+    "confidence": "low",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Массированный удар беспилотников и ракет по Киеву и региону: погибли три человека, в том числе ребёнок",
+    "url": "https://ipn.md/ru/massirovannyj-udar-bespilotnikov-i-raket-po-kievu-i-regionu-pogibli-tri-cheloveka-v-tom-chisle-rebenok/",
+    "excerpt": "ПолитикаМассированный удар беспилотников и ракет по Киеву и региону: погибли три человека, в том числе ребёнокbyBolohan Maxim30.09.2026Российская армия минувшей ночью нанесла массированный удар беспилотниками и примерно 20 ракетами по Киеву и Киевской области. Погибли три человека, в том числе ребён",
+    "confidence": "low",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Взорвавшийся в Оргеевском районе беспилотник имеет элементы «Герани»",
+    "url": "https://point.md/ru/novosti/obschestvo/vzorvavshiisia-v-orgeevskom-raione-bespilotnik-imeet-elementy-gerani/",
+    "excerpt": "Эксперты предварительно установили, что беспилотник, обнаруженный вблизи населенного пункта Бранешты Оргеевского района, имеет элементы, ха…",
+    "confidence": "low",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Носатый: Молдова будет оснащена системами для сбивания дронов и ракет",
+    "url": "https://point.md/ru/novosti/obschestvo/nosatyi-moldova-budet-osnashchena-sistemami-dlia-sbivaniia-dronov-i-raket/",
+    "excerpt": "Национальная армия Молдовы будет оснащена системами, способными сбивать дроны и ракеты, которые входят в воздушное пространство страны. Об …",
+    "confidence": "medium",
+    "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
