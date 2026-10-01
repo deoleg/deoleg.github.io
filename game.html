@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <title>Game</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <main class="game">
+    <header class="game-header">
+      <div class="game-title">Игра</div>
+      <a class="game-link" href="admin.html">Admin</a>
+    </header>
+
+    <section class="card">
+      <div class="letter-label">Буква</div>
+      <div id="letter" class="letter">А</div>
+
+      <ul id="words" class="words" aria-label="Слова"></ul>
+
+      <div id="timer" class="timer">
+        <div class="timer-controls top">
+          <button id="minuteUp" type="button" aria-label="Увеличить минуты">▲</button>
+          <button id="secondUp" type="button" aria-label="Увеличить секунды">▲</button>
+        </div>
+
+        <div class="timer-values" aria-label="Таймер">
+          <span id="minutes" class="timer-value">01</span>
+          <span class="timer-separator">:</span>
+          <span id="seconds" class="timer-value">00</span>
+        </div>
+
+        <div class="timer-controls bottom">
+          <button id="minuteDown" type="button" aria-label="Уменьшить минуты">▼</button>
+          <button id="secondDown" type="button" aria-label="Уменьшить секунды">▼</button>
+        </div>
+      </div>
+
+      <div id="status" class="status">Готово к новому раунду</div>
+
+      <div class="actions">
+        <button id="startBtn" class="action primary" type="button">Старт</button>
+        <button id="newRoundBtn" class="action green" type="button">Новый раунд</button>
+        <button id="resetBtn" class="action" type="button">Сброс</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="data/game-data.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

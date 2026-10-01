@@ -8,26 +8,25 @@
   <title>Admin</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0ee; height: 100vh; display: flex; flex-direction: column; }
 
     .tab-bar {
       display: flex; align-items: center; gap: 4px;
       background: #fff; border-bottom: 1.5px solid #e5e5e5;
       padding: 10px 16px 0; flex-shrink: 0;
+      overflow-x: auto;
     }
-
     .tab-btn {
       font-family: inherit; font-size: 13px; font-weight: 500;
       padding: 8px 18px 10px; border: none; background: none; cursor: pointer;
       color: #888; border-bottom: 2px solid transparent; margin-bottom: -1.5px;
       border-radius: 6px 6px 0 0; transition: color .15s, border-color .15s;
+      white-space: nowrap;
     }
     .tab-btn:hover { color: #333; }
     .tab-btn.active { color: #1a1f36; border-bottom-color: #1a1f36; }
 
     .frame-wrap { flex: 1; position: relative; }
-
     iframe {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
@@ -37,7 +36,6 @@
   </style>
 </head>
 <body>
-
 <div class="tab-bar">
   <button class="tab-btn active" data-src="mpd.html">MPD</button>
   <button class="tab-btn" data-src="life.html">Life</button>
@@ -45,15 +43,16 @@
   <button class="tab-btn" data-src="risk.html">Risk</button>
   <button class="tab-btn" data-src="sport.html">Sport</button>
   <button class="tab-btn" data-src="history/index.html">History</button>
+  <button class="tab-btn" data-src="game.html">Game</button>
 </div>
-
 <div class="frame-wrap">
-  <iframe id="frame-mpd.html"      class="active" allow="autoplay"></iframe>
-  <iframe id="frame-life.html"     allow="autoplay"></iframe>
-  <iframe id="frame-pl.html"       allow="autoplay"></iframe>
-  <iframe id="frame-risk.html"     allow="autoplay"></iframe>
-  <iframe id="frame-sport.html"    allow="autoplay"></iframe>
+  <iframe id="frame-mpd.html" class="active" allow="autoplay"></iframe>
+  <iframe id="frame-life.html" allow="autoplay"></iframe>
+  <iframe id="frame-pl.html" allow="autoplay"></iframe>
+  <iframe id="frame-risk.html" allow="autoplay"></iframe>
+  <iframe id="frame-sport.html" allow="autoplay"></iframe>
   <iframe id="frame-history/index.html" allow="clipboard-write"></iframe>
+  <iframe id="frame-game.html"></iframe>
 </div>
 
 <script>
@@ -65,19 +64,16 @@
     return frame;
   }
 
-  // Load default tab
   loadFrame('mpd.html').classList.add('active');
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       document.querySelectorAll('iframe').forEach(f => f.classList.remove('active'));
       loadFrame(btn.dataset.src).classList.add('active');
     });
   });
 </script>
-
 </body>
 </html>
