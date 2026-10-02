@@ -2262,5 +2262,70 @@
     },
     "overall_score": 0.4,
     "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 0.4."
+  },
+  {
+    "date": "2026-10-02",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: мид россии. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Захарова: Власти Молдовы демонизируют Россию, чтобы отвлечь внимание от энергокризиса",
+            "url": "https://point.md/ru/novosti/politika/zakharova-vlasti-moldovy-demoniziruiut-rossiiu-chtoby-otvlech-vnimanie-ot-energokrizisa/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 13.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-23"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-22"
+          },
+          {
+            "title": "Назначенный посол России вызван в МИД после нарушения воздушного пространства и взрыва дрона на территории Молдовы",
+            "url": "https://ipn.md/ru/naznachennyj-posol-rossii-vyzvan-v-mid-posle-narusheniya-vozdushnogo-prostranstva-i-vzryva-drona-na-territorii-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 7
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 8 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 8
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
