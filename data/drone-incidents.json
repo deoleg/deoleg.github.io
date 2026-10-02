@@ -1,5 +1,13 @@
 [
   {
+    "date_mentioned": "1 октября",
+    "title": "Россия трижды за сутки атаковала Южный мост в Киеве",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-trizhdy-za-sutki-atakovala-iuzhnyi-most-v-kieve/",
+    "excerpt": "Первый удар произошёл в ночь на 1 октября. Два дрона типа \"Шахед\" взорвались вблизи опорной части моста в тот момент, когда там про…",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
     "date_mentioned": "15 сентября",
     "title": "В Литве самолеты НАТО сбили дрон, залетевший в страну",
     "url": "https://point.md/ru/novosti/v-mire/v-litve-samolety-nato-sbili-dron-zaletevshii-v-stranu/",
@@ -2372,6 +2380,78 @@
     "excerpt": "Национальная армия Молдовы будет оснащена системами, способными сбивать дроны и ракеты, которые входят в воздушное пространство страны. Об …",
     "confidence": "medium",
     "detected_at": "2026-10-01T07:00:45.824853+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Румынии упал беспилотник. Радары не зафиксировали нарушение воздушного пространства",
+    "url": "https://newsmaker.md/ru/v-rumynii-upal-bespilotnik-radary-ne-zafiksirovali-narushenie-vozdushnogo-prostranstva",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Назначенный посол России вызван в МИД после нарушения воздушного пространства и взрыва дрона на территории Молдовы",
+    "url": "https://ipn.md/ru/naznachennyj-posol-rossii-vyzvan-v-mid-posle-narusheniya-vozdushnogo-prostranstva-i-vzryva-drona-na-territorii-moldovy/",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обломки с маркировкой «Герань-4» обнаружены после взрыва дрона в Орхейском районе",
+    "url": "https://ipn.md/ru/oblomki-s-markirovkoj-geran-4-obnaruzheny-posle-vzryva-drona-v-orhejskom-rajone/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "МИД вручил российскому послу ноту протеста в связи с пролётом дронов",
+    "url": "https://ipn.md/ru/mid-vruchil-rossijskomu-poslu-notu-protesta-v-svyazi-s-prolyotom-dronov/",
+    "excerpt": "МИД вручил российскому послу ноту протеста в связи с пролётом дронов14:46",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTDronele ucrainene au atacat orașele Volgograd și Samara. A izbucnit un incendiu la cel mai mare parc de rezervoare petroliere din Europa  Război în Ucraina, ziua 1682",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-dronele-ucrainene-au-atacat-orasele-volgograd-si-samara-a-izbucnit-un-incendiu-la-cel-mai-mare-parc-de-rezervoare-petroliere-din-europa-razboi-in-ucraina-ziua-1682/",
+    "excerpt": "LIVE TEXTDronele ucrainene au atacat orașele Volgograd și Samara. A izbucnit un incendiu la cel mai mare parc de rezervoare petroliere din Europa  Război în Ucraina, ziua 1682NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O dronă ar fi căzut în apropierea frontierei României cu Ucraina, provocând un incendiu",
+    "url": "https://www.zdg.md/stiri/o-drona-ar-fi-cazut-in-apropierea-frontierei-romaniei-cu-ucraina-provocand-un-incendiu/",
+    "excerpt": "O dronă ar fi căzut în apropierea frontierei României cu Ucraina, provocând un incendiuNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "UPDATEMAE l-a convocat pe ambasadorul agreat al Rusiei după ce trei drone au încălcat spațiul aerian al R. Moldova într-o singură zi. Acestuia i-a fost înmânată o notă de protest",
+    "url": "https://www.zdg.md/stiri/update-mae-l-a-convocat-pe-ambasadorul-agreat-al-rusiei-dupa-ce-trei-drone-au-incalcat-spatiul-aerian-al-r-moldova-intr-o-singura-zi-acestuia-i-a-fost-inmanata-o-nota-de-protest/",
+    "excerpt": "UPDATEMAE l-a convocat pe ambasadorul agreat al Rusiei după ce trei drone au încălcat spațiul aerian al R. Moldova într-o singură zi. Acestuia i-a fost înmânată o notă de protestNouPolitic",
+    "confidence": "low",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-23",
+    "excerpt": "UPDATE:La ora 21:07 spațiul aerian zona Centru a fost redeschis. UPDATE:Potrivit datelor înregistrate, obiectul a traversat frontiera la ora 20.45 din direcția loc. Șerșenți, reg.Vinița, Ucraina spre proximitatea loc. Slobozia Rașcov, segmentul transnistrian. Ulterior, acesta s-a îndreptat spre loc.",
+    "confidence": "high",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-22",
+    "excerpt": "UPDATE:Potrivit ultimelor date, drona a dispărut de pe sistemele de monitorizare la ora 11:07, în proximitatea loc. Arionești, r. Dondușeni. Spațiul aerian al țării în zona Nord a fost redeschis. Menționăm că survolurile de astăzi au avut loc în urma atacurilor masive ale Federației Ruse asupra Ucra",
+    "confidence": "high",
+    "detected_at": "2026-10-02T07:00:49.404136+00:00"
   },
   {
     "date_mentioned": "21 сентября",
