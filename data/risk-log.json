@@ -2387,5 +2387,78 @@
     },
     "overall_score": 0.6,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.6."
+  },
+  {
+    "date": "2026-10-04",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 8 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 8
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 6 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы, дрон, обломки. Взвешенный балл за сегодня: 15.0.",
+        "sources": [
+          {
+            "title": "Precizează",
+            "url": "https://www.army.md/ro/comunicate-de-presa/precizeaza"
+          },
+          {
+            "title": "В Молдове нашли обломки гибридных дронов-ракет «Бандероль». Что сообщила полиция",
+            "url": "https://newsmaker.md/ru/v-moldove-nashli-oblomki-gibridnyh-dronov-raket-banderol-chto-soobshila-policziya"
+          },
+          {
+            "title": "Ещё один объект пересёк воздушное пространство Молдовы: шестой по счету",
+            "url": "https://point.md/ru/novosti/proisshestviya/eshchio-odin-ob-ekt-peresiok-vozdushnoe-prostranstvo-moldovy-shestoi-po-schetu/"
+          },
+          {
+            "title": "Назначенного посла России в Молдове снова вызвали в МИД из-за российских дронов и ракет",
+            "url": "https://newsmaker.md/ru/naznachennogo-posla-rossii-v-moldove-snova-vyzvali-v-mid-iz-za-rossiiskih-dronov-i-raket"
+          },
+          {
+            "title": "Минобороны: в Молдову залетели три ракеты и два дрона. МИД и Санду осудили нарушение воздушного пространства страны",
+            "url": "https://newsmaker.md/ru/minoborony-v-moldovu-zaleteli-tri-rakety-i-dva-drona-mid-i-sandu-osudili-narushenie-vozdushnogo-prostranstva-strany"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: энергетический кризис. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Парликов: У нас кризис покупательной способности, а не энергетический кризис",
+            "url": "https://point.md/ru/novosti/politika/parlikov-u-nas-krizis-pokupatel-noi-sposobnosti-a-ne-energeticheskii-krizis/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 10
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.2."
   }
 ]
