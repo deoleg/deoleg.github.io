@@ -2502,6 +2502,94 @@
     "detected_at": "2026-10-03T07:00:47.482672+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Средства ПВО уничтожили 559 украинских беспилотников за ночь08:26",
+    "url": "https://ria.ru/20261004/pvo-2122079711.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове нашли обломки гибридных дронов-ракет «Бандероль». Что сообщила полиция",
+    "url": "https://newsmaker.md/ru/v-moldove-nashli-oblomki-gibridnyh-dronov-raket-banderol-chto-soobshila-policziya",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Назначенного посла России в Молдове снова вызвали в МИД из-за российских дронов и ракет",
+    "url": "https://newsmaker.md/ru/naznachennogo-posla-rossii-v-moldove-snova-vyzvali-v-mid-iz-za-rossiiskih-dronov-i-raket",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Минобороны Молдовы обнаружило шестой беспилотник, нарушивший воздушное пространство страны",
+    "url": "https://newsmaker.md/ru/minoborony-moldovy-obnarujilo-shestoi-bespilotnik-narushivshii-vozdushnoe-prostranstvo-strany",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Минобороны: в Молдову залетели три ракеты и два дрона. МИД и Санду осудили нарушение воздушного пространства страны",
+    "url": "https://newsmaker.md/ru/minoborony-v-moldovu-zaleteli-tri-rakety-i-dva-drona-mid-i-sandu-osudili-narushenie-vozdushnogo-prostranstva-strany",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ГИП: Фрагменты беспилотника похожи на модель «Бандероль». Российского посла вызвали в МИД",
+    "url": "https://ipn.md/ru/gip-fragmenty-bespilotnika-pohozhi-na-model-banderol-rossijskogo-posla-vyzvali-v-mid/",
+    "excerpt": "ГИП: Фрагменты беспилотника похожи на модель «Бандероль». Российского посла вызвали в МИД04.10.202609:06",
+    "confidence": "low",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Пять беспилотников пролетели над воздушным пространством страны. Власти осуждают инциденты",
+    "url": "https://ipn.md/ru/pyat-bespilotnikov-proleteli-nad-vozdushnym-prostranstvom-strany-vlasti-osuzhdayut-inczidenty/",
+    "excerpt": "Пять беспилотников пролетели над воздушным пространством страны. Власти осуждают инциденты10:42",
+    "confidence": "low",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTFragmente din resturi de dronă au provocat un incendiu la o clădire nerezidențială din Kiev. Război în Ucraina, ziua 1684",
+    "url": "https://www.zdg.md/stiri/live-text-fragmente-din-resturi-de-drona-au-provocat-un-incendiu-la-o-cladire-nerezidentiala-din-kiev-razboi-in-ucraina-ziua-1684/",
+    "excerpt": "LIVE TEXTFragmente din resturi de dronă au provocat un incendiu la o clădire nerezidențială din Kiev. Război în Ucraina, ziua 1684NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Cinci drone au căzut și au explodat în patru raioane",
+    "url": "https://www.zdg.md/stiri/cinci-drone-au-cazut-in-patru-raioane/",
+    "excerpt": "Cinci drone au căzut și au explodat în patru raioaneNouŞtiri",
+    "confidence": "low",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове обнаружили фрагменты дронов S8000 Banderol",
+    "url": "https://point.md/ru/novosti/obschestvo/v-moldove-obnaruzhili-fragmenty-dronov-s8000-banderol/",
+    "excerpt": "Эксперты из технического и взрывотехнического подразделения полиции сегодня установили места падения и взрыва некоторых беспилотников. Они …",
+    "confidence": "medium",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Precizează",
+    "url": "https://www.army.md/ro/comunicate-de-presa/precizeaza",
+    "excerpt": "UPDATE:În contextul atacurilor masive ale Federației Ruse asupra Ucrainei din această dimineață, Serviciul Operații Aeriene al Armatei Naționale informează că în urma analizei datelor de survol al spațiului aerian național, precizăm că pe lângă cele cinci aparate de zbor — trei rachete și două drone",
+    "confidence": "high",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -2612,6 +2700,14 @@
     "excerpt": "Утром 3 октября нескольких беспилотных летательных аппаратов были зафиксированы в воздушном пространстве Молдовы вблизи населённых пунктов …",
     "confidence": "medium",
     "detected_at": "2026-10-03T07:00:47.482672+00:00"
+  },
+  {
+    "date_mentioned": "3 октября",
+    "title": "Ещё один объект пересёк воздушное пространство Молдовы: шестой по счету",
+    "url": "https://point.md/ru/novosti/proisshestviya/eshchio-odin-ob-ekt-peresiok-vozdushnoe-prostranstvo-moldovy-shestoi-po-schetu/",
+    "excerpt": "На фоне массированных атак России по Украине утром 3 октября Служба воздушных операций Национальной армии сообщила о ещё одном несанкционир…",
+    "confidence": "medium",
+    "detected_at": "2026-10-04T07:00:43.558016+00:00"
   },
   {
     "date_mentioned": "30 августа",
