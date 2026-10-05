@@ -2590,6 +2590,22 @@
     "detected_at": "2026-10-04T07:00:43.558016+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "LIVE TEXTGermania anunță ajutor de 1,3 miliarde de euro pentru Ucraina, inclusiv drone interceptoare. Război în Ucraina, ziua 1684",
+    "url": "https://www.zdg.md/stiri/live-text-germania-anunta-ajutor-de-13-miliarde-de-euro-pentru-ucraina-inclusiv-drone-interceptoare-razboi-in-ucraina-ziua-1684/",
+    "excerpt": "LIVE TEXTGermania anunță ajutor de 1,3 miliarde de euro pentru Ucraina, inclusiv drone interceptoare. Război în Ucraina, ziua 1684NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-05T07:00:47.382262+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Киеве стали устанавливать турели для защиты от реактивных дронов",
+    "url": "https://point.md/ru/novosti/v-mire/v-kieve-stali-ustanavlivat-tureli-dlia-zashchity-ot-reaktivnykh-dronov/",
+    "excerpt": "«Начали ставить турели. Двенадцать плюс уже поставили в столице, и плюс сейчас еще восемь „пятидесятников“ на Киевскую область дополнительн…",
+    "confidence": "low",
+    "detected_at": "2026-10-05T07:00:47.382262+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
