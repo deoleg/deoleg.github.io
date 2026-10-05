@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>История христианских доктрин · History of Christian Doctrine</title>
+  <meta name="description" content="Двенадцать христианских учений от апостольского века до XX столетия: матрица «учение × эпоха», линии развития, хронология и глоссарий. Twelve Christian doctrines from the apostolic age to the 20th century.">
+  <link rel="canonical" href="https://deoleg.github.io/doctrines/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="История христианских доктрин · History of Christian Doctrine">
+  <meta property="og:description" content="Как развивалось каждое учение: матрица, линии учений, хронология и глоссарий по девяти учебникам.">
+  <meta property="og:url" content="https://deoleg.github.io/doctrines/">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script>
+    // Theme before first paint; file:// fallback (module scripts do not load from file://)
+    try { var t = localStorage.getItem('hcd-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    if (location.protocol === 'file:') document.addEventListener('DOMContentLoaded', function () {
+      var m = document.getElementById('main'); if (!m || document.documentElement.classList.contains('is-ready')) return;
+      var box = document.createElement('section'); box.className = 'view load-error'; box.setAttribute('role', 'alert');
+      [['ru', 'Не удалось загрузить данные.', 'Откройте сайт через локальный сервер: python3 -m http.server в корне репозитория, затем http://localhost:8000/doctrines/.'],
+       ['en', 'Could not load the data.', 'Open the site through a local server: run python3 -m http.server in the repository root, then open http://localhost:8000/doctrines/.']]
+        .forEach(function (x) { var d = document.createElement('div'); d.lang = x[0]; d.className = 'load-error-block';
+          var a = document.createElement('p'); a.className = 'load-error-title'; a.textContent = x[1];
+          var b = document.createElement('p'); b.textContent = x[2]; d.append(a, b); box.append(d); });
+      m.replaceChildren(box);
+    });
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="preload" href="data/doctrines.json" as="fetch" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=b3768c1b8b">
+  <script type="importmap">
+  {
+    "imports": {
+      "./js/i18n.js": "./js/i18n.js?v=b996d30fd7",
+      "./js/util.js": "./js/util.js?v=2688ef8d99",
+      "./js/views/common.js": "./js/views/common.js?v=33b44518c6",
+      "./js/views/matrix.js": "./js/views/matrix.js?v=6104c26ad7",
+      "./js/views/doctrine.js": "./js/views/doctrine.js?v=bbba08b75b",
+      "./js/views/timeline.js": "./js/views/timeline.js?v=1fa141e9c4",
+      "./js/views/glossary.js": "./js/views/glossary.js?v=e08fc40238",
+      "./js/views/about.js": "./js/views/about.js?v=8f0047133b",
+      "./js/views/item.js": "./js/views/item.js?v=2941066c94"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" id="skip" href="#main"></a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#/">
+      <span class="brand-title" id="siteTitle"></span>
+      <span class="brand-sub" id="siteSub"></span>
+    </a>
+    <nav class="site-nav" id="siteNav"></nav>
+    <div class="header-tools">
+      <div class="lang-switch" id="langSwitch" role="group">
+        <button type="button" data-lang="ru" lang="ru">RU</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="themeToggle"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="site-footer">
+  <p class="footer-inner" id="footerText"></p>
+</footer>
+
+<p class="visually-hidden" id="announcer" aria-live="polite" aria-atomic="true"></p>
+
+<dialog class="panel" id="panel" aria-labelledby="panelTitle">
+  <div class="panel-inner">
+    <div class="panel-top">
+      <div class="panel-kicker" id="panelKicker"></div>
+      <button type="button" class="icon-btn panel-close" id="panelClose">✕</button>
+    </div>
+    <div class="panel-scroll">
+      <div class="panel-body" id="panelBody"></div>
+      <nav class="panel-nav" id="panelNav">
+        <button type="button" class="pn-btn pn-prev" id="panelPrev"></button>
+        <button type="button" class="pn-btn pn-next" id="panelNext"></button>
+      </nav>
+    </div>
+  </div>
+</dialog>
+
+<script type="module" src="js/app.js?v=ad8709533c"></script>
+</body>
+</html>

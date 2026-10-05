@@ -5,3 +5,9 @@
 history/PROMPT_vscode.md
 history/all_events_by_book_raw.json
 history/*.xlsx
+
+# History of Christian Doctrine: source materials (not published)
+doctrines/PROMPT_vscode.md
+doctrines/all_items_by_book_raw.json
+doctrines/doctrines_work.json
+doctrines/*.xlsx
