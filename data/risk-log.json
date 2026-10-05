@@ -2460,5 +2460,57 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Экономические индикаторы. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-10-05",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 9 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 9
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "МИД вручил российскому послу ноту протеста в связи с пролётом дронов",
+            "url": "https://ipn.md/ru/mid-vruchil-rossijskomu-poslu-notu-protesta-v-svyazi-s-prolyotom-dronov/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 11 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 11
+      }
+    },
+    "overall_score": 0.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.4."
   }
 ]
