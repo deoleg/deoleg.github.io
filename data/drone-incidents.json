@@ -2606,6 +2606,46 @@
     "detected_at": "2026-10-05T07:00:47.382262+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При одной из крупнейших атак беспилотников на Подмосковье погибли два человека09:05",
+    "url": "https://ria.ru/20261006/bespilotniki-2122499176.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-06T07:00:46.862702+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Собянин сообщил об отражении атаки 650 дронов, летевших на Москву05:15",
+    "url": "https://ria.ru/20261006/moskva-2122479569.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-06T07:00:46.862702+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Подмосковье из-за атаки БПЛА пострадали 47 частных домов09:11",
+    "url": "https://ria.ru/20261006/bespilotniki-2122499922.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-06T07:00:46.862702+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTUcraina a fost atacată cu aproape 140 de drone, 114 au fost doborâte de apărarea antiaeriană. Război în Ucraina, ziua 1686",
+    "url": "https://www.zdg.md/stiri/live-text-ucraina-a-fost-atacata-cu-aproape-140-de-drone-114-au-fost-doborate-de-apararea-antiaeriana-razboi-in-ucraina-ziua-1686/",
+    "excerpt": "LIVE TEXTUcraina a fost atacată cu aproape 140 de drone, 114 au fost doborâte de apărarea antiaeriană. Război în Ucraina, ziua 1686NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-06T07:00:46.862702+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTO dronă rusească a lovit o clădire înaltă din Zaporijjea, provocând victime și incendii în apartamente. Război în Ucraina, ziua 1685",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-o-drona-ruseasca-a-lovit-o-cladire-inalta-din-zaporijjea-provocand-victime-si-incendii-in-apartamente-razboi-in-ucraina-ziua-1685/",
+    "excerpt": "LIVE TEXTO dronă rusească a lovit o clădire înaltă din Zaporijjea, provocând victime și incendii în apartamente. Război în Ucraina, ziua 1685NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-06T07:00:46.862702+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
