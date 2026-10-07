@@ -2573,5 +2573,73 @@
     },
     "overall_score": 0.8,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове. Общий индекс: 0.8."
+  },
+  {
+    "date": "2026-10-07",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы. Взвешенный балл за сегодня: 18.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-25"
+          },
+          {
+            "title": "Precizează",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/precizeaza"
+          },
+          {
+            "title": "Неизвестный объект нарушил воздушное пространство Молдовы. Минобороны: Он сразу покинул территорию страны",
+            "url": "https://newsmaker.md/ru/neizvestnyi-obekt-narushil-vozdushnoe-prostranstvo-moldovy-minoborony-on-srazu-pokinul-territoriyu-strany"
+          },
+          {
+            "title": "Неопознанный объект нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-ob-ekt-narushil-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Неопознанный объект нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-ob-ekt-narushil-vozdushnoe-prostranstvo-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 13 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 13
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
