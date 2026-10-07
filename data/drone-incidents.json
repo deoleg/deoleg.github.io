@@ -2646,6 +2646,62 @@
     "detected_at": "2026-10-06T07:00:46.862702+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Неизвестный объект нарушил воздушное пространство Молдовы. Минобороны: Он сразу покинул территорию страны",
+    "url": "https://newsmaker.md/ru/neizvestnyi-obekt-narushil-vozdushnoe-prostranstvo-moldovy-minoborony-on-srazu-pokinul-territoriyu-strany",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Два торговых судна атакованы дронами у берегов Болгарии. Одно из них затонуло",
+    "url": "https://ipn.md/ru/dva-torgovyh-sudna-atakovany-dronami-u-beregov-bolgarii-odno-iz-nih-zatonulo/",
+    "excerpt": "Два торговых судна атакованы дронами у берегов Болгарии. Одно из них затонуло11:36",
+    "confidence": "low",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTCel puțin două persoane au murit la Kiev în urma atacurilor nocturne cu rachete și drone lansate de Rusia. Război în Ucraina, ziua 1687",
+    "url": "https://www.zdg.md/stiri/live-text-cel-putin-doua-persoane-au-murit-la-kiev-in-urma-atacurilor-nocturne-cu-rachete-si-drone-lansate-de-rusia-razboi-in-ucraina-ziua-1687/",
+    "excerpt": "LIVE TEXTCel puțin două persoane au murit la Kiev în urma atacurilor nocturne cu rachete și drone lansate de Rusia. Război în Ucraina, ziua 1687NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Неопознанный объект нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-ob-ekt-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "В воздушном пространстве Молдовы зафиксировали несанкционированный полет на фоне массированных атак России на Украину. Об этом сообщает Слу…",
+    "confidence": "medium",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-25",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 08:43, cu părăsirea imediată a spațiului aerian în direcția localității Limanske (Ucraina), la ora 08:44. Servi",
+    "confidence": "high",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Precizează",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/precizeaza",
+    "excerpt": "UPDATE:În contextul atacurilor masive ale Federației Ruse asupra Ucrainei din această dimineață, Serviciul Operații Aeriene al Armatei Naționale informează că în urma analizei datelor de survol al spațiului aerian național, precizăm că pe lângă cele cinci aparate de zbor — trei rachete și două drone",
+    "confidence": "high",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Неопознанный объект нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-ob-ekt-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "В воздушном пространстве Молдовы зафиксировали несанкционированный полет на фоне массированных атак России на Украину. Об этом сообщает Слу…",
+    "confidence": "medium",
+    "detected_at": "2026-10-07T07:00:49.533222+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
