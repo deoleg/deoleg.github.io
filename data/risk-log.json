@@ -2641,5 +2641,82 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-10-08",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 3.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: оппозиция готовит импичмент Санду, Приднестровье тестирует «Молнию», Филат возвращается",
+            "url": "https://newsmaker.md/ru/nm-espresso-moldove-otkroyut-eshe-dva-klastera-po-vstupleniyu-es-jiteli-pridnestrovya-poluchili-sms-ki-o-chp-spor-mejdu-termoelectrica-i-chebanom-razgoraetsya"
+          },
+          {
+            "title": "Тофан: Во втором полугодии нужно 40 реформ для получения нового финансирования ЕС",
+            "url": "https://point.md/ru/novosti/politika/tofan-vo-vtorom-polugodii-neobkhodimo-40-reform-dlia-polucheniia-novogo-finansirovaniia-es/"
+          },
+          {
+            "title": "В Приднестровье тракторист погиб после падения под прицепное оборудование",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-traktorist-pogib-posle-padeniia-pod-pritsepnoe-oborudovanie/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 14.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-26"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-25"
+          },
+          {
+            "title": "Прокуратура Молдовы расследует 30 дел по фактам незаконных пролетов ракет и дронов",
+            "url": "https://point.md/ru/novosti/obschestvo/prokuratura-moldovy-rassleduet-30-del-po-faktam-nezakonnykh-proletov-raket-i-dronov/"
+          },
+          {
+            "title": "Еще один дрон пролетел над территорией Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/eshche-odin-dron-proletel-nad-territoriei-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 4
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 14 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 14
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
