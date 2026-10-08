@@ -2702,6 +2702,62 @@
     "detected_at": "2026-10-07T07:00:49.533222+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ПВО за ночь сбила 399 дронов08:25",
+    "url": "https://ria.ru/20261008/drony-2123086606.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Zbor neautorizat în spațiul aerian al R. Moldova, în contextul atacurilor asupra Ucrainei",
+    "url": "https://www.zdg.md/stiri/zbor-neautorizat-in-spatiul-aerian-al-r-moldova-in-contextul-atacurilor-asupra-ucrainei/",
+    "excerpt": "Zbor neautorizat în spațiul aerian al R. Moldova, în contextul atacurilor asupra UcraineiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "МВД Украины: 28 человек погибли после массированных атак России",
+    "url": "https://point.md/ru/novosti/v-mire/mvd-ukrainy-28-chelovek-pogibli-posle-massirovannykh-atak-rossii/",
+    "excerpt": "В результате массированной атаки российских военных с применением ракет и беспилотников в Украине погибли 28 человек, сообщил министр внутр…",
+    "confidence": "low",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Прокуратура Молдовы расследует 30 дел по фактам незаконных пролетов ракет и дронов",
+    "url": "https://point.md/ru/novosti/obschestvo/prokuratura-moldovy-rassleduet-30-del-po-faktam-nezakonnykh-proletov-raket-i-dronov/",
+    "excerpt": "Правоохранительные органы Молдовы завели 30 уголовных дел по фактам несанкционированного нарушения воздушного пространства страны иностранн…",
+    "confidence": "medium",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-26",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 20:04, în zona localității Pervomaisc, cu părăsirea spațiului național, la ora 20:05, în direcția localității L",
+    "confidence": "high",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-25",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 08:43, cu părăsirea imediată a spațiului aerian în direcția localității Limanske (Ucraina), la ora 08:44. Servi",
+    "confidence": "high",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Еще один дрон пролетел над территорией Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/eshche-odin-dron-proletel-nad-territoriei-moldovy/",
+    "excerpt": "Служба воздушных операций Национальной армии Молдовы зафиксировала несанкционированный полет в национальном воздушном пространстве на фоне …",
+    "confidence": "medium",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -2868,6 +2924,14 @@
     "excerpt": "Сегодня, 30 сентября, в 10:26 беспилотный летательный аппарат пролетел в воздушном пространстве Молдовы в районе населенного пункта Лунга Д…",
     "confidence": "medium",
     "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": "4 октября",
+    "title": "В Кишиневе водитель Opel проехался по скверу и получил штраф",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-kishineve-voditel-opel-proekhalsia-po-skveru-i-poluchil-shtraf/",
+    "excerpt": "В Кишиневе оштрафовали 54-летнюю женщину, которая нарушила ПДД, проехав на Opel по скверу. Нарушение зафиксировали на видео 4 октября в сек…",
+    "confidence": "medium",
+    "detected_at": "2026-10-08T07:01:07.670403+00:00"
   },
   {
     "date_mentioned": "4 сентября",
