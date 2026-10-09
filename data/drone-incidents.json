@@ -2758,6 +2758,54 @@
     "detected_at": "2026-10-08T07:01:07.670403+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "На заводе в Тверской области после атаки дрона начался пожар08:00",
+    "url": "https://ria.ru/20261009/ataka-2123371531.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "NM Espresso: парламент провел секретное заседание, Санду рассказала о «когнитивной войне», Молдова будет производить дроны",
+    "url": "https://newsmaker.md/ru/nm-espresso-parlament-provel-sekretnoe-zasedanie-sandu-rasskazala-o-kognitivnoi-voine-i-pomojet-li-rumyniya-sbivat-drony-nad-moldovoi",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Молдова планирует производить дроны и оборудование для ПВО: Что заявили Санду и Гросу",
+    "url": "https://newsmaker.md/ru/moldova-planiruet-proizvodit-drony-i-oborudovanie-dlya-pvo-chto-zayavili-sandu-i-grosu",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Атаки беспилотников в России: пожары в дата-центре и на нефтеперерабатывающем заводе",
+    "url": "https://ipn.md/ru/ataki-bespilotnikov-v-rossii-pozhary-v-data-czentre-i-na-neftepererabatyvayushhem-zavode/",
+    "excerpt": "Атаки беспилотников в России: пожары в дата-центре и на нефтеперерабатывающем заводе12:28",
+    "confidence": "low",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Un sediu Yandex, lovit de drone în primul atac major asupra unui centru de date din Rusia",
+    "url": "https://www.zdg.md/stiri/un-sediul-yandex-lovit-de-drone-in-primul-atac-major-asupra-unui-centru-de-date-din-rusia/",
+    "excerpt": "Un sediu Yandex, lovit de drone în primul atac major asupra unui centru de date din RusiaNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-26",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 20:04, în zona localității Pervomaisc, cu părăsirea spațiului național, la ora 20:05, în direcția localității L",
+    "confidence": "high",
+    "detected_at": "2026-10-09T07:01:24.662532+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
