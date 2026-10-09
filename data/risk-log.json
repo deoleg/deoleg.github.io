@@ -2718,5 +2718,65 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-10-09",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 8.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-26"
+          },
+          {
+            "title": "NM Espresso: парламент провел секретное заседание, Санду рассказала о «когнитивной войне», Молдова будет производить дроны",
+            "url": "https://newsmaker.md/ru/nm-espresso-parlament-provel-sekretnoe-zasedanie-sandu-rasskazala-o-kognitivnoi-voine-i-pomojet-li-rumyniya-sbivat-drony-nad-moldovoi"
+          },
+          {
+            "title": "Молдова планирует производить дроны и оборудование для ПВО: Что заявили Санду и Гросу",
+            "url": "https://newsmaker.md/ru/moldova-planiruet-proizvodit-drony-i-oborudovanie-dlya-pvo-chto-zayavili-sandu-i-grosu"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 15 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 15
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
