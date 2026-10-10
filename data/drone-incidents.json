@@ -2806,6 +2806,54 @@
     "detected_at": "2026-10-09T07:01:24.662532+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Ростове-на-Дону после массированной атаки БПЛА вспыхнул пожар03:44",
+    "url": "https://ria.ru/20261010/bpla-2123612983.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Сапер обезвредил восемь мин, сбил два FPV-дрона ВСУ и спас товарища00:12",
+    "url": "https://ria.ru/20261010/spetsoperatsiya-2123597029.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Игорь Гросу: Законодательство будет изменено, чтобы разрешить производство дронов",
+    "url": "https://ipn.md/ru/igor-grosu-zakonodatelstvo-budet-izmeneno-chtoby-razreshit-proizvodstvo-dronov/",
+    "excerpt": "Игорь Гросу: Законодательство будет изменено, чтобы разрешить производство дронов10.10.202609:11",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Забастовки профсоюзов нарушили авиасообщение и работу общественного транспорта в Бельгии",
+    "url": "https://ipn.md/ru/zabastovki-profsoyuzov-narushili-aviasoobshhenie-i-rabotu-obshhestvennogo-transporta-v-belgii/",
+    "excerpt": "Забастовки профсоюзов нарушили авиасообщение и работу общественного транспорта в Бельгии14:21",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Mai multe aeroporturi rusești au fost închise pe fondul unui presupus raid ucrainean cu drone",
+    "url": "https://www.zdg.md/stiri/mai-multe-aeroporturi-rusesti-au-fost-inchise-pe-fondul-unui-presupus-raid-ucrainean-cu-drone/",
+    "excerpt": "Mai multe aeroporturi rusești au fost închise pe fondul unui presupus raid ucrainean cu droneNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "БПЛА атаковали Ростов: горит терминал НЗНП, поврежден мост",
+    "url": "https://point.md/ru/novosti/v-mire/bpla-atakovali-rostov-gorit-terminal-nznp-povrezhden-most/",
+    "excerpt": "В Ростовской области после атаки более 50 беспилотников вспыхнул пожар на нефтеналивном терминале НЗНП. Повреждены жилые дома и железнодоро…",
+    "confidence": "low",
+    "detected_at": "2026-10-10T07:00:49.753865+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
