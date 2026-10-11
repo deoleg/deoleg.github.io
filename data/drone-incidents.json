@@ -2854,6 +2854,54 @@
     "detected_at": "2026-10-10T07:00:49.753865+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Гросу: Молдова хочет производить беспилотники для собственных нужд, а не на экспорт",
+    "url": "https://newsmaker.md/ru/grosu-moldova-hochet-proizvodit-bespilotniki-dlya-sobstvennyh-nujd-a-ne-na-eksport",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Химический завод в Твери, часть российского военно-промышленного комплекса, атакован дронами",
+    "url": "https://ipn.md/ru/himicheskij-zavod-v-tveri-chast-rossijskogo-voenno-promyshlennogo-kompleksa-atakovan-dronami/",
+    "excerpt": "ПолитикаХимический завод в Твери, часть российского военно-промышленного комплекса, атакован дронамиbyBolohan Maxim09.10.2026Химический завод в Тверской области России, производящий топливо для крылатых ракет и присадки для дизельного топлива и керосина, минувшей ночью подвергся атаке беспилотников.",
+    "confidence": "low",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTTeritoriul ucrainean, atacat cu peste 110 drone în timpul nopții. Război în Ucraina, ziua 1691",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-teritoriul-ucrainean-atacat-cu-peste-110-drone-in-timpul-noptii-razboi-in-ucraina-ziua-1691/",
+    "excerpt": "LIVE TEXTTeritoriul ucrainean, atacat cu peste 110 drone în timpul nopții. Război în Ucraina, ziua 1691NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Во Владимире в результате атаки дронов остановлена работа дата-центра «Яндекса»",
+    "url": "https://point.md/ru/novosti/v-mire/vo-vladimire-v-rezul-tate-ataki-dronov-polnost-iu-ostanovlena-rabota-data-tsentra-iandeksa/",
+    "excerpt": "В компании также отметили, что пострадавших нет.",
+    "confidence": "low",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В ГИП рассказали, куда отправляют фрагменты дронов, упавших на территории Молдовы",
+    "url": "https://point.md/ru/novosti/obschestvo/v-gip-rasskazali-kuda-otpravliaiut-fragmenty-dronov-upavshikh-na-territorii-moldovy/",
+    "excerpt": "Фрагменты беспилотных летательных аппаратов, упавших на территории Республики Молдова, подвергаются взрывотехнической экспертизе, после чег…",
+    "confidence": "medium",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Санду о закрытии посольства Молдовы в России: Пока решено оставить все как есть",
+    "url": "https://point.md/ru/novosti/politika/sandu-o-zakrytii-posol-stva-moldovy-v-rossii-na-dannyi-moment-reshenie-ostavit-vse-kak-est/",
+    "excerpt": "Посольство Республики Молдова в России продолжит свою работу, несмотря на недавние инциденты с беспилотниками.",
+    "confidence": "medium",
+    "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
