@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T13:35:43.596642+03:00",
+  "updatedAt": "2026-10-12T14:38:41.862653+03:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -519,23 +519,23 @@
     {
       "home": "Crystal Palace",
       "away": "Nottingham Forest",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 3,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Hull City",
       "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 2,
+      "played": true
     },
     {
       "home": "Liverpool",
       "away": "Manchester City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 3,
+      "played": true
     },
     {
       "home": "Coventry City",
