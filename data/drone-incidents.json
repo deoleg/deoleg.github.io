@@ -8,6 +8,14 @@
     "detected_at": "2026-10-02T07:00:49.404136+00:00"
   },
   {
+    "date_mentioned": "10 октября",
+    "title": "Упавший и взорвавшийся в Молдове дрон не заметили радары",
+    "url": "https://point.md/ru/novosti/proisshestviya/upavshii-i-vzorvavshiisia-v-moldove-dron-ne-zametili-radary/",
+    "excerpt": "БПЛА упал и взорвался в лесу возле села Джамана Новоаненского района вечером 10 октября 2026 года.",
+    "confidence": "medium",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
     "date_mentioned": "15 сентября",
     "title": "В Литве самолеты НАТО сбили дрон, залетевший в страну",
     "url": "https://point.md/ru/novosti/v-mire/v-litve-samolety-nato-sbili-dron-zaletevshii-v-stranu/",
@@ -2900,6 +2908,78 @@
     "excerpt": "Посольство Республики Молдова в России продолжит свою работу, несмотря на недавние инциденты с беспилотниками.",
     "confidence": "medium",
     "detected_at": "2026-10-11T07:00:45.493073+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Неопознанный летательный аппарат, предположительно, упал и взорвался в лесу в районе Анений Ной. Пострадавших нет",
+    "url": "https://ipn.md/ru/neopoznannyj-letatelnyj-apparat-predpolozhitelno-upal-i-vzorvalsya-v-lesu-v-rajone-anenij-noj-postradavshih-net/",
+    "excerpt": "Летательный аппарат, предположительно беспилотник, упал и взорвался в лесу недалеко от села Жямэна в районе Анений-Ной в субботу вечером. По …Continue Reading",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Взрывчатый заряд дрона, упавшего в Анений Ной, обезврежен специалистами полиции",
+    "url": "https://ipn.md/ru/vzryvchatyj-zaryad-drona-upavshego-v-anenij-noj-obezvrezhen-speczialistami-policzii/",
+    "excerpt": "Взрывчатый заряд дрона, упавшего в Анений Ной, обезврежен специалистами полиции16:06",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Третий центр обработки данных Yandex в России атакован беспилотниками. Работа цифровых сервисов нарушена",
+    "url": "https://ipn.md/ru/tretij-czentr-obrabotki-dannyh-yandex-v-rossii-atakovan-bespilotnikami-rabota-czifrovyh-servisov-narushena/",
+    "excerpt": "Третий центр обработки данных Yandex в России атакован беспилотниками. Работа цифровых сервисов нарушена09:57",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Al treilea centru de date Yandex din Rusia a fost închis în urma unui presupus atac cu drone",
+    "url": "https://www.zdg.md/stiri/stiri-externe/al-treilea-centru-de-date-yandex-din-rusia-a-fost-inchis-in-urma-unui-presupus-atac-cu-drone/",
+    "excerpt": "Al treilea centru de date Yandex din Rusia a fost închis în urma unui presupus atac cu droneNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "EditorialAlertă deasupra Moldovei: războiul intră în spațiul aerian",
+    "url": "https://www.zdg.md/blog/editoriale/editorial-alerta-deasupra-moldovei-razboiul-intra-in-spatiul-aerian/",
+    "excerpt": "EditorialAlertă deasupra Moldovei: războiul intră în spațiul aerianNouBlog",
+    "confidence": "medium",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Blog",
+    "url": "https://www.zdg.md/categoria/blog/",
+    "excerpt": "EditorialAlertă deasupra Moldovei: războiul intră în spațiul aerianNouBlog",
+    "confidence": "medium",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-28",
+    "excerpt": "Update:Specialiştii Secției tehnico-explozivǎ a Poliției și echipele Armatei Naționale se deplasează la fața locului pentru a examina obiectul și a stabili toate circumstanțele. Ne adresăm cetățenilor în cazul depistării unor obiecte neidentificate sau fragmente să nu le atingă, să nu le miște și să",
+    "confidence": "high",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В лесу возле Жямэны обезвредили боевую часть упавшего беспилотника",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-lesu-vozle-zhiameny-obezvredili-boevuiu-chast-upavshego-bespilotnika/",
+    "excerpt": "В ходе обследования леса за пределами села Жямэна Новоаненского района, примерно в 100 метрах от дороги, было обнаружено место, где беспило…",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Новоаненском районе сообщили о падении и взрыве беспилотника",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-novoanenskom-raione-soobshchili-o-padenii-i-vzryve-bespilotnika/",
+    "excerpt": "Накануне вечером, около 22:20, местные жители сообщили в полицию, что заметили беспилотник, летевший на небольшой высоте над территорией Но…",
+    "confidence": "low",
+    "detected_at": "2026-10-12T07:00:45.591734+00:00"
   },
   {
     "date_mentioned": "21 сентября",
