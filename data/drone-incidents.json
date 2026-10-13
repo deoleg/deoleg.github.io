@@ -2982,6 +2982,38 @@
     "detected_at": "2026-10-12T07:00:45.591734+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ВС России поразили в Киеве цех предприятия по производству ракет и БПЛА09:33",
+    "url": "https://ria.ru/20261013/mo-2124123798.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-13T07:00:57.457380+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "У берегов Болгарии дроны атаковали судно, следовавшее в Молдову",
+    "url": "https://point.md/ru/novosti/v-mire/u-beregov-bolgarii-drony-atakovali-sudno-sledovavshee-v-moldovu/",
+    "excerpt": "Сухогруз CHELSEA 3, следовавший из Турции в молдавский порт Джурджулешты, подвергся атаке беспилотников в Черном море у берегов Болгарии.",
+    "confidence": "medium",
+    "detected_at": "2026-10-13T07:00:57.457380+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Гросу объяснил, почему дроны, залетающие в воздушное пространство Молдовы, не сбивают",
+    "url": "https://point.md/ru/novosti/politika/grosu-ob-iasnil-pochemu-drony-zaletaiushchie-v-vozdushnoe-prostranstvo-moldovy-ne-sbivaiut/",
+    "excerpt": "Председатель парламента Игорь Гросу заявил, что сбивание беспилотников, нарушающих воздушное пространство Молдовы, сопряжено с рисками и тр…",
+    "confidence": "high",
+    "detected_at": "2026-10-13T07:00:57.457380+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-28",
+    "excerpt": "Update:Specialiştii Secției tehnico-explozivǎ a Poliției și echipele Armatei Naționale se deplasează la fața locului pentru a examina obiectul și a stabili toate circumstanțele. Ne adresăm cetățenilor în cazul depistării unor obiecte neidentificate sau fragmente să nu le atingă, să nu le miște și să",
+    "confidence": "high",
+    "detected_at": "2026-10-13T07:00:57.457380+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
