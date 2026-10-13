@@ -2970,5 +2970,70 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-10-13",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: dronă, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 7.0.",
+        "sources": [
+          {
+            "title": "Гросу объяснил, почему дроны, залетающие в воздушное пространство Молдовы, не сбивают",
+            "url": "https://point.md/ru/novosti/politika/grosu-ob-iasnil-pochemu-drony-zaletaiushchie-v-vozdushnoe-prostranstvo-moldovy-ne-sbivaiut/"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-28"
+          },
+          {
+            "title": "У берегов Болгарии дроны атаковали судно, следовавшее в Молдову",
+            "url": "https://point.md/ru/novosti/v-mire/u-beregov-bolgarii-drony-atakovali-sudno-sledovavshee-v-moldovu/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 9 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 9
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: эвакуаци. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Землетрясение магнитудой 7,7 в Панаме: материальный ущерб, десятки афтершоков и предупреждение о цунами",
+            "url": "https://ipn.md/ru/zemletryasenie-magnitudoj-77-v-paname-materialnyj-ushherb-desyatki-aftershokov-i-preduprezhdenie-o-czunami/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Официальные travel advisories. Общий индекс: 1.4."
   }
 ]
