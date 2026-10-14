@@ -3035,5 +3035,52 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка, Официальные travel advisories. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-10-14",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 1
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 10
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
   }
 ]
