@@ -3014,6 +3014,46 @@
     "detected_at": "2026-10-13T07:00:57.457380+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Судно Chelsea 3, атакованное беспилотниками в Чёрном море, направлялось в порт Джурджулешть",
+    "url": "https://ipn.md/ru/sudno-chelsea-3-atakovannoe-bespilotnikami-v-chyornom-more-napravlyalos-v-port-dzhurdzhulesht/",
+    "excerpt": "Судно Chelsea 3, атакованное беспилотниками в Чёрном море, направлялось в порт Джурджулешть14:06",
+    "confidence": "low",
+    "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Торговое судно затонуло после атаки беспилотников в Чёрном море",
+    "url": "https://ipn.md/ru/torgovoe-sudno-zatonulo-posle-ataki-bespilotnikov-v-chyornom-more/",
+    "excerpt": "Торговое судно затонуло после атаки беспилотников в Чёрном море13:09",
+    "confidence": "low",
+    "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Российские реактивные «Шахеды» летели к западу Украины вдоль границы Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/rossiiskie-reaktivnye-shakhedy-leteli-k-zapadu-ukrainy-vdol-granitsy-moldovy/",
+    "excerpt": "Россия испытывает возможности применения реактивных беспилотников «Шахед» для атак на западные области Украины.",
+    "confidence": "medium",
+    "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Российские реактивные «Шахеды» летели к западу Украины вдоль границы Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/rossiiskie-reaktivnye-shakhedy-leteli-k-zapadu-ukrainy-vdol-granitsy-moldovy/",
+    "excerpt": "Россия испытывает возможности применения реактивных беспилотников «Шахед» для атак на западные области Украины.",
+    "confidence": "medium",
+    "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Судно, атакованное в Черном море, направлялось в Молдову за грузом подсолнечника",
+    "url": "https://point.md/ru/novosti/proisshestviya/sudno-atakovannoe-v-chernom-more-napravlialos-v-moldovu-za-gruzom-podsolnechnika/",
+    "excerpt": "Грузовое судно, направлявшееся в Молдову для загрузки подсолнечника, предназначенного на экспорт, подверглось атаке беспилотников в Чёрном …",
+    "confidence": "medium",
+    "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
