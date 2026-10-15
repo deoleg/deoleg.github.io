@@ -16,6 +16,22 @@
     "detected_at": "2026-10-12T07:00:45.591734+00:00"
   },
   {
+    "date_mentioned": "15 октября",
+    "title": "Беспилотник залетел в воздушное пространство Молдовы со стороны Украины",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-zaletel-v-vozdushnoe-prostranstvo-moldovy-so-storony-ukrainy/",
+    "excerpt": "Беспилотник нарушил воздушное пространство Молдовы в ночь на 15 октября. Об этом сообщила Служба воздушных операций Национальной армии.",
+    "confidence": "medium",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": "15 октября",
+    "title": "Беспилотник залетел в воздушное пространство Молдовы со стороны Украины",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-zaletel-v-vozdushnoe-prostranstvo-moldovy-so-storony-ukrainy/",
+    "excerpt": "Беспилотник нарушил воздушное пространство Молдовы в ночь на 15 октября. Об этом сообщила Служба воздушных операций Национальной армии.",
+    "confidence": "medium",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
     "date_mentioned": "15 сентября",
     "title": "В Литве самолеты НАТО сбили дрон, залетевший в страну",
     "url": "https://point.md/ru/novosti/v-mire/v-litve-samolety-nato-sbili-dron-zaletevshii-v-stranu/",
@@ -3052,6 +3068,62 @@
     "excerpt": "Грузовое судно, направлявшееся в Молдову для загрузки подсолнечника, предназначенного на экспорт, подверглось атаке беспилотников в Чёрном …",
     "confidence": "medium",
     "detected_at": "2026-10-14T07:00:45.068018+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Рязанской области на территории НПЗ вспыхнул пожар из-за атаки дронов09:28",
+    "url": "https://ria.ru/20261015/npz-2124609807.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ВСУ отменяют миссии с дронами после замедления Starlink, пишут СМИ03:15",
+    "url": "https://ria.ru/20261015/vsu-2124580066.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Молдовой снова заметили беспилотник. Что сообщает министерство обороны",
+    "url": "https://newsmaker.md/ru/nad-moldovoi-snova-zametili-bespilotnik-chto-soobshaet-ministerstvo-oborony",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O dronă a survolat spațiul aerian al R. Moldova, după atacurile masive ale Federației Ruse asupra Ucrainei",
+    "url": "https://www.zdg.md/stiri/stiri-sociale/o-drona-a-survolat-spatiul-aerian-al-r-moldova-dupa-atacurile-masive-ale-federatiei-ruse-asupra-ucrainei/",
+    "excerpt": "O dronă a survolat spațiul aerian al R. Moldova, după atacurile masive ale Federației Ruse asupra UcraineiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Două ținte aeriene au pătruns în spațiul aerian al României. Una a fost distrusă de apărarea ucraineană în apropiere de Reni",
+    "url": "https://www.zdg.md/stiri/stiri-externe/doua-tinte-aeriene-au-patruns-in-spatiul-aerian-al-romaniei-una-a-fost-distrusa-de-apararea-ucraineana-in-apropiere-de-reni/",
+    "excerpt": "Două ținte aeriene au pătruns în spațiul aerian al României. Una a fost distrusă de apărarea ucraineană în apropiere de ReniNouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Российские дроны 10 часов атаковали Кировоградскую область: три человека погибли",
+    "url": "https://point.md/ru/novosti/v-mire/rossiiskie-drony-10-chasov-atakovali-kirovogradskuiu-oblast-tri-cheloveka-pogibli/",
+    "excerpt": "Российские войска ударили беспилотниками по Кировоградской области, атака продолжалась больше 10 часов, сообщили в Государственной службе п…",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Муж нарушил запрет приближаться к жене: отправили на общественные работы",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-novykh-anenakh-muzh-narushil-zapret-priblizhat-sia-k-zhene-i-poluchil-50-chasov-obshchestvennykh-rabot/",
+    "excerpt": "Мужчину обязали отработать 50 часов на общественных работах после того, как он нарушил ограничительный ордер, выданный полицией по делу о д…",
+    "confidence": "low",
+    "detected_at": "2026-10-15T07:00:46.366065+00:00"
   },
   {
     "date_mentioned": "21 сентября",
