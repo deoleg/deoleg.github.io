@@ -3082,5 +3082,61 @@
     },
     "overall_score": 1.4,
     "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
+  },
+  {
+    "date": "2026-10-15",
+    "factors": {
+      "transnistria_military": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: воздушное пространство молдовы. Взвешенный балл за сегодня: 4.0.",
+        "sources": [
+          {
+            "title": "Беспилотник залетел в воздушное пространство Молдовы со стороны Украины",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-zaletel-v-vozdushnoe-prostranstvo-moldovy-so-storony-ukrainy/"
+          },
+          {
+            "title": "Беспилотник залетел в воздушное пространство Молдовы со стороны Украины",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-zaletel-v-vozdushnoe-prostranstvo-moldovy-so-storony-ukrainy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 11 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 11
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 2
+      }
+    },
+    "overall_score": 0.8,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.8."
   }
 ]
