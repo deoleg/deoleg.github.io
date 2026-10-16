@@ -40,6 +40,22 @@
     "detected_at": "2026-09-15T07:00:50.673685+00:00"
   },
   {
+    "date_mentioned": "16 октября",
+    "title": "Четыре беспилотника нарушили воздушное пространство Молдовы за ночь",
+    "url": "https://point.md/ru/novosti/proisshestviya/chetyre-bespilotnika-narushili-vozdushnoe-prostranstvo-moldovy-za-noch/",
+    "excerpt": "В ночь с 15 на 16 октября системы наблюдения зафиксировали четыре случая несанкционированного пролёта через воздушное пространство Молдовы.…",
+    "confidence": "medium",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": "16 октября",
+    "title": "Четыре беспилотника нарушили воздушное пространство Молдовы за ночь",
+    "url": "https://point.md/ru/novosti/proisshestviya/chetyre-bespilotnika-narushili-vozdushnoe-prostranstvo-moldovy-za-noch/",
+    "excerpt": "В ночь с 15 на 16 октября системы наблюдения зафиксировали четыре случая несанкционированного пролёта через воздушное пространство Молдовы.…",
+    "confidence": "medium",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
     "date_mentioned": "17 сентября",
     "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/",
@@ -3124,6 +3140,54 @@
     "excerpt": "Мужчину обязали отработать 50 часов на общественных работах после того, как он нарушил ограничительный ордер, выданный полицией по делу о д…",
     "confidence": "low",
     "detected_at": "2026-10-15T07:00:46.366065+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Молдовой со стороны Украины пролетели четыре беспилотника. Носатый осудил нарушения, угрожающие безопасности граждан",
+    "url": "https://newsmaker.md/ru/nad-moldovoi-so-storony-ukrainy-proleteli-chetyre-bespilotnika-nosatyi-osudil-narusheniya-ugrojayushie-bezopasnosti-grajdan",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Носатый: Беспилотник, который минувшей ночью пролетел над Молдовой, принадлежит России",
+    "url": "https://newsmaker.md/ru/nosatyi-bespilotnik-kotoryi-minuvshei-nochyu-proletel-nad-moldovoi-prinadlejit-rossii",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник, пролетевший над воздушным пространством Молдовы, был российским, министр",
+    "url": "https://ipn.md/ru/bespilotnik-proletevshij-nad-vozdushnym-prostranstvom-moldovy-byl-rossijskim-ministr/",
+    "excerpt": "Беспилотник, пролетевший над воздушным пространством Молдовы, был российским, министр13:44",
+    "confidence": "medium",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ministrul Apărării, după ce patru drone au intrat în spațiul aerian al R. Moldova: „Chiar dacă toate au părăsit teritoriul național într-un interval scurt de timp, acest lucru nu înseamnă că incursiunile nu au prezentat un pericol”",
+    "url": "https://www.zdg.md/stiri/stiri-sociale/ministrul-apararii-dupa-ce-patru-drone-au-intrat-in-spatiul-aerian-al-r-moldova-chiar-daca-toate-au-parasit-teritoriul-national-intr-un-interval-scurt-de-timp-acest-lucru-nu-inseamna-ca-i/",
+    "excerpt": "Ministrul Apărării, după ce patru drone au intrat în spațiul aerian al R. Moldova: „Chiar dacă toate au părăsit teritoriul național într-un interval scurt de timp, acest lucru nu înseamnă că incursiunile nu au prezentat un pericol”NouSocial",
+    "confidence": "low",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "При Инспекторате по чрезвычайным ситуациям создадут службу БПЛА",
+    "url": "https://point.md/ru/novosti/obschestvo/pri-inspektorate-po-chrezvychainym-situatsiiam-sozdadut-sluzhbu-bpla/",
+    "excerpt": "Это предусмотрено проектом постановления правительства о реорганизации учреждений, подведомственных МВД.",
+    "confidence": "low",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-29",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, pe 15 octombrie, ora 1:43. Obiectul de zbor fără pilot a survolat spațiul aerian din direcția loc. Grădinița, regiunea",
+    "confidence": "high",
+    "detected_at": "2026-10-16T07:00:50.850329+00:00"
   },
   {
     "date_mentioned": "21 сентября",
