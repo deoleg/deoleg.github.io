@@ -3138,5 +3138,74 @@
     },
     "overall_score": 0.8,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.8."
+  },
+  {
+    "date": "2026-10-16",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: тирасполь, учения. Взвешенный балл за сегодня: 2.2.",
+        "sources": [
+          {
+            "title": "Тирасполь обвинил Киверя в признании экономической войны против Приднестровья. Реакция вице-премьера",
+            "url": "https://newsmaker.md/ru/tiraspol-obvinil-kiverya-v-priznanii-ekonomicheskoi-voiny-protiv-pridnestrovya-reakcziya-vicze-premera"
+          },
+          {
+            "title": "Молдова к концу года может достичь 500 миллионов евро в рамках Плана роста",
+            "url": "https://ipn.md/ru/moldova-k-konczu-goda-mozhet-dostich-500-millionov-evro-v-ramkah-plana-rosta/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 4
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы. Взвешенный балл за сегодня: 10.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-29"
+          },
+          {
+            "title": "Четыре беспилотника нарушили воздушное пространство Молдовы за ночь",
+            "url": "https://point.md/ru/novosti/proisshestviya/chetyre-bespilotnika-narushili-vozdushnoe-prostranstvo-moldovy-za-noch/"
+          },
+          {
+            "title": "Четыре беспилотника нарушили воздушное пространство Молдовы за ночь",
+            "url": "https://point.md/ru/novosti/proisshestviya/chetyre-bespilotnika-narushili-vozdushnoe-prostranstvo-moldovy-za-noch/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 12 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 12
+      },
+      "travel_advisories": {
+        "score": 1,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение постепенно снижается (пик был 2, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 3
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
