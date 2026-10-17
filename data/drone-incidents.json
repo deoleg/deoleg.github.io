@@ -3190,6 +3190,158 @@
     "detected_at": "2026-10-16T07:00:50.850329+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ПВО уничтожила 75 дронов, летевших на Москву06:45",
+    "url": "https://ria.ru/20261017/bpla-2125078490.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ПВО ночью сбила более 20 БПЛА в Ростовской области07:08",
+    "url": "https://ria.ru/20261017/bpla-2125079589.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ПВО за ночь сбила 610 беспилотников08:35",
+    "url": "https://ria.ru/20261017/pvo-2125083812.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "NM Espresso: Молдова «углубленно проверит» Yandex Go, Кремль призвал молдавские власти отпустить Гуцул, в Кишиневе будут производить дроны?",
+    "url": "https://newsmaker.md/ru/nmespresso-v-gagauzii-nachalas-predvybornaya-kampaniya-kreml-prosit-otpustit-guczul-v-kishineve-postroyat-zavod-dronov",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "(ОБНОВЛЕНО) В Дондюшанском районе упал и взорвался беспилотник. Реакция МИД",
+    "url": "https://newsmaker.md/ru/pyatyi-za-den-dron-v-nebe-moldovy-minoborony-soobshilo-o-novom-vozmojnom-narushenii",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Чебан: Производить дроны планируют в Кишиневе. Что сказали в правительстве",
+    "url": "https://newsmaker.md/ru/cheban-proizvodit-drony-gotovyatsya-v-kishineve-chto-skazali-v-pravitelstve",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Четыре дрона незаконно вторглись в воздушное пространство Молдовы. Один из них дважды пролетел над страной",
+    "url": "https://ipn.md/ru/chetyre-drona-nezakonno-vtorglis-v-vozdushnoe-prostranstvo-moldovy-odin-iz-nih-dvazhdy-proletel-nad-stranoj/",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Игорь Додон говорит в Москве о «дружбе» с Россией, в то время как дроны пролетают над воздушным пространством Молдовы",
+    "url": "https://ipn.md/ru/igor-dodon-govorit-v-moskve-o-druzhbe-s-rossiej-v-to-vremya-kak-drony-proletayut-nad-vozdushnym-prostranstvom-moldovy/",
+    "excerpt": "ПолитикаИгорь Додон говорит в Москве о «дружбе» с Россией, в то время как дроны пролетают над воздушным пространством МолдовыbyIrina Botu16.10.2026Лидер ПСРМ, депутат Игорь Додон призывает возобновить стратегический диалог с Москвой, ссылаясь на возможность получения дешёвых энергоресурсов. В заявле",
+    "confidence": "medium",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Великобритания выделит 22,5 миллиона долларов на ремонт защитного сооружения Чернобыльской АЭС",
+    "url": "https://ipn.md/ru/velikobritaniya-vydelit-225-milliona-dollarov-na-remont-zashhitnogo-sooruzheniya-chernobylskoj-aes/",
+    "excerpt": "ПолитикаЭкономикаВеликобритания выделит 22,5 миллиона долларов на ремонт защитного сооружения Чернобыльской АЭСbyAlexandru Carasec15.10.2026Великобритания выделит около 22,5 миллиона долларов на ремонт защитного сооружения Чернобыльской атомной электростанции, повреждённого в результате атаки беспил",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Аэропорты Москвы закрыты в третий раз за неделю из-за беспилотников",
+    "url": "https://ipn.md/ru/aeroporty-moskvy-zakryty-v-tretij-raz-za-nedelyu-iz-za-bespilotnikov/",
+    "excerpt": "Аэропорты Москвы закрыты в третий раз за неделю из-за беспилотников17:38",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обновление: Полиция обнаружила упавший дрон, взорвавшийся возле Кодрений Ной, Дондюшенского района",
+    "url": "https://ipn.md/ru/obnovlenie-dron-upal-i-vzorvalsya-v-rajone-naselyonnogo-punkta-kodrenij-noj-dondyushen/",
+    "excerpt": "Обновление: Полиция обнаружила упавший дрон, взорвавшийся возле Кодрений Ной, Дондюшенского района16:59",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTO instalație industrială rusească ar fi luat foc după un atac cu drone în regiunea Surgut. Război în Ucraina, ziua 1696",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-o-instalatie-industriala-ruseasca-ar-fi-luat-foc-dupa-un-atac-cu-drone-in-regiunea-surgut-razboi-in-ucraina-ziua-1696/",
+    "excerpt": "LIVE TEXTO instalație industrială rusească ar fi luat foc după un atac cu drone în regiunea Surgut. Război în Ucraina, ziua 1696NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "EditorialDe care drone (nu) se teme Ceban?",
+    "url": "https://www.zdg.md/blog/editoriale/editorial-de-care-drone-nu-se-teme-ceban/",
+    "excerpt": "EditorialDe care drone (nu) se teme Ceban?NouBlog",
+    "confidence": "low",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "МИД Молдовы потребовал от России прекратить атаки на Украину после падения дрона",
+    "url": "https://point.md/ru/novosti/politika/mid-moldovy-potreboval-ot-rossii-prekratit-ataki-na-ukrainu-posle-padeniia-drona/",
+    "excerpt": "Министерство иностранных дел Молдовы решительно осудило повторные нарушения воздушного пространства страны после падения и взрыва беспилотн…",
+    "confidence": "high",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-31",
+    "excerpt": "Update:Potrivit datelor înregistrate, aparatul de zbor fără pilot a căzut și explodat în câmpul din extravilanul localității Codrenii Noi spre satul Scaieni, raionul Dondușeni. Alte circumstanțe se stabilesc. Ne adresăm cetățenilor în cazul depistării unor obiecte neidentificate sau fragmente să nu ",
+    "confidence": "high",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Șapte incidente de încălcare a spațiului aerian al Republicii Moldova,...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/sapte-incidente-de-incalcare-spatiului-aerian-al-republicii-moldova-perioada-10",
+    "excerpt": "Pe fondul atacurilor Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale a înregistrat șapte incidente de încălcare a spațiului aerian al Republicii Moldova. Unul dintre cazuri a fost consemnat la 10 octombrie, când, în localitatea Geamăna, raionul Anenii Noi, au fost depi",
+    "confidence": "high",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-30",
+    "excerpt": "UPDATE: La ora 05:59 sistemele de supraveghere al spațiului aerian au înregistrat un alt aparat de zbor fără pilot din direcția loc. Starocazacie (UA) — loc. Căplani (MD). La ora 06:00 aparatul a părăsit spațiul aerian al Republicii Moldova pe direcția loc. Olănești (MD). La 06:09 a survolat repetat",
+    "confidence": "high",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-29",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Serviciul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, pe 15 octombrie, ora 1:43. Obiectul de zbor fără pilot a survolat spațiul aerian din direcția loc. Grădinița, regiunea",
+    "confidence": "high",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "За неделю воздушное пространство Молдовы нарушили семь раз",
+    "url": "https://point.md/ru/novosti/proisshestviya/za-nedeliu-vozdushnoe-prostranstvo-moldovy-narushili-sem-raz/",
+    "excerpt": "На фоне атак Российской Федерации на Украину Центр воздушных операций Национальной армии зарегистрировал семь случаев нарушения воздушного …",
+    "confidence": "medium",
+    "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
