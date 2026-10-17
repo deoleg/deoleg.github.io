@@ -3207,5 +3207,83 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-10-17",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: учения. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Игорь Додон говорит в Москве о «дружбе» с Россией, в то время как дроны пролетают над воздушным пространством Молдовы",
+            "url": "https://ipn.md/ru/igor-dodon-govorit-v-moskve-o-druzhbe-s-rossiej-v-to-vremya-kak-drony-proletayut-nad-vozdushnym-prostranstvom-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: кремль. Взвешенный балл за сегодня: 1.2.",
+        "sources": [
+          {
+            "title": "NM Espresso: Молдова «углубленно проверит» Yandex Go, Кремль призвал молдавские власти отпустить Гуцул, в Кишиневе будут производить дроны?",
+            "url": "https://newsmaker.md/ru/nmespresso-v-gagauzii-nachalas-predvybornaya-kampaniya-kreml-prosit-otpustit-guczul-v-kishineve-postroyat-zavod-dronov"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 9 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 27.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-31"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-30"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-29"
+          },
+          {
+            "title": "Четыре дрона незаконно вторглись в воздушное пространство Молдовы. Один из них дважды пролетел над страной",
+            "url": "https://ipn.md/ru/chetyre-drona-nezakonno-vtorglis-v-vozdushnoe-prostranstvo-moldovy-odin-iz-nih-dvazhdy-proletel-nad-stranoj/"
+          },
+          {
+            "title": "За неделю воздушное пространство Молдовы нарушили семь раз",
+            "url": "https://point.md/ru/novosti/proisshestviya/za-nedeliu-vozdushnoe-prostranstvo-moldovy-narushili-sem-raz/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 13 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 13
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 4
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
