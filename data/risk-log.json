@@ -3285,5 +3285,69 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-10-18",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: spațiul aerian, дрон. Взвешенный балл за сегодня: 14.2.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-31"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-30"
+          },
+          {
+            "title": "В Молдове в саду жителя Атак упал дрон для наблюдения",
+            "url": "https://newsmaker.md/ru/v-moldove-v-sadu-jitelya-atak-upal-dron-dlya-nablyudeniya"
+          },
+          {
+            "title": "Шалару: Молдове нужно около 500 млн евро на защиту от дронов",
+            "url": "https://point.md/ru/novosti/politika/shalaru-moldove-nuzhno-okolo-500-mln-evro-na-zashchitu-ot-dronov/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 14 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 14
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 5
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
