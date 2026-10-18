@@ -56,6 +56,14 @@
     "detected_at": "2026-10-16T07:00:50.850329+00:00"
   },
   {
+    "date_mentioned": "17 октября",
+    "title": "Румыния сбила два беспилотника над своими территориальными водами",
+    "url": "https://point.md/ru/novosti/v-mire/rumyniia-sbila-dva-bespilotnika-nad-svoimi-territorial-nymi-vodami/",
+    "excerpt": "Румынские истребители F-16 сбили два беспилотника над территориальными водами страны. Об этом в субботу, 17 октября, пишет агентство Reuter…",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
     "date_mentioned": "17 сентября",
     "title": "Неопознанный дрон на две минуты залетел в воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neopoznannyi-dron-na-dve-minuty-zaletel-v-vozdushnoe-prostranstvo-moldovy/",
@@ -86,6 +94,14 @@
     "excerpt": "В целях предотвращения незаконной охоты полиция регулярно проводит рейды по всей стране. Утром 17 сентября сотрудники полиции Резины обнару…",
     "confidence": "low",
     "detected_at": "2026-09-18T07:00:47.271942+00:00"
+  },
+  {
+    "date_mentioned": "18 октября",
+    "title": "Дроны атаковали Петербург: поражены нефтяной терминал и дата-центр VK",
+    "url": "https://point.md/ru/novosti/v-mire/drony-atakovali-peterburg-porazheny-neftianoi-terminal-i-data-tsentr-vk/",
+    "excerpt": "Санкт-Петербург и Ленинградская область в ночь на воскресенье, 18 октября, подверглись массированной атаке беспилотников.",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
   },
   {
     "date_mentioned": "18 сентября",
@@ -3340,6 +3356,158 @@
     "excerpt": "На фоне атак Российской Федерации на Украину Центр воздушных операций Национальной армии зарегистрировал семь случаев нарушения воздушного …",
     "confidence": "medium",
     "detected_at": "2026-10-17T07:00:58.767548+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Петербурге при атаке дронов погиб местный житель09:20",
+    "url": "https://ria.ru/20261018/peterburg-2125204542.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Петербурге после атаки БПЛА произошли возгорания в четырех районах города05:46",
+    "url": "https://ria.ru/20261018/bpla-2125193738.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Ленинградской области госпитализировали четырех человек из-за атаки БПЛА08:04",
+    "url": "https://ria.ru/20261018/bpla-2125199247.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "СК возбудил дело после атаки БПЛА в Петербурге и Ленинградской области09:09",
+    "url": "https://ria.ru/20261018/delo-2125203742.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ПВО отразила почти рекордное число украинских БПЛА за ночь09:20",
+    "url": "https://ria.ru/20261018/pvo-2125204667.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове в саду жителя Атак упал дрон для наблюдения",
+    "url": "https://newsmaker.md/ru/v-moldove-v-sadu-jitelya-atak-upal-dron-dlya-nablyudeniya",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Санду на форуме этнических меньшинств: Дроны не спрашивают, на каком языке говорят люди",
+    "url": "https://newsmaker.md/ru/sandu-na-forume-etnicheskih-menshinstv-drony-ne-sprashivayut-na-kakom-yazyke-govoryat-lyudi",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Взрыв дрона в Дондюшанском районе: полиция обнаружила на месте воронку и опасные элементы",
+    "url": "https://newsmaker.md/ru/vzryv-drona-v-dondyushanskom-raione-policziya-obnarujila-na-meste-voronku-i-opasnye-elementy",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Румынские пилоты сбили два российских беспилотника над Чёрным морем",
+    "url": "https://ipn.md/ru/rumynskie-piloty-sbili-dva-rossijskih-bespilotnika-nad-chyornym-morem/",
+    "excerpt": "Румынские пилоты сбили два российских беспилотника над Чёрным морем18.10.202609:15",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обломки беспилотника типа квадрокоптер обнаружены в саду местного жителя в Отачь",
+    "url": "https://ipn.md/ru/oblomki-bespilotnika-tipa-kvadrokopter-obnaruzheny-v-sadu-mestnogo-zhitelya-v-otach/",
+    "excerpt": "Обломки беспилотника типа квадрокоптер обнаружены в саду местного жителя в Отачь09:18",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTUn atac cu drone rusești asupra regiunii Poltava a ucis o persoană și a rănit altele patru. Război în Ucraina, ziua 1698",
+    "url": "https://www.zdg.md/stiri/live-text-un-atac-cu-drone-rusesti-asupra-poltavei-a-ucis-o-persoana-si-a-ranit-patru-persoane-razboi-in-ucraina-ziua-1698/",
+    "excerpt": "LIVE TEXTUn atac cu drone rusești asupra regiunii Poltava a ucis o persoană și a rănit altele patru. Război în Ucraina, ziua 1698NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O dronă a căzut în grădina unui localnic din Otaci",
+    "url": "https://www.zdg.md/stiri/o-drona-a-cazut-in-gradina-unui-localnic-din-otaci/",
+    "excerpt": "O dronă a căzut în grădina unui localnic din OtaciNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Trebuie sau nu R. Moldova să producă drone?",
+    "url": "https://www.zdg.md/stiri/trebuie-sau-nu-r-moldova-sa-produca-drone/",
+    "excerpt": "Trebuie sau nu R. Moldova să producă drone?NouSocial",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Шалару: Молдове нужно около 500 млн евро на защиту от дронов",
+    "url": "https://point.md/ru/novosti/politika/shalaru-moldove-nuzhno-okolo-500-mln-evro-na-zashchitu-ot-dronov/",
+    "excerpt": "Для создания защиты от беспилотников Молдове необходимо около 500 млн евро, считает бывший министр обороны Анатол Шалару.",
+    "confidence": "medium",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Отачь упал профессиональный квадрокоптер, используемый для наблюдения",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-otach-upal-professional-nyi-kvadrokopter-ispol-zuemyi-dlia-nabliudeniia/",
+    "excerpt": "Сегодня около 15:40 в полицию поступило сообщение об обнаружении упавшего дрона в огороде местного жителя города Отачь Окницкого района.",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-31",
+    "excerpt": "Update:Potrivit datelor înregistrate, aparatul de zbor fără pilot a căzut și explodat în câmpul din extravilanul localității Codrenii Noi spre satul Scaieni, raionul Dondușeni. Alte circumstanțe se stabilesc. Ne adresăm cetățenilor în cazul depistării unor obiecte neidentificate sau fragmente să nu ",
+    "confidence": "high",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Șapte incidente de încălcare a spațiului aerian al Republicii...",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/sapte-incidente-de-incalcare-spatiului-aerian-al-republicii-moldova-perioada-10",
+    "excerpt": "Pe fondul atacurilor Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale a înregistrat șapte incidente de încălcare a spațiului aerian al Republicii Moldova. Unul dintre cazuri a fost consemnat la 10 octombrie, când, în localitatea Geamăna, raionul Anenii Noi, au fost depi",
+    "confidence": "high",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-30",
+    "excerpt": "UPDATE: La ora 05:59 sistemele de supraveghere al spațiului aerian au înregistrat un alt aparat de zbor fără pilot din direcția loc. Starocazacie (UA) — loc. Căplani (MD). La ora 06:00 aparatul a părăsit spațiul aerian al Republicii Moldova pe direcția loc. Olănești (MD). La 06:09 a survolat repetat",
+    "confidence": "high",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Отачь упал профессиональный квадрокоптер, используемый для наблюдения",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-otach-upal-professional-nyi-kvadrokopter-ispol-zuemyi-dlia-nabliudeniia/",
+    "excerpt": "Сегодня около 15:40 в полицию поступило сообщение об обнаружении упавшего дрона в огороде местного жителя города Отачь Окницкого района.",
+    "confidence": "low",
+    "detected_at": "2026-10-18T07:00:45.480125+00:00"
   },
   {
     "date_mentioned": "21 сентября",
