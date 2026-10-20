@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T12:34:33.613302+03:00",
+  "updatedAt": "2026-10-20T12:06:24.895121+03:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -610,9 +610,9 @@
     {
       "home": "Tottenham Hotspur",
       "away": "Coventry City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 3,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Ipswich Town",
@@ -965,22 +965,8 @@
       "played": false
     },
     {
-      "home": "Aston Villa",
-      "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Bournemouth",
-      "away": "Brighton & Hove Albion",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Brentford",
-      "away": "Arsenal",
+      "home": "Coventry City",
+      "away": "Ipswich Town",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -988,13 +974,6 @@
     {
       "home": "Chelsea",
       "away": "Crystal Palace",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Coventry City",
-      "away": "Ipswich Town",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1021,6 +1000,27 @@
       "played": false
     },
     {
+      "home": "Aston Villa",
+      "away": "Everton",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Bournemouth",
+      "away": "Brighton & Hove Albion",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Brentford",
+      "away": "Arsenal",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
       "home": "Newcastle United",
       "away": "Manchester United",
       "homeScore": null,
@@ -1030,6 +1030,13 @@
     {
       "home": "Tottenham Hotspur",
       "away": "Fulham",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Chelsea",
+      "away": "Liverpool",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1049,27 +1056,6 @@
       "played": false
     },
     {
-      "home": "Brentford",
-      "away": "Manchester City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Chelsea",
-      "away": "Liverpool",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Everton",
-      "away": "Fulham",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
       "home": "Leeds United",
       "away": "Ipswich Town",
       "homeScore": null,
@@ -1084,15 +1070,29 @@
       "played": false
     },
     {
-      "home": "Newcastle United",
-      "away": "Sunderland",
+      "home": "Nottingham Forest",
+      "away": "Brighton & Hove Albion",
       "homeScore": null,
       "awayScore": null,
       "played": false
     },
     {
-      "home": "Nottingham Forest",
-      "away": "Brighton & Hove Albion",
+      "home": "Brentford",
+      "away": "Manchester City",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Everton",
+      "away": "Fulham",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Newcastle United",
+      "away": "Sunderland",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1105,43 +1105,8 @@
       "played": false
     },
     {
-      "home": "Arsenal",
-      "away": "Bournemouth",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Brighton & Hove Albion",
-      "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Coventry City",
-      "away": "Aston Villa",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Crystal Palace",
-      "away": "Manchester United",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
       "home": "Fulham",
       "away": "Brentford",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Hull City",
-      "away": "Tottenham Hotspur",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1168,6 +1133,20 @@
       "played": false
     },
     {
+      "home": "Arsenal",
+      "away": "Bournemouth",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Brighton & Hove Albion",
+      "away": "Everton",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
       "home": "Sunderland",
       "away": "Nottingham Forest",
       "homeScore": null,
@@ -1175,15 +1154,22 @@
       "played": false
     },
     {
-      "home": "Arsenal",
+      "home": "Coventry City",
+      "away": "Aston Villa",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Crystal Palace",
       "away": "Manchester United",
       "homeScore": null,
       "awayScore": null,
       "played": false
     },
     {
-      "home": "Bournemouth",
-      "away": "Coventry City",
+      "home": "Hull City",
+      "away": "Tottenham Hotspur",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1196,15 +1182,8 @@
       "played": false
     },
     {
-      "home": "Brighton & Hove Albion",
-      "away": "Ipswich Town",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Chelsea",
-      "away": "Aston Villa",
+      "home": "Bournemouth",
+      "away": "Coventry City",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1212,13 +1191,6 @@
     {
       "home": "Leeds United",
       "away": "Fulham",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
-      "home": "Liverpool",
-      "away": "Tottenham Hotspur",
       "homeScore": null,
       "awayScore": null,
       "played": false
@@ -1238,8 +1210,36 @@
       "played": false
     },
     {
+      "home": "Liverpool",
+      "away": "Tottenham Hotspur",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Brighton & Hove Albion",
+      "away": "Ipswich Town",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
       "home": "Sunderland",
       "away": "Crystal Palace",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Arsenal",
+      "away": "Manchester United",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Chelsea",
+      "away": "Aston Villa",
       "homeScore": null,
       "awayScore": null,
       "played": false
