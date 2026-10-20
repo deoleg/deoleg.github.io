@@ -3396,5 +3396,65 @@
     },
     "overall_score": 1.2,
     "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
+  },
+  {
+    "date": "2026-10-20",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 3.4.",
+        "sources": [
+          {
+            "title": "Веймарский формат в Кишиневе. Послы Германии, Франции и Польши обсудили с Киверем ситуацию в Приднестровье",
+            "url": "https://newsmaker.md/ru/v-kishinev-pribyli-poslov-stran-veimarskogo-formata-chto-on"
+          },
+          {
+            "title": "Давление на студентов ради военных контрактов и еженедельное поднятие флага: новый отчет Promo-LEX о ситуации в Приднестровье",
+            "url": "https://newsmaker.md/ru/davlenie-na-studentov-radi-voennyh-kontraktov-i-ejenedelnoe-podnyatie-flaga-novyi-otchet-promo-lex-o-situaczii-v-pridnestrove"
+          },
+          {
+            "title": "Тофан: Приднестровье не включили в админреформу из-за российской оккупации",
+            "url": "https://point.md/ru/novosti/politika/tofan-pridnestrov-e-ne-vkliuchili-v-adminreformu-iz-za-rossiiskoi-okkupatsii/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 4,
+        "days_since_last_signal": 2
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 16 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 16
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 7
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.2."
   }
 ]
