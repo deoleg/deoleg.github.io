@@ -3614,6 +3614,30 @@
     "detected_at": "2026-10-21T07:01:06.052797+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке БПЛА на Новую Москву пострадали два человека04:30",
+    "url": "https://ria.ru/20261022/moskva-2126109939.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-22T07:02:42.596116+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ministrul de Externe, Mihai Popșoi, nu exclude expulzarea ambasadorului agreat al Rusiei, dacă incidentele cu drone și rachete vor continua",
+    "url": "https://www.zdg.md/stiri/ministrul-de-externe-mihai-popsoi-nu-exclude-expulzarea-ambasadorului-agreat-al-rusiei-daca-incidentele-cu-drone-si-rachete-vor-continua/",
+    "excerpt": "Ministrul de Externe, Mihai Popșoi, nu exclude expulzarea ambasadorului agreat al Rusiei, dacă incidentele cu drone și rachete vor continuaNouPolitic",
+    "confidence": "low",
+    "detected_at": "2026-10-22T07:02:42.596116+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове водитель грузовика выехал на встречную полосу и едва не устроил ДТП",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-moldove-voditel-gruzovika-vyekhal-na-vstrechnuiu-polosu-i-edva-ne-ustroil-dtp/",
+    "excerpt": "Полиция установила личность водителя грузовика, который грубо нарушил правила дорожного движения на трассе в селе Черепково Флорештского ра…",
+    "confidence": "high",
+    "detected_at": "2026-10-22T07:02:42.596116+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
