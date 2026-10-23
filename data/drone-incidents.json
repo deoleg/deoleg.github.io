@@ -3638,6 +3638,22 @@
     "detected_at": "2026-10-22T07:02:42.596116+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "LIVE TEXTTeritoriul ucrainean, atacat cu peste 170 de drone în ultima noapte. Război în Ucraina, ziua 1703",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-teritoriul-ucrainean-atacat-cu-peste-170-de-drone-in-ultima-noapte-razboi-in-ucraina-ziua-1703/",
+    "excerpt": "LIVE TEXTTeritoriul ucrainean, atacat cu peste 170 de drone în ultima noapte. Război în Ucraina, ziua 1703NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-23T07:00:50.892943+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Гросу о производстве дронов: Министерства уже ведут переговоры с компаниями",
+    "url": "https://point.md/ru/novosti/politika/grosu-o-proizvodstve-dronov-ministerstva-uzhe-vedut-peregovory-s-kompaniiami/",
+    "excerpt": "Министерство экономики и Министерство обороны проводят консультации с компаниями по поводу возможных инвестиций в производство дронов и дру…",
+    "confidence": "low",
+    "detected_at": "2026-10-23T07:00:50.892943+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
