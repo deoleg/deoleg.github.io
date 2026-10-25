@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:37:45.685568+03:00",
+  "updatedAt": "2026-10-25T10:56:12.988075+02:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -624,30 +624,30 @@
     {
       "home": "Aston Villa",
       "away": "Manchester City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Arsenal",
       "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 0,
+      "played": true
     },
     {
       "home": "Coventry City",
       "away": "Fulham",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Chelsea",
       "away": "Tottenham Hotspur",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 2,
+      "played": true
     },
     {
       "home": "Crystal Palace",
