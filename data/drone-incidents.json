@@ -3774,6 +3774,62 @@
     "detected_at": "2026-10-24T07:00:45.589407+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Welt: ВСУ становится все сложнее отбиваться от дронов и ракет05:04",
+    "url": "https://ria.ru/20261025/ukraina-2126814269.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Минобороны подтвердило, что в Теленештском районе упал ударный беспилотник «Герань-4»",
+    "url": "https://newsmaker.md/ru/minoborony-podtverdilo-chto-v-teleneshtskom-raione-upal-udarnyi-bespilotnik-geran-4",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ГИП: обнаруженный в Теленешть беспилотник относится к типу «Герань-4». Взрыватель уничтожен контролируемым образом",
+    "url": "https://ipn.md/ru/gip-obnaruzhennyj-v-telenesht-bespilotnik-otnositsya-k-tipu-geran-4-vzryvatel-unichtozhen-kontroliruemym-obrazom/",
+    "excerpt": "ГИП: обнаруженный в Теленешть беспилотник относится к типу «Герань-4». Взрыватель уничтожен контролируемым образом24.10.202612:11",
+    "confidence": "low",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "У Нацармии есть советские радары, но они не могут обнаруживать дроны на малых высотах",
+    "url": "https://point.md/ru/novosti/obschestvo/u-natsarmii-est-sovetskie-radary-no-oni-ne-mogut-obnaruzhivat-drony-na-malykh-vysotakh/",
+    "excerpt": "Часть радаров, имеющихся в распоряжении Молдовы, унаследована с советских времен и не приспособлена для эффективного обнаружения дронов, ле…",
+    "confidence": "medium",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Precizează",
+    "url": "https://www.army.md/ro/comunicate-de-presa/precizeaza-0",
+    "excerpt": "Privitor incidentului din 23 octombrie curent, cazul de survol neautorizat al spațiului aerian național, soldat cu căderea unui aparat de zbor fără pilot în satul Chiștelnița, raionul Telenești, Ministerul Apărării informează că grupul de lucru comun, format din reprezentanții Armatei Naționale și a",
+    "confidence": "high",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Două cazuri de încălcare a spațiului aerian al Republicii Moldova, în per...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/doua-cazuri-de-incalcare-spatiului-aerian-al-republicii-moldova-perioada-16-23",
+    "excerpt": "În perioada16–23octombrie 2026, au fost înregistrate două incidente de încălcare a spațiului aerian al Republicii Moldova, unul în seara zilei de 16 octombrie, după publicarea de către Ministerul Apărării a informațiilor statistice despre incidentele perioadei anterioare(10–16 octombrie),și altul as",
+    "confidence": "high",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-32",
+    "excerpt": "UPDATE:Potrivit Centrului Operații Aeriene, aparatul de zbor fără pilot a reapărut pe ecranele sistemelor de monitorizare pe scurt timp. Ulterior la ora 14:12 acesta a dispărut în proximitatea loc. Meșeni, raionul Rezina. Centrul Operații Aeriene continuă monitorizarea spațiului aerian al Republicii",
+    "confidence": "high",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -3796,6 +3852,14 @@
     "excerpt": "Вечером 23 сентября в молдавском Telegram-сегменте разошлась публикация о том, что в международном аэропорту Кишинёва (AIC) якобы разгрузили партию беспилотников, …Continue Reading",
     "confidence": "medium",
     "detected_at": "2026-09-25T07:00:53.509626+00:00"
+  },
+  {
+    "date_mentioned": "24 октября",
+    "title": "Россия атаковала Украину ночью БПЛА и \"Бандеролями\"",
+    "url": "https://point.md/ru/novosti/v-mire/rossiia-atakovala-ukrainu-noch-iu-bpla-i-banderoliami/",
+    "excerpt": "Российские войска в ночь на субботу, 24 октября, атаковали регионы Украины с применением 126 средств воздушного поражения, говорится в утре…",
+    "confidence": "low",
+    "detected_at": "2026-10-25T07:01:14.609428+00:00"
   },
   {
     "date_mentioned": "24 сентября",
