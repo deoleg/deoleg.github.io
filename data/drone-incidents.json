@@ -3830,6 +3830,46 @@
     "detected_at": "2026-10-25T07:01:14.609428+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ФСБ задержала двух агентов СБУ за подготовку атак дронов в Москве09:47",
+    "url": "https://ria.ru/20261026/fsb-2126984443.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-26T07:00:53.578379+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Воронеже обломки БПЛА упали на движущийся поезд09:12",
+    "url": "https://ria.ru/20261026/voronezh-2126976575.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-26T07:00:53.578379+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Тофан о планах производить дроны в Молдове: «Заинтересованных инвесторов очень много. Мы работаем над законом»",
+    "url": "https://newsmaker.md/ru/tofan-o-planah-proizvodit-drony-v-moldove-zainteresovannyh-investorov-ochen-mnogo-my-rabotaem-nad-zakonom",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-10-26T07:00:53.578379+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Белгород подвергся атаке беспилотников: два человека погибли, 14 пострадали",
+    "url": "https://newsmaker.md/ru/belgorod-podvergsya-atake-bespilotnikov-dva-cheloveka-pogibli-14-postradali",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-26T07:00:53.578379+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTO dronă rusească a atacat un microbuz în Herson, rănind șase persoane. Război în Ucraina, ziua 1705",
+    "url": "https://www.zdg.md/stiri/live-text-o-drona-ruseasca-a-atacat-un-microbuz-in-herson-ranind-sase-persoane-razboi-in-ucraina-ziua-1705/",
+    "excerpt": "LIVE TEXTO dronă rusească a atacat un microbuz în Herson, rănind șase persoane. Război în Ucraina, ziua 1705NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-10-26T07:00:53.578379+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
