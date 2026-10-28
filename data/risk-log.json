@@ -3862,5 +3862,75 @@
     },
     "overall_score": 0.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 0.4."
+  },
+  {
+    "date": "2026-10-28",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 2.4.",
+        "sources": [
+          {
+            "title": "(ВИДЕО) Украина продаст Молдове технологии/ Румыния будет поставлять газ/ Приднестровье заплатило НДС с пива",
+            "url": "https://newsmaker.md/ru/video-ukraina-prodast-moldove-tehnologii-rumyniya-budet-postavlyat-gaz-pridnestrove-zaplatilo-nds-s-piva"
+          },
+          {
+            "title": "Как помочь жертвам преследований в Приднестровье? Promo-LEX направила властям 34 предложения",
+            "url": "https://newsmaker.md/ru/kak-pomoch-jertvam-presledovanii-v-pridnestrove-promo-lex-napravila-vlastyam-34-predlojeniya"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "В Кишиневе у 16-летнего подростка нашли 100 граммов мефедрона",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-kishineve-u-16-letnego-podrostka-nashli-100-grammov-mefedrona/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 24 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 24
+      },
+      "travel_advisories": {
+        "score": 3,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: эвакуаци. Взвешенный балл за сегодня: 6.0.",
+        "sources": [
+          {
+            "title": "В аэропорту Кишинева провели эвакуацию из-за сообщения о бомбе",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-aeroportu-kishineva-proveli-evakuatsiiu-iz-za-soobshcheniia-o-bombe/"
+          },
+          {
+            "title": "В аэропорту Кишинева провели эвакуацию из-за сообщения о бомбе",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-aeroportu-kishineva-proveli-evakuatsiiu-iz-za-soobshcheniia-o-bombe/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка, Официальные travel advisories. Общий индекс: 1.0."
   }
 ]
