@@ -3989,5 +3989,61 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-10-30",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 2.4.",
+        "sources": [
+          {
+            "title": "(ВИДЕО) Санду отбирает гражданство/ Россия держит Приднестровье «в стрессе» / TikTok следит за Гагаузией",
+            "url": "https://newsmaker.md/ru/video-sandu-otbiraet-grajdanstvo-rossiya-derjit-pridnestrove-v-stresse-tiktok-sledit-za-gagauziei"
+          },
+          {
+            "title": "В Кишиневе пройдут учения спецназа Fulger с участием бронетехники. Полиция призвала граждан сохранять спокойствие",
+            "url": "https://newsmaker.md/ru/v-kishineve-proidut-ucheniya-specznaza-fulger-s-uchastiem-bronetehniki-policziya-prizvala-grajdan-sohranyat-spokoistvie"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 8 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 8
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 26 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 26
+      },
+      "travel_advisories": {
+        "score": 3,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 2
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.0."
   }
 ]
