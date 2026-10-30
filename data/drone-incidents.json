@@ -3942,6 +3942,46 @@
     "detected_at": "2026-10-29T07:00:49.127933+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Первый женский батальон БПЛА ВСУ потерял половину состава на Запорожье05:05",
+    "url": "https://ria.ru/20261030/spetsoperatsiya-2127979227.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-30T07:00:50.381075+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Alina RaduDodon a fost la Moscova. Dar n-a cerut oprirea dronelor care atacă Moldova",
+    "url": "https://www.zdg.md/blog/editoriale/alina-radu-dodon-a-fost-la-moscova-dar-n-a-cerut-oprirea-dronelor-care-ataca-moldova/",
+    "excerpt": "Alina RaduDodon a fost la Moscova. Dar n-a cerut oprirea dronelor care atacă MoldovaNouEditoriale",
+    "confidence": "low",
+    "detected_at": "2026-10-30T07:00:50.381075+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Editoriale",
+    "url": "https://www.zdg.md/categoria/blog/editoriale/",
+    "excerpt": "Alina RaduDodon a fost la Moscova. Dar n-a cerut oprirea dronelor care atacă MoldovaNouEditoriale",
+    "confidence": "low",
+    "detected_at": "2026-10-30T07:00:50.381075+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Вместо советских грузовиков Молдова готовит закупку итальянских военных машин",
+    "url": "https://point.md/ru/novosti/obschestvo/vmesto-sovetskikh-gruzovikov-moldova-gotovit-zakupku-ital-ianskikh-voennykh-mashin/",
+    "excerpt": "Также власти ищут системы для перехвата российских беспилотников.",
+    "confidence": "medium",
+    "detected_at": "2026-10-30T07:00:50.381075+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Чернигове из-за атак России погибли две девочки, 25 человек пострадали",
+    "url": "https://point.md/ru/novosti/v-mire/v-chernigove-iz-za-atak-rossii-pogibli-dve-devochki-25-chelovek-postradali/",
+    "excerpt": "В результате ударов России в Чернигове погибли две 15-летние девочки. Из-за атаки БПЛА на вокзале в Днепре были убиты еще 14 человек. В ряд…",
+    "confidence": "low",
+    "detected_at": "2026-10-30T07:00:50.381075+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
