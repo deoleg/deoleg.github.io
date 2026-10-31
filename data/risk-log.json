@@ -4045,5 +4045,73 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-10-31",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: приднестровье. Взвешенный балл за сегодня: 5.4.",
+        "sources": [
+          {
+            "title": "(ВИДЕО) Приднестровье под влиянием СИБ? / PAS боится гагаузов-социалистов? / Молдова заплатит за ЛГБТ-флаг",
+            "url": "https://newsmaker.md/ru/video-pridnestrove-pod-vliyaniem-sib-pas-boitsya-gagauzov-soczialistov-moldova-zaplatit-za-lgbt-flag"
+          },
+          {
+            "title": "Румынскому журналисту, корреспонденту в Украине, запретили въезд в Приднестровье. «Очевидно, это из-за моей деятельности»",
+            "url": "https://newsmaker.md/ru/rumynskomu-jurnalistu-korrespondentu-v-ukraine-zapretili-vezd-v-pridnestrove-ochevidno-eto-iz-za-moei-deyatelnosti"
+          },
+          {
+            "title": "Explainer | Выборы без реальной альтернативы? Как создаётся видимость политической конкуренции в Приднестровье",
+            "url": "https://ipn.md/ru/vybory-bez-realnoj-alternativy-kak-sozdayotsya-vidimost-politicheskoj-konkurenczii-v-pridnestrove/"
+          },
+          {
+            "title": "Румынскому журналисту на три года запретили въезд в Приднестровье",
+            "url": "https://point.md/ru/novosti/politika/rumynskomu-zhurnalistu-na-tri-goda-zapretili-v-ezd-v-pridnestrov-e/"
+          },
+          {
+            "title": "В Приднестровье в колодце обнаружено тело мужчины",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-v-kolodtse-obnaruzheno-telo-muzhchiny/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 9 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 9
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 27 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 27
+      },
+      "travel_advisories": {
+        "score": 2,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение постепенно снижается (пик был 3, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 3
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.0."
   }
 ]
