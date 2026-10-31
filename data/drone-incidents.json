@@ -3982,6 +3982,22 @@
     "detected_at": "2026-10-30T07:00:50.381075+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ВС России поразили склады, оборудованные под сборку дронов для ВСУ08:03",
+    "url": "https://ria.ru/20261031/mo-2128271788.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-10-31T07:00:49.678698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Российская атака на Днепр лишила жизни 14 человек. Ещё 14 ранены",
+    "url": "https://ipn.md/ru/rossijskaya-ataka-na-dnepr-lishila-zhizni-14-chelovek-eshhyo-14-raneny/",
+    "excerpt": "ПолитикаРоссийская атака на Днепр лишила жизни 14 человек. Ещё 14 раненыbyBolohan Maxim29.10.202614 человек погибли и ещё 14 получили ранения в результате атаки российской армии беспилотниками на железнодорожный вокзал в украинском городе Днепр. Железнодорожная компания уточнила, что один из дронов ",
+    "confidence": "low",
+    "detected_at": "2026-10-31T07:00:49.678698+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
