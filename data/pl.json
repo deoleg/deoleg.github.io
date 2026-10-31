@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T12:42:16.420561+02:00",
+  "updatedAt": "2026-10-31T12:10:25.172282+02:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -432,6 +432,17 @@
       "away": "Everton",
       "awayCrest": "t11",
       "ground": "St. James' Park",
+      "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-06T22:00:00+02:00",
+      "kickoffLabel": "Пт, 6 ноября, 22:00",
+      "home": "Everton",
+      "homeCrest": "t11",
+      "away": "Coventry City",
+      "awayCrest": "t9",
+      "ground": "Hill Dickinson Stadium",
       "status": "U"
     }
   ],
