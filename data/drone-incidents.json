@@ -3998,6 +3998,78 @@
     "detected_at": "2026-10-31T07:00:49.678698+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Нижегородской области промпредприятие получило повреждения при атаке дронов08:01",
+    "url": "https://ria.ru/20261101/bpla-2128408007.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон незаконно пролетел над Молдовой. Власти закрыли воздушное пространство на севере и в центре страны (ОБНОВЛЕНО)",
+    "url": "https://newsmaker.md/ru/dron-nezakonno-proletel-nad-moldovoi-vlasti-zakryli-vozdushnoe-prostranstvo-na-severe-i-v-czentre-strany-obnovleno",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обновление: Второй беспилотник, незаконно проникший в воздушное пространство страны, покинул территорию Республики Молдова",
+    "url": "https://ipn.md/ru/obnovlenie-vtoroj-bespilotnik-nezakonno-pronikshij-v-vozdushnoe-prostranstvo-strany-pokinul-territoriyu-respubliki-moldova/",
+    "excerpt": "Обновление: Второй беспилотник, незаконно проникший в воздушное пространство страны, покинул территорию Республики Молдова18:36",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Обновление: Ранее обнаруженный беспилотник в районе населённого пункта Цибирика Каларашского района покинул воздушное пространство Республики Молдова",
+    "url": "https://ipn.md/ru/obnovlenie-ranee-obnaruzhennyj-bespilotnik-v-rajone-naselyonnogo-punkta-czibirika-kalarashskogo-rajona-pokinul-vozdushnoe-prostranstvo-respubliki-moldova/",
+    "excerpt": "Обновление: Ранее обнаруженный беспилотник в районе населённого пункта Цибирика Каларашского района покинул воздушное пространство Республики Молдова16:56",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "O altă dronă a survolat spațiul aerian al țării în zona satelor Goleni, Gordinești și Burlănești",
+    "url": "https://www.zdg.md/stiri/o-alta-drona-a-survolat-spatiul-aerian-al-tarii-in-zona-satelor-goleni-gordinesti-si-burlanesti/",
+    "excerpt": "O altă dronă a survolat spațiul aerian al țării în zona satelor Goleni, Gordinești și BurlăneștiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "UPDATESpațiul aerian în zonele de nord și centru a fost redeschis, iar drona a părăsit teritoriul R. Moldova",
+    "url": "https://www.zdg.md/stiri/update-spatiul-aerian-in-zonele-de-nord-si-centru-a-fost-redeschis-iar-drona-a-parasit-teritoriul-r-moldova/",
+    "excerpt": "UPDATESpațiul aerian în zonele de nord și centru a fost redeschis, iar drona a părăsit teritoriul R. MoldovaNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотники атаковали Башкортостан: пожар вспыхнул в районе промзоны Уфы",
+    "url": "https://point.md/ru/novosti/v-mire/bespilotniki-atakovali-bashkortostan-pozhar-vspykhnul-v-raione-promzony-ufy-gde-raspolozheny-npz/",
+    "excerpt": "В Уфе после ночной атаки беспилотников вспыхнул пожар в районе северной промзоны, следует из фотографий, опубликованных украинскими монитор…",
+    "confidence": "low",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/obschestvo/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-4/",
+    "excerpt": "На фоне массированных атак Российской Федерации на Украину Центр воздушных операций Национальной армии сообщил о несанкционированном полете…",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-34",
+    "excerpt": "Informează: Un alt aparat de zbor fără pilot a survolat neautorizat spațiul aerian al Republicii Moldova, astăzi, la ora 17:50. Cea de-a doua dronă a pătruns în spațiul aerian național din direcția localității Mihailovka, regiunea Vinița, Ucraina, spre localitatea Sobor, raionul Soroca. Ulterior, zb",
+    "confidence": "high",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -4172,6 +4244,22 @@
     "excerpt": "Сегодня, 30 сентября, в 10:26 беспилотный летательный аппарат пролетел в воздушном пространстве Молдовы в районе населенного пункта Лунга Д…",
     "confidence": "medium",
     "detected_at": "2026-09-30T19:40:05.850777+00:00"
+  },
+  {
+    "date_mentioned": "31 октября",
+    "title": "Второй беспилотник за день нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/vtoroi-bespilotnik-za-den-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Сегодня, 31 октября, в 17:50 еще один беспилотный летательный аппарат нарушил воздушное пространство Республики Молдова.",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
+  },
+  {
+    "date_mentioned": "31 октября",
+    "title": "Второй беспилотник за день нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/vtoroi-bespilotnik-za-den-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Сегодня, 31 октября, в 17:50 еще один беспилотный летательный аппарат нарушил воздушное пространство Республики Молдова.",
+    "confidence": "medium",
+    "detected_at": "2026-11-01T07:00:50.437848+00:00"
   },
   {
     "date_mentioned": "4 октября",
