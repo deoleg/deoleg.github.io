@@ -4113,5 +4113,73 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-11-01",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 10 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 10
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 16.2.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-34"
+          },
+          {
+            "title": "Второй беспилотник за день нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/vtoroi-bespilotnik-za-den-narushil-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Беспилотник нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/obschestvo/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-4/"
+          },
+          {
+            "title": "Второй беспилотник за день нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/vtoroi-bespilotnik-za-den-narushil-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Дрон незаконно пролетел над Молдовой. Власти закрыли воздушное пространство на севере и в центре страны (ОБНОВЛЕНО)",
+            "url": "https://newsmaker.md/ru/dron-nezakonno-proletel-nad-moldovoi-vlasti-zakryli-vozdushnoe-prostranstvo-na-severe-i-v-czentre-strany-obnovleno"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 28 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 28
+      },
+      "travel_advisories": {
+        "score": 1,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение постепенно снижается (пик был 3, затухание -1/день после 2 дн.).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 4
+      }
+    },
+    "overall_score": 1.6,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.6."
   }
 ]
