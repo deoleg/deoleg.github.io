@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T13:43:49.929669+02:00",
+  "updatedAt": "2026-11-02T15:13:42.114006+02:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -743,9 +743,9 @@
     {
       "home": "Liverpool",
       "away": "Arsenal",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 0,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Newcastle United",

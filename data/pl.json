@@ -1,9 +1,25 @@
 {
-  "updatedAt": "2026-11-01T13:43:49.929669+02:00",
+  "updatedAt": "2026-11-02T15:13:42.114006+02:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
       "position": 1,
+      "team": "Arsenal",
+      "shortName": "Arsenal",
+      "abbr": "ARS",
+      "crest": "t3",
+      "played": 9,
+      "won": 8,
+      "drawn": 0,
+      "lost": 1,
+      "gf": 14,
+      "ga": 5,
+      "gd": 9,
+      "points": 24,
+      "qualification": "EU_CL"
+    },
+    {
+      "position": 2,
       "team": "Manchester City",
       "shortName": "Man City",
       "abbr": "MCI",
@@ -15,22 +31,6 @@
       "gf": 20,
       "ga": 10,
       "gd": 10,
-      "points": 21,
-      "qualification": "EU_CL"
-    },
-    {
-      "position": 2,
-      "team": "Arsenal",
-      "shortName": "Arsenal",
-      "abbr": "ARS",
-      "crest": "t3",
-      "played": 8,
-      "won": 7,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 13,
-      "ga": 5,
-      "gd": 8,
       "points": 21,
       "qualification": "EU_CL"
     },
@@ -72,13 +72,13 @@
       "shortName": "Liverpool",
       "abbr": "LIV",
       "crest": "t14",
-      "played": 8,
+      "played": 9,
       "won": 4,
       "drawn": 3,
-      "lost": 1,
+      "lost": 2,
       "gf": 11,
-      "ga": 8,
-      "gd": 3,
+      "ga": 9,
+      "gd": 2,
       "points": 15,
       "qualification": "EU_EL"
     },
@@ -326,17 +326,6 @@
   "fixtures": [
     {
       "gameweek": 9.0,
-      "kickoff": "2026-11-01T18:30:00+02:00",
-      "kickoffLabel": "Вс, 1 ноября, 18:30",
-      "home": "Liverpool",
-      "homeCrest": "t14",
-      "away": "Arsenal",
-      "awayCrest": "t3",
-      "ground": "Anfield",
-      "status": "U"
-    },
-    {
-      "gameweek": 9.0,
       "kickoff": "2026-11-02T22:00:00+02:00",
       "kickoffLabel": "Пн, 2 ноября, 22:00",
       "home": "Newcastle United",
@@ -400,18 +389,123 @@
       "awayCrest": "t43",
       "ground": "The City Ground",
       "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-08T16:00:00+02:00",
+      "kickoffLabel": "Вс, 8 ноября, 16:00",
+      "home": "Brighton & Hove Albion",
+      "homeCrest": "t36",
+      "away": "Brentford",
+      "awayCrest": "t94",
+      "ground": "American Express Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-08T16:00:00+02:00",
+      "kickoffLabel": "Вс, 8 ноября, 16:00",
+      "home": "Crystal Palace",
+      "homeCrest": "t31",
+      "away": "Liverpool",
+      "awayCrest": "t14",
+      "ground": "Selhurst Park",
+      "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-08T16:00:00+02:00",
+      "kickoffLabel": "Вс, 8 ноября, 16:00",
+      "home": "Ipswich Town",
+      "homeCrest": "t40",
+      "away": "Bournemouth",
+      "awayCrest": "t91",
+      "ground": "Portman Road",
+      "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-08T16:00:00+02:00",
+      "kickoffLabel": "Вс, 8 ноября, 16:00",
+      "home": "Sunderland",
+      "homeCrest": "t56",
+      "away": "Chelsea",
+      "awayCrest": "t8",
+      "ground": "Stadium of Light",
+      "status": "U"
+    },
+    {
+      "gameweek": 10.0,
+      "kickoff": "2026-11-08T18:30:00+02:00",
+      "kickoffLabel": "Вс, 8 ноября, 18:30",
+      "home": "Manchester United",
+      "homeCrest": "t1",
+      "away": "Aston Villa",
+      "awayCrest": "t7",
+      "ground": "Old Trafford",
+      "status": "U"
     }
   ],
   "facts": [
     {
       "team": "Arsenal",
-      "player": "Bukayo Saka",
+      "player": "Kai Havertz",
       "position": "Нападающий",
-      "nationality": "England",
-      "age": "25",
+      "nationality": "Germany",
+      "age": "27",
       "note": "лучший бомбардир «Arsenal» в этом сезоне — 3 гола",
-      "wikiFact": "Бука́йо Айоинка Темида́йо Са́ка (англ. Bukayo Ayoyinka Temidayo Saka; род. 5 сентября 2001, Лондон) — английский футболист, выступающий на позиции правого вингера за клуб Премьер-лиги «Арсенал» и сборную Англии. Участник двух чемпионатов Европы (2020 и 2024) и чемпионатов мира (2022 и 2026).",
-      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BA%D0%B0%2C_%D0%91%D1%83%D0%BA%D0%B0%D0%B9%D0%BE"
+      "wikiFact": "Кай Лу́кас Ха́верц (нем. Kai Lukas Havertz; род. 11 июня 1999, Ахен, Германия) — немецкий футболист, нападающий английского клуба «Арсенал» и сборной Германии. Участник чемпионатов Европы 2020, 2024 годов и чемпионатов мира 2022, 2026 годов.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B2%D0%B5%D1%80%D1%86%2C_%D0%9A%D0%B0%D0%B9"
+    },
+    {
+      "team": "Aston Villa",
+      "player": "Nicolas Jackson",
+      "position": "Нападающий",
+      "nationality": "Senegal",
+      "age": "25",
+      "note": "лучший бомбардир «Aston Villa» в этом сезоне — 5 голов",
+      "wikiFact": "Николас Джексон (фр. Nicolas Jackson; род. 20 июня 2001, Банжул, Гамбия) — сенегальский футболист, центральный нападающий английского клуба «Астон Вилла» и сборной Сенегала. Участник чемпионатов мира 2022 и 2026 годов.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B5%D0%BA%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%81"
+    },
+    {
+      "team": "Bournemouth",
+      "player": "Marcus Tavernier",
+      "position": "Полузащитник",
+      "nationality": "England",
+      "age": "27",
+      "note": "лучший бомбардир «Bournemouth» в этом сезоне — 5 голов",
+      "wikiFact": "Маркус Джозеф Тавернье (англ.  Marcus Joseph Tavernier; род. 22 марта 1999, Лидс) — английский футболист, полузащитник клуба «Борнмут». Младший брат Джеймса Тавернье, правого защитника и капитана шотландского клуба «Рейнджерс».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B2%D0%B5%D1%80%D0%BD%D1%8C%D0%B5%2C_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81"
+    },
+    {
+      "team": "Brentford",
+      "player": "Kevin Schade",
+      "position": "Полузащитник",
+      "nationality": "Germany",
+      "age": "24",
+      "note": "лучший бомбардир «Brentford» в этом сезоне — 3 гола",
+      "wikiFact": "Шаде родился в семье немки и нигерийца.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B4%D0%B5%2C_%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD"
+    },
+    {
+      "team": "Brighton & Hove Albion",
+      "player": "Yasin Ayari",
+      "position": "Полузащитник",
+      "nationality": "Sweden",
+      "age": "23",
+      "note": "лучший бомбардир «Brighton & Hove Albion» в этом сезоне — 3 гола",
+      "wikiFact": "Ясин Аббас Айяри (швед. Yasin Abbas Ayari, шведское произношение: [ˈjɑː.sɪn aˈjɑː.rɪ]; Сольна, Стокгольм) — шведский футболист, полузащитник английского клуба «Брайтон энд Хоув Альбион» и сборной Швеции.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%B9%D1%8F%D1%80%D0%B8%2C_%D0%AF%D1%81%D0%B8%D0%BD"
+    },
+    {
+      "team": "Chelsea",
+      "player": "João Pedro",
+      "position": "Нападающий",
+      "nationality": "Brazil",
+      "age": "25",
+      "note": "лучший бомбардир «Chelsea» в этом сезоне — 5 голов",
+      "wikiFact": "Жуан Педро Жункейра де Жезус (порт.-браз. João Pedro Junqueira de Jesus; род. 26 сентября 2001, Рибейран-Прету), или же просто Жуан Педро (порт.-браз. João Pedro, бразильский португальский: [ʒuˈɐ̃w̃ ˈpedɾu]) — бразильский футболист, нападающий английского клуба «Челси» и сборной Бразилии.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D0%B0%D0%BD_%D0%9F%D0%B5%D0%B4%D1%80%D0%BE_%28%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82%2C_2001%29"
     },
     {
       "team": "Coventry City",
@@ -422,6 +516,16 @@
       "note": "лучший бомбардир «Coventry City» в этом сезоне — 3 гола",
       "wikiFact": "Джек Эдвард Рудони (родился 14 июня 2001 года) - английский профессиональный футболист, полузащитник клуба Премьер-лиги «Ковентри Сити».",
       "wikiUrl": "https://en.wikipedia.org/wiki/Jack_Rudoni"
+    },
+    {
+      "team": "Crystal Palace",
+      "player": "Tyrick Mitchell",
+      "position": "Защитник",
+      "nationality": "England",
+      "age": "27",
+      "note": "лучший бомбардир «Crystal Palace» в этом сезоне — 2 гола",
+      "wikiFact": "Тайрик Куон Митчелл (англ. Tyrick Kwon Mitchell; родился 1 сентября 1999, Брент, Внешний Лондон) — английский футболист, левый защитник клуба «Кристал Пэлас».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%82%D1%87%D0%B5%D0%BB%D0%BB%2C_%D0%A2%D0%B0%D0%B9%D1%80%D0%B8%D0%BA"
     },
     {
       "team": "Everton",
@@ -454,6 +558,16 @@
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BB%D1%83%D0%BC%D0%B8%2C_%D0%9C%D0%BE%D1%85%D0%B0%D0%BC%D0%B5%D0%B4"
     },
     {
+      "team": "Ipswich Town",
+      "player": "Emersonn",
+      "position": "Нападающий",
+      "nationality": "Brazil",
+      "age": "22",
+      "note": "лучший бомбардир «Ipswich Town» в этом сезоне — 2 гола",
+      "wikiFact": "Эмерсонн Коррея да Силва (порт.-браз. Emersonn Correia da Silva); род. 16 июля 2004, Кашуэйру-ди-Итапемирин, Эспириту-Санту), более известный, как Эмерсонн (порт.-браз. Emersonn) — бразильский футболист, центральный нападающий и вингер клуба «Ипсвич Таун».",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D1%80%D0%B5%D1%8F_%D0%B4%D0%B0_%D0%A1%D0%B8%D0%BB%D0%B2%D0%B0%2C_%D0%AD%D0%BC%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%BD"
+    },
+    {
       "team": "Leeds United",
       "player": "Dominic Calvert-Lewin",
       "position": "Нападающий",
@@ -470,8 +584,8 @@
       "nationality": "Sweden",
       "age": "27",
       "note": "лучший бомбардир «Liverpool» в этом сезоне — 6 голов",
-      "wikiFact": "Родившийся и выросший в Стокгольме, Исак начал свою профессиональную карьеру в детском клубе AIK в 2016 году. Затем он продолжил представлять дортмундскую «Боруссию» и Виллема II, прежде чем подписать контракт с «Реал Сосьедад» в 2019 году. В 2022 году Исак присоединился к «Ньюкасл Юнайтед» за рекордный для клуба гонорар.",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Alexander_Isak"
+      "wikiFact": "Алекса́ндер И́сак (швед. Alexander Isak; род. 21 сентября 1999, Стокгольм) — шведский футболист, нападающий английского клуба «Ливерпуль» и национальной сборной Швеции.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B0%D0%BA%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D0%B5%D1%80"
     },
     {
       "team": "Manchester City",
@@ -482,6 +596,16 @@
       "note": "лучший бомбардир «Manchester City» в этом сезоне — 9 голов",
       "wikiFact": "Холанн начинал карьеру в норвежских клубах «Брюне» и «Молде», а в январе 2019 года перешёл в австрийский клуб «Ред Булл Зальцбург». Благодаря своим играм в Австрии в 2020 году норвежец подписал контракт с дортмундской «Боруссией», в составе которой выиграл Кубок Германии.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BB%D0%B0%D0%BD%D0%BD%2C_%D0%AD%D1%80%D0%BB%D0%B8%D0%BD%D0%B3"
+    },
+    {
+      "team": "Manchester United",
+      "player": "Bryan Mbeumo",
+      "position": "Нападающий",
+      "nationality": "Cameroon",
+      "age": "27",
+      "note": "лучший бомбардир «Manchester United» в этом сезоне — 4 гола",
+      "wikiFact": "Бра́йан Тетсадо́н Марсо́ Мбёмо́ (фр. Bryan Tetsadong Marceau Mbeumo; родился 7 августа 1999) — камерунский и французский футболист, вингер английского клуба «Манчестер Юнайтед» и сборной Камеруна.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B1%D1%91%D0%BC%D0%BE%2C_%D0%91%D1%80%D0%B0%D0%B9%D0%B0%D0%BD"
     },
     {
       "team": "Newcastle United",
@@ -502,6 +626,16 @@
       "note": "лучший бомбардир «Nottingham Forest» в этом сезоне — 2 гола",
       "wikiFact": "Дан Асса́н Ндо́йе (фр. Dan Assane Ndoye; 25 октября 2000, Ньон) — швейцарский футболист, вингер английского клуба «Ноттингем Форест» и сборной Швейцарии. Участник чемпионата Европы 2024 и чемпионата мира 2026.",
       "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B4%D0%BE%D0%B9%D0%B5%2C_%D0%94%D0%B0%D0%BD"
+    },
+    {
+      "team": "Sunderland",
+      "player": "Brian Brobbey",
+      "position": "Нападающий",
+      "nationality": "Netherlands",
+      "age": "24",
+      "note": "лучший бомбардир «Sunderland» в этом сезоне — 3 гола",
+      "wikiFact": "Брайан Эбенезер Аджей Бробби (нид. Brian Ebenezer Adjei Brobbey; род. 1 февраля 2002, Амстердам) — нидерландский футболист, нападающий клуба «Сандерленд» и сборной Нидерландов. Бронзовый призёр чемпионата Европы 2024. Участник чемпионата мира 2026 года.",
+      "wikiUrl": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%B1%D0%B1%D0%B8%2C_%D0%91%D1%80%D0%B0%D0%B9%D0%B0%D0%BD"
     },
     {
       "team": "Tottenham Hotspur",
