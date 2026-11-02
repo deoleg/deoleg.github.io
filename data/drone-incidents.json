@@ -4070,6 +4070,30 @@
     "detected_at": "2026-11-01T07:00:50.437848+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "ФСБ сорвала теракты Киева с использованием FPV-очков для дронов09:47",
+    "url": "https://ria.ru/20261102/fsb-2128546433.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-02T07:00:53.247660+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTTeritoriul ucrainean, atacat de aproape 200 de drone în timpul nopții. Război în Ucraina, ziua 1713",
+    "url": "https://www.zdg.md/stiri/stiri-externe/live-text-teritoriul-ucrainean-atacat-de-aproape-200-de-drone-in-timpul-noptii-razboi-in-ucraina-ziua-1713/",
+    "excerpt": "LIVE TEXTTeritoriul ucrainean, atacat de aproape 200 de drone în timpul nopții. Război în Ucraina, ziua 1713NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-11-02T07:00:53.247660+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTRusia a lansat peste 430 de drone asupra Ucrainei într-o singură noapte: un mort și cel puțin 47 de răniți. Război în Ucraina, ziua 1712",
+    "url": "https://www.zdg.md/stiri/live-text-rusia-a-lansat-peste-430-de-drone-asupra-ucrainei-intr-o-singura-noapte-un-mort-si-cel-putin-47-de-raniti-razboi-in-ucraina-ziua-1712/",
+    "excerpt": "LIVE TEXTRusia a lansat peste 430 de drone asupra Ucrainei într-o singură noapte: un mort și cel puțin 47 de răniți. Război în Ucraina, ziua 1712NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-11-02T07:00:53.247660+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
