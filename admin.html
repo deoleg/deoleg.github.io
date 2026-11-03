@@ -37,24 +37,14 @@
 </head>
 <body>
 <div class="tab-bar">
-  <button class="tab-btn active" data-src="mpd.html">MPD</button>
+  <button class="tab-btn active" data-src="trip/index.html">Trip</button>
   <button class="tab-btn" data-src="life.html">Life</button>
-  <button class="tab-btn" data-src="pl.html">PL</button>
   <button class="tab-btn" data-src="risk.html">Risk</button>
-  <button class="tab-btn" data-src="sport.html">Sport</button>
-  <button class="tab-btn" data-src="history/index.html">History</button>
-  <button class="tab-btn" data-src="doctrines/index.html">Doctrines</button>
-  <button class="tab-btn" data-src="game.html">Game</button>
 </div>
 <div class="frame-wrap">
-  <iframe id="frame-mpd.html" class="active" allow="autoplay"></iframe>
+  <iframe id="frame-trip/index.html" class="active" allow="clipboard-write"></iframe>
   <iframe id="frame-life.html" allow="autoplay"></iframe>
-  <iframe id="frame-pl.html" allow="autoplay"></iframe>
   <iframe id="frame-risk.html" allow="autoplay"></iframe>
-  <iframe id="frame-sport.html" allow="autoplay"></iframe>
-  <iframe id="frame-history/index.html" allow="clipboard-write"></iframe>
-  <iframe id="frame-doctrines/index.html"></iframe>
-  <iframe id="frame-game.html"></iframe>
 </div>
 
 <script>
@@ -66,7 +56,7 @@
     return frame;
   }
 
-  loadFrame('mpd.html').classList.add('active');
+  loadFrame('trip/index.html').classList.add('active');
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
