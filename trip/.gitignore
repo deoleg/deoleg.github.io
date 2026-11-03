@@ -2,3 +2,6 @@ data.json
 build.py
 template.html
 README.md
+publish.py
+.venv/
+trip-progress-*.json
