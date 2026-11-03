@@ -527,6 +527,24 @@ function renderRiskChart(days) {
 
 // ---------------- Drone section ----------------
 
+// date_mentioned бывает ISO, текстом без года («18 сентября») или пустым – год берём из detected_at
+const MONTHS = {
+  'января':0,'февраля':1,'марта':2,'апреля':3,'мая':4,'июня':5,'июля':6,'августа':7,'сентября':8,'октября':9,'ноября':10,'декабря':11,
+  'ianuarie':0,'februarie':1,'martie':2,'aprilie':3,'mai':4,'iunie':5,'iulie':6,'august':7,'septembrie':8,'octombrie':9,'noiembrie':10,'decembrie':11
+};
+function incidentDate(i) {
+  const detected = new Date(i.detected_at);
+  const m = (i.date_mentioned || '').trim();
+  if (/^\d{4}-\d{2}-\d{2}/.test(m)) return new Date(m);
+  const t = m.toLowerCase().match(/^(\d{1,2})\s+([a-zа-яăâîșț]+)/);
+  if (t && t[2] in MONTHS && !isNaN(detected)) {
+    let y = detected.getUTCFullYear();
+    if (MONTHS[t[2]] > detected.getUTCMonth()) y--;  // «28 декабря» в новости от января
+    return new Date(Date.UTC(y, MONTHS[t[2]], +t[1]));
+  }
+  return detected;
+}
+
 function renderDroneSection() {
   const confirmed = droneIncidents.filter(i => i.confidence === 'high');
   const pending = droneIncidents.filter(i => i.confidence !== 'high');
@@ -537,7 +555,7 @@ function renderDroneSection() {
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   const thisMonth = confirmed.filter(i => {
-    const d = new Date(i.date_mentioned || i.detected_at);
+    const d = incidentDate(i);
     return !isNaN(d) && d >= thirtyDaysAgo;
   });
   document.getElementById('stat-drones-month').textContent = thisMonth.length;
@@ -556,11 +574,12 @@ function renderDroneSection() {
 }
 
 function renderIncidentList(confirmed) {
-  const sorted = [...confirmed].sort((a, b) => {
-    const da = new Date(a.date_mentioned || a.detected_at);
-    const db = new Date(b.date_mentioned || b.detected_at);
-    return db - da;
-  }).slice(0, 15);
+  const seen = new Set();
+  const sorted = confirmed
+    .filter(i => !seen.has(i.url) && seen.add(i.url))
+    .map(i => ({ ...i, _d: incidentDate(i) }))
+    .sort((a, b) => (b._d.getTime() || 0) - (a._d.getTime() || 0))
+    .slice(0, 15);
 
   const list = document.getElementById('incident-list');
   if (sorted.length === 0) {
@@ -571,7 +590,7 @@ function renderIncidentList(confirmed) {
     <li>
       <a href="${i.url}" target="_blank" rel="noopener">${i.title}</a>
       <span class="confidence-tag confidence-${i.confidence}">${i.confidence}</span>
-      <div class="incident-meta">${i.date_mentioned || (i.detected_at || '').slice(0,10)}</div>
+      <div class="incident-meta">${isNaN(i._d) ? (i.date_mentioned || '') : i._d.toISOString().slice(0,10)}</div>
     </li>
   `).join('');
   list.querySelectorAll('a').forEach(translateElement);
@@ -580,7 +599,7 @@ function renderIncidentList(confirmed) {
 function groupByWeek(incidents) {
   const weeks = {};
   for (const i of incidents) {
-    const d = new Date(i.date_mentioned || i.detected_at);
+    const d = incidentDate(i);
     if (isNaN(d)) continue;
     const day = d.getDay() || 7;
     const monday = new Date(d);
