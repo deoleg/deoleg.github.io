@@ -4233,5 +4233,78 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-11-03",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: учения. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "В Молдове разработан проект Регламента о сертификации агентов по недвижимости",
+            "url": "https://point.md/ru/novosti/obschestvo/v-moldove-razrabotan-proekt-reglamenta-o-sertifikatsii-agentov-po-nedvizhimosti/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 12 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 12
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, дрон. Взвешенный балл за сегодня: 12.0.",
+        "sources": [
+          {
+            "title": "În luna octombrie, spațiul aerian al Republicii Moldova a fost...",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/luna-octombrie-spatiul-aerian-al-republicii-moldova-fost-incalcat-de-19-ori-iar"
+          },
+          {
+            "title": "32 de obiecte explozive, nimicite de geniștii Armatei Naționale...",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/32-de-obiecte-explozive-nimicite-de-genistii-armatei-nationale-luna-octombrie"
+          },
+          {
+            "title": "Шалару: Некоторые молдавские политики опаснее российских дронов",
+            "url": "https://point.md/ru/novosti/politika/shalaru-nekotorye-moldavskie-politiki-opasnee-rossiiskikh-dronov/"
+          },
+          {
+            "title": "Василой о дронах: Молдова используется для ухода от ПВО Украины",
+            "url": "https://point.md/ru/novosti/obschestvo/vasiloi-o-dronakh-moldova-ispol-zuetsia-dlia-ukhoda-ot-pvo-ukrainy/"
+          },
+          {
+            "title": "В Кишиневе за неделю задержали 15 человек и изъяли мефедрон и гашиш",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-kishineve-za-nedeliu-zaderzhali-15-chelovek-i-iz-iali-mefedron-i-gashish/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 30 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 30
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 6
+      }
+    },
+    "overall_score": 1.0,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
   }
 ]
