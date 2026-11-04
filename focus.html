@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light only">
+  <title>Position Focus</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      padding: 40px 20px 64px;
+    }
+
+    .page { max-width: 1240px; margin: 0 auto; }
+
+    .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 6px; }
+    h1 { font-size: 22px; font-weight: 700; color: #1a1f36; }
+    .verse { font-size: 13px; color: #666; font-style: italic; margin-bottom: 14px; }
+
+    .status-bar { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #999; margin-bottom: 24px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+    .status-dot.ok { background: #1a9e75; }
+    .status-dot.saving { background: #e0a800; }
+    .status-dot.error { background: #c0392b; }
+    .status-text.error { color: #c0392b; }
+
+    .actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .btn {
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+      background: #fff; color: #555; border: 1.5px solid #e5e5e5; border-radius: 6px;
+      padding: 6px 12px; cursor: pointer;
+    }
+    .btn:hover { border-color: #bbb; color: #1a1a1a; }
+    .btn.dark { background: #1a1f36; color: #fff; border-color: #1a1f36; }
+
+    .meta { display: grid; grid-template-columns: 2fr 2fr 1.4fr; gap: 12px; margin-bottom: 36px; }
+
+    label.field { display: block; }
+    label.field > span, .cell-label {
+      display: block; font-size: 11px; font-weight: 600; color: #888;
+      text-transform: uppercase; letter-spacing: .04em; margin-bottom: 5px;
+    }
+
+    input[type=text], input[type=date], textarea {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.45; color: #1a1a1a;
+      background: #fff; border: 1.5px solid #e5e5e5; border-radius: 8px; padding: 8px 10px; outline: none;
+      transition: border-color .15s;
+    }
+    input:focus, textarea:focus { border-color: #1a1f36; }
+    textarea { resize: none; overflow: hidden; min-height: 64px; display: block; }
+
+    section { margin-bottom: 40px; }
+    h2 { font-size: 16px; font-weight: 700; color: #1a1f36; margin-bottom: 6px; }
+    .desc { font-size: 13px; color: #666; line-height: 1.55; max-width: 900px; margin-bottom: 14px; }
+
+    .table { border-radius: 10px; overflow: hidden; border: 1.5px solid var(--edge); background: #fff; }
+    .row {
+      display: grid; grid-template-columns: 36px 1.25fr 1.5fr .65fr 1.1fr 1.1fr;
+      border-top: 1px solid var(--edge);
+    }
+    .row.hdr { border-top: none; background: var(--tint); }
+    .row > div { padding: 8px; min-width: 0; }
+    .row > div + div { border-left: 1px solid var(--edge); }
+    .row.hdr > div { font-size: 11px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: .03em; line-height: 1.35; padding: 10px 8px; }
+    .row.hdr small { display: block; font-weight: 500; text-transform: none; letter-spacing: 0; color: #666; font-size: 11px; margin-top: 2px; }
+    .row.hdr input[type=date] { font-size: 12px; padding: 4px 6px; margin-top: 6px; border-radius: 6px; }
+    .num { font-weight: 700; font-size: 13px; color: #555; background: var(--tint); display: flex; justify-content: center; padding-top: 14px !important; }
+    .row textarea { border-color: transparent; background: transparent; padding: 6px; }
+    .row textarea:hover { border-color: #eee; }
+    .row textarea:focus { border-color: #1a1f36; background: #fff; }
+    .cell-label { display: none; }
+
+    .s-ministry { --edge: #e6d980; --tint: #fff9cc; }
+    .s-personal { --edge: #9fcfde; --tint: #e3f3f8; }
+    .s-people   { --edge: #f0bf8f; --tint: #ffeedd; }
+
+    /* Token screen */
+    .token-screen {
+      display: none; position: fixed; inset: 0; background: #f9f9f9; z-index: 10;
+      flex-direction: column; align-items: center; justify-content: center; padding: 32px;
+    }
+    .token-inner { width: 100%; max-width: 420px; }
+    .token-title { font-size: 13px; font-weight: 600; color: #1a1f36; margin-bottom: 6px; }
+    .token-desc { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+    .token-input {
+      width: 100%; font-family: monospace; font-size: 13px; padding: 10px 12px; border: 1.5px solid #ddd;
+      border-radius: 8px; outline: none; margin-bottom: 12px; background: #fff; color: #1a1a1a;
+    }
+    .token-btn {
+      width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; background: #1a1f36;
+      color: #fff; border: none; border-radius: 8px; padding: 11px; cursor: pointer;
+    }
+    .token-hint { font-size: 12px; color: #bbb; margin-top: 12px; line-height: 1.6; }
+    .token-error { font-size: 12px; color: #c0392b; margin-bottom: 12px; display: none; }
+
+    @media (max-width: 860px) {
+      body { padding: 28px 16px 48px; }
+      .head { flex-direction: column; }
+      .meta { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; }
+      .row > div + div { border-left: none; }
+      .row.hdr { display: block; padding: 4px 0; }
+      .row.hdr > div:not(.hdr-date) { display: none; }
+      .row.hdr .hdr-date { display: inline-block; width: 50%; vertical-align: top; }
+      .num { justify-content: flex-start; padding: 8px 12px !important; }
+      .cell-label { display: block; margin: 4px 0 2px 6px; }
+      .row textarea { border-color: #eee; background: #fff; }
+    }
+
+    @media print {
+      @page { size: A4 landscape; margin: 10mm; }
+      body { background: #fff; padding: 0; }
+      .actions, .status-bar { display: none; }
+      section { break-inside: avoid; margin-bottom: 18px; }
+      .row { break-inside: avoid; }
+      textarea, input { border-color: transparent !important; background: transparent !important; padding: 2px 4px; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <div class="head">
+    <div>
+      <h1>My Personal &amp; Ministry Priorities</h1>
+      <p class="verse">«I press on toward the goal for the prize of the upward call of God in Jesus Christ» (Philippians 3:14)</p>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" id="printBtn">Печать / PDF</button>
+      <button type="button" class="btn" id="changeTokenBtn">Сменить токен</button>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-text" id="statusText">Загрузка…</span>
+  </div>
+
+  <div class="meta">
+    <label class="field"><span>Имя</span><input type="text" data-f="name"></label>
+    <label class="field"><span>Занимаемая должность</span><input type="text" data-f="position"></label>
+    <label class="field"><span>Временные рамки</span><input type="text" data-f="period" placeholder="напр. 2026–2027"></label>
+  </div>
+
+  <div id="sections"></div>
+</div>
+
+<!-- Token setup screen -->
+<div id="tokenScreen" class="token-screen">
+  <div class="token-inner">
+    <p class="token-title" id="tokenTitle">Настройка сохранения</p>
+    <p class="token-desc" id="tokenDesc">
+      Введи GitHub Personal Access Token — тот же, что для MPD. Он сохранится только в этом браузере.
+      Документ шифруется этим токеном перед отправкой в репозиторий.
+    </p>
+    <p class="token-error" id="tokenError"></p>
+    <input id="tokenInput" class="token-input" type="password" placeholder="github_pat_…">
+    <button type="button" id="tokenSaveBtn" class="token-btn">Продолжить</button>
+    <p class="token-hint">
+      Нужен Fine-grained token с правом <strong>Contents: Read&nbsp;&amp;&nbsp;write</strong> для репозитория deoleg.github.io
+    </p>
+  </div>
+</div>
+
+<script>
+// ── Конфигурация ──────────────────────────────────────────────────────────────
+const REPO      = "deoleg/deoleg.github.io";
+const FILE      = "data/focus.json";
+const TOKEN_KEY = "mpd_gh_token";
+let TOKEN = localStorage.getItem(TOKEN_KEY) || "";
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+const ITER = 310000;
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SECTIONS = [
+  { id: "ministry", cls: "s-ministry", from: 1, count: 5,
+    title: "I. Приоритеты в служении",
+    desc: "Это мои приоритеты в служении на этот год. Они сформулированы на основе стратегического плана моей команды и учитывают тот вклад, который я вношу для достижения цели построения духовных движений. Эти задачи являются самыми важными для меня, и я буду тратить большинство моего времени, энергии и усилий для их достижения.",
+    head: "Приоритеты в служении" },
+  { id: "personal", cls: "s-personal", from: 6, count: 2,
+    title: "II. Приоритеты в личном развитии",
+    desc: "Это мои приоритеты в личном развитии на этот год. Это те области, которые будут в фокусе моего внимания и над которыми я буду работать для моего личного роста и развития. Это могут быть области духовного или профессионального развития, оптимизация моих сильных сторон или укрепление слабых. Я бы хотел в конце года увидеть прогресс в этих областях.",
+    head: "Приоритеты в личном развитии<small>(Способности и сердце)</small>" },
+  { id: "people", cls: "s-people", from: 8, count: 2,
+    title: "III. Приоритетные люди",
+    desc: "Это те люди, которых я буду ободрять и которым я буду помогать в их развитии в этом году. Я буду вовлечён в жизни большего числа людей, но эти люди будут моим приоритетом. Это могут быть сотрудники или добровольцы, чьё развитие, по моему мнению, является очень важным для построения духовных движений.",
+    head: "Приоритетные люди" }
+];
+
+const COLS = [
+  { k: "p",  label: "Беседа #1 · Приоритет" },
+  { k: "s",  label: "Беседа #1 · Шаги для достижения" },
+  { k: "t",  label: "Временные рамки (по вере)" },
+  { k: "r2", label: "Беседа #2 · Обзор в середине года" },
+  { k: "r3", label: "Беседа #3 · Обзор в конце года" }
+];
+
+let doc = emptyDoc();
+let fileSha = null;
+let saveTimer = null;
+let ready = false;  // не сохранять, пока документ не загружен: иначе можно затереть его пустым
+
+function emptyDoc() {
+  const d = { name: "", position: "", period: "", sections: {} };
+  SECTIONS.forEach(s => {
+    d.sections[s.id] = { d2: "", d3: "", rows: Array.from({ length: s.count }, () => ({ p: "", s: "", t: "", r2: "", r3: "" })) };
+  });
+  return d;
+}
+
+function mergeDoc(saved) {
+  const d = emptyDoc();
+  ["name", "position", "period"].forEach(k => { d[k] = saved[k] || ""; });
+  SECTIONS.forEach(s => {
+    const src = (saved.sections || {})[s.id] || {};
+    d.sections[s.id].d2 = src.d2 || "";
+    d.sections[s.id].d3 = src.d3 || "";
+    d.sections[s.id].rows.forEach((r, i) => Object.assign(r, (src.rows || [])[i] || {}));
+  });
+  return d;
+}
+
+// ── Шифрование (AES-GCM, ключ из токена через PBKDF2) ─────────────────────────
+
+const b64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+async function deriveKey(token, salt) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(token), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: ITER, hash: "SHA-256" }, base,
+    { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+}
+
+async function encryptDoc(obj, token) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await deriveKey(token, salt);
+  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(JSON.stringify(obj)));
+  return { v: 1, iter: ITER, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
+}
+
+async function decryptDoc(enc, token) {
+  const key = await deriveKey(token, unb64(enc.salt));
+  const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(enc.iv) }, key, unb64(enc.ct));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+// ── GitHub API ────────────────────────────────────────────────────────────────
+
+function apiHeaders() {
+  return {
+    Authorization: `token ${TOKEN}`,
+    Accept: "application/vnd.github.v3+json",
+    "Content-Type": "application/json"
+  };
+}
+
+async function fetchFile() {
+  const r = await fetch(API + "?t=" + Date.now(), { headers: apiHeaders(), cache: "no-store" });
+  if (r.status === 404) { fileSha = null; return null; }
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const json = await r.json();
+  fileSha = json.sha;
+  return JSON.parse(atob(json.content.replace(/\n/g, "")));
+}
+
+async function saveToGitHub(retry = true) {
+  const enc = await encryptDoc(doc, TOKEN);
+  const body = { message: "Update Position Focus", content: btoa(JSON.stringify(enc)) };
+  if (fileSha) body.sha = fileSha;
+  const r = await fetch(API, { method: "PUT", headers: apiHeaders(), body: JSON.stringify(body) });
+  if ((r.status === 409 || r.status === 422) && retry) { await fetchFile(); return saveToGitHub(false); }
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  fileSha = (await r.json()).content.sha;
+}
+
+// ── Статус и сохранение ──────────────────────────────────────────────────────
+
+function setStatus(state, text) {
+  document.getElementById("statusDot").className = "status-dot " + state;
+  const t = document.getElementById("statusText");
+  t.textContent = text;
+  t.className = "status-text" + (state === "error" ? " error" : "");
+}
+
+function scheduleSave() {
+  if (!ready) return;
+  setStatus("saving", "Сохраняется…");
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    saveTimer = null;
+    try {
+      await saveToGitHub();
+      setStatus("ok", "Сохранено");
+    } catch (e) {
+      console.error(e);
+      setStatus("error", "Ошибка сохранения — проверь токен");
+    }
+  }, 1500);
+}
+
+window.addEventListener("beforeunload", e => { if (saveTimer) { e.preventDefault(); e.returnValue = ""; } });
+
+// ── Форма ─────────────────────────────────────────────────────────────────────
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function buildSections() {
+  document.getElementById("sections").innerHTML = SECTIONS.map(s => {
+    const rows = Array.from({ length: s.count }, (_, i) => `
+      <div class="row">
+        <div class="num">${s.from + i}.</div>
+        ${COLS.map(c => `<div><span class="cell-label">${c.label}</span><textarea rows="2" data-s="${s.id}" data-i="${i}" data-k="${c.k}"></textarea></div>`).join("")}
+      </div>`).join("");
+    return `<section class="${s.cls}">
+      <h2>${s.title}</h2>
+      <p class="desc">${s.desc}</p>
+      <div class="table">
+        <div class="row hdr">
+          <div></div>
+          <div>Беседа #1<small>${s.head}</small></div>
+          <div>Беседа #1<small>Шаги для их достижения</small></div>
+          <div>Временные рамки<small>(по вере)</small></div>
+          <div class="hdr-date">Беседа #2<small>Обзор в середине года</small><input type="date" data-s="${s.id}" data-d="d2" aria-label="Дата беседы #2"></div>
+          <div class="hdr-date">Беседа #3<small>Обзор в конце года</small><input type="date" data-s="${s.id}" data-d="d3" aria-label="Дата беседы #3"></div>
+        </div>
+        ${rows}
+      </div>
+    </section>`;
+  }).join("");
+}
+
+function autoGrow(t) { t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
+
+function fillForm() {
+  document.querySelectorAll("[data-f]").forEach(i => { i.value = doc[i.dataset.f]; });
+  document.querySelectorAll("[data-d]").forEach(i => { i.value = doc.sections[i.dataset.s][i.dataset.d]; });
+  document.querySelectorAll("textarea[data-k]").forEach(t => {
+    t.value = doc.sections[t.dataset.s].rows[+t.dataset.i][t.dataset.k];
+    autoGrow(t);
+  });
+}
+
+function bindForm() {
+  document.querySelectorAll("[data-f]").forEach(i => i.addEventListener("input", () => { doc[i.dataset.f] = i.value; scheduleSave(); }));
+  document.querySelectorAll("[data-d]").forEach(i => i.addEventListener("change", () => { doc.sections[i.dataset.s][i.dataset.d] = i.value; scheduleSave(); }));
+  document.querySelectorAll("textarea[data-k]").forEach(t => t.addEventListener("input", () => {
+    doc.sections[t.dataset.s].rows[+t.dataset.i][t.dataset.k] = t.value;
+    autoGrow(t);
+    scheduleSave();
+  }));
+  window.addEventListener("resize", () => document.querySelectorAll("textarea[data-k]").forEach(autoGrow));
+}
+
+// ── Экран токена ──────────────────────────────────────────────────────────────
+
+function showTokenScreen({ title, desc, error, onSubmit } = {}) {
+  document.getElementById("tokenScreen").style.display = "flex";
+  if (title) document.getElementById("tokenTitle").textContent = title;
+  if (desc) document.getElementById("tokenDesc").textContent = desc;
+  const err = document.getElementById("tokenError");
+  err.textContent = error || ""; err.style.display = error ? "block" : "none";
+  const input = document.getElementById("tokenInput");
+  input.value = ""; input.focus();
+
+  const submit = onSubmit || (val => { localStorage.setItem(TOKEN_KEY, val); location.reload(); });
+  const go = () => { const v = input.value.trim(); if (v) submit(v); };
+  document.getElementById("tokenSaveBtn").onclick = go;
+  input.onkeydown = e => { if (e.key === "Enter") go(); };
+}
+
+function hideTokenScreen() { document.getElementById("tokenScreen").style.display = "none"; }
+
+// Документ зашифрован другим токеном (например, после «Сменить токен»):
+// просим прежний, расшифровываем и сразу пересохраняем под текущим.
+function askOldToken(enc, error) {
+  showTokenScreen({
+    title: "Документ зашифрован другим токеном",
+    desc: "Похоже, токен меняли. Введи прежний токен — документ расшифруется и пересохранится под текущим.",
+    error,
+    onSubmit: async old => {
+      try {
+        doc = mergeDoc(await decryptDoc(enc, old));
+      } catch {
+        return askOldToken(enc, "Этот токен тоже не подходит.");
+      }
+      hideTokenScreen();
+      fillForm();
+      ready = true;
+      scheduleSave();
+    }
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+async function startApp() {
+  buildSections();
+  bindForm();
+  let enc;
+  try {
+    enc = await fetchFile();
+  } catch (e) {
+    console.error(e);
+    setStatus("error", "Не удалось загрузить — проверь токен");
+    return;
+  }
+  if (enc) {
+    try {
+      doc = mergeDoc(await decryptDoc(enc, TOKEN));
+    } catch {
+      setStatus("error", "Не удалось расшифровать");
+      return askOldToken(enc);
+    }
+  }
+  fillForm();
+  ready = true;
+  setStatus("ok", enc ? "Сохранено" : "Новый документ");
+}
+
+document.getElementById("printBtn").addEventListener("click", () => {
+  document.querySelectorAll("textarea[data-k]").forEach(autoGrow);
+  window.print();
+});
+
+document.getElementById("changeTokenBtn").addEventListener("click", () => {
+  localStorage.removeItem(TOKEN_KEY);
+  location.reload();
+});
+
+if (TOKEN) {
+  startApp();
+} else {
+  showTokenScreen();
+}
+</script>
+
+</body>
+</html>
