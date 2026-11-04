@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T14:40:17.788655+02:00",
+  "updatedAt": "2026-11-04T14:50:06.794022+02:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -1203,13 +1203,6 @@
       "played": false
     },
     {
-      "home": "Nottingham Forest",
-      "away": "Everton",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
-    },
-    {
       "home": "Liverpool",
       "away": "Tottenham Hotspur",
       "homeScore": null,
@@ -1219,6 +1212,13 @@
     {
       "home": "Brighton & Hove Albion",
       "away": "Ipswich Town",
+      "homeScore": null,
+      "awayScore": null,
+      "played": false
+    },
+    {
+      "home": "Nottingham Forest",
+      "away": "Everton",
       "homeScore": null,
       "awayScore": null,
       "played": false
