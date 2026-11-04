@@ -81,6 +81,19 @@
     .row textarea:hover { border-color: #eee; }
     .row textarea:focus { border-color: #1a1f36; background: #fff; }
     .cell-label { display: none; }
+    .num { position: relative; }
+    .del {
+      position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);
+      width: 22px; height: 22px; border: none; border-radius: 50%; background: transparent;
+      color: #bbb; font-size: 16px; line-height: 1; cursor: pointer; opacity: 0; transition: opacity .15s;
+    }
+    .row:hover .del, .del:focus-visible { opacity: 1; }
+    .del:hover { color: #c0392b; background: #fff5f5; }
+    .add-row {
+      margin-top: 8px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: #555;
+      background: #fff; border: 1.5px dashed var(--edge); border-radius: 8px; padding: 7px 14px; cursor: pointer;
+    }
+    .add-row:hover { border-style: solid; color: #1a1f36; background: var(--tint); }
 
     .s-ministry { --edge: #e6d980; --tint: #fff9cc; }
     .s-personal { --edge: #9fcfde; --tint: #e3f3f8; }
@@ -114,7 +127,8 @@
       .row.hdr { display: block; padding: 4px 0; }
       .row.hdr > div:not(.hdr-date) { display: none; }
       .row.hdr .hdr-date { display: inline-block; width: 50%; vertical-align: top; }
-      .num { justify-content: flex-start; padding: 8px 12px !important; }
+      .num { justify-content: space-between; align-items: center; padding: 6px 12px !important; }
+      .del { position: static; transform: none; opacity: 1; }
       .cell-label { display: block; margin: 4px 0 2px 6px; }
       .row textarea { border-color: #eee; background: #fff; }
     }
@@ -122,7 +136,7 @@
     @media print {
       @page { size: A4 landscape; margin: 10mm; }
       body { background: #fff; padding: 0; }
-      .actions, .status-bar { display: none; }
+      .actions, .status-bar, .add-row, .del { display: none !important; }
       section { break-inside: avoid; margin-bottom: 18px; }
       .row { break-inside: avoid; }
       textarea, input { border-color: transparent !important; background: transparent !important; padding: 2px 4px; }
@@ -135,8 +149,8 @@
 <div class="page">
   <div class="head">
     <div>
-      <h1>My Personal &amp; Ministry Priorities</h1>
-      <p class="verse">«I press on toward the goal for the prize of the upward call of God in Jesus Christ» (Philippians 3:14)</p>
+      <h1>Мои личные приоритеты и приоритеты в служении</h1>
+      <p class="verse">«Стремлюсь к цели, к почести вышнего звания Божия во Христе Иисусе» (Флп 3:14)</p>
     </div>
     <div class="actions">
       <button type="button" class="btn" id="printBtn">Печать / PDF</button>
@@ -186,15 +200,15 @@ const ITER = 310000;
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SECTIONS = [
-  { id: "ministry", cls: "s-ministry", from: 1, count: 5,
+  { id: "ministry", cls: "s-ministry",
     title: "I. Приоритеты в служении",
     desc: "Это мои приоритеты в служении на этот год. Они сформулированы на основе стратегического плана моей команды и учитывают тот вклад, который я вношу для достижения цели построения духовных движений. Эти задачи являются самыми важными для меня, и я буду тратить большинство моего времени, энергии и усилий для их достижения.",
     head: "Приоритеты в служении" },
-  { id: "personal", cls: "s-personal", from: 6, count: 2,
+  { id: "personal", cls: "s-personal",
     title: "II. Приоритеты в личном развитии",
     desc: "Это мои приоритеты в личном развитии на этот год. Это те области, которые будут в фокусе моего внимания и над которыми я буду работать для моего личного роста и развития. Это могут быть области духовного или профессионального развития, оптимизация моих сильных сторон или укрепление слабых. Я бы хотел в конце года увидеть прогресс в этих областях.",
     head: "Приоритеты в личном развитии<small>(Способности и сердце)</small>" },
-  { id: "people", cls: "s-people", from: 8, count: 2,
+  { id: "people", cls: "s-people",
     title: "III. Приоритетные люди",
     desc: "Это те люди, которых я буду ободрять и которым я буду помогать в их развитии в этом году. Я буду вовлечён в жизни большего числа людей, но эти люди будут моим приоритетом. Это могут быть сотрудники или добровольцы, чьё развитие, по моему мнению, является очень важным для построения духовных движений.",
     head: "Приоритетные люди" }
@@ -208,6 +222,9 @@ const COLS = [
   { k: "r3", label: "Беседа #3 · Обзор в конце года" }
 ];
 
+const emptyRow = () => ({ p: "", s: "", t: "", r2: "", r3: "" });
+const isEmptyRow = r => COLS.every(c => !(r[c.k] || "").trim());
+
 let doc = emptyDoc();
 let fileSha = null;
 let saveTimer = null;
@@ -215,9 +232,7 @@ let ready = false;  // не сохранять, пока документ не �
 
 function emptyDoc() {
   const d = { name: "", position: "", period: "", sections: {} };
-  SECTIONS.forEach(s => {
-    d.sections[s.id] = { d2: "", d3: "", rows: Array.from({ length: s.count }, () => ({ p: "", s: "", t: "", r2: "", r3: "" })) };
-  });
+  SECTIONS.forEach(s => { d.sections[s.id] = { d2: "", d3: "", rows: [emptyRow()] }; });
   return d;
 }
 
@@ -228,7 +243,9 @@ function mergeDoc(saved) {
     const src = (saved.sections || {})[s.id] || {};
     d.sections[s.id].d2 = src.d2 || "";
     d.sections[s.id].d3 = src.d3 || "";
-    d.sections[s.id].rows.forEach((r, i) => Object.assign(r, (src.rows || [])[i] || {}));
+    const rows = (src.rows || []).map(r => ({ ...emptyRow(), ...r }));
+    while (rows.length > 1 && isEmptyRow(rows[rows.length - 1])) rows.pop();  // пустые строки в конце не нужны
+    d.sections[s.id].rows = rows.length ? rows : [emptyRow()];
   });
   return d;
 }
@@ -317,12 +334,14 @@ window.addEventListener("beforeunload", e => { if (saveTimer) { e.preventDefault
 
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
-function buildSections() {
+function renderSections() {
+  let n = 0;
   document.getElementById("sections").innerHTML = SECTIONS.map(s => {
-    const rows = Array.from({ length: s.count }, (_, i) => `
+    const sec = doc.sections[s.id];
+    const rows = sec.rows.map((r, i) => `
       <div class="row">
-        <div class="num">${s.from + i}.</div>
-        ${COLS.map(c => `<div><span class="cell-label">${c.label}</span><textarea rows="2" data-s="${s.id}" data-i="${i}" data-k="${c.k}"></textarea></div>`).join("")}
+        <div class="num">${++n}.<button type="button" class="del" data-del="${s.id}:${i}" title="Удалить строку" aria-label="Удалить строку">×</button></div>
+        ${COLS.map(c => `<div><span class="cell-label">${c.label}</span><textarea rows="2" data-s="${s.id}" data-i="${i}" data-k="${c.k}">${esc(r[c.k])}</textarea></div>`).join("")}
       </div>`).join("");
     return `<section class="${s.cls}">
       <h2>${s.title}</h2>
@@ -333,34 +352,52 @@ function buildSections() {
           <div>Беседа #1<small>${s.head}</small></div>
           <div>Беседа #1<small>Шаги для их достижения</small></div>
           <div>Временные рамки<small>(по вере)</small></div>
-          <div class="hdr-date">Беседа #2<small>Обзор в середине года</small><input type="date" data-s="${s.id}" data-d="d2" aria-label="Дата беседы #2"></div>
-          <div class="hdr-date">Беседа #3<small>Обзор в конце года</small><input type="date" data-s="${s.id}" data-d="d3" aria-label="Дата беседы #3"></div>
+          <div class="hdr-date">Беседа #2<small>Обзор в середине года</small><input type="date" data-s="${s.id}" data-d="d2" value="${esc(sec.d2)}" aria-label="Дата беседы #2"></div>
+          <div class="hdr-date">Беседа #3<small>Обзор в конце года</small><input type="date" data-s="${s.id}" data-d="d3" value="${esc(sec.d3)}" aria-label="Дата беседы #3"></div>
         </div>
         ${rows}
       </div>
+      <button type="button" class="add-row" data-add="${s.id}" title="Добавить строку">+ Добавить строку</button>
     </section>`;
   }).join("");
+
+  const box = document.getElementById("sections");
+  box.querySelectorAll("[data-d]").forEach(i => i.addEventListener("change", () => { doc.sections[i.dataset.s][i.dataset.d] = i.value; scheduleSave(); }));
+  box.querySelectorAll("textarea[data-k]").forEach(t => {
+    autoGrow(t);
+    t.addEventListener("input", () => {
+      doc.sections[t.dataset.s].rows[+t.dataset.i][t.dataset.k] = t.value;
+      autoGrow(t);
+      scheduleSave();
+    });
+  });
+  box.querySelectorAll("[data-add]").forEach(b => b.addEventListener("click", () => {
+    const rows = doc.sections[b.dataset.add].rows;
+    rows.push(emptyRow());
+    renderSections();
+    scheduleSave();
+    box.querySelector(`textarea[data-s="${b.dataset.add}"][data-i="${rows.length - 1}"]`).focus();
+  }));
+  box.querySelectorAll("[data-del]").forEach(b => b.addEventListener("click", () => {
+    const [id, i] = b.dataset.del.split(":");
+    const rows = doc.sections[id].rows;
+    if (!isEmptyRow(rows[+i]) && !confirm("Удалить эту строку?")) return;
+    rows.splice(+i, 1);
+    if (!rows.length) rows.push(emptyRow());
+    renderSections();
+    scheduleSave();
+  }));
 }
 
 function autoGrow(t) { t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
 
 function fillForm() {
   document.querySelectorAll("[data-f]").forEach(i => { i.value = doc[i.dataset.f]; });
-  document.querySelectorAll("[data-d]").forEach(i => { i.value = doc.sections[i.dataset.s][i.dataset.d]; });
-  document.querySelectorAll("textarea[data-k]").forEach(t => {
-    t.value = doc.sections[t.dataset.s].rows[+t.dataset.i][t.dataset.k];
-    autoGrow(t);
-  });
+  renderSections();
 }
 
 function bindForm() {
   document.querySelectorAll("[data-f]").forEach(i => i.addEventListener("input", () => { doc[i.dataset.f] = i.value; scheduleSave(); }));
-  document.querySelectorAll("[data-d]").forEach(i => i.addEventListener("change", () => { doc.sections[i.dataset.s][i.dataset.d] = i.value; scheduleSave(); }));
-  document.querySelectorAll("textarea[data-k]").forEach(t => t.addEventListener("input", () => {
-    doc.sections[t.dataset.s].rows[+t.dataset.i][t.dataset.k] = t.value;
-    autoGrow(t);
-    scheduleSave();
-  }));
   window.addEventListener("resize", () => document.querySelectorAll("textarea[data-k]").forEach(autoGrow));
 }
 
@@ -407,8 +444,8 @@ function askOldToken(enc, error) {
 // ── Init ──────────────────────────────────────────────────────────────────────
 
 async function startApp() {
-  buildSections();
   bindForm();
+  renderSections();
   let enc;
   try {
     enc = await fetchFile();
