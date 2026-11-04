@@ -73,8 +73,8 @@
     .row.hdr { border-top: none; background: var(--tint); }
     .row > div { padding: 8px; min-width: 0; }
     .row > div + div { border-left: 1px solid var(--edge); }
-    .row.hdr > div { font-size: 11px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: .03em; line-height: 1.35; padding: 10px 8px; }
-    .row.hdr small { display: block; font-weight: 500; text-transform: none; letter-spacing: 0; color: #666; font-size: 11px; margin-top: 2px; }
+    .row.hdr > div { font-size: 14px; font-weight: 700; color: #1a1f36; line-height: 1.35; padding: 12px 10px; }
+    .row.hdr small { display: block; font-weight: 500; color: #666; font-size: 12px; margin-top: 2px; }
     .row.hdr input[type=date] { font-size: 12px; padding: 4px 6px; margin-top: 6px; border-radius: 6px; }
     .num { font-weight: 700; font-size: 13px; color: #555; background: var(--tint); display: flex; justify-content: center; padding-top: 14px !important; }
     .row textarea { border-color: transparent; background: transparent; padding: 6px; }
@@ -215,11 +215,11 @@ const SECTIONS = [
 ];
 
 const COLS = [
-  { k: "p",  label: "Беседа #1 · Приоритет" },
-  { k: "s",  label: "Беседа #1 · Шаги для достижения" },
+  { k: "p",  label: "Приоритет" },
+  { k: "s",  label: "Шаги для достижения" },
   { k: "t",  label: "Временные рамки (по вере)" },
-  { k: "r2", label: "Беседа #2 · Обзор в середине года" },
-  { k: "r3", label: "Беседа #3 · Обзор в конце года" }
+  { k: "r2", label: "Обзор в середине года" },
+  { k: "r3", label: "Обзор в конце года" }
 ];
 
 const emptyRow = () => ({ p: "", s: "", t: "", r2: "", r3: "" });
@@ -349,11 +349,11 @@ function renderSections() {
       <div class="table">
         <div class="row hdr">
           <div></div>
-          <div>Беседа #1<small>${s.head}</small></div>
-          <div>Беседа #1<small>Шаги для их достижения</small></div>
+          <div>${s.head}</div>
+          <div>Шаги для их достижения</div>
           <div>Временные рамки<small>(по вере)</small></div>
-          <div class="hdr-date">Беседа #2<small>Обзор в середине года</small><input type="date" data-s="${s.id}" data-d="d2" value="${esc(sec.d2)}" aria-label="Дата беседы #2"></div>
-          <div class="hdr-date">Беседа #3<small>Обзор в конце года</small><input type="date" data-s="${s.id}" data-d="d3" value="${esc(sec.d3)}" aria-label="Дата беседы #3"></div>
+          <div class="hdr-date">Обзор в середине года<input type="date" data-s="${s.id}" data-d="d2" value="${esc(sec.d2)}" aria-label="Дата обзора в середине года"></div>
+          <div class="hdr-date">Обзор в конце года<input type="date" data-s="${s.id}" data-d="d3" value="${esc(sec.d3)}" aria-label="Дата обзора в конце года"></div>
         </div>
         ${rows}
       </div>
