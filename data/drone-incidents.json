@@ -4174,6 +4174,78 @@
     "detected_at": "2026-11-03T07:00:51.324140+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Адыгейске после атаки дронов загорелся логистический центр OZON04:59",
+    "url": "https://ria.ru/20261104/tsentr-2129102761.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Литовский министр осудил еврокомиссара Кубилюса из-за решения ЕК по БПЛА04:28",
+    "url": "https://ria.ru/20261104/litva-2129100975.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон нарушил воздушное пространство Молдовы: за две минуты он пролетел от Приднестровья до Сорокского района",
+    "url": "https://newsmaker.md/ru/dron-narushil-vozdushnoe-prostranstvo-moldovy-za-dve-minuty-on-proletel-ot-pridnestrovya-do-sorokskogo-raiona",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "НПЗ в Ярославле стал пятым нефтяным объектом, атакованным беспилотниками за пять ночей подряд",
+    "url": "https://ipn.md/ru/npz-v-yaroslavle-stal-pyatym-neftyanym-obektom-atakovannym-bespilotnikami-za-pyat-nochej-podryad/",
+    "excerpt": "НПЗ в Ярославле стал пятым нефтяным объектом, атакованным беспилотниками за пять ночей подряд14:20",
+    "confidence": "low",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Неизвестный дрон залетел в Молдову со стороны Украины",
+    "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-dron-zaletel-v-moldovu-so-storony-ukrainy/",
+    "excerpt": "На фоне массированных атак России на Украину в воздушное пространство Молдовы незаконно проник беспилотник. Об этом сообщил Центр воздушных…",
+    "confidence": "medium",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "În luna octombrie, spațiul aerian al Republicii Moldova a fost încălcat...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/luna-octombrie-spatiul-aerian-al-republicii-moldova-fost-incalcat-de-19-ori-iar",
+    "excerpt": "În luna octombrie, atacurile Federației Ruse asupra Ucrainei au continuat cu aceeași intensitate, provocând distrugeri și victime în rândul populației civile, inclusiv copii. În consecința acestor atacuri, spațiul aerian al Republicii Moldova a fost încălcat de 19 ori, în raioanele Căușeni, Ștefan V",
+    "confidence": "high",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "32 de obiecte explozive, nimicite de geniștii Armatei Naționale în luna oc...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/32-de-obiecte-explozive-nimicite-de-genistii-armatei-nationale-luna-octombrie",
+    "excerpt": "Pe parcursul lunii octombrie, geniștii Armatei Naționale au executat 26 de misiuni de deminare, în cadrul cărora au depistat și nimicit 34 de obiecte explozive provenite din perioada celui de-al Doilea Război Mondial. Intervențiile au avut loc în raioanele Chișinău, Ștefan Vodă, Căușeni, Anenii Noi,",
+    "confidence": "high",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-34",
+    "excerpt": "Informează: Un alt aparat de zbor fără pilot a survolat neautorizat spațiul aerian al Republicii Moldova, astăzi, la ora 17:50. Cea de-a doua dronă a pătruns în spațiul aerian național din direcția localității Mihailovka, regiunea Vinița, Ucraina, spre localitatea Sobor, raionul Soroca. Ulterior, zb",
+    "confidence": "high",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Неизвестный дрон залетел в Молдову со стороны Украины",
+    "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-dron-zaletel-v-moldovu-so-storony-ukrainy/",
+    "excerpt": "На фоне массированных атак России на Украину в воздушное пространство Молдовы незаконно проник беспилотник. Об этом сообщил Центр воздушных…",
+    "confidence": "medium",
+    "detected_at": "2026-11-04T07:00:52.075336+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
