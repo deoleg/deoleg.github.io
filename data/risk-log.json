@@ -4306,5 +4306,86 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-11-04",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: тирасполь, учения. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Жителя Рыбницы приговорили к восьми годам колонии за наркотики",
+            "url": "https://point.md/ru/novosti/proisshestviya/zhitelia-rybnitsy-prigovorili-k-vos-mi-godam-kolonii-za-narkotiki/"
+          },
+          {
+            "title": "В Молдове долги за газ и свет не будут препятствием для получения компенсаций",
+            "url": "https://point.md/ru/novosti/obschestvo/v-moldove-dolgi-za-gaz-i-svet-ne-budut-prepiatstviem-dlia-polucheniia-kompensatsii/"
+          },
+          {
+            "title": "Жителя Рыбницы приговорили к восьми годам колонии за наркотики",
+            "url": "https://point.md/ru/novosti/proisshestviya/zhitelia-rybnitsy-prigovorili-k-vos-mi-godam-kolonii-za-narkotiki/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 13 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 13
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 6 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 27.6.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-34"
+          },
+          {
+            "title": "În luna octombrie, spațiul aerian al Republicii Moldova a fost încălcat...",
+            "url": "https://www.army.md/ro/comunicate-de-presa/luna-octombrie-spatiul-aerian-al-republicii-moldova-fost-incalcat-de-19-ori-iar"
+          },
+          {
+            "title": "Дрон нарушил воздушное пространство Молдовы: за две минуты он пролетел от Приднестровья до Сорокского района",
+            "url": "https://newsmaker.md/ru/dron-narushil-vozdushnoe-prostranstvo-moldovy-za-dve-minuty-on-proletel-ot-pridnestrovya-do-sorokskogo-raiona"
+          },
+          {
+            "title": "Неизвестный дрон залетел в Молдову со стороны Украины",
+            "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-dron-zaletel-v-moldovu-so-storony-ukrainy/"
+          },
+          {
+            "title": "32 de obiecte explozive, nimicite de geniștii Armatei Naționale în luna oc...",
+            "url": "https://www.army.md/ro/comunicate-de-presa/32-de-obiecte-explozive-nimicite-de-genistii-armatei-nationale-luna-octombrie"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 31 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 31
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 7 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 7
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
