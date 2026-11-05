@@ -4246,6 +4246,38 @@
     "detected_at": "2026-11-04T07:00:52.075336+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Рязанской области из-за атаки БПЛА произошли возгорания на предприятиях07:41",
+    "url": "https://ria.ru/20261105/bpla-2129275037.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-05T07:00:52.575516+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Логистический центр российской платформы Ozon подвергся атаке беспилотников",
+    "url": "https://ipn.md/ru/logisticheskij-czentr-rossijskoj-platformy-ozon-podvergsya-atake-bespilotnikov/",
+    "excerpt": "Логистический центр российской платформы Ozon подвергся атаке беспилотников13:06",
+    "confidence": "low",
+    "detected_at": "2026-11-05T07:00:52.575516+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-35",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul  Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 04:23, de către o dronă, din direcția localității Zahnitkiv, regiunea Odesa, Ucraina spre orașul Camenca, segmen",
+    "confidence": "high",
+    "detected_at": "2026-11-05T07:00:52.575516+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Кишиневе у 18-летнего парня нашли кокаин, мефедрон и другие наркотики",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-kishineve-u-18-letnego-parnia-nashli-kokain-mefedron-i-drugie-narkotiki/",
+    "excerpt": "В Кишиневе полицейские сектора Рышкановка задержали 18-летнего молодого человека по подозрению в распространении наркотиков.",
+    "confidence": "medium",
+    "detected_at": "2026-11-05T07:00:52.575516+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
@@ -4452,6 +4484,14 @@
     "excerpt": "Военно-морские силы Румынии 4 сентября обнаружили и обезвредили обломок беспилотника со взрывной нагрузкой в Чёрном море, примерно в пяти м…",
     "confidence": "low",
     "detected_at": "2026-09-05T07:00:50.666919+00:00"
+  },
+  {
+    "date_mentioned": "5 ноября",
+    "title": "Украина атаковала Рязанскую область: на НПЗ и складе Wildberries вспыхнули пожары",
+    "url": "https://point.md/ru/novosti/v-mire/ukraina-atakovala-riazanskuiu-oblast-na-npz-i-sklade-wildberries-vspykhnuli-pozhary/",
+    "excerpt": "Украинские беспилотники в ночь на 5 ноября атаковали Рязанскую область, сообщил глава региона Павел Малков. По его словам, в результате «па…",
+    "confidence": "low",
+    "detected_at": "2026-11-05T07:00:52.575516+00:00"
   },
   {
     "date_mentioned": "7 сентября",
