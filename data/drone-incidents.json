@@ -4278,6 +4278,54 @@
     "detected_at": "2026-11-05T07:00:52.575516+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Беспилотник обнаружен в лесу недалеко от села Гординешть Резинского района",
+    "url": "https://ipn.md/ru/bespilotnik-obnaruzhen-v-lesu-nedaleko-ot-sela-gordinesht-rezinskogo-rajona/",
+    "excerpt": "Беспилотник был обнаружен в лесу неподалёку от села Гординешть Резинского района. На место происшествия выехали сапёры, чтобы установить, имеется ли …Continue Reading",
+    "confidence": "low",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTIncendiu la o rafinărie de petrol din sudul Rusiei, după un atac cu drone. Explozii au fost raportate și în alte regiuni. Război în Ucraina, ziua 1717",
+    "url": "https://www.zdg.md/stiri/live-text-incendiu-la-o-rafinarie-de-petrol-din-sudul-rusiei-dupa-un-atac-cu-drone-explozii-au-fost-raportate-si-in-alte-regiuni-razboi-in-ucraina-ziua-1717/",
+    "excerpt": "LIVE TEXTIncendiu la o rafinărie de petrol din sudul Rusiei, după un atac cu drone. Explozii au fost raportate și în alte regiuni. Război în Ucraina, ziua 1717NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "UPDATEAparatul de zbor depistat în raionul Rezina este o dronă de tip „Gerbera”, spun specialiștii",
+    "url": "https://www.zdg.md/stiri/update-aparatul-de-zbor-depistat-in-raionul-rezina-este-o-drona-de-tip-gerbera-spun-specialistii/",
+    "excerpt": "UPDATEAparatul de zbor depistat în raionul Rezina este o dronă de tip „Gerbera”, spun specialiștiiNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Румынии обнаружили обломки дрона",
+    "url": "https://point.md/ru/novosti/v-mire/v-rumynii-obnaruzhili-oblomki-drona/",
+    "excerpt": "В четверг в румынской коммуне Богочия на площади примерно 200–300 метров были обнаружены обломки дрона.",
+    "confidence": "low",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-35",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul  Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, la ora 04:23, de către o dronă, din direcția localității Zahnitkiv, regiunea Odesa, Ucraina spre orașul Camenca, segmen",
+    "confidence": "high",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В лесу в Резинском районе обнаружили объект, похожий на дрон",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-lesu-v-rezinskom-raione-obnaruzhili-ob-ekt-pokhozhii-na-dron/",
+    "excerpt": "На место выехали сотрудники технико-взрывотехнического отдела полиции, чтобы осмотреть объект и установить его происхождение.",
+    "confidence": "low",
+    "detected_at": "2026-11-06T07:00:47.850090+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
