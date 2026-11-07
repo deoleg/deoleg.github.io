@@ -4326,6 +4326,22 @@
     "detected_at": "2026-11-06T07:00:47.850090+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Дрон, обнаруженный в Гординешть, оказался аппаратом типа «Гербера» и не содержал взрывчатки",
+    "url": "https://ipn.md/ru/dron-obnaruzhennyj-v-gordinesht-okazalsya-apparatom-tipa-gerbera-i-ne-soderzhal-vzryvchatki/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-07T07:00:48.848834+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Încălcarea spațiului aerian și depistarea unor fragmente de dr...",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/incalcarea-spatiului-aerian-si-depistarea-unor-fragmente-de-drona-pe-teritoriul",
+    "excerpt": "În perioada1–6noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile. În contextul acestor atacuri, la 4 noiembrie, spațiul aerian al Republicii Moldova a fost survolat neautorizat de o dronă, în zona localităților Camenca ",
+    "confidence": "high",
+    "detected_at": "2026-11-07T07:00:48.848834+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
