@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T14:46:03.296340+02:00",
+  "updatedAt": "2026-11-07T13:34:31.129127+02:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -757,9 +757,9 @@
     {
       "home": "Everton",
       "away": "Coventry City",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 3,
+      "awayScore": 1,
+      "played": true
     },
     {
       "home": "Leeds United",
