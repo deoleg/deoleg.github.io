@@ -4342,6 +4342,38 @@
     "detected_at": "2026-11-07T07:00:48.848834+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Атака БПЛА на Ростовскую область привела к повреждению моста07:49",
+    "url": "https://ria.ru/20261108/bpla-2130059625.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-08T07:00:45.922034+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Два аэростата нарушили воздушное пространство Молдовы. Что сообщило минобороны?",
+    "url": "https://newsmaker.md/ru/dva-aerostata-narushili-vozdushnoe-prostranstvo-moldovy-chto-soobshilo-minoborony",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-11-08T07:00:45.922034+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ещё один крупный нефтеперерабатывающий завод на юге России подвергся атаке дронов",
+    "url": "https://ipn.md/ru/eshhyo-odin-krupnyj-neftepererabatyvayushhij-zavod-na-yuge-rossii-podvergsya-atake-dronov/",
+    "excerpt": "ПолитикаЕщё один крупный нефтеперерабатывающий завод на юге России подвергся атаке дроновbyBolohan Maxim06.11.2026Ещё один крупный нефтеперерабатывающий завод на юге России, расположенный в посёлке Афипский, минувшей ночью подвергся атаке беспилотников. Предприятие принадлежит группе Safmar, владель",
+    "confidence": "low",
+    "detected_at": "2026-11-08T07:00:45.922034+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-36",
+    "excerpt": "Sistemul național integrat de monitorizare informează despre două cazuri de traversare neautorizată a spațiului aerian național de către obiecte de tip aerostat. Primul caz a fost înregistrat astăzi, la ora 09:15, când un aerostat a survolat spațiul aerian național în regiunea localității Moșana, ra",
+    "confidence": "high",
+    "detected_at": "2026-11-08T07:00:45.922034+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
