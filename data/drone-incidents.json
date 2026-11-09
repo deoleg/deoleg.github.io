@@ -4374,6 +4374,38 @@
     "detected_at": "2026-11-08T07:00:45.922034+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Во Всеволожске организовали пункт временного размещения после атаки БПЛА09:22",
+    "url": "https://ria.ru/20261109/bpla-2130218565.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-09T07:00:52.744671+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Российские атаки в трёх регионах Украины: пять раненых, спасатели атакованы дроном",
+    "url": "https://ipn.md/ru/rossijskie-ataki-v-tryoh-regionah-ukrainy-pyat-ranenyh-spasateli-atakovany-dronom/",
+    "excerpt": "Российские атаки в трёх регионах Украины: пять раненых, спасатели атакованы дроном10:41",
+    "confidence": "low",
+    "detected_at": "2026-11-09T07:00:52.744671+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-36",
+    "excerpt": "Sistemul național integrat de monitorizare informează despre două cazuri de traversare neautorizată a spațiului aerian național de către obiecte de tip aerostat. Primul caz a fost înregistrat astăzi, la ora 09:15, când un aerostat a survolat spațiul aerian național în regiunea localității Moșana, ra",
+    "confidence": "high",
+    "detected_at": "2026-11-09T07:00:52.744671+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Încălcarea spațiului aerian și depistarea unor fragmente de dronă pe ter...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/incalcarea-spatiului-aerian-si-depistarea-unor-fragmente-de-drona-pe-teritoriul",
+    "excerpt": "În perioada1–6noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile. În contextul acestor atacuri, la 4 noiembrie, spațiul aerian al Republicii Moldova a fost survolat neautorizat de o dronă, în zona localităților Camenca ",
+    "confidence": "high",
+    "detected_at": "2026-11-09T07:00:52.744671+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
