@@ -4730,5 +4730,78 @@
     },
     "overall_score": 1.0,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 1.0."
+  },
+  {
+    "date": "2026-11-11",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: мид россии, путин. Взвешенный балл за сегодня: 2.4.",
+        "sources": [
+          {
+            "title": "МИД России объявил сотрудника посольства Молдовы в Москве персоной нон грата. Почему?⚡️⚡️⚡️",
+            "url": "https://newsmaker.md/ru/posla-moldovy-v-moskve-snova-vyzvali-v-mid-rossii"
+          },
+          {
+            "title": "«Путин хочет вернуть СССР»: Зеленский предупредил об угрозах для Молдовы и стран Балтии",
+            "url": "https://newsmaker.md/ru/putin-hochet-vernut-sssr-zelenskii-predupredil-ob-ugrozah-dlya-moldovy-i-stran-baltii"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы. Взвешенный балл за сегодня: 12.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-37"
+          },
+          {
+            "title": "Две российские ракеты нарушили воздушное пространство Молдовы во время массированной атаки на Украину",
+            "url": "https://newsmaker.md/ru/dve-rossiiskie-raketi-narushili-vozdushnoe-prostranstvo-moldovy-vo-vremya-massirovannoi-ataki-na-ukrainu"
+          },
+          {
+            "title": "Две крылатые ракеты пересекли воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/dve-krylatye-rakety-peresekli-vozdushnoe-prostranstvo-moldovy/"
+          },
+          {
+            "title": "Две крылатые ракеты пересекли воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/dve-krylatye-rakety-peresekli-vozdushnoe-prostranstvo-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 38 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 38
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 14 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 14
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
