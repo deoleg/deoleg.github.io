@@ -16,6 +16,22 @@
     "detected_at": "2026-10-12T07:00:45.591734+00:00"
   },
   {
+    "date_mentioned": "11 ноября",
+    "title": "Две крылатые ракеты пересекли воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/dve-krylatye-rakety-peresekli-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Две крылатые ракеты «Бандероль», запущенные во время массированных атак России на Украину, утром 11 ноября пересекли воздушное пространство Республики Молдова.",
+    "confidence": "medium",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
+    "date_mentioned": "11 ноября",
+    "title": "Две крылатые ракеты пересекли воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/dve-krylatye-rakety-peresekli-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "Две крылатые ракеты «Бандероль», запущенные во время массированных атак России на Украину, утром 11 ноября пересекли воздушное пространство…",
+    "confidence": "medium",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
     "date_mentioned": "15 октября",
     "title": "Беспилотник залетел в воздушное пространство Молдовы со стороны Украины",
     "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-zaletel-v-vozdushnoe-prostranstvo-moldovy-so-storony-ukrainy/",
@@ -4404,6 +4420,46 @@
     "excerpt": "În perioada1–6noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile. În contextul acestor atacuri, la 4 noiembrie, spațiul aerian al Republicii Moldova a fost survolat neautorizat de o dronă, în zona localităților Camenca ",
     "confidence": "high",
     "detected_at": "2026-11-09T07:00:52.744671+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "БПЛА атаковали портовую зону в Усть-Луге, есть пострадавшие07:33",
+    "url": "https://ria.ru/20261111/ataka-2130778512.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Две российские ракеты нарушили воздушное пространство Молдовы во время массированной атаки на Украину",
+    "url": "https://newsmaker.md/ru/dve-rossiiskie-raketi-narushili-vozdushnoe-prostranstvo-moldovy-vo-vremya-massirovannoi-ataki-na-ukrainu",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "LIVE TEXTUnul dintre principalele noduri logistice ale Rusiei din Marea Baltică, atacat de drone. Război în Ucraina, ziua 1722",
+    "url": "https://www.zdg.md/stiri/live-text-unul-dintre-principalele-noduri-logistice-ale-rusiei-din-marea-baltica-atacat-de-drone-razboi-in-ucraina-ziua-1722/",
+    "excerpt": "LIVE TEXTUnul dintre principalele noduri logistice ale Rusiei din Marea Baltică, atacat de drone. Război în Ucraina, ziua 1722NouExtern",
+    "confidence": "low",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ULTIMA ORĂDouă rachete de croazieră au pătruns în spațiul aerian al R. Moldova",
+    "url": "https://www.zdg.md/stiri/stiri-sociale/ultima-ora-doua-rachete-de-croaziera-au-patruns-in-spatiul-aerian-al-r-moldova/",
+    "excerpt": "ULTIMA ORĂDouă rachete de croazieră au pătruns în spațiul aerian al R. MoldovaNouSocial",
+    "confidence": "low",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-37",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, sistemul național integrat de monitorizare informează despre pătrunderea în spațiul aerian national a doua rachete de croazieră de tip Banderol (S8000). Prima racheta a traversat frontiera de stat la ora 06.04 din direcția localităț",
+    "confidence": "high",
+    "detected_at": "2026-11-11T07:00:54.024713+00:00"
   },
   {
     "date_mentioned": "21 сентября",
