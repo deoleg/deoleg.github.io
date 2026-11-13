@@ -4478,6 +4478,30 @@
     "detected_at": "2026-11-12T07:00:51.963771+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке беспилотников на Волгоградскую область погибли четыре человека09:05",
+    "url": "https://ria.ru/20261113/bespilotniki-2131265063.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-13T07:00:59.293660+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Операторы БПЛА сбивают дроны ВСУ воздушными таранамиВчера, 12:28",
+    "url": "https://ria.ru/20261112/vsu-2131078165.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-13T07:00:59.293660+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Сбой Microsoft по всему миру нарушил работу Outlook и других сервисов в 74 странах",
+    "url": "https://point.md/ru/novosti/v-mire/sboi-microsoft-po-vsemu-miru-narushil-rabotu-outlook-i-drugikh-servisov-v-74-stranakh/",
+    "excerpt": "Сбой в течение часа приобрел глобальный характер, выведя из строя продукты Microsoft в 74 странах и территориях, сообщил ресурс Downdetecto…",
+    "confidence": "low",
+    "detected_at": "2026-11-13T07:00:59.293660+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
