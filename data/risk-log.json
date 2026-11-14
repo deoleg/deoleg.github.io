@@ -4907,5 +4907,70 @@
     },
     "overall_score": 1.2,
     "day_summary": "Есть сигналы по: Официальная риторика РФ по Молдове. Общий индекс: 1.2."
+  },
+  {
+    "date": "2026-11-14",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Выставка, посвящённая легендарной гимнастке Наде Комэнеч, откроется в субботу во Дворце Республики",
+            "url": "https://ipn.md/ru/vystavka-posvyashhyonnaya-legendarnoj-gimnastke-nade-komenech-otkroetsya-v-subbotu-vo-dvorcze-respubliki/"
+          },
+          {
+            "title": "Жунгиету: У нас нет данных о планах России сократить поставки газа в Приднестровье",
+            "url": "https://point.md/ru/novosti/politika/zhungietu-u-nas-net-dannykh-o-planakh-rossii-sokratit-postavki-gaza-v-pridnestrov-e/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "border_aviation": {
+        "score": 4,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: spațiul aerian. Взвешенный балл за сегодня: 12.0.",
+        "sources": [
+          {
+            "title": "Cinci incidente aeriene în Republica Moldova, în perioada 7–13 noiembrie 2026",
+            "url": "https://www.army.md/ro/comunicate-de-presa/cinci-incidente-aeriene-republica-moldova-perioada-7-13-noiembrie-2026"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-37"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 4,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 41 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 41
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 17 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 17
+      }
+    },
+    "overall_score": 1.2,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.2."
   }
 ]
