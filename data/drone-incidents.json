@@ -4502,6 +4502,38 @@
     "detected_at": "2026-11-13T07:00:59.293660+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Дрон разрушил частный дом в Белгородской области, погибли три человека07:39",
+    "url": "https://ria.ru/20261114/ataka-2131499738.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-14T07:00:57.576293+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Четыре несанкционированных пролёта и обломки беспилотника обнаружены за неделю",
+    "url": "https://ipn.md/ru/chetyre-nesankczionirovannyh-prolyota-i-oblomki-bespilotnika-obnaruzheny-za-nedelyu/",
+    "excerpt": "Четыре несанкционированных пролёта и обломки беспилотника обнаружены за неделю16:41",
+    "confidence": "low",
+    "detected_at": "2026-11-14T07:00:57.576293+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Cinci incidente aeriene în Republica Moldova, în perioada 7–13 noiembrie 2026",
+    "url": "https://www.army.md/ro/comunicate-de-presa/cinci-incidente-aeriene-republica-moldova-perioada-7-13-noiembrie-2026",
+    "excerpt": "În perioada7–13noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile, menținând astfel și riscuri de securitate pentru statele din regiune, inclusiv Republica Moldova. În perioada indicată, au fost înregistrate patru survo",
+    "confidence": "high",
+    "detected_at": "2026-11-14T07:00:57.576293+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-37",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, sistemul național integrat de monitorizare informează despre pătrunderea în spațiul aerian national a doua rachete de croazieră de tip Banderol (S8000). Prima racheta a traversat frontiera de stat la ora 06.04 din direcția localităț",
+    "confidence": "high",
+    "detected_at": "2026-11-14T07:00:57.576293+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
