@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T14:54:43.316017+02:00",
+  "updatedAt": "2026-11-14T13:57:58.359533+02:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -432,6 +432,17 @@
       "away": "Everton",
       "awayCrest": "t11",
       "ground": "Gtech Community Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 12.0,
+      "kickoff": "2026-11-27T22:00:00+02:00",
+      "kickoffLabel": "Пт, 27 ноября, 22:00",
+      "home": "Nottingham Forest",
+      "homeCrest": "t17",
+      "away": "Chelsea",
+      "awayCrest": "t8",
+      "ground": "The City Ground",
       "status": "U"
     }
   ],
