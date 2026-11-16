@@ -5019,5 +5019,61 @@
     },
     "overall_score": 1.2,
     "day_summary": "Значимых новых сигналов за сутки не зафиксировано."
+  },
+  {
+    "date": "2026-11-16",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 3 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 3
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: аэропорт кишинёва, обломки. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Четыре несанкционированных пролёта и обломки беспилотника обнаружены за неделю",
+            "url": "https://ipn.md/ru/chetyre-nesankczionirovannyh-prolyota-i-oblomki-bespilotnika-obnaruzheny-za-nedelyu/"
+          },
+          {
+            "title": "Международный аэропорт Кишинёва эвакуировали из-за пожарной тревоги",
+            "url": "https://ipn.md/ru/mezhdunarodnyj-aeroport-kishinyova-evakuirovali-iz-za-pozharnoj-trevogi/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 43 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 43
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 19 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 19
+      }
+    },
+    "overall_score": 0.6,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.6."
   }
 ]
