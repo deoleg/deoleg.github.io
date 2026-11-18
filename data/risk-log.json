@@ -5143,5 +5143,73 @@
     },
     "overall_score": 0.8,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье. Общий индекс: 0.8."
+  },
+  {
+    "date": "2026-11-18",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 1
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 8 новых релевантных статей, сработавшие термины: dronă, spațiul aerian, воздушное пространство молдовы, дрон, обломки. Взвешенный балл за сегодня: 29.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-38"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-39"
+          },
+          {
+            "title": "Cinci incidente aeriene în Republica Moldova, în perioada 7–13 noiembri...",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/cinci-incidente-aeriene-republica-moldova-perioada-7-13-noiembrie-2026"
+          },
+          {
+            "title": "В Молдове возле Наславчи обнаружили обломки летательного аппарата в 50 метрах от границы с Украиной",
+            "url": "https://newsmaker.md/ru/v-moldove-vozle-naslavchi-obnarujili-oblomki-letatelnogo-apparata-v-50-metrah-ot-graniczy-s-ukrainoi"
+          },
+          {
+            "title": "Воздушное пространство Молдовы открыли. Самолет FLYONE из Шарм-эль-Шейха полчаса кружил у границы с Румынией",
+            "url": "https://newsmaker.md/ru/vozdushnoe-prostranstvo-moldovy-otkryli-samolet-flyone-iz-sharm-el-sheiha-polchasa-krujil-u-graniczy-s-rumyniei"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 45 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 45
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 21 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 21
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
