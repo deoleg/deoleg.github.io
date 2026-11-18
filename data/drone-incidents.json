@@ -72,6 +72,30 @@
     "detected_at": "2026-10-16T07:00:50.850329+00:00"
   },
   {
+    "date_mentioned": "17 ноября",
+    "title": "Над Молдовой пролетели 7 дронов: 5 упали вблизи населенных пунктов",
+    "url": "https://point.md/ru/novosti/proisshestviya/nad-moldovoi-proleteli-7-dronov-5-upali-vblizi-naselennykh-punktov/",
+    "excerpt": "На фоне массированных атак России на Украину сегодня, 17 ноября, в период с 15:45 до 18:10, были зафиксированы несколько случаев несанкцион…",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": "17 ноября",
+    "title": "Полиция проверяет сообщения о взрывах и падении дрона в трёх районах Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/politsiia-proveriaet-soobshcheniia-o-vzryvakh-i-padenii-drona-v-triokh-raionakh-moldovy/",
+    "excerpt": "Сегодня вечером, 17 ноября, полиция зарегистрировала многочисленные обращения из муниципия Кишинёв, а также Оргеевского и Флорештского райо…",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": "17 ноября",
+    "title": "Над Кишинёвом пролетел беспилотник",
+    "url": "https://point.md/ru/novosti/proisshestviya/nad-kishiniovom-proletel-bespilotnik/",
+    "excerpt": "В Минобороны сообщили, что на фоне массированных российских атак на Украину беспилотник типа «Герань-2» 17 ноября дважды нарушил воздушное …",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
     "date_mentioned": "17 октября",
     "title": "Румыния сбила два беспилотника над своими территориальными водами",
     "url": "https://point.md/ru/novosti/v-mire/rumyniia-sbila-dva-bespilotnika-nad-svoimi-territorial-nymi-vodami/",
@@ -4628,6 +4652,134 @@
     "excerpt": "",
     "confidence": "low",
     "detected_at": "2026-11-17T07:00:52.555479+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "На Кубани из-за падения обломков БПЛА произошли возгорания на предприятиях08:45",
+    "url": "https://ria.ru/20261118/kuban-2132267510.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове возле Наславчи обнаружили обломки летательного аппарата в 50 метрах от границы с Украиной",
+    "url": "https://newsmaker.md/ru/v-moldove-vozle-naslavchi-obnarujili-oblomki-letatelnogo-apparata-v-50-metrah-ot-graniczy-s-ukrainoi",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Молдовой за два с половиной часа пролетели семь беспилотников. Минобороны сообщило о падении пяти из них❗ ❗ ❗",
+    "url": "https://newsmaker.md/ru/nad-moldovoi-za-dva-s-polovinoi-chasa-proleteli-sem-bespilotnikov-minoborony-soobshilo-o-padenii-pyati-iz-nih",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Молдове из-за дронов временно закрыли шесть КПП на границе с Украиной (ОБНОВЛЕНО)",
+    "url": "https://newsmaker.md/ru/v-moldove-iz-za-dronov-vremenno-zakryli-shest-kpp-na-granicze-s-ukrainoi-obnovleno",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Оргеевском районе упал беспилотник? В Кишиневе и Флорештах слышали взрывы. На места выехали саперы",
+    "url": "https://newsmaker.md/ru/v-orgeevskom-raione-upal-bespilotnik-v-kishineve-i-floreshtah-slyshali-vzryvy-na-mesta-vyehali-sapery",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Санду и Попшой о беспилотнике над Кишиневом: «России нет дела до суверенитета и человеческих жизней»",
+    "url": "https://newsmaker.md/ru/sandu-i-popshoi-o-bespilotnike-nad-kishinevom-rossii-net-dela-do-suvereniteta-i-chelovecheskih-jiznei",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Воздушное пространство Молдовы открыли. Самолет FLYONE из Шарм-эль-Шейха полчаса кружил у границы с Румынией",
+    "url": "https://newsmaker.md/ru/vozdushnoe-prostranstvo-moldovy-otkryli-samolet-flyone-iz-sharm-el-sheiha-polchasa-krujil-u-graniczy-s-rumyniei",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник, предположительно, упал возле села Погорничень, в двух других населённых пунктах были слышны взрывы",
+    "url": "https://ipn.md/ru/bespilotnik-predpolozhitelno-upal-vozle-sela-pogornichen-v-dvuh-drugih-naselyonnyh-punktah-byli-slyshny-vzryvy/",
+    "excerpt": "Полиция зарегистрировала несколько сообщений о возможных происшествиях в муниципии Кишинёв и районах Орхей и Флорешть. Один из граждан сообщил, что …Continue Reading",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Семь беспилотников незаконно пересекли воздушное пространство Республики Молдова. Пять упали вблизи населённых пунктов",
+    "url": "https://ipn.md/ru/sem-bespilotnikov-nezakonno-peresekli-vozdushnoe-prostranstvo-respubliki-moldova-pyat-upali-vblizi-naselyonnyh-punktov/",
+    "excerpt": "Семь беспилотников незаконно пересекли воздушное пространство Республики Молдова. Пять упали вблизи населённых пунктов17.11.202620:00",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Самолёт FlyOne был перенаправлен из-за беспилотников, обнаруженных в воздушном пространстве Молдовы",
+    "url": "https://ipn.md/ru/samolyot-flyone-byl-perenapravlen-iz-za-bespilotnikov-obnaruzhennyh-v-vozdushnom-prostranstve-moldovy/",
+    "excerpt": "Самолёт FlyOne был перенаправлен из-за беспилотников, обнаруженных в воздушном пространстве Молдовы18:10",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Замечен новый беспилотник, направляющийся в сторону сектора Ботаника. Воздушное пространство закрыто",
+    "url": "https://ipn.md/ru/zamechen-novyj-bespilotnik-napravlyayushhijsya-v-storonu-sektora-botanika-vozdushnoe-prostranstvo-zakryto/",
+    "excerpt": "Замечен новый беспилотник, направляющийся в сторону сектора Ботаника. Воздушное пространство закрыто17:01",
+    "confidence": "low",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник типа «Герань-2» дважды нарушил воздушное пространство Республики Молдова",
+    "url": "https://ipn.md/ru/bespilotnik-tipa-geran-2-dvazhdy-narushil-vozdushnoe-prostranstvo-respubliki-moldova/",
+    "excerpt": "Беспилотник типа «Герань-2» дважды нарушил воздушное пространство Республики Молдова16:44",
+    "confidence": "medium",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Гросу: Мы осуждаем атаки России и продолжим инвестировать в национальную армию",
+    "url": "https://point.md/ru/novosti/politika/grosu-my-osuzhdaem-ataki-rossii-i-prodolzhim-investirovat-v-natsional-nuiu-armiiu/",
+    "excerpt": "Председатель парламента Игорь Гросу прокомментировал появление беспилотника типа Shahed, который сегодня двигался с юга в направлении кишин…",
+    "confidence": "low",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-39",
+    "excerpt": "UPDATE:În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, astăzi, în intervalul orelor15:45-18:10,au fost raportate mai multe zboruri neautorizate în spațiul aerian național, efectuate de aparate de zbor fără pilot. Potrivit informațiilor preliminare ale sistemului integrat de monit",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-38",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian al Republicii Moldova, astăzi, 17 noiembrie, la ora 15:49, de către o dronă de tip Geran-2, din direcția localității Grebenichi, r",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Cinci incidente aeriene în Republica Moldova, în perioada 7–13 noiembri...",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/cinci-incidente-aeriene-republica-moldova-perioada-7-13-noiembrie-2026",
+    "excerpt": "În perioada7–13noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile, menținând astfel și riscuri de securitate pentru statele din regiune, inclusiv Republica Moldova. În perioada indicată, au fost înregistrate patru survo",
+    "confidence": "high",
+    "detected_at": "2026-11-18T07:00:50.433698+00:00"
   },
   {
     "date_mentioned": "21 сентября",
