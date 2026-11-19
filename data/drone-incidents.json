@@ -136,6 +136,14 @@
     "detected_at": "2026-09-18T07:00:47.271942+00:00"
   },
   {
+    "date_mentioned": "18 ноября",
+    "title": "На Кубани повреждены 78 частных домов после атаки дронов 18 ноября09:28",
+    "url": "https://ria.ru/20261119/dom-2132585495.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
     "date_mentioned": "18 октября",
     "title": "Дроны атаковали Петербург: поражены нефтяной терминал и дата-центр VK",
     "url": "https://point.md/ru/novosti/v-mire/drony-atakovali-peterburg-porazheny-neftianoi-terminal-i-data-tsentr-vk/",
@@ -4780,6 +4788,70 @@
     "excerpt": "În perioada7–13noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile, menținând astfel și riscuri de securitate pentru statele din regiune, inclusiv Republica Moldova. În perioada indicată, au fost înregistrate patru survo",
     "confidence": "high",
     "detected_at": "2026-11-18T07:00:50.433698+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "МИД вручил российскому послу ноту протеста. Озеров: Нет доказательств того, что беспилотники российские",
+    "url": "https://ipn.md/ru/mid-vruchil-rossijskomu-poslu-notu-protesta-ozerov-net-dokazatelstv-togo-chto-bespilotniki-rossijskie/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Василе Тофан призывает ускорить принятие закона об оборонной промышленности после пролёта дронов",
+    "url": "https://ipn.md/ru/vasile-tofan-prizyvaet-uskorit-prinyatie-zakona-ob-oboronnoj-promyshlennosti-posle-prolyota-dronov/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Посол России Олег Озеров вызван в МИД после инцидента с семью беспилотниками",
+    "url": "https://ipn.md/ru/posol-rossii-oleg-ozerov-vyzvan-v-mid-posle-inczidenta-s-semyu-bespilotnikami/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Япония, Южная Корея и Тайвань отреагировали на несанкционированные вторжения российских военных самолётов",
+    "url": "https://ipn.md/ru/yaponiya-yuzhnaya-koreya-i-tajvan-otreagirovali-na-nesankczionirovannye-vtorzheniya-rossijskih-voennyh-samolyotov/",
+    "excerpt": "ПолитикаЯпония, Южная Корея и Тайвань отреагировали на несанкционированные вторжения российских военных самолётовbyBolohan Maxim17.11.2026Япония подняла в воздух истребители после того, как два российских военных самолёта нарушили её воздушное пространство. Южная Корея и Тайвань также отреагировали ",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Судно, затонувшее во вторник в Чёрном море, предположительно, было атаковано четырьмя беспилотниками",
+    "url": "https://ipn.md/ru/sudno-zatonuvshee-vo-vtornik-v-chyornom-more-predpolozhitelno-bylo-atakovano-chetyrmya-bespilotnikami/",
+    "excerpt": "Судно, затонувшее во вторник в Чёрном море, предположительно, было атаковано четырьмя беспилотниками14:54",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Гросу: Закон о производстве дронов в Молдове будет принят до конца года",
+    "url": "https://point.md/ru/novosti/politika/grosu-zakon-o-proizvodstve-dronov-v-moldove-budet-priniat-do-kontsa-goda/",
+    "excerpt": "Правительство разработало специальный законопроект, который позволит запустить в стране производство беспилотников. Документ планируют принять до конца текущего года. Об этом сооб…",
+    "confidence": "medium",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Атаки дронов сократили переработку нефти в России на 45%",
+    "url": "https://point.md/ru/novosti/v-mire/ataki-dronov-sokratili-pererabotku-nefti-v-rossii-na-45/",
+    "excerpt": "По данным Reuters, из-за украинских атак дронов нарушена работа 15 из 35 крупных НПЗ России. Объемы переработки нефти временно снизились по…",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Момент взрыва дрона во Флорештском районе попал на видео",
+    "url": "https://point.md/ru/novosti/proisshestviya/moment-vzryva-drona-vo-floreshtskom-raione-popal-na-video/",
+    "excerpt": "Речь идёт о беспилотнике, который, по предварительным данным, упал во Флорештском районе после несанкционированного пролёта через воздушное…",
+    "confidence": "low",
+    "detected_at": "2026-11-19T07:00:51.426716+00:00"
   },
   {
     "date_mentioned": "21 сентября",
