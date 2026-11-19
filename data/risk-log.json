@@ -5211,5 +5211,61 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-11-19",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 2,
+        "days_since_last_signal": 2
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 6 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 6
+      },
+      "border_aviation": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: дрон. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Замечен новый беспилотник, направляющийся в сторону сектора Ботаника. Воздушное пространство закрыто",
+            "url": "https://ipn.md/ru/zamechen-novyj-bespilotnik-napravlyayushhijsya-v-storonu-sektora-botanika-vozdushnoe-prostranstvo-zakryto/"
+          },
+          {
+            "title": "Гросу: Закон о производстве дронов в Молдове будет принят до конца года",
+            "url": "https://point.md/ru/novosti/politika/grosu-zakon-o-proizvodstve-dronov-v-moldove-budet-priniat-do-kontsa-goda/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 46 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 46
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 22 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 22
+      }
+    },
+    "overall_score": 0.6,
+    "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.6."
   }
 ]
