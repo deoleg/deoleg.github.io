@@ -96,6 +96,14 @@
     "detected_at": "2026-11-18T07:00:50.433698+00:00"
   },
   {
+    "date_mentioned": "17 ноября",
+    "title": "ПВО Молдовы не обеспечивает полного прикрытия и защищает только критические объекты",
+    "url": "https://point.md/ru/novosti/obschestvo/pvo-moldovy-ne-obespechivaet-polnogo-prikrytiia-i-zashchishchaet-tol-ko-kriticheskie-ob-ekty/",
+    "excerpt": "Беспилотник, пролетевший над Кишинёвом 17 ноября, предположительно, трижды проникал в воздушное пространство Молдовы со стороны Приднестров…",
+    "confidence": "medium",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
     "date_mentioned": "17 октября",
     "title": "Румыния сбила два беспилотника над своими территориальными водами",
     "url": "https://point.md/ru/novosti/v-mire/rumyniia-sbila-dva-bespilotnika-nad-svoimi-territorial-nymi-vodami/",
@@ -198,6 +206,22 @@
     "excerpt": "Инцидент произошел в ночь на 2 сентября в приграничной зоне, на окраине села Крокмаз. Пограничники сначала услышали взрыв, а позднее обнару…",
     "confidence": "medium",
     "detected_at": "2026-09-02T07:00:59.713260+00:00"
+  },
+  {
+    "date_mentioned": "20 ноября",
+    "title": "Беспилотник нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-6/",
+    "excerpt": "Дрон пересек воздушное пространство Молдовы в ночь на 20 ноября на фоне массированных атак России по Украине. Объект находился над территор…",
+    "confidence": "medium",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": "20 ноября",
+    "title": "Беспилотник нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-6/",
+    "excerpt": "Дрон пересек воздушное пространство Молдовы в ночь на 20 ноября на фоне массированных атак России по Украине. Объект находился над территор…",
+    "confidence": "medium",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
   },
   {
     "date_mentioned": "2022-10-31",
@@ -4852,6 +4876,62 @@
     "excerpt": "Речь идёт о беспилотнике, который, по предварительным данным, упал во Флорештском районе после несанкционированного пролёта через воздушное…",
     "confidence": "low",
     "detected_at": "2026-11-19T07:00:51.426716+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Черным морем пропала связь с натовским БПЛА01:27",
+    "url": "https://ria.ru/20261120/nato-2132845833.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Эксперт сравнил борьбу с FPV-дронами с ловлей пуль вместо поиска снайпера09:38",
+    "url": "https://ria.ru/20261120/drony-2132880246.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник вновь нарушил воздушное пространство Молдовы. Что сообщило минобороны?",
+    "url": "https://newsmaker.md/ru/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-i-vernulsya-v-ukrainu-chto-soobshilo-minoborony",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Игорь Гросу: Закон, разрешающий производство дронов, будет принят до конца декабря",
+    "url": "https://ipn.md/ru/igor-grosu-zakon-razreshayushhij-proizvodstvo-dronov-budet-prinyat-do-koncza-dekabrya/",
+    "excerpt": "ВажноПолитикаИгорь Гросу: Закон, разрешающий производство дронов, будет принят до конца декабряbyElena Nistor19.11.2026Закон, который позволит производить беспилотники на территории Республики Молдова, планируется принять до конца декабря. Об этом заявил председатель Парламента Игорь Гросу. По его с",
+    "confidence": "high",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-40",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, pe 20 noiembrie, ora 1:19. Obiectul de zbor fără pilot a survolat spațiul aerian din direcția localitătii Sadkivți, regi",
+    "confidence": "high",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Armata Națională, parte a eforturilor consolidate ale țării privind situa...",
+    "url": "https://www.army.md/ro/comunicate-de-presa/armata-nationala-parte-eforturilor-consolidate-ale-tarii-privind-situatiile-de",
+    "excerpt": "Reprezentanți ai Armatei Naționale au participat astăzi la primul Congres Național de Reziliență, desfășurat la Chișinău, ce a marcat lansarea campaniei naționale de pregătire a populației pentru situații de criză, în cadrul Programului „Moldova Pregătită”. Campania este coordonată de Guvernul Repub",
+    "confidence": "high",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Жители села Погребень рассказали о взрыве дрона: Думали, упадет на дома",
+    "url": "https://point.md/ru/novosti/proisshestviya/zhiteli-sela-pogreben-rasskazali-o-vzryve-drona-dumali-upadet-na-doma/",
+    "excerpt": "Жители сел, вблизи которых взорвались беспилотники, убеждены, что лишь вопрос времени, когда смертоносные дроны начнут падать на жилые дома.",
+    "confidence": "low",
+    "detected_at": "2026-11-20T07:00:57.442399+00:00"
   },
   {
     "date_mentioned": "21 сентября",
