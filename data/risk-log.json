@@ -5267,5 +5267,87 @@
     },
     "overall_score": 0.6,
     "day_summary": "Есть сигналы по: Пограничная/авиационная обстановка. Общий индекс: 0.6."
+  },
+  {
+    "date": "2026-11-20",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 2 новых релевантных статей, сработавшие термины: тирасполь. Взвешенный балл за сегодня: 2.0.",
+        "sources": [
+          {
+            "title": "Тирасполь готовится ввести налог на электромобили",
+            "url": "https://ipn.md/ru/tiraspol-gotovitsya-vvesti-nalog-na-elektromobili/"
+          },
+          {
+            "title": "Тирасполь готовится ввести налог на электромобили",
+            "url": "https://point.md/ru/novosti/ekonomika/tiraspol-gotovitsia-vvesti-nalog-na-elektromobili/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: путин. Взвешенный балл за сегодня: 1.2.",
+        "sources": [
+          {
+            "title": "«Катализатор — ваш дедушка Путин»: Парламент Молдовы ратифицировал соглашение с Украиной на фоне критики оппозиции",
+            "url": "https://newsmaker.md/ru/katalizator-vash-dedushka-putin-parlament-moldovy-ratificziroval-soglashenie-s-ukrainoi-na-fone-kritiki-oppoziczii"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 6 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 17.4.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-40"
+          },
+          {
+            "title": "Беспилотник нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-6/"
+          },
+          {
+            "title": "Беспилотник нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-6/"
+          },
+          {
+            "title": "Беспилотник вновь нарушил воздушное пространство Молдовы. Что сообщило минобороны?",
+            "url": "https://newsmaker.md/ru/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-i-vernulsya-v-ukrainu-chto-soobshilo-minoborony"
+          },
+          {
+            "title": "ПВО Молдовы не обеспечивает полного прикрытия и защищает только критические объекты",
+            "url": "https://point.md/ru/novosti/obschestvo/pvo-moldovy-ne-obespechivaet-polnogo-prikrytiia-i-zashchishchaet-tol-ko-kriticheskie-ob-ekty/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 47 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 47
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 23 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 23
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
