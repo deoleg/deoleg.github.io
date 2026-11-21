@@ -224,6 +224,30 @@
     "detected_at": "2026-11-20T07:00:57.442399+00:00"
   },
   {
+    "date_mentioned": "20 ноября",
+    "title": "Беспилотник несанкционированно пересёк воздушное пространство страны в ночь с 19 на 20 ноября",
+    "url": "https://ipn.md/ru/bespilotnik-nesankczionirovanno-peresyok-vozdushnoe-prostranstvo-strany-v-noch-s-19-na-20-noyabrya/",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": "20 ноября",
+    "title": "Беспилотник вновь нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-vnov-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "20 ноября в воздушном пространстве Республики Молдова был зафиксирован очередной несанкционированный пролёт беспилотного летательного аппар…",
+    "confidence": "medium",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": "20 ноября",
+    "title": "Беспилотник нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-7/",
+    "excerpt": "Дрон пересек воздушное пространство Молдовы в ночь на 20 ноября на фоне массированных атак России по Украине. Объект находился над территор…",
+    "confidence": "medium",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
     "date_mentioned": "2022-10-31",
     "title": "Обломки дрона с взрывчаткой обнаружены в Наславче (Окницкий район)",
     "url": "https://newsmaker.md/ru/bolee-50-dronov-i-raket-narushili-vozdushnoe-prostranstvo-moldovy-s-nachala-voiny-v-ukraine-dannye-mid-i-minoborony",
@@ -4932,6 +4956,70 @@
     "excerpt": "Жители сел, вблизи которых взорвались беспилотники, убеждены, что лишь вопрос времени, когда смертоносные дроны начнут падать на жилые дома.",
     "confidence": "low",
     "detected_at": "2026-11-20T07:00:57.442399+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Ленинградской областью сбили 61 беспилотник08:39",
+    "url": "https://ria.ru/20261121/bpla-2133091018.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Над Ленинградской областью сбили 38 БПЛА06:22",
+    "url": "https://ria.ru/20261121/bpla-2133083715.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Ещё один беспилотник незаконно пролетел в воздушном пространстве Республики Молдова",
+    "url": "https://ipn.md/ru/eshhyo-odin-bespilotnik-nezakonno-proletel-v-vozdushnom-prostranstve-respubliki-moldova/",
+    "excerpt": "В пятницу днём беспилотник незаконно находился в воздушном пространстве Республики Молдова примерно одну минуту. Летательный аппарат вошёл на территорию страны …Continue Reading",
+    "confidence": "medium",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Польше упали две ракеты и беспилотник. Премьер-министр Туск созвал экстренное совещание",
+    "url": "https://ipn.md/ru/v-polshe-upali-dve-rakety-i-bespilotnik-premer-ministr-tusk-sozval-ekstrennoe-soveshhanie/",
+    "excerpt": "В Польше упали две ракеты и беспилотник. Премьер-министр Туск созвал экстренное совещание14:21",
+    "confidence": "low",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Zece incidente aeriene în Republica Moldova, în perioada 14–20 noiembrie 2026",
+    "url": "https://www.army.md/ro/comunicate-de-presa/zece-incidente-aeriene-republica-moldova-perioada-14-20-noiembrie-2026",
+    "excerpt": "În perioada14–20noiembrie 2026, atacurile Federației Ruse asupra Ucrainei au continuat, provocând distrugeri și victime în rândul populației civile, menținând astfel și riscuri de securitate pentru statele din regiune, inclusiv Republica Moldova. Potrivit datelor Centrului Operații Aeriene al Armate",
+    "confidence": "high",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-41",
+    "excerpt": "În contextul continuării atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale informează despre un alt zbor neautorizat în spațiul aerian național, pe 20 noiembrie, ora 14:48. Obiectul de zbor fără pilot a survolat spațiul aerian din direcția localităt",
+    "confidence": "high",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-40",
+    "excerpt": "În contextul atacurilor masive ale Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale informează despre un zbor neautorizat în spațiul aerian național, pe 20 noiembrie, ora 1:19. Obiectul de zbor fără pilot a survolat spațiul aerian din direcția localitătii Sadkivți, regi",
+    "confidence": "high",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Armata Națională, parte a eforturilor consolidate ale țării pri...",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/armata-nationala-parte-eforturilor-consolidate-ale-tarii-privind-situatiile-de",
+    "excerpt": "Reprezentanți ai Armatei Naționale au participat astăzi la primul Congres Național de Reziliență, desfășurat la Chișinău, ce a marcat lansarea campaniei naționale de pregătire a populației pentru situații de criză, în cadrul Programului „Moldova Pregătită”. Campania este coordonată de Guvernul Repub",
+    "confidence": "high",
+    "detected_at": "2026-11-21T07:00:52.553365+00:00"
   },
   {
     "date_mentioned": "21 сентября",
