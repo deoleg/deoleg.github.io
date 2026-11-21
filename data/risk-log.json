@@ -5349,5 +5349,82 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Официальная риторика РФ по Молдове, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-11-21",
+    "factors": {
+      "transnistria_military": {
+        "score": 2,
+        "reasoning": "Найдено 3 новых релевантных статей, сработавшие термины: приднестровье, учения. Взвешенный балл за сегодня: 3.2.",
+        "sources": [
+          {
+            "title": "В Приднестровье освободили двух граждан Молдовы, которых незаконно удерживали в тюрьме с 2024 года",
+            "url": "https://newsmaker.md/ru/v-pridnestrove-osvobodili-dvuh-grajdan-moldovy-kotoryh-nezakonno-uderjivali-v-regione-s-2024-goda"
+          },
+          {
+            "title": "В Кишинёве спецназ провёл учения по освобождению заложников на вокзале",
+            "url": "https://point.md/ru/novosti/obschestvo/v-kishiniove-spetsnaz-proviol-ucheniia-po-osvobozhdeniiu-zalozhnikov-na-vokzale/"
+          },
+          {
+            "title": "Moldovagaz восстановил поставки газа в Приднестровье",
+            "url": "https://point.md/ru/novosti/ekonomika/moldovagaz-vosstanovil-postavki-gaza-v-pridnestrov-e/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "border_aviation": {
+        "score": 5,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: spațiul aerian, воздушное пространство молдовы, дрон. Взвешенный балл за сегодня: 17.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-41"
+          },
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-40"
+          },
+          {
+            "title": "Беспилотник нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-narushil-vozdushnoe-prostranstvo-moldovy-7/"
+          },
+          {
+            "title": "Беспилотник вновь нарушил воздушное пространство Молдовы",
+            "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-vnov-narushil-vozdushnoe-prostranstvo-moldovy/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 5,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 0,
+        "reasoning": "Нет новых данных 48 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 48
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 24 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 24
+      }
+    },
+    "overall_score": 1.6,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.6."
   }
 ]
