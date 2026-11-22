@@ -5022,6 +5022,46 @@
     "detected_at": "2026-11-21T07:00:52.553365+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В минобороны Молдовы сообщили, что реактивный беспилотник дважды нарушил воздушное пространство страны",
+    "url": "https://newsmaker.md/ru/v-minoborony-moldovy-soobshili-chto-reaktivnyi-bespilotnik-dvajdy-narushil-vozdushnoe-prostranstvo-strany",
+    "excerpt": "",
+    "confidence": "high",
+    "detected_at": "2026-11-22T07:00:53.424950+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник с реактивным двигателем дважды нарушил воздушное пространство Республики Молдова",
+    "url": "https://ipn.md/ru/bespilotnik-s-reaktivnym-dvigatelem-dvazhdy-narushil-vozdushnoe-prostranstvo-respubliki-moldova/",
+    "excerpt": "Беспилотник с реактивным двигателем дважды нарушил воздушное пространство Республики Молдова21.11.202611:59",
+    "confidence": "medium",
+    "detected_at": "2026-11-22T07:00:53.424950+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Костюк об идее производства дронов в Молдове: Мы даже майонез из России не заменили",
+    "url": "https://point.md/ru/novosti/politika/kostiuk-ob-idee-proizvodstva-dronov-v-moldove-my-dazhe-maionez-iz-rossii-ne-zamenili/",
+    "excerpt": "Депутат Василе Костюк требует найти способы защиты Республики Молдова от беспилотников, однако считает опасной идею производства оборонного…",
+    "confidence": "medium",
+    "detected_at": "2026-11-22T07:00:53.424950+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-42",
+    "excerpt": "În contextul atacurilor Federației Ruse asupra Ucrainei, Centrul Operații Aeriene al Armatei Naționale informează că astăzi, o dronă cu propulsie reactivă a traversat în mod repetat frontiera de stat, după cum urmează: Ora 11:20 — Drona a pătruns în spațiul aerian al Republicii Moldova din direcția ",
+    "confidence": "high",
+    "detected_at": "2026-11-22T07:00:53.424950+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Беспилотник дважды нарушил воздушное пространство Молдовы",
+    "url": "https://point.md/ru/novosti/proisshestviya/bespilotnik-dvazhdy-narushil-vozdushnoe-prostranstvo-moldovy/",
+    "excerpt": "На фоне атак Российской Федерации на Украину Центр воздушных операций Национальной армии сообщил, что сегодня беспилотник с реактивным двиг…",
+    "confidence": "medium",
+    "detected_at": "2026-11-22T07:00:53.424950+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
