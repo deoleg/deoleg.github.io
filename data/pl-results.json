@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T15:07:54.569454+02:00",
+  "updatedAt": "2026-11-23T17:44:57.324014+02:00",
   "season": "English Premier League Season 2026/2027",
   "teams": [
     {
@@ -876,16 +876,16 @@
     {
       "home": "Hull City",
       "away": "Brighton & Hove Albion",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 2,
+      "awayScore": 0,
+      "played": true
     },
     {
       "home": "Liverpool",
       "away": "Manchester United",
-      "homeScore": null,
-      "awayScore": null,
-      "played": false
+      "homeScore": 4,
+      "awayScore": 0,
+      "played": true
     },
     {
       "home": "Brentford",
