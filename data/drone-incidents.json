@@ -5070,6 +5070,54 @@
     "detected_at": "2026-11-23T07:00:54.389147+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "Российский военный сбил украинский дрон каской08:24",
+    "url": "https://ria.ru/20261124/dnr-2133540328.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "(ОБНОВЛЕНО) В Приднестровье, предположительно, упал и взорвался дрон. Очевидцы сообщают о пожаре возле АЗС",
+    "url": "https://newsmaker.md/ru/v-pridnestrove-predpolojitelno-upal-i-vzorvalsya-dron-ochevidczy-soobshayut-o-pojare-vozle-azs",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В приднестровском регионе якобы упал и взорвался беспилотник",
+    "url": "https://ipn.md/ru/v-pridnestrovskom-regione-yakoby-upal-i-vzorvalsya-bespilotnik/",
+    "excerpt": "В приднестровском регионе якобы упал и взорвался беспилотник23.11.202621:17",
+    "confidence": "low",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-43",
+    "excerpt": "Sistemul național integrat de monitorizare informează că, la 23 noiembrie 2026, ora 18:44, a fost înregistrată survolarea neautorizată a spațiului aerian național de către o dronă de atac, care a pătruns din direcția localității Grădinița, regiunea Odesa, Ucraina, în direcția localității Nezavertail",
+    "confidence": "high",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Приднестровье произошел взрыв: там опровергают информацию о взорвавшемся дроне",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-proizoshel-vzryv-tam-oprovergaiut-informatsiiu-o-vzorvavshemsia-drone/",
+    "excerpt": "Власти непризнанной республики утверждают, что взрыв, который приняли за упавший дрон, на самом деле произошел в хозпостройке на окраине Не…",
+    "confidence": "medium",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Приднестровье предположительно упал и взорвался дрон",
+    "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-predpolozhitel-no-upal-i-vzorvalsia-dron/",
+    "excerpt": "Недалеко от Днестровска, между городом и селом Незавертайловка, предположительно упал и взорвался дрон.",
+    "confidence": "medium",
+    "detected_at": "2026-11-24T07:00:58.348292+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
