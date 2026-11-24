@@ -5538,5 +5538,90 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Экономические индикаторы. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-11-24",
+    "factors": {
+      "transnistria_military": {
+        "score": 3,
+        "reasoning": "Найдено 5 новых релевантных статей, сработавшие термины: боеприпасы, приднестровье. Взвешенный балл за сегодня: 6.2.",
+        "sources": [
+          {
+            "title": "В случае войны производители оружия в РМ будут выполнять госзаказы в первую очередь",
+            "url": "https://point.md/ru/novosti/obschestvo/v-sluchae-voiny-proizvoditeli-oruzhiia-v-moldove-budut-vypolniat-goszakazy-v-pervuiu-ochered/"
+          },
+          {
+            "title": "(ОБНОВЛЕНО) В Приднестровье, предположительно, упал и взорвался дрон. Очевидцы сообщают о пожаре возле АЗС",
+            "url": "https://newsmaker.md/ru/v-pridnestrove-predpolojitelno-upal-i-vzorvalsya-dron-ochevidczy-soobshayut-o-pojare-vozle-azs"
+          },
+          {
+            "title": "В Приднестровье хотят повысить ставку «сбора-виньетки» на 20–25%",
+            "url": "https://point.md/ru/novosti/ekonomika/v-pridnestrov-e-khotiat-povysit-stavku-sbora-vin-etki-na-20-25/"
+          },
+          {
+            "title": "В Приднестровье произошел взрыв: там опровергают информацию о взорвавшемся дроне",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-proizoshel-vzryv-tam-oprovergaiut-informatsiiu-o-vzorvavshemsia-drone/"
+          },
+          {
+            "title": "В Приднестровье предположительно упал и взорвался дрон",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-predpolozhitel-no-upal-i-vzorvalsia-dron/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 4 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 4
+      },
+      "border_aviation": {
+        "score": 3,
+        "reasoning": "Найдено 4 новых релевантных статей, сработавшие термины: dronă, дрон. Взвешенный балл за сегодня: 6.2.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/index.php/ro/comunicate-de-presa/informeaza-43"
+          },
+          {
+            "title": "(ОБНОВЛЕНО) В Приднестровье, предположительно, упал и взорвался дрон. Очевидцы сообщают о пожаре возле АЗС",
+            "url": "https://newsmaker.md/ru/v-pridnestrove-predpolojitelno-upal-i-vzorvalsya-dron-ochevidczy-soobshayut-o-pojare-vozle-azs"
+          },
+          {
+            "title": "В Приднестровье произошел взрыв: там опровергают информацию о взорвавшемся дроне",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-proizoshel-vzryv-tam-oprovergaiut-informatsiiu-o-vzorvavshemsia-drone/"
+          },
+          {
+            "title": "В Приднестровье предположительно упал и взорвался дрон",
+            "url": "https://point.md/ru/novosti/proisshestviya/v-pridnestrov-e-predpolozhitel-no-upal-i-vzorvalsia-dron/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 3,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Нет новых данных 1 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 1
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 27 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 27
+      }
+    },
+    "overall_score": 1.4,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
   }
 ]
