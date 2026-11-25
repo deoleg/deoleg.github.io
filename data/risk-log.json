@@ -5623,5 +5623,62 @@
     },
     "overall_score": 1.4,
     "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 1.4."
+  },
+  {
+    "date": "2026-11-25",
+    "factors": {
+      "transnistria_military": {
+        "score": 1,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: тирасполь. Взвешенный балл за сегодня: 1.0.",
+        "sources": [
+          {
+            "title": "Тирасполь сообщил лишь спустя неделю, что МГРЭС работала на угле",
+            "url": "https://ipn.md/ru/tiraspol-soobshhil-lish-spustya-nedelyu-chto-mgres-rabotala-na-ugle/"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 1,
+        "days_since_last_signal": 0
+      },
+      "russian_rhetoric": {
+        "score": 0,
+        "reasoning": "Нет новых данных 5 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 5
+      },
+      "border_aviation": {
+        "score": 2,
+        "reasoning": "Найдено 1 новых релевантных статей, сработавшие термины: dronă. Взвешенный балл за сегодня: 3.0.",
+        "sources": [
+          {
+            "title": "Informează!",
+            "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-43"
+          }
+        ],
+        "carried_forward": false,
+        "peak_score": 2,
+        "days_since_last_signal": 0
+      },
+      "economic": {
+        "score": 1,
+        "reasoning": "Нет новых данных 2 дн. подряд — значение пока держится (2 дн. без изменений перед началом затухания).",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 1,
+        "days_since_last_signal": 2
+      },
+      "travel_advisories": {
+        "score": 0,
+        "reasoning": "Нет новых данных 28 дн. подряд — значение затухло до 0.",
+        "sources": [],
+        "carried_forward": true,
+        "peak_score": 3,
+        "days_since_last_signal": 28
+      }
+    },
+    "overall_score": 0.8,
+    "day_summary": "Есть сигналы по: Военная активность в Приднестровье, Пограничная/авиационная обстановка. Общий индекс: 0.8."
   }
 ]
