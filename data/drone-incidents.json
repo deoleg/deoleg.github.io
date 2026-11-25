@@ -5118,6 +5118,46 @@
     "detected_at": "2026-11-24T07:00:58.348292+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "При атаке беспилотников в Самарской области погиб человек07:49",
+    "url": "https://ria.ru/20261125/ataka-2133763830.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-25T07:00:58.232304+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ВС России перешли на массовое применение антидроновых патронов IGLA07:09",
+    "url": "https://ria.ru/20261125/spetsoperatsiya-2133759311.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-25T07:00:58.232304+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Дрон с наркотиками и мобильными телефонами перехватили над одной из тюрем Италии",
+    "url": "https://ipn.md/ru/dron-s-narkotikami-i-mobilnymi-telefonami-perehvatili-nad-odnoj-iz-tyurem-italii/",
+    "excerpt": "ОбществоДрон с наркотиками и мобильными телефонами перехватили над одной из тюрем ИталииbyOctavian Bratosin23.11.2026Сотрудники службы охраны предотвратили попытку доставки наркотиков и мобильных телефонов в исправительное учреждение города Фрозиноне, Италия. По данным Rainews, охранники подняли тре",
+    "confidence": "low",
+    "detected_at": "2026-11-25T07:00:58.232304+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Австрии разрешат критически важным объектам самостоятельно бороться с дронами",
+    "url": "https://point.md/ru/novosti/v-mire/v-avstrii-razreshat-kriticheski-vazhnym-ob-ektam-samostoiatel-no-borot-sia-s-dronami/",
+    "excerpt": "В связи с неоднократными нарушениями воздушного пространства стран ЕС российскими дронами правительство Австрии представило общегосударстве…",
+    "confidence": "low",
+    "detected_at": "2026-11-25T07:00:58.232304+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Informează!",
+    "url": "https://www.army.md/ro/comunicate-de-presa/informeaza-43",
+    "excerpt": "Sistemul național integrat de monitorizare informează că, la 23 noiembrie 2026, ora 18:44, a fost înregistrată survolarea neautorizată a spațiului aerian național de către o dronă de atac, care a pătruns din direcția localității Grădinița, regiunea Odesa, Ucraina, în direcția localității Nezavertail",
+    "confidence": "high",
+    "detected_at": "2026-11-25T07:00:58.232304+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
