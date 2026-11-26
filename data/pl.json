@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T17:21:11.678776+02:00",
+  "updatedAt": "2026-11-26T16:48:17.410022+02:00",
   "season": "English Premier League Season 2026/2027",
   "standings": [
     {
@@ -443,6 +443,94 @@
       "away": "Ipswich Town",
       "awayCrest": "t40",
       "ground": "Coventry Building Society Arena",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T21:30:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 21:30",
+      "home": "Chelsea",
+      "homeCrest": "t8",
+      "away": "Crystal Palace",
+      "awayCrest": "t31",
+      "ground": "Stamford Bridge",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T21:30:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 21:30",
+      "home": "Hull City",
+      "homeCrest": "t88",
+      "away": "Nottingham Forest",
+      "awayCrest": "t17",
+      "ground": "The MKM Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T21:30:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 21:30",
+      "home": "Liverpool",
+      "homeCrest": "t14",
+      "away": "Sunderland",
+      "awayCrest": "t56",
+      "ground": "Anfield",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T21:30:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 21:30",
+      "home": "Manchester City",
+      "homeCrest": "t43",
+      "away": "Leeds United",
+      "awayCrest": "t2",
+      "ground": "Etihad Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T22:15:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 22:15",
+      "home": "Aston Villa",
+      "homeCrest": "t7",
+      "away": "Everton",
+      "awayCrest": "t11",
+      "ground": "Villa Park",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T22:15:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 22:15",
+      "home": "Bournemouth",
+      "homeCrest": "t91",
+      "away": "Brighton & Hove Albion",
+      "awayCrest": "t36",
+      "ground": "Vitality Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T22:15:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 22:15",
+      "home": "Brentford",
+      "homeCrest": "t94",
+      "away": "Arsenal",
+      "awayCrest": "t3",
+      "ground": "Gtech Community Stadium",
+      "status": "U"
+    },
+    {
+      "gameweek": 13.0,
+      "kickoff": "2026-12-02T22:15:00+02:00",
+      "kickoffLabel": "Ср, 2 декабря, 22:15",
+      "home": "Newcastle United",
+      "homeCrest": "t4",
+      "away": "Manchester United",
+      "awayCrest": "t1",
+      "ground": "St. James' Park",
       "status": "U"
     }
   ],
