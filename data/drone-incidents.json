@@ -5206,6 +5206,70 @@
     "detected_at": "2026-11-27T07:00:54.159608+00:00"
   },
   {
+    "date_mentioned": null,
+    "title": "В Брянской области дрон атаковал служебный автобус, есть пострадавшие09:26",
+    "url": "https://ria.ru/20261128/dron-2134576127.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ВСУ пожаловались на проблемы с потерей БПЛА01:51",
+    "url": "https://ria.ru/20261128/ukraina-2134556623.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "В Иране считают, что за атакой дронов по Кувейту, вероятно, стоит Украина00:29",
+    "url": "https://ria.ru/20261128/ataka-2134546117.html",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "СМИ: США отразили атаку БПЛА над британской базой, но не перехватили их09:15",
+    "url": "https://ria.ru/20261128/bpla-2134574870.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "ПВО за ночь сбила 1246 беспилотников08:56",
+    "url": "https://ria.ru/20261128/bpla-2134572039.html?rcmd_alg=slotter",
+    "excerpt": "",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Германия поможет Молдове защитить воздушное пространство: выделит €20 млн на современную систему борьбы с дронами",
+    "url": "https://newsmaker.md/ru/germaniya-pomojet-moldove-zashitit-vozdushnoe-prostranstvo-vydelit-%e2%82%ac20-mln-na-sovremennuyu-sistemu-borby-s-dronami",
+    "excerpt": "",
+    "confidence": "medium",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Альянс дронов Украина-ЕС планирует втрое увеличить число участников",
+    "url": "https://point.md/ru/novosti/v-mire/al-ians-dronov-ukraina-es-planiruet-vtroe-uvelichit-chislo-uchastnikov/",
+    "excerpt": "Инициатива по промышленному сотрудничеству между ЕС и Украиной в сфере беспилотников готовится к значительному расширению круга компаний-уч…",
+    "confidence": "low",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
+    "date_mentioned": null,
+    "title": "Germania sprijină dezvoltarea apărării antiaeriene a Republicii Moldova",
+    "url": "https://www.army.md/ro/comunicate-de-presa/germania-sprijina-dezvoltarea-apararii-antiaeriene-republicii-moldova",
+    "excerpt": "Republica Moldova și Republica Federală Germania au semnat o scrisoare de intenție cu privire la implementarea proiectului ce vizează dotarea Armatei Naționale cu capabilități anti-dronă de ultimă generație. După ce la începutul acestei săptămâni, Președinta Republicii Moldova, Maia Sandu, a avut di",
+    "confidence": "high",
+    "detected_at": "2026-11-28T07:00:53.773109+00:00"
+  },
+  {
     "date_mentioned": "21 сентября",
     "title": "Неизвестный летательный аппарат пересек воздушное пространство Молдовы",
     "url": "https://point.md/ru/novosti/proisshestviya/neizvestnyi-letatel-nyi-apparat-peresek-vozdushnoe-prostranstvo-moldovy/",
